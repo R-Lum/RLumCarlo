@@ -1,0 +1,14 @@
+"Name","Title","Description","Version","m.Date","m.Time","Author"
+"calc_RLumCarlo","Plot results from Monte-Carlo simulations with RLumCarlo","<br /> Plot results from Monte-Carlo simulations with RLumCarlo<br />","0.0.1","[2017-01-27]
+",NA,"<br /> Johannes Friedrich, University of Bayreuth (Germany)<br />"
+"plot_RLumCarlo","Plot results from Monte-Carlo simulations with RLumCarlo","<br /> Plot results from Monte-Carlo simulations with RLumCarlo<br />","0.0.1","[2017-01-27]
+",NA,"<br /> Johannes Friedrich, University of Bayreuth (Germany)<br />"
+"reexports","Objects exported from other packages","<br /> These objects are imported from other packages. Follow the links<br /> below to see their documentation.<br /> <br /> <br />    magrittr %>% <br />",NA,NA,NA,NA
+"run_MC_CW_IRSL","Run Monte-Carlo simulation for CW-IRSL","<br /> Run Monte-Carlo simulation for CW-IRSL<br />","0.0.1","[2017-01-31]
+",NA,"<br /> Johannes Friedrich, University of Bayreuth (Germany)<br />"
+"run_MC_ISO","Run Monte-Carlo simulation for isothermal measurements","<br /> Run Monte-Carlo simulation for isothermal measurements<br />","0.0.1","[2017-01-27]
+",NA,"<br /> Johannes Friedrich, University of Bayreuth (Germany)<br />"
+"run_MC_LM_OSL","Run Monte-Carlo simulation for LM-OSL","<br /> Run Monte-Carlo simulation for LM-OSL<br />","0.0.1","[2017-01-27]
+",NA,"<br /> Johannes Friedrich, University of Bayreuth (Germany)<br />"
+"run_MC_TL","Run Monte-Carlo simulation for TL","<br /> Run Monte-Carlo simulation for TL<br />","0.0.1","[2017-01-27]
+",NA,"<br /> Johannes Friedrich, University of Bayreuth (Germany)<br />"

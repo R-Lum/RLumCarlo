@@ -1,0 +1,132 @@
+---
+title: "Getting started with RLumCarlo"
+author: "Johannes Friedrich"
+date: "12 Februar 2017"
+output: pdf_document
+vignette: |
+  %\VignetteIndexEntry{RLumCarlo - Getting started with RLumCarlo}         
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}{inputenc}
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Figure 1
+
+```{r Fig 1, fig.align='center'}
+library(RLumCarlo)
+
+times <- seq(0, 500)
+
+## Run MC simulation
+
+run_MC_ISO(A = 0.20,
+           rho = 0.007,
+           times = times) %>%
+  calc_RLumCarlo() %>%
+    plot_RLumCarlo(norm = T, legend = T)
+grid()
+```
+
+
+# Figure 2
+
+```{r Fig 2, fig.align='center'}
+times <- seq(0, 1000)
+
+## Run MC simulation
+
+run_MC_CW_IRSL(A = 0.12, rho = 0.003, times = times) %>%
+calc_RLumCarlo() %>% plot_RLumCarlo(norm = T, legend = T)
+
+run_MC_CW_IRSL(A = 0.21, rho = 0.003, times = times) %>%
+calc_RLumCarlo() %>% plot_RLumCarlo(norm = T, add = T)
+grid()
+```
+
+# Figure 3
+
+```{r Fig 3, fig.align='center'}
+
+s <- 3.5e12
+rho <- 0.015
+E <- 1.45
+
+times <- seq(100, 450) # time = temperature
+
+
+results_rc0 <- run_MC_TL(s=s, E = E, rho = rho, r_c = 0, times = times) %>% 
+  calc_RLumCarlo()
+
+results_rc07 <- run_MC_TL(s=s, E = E, rho = rho, r_c = 0.7, times = times) %>% 
+  calc_RLumCarlo()
+
+results_rc077 <- run_MC_TL(s=s, E = E, rho = rho, r_c = 0.77, times = times) %>% 
+  calc_RLumCarlo()
+
+results_rc086 <- run_MC_TL(s=s, E = E, rho = rho, r_c = 0.86, times = times) %>% 
+  calc_RLumCarlo()
+```
+
+```{r,Plot average signal, fig.align='center', echo = F}
+
+plot(
+  x = times,
+  y = results_rc0$avg/max(results_rc0$avg),
+  type = "b",
+  ylab = "normalized TL signal",
+  xlab = "Temperature [°C]"
+)
+lines(
+  x = times,
+  y = results_rc07$avg/max(results_rc0$avg),
+  type = "p",
+  pch = 6,
+  col = "green"
+)
+lines(
+  x = times,
+  y = results_rc077$avg/max(results_rc0$avg),
+  type = "p",
+  pch = 4,
+  col = "blue"
+)
+lines(
+  x = times,
+  y = results_rc086$avg/max(results_rc0$avg),
+  type = "b",
+  pch = 5,
+  col = "red"
+)
+
+legend("topright",
+       legend = c("0", "5", "10", "50"),
+       pch = c(1,6,5,4),
+       col = c("black", "green", "blue", "red"))
+
+grid()
+```
+
+# Figure 4
+
+```{r Fig 4, fig.align='center'}
+
+s <- 3.5e12
+rho <- 0.015
+E <- 1.45
+
+times <- seq(200, 500) # time = temperature
+
+run_MC_TL(s=s, E = E, rho = rho, r_c = 0.85, times = times) %>%
+  calc_RLumCarlo() %>% plot_RLumCarlo(legend = T)
+
+run_MC_TL(s=s, E = E, rho = rho, r_c = 1.13, times = times) %>%
+  calc_RLumCarlo() %>% plot_RLumCarlo(add = T)
+
+run_MC_TL(s=s, E = E, rho = rho, r_c = 1.3, times = times) %>%
+  calc_RLumCarlo() %>% plot_RLumCarlo(add = T)
+
+grid()
+```
