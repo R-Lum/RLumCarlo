@@ -1,7 +1,7 @@
 # RLumCarlo
 
 The **R** package 'RLumCarlo' by Johannes Friedrich (University of Bayreuth, Germany), 
-provides a collection of various R functions modelling luminescence signals in feldspat.
+provides a collection of various R functions modelling luminescence signals in feldspar.
 
 For an introduction and further details, visit the [RLumModel homepage](http://model.r-luminescence.de).
 
