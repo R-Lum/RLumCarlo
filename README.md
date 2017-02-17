@@ -68,5 +68,5 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
 ## Related projects 
 
 * [Luminescence](https://github.com/R-Lum/Luminescence)
-* [Luminescence](https://github.com/R-Lum/RLumModel)
+* [RLumModel](https://github.com/R-Lum/RLumModel)
 
