@@ -85,6 +85,12 @@ echo ""
   check_status
 
 
+# Set entry points
+# =================================================================================================
+  echo -ne "-> Set entry points ... \t\t\t"
+  eval R CMD BATCH --no-timing ${PATHPACKAGE}/RLumCarlo.BuildScripts/RLumCarlo.PBS_EntryPointRegistration.R /dev/null
+  check_status
+
 #
 # NEWS
 # =================================================================================================
