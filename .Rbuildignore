@@ -1,0 +1,6 @@
+^.*\.Rproj$
+^\.Rproj\.user$
+RLumCarlo.CHECK_AND_BUILD_Linux.sh
+RLumCarlo.CHECK_AND_BUILD_MacOSX.sh
+RLumCarlo.BuildResults
+RLumCarlo.BuildScripts
