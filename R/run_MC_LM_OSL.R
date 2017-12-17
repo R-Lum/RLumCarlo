@@ -57,7 +57,7 @@ run_MC_LM_OSL <- function(
                   .combine = 'comb_array',
                   .multicombine = TRUE) %dopar% {
 
-      results <- RLumCarlo:::MC_C_LM_OSL(times = times,
+      results <- MC_C_LM_OSL(times = times,
                   N_e = N_e,
                   r = r,
                   rho = rho,

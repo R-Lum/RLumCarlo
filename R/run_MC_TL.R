@@ -78,7 +78,7 @@ run_MC_TL <- function(
                   .combine = 'comb_array',
                   .multicombine = TRUE) %dopar% {
 
-    results <- RLumCarlo:::MC_C_TL(times = times,
+    results <- MC_C_TL(times = times,
             N_e = N_e,
             r = r,
             rho = rho,

@@ -67,11 +67,13 @@ run_MC_CW_IRSL <- function(
                   .combine = 'comb_array',
                   .multicombine = TRUE) %dopar% {
 
-    results <- RLumCarlo:::MC_C_CW_IRSL(times = times,
-                            N_e = N_e,
-                            r = r,
-                            rho = rho,
-                            A = A)
+  results <- MC_C_CW_IRSL(
+      times = times,
+      N_e = N_e,
+      r = r,
+      rho = rho,
+      A = A
+  )
 
     return(results[[output]])
 

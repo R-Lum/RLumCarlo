@@ -69,7 +69,7 @@ run_MC_ISO <- function(
                   .combine = 'comb_array',
                   .multicombine = TRUE) %dopar% {
 
-    results <- RLumCarlo:::MC_C_ISO(times = times,
+    results <- MC_C_ISO(times = times,
              N_e = N_e,
              r = r,
              rho = rho,
