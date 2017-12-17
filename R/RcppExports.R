@@ -2,18 +2,18 @@
 # Generator token: 10BE3573-1514-4C36-9D1C-5A225CD40393
 
 MC_C_CW_IRSL <- function(times, N_e, r, rho, A) {
-    .Call('RLumCarlo_MC_C_CW_IRSL', PACKAGE = 'RLumCarlo', times, N_e, r, rho, A)
+    .Call('_RLumCarlo_MC_C_CW_IRSL', PACKAGE = 'RLumCarlo', times, N_e, r, rho, A)
 }
 
 MC_C_ISO <- function(times, N_e, r, rho, A) {
-    .Call('RLumCarlo_MC_C_ISO', PACKAGE = 'RLumCarlo', times, N_e, r, rho, A)
+    .Call('_RLumCarlo_MC_C_ISO', PACKAGE = 'RLumCarlo', times, N_e, r, rho, A)
 }
 
 MC_C_LM_OSL <- function(times, N_e, r, rho, A) {
-    .Call('RLumCarlo_MC_C_LM_OSL', PACKAGE = 'RLumCarlo', times, N_e, r, rho, A)
+    .Call('_RLumCarlo_MC_C_LM_OSL', PACKAGE = 'RLumCarlo', times, N_e, r, rho, A)
 }
 
 MC_C_TL <- function(times, N_e, r, rho, E, s) {
-    .Call('RLumCarlo_MC_C_TL', PACKAGE = 'RLumCarlo', times, N_e, r, rho, E, s)
+    .Call('_RLumCarlo_MC_C_TL', PACKAGE = 'RLumCarlo', times, N_e, r, rho, E, s)
 }
 

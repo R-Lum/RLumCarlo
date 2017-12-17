@@ -8,7 +8,7 @@ using namespace Rcpp;
 
 // MC_C_CW_IRSL
 List MC_C_CW_IRSL(arma::vec times, int N_e, arma::vec r, double rho, double A);
-RcppExport SEXP RLumCarlo_MC_C_CW_IRSL(SEXP timesSEXP, SEXP N_eSEXP, SEXP rSEXP, SEXP rhoSEXP, SEXP ASEXP) {
+RcppExport SEXP _RLumCarlo_MC_C_CW_IRSL(SEXP timesSEXP, SEXP N_eSEXP, SEXP rSEXP, SEXP rhoSEXP, SEXP ASEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
@@ -23,7 +23,7 @@ END_RCPP
 }
 // MC_C_ISO
 List MC_C_ISO(arma::vec times, int N_e, arma::vec r, double rho, double A);
-RcppExport SEXP RLumCarlo_MC_C_ISO(SEXP timesSEXP, SEXP N_eSEXP, SEXP rSEXP, SEXP rhoSEXP, SEXP ASEXP) {
+RcppExport SEXP _RLumCarlo_MC_C_ISO(SEXP timesSEXP, SEXP N_eSEXP, SEXP rSEXP, SEXP rhoSEXP, SEXP ASEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
@@ -38,7 +38,7 @@ END_RCPP
 }
 // MC_C_LM_OSL
 List MC_C_LM_OSL(arma::vec times, int N_e, arma::vec r, double rho, double A);
-RcppExport SEXP RLumCarlo_MC_C_LM_OSL(SEXP timesSEXP, SEXP N_eSEXP, SEXP rSEXP, SEXP rhoSEXP, SEXP ASEXP) {
+RcppExport SEXP _RLumCarlo_MC_C_LM_OSL(SEXP timesSEXP, SEXP N_eSEXP, SEXP rSEXP, SEXP rhoSEXP, SEXP ASEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
@@ -53,7 +53,7 @@ END_RCPP
 }
 // MC_C_TL
 List MC_C_TL(arma::vec times, int N_e, arma::vec r, double rho, double E, double s);
-RcppExport SEXP RLumCarlo_MC_C_TL(SEXP timesSEXP, SEXP N_eSEXP, SEXP rSEXP, SEXP rhoSEXP, SEXP ESEXP, SEXP sSEXP) {
+RcppExport SEXP _RLumCarlo_MC_C_TL(SEXP timesSEXP, SEXP N_eSEXP, SEXP rSEXP, SEXP rhoSEXP, SEXP ESEXP, SEXP sSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
