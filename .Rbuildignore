@@ -6,4 +6,9 @@ RLumCarlo.BuildResults
 RLumCarlo.BuildScripts
 LICENSE
 
+
+##Odds and sodds
 fitting.R
+
+##Exclude Doc
+docs

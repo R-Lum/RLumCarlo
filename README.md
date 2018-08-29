@@ -1,3 +1,5 @@
+![](docs/img/Logo_RLumCarlo.png)
+
 # RLumCarlo
 
 The **R** package 'RLumCarlo' by Johannes Friedrich (University of Bayreuth, Germany), 
