@@ -19,6 +19,20 @@
 #'
 #' @references
 #' Pagonis 2017
+#'
+#' @examples
+#'
+#'\dontrun{
+#'
+#'##TODO: Primary example, should be verified
+#'run_MC_LM_OSL(A = 10000, rho = 0.0001, times = 1:100, clusters = 10, r = NULL,
+#'  delta.r = 0.1,
+#'  N_e = 200, method = "par", output = "signal") %>%
+#'  calc_RLumCarlo() %>%
+#'  plot_RLumCarlo(norm = T)
+#'
+#'}
+#'
 #' @export
 run_MC_LM_OSL <- function(
   A,
@@ -42,6 +56,8 @@ run_MC_LM_OSL <- function(
 
     cl <- parallel::makeCluster(1)
     doParallel::registerDoParallel(cl)
+    ##ensures that we do not have any particular problems
+    registerDoSEQ()
     on.exit(stopCluster(cl))
 
   } else {

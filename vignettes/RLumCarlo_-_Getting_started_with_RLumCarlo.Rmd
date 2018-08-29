@@ -1,7 +1,7 @@
 ---
 title: "Getting started with RLumCarlo"
 author: "Johannes Friedrich"
-date: "12 Februar 2017"
+date: "Last modified: `r Sys.Date()`"
 output: pdf_document
 vignette: |
   %\VignetteIndexEntry{RLumCarlo - Getting started with RLumCarlo}         
@@ -11,6 +11,10 @@ vignette: |
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r, echo = FALSE, fig.align='center'}
+knitr::include_graphics("../docs/img/Logo_RLumCarlo.png")
 ```
 
 # Figure 1

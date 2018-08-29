@@ -38,6 +38,20 @@ Run Monte-Carlo simulation for LM-OSL
  0.0.1 [2017-01-27]
 }
 
+\examples{
+
+\dontrun{
+
+##TODO: Primary example, should be verified
+run_MC_LM_OSL(A = 10000, rho = 0.0001, times = 1:100, clusters = 10, r = NULL,
+ delta.r = 0.1,
+ N_e = 200, method = "par", output = "signal") \%>\%
+ calc_RLumCarlo() \%>\%
+ plot_RLumCarlo(norm = T)
+
+}
+
+}
 \references{
 Pagonis 2017
 }
