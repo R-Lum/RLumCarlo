@@ -1,6 +1,8 @@
-// [[Rcpp::depends(RcppArmadillo)]]
 #include <RcppArmadillo.h>
+
+// [[Rcpp::depends(RcppArmadillo)]]
 using namespace Rcpp;
+
 
 // [[Rcpp::export("MC_C_CW_IRSL")]]
 List MC_C_CW_IRSL(arma::vec times, int N_e, arma::vec r, double rho, double A) {

@@ -1,21 +1,25 @@
 Package: RLumCarlo
 Type: Package
 Title: Monte-Carlo Methods for Simulating Luminescence Phenomena
-Version: 0.0.1
-Date: 2017-01-27
-Author: Johannes Friedrich [aut, trl, cre]
+Version: 0.0.2
+Date: 2018-08-29
+Author: Johannes Friedrich [aut, trl, cre] (<https://orcid.org/0000-0002-0805-9547>),
+    Sebastian Kreutzer [ctb] (<https://orcid.org/0000-0002-0734-2199>)
 Authors@R: c(
     person("Johannes", "Friedrich", role = c("aut","trl","cre"), 
-            email = "johannes.friedrich@uni-bayreuth.de")
+            email = "johannes.friedrich@uni-bayreuth.de"), 
+     person("Sebastian", "Kreutzer", role = c("ctb"), comment = c(ORCID = "0000-0002-0734-2199"))
     )
 Maintainer: Johannes Friedrich <johannes.friedrich@uni-bayreuth.de>
 Description: A collection of functions to simulate luminescence signals with Monte-Carlo methods in the
     mineral feldspar based on published models.
 Contact: Package Developer Team <johannes.friedrich@uni-bayreuth.de>
 License: GPL-3
+BugReports: https://github.com/R-Lum/RLumCarlo/issues
 Depends:
     R (>= 3.3.0),
-    utils
+    utils,
+    magrittr
 URL: https://CRAN.R-project.org/package=RLumModel
 Collate:
     'calc_RLumCarlo.R'
@@ -27,18 +31,16 @@ Collate:
     'run_MC_TL.R'
     'run_MC_LM_OSL.R'
     'utils.R'
-Imports: 
-      abind,
+LinkingTo: Rcpp, 
+      RcppProgress,
+      RcppArmadillo
+Imports: abind,
       doParallel,
       foreach,
       parallel,
       methods,
-      magrittr,
       Rcpp
-LinkingTo: 
-      Rcpp, 
-      RcppProgress,
-      RcppArmadillo
 Suggests: R.rsp
+Encoding: UTF-8
 VignetteBuilder: R.rsp
-RoxygenNote: 6.0.1
+RoxygenNote: 6.1.0

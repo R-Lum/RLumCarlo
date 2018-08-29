@@ -116,7 +116,8 @@ echo ""
 echo "[CHECK PACKAGE]"
 echo ""
 
-  eval R CMD check --timings --as-cran ${PATHPACKAGE}/RLumCarlo*.tar.gz
+  eval R CMD check --timings ${PATHPACKAGE}/RLumCarlo*.tar.gz
+  #eval R CMD check --timings --as-cran ${PATHPACKAGE}/RLumCarlo*.tar.gz
 
   echo -ne 'Example timing warnings...:\n\n'
   eval R CMD BATCH ${PATHPACKAGE}/RLumCarlo.BuildScripts/RLumCarlo.PBS_Timings.R /dev/null

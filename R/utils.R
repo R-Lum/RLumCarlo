@@ -1,5 +1,2 @@
-#' @importFrom magrittr %>%
-#' @export
-magrittr::"%>%"
-
+#' @noMd
 comb_array <- function(...) abind::abind(..., along = 3)

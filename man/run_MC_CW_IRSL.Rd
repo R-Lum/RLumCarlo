@@ -5,7 +5,7 @@
 \title{Run Monte-Carlo simulation for CW-IRSL}
 \usage{
 run_MC_CW_IRSL(A, rho, times, clusters = 10, r = NULL, N_e = 200,
-  method = "par", output = "signal", ...)
+  method = "seq", output = "signal", ...)
 }
 \arguments{
 \item{A}{\code{\link{numeric}}}
@@ -33,7 +33,7 @@ This function returns a list.
 Run Monte-Carlo simulation for CW-IRSL
 }
 \section{Function version}{
- 0.0.1 [2017-01-31]
+ 0.0.2 [2017-01-31]
 }
 
 \examples{
@@ -52,5 +52,5 @@ run_MC_CW_IRSL(A = 0.12, rho = 0.003, times = 0:1000) \%>\%
 Pagonis 2017
 }
 \author{
-Johannes Friedrich, University of Bayreuth (Germany)
+Johannes Friedrich, University of Bayreuth (Germany), Sebastian Kreutzer, IRAMAT-CRP2A, Université Bordeaux Montaigne (France)
 }

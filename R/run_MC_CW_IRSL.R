@@ -12,9 +12,9 @@
 #'
 #' @return This function returns a list.
 #'
-#' @section Function version: 0.0.1 [2017-01-31]
+#' @section Function version: 0.0.2 [2017-01-31]
 #'
-#' @author Johannes Friedrich, University of Bayreuth (Germany)
+#' @author Johannes Friedrich, University of Bayreuth (Germany), Sebastian Kreutzer, IRAMAT-CRP2A, Université Bordeaux Montaigne (France)
 #'
 #' @references
 #' Pagonis 2017
@@ -38,44 +38,49 @@ run_MC_CW_IRSL <- function(
   clusters = 10,
   r = NULL,
   N_e = 200,
-  method = "par",
+  method = "seq",
   output = "signal",
   ...){
 
+
   ## register backend ----
-  cores <- detectCores()
+  cores <- parallel::detectCores()
   if(cores == 1) method <- "seq"
 
   if(method != "par"){
 
     cl <- parallel::makeCluster(1)
     doParallel::registerDoParallel(cl)
-    on.exit(stopCluster(cl))
+
+    ##ensures that we do not have any particular problems
+    registerDoSEQ()
+    on.exit(parallel::stopCluster(cl))
 
   } else {
-
     cl <- parallel::makeCluster(cores-1)
     doParallel::registerDoParallel(cl)
-    on.exit(stopCluster(cl))
+    on.exit(parallel::stopCluster(cl))
   }
+
   ## -----
 
-  if(is.null(r)) r <- seq(from = 0, to = 2, by = 0.1)
+ if(is.null(r)) r <- seq(from = 0, to = 2, by = 0.1)
 
-  temp <- foreach(c = 1:clusters,
-                  .packages = 'RLumCarlo',
-                  .combine = 'comb_array',
-                  .multicombine = TRUE) %dopar% {
+  temp <- foreach(
+    c = 1:clusters,
+    .packages = 'RLumCarlo',
+    .combine = 'comb_array',
+    .multicombine = TRUE) %dopar% {
 
-  results <- MC_C_CW_IRSL(
-      times = times,
-      N_e = N_e,
-      r = r,
-      rho = rho,
-      A = A
-  )
+    results <- MC_C_CW_IRSL(
+        times = times,
+        N_e = N_e,
+        r = r,
+        rho = rho,
+        A = A
+    )
 
-    return(results[[output]])
+   return(results[[output]])
 
   }  # end c-loop
 
@@ -83,3 +88,5 @@ run_MC_CW_IRSL <- function(
               time = times))
 
 }
+
+

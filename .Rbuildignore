@@ -5,3 +5,5 @@ RLumCarlo.CHECK_AND_BUILD_MacOSX.sh
 RLumCarlo.BuildResults
 RLumCarlo.BuildScripts
 LICENSE
+
+fitting.R

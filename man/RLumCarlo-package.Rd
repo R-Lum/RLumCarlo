@@ -4,11 +4,11 @@
 \name{RLumCarlo-package}
 \alias{RLumCarlo-package}
 \title{\tabular{ll}{ Package: \tab RLumCarlo\cr Type: \tab Package\cr Version:
-\tab 0.0.1\cr Date: \tab 2017-01-31 \cr License: \tab GPL-3\cr }}
+\tab 0.0.2\cr Date: \tab 2018-08-28 \cr License: \tab GPL-3\cr }}
 \description{
 \tabular{ll}{ Package: \tab RLumCarlo\cr Type: \tab Package\cr Version:
-\tab 0.0.1\cr Date: \tab 2017-01-31 \cr License: \tab GPL-3\cr }
+\tab 0.0.2\cr Date: \tab 2018-08-28 \cr License: \tab GPL-3\cr }
 }
 \author{
-\bold{Authors}
+Johannes Friedrich (University of Bayreuth, Germany), Sebastian Kreutzer, IRAMAT-CRP2A, UMR 5060, CNRS-Université Bordeaux Montaigne (France)
 }

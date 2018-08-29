@@ -4,8 +4,8 @@
 \alias{run_MC_TL}
 \title{Run Monte-Carlo simulation for TL}
 \usage{
-run_MC_TL(s, E, rho, r_c, times, clusters = 10, N_e = 200, delta.r = 0.1,
-  method = "par", output = "signal", ...)
+run_MC_TL(s, E, rho, r_c, times, clusters = 10, N_e = 200,
+  delta.r = 0.1, method = "par", output = "signal", ...)
 }
 \arguments{
 \item{s}{\code{\link{list}}}

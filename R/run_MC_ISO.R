@@ -52,6 +52,8 @@ run_MC_ISO <- function(
 
     cl <- parallel::makeCluster(1)
     doParallel::registerDoParallel(cl)
+    ##ensures that we do not have any particular problems
+    registerDoSEQ()
     on.exit(stopCluster(cl))
 
   } else {
