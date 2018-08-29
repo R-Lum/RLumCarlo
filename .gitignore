@@ -9,9 +9,9 @@ RLumCarlo.Debug/
 RLumCarlo.Experiment/
 packrat/
 RLumCarlo.Rcheck/
-RLumCarlo.BuildResults/*.tar.gz
+#RLumCarlo.BuildResults/*.tar.gz
 RLumCarlo.BuildResults/*.zip
-RLumCarlo.BuildResults/*.tgz
+#RLumCarlo.BuildResults/*.tgz
 packrat/lib*/
 packrat/src/
 src/*.o
