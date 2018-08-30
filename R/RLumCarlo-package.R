@@ -1,3 +1,10 @@
+#' Modelling luminescence signals in feldspar
+#'
+#' \if{html}{
+#' \figure{Logo_RLumCarlo.png}{options: width="50px" alt="https://github.com/R-Lum/RLumCarlo"}\cr
+#' }
+#'
+#'
 #' \tabular{ll}{ Package: \tab RLumCarlo\cr Type: \tab Package\cr Version:
 #' \tab 0.0.2\cr Date: \tab 2018-08-28 \cr License: \tab GPL-3\cr }
 #'

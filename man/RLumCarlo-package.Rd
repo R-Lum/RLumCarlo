@@ -3,9 +3,13 @@
 \docType{package}
 \name{RLumCarlo-package}
 \alias{RLumCarlo-package}
-\title{\tabular{ll}{ Package: \tab RLumCarlo\cr Type: \tab Package\cr Version:
-\tab 0.0.2\cr Date: \tab 2018-08-28 \cr License: \tab GPL-3\cr }}
+\title{Modelling luminescence signals in feldspar}
 \description{
+\if{html}{
+\figure{Logo_RLumCarlo.png}{options: width="50px" alt="https://github.com/R-Lum/RLumCarlo"}\cr
+}
+}
+\details{
 \tabular{ll}{ Package: \tab RLumCarlo\cr Type: \tab Package\cr Version:
 \tab 0.0.2\cr Date: \tab 2018-08-28 \cr License: \tab GPL-3\cr }
 }

@@ -21,6 +21,7 @@ library(xtable)
 # Reading file ------------------------------------------------------------
 
 file.list.man <- list.files("man/")
+file.list.man <- file.list.man[!(file.list.man == "figures")]
 
 ##get version number
 temp <- readLines("DESCRIPTION")
