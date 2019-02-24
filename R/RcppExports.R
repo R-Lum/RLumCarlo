@@ -17,3 +17,7 @@ MC_C_TL <- function(times, N_e, r, rho, E, s) {
     .Call('_RLumCarlo_MC_C_TL', PACKAGE = 'RLumCarlo', times, N_e, r, rho, E, s)
 }
 
+MC_C_TL_DELOC <- function(times, N_e, n_filled, R, E, s) {
+    .Call('_RLumCarlo_MC_C_TL_DELOC', PACKAGE = 'RLumCarlo', times, N_e, n_filled, R, E, s)
+}
+

@@ -67,3 +67,19 @@ BEGIN_RCPP
     return rcpp_result_gen;
 END_RCPP
 }
+// MC_C_TL_DELOC
+List MC_C_TL_DELOC(arma::vec times, int N_e, int n_filled, double R, double E, double s);
+RcppExport SEXP _RLumCarlo_MC_C_TL_DELOC(SEXP timesSEXP, SEXP N_eSEXP, SEXP n_filledSEXP, SEXP RSEXP, SEXP ESEXP, SEXP sSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< arma::vec >::type times(timesSEXP);
+    Rcpp::traits::input_parameter< int >::type N_e(N_eSEXP);
+    Rcpp::traits::input_parameter< int >::type n_filled(n_filledSEXP);
+    Rcpp::traits::input_parameter< double >::type R(RSEXP);
+    Rcpp::traits::input_parameter< double >::type E(ESEXP);
+    Rcpp::traits::input_parameter< double >::type s(sSEXP);
+    rcpp_result_gen = Rcpp::wrap(MC_C_TL_DELOC(times, N_e, n_filled, R, E, s));
+    return rcpp_result_gen;
+END_RCPP
+}

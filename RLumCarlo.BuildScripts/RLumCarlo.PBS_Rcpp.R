@@ -10,4 +10,4 @@ if(!require("Rcpp"))
   install.packages("Rcpp")
 
 ##compile new attributes
-Rcpp::compileAttributes(verbose = TRUE)
+Rcpp::compileAttributes()

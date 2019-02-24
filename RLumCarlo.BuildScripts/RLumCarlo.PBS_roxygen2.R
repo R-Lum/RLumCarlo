@@ -1,14 +1,22 @@
 ### ===============================================================================================
 ### R package RLumCarlo BUILDSCRIPTS
 ### roxygen2
-### johannes.friedrich@uni-bayreuth.de
-### 2017-02-01
-### Note: Previous version based on code of Sebastian Kreutzer
+### sebastian.kreutzer@u-bordeaux-montaigne.fr
+### 2018-11-25
 ### ===============================================================================================
+##updated using the suggestions in
+##https://github.com/klutometis/roxygen/issues/822
+
+
+# Load packages -------------------------------------------------------------------------------
+
+if(!require("pkgbuild"))
+  install.packages("pkgbuild")
 
 if(!require("devtools"))
   install.packages("devtools")
 
-library(devtools)
 
-document(pkg = ".", roclets = NULL)
+# Create documentation  -----------------------------------------------------------------------
+pkgbuild::compile_dll(quiet = TRUE)
+devtools::document()
