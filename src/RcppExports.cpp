@@ -115,6 +115,21 @@ BEGIN_RCPP
     return rcpp_result_gen;
 END_RCPP
 }
+// MC_C_LM_OSL_DELOC
+List MC_C_LM_OSL_DELOC(arma::vec times, int N_e, int n_filled, double R, double A);
+RcppExport SEXP _RLumCarlo_MC_C_LM_OSL_DELOC(SEXP timesSEXP, SEXP N_eSEXP, SEXP n_filledSEXP, SEXP RSEXP, SEXP ASEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< arma::vec >::type times(timesSEXP);
+    Rcpp::traits::input_parameter< int >::type N_e(N_eSEXP);
+    Rcpp::traits::input_parameter< int >::type n_filled(n_filledSEXP);
+    Rcpp::traits::input_parameter< double >::type R(RSEXP);
+    Rcpp::traits::input_parameter< double >::type A(ASEXP);
+    rcpp_result_gen = Rcpp::wrap(MC_C_LM_OSL_DELOC(times, N_e, n_filled, R, A));
+    return rcpp_result_gen;
+END_RCPP
+}
 // MC_C_TL
 List MC_C_TL(arma::vec times, int N_e, arma::vec r, double rho, double E, double s);
 RcppExport SEXP _RLumCarlo_MC_C_TL(SEXP timesSEXP, SEXP N_eSEXP, SEXP rSEXP, SEXP rhoSEXP, SEXP ESEXP, SEXP sSEXP) {

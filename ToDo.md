@@ -2,8 +2,8 @@
 
 ## Sebastian
 
-* Exchange A by E,s,T in scripts by Johannes 
-* Update vignette
+* LOC - LM-OSL
+* DELOC - LM-OSL
 
 ## Students 
 

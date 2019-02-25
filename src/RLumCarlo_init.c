@@ -17,6 +17,7 @@ extern SEXP _RLumCarlo_MC_C_ISO(SEXP, SEXP, SEXP, SEXP, SEXP, SEXP, SEXP);
 extern SEXP _RLumCarlo_MC_C_ISO_DELOC(SEXP, SEXP, SEXP, SEXP, SEXP, SEXP, SEXP);
 extern SEXP _RLumCarlo_MC_C_ISO_LOC(SEXP, SEXP, SEXP, SEXP, SEXP, SEXP);
 extern SEXP _RLumCarlo_MC_C_LM_OSL(SEXP, SEXP, SEXP, SEXP, SEXP);
+extern SEXP _RLumCarlo_MC_C_LM_OSL_DELOC(SEXP, SEXP, SEXP, SEXP, SEXP);
 extern SEXP _RLumCarlo_MC_C_TL(SEXP, SEXP, SEXP, SEXP, SEXP, SEXP);
 extern SEXP _RLumCarlo_MC_C_TL_DELOC(SEXP, SEXP, SEXP, SEXP, SEXP, SEXP);
 extern SEXP _RLumCarlo_MC_C_TL_LOC(SEXP, SEXP, SEXP, SEXP, SEXP);
@@ -29,6 +30,7 @@ static const R_CallMethodDef CallEntries[] = {
     {"_RLumCarlo_MC_C_ISO_DELOC",     (DL_FUNC) &_RLumCarlo_MC_C_ISO_DELOC,     7},
     {"_RLumCarlo_MC_C_ISO_LOC",       (DL_FUNC) &_RLumCarlo_MC_C_ISO_LOC,       6},
     {"_RLumCarlo_MC_C_LM_OSL",        (DL_FUNC) &_RLumCarlo_MC_C_LM_OSL,        5},
+    {"_RLumCarlo_MC_C_LM_OSL_DELOC",  (DL_FUNC) &_RLumCarlo_MC_C_LM_OSL_DELOC,  5},
     {"_RLumCarlo_MC_C_TL",            (DL_FUNC) &_RLumCarlo_MC_C_TL,            6},
     {"_RLumCarlo_MC_C_TL_DELOC",      (DL_FUNC) &_RLumCarlo_MC_C_TL_DELOC,      6},
     {"_RLumCarlo_MC_C_TL_LOC",        (DL_FUNC) &_RLumCarlo_MC_C_TL_LOC,        5},
