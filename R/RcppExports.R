@@ -33,6 +33,10 @@ MC_C_LM_OSL_DELOC <- function(times, N_e, n_filled, R, A) {
     .Call('_RLumCarlo_MC_C_LM_OSL_DELOC', PACKAGE = 'RLumCarlo', times, N_e, n_filled, R, A)
 }
 
+MC_C_LM_OSL_LOC <- function(times, n_filled, r, A) {
+    .Call('_RLumCarlo_MC_C_LM_OSL_LOC', PACKAGE = 'RLumCarlo', times, n_filled, r, A)
+}
+
 MC_C_TL <- function(times, N_e, r, rho, E, s) {
     .Call('_RLumCarlo_MC_C_TL', PACKAGE = 'RLumCarlo', times, N_e, r, rho, E, s)
 }

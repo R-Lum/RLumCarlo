@@ -17,6 +17,8 @@
 ",NA,NA,"<br /> Johannes Friedrich, University of Bayreuth (Germany), Sebastian Kreutzer, IRAMAT-CRP2A,<br /> UMR 5060, CNRS - Univerité Bordeaux Montaigne (France)<br />"
 "run_MC_LM_OSL_DELOC","Run Monte-Carlo simulation for LM-OSL for GOT model","<br /> ##TODO<br />","0.0.1
 ",NA,NA,"<br /> Sebastian Kreutzer, IRAMAT-CRP2A, UMR 5060, CNRS - Université Bordeaux Montaigne (France)<br />"
+"run_MC_LM_OSL_LOC","Run Monte-Carlo simulation for LM-OSL for localised transition","<br /> ##TODO<br />","0.0.1
+",NA,NA,"<br /> Sebastian Kreutzer, IRAMAT-CRP2A, UMR 5060, CNRS - Université Bordeaux Montaigne (France)<br />"
 "run_MC_LM_OSL","Run Monte-Carlo simulation for LM-OSL","<br /> Run Monte-Carlo simulation for LM-OSL<br />","0.0.1","[2017-01-27]
 ",NA,"<br /> Johannes Friedrich, University of Bayreuth (Germany)<br />"
 "run_MC_TL_DELOC","Run Monte-Carlo simulation for TL for GOT model","<br /> ##TODO<br />","0.0.1
