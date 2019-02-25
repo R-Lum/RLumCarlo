@@ -83,3 +83,18 @@ BEGIN_RCPP
     return rcpp_result_gen;
 END_RCPP
 }
+// MC_C_TL_LOC
+List MC_C_TL_LOC(arma::vec times, int n_filled, double r, double E, double s);
+RcppExport SEXP _RLumCarlo_MC_C_TL_LOC(SEXP timesSEXP, SEXP n_filledSEXP, SEXP rSEXP, SEXP ESEXP, SEXP sSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< arma::vec >::type times(timesSEXP);
+    Rcpp::traits::input_parameter< int >::type n_filled(n_filledSEXP);
+    Rcpp::traits::input_parameter< double >::type r(rSEXP);
+    Rcpp::traits::input_parameter< double >::type E(ESEXP);
+    Rcpp::traits::input_parameter< double >::type s(sSEXP);
+    rcpp_result_gen = Rcpp::wrap(MC_C_TL_LOC(times, n_filled, r, E, s));
+    return rcpp_result_gen;
+END_RCPP
+}
