@@ -54,7 +54,7 @@ run_MC_ISO(
  rho = 0.007,
  times = times) \%>\%
   calc_RLumCarlo() \%>\%
-    plot_RLumCarlo(legend = T)
+  plot_RLumCarlo(legend = T)
 }
 }
 \references{
