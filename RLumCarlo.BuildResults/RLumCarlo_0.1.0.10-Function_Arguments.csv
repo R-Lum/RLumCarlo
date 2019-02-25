@@ -1,0 +1,12 @@
+"calc_RLumCarlo","plot_RLumCarlo","run_MC_CW_IRSL","run_MC_ISO","run_MC_LM_OSL","run_MC_TL","run_MC_TL_DELOC"
+"results","results","A","A","A","s","s"
+NA,"times","rho","rho","rho","E","E"
+NA,"norm","times","times","times","rho","times"
+NA,"legend","clusters","clusters","clusters","r_c","clusters"
+NA,"add","r","r","r","times","N_e"
+NA,"...","N_e","N_e","delta.r","clusters","n_filled"
+NA,NA,"method","method","N_e","N_e","R"
+NA,NA,"output","output","method","delta.r","method"
+NA,NA,"...","...","output","method","output"
+NA,NA,NA,NA,"...","output","..."
+NA,NA,NA,NA,NA,"...",NA

@@ -1,7 +1,7 @@
 Package: RLumCarlo
 Type: Package
 Title: Monte-Carlo Methods for Simulating Luminescence Phenomena
-Version: 0.1.0.7
+Version: 0.1.0.11
 Date: 2019-02-24
 Author: Johannes Friedrich [aut, trl, cre] (<https://orcid.org/0000-0002-0805-9547>),
     Sebastian Kreutzer [aut] (<https://orcid.org/0000-0002-0734-2199>)
@@ -21,16 +21,6 @@ Depends:
     utils,
     magrittr
 URL: https://CRAN.R-project.org/package=RLumModel
-Collate:
-    'calc_RLumCarlo.R'
-    'plot_RLumCarlo.R'
-    'RcppExports.R'
-    'RLumCarlo-package.R'
-    'run_MC_ISO.R'
-    'run_MC_CW_IRSL.R'
-    'run_MC_TL.R'
-    'run_MC_LM_OSL.R'
-    'utils.R'
 LinkingTo: Rcpp, 
       RcppProgress,
       RcppArmadillo
