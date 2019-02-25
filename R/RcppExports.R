@@ -5,8 +5,24 @@ MC_C_CW_IRSL <- function(times, N_e, r, rho, A) {
     .Call('_RLumCarlo_MC_C_CW_IRSL', PACKAGE = 'RLumCarlo', times, N_e, r, rho, A)
 }
 
-MC_C_ISO <- function(times, N_e, r, rho, A) {
-    .Call('_RLumCarlo_MC_C_ISO', PACKAGE = 'RLumCarlo', times, N_e, r, rho, A)
+MC_C_CW_IRSL_DELOC <- function(times, N_e, n_filled, R, A) {
+    .Call('_RLumCarlo_MC_C_CW_IRSL_DELOC', PACKAGE = 'RLumCarlo', times, N_e, n_filled, R, A)
+}
+
+MC_C_CW_IRSL_LOC <- function(times, n_filled, r, A) {
+    .Call('_RLumCarlo_MC_C_CW_IRSL_LOC', PACKAGE = 'RLumCarlo', times, n_filled, r, A)
+}
+
+MC_C_ISO <- function(times, N_e, r, rho, E, s, T) {
+    .Call('_RLumCarlo_MC_C_ISO', PACKAGE = 'RLumCarlo', times, N_e, r, rho, E, s, T)
+}
+
+MC_C_ISO_DELOC <- function(times, N_e, n_filled, R, E, s, T) {
+    .Call('_RLumCarlo_MC_C_ISO_DELOC', PACKAGE = 'RLumCarlo', times, N_e, n_filled, R, E, s, T)
+}
+
+MC_C_ISO_LOC <- function(times, n_filled, r, E, s, T) {
+    .Call('_RLumCarlo_MC_C_ISO_LOC', PACKAGE = 'RLumCarlo', times, n_filled, r, E, s, T)
 }
 
 MC_C_LM_OSL <- function(times, N_e, r, rho, A) {

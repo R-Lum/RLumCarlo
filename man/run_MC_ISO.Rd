@@ -4,25 +4,29 @@
 \alias{run_MC_ISO}
 \title{Run Monte-Carlo simulation for isothermal measurements}
 \usage{
-run_MC_ISO(A, rho, times, clusters = 10, r = NULL, N_e = 200,
-  method = "par", output = "signal", ...)
+run_MC_ISO(E, s, T = 200, rho, times, clusters = 10, r = NULL,
+  N_e = 200, method = "par", output = "signal", ...)
 }
 \arguments{
-\item{A}{\code{\link{numeric}}}
+\item{E}{\link{numeric} (\strong{required})}
 
-\item{rho}{\code{\link{numeric}}}
+\item{s}{\link{numeric} (\strong{required})}
 
-\item{times}{\code{\link{vector}} (with default)}
+\item{T}{\link{numeric} (\strong{required})}
 
-\item{clusters}{\code{\link{numeric}} (with default):}
+\item{rho}{\link{numeric} (\strong{required})}
 
-\item{r}{\code{\link{numeric}} (with default)}
+\item{times}{\link{numeric} (\emph{with default})}
 
-\item{N_e}{\code{\link{numeric}} (with default):}
+\item{clusters}{\link{numeric} (\emph{with default}):}
 
-\item{method}{\code{\link{character}} (with default):}
+\item{r}{\link{numeric} (\emph{with default})}
 
-\item{output}{\code{\link{character}} (with default):}
+\item{N_e}{\link{numeric} (\emph{with default})}
+
+\item{method}{\link{character} (\emph{with default})}
+
+\item{output}{\link{character} (\emph{with default})}
 
 \item{\dots}{further arguments}
 }
@@ -33,7 +37,7 @@ This function returns a list.
 Run Monte-Carlo simulation for isothermal measurements
 }
 \section{Function version}{
- 0.0.1 [2017-01-27]
+ 0.1.0
 }
 
 \examples{
@@ -42,10 +46,13 @@ Run Monte-Carlo simulation for isothermal measurements
 ## Example 1: Simulate isothermal measurement
 ##============================================================================##
 
-times <- seq(0, 500)
-run_MC_ISO(A = 0.20,
-          rho = 0.007,
-          times = times) \%>\%
+times <- seq(0, 5000)
+run_MC_ISO(
+ E = 1.2,
+ s = 1e10,
+ T = 200,
+ rho = 0.007,
+ times = times) \%>\%
   calc_RLumCarlo() \%>\%
     plot_RLumCarlo(legend = T)
 }
@@ -54,5 +61,6 @@ run_MC_ISO(A = 0.20,
 Pagonis 2017
 }
 \author{
-Johannes Friedrich, University of Bayreuth (Germany)
+Johannes Friedrich, University of Bayreuth (Germany), Sebastian Kreutzer, IRAMAT-CRP2A,
+UMR 5060, CNRS - Univerité Bordeaux Montaigne (France)
 }
