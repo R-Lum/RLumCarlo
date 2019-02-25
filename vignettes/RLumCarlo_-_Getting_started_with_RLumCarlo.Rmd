@@ -1,6 +1,6 @@
 ---
 title: "Getting started with RLumCarlo"
-author: "Johannes Friedrich"
+author: "Johannes Friedrich & Sebastian Kreutzer"
 date: "Last modified: `r Sys.Date()`"
 output: pdf_document
 vignette: |
@@ -22,15 +22,17 @@ knitr::include_graphics("../docs/img/Logo_RLumCarlo.png")
 ```{r Fig 1, fig.align='center'}
 library(RLumCarlo)
 
-times <- seq(0, 500)
+times <- seq(0, 5000)
 
 ## Run MC simulation
 
-run_MC_ISO(A = 0.20,
+run_MC_ISO(E = 1.2,
+           s = 1e10,
+           T = 200,
            rho = 0.007,
            times = times) %>%
   calc_RLumCarlo() %>%
-    plot_RLumCarlo(norm = T, legend = T)
+  plot_RLumCarlo(norm = T, legend = T)
 grid()
 ```
 
