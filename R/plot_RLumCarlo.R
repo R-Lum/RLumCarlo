@@ -1,18 +1,26 @@
 #' Plot results from Monte-Carlo simulations with RLumCarlo
 #'
-#' @param results \code{\link{data.frame}}
-#' @param times \code{\link{vector}} (with default):
-#' @param norm \code{\link{character}} (with default):
-#' @param legend \code{\link{logical}} (with default):
-#' @param add \code{\link{logical}} (with default):
-#' @param \dots further arguments
+#' @param results [data.frame] (**required**)
+#'
+#' @param times [numeric] (*optinal*): Optional vector for the x-axis
+#'
+#' @param norm  [logical] (*with default*): Normalise curve to the highest intensity
+#'
+#' @param legend [logical] (*with default*): Enable/disable legend
+#'
+#' @param add [logical] (*with default*): allow overplotting of results
+#'
+#' @param \dots further arguments that can be passed to control the plot output. Currently supported
+#' are: `xlab`, `xlim`, `ylim`, `main`, `lwd`, `type`
 #'
 #' @return This function returns a graphical output
 #'
-#' @section Function version: 0.0.1 [2017-01-27]
+#' @section Function version: 0.1.0
 #'
-#' @author Johannes Friedrich, University of Bayreuth (Germany)
+#' @author Johannes Friedrich, University of Bayreuth (Germany), Sebastian Kreutzer, IRAMAT-CRP2A, Université
+#' Bordeaux Montaigne (France)
 #'
+#' @md
 #' @export
 plot_RLumCarlo <- function(
   results,
@@ -34,32 +42,45 @@ plot_RLumCarlo <- function(
     y_max <- y_max/max(y_max)
     ylab = "normalized average signal"
   } else {
-
     ylab = "average signal [a.u.]"
   }
+
+  ##default plot settings
+  plot_settings <-
+    modifyList(x = list(
+      main = "",
+      xlim = range(times),
+      ylim = c(0, max(y_max)),
+      xlab = "Time [s]",
+      type = "l",
+      lwd = 2
+    ), val = list(...))
+
 
   if(add == FALSE){
 
     plot(
       x = times,
       y = avg,
-      xlab = "Time [s]",
+      main = plot_settings$main,
+      xlab = plot_settings$xlab,
       ylab = ylab,
-      type = "l",
-      ylim = c(0, max(y_max)),
-      lwd = 2,
-      ...)
+      type = plot_settings$type,
+      xlim = plot_settings$xlim,
+      ylim = plot_settings$ylim,
+      lwd = plot_settings$lwd)
   } else {
 
     lines(
       x = times,
       y = avg,
-      xlab = "Time [s]",
+      main = plot_settings$main,
+      xlab = plot_settings$xlab,
       ylab = ylab,
-      type = "l",
-      ylim = c(0, max(y_max)),
-      lwd = 2,
-      ...)
+      type = plot_settings$type,
+      xlim = plot_settings$xlim,
+      ylim = plot_settings$ylim,
+      lwd = plot_settings$lwd)
   }
 
   polygon(x = c(times, rev(times)),
@@ -71,6 +92,7 @@ plot_RLumCarlo <- function(
     legend("topright",
            legend = c("average", "min-max"),
            lwd = 1,
+           bty = "n",
            col = c("black", "red"))
   }
 
