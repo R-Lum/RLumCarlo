@@ -42,7 +42,7 @@
 #' run_MC_CW_IRSL_LOC(
 #'  A = 0.12,
 #'  r = 1,
-#'  times = 0:10000) %>%
+#'  times = 0:100) %>%
 #'    calc_RLumCarlo() %>%
 #'    plot_RLumCarlo(legend = T)
 #'
