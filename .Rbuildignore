@@ -12,3 +12,4 @@ fitting.R
 
 ##Exclude Doc
 docs
+README.Rmd
