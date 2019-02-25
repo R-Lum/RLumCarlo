@@ -1,20 +1,33 @@
 #' Run Monte-Carlo simulation for isothermal measurements
 #'
-#' @param A \code{\link{numeric}}
-#' @param rho \code{\link{numeric}}
-#' @param times \code{\link{vector}} (with default)
-#' @param clusters \code{\link{numeric}} (with default):
-#' @param r \code{\link{numeric}} (with default)
-#' @param N_e \code{\link{numeric}} (with default):
-#' @param method \code{\link{character}} (with default):
-#' @param output \code{\link{character}} (with default):
+#' @param E [numeric] (**required**)
+#'
+#' @param s [numeric] (**required**)
+#'
+#' @param T [numeric] (**required**)
+#'
+#' @param rho [numeric] (**required**)
+#'
+#' @param times [numeric] (*with default*)
+#'
+#' @param clusters [numeric] (*with default*):
+#'
+#' @param r [numeric] (*with default*)
+#'
+#' @param N_e [numeric] (*with default*)
+#'
+#' @param method [character] (*with default*)
+#'
+#' @param output [character] (*with default*)
+#'
 #' @param \dots further arguments
 #'
 #' @return This function returns a list.
 #'
-#' @section Function version: 0.0.1 [2017-01-27]
+#' @section Function version: 0.1.0
 #'
-#' @author Johannes Friedrich, University of Bayreuth (Germany)
+#' @author Johannes Friedrich, University of Bayreuth (Germany), Sebastian Kreutzer, IRAMAT-CRP2A,
+#' UMR 5060, CNRS - Univerité Bordeaux Montaigne (France)
 #'
 #' @references
 #' Pagonis 2017
@@ -25,16 +38,22 @@
 #' ## Example 1: Simulate isothermal measurement
 #' ##============================================================================##
 #'
-#' times <- seq(0, 500)
-#' run_MC_ISO(A = 0.20,
-#'           rho = 0.007,
-#'           times = times) %>%
+#' times <- seq(0, 5000)
+#' run_MC_ISO(
+#'  E = 1.2,
+#'  s = 1e10,
+#'  T = 200,
+#'  rho = 0.007,
+#'  times = times) %>%
 #'   calc_RLumCarlo() %>%
-#'     plot_RLumCarlo(legend = T)
+#'   plot_RLumCarlo(legend = T)
 #'}
+#' @md
 #' @export
 run_MC_ISO <- function(
-  A,
+  E,
+  s,
+  T = 200,
   rho,
   times,
   clusters = 10,
@@ -75,7 +94,10 @@ run_MC_ISO <- function(
              N_e = N_e,
              r = r,
              rho = rho,
-             A = A)
+             E = E,
+             s = s,
+             T = T
+             )
 
     return(results[[output]])
 
