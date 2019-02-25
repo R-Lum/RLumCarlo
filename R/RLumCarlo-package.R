@@ -23,5 +23,6 @@
 #' @importFrom graphics plot
 #' @importFrom graphics polygon
 #' @importFrom Rcpp evalCpp
+#' @importFrom utils modifyList
 #' @useDynLib RLumCarlo, .registration = TRUE
 NULL

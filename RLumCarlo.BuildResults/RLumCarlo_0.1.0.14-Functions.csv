@@ -1,8 +1,8 @@
 "Name","Title","Description","Version","m.Date","m.Time","Author"
 "calc_RLumCarlo","Plot results from Monte-Carlo simulations with RLumCarlo","<br /> Plot results from Monte-Carlo simulations with RLumCarlo<br />","0.0.1","[2017-01-27]
 ",NA,"<br /> Johannes Friedrich, University of Bayreuth (Germany)<br />"
-"plot_RLumCarlo","Plot results from Monte-Carlo simulations with RLumCarlo","<br /> Plot results from Monte-Carlo simulations with RLumCarlo<br />","0.0.1","[2017-01-27]
-",NA,"<br /> Johannes Friedrich, University of Bayreuth (Germany)<br />"
+"plot_RLumCarlo","Plot results from Monte-Carlo simulations with RLumCarlo","<br /> Plot results from Monte-Carlo simulations with RLumCarlo<br />","0.1.0
+",NA,NA,"<br /> Johannes Friedrich, University of Bayreuth (Germany), Sebastian Kreutzer, IRAMAT-CRP2A, Université<br /> Bordeaux Montaigne (France)<br />"
 "run_MC_CW_IRSL","Run Monte-Carlo simulation for CW-IRSL","<br /> Run Monte-Carlo simulation for CW-IRSL<br />","0.0.2","[2017-01-31]
 ",NA,"<br /> Johannes Friedrich, University of Bayreuth (Germany), Sebastian Kreutzer, IRAMAT-CRP2A, Université Bordeaux Montaigne (France)<br />"
 "run_MC_ISO","Run Monte-Carlo simulation for isothermal measurements","<br /> Run Monte-Carlo simulation for isothermal measurements<br />","0.0.1","[2017-01-27]

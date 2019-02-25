@@ -8,17 +8,18 @@ plot_RLumCarlo(results, times = NULL, norm = FALSE, legend = FALSE,
   add = FALSE, ...)
 }
 \arguments{
-\item{results}{\code{\link{data.frame}}}
+\item{results}{\link{data.frame} (\strong{required})}
 
-\item{times}{\code{\link{vector}} (with default):}
+\item{times}{\link{numeric} (\emph{optinal}): Optional vector for the x-axis}
 
-\item{norm}{\code{\link{character}} (with default):}
+\item{norm}{\link{logical} (\emph{with default}): Normalise curve to the highest intensity}
 
-\item{legend}{\code{\link{logical}} (with default):}
+\item{legend}{\link{logical} (\emph{with default}): Enable/disable legend}
 
-\item{add}{\code{\link{logical}} (with default):}
+\item{add}{\link{logical} (\emph{with default}): allow overplotting of results}
 
-\item{\dots}{further arguments}
+\item{\dots}{further arguments that can be passed to control the plot output. Currently supported
+are: \code{xlab}, \code{xlim}, \code{ylim}, \code{main}, \code{lwd}, \code{type}}
 }
 \value{
 This function returns a graphical output
@@ -27,9 +28,10 @@ This function returns a graphical output
 Plot results from Monte-Carlo simulations with RLumCarlo
 }
 \section{Function version}{
- 0.0.1 [2017-01-27]
+ 0.1.0
 }
 
 \author{
-Johannes Friedrich, University of Bayreuth (Germany)
+Johannes Friedrich, University of Bayreuth (Germany), Sebastian Kreutzer, IRAMAT-CRP2A, Université
+Bordeaux Montaigne (France)
 }
