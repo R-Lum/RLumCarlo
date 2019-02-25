@@ -14,7 +14,7 @@ List MC_C_LM_OSL(arma::vec times, int N_e, arma::vec r, double rho, double A) {
 
       for(std::size_t t = 0; t < times.size(); ++t){
 
-        double P =  A * times[t] * exp(-(pow(rho,-1.0/3)) * r[k]);
+        double P =  A * (times[t]/max(times)) * exp(-(pow(rho,-1.0/3)) * r[k]);
 
         for(std::size_t j = 0; j < n_filled; ++j){
 
