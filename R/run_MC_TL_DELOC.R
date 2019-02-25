@@ -5,7 +5,7 @@
 #' @details
 #'
 #' \deqn{
-#' I_{DELOC}(t) = -dn/dt = p(t) * \frac{n^2}{NR + n(1-R)}
+#' I_{DELOC}(t) = -dn/dt = p(t) * (n^2 / (NR + n(1-R)))
 #' }
 #'
 #' @param s [numeric] (*required*)

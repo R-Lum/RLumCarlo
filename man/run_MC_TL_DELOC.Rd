@@ -36,7 +36,7 @@ This function returns an \link{array} with dimension length(times) x length(r) x
 }
 \details{
 \deqn{
-I_{DELOC}(t) = -dn/dt = p(t) * \frac{n^2}{NR + n(1-R)}
+I_{DELOC}(t) = -dn/dt = p(t) * (n^2 / (NR + n(1-R)))
 }
 }
 \section{Function version}{
