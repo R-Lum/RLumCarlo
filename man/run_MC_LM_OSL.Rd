@@ -51,7 +51,12 @@ run_MC_LM_OSL(A = 10000, rho = 0.0001, times = 1:100, clusters = 10, r = NULL,
 
 }
 
+} 
+
+\section{How to cite}{
+Friedrich, J. (2019). run_MC_LM_OSL(): Run Monte-Carlo simulation for LM-OSL. Function version 0.0.1 [2017-01-27]. In: Friedrich, J., Kreutzer, S. (2019). RLumCarlo: Monte-Carlo Methods for Simulating Luminescence PhenomenaR package version 0.1.0.9000-6. https://CRAN.R-project.org/package=RLumCarlo
 }
+
 \references{
 Pagonis 2017
 }

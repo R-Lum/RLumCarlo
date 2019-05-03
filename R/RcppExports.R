@@ -2,50 +2,50 @@
 # Generator token: 10BE3573-1514-4C36-9D1C-5A225CD40393
 
 MC_C_CW_IRSL <- function(times, N_e, r, rho, A) {
-    .Call('_RLumCarlo_MC_C_CW_IRSL', PACKAGE = 'RLumCarlo', times, N_e, r, rho, A)
+    .Call(`_RLumCarlo_MC_C_CW_IRSL`, times, N_e, r, rho, A)
 }
 
 MC_C_CW_IRSL_DELOC <- function(times, N_e, n_filled, R, A) {
-    .Call('_RLumCarlo_MC_C_CW_IRSL_DELOC', PACKAGE = 'RLumCarlo', times, N_e, n_filled, R, A)
+    .Call(`_RLumCarlo_MC_C_CW_IRSL_DELOC`, times, N_e, n_filled, R, A)
 }
 
 MC_C_CW_IRSL_LOC <- function(times, n_filled, r, A) {
-    .Call('_RLumCarlo_MC_C_CW_IRSL_LOC', PACKAGE = 'RLumCarlo', times, n_filled, r, A)
+    .Call(`_RLumCarlo_MC_C_CW_IRSL_LOC`, times, n_filled, r, A)
 }
 
 MC_C_ISO <- function(times, N_e, r, rho, E, s, T) {
-    .Call('_RLumCarlo_MC_C_ISO', PACKAGE = 'RLumCarlo', times, N_e, r, rho, E, s, T)
+    .Call(`_RLumCarlo_MC_C_ISO`, times, N_e, r, rho, E, s, T)
 }
 
 MC_C_ISO_DELOC <- function(times, N_e, n_filled, R, E, s, T) {
-    .Call('_RLumCarlo_MC_C_ISO_DELOC', PACKAGE = 'RLumCarlo', times, N_e, n_filled, R, E, s, T)
+    .Call(`_RLumCarlo_MC_C_ISO_DELOC`, times, N_e, n_filled, R, E, s, T)
 }
 
 MC_C_ISO_LOC <- function(times, n_filled, r, E, s, T) {
-    .Call('_RLumCarlo_MC_C_ISO_LOC', PACKAGE = 'RLumCarlo', times, n_filled, r, E, s, T)
+    .Call(`_RLumCarlo_MC_C_ISO_LOC`, times, n_filled, r, E, s, T)
 }
 
 MC_C_LM_OSL <- function(times, N_e, r, rho, A) {
-    .Call('_RLumCarlo_MC_C_LM_OSL', PACKAGE = 'RLumCarlo', times, N_e, r, rho, A)
+    .Call(`_RLumCarlo_MC_C_LM_OSL`, times, N_e, r, rho, A)
 }
 
 MC_C_LM_OSL_DELOC <- function(times, N_e, n_filled, R, A) {
-    .Call('_RLumCarlo_MC_C_LM_OSL_DELOC', PACKAGE = 'RLumCarlo', times, N_e, n_filled, R, A)
+    .Call(`_RLumCarlo_MC_C_LM_OSL_DELOC`, times, N_e, n_filled, R, A)
 }
 
 MC_C_LM_OSL_LOC <- function(times, n_filled, r, A) {
-    .Call('_RLumCarlo_MC_C_LM_OSL_LOC', PACKAGE = 'RLumCarlo', times, n_filled, r, A)
+    .Call(`_RLumCarlo_MC_C_LM_OSL_LOC`, times, n_filled, r, A)
 }
 
 MC_C_TL <- function(times, N_e, r, rho, E, s) {
-    .Call('_RLumCarlo_MC_C_TL', PACKAGE = 'RLumCarlo', times, N_e, r, rho, E, s)
+    .Call(`_RLumCarlo_MC_C_TL`, times, N_e, r, rho, E, s)
 }
 
 MC_C_TL_DELOC <- function(times, N_e, n_filled, R, E, s) {
-    .Call('_RLumCarlo_MC_C_TL_DELOC', PACKAGE = 'RLumCarlo', times, N_e, n_filled, R, E, s)
+    .Call(`_RLumCarlo_MC_C_TL_DELOC`, times, N_e, n_filled, R, E, s)
 }
 
 MC_C_TL_LOC <- function(times, n_filled, r, E, s) {
-    .Call('_RLumCarlo_MC_C_TL_LOC', PACKAGE = 'RLumCarlo', times, n_filled, r, E, s)
+    .Call(`_RLumCarlo_MC_C_TL_LOC`, times, n_filled, r, E, s)
 }
 

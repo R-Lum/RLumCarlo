@@ -56,7 +56,12 @@ run_MC_TL_LOC(
 
 }
 
+} 
+
+\section{How to cite}{
+Kreutzer, S. (2019). run_MC_TL_LOC(): Run Monte-Carlo simulation for TL for localised transition. Function version 0.0.1. In: Friedrich, J., Kreutzer, S. (2019). RLumCarlo: Monte-Carlo Methods for Simulating Luminescence PhenomenaR package version 0.1.0.9000-6. https://CRAN.R-project.org/package=RLumCarlo
 }
+
 \references{
 ##TODO
 }

@@ -15,11 +15,11 @@ knitr::opts_chunk$set(
 library(RLumCarlo)
 ```
 
-# RLumCarlo <img width=120px src="docs/img/Logo_RLumCarlo.png" align="right" />
+# RLumCarlo <img width=120px src="man/figures/Logo_RLumCarlo.png" align="right" />
 
 The **R** package 'RLumCarlo' by Johannes Friedrich (University of Bayreuth, Germany) & Sebastian Kreutzer (IRAMAT-CRP2A, UMR 5060, CNRS - Université Bordeaux Montaigne, France) provides a collection of various R functions modelling luminescence signals in feldspar.
 
-[![Project Status: Concept – Minimal or no implementation has been done yet, or the repository is only intended to be a limited example, demo, or proof-of-concept.](http://www.repostatus.org/badges/latest/concept.svg)](a href="https://www.repostatus.org/#concept">)
+[![Project Status: Concept](http://www.repostatus.org/badges/latest/concept.svg)](a href="https://www.repostatus.org/#concept">)
 [![CRAN](http://www.r-pkg.org/badges/version/RLumCarlo)](https://cran.r-project.org/package=RLumCarlo)
 [![Downloads](http://cranlogs.r-pkg.org/badges/grand-total/RLumCarlo)](http://www.r-pkg.org/pkg/RLumCarlo)
 
