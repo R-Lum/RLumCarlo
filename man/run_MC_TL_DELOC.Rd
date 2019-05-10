@@ -61,7 +61,7 @@ run_MC_TL_DELOC(
 } 
 
 \section{How to cite}{
-Kreutzer, S. (2019). run_MC_TL_DELOC(): Run Monte-Carlo simulation for TL for GOT model. Function version 0.0.1. In: Friedrich, J., Kreutzer, S. (2019). RLumCarlo: Monte-Carlo Methods for Simulating Luminescence PhenomenaR package version 0.1.0.9000-6. https://CRAN.R-project.org/package=RLumCarlo
+Kreutzer, S., 2019. run_MC_TL_DELOC(): Run Monte-Carlo simulation for TL for GOT model. Function version 0.0.1. In: Friedrich, J., Kreutzer, S., 2019. RLumCarlo: Monte-Carlo Methods for Simulating Luminescence PhenomenaR package version 0.1.0.9000-7. https://CRAN.R-project.org/package=RLumModel
 }
 
 \references{

@@ -37,6 +37,6 @@ Bordeaux Montaigne (France)
 } 
 
 \section{How to cite}{
-Friedrich, J., Kreutzer, S. (2019). plot_RLumCarlo(): Plot results from Monte-Carlo simulations with RLumCarlo. Function version 0.1.0. In: Friedrich, J., Kreutzer, S. (2019). RLumCarlo: Monte-Carlo Methods for Simulating Luminescence PhenomenaR package version 0.1.0.9000-6. https://CRAN.R-project.org/package=RLumCarlo
+Friedrich, J., Kreutzer, S., 2019. plot_RLumCarlo(): Plot results from Monte-Carlo simulations with RLumCarlo. Function version 0.1.0. In: Friedrich, J., Kreutzer, S., 2019. RLumCarlo: Monte-Carlo Methods for Simulating Luminescence PhenomenaR package version 0.1.0.9000-7. https://CRAN.R-project.org/package=RLumModel
 }
 
