@@ -59,7 +59,7 @@ run_MC_ISO(
 } 
 
 \section{How to cite}{
-Friedrich, J., Kreutzer, S., 2019. run_MC_ISO(): Run Monte-Carlo simulation for isothermal measurements. Function version 0.1.0. In: Friedrich, J., Kreutzer, S., 2019. RLumCarlo: Monte-Carlo Methods for Simulating Luminescence PhenomenaR package version 0.1.0.9000-7. https://CRAN.R-project.org/package=RLumModel
+Friedrich, J., Kreutzer, S., 2019. run_MC_ISO(): Run Monte-Carlo simulation for isothermal measurements. Function version 0.1.0. In: Friedrich, J., Kreutzer, S., 2019. RLumCarlo: Monte-Carlo Methods for Simulating Luminescence PhenomenaR package version 0.1.0.9000-10. https://CRAN.R-project.org/package=RLumModel
 }
 
 \references{

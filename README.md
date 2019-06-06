@@ -13,7 +13,7 @@ Université Bordeaux Montaigne, France) provides a collection of various
 R functions modelling luminescence signals in feldspar.
 
 [![Project Status:
-Concept](http://www.repostatus.org/badges/latest/concept.svg)](a%20href=%22https://www.repostatus.org/#concept%22%3E)
+Concept](http://www.repostatus.org/badges/latest/concept.svg)](https://www.repostatus.org/#concept)
 [![CRAN](http://www.r-pkg.org/badges/version/RLumCarlo)](https://cran.r-project.org/package=RLumCarlo)
 [![Downloads](http://cranlogs.r-pkg.org/badges/grand-total/RLumCarlo)](http://www.r-pkg.org/pkg/RLumCarlo)
 
@@ -25,7 +25,7 @@ Depending on your OS please download and install one of the following:
 
 **Windows (32/64bit)** - ‘Rtools’ (provided by CRAN)
 
-<http://cran.r-project.org/bin/windows/Rtools/>
+<https://cran.r-project.org/bin/windows/Rtools/>
 
 **Mac OS X** - ‘Xcode’ (provided by Apple)
 

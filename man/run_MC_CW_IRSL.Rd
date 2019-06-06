@@ -50,7 +50,7 @@ run_MC_CW_IRSL(A = 0.12, rho = 0.003, times = 0:1000) \%>\%
 } 
 
 \section{How to cite}{
-Friedrich, J., Kreutzer, S., 2019. run_MC_CW_IRSL(): Run Monte-Carlo simulation for CW-IRSL. Function version 0.0.2 [2017-01-31]. In: Friedrich, J., Kreutzer, S., 2019. RLumCarlo: Monte-Carlo Methods for Simulating Luminescence PhenomenaR package version 0.1.0.9000-7. https://CRAN.R-project.org/package=RLumModel
+Friedrich, J., Kreutzer, S., 2019. run_MC_CW_IRSL(): Run Monte-Carlo simulation for CW-IRSL. Function version 0.0.2 [2017-01-31]. In: Friedrich, J., Kreutzer, S., 2019. RLumCarlo: Monte-Carlo Methods for Simulating Luminescence PhenomenaR package version 0.1.0.9000-10. https://CRAN.R-project.org/package=RLumModel
 }
 
 \references{
