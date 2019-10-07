@@ -13,9 +13,45 @@ vignette: |
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-```{r, echo = FALSE, fig.align='center'}
+```{r, echo = FALSE, fig.align='center', message = FALSE}
 knitr::include_graphics("../docs/img/Logo_RLumCarlo.png")
+
+library(RLumCarlo)
+library(ggplot2)
+library(scales)
+
+##https://github.com/JohannesFriedrich/EnergyBandModels
+theme <- theme(axis.text = element_text(size = 14),
+             axis.title = element_text(size = 14, face = "bold"),
+             legend.text = element_text(size = 12),
+             legend.title = element_text(size = 12, face = "bold"))
+
+electrons <- data.frame(
+  x = seq(0,1, length.out = 10),
+  y = rep(c(-2.2,-1.5, -1, -0.6, -0.3, 0), each = 10)
+)
 ```
+
+# Scope
+
+RLumCarlo is collection of energ-band models to simulate luminescence signal production using Monte-Carlo (MC) methods. This document aims at providing an overview and a brief introduction to RLumCarlo 
+and on how to use the models. The first section, will, however, provide a brief introduction 
+into RLumCarlo and how plot and extracts its data.
+
+# A simple exlample
+
+
+
+# The models in RLumCarlo
+
+
+
+| Model | R-file | C++ file | Function to call |
+|----------|-------------|--------------|------------------|
+TL$_{DELOC}$ | `run_MC_TL_DELOC.R` | `MC_C_TL_DELOC.cpp` | `run_MC_TL_DELOC()`|
+ITL$_{DELOC}$ | `run_MC_ISO_DELOC.R` | `MC_C_ISO_DELOC.cpp` | `run_MC_ISO_DELOC()`|
+CW-IRSL$_{DELOC}$ | `run_MC_CW_IRSL_DELOC.R` | `MC_C_CW_IRSL_DELOC.cpp` | `run_MC_CW_IRSL_DELOC()`|
+LM-OSL$_{DELOC}$ | `run_MC_LM_OSL_DELOC.R` | `MC_C_LM_OSL_DELOC.cpp` | `run_MC_LM_OSL_DELOC()`|
 
 # Figure 1
 
