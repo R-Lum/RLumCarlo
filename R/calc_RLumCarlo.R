@@ -1,35 +1,39 @@
 #' Plot results from Monte-Carlo simulations with RLumCarlo
 #'
-#' @param results \code{\link{array}}:
+#' @param results [list] of class RLumCarlo_Model_Output: RLumCarlo simulation output object
+#' produced by all
 #'
-#' @return This function returns a \code{\link{data.frame}}
+#' @return This function returns a [data.frame]
 #'
-#' @section Function version: 0.0.1 [2017-01-27]
+#' @section Function version: 0.1.0
 #'
-#' @author Johannes Friedrich, University of Bayreuth (Germany)
+#' @author Johannes Friedrich, University of Bayreuth (Germany), Sebastian Kreutzer, IRAMAT-CRP2A, UMR 5060, CNRS-Université Bordeaux Montagine, France
 #'
+#' @md
 #' @export
 calc_RLumCarlo <- function(results){
 
-  signal <- results[["signal"]]
-  times <-   results[["time"]]
+  # Pre-checks ----------------------------------------------------------------------------------
+  if(class(results) != "RLumCarlo_Model_Output")
+    stop("[calc_RLumCarlo()] Input must be of class 'RLumModel_Model_Output' created by functions starting with 'run_'!",
+         call. = FALSE)
 
+  # copy input into new objects
+  signal <- results[[1]]
+  times <- results[[2]]
+
+  # melt objects
   if(length(dim(results)) == 2) {
-
-
       sum_signal <- vapply(1:length(times), function(x){
         sum(signal[x,])
       }, FUN.VALUE = 1)
 
       avg <- y_min <- y_max <- sum_signal
 
-
     } else {
-
       clusters <- dim(signal)[3]
 
       sum_signal <- sapply(1:clusters, function(y){
-
         vapply(1:length(times), function(x){
           sum(signal[x,,y])
         }, FUN.VALUE = 1)
@@ -41,5 +45,11 @@ calc_RLumCarlo <- function(results){
       y_max <- apply(sum_signal, 1, max)
     }
 
-  return(data.frame(avg = avg, y_min = y_min, y_max = y_max, time = times))
+  ## set output data.frame
+  output <- data.frame(avg = avg, y_min = y_min, y_max = y_max, time = times)
+  attributes(output) <- list(model = attributes(output)$model)
+
+  ## return
+  return(output)
 }
+
