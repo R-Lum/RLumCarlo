@@ -1,14 +1,18 @@
 Package: RLumCarlo
 Type: Package
 Title: Monte-Carlo Methods for Simulating Luminescence Phenomena
-Version: 0.1.0.9000-10
-Date: 2019-06-05
-Author: Johannes Friedrich [aut, trl, cre] (<https://orcid.org/0000-0002-0805-9547>),
-    Sebastian Kreutzer [aut] (<https://orcid.org/0000-0002-0734-2199>)
+Version: 0.1.0.9000-14
+Date: 2019-10-07
+Author: Johannes Friedrich [aut, trl] (<https://orcid.org/0000-0002-0805-9547>),
+    Sebastian Kreutzer [aut, trl, cre] (<https://orcid.org/0000-0002-0734-2199>),
+    Vasilis Pagonis [aut] (<https://orcid.org/0000-0002-4852-9312>),
+    Christoph Schmidt [aut] (<https://orcid.org/0000-0002-2309-3209>)
 Authors@R: c(
-    person("Johannes", "Friedrich", role = c("aut","trl","cre"), comment = c(ORCID = "0000-0002-0805-9547"),
-            email = "johannes.friedrich@uni-bayreuth.de"), 
-     person("Sebastian", "Kreutzer", role = c("aut"), comment = c(ORCID = "0000-0002-0734-2199"))
+    person("Johannes", "Friedrich", role = c("aut","trl"), comment = c(ORCID = "0000-0002-0805-9547")),
+    person("Sebastian", "Kreutzer", role = c("aut","trl","cre"), comment = c(ORCID = "0000-0002-0734-2199"),
+            email = "sebastian.kreutzer@u-bordeaux-montagine.fr"),
+    person("Vasilis", "Pagonis", role = c("aut"), comment = c(ORCID = "0000-0002-4852-9312")),
+    person("Christoph", "Schmidt", role = c("aut"), comment = c(ORCID = "0000-0002-2309-3209"))
     )
 Maintainer: Johannes Friedrich <johannes.friedrich@uni-bayreuth.de>
 Description: A collection of functions to simulate luminescence signals with Monte-Carlo methods in the
