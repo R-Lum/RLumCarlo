@@ -1,17 +1,18 @@
-#' Plot results from Monte-Carlo simulations with RLumCarlo
+#' @title Plot results from Monte-Carlo simulations with RLumCarlo
+#'
 #'
 #' @param results [data.frame] (**required**)
 #'
 #' @param times [numeric] (*optinal*): Optional vector for the x-axis
 #'
-#' @param norm  [logical] (*with default*): Normalise curve to the highest intensity
+#' @param plot_uncertainty [logical] (*with default*): Enable/disable uncertainty polygon plot
 #'
-#' @param legend [logical] (*with default*): Enable/disable legend
+#' @param norm  [logical] (*with default*): Normalise curve to the highest intensity
 #'
 #' @param add [logical] (*with default*): allow overplotting of results
 #'
 #' @param \dots further arguments that can be passed to control the plot output. Currently supported
-#' are: `xlab`, `xlim`, `ylim`, `main`, `lwd`, `type`, `col`, `grid`
+#' are: `xlab`, `xlim`, `ylim`, `main`, `lwd`, `type`, `pch`, `lty`,`col`, `grid`, `legend`
 #'
 #' @return This function returns a graphical output
 #'
@@ -25,8 +26,8 @@
 plot_RLumCarlo <- function(
   results,
   times = NULL,
+  plot_uncertainty = TRUE,
   norm = FALSE,
-  legend = FALSE,
   add = FALSE,
   ...){
 
@@ -43,9 +44,10 @@ plot_RLumCarlo <- function(
     avg <- avg/max(avg)
     y_min  <-  y_min/max(y_min)
     y_max <- y_max/max(y_max)
-    ylab = "Normalized average signal"
+    ylab <- "Normalized average signal"
   } else {
-    ylab = "Averaged signal [a.u.]"
+    ylab <- "Averaged signal [a.u.]"
+
   }
 
   ##default plot settings
@@ -59,10 +61,14 @@ plot_RLumCarlo <- function(
       } else {
         "Time [s]"
       },
+      ylab = ylab,
       type = "l",
       lwd = 2,
+      pch = 1,
+      lty = 1,
       grid = TRUE,
-      col = "red"
+      col = "red",
+      legend = TRUE
     ), val = list(...))
 
   # Plotting ------------------------------------------------------------------------------------
@@ -71,7 +77,7 @@ plot_RLumCarlo <- function(
       plot(NA, NA,
         main = plot_settings$main,
         xlab = plot_settings$xlab,
-        ylab = ylab,
+        ylab = plot_settings$ylab,
         type = plot_settings$type,
         xlim = plot_settings$xlim,
         ylim = plot_settings$ylim
@@ -83,10 +89,13 @@ plot_RLumCarlo <- function(
   if(plot_settings$grid) grid()
 
   ## draw error pologyon
+  if(plot_uncertainty){
   polygon(x = c(times, rev(times)),
           y = c(y_min, rev(y_max)),
-          col = adjustcolor(plot_settings$col, alpha.f=0.2),
+          col = adjustcolor(plot_settings$col, alpha.f=0.3),
           border = NA)
+
+  }
 
   ## add average lines
   lines(
@@ -97,11 +106,13 @@ plot_RLumCarlo <- function(
     ylab = ylab,
     col = adjustcolor(plot_settings$col, alpha.f=1),
     type = plot_settings$type,
+    pch = plot_settings$pch,
+    lty = plot_settings$lty,
     xlim = plot_settings$xlim,
     ylim = plot_settings$ylim,
     lwd = plot_settings$lwd)
 
-  if(legend){
+  if(plot_settings$legend && plot_uncertainty){
     legend(
       "topright",
       legend = c("average", "min-max"),
