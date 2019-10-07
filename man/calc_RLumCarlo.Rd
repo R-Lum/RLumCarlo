@@ -24,6 +24,6 @@ Johannes Friedrich, University of Bayreuth (Germany)
 } 
 
 \section{How to cite}{
-Friedrich, J., 2019. calc_RLumCarlo(): Plot results from Monte-Carlo simulations with RLumCarlo. Function version 0.0.1 [2017-01-27]. In: Friedrich, J., Kreutzer, S., 2019. RLumCarlo: Monte-Carlo Methods for Simulating Luminescence PhenomenaR package version 0.1.0.9000-10. https://CRAN.R-project.org/package=RLumModel
+Friedrich, J., 2019. calc_RLumCarlo(): Plot results from Monte-Carlo simulations with RLumCarlo. Function version 0.0.1 [2017-01-27]. In: Friedrich, J., Kreutzer, S., Pagonis, V., Schmidt, C., 2019. RLumCarlo: Monte-Carlo Methods for Simulating Luminescence PhenomenaR package version 0.1.0.9000-15. https://CRAN.R-project.org/package=RLumModel
 }
 
