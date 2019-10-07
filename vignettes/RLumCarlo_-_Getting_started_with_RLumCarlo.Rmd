@@ -1,6 +1,6 @@
 ---
 title: "Getting started with RLumCarlo"
-author: "Johannes Friedrich & Sebastian Kreutzer"
+author: "Sebastian Kreutzer, Johannes Friedrich, Vasilis Pagnis, Christoph Schmidt"
 date: "Last modified: `r Sys.Date()`"
 output: pdf_document
 vignette: |
