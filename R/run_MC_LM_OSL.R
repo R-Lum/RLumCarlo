@@ -13,7 +13,7 @@
 #'
 #' @return This function returns a list.
 #'
-#' @section Function version: 0.0.1 [2017-01-27]
+#' @section Function version: 0.1.0
 #'
 #' @author Johannes Friedrich, University of Bayreuth (Germany)
 #'
@@ -33,6 +33,7 @@
 #'
 #'}
 #'
+#' @md
 #' @export
 run_MC_LM_OSL <- function(
   A,
@@ -83,6 +84,6 @@ run_MC_LM_OSL <- function(
 
   }  # end c-loop
 
-  return(list(signal = temp,
-              time = times))
+  ## return model output
+  .return_ModelOutput(signal = temp, time = times)
 }

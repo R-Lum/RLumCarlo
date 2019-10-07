@@ -30,6 +30,7 @@
 #'   calc_RLumCarlo() %>%
 #'     plot_RLumCarlo(norm = T, legend = T)
 #'}
+#' @md
 #' @export
 run_MC_CW_IRSL <- function(
   A,
@@ -84,8 +85,8 @@ run_MC_CW_IRSL <- function(
 
   }  # end c-loop
 
-  return(list(signal = temp,
-              time = times))
+  ## return model output
+  .return_ModelOutput(signal = temp, time = times)
 
 }
 

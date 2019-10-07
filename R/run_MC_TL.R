@@ -14,7 +14,7 @@
 #'
 #' @return This function returns an \code{\link{array}} with dimension length(times) x length(r) x clusters
 #'
-#' @section Function version: 0.0.1 [2017-01-27]
+#' @section Function version: 0.1.0
 #'
 #' @author Johannes Friedrich, University of Bayreuth (Germany)
 #'
@@ -37,6 +37,7 @@
 #'   calc_RLumCarlo() %>%
 #'     plot_RLumCarlo(legend = T)
 #'}
+#' @md
 #' @export
 run_MC_TL <- function(
   s,
@@ -91,6 +92,6 @@ run_MC_TL <- function(
 
   }  # end c-loop
 
-  return(list(signal = temp,
-              time = times))
+  ## standard return
+  .return_ModelOutput(signal = temp, time = times)
 }
