@@ -64,22 +64,21 @@ run_MC_ISO <- function(
   ...){
 
   ## register backend ----
-  cores <- detectCores()
+  cores <- parallel::detectCores()
   if(cores == 1) method <- "seq"
 
   if(method != "par"){
-
     cl <- parallel::makeCluster(1)
     doParallel::registerDoParallel(cl)
     ##ensures that we do not have any particular problems
     registerDoSEQ()
-    on.exit(stopCluster(cl))
+    on.exit(parallel::stopCluster(cl))
 
   } else {
 
     cl <- parallel::makeCluster(cores-1)
     doParallel::registerDoParallel(cl)
-    on.exit(stopCluster(cl))
+    on.exit(parallel::stopCluster(cl))
   }
   ## -----
 
@@ -103,7 +102,7 @@ run_MC_ISO <- function(
 
   }  # end c-loop
 
-  return(list(signal = temp,
-              time = times))
+  ## return model output
+  .return_ModelOutput(signal = temp, time = times)
 
 }
