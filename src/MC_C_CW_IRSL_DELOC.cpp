@@ -35,7 +35,7 @@ List MC_C_CW_IRSL_DELOC(arma::vec times, int N_e, int n_filled, double R, double
             //draw random number
             r_num = runif(1);
 
-            if (r_num[0] < P)
+            if (r_num[0] < n_filled / (N_e * R + n_filled * (1 - R)))
               n_filled = n_filled - 1;
 
             if (n_filled == 0)
