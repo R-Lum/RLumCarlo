@@ -31,8 +31,10 @@ calc_RLumCarlo <- function(results){
       avg <- y_min <- y_max <- sum_signal
 
     } else {
+      ## extract number of clusters
       clusters <- dim(signal)[3]
 
+      ##get sum signal
       sum_signal <- sapply(1:clusters, function(y){
         vapply(1:length(times), function(x){
           sum(signal[x,,y])
@@ -43,13 +45,13 @@ calc_RLumCarlo <- function(results){
       avg <- rowMeans(sum_signal)
       y_min <- apply(sum_signal, 1, min)
       y_max <- apply(sum_signal, 1, max)
+
     }
 
   ## set output data.frame
-  output <- data.frame(avg = avg, y_min = y_min, y_max = y_max, time = times)
-  attributes(output) <- list(model = attributes(output)$model)
+  output <- data.frame(time = times, avg = avg, y_min = y_min, y_max = y_max)
+  attr(output, "model") <- attributes(results)$model
 
   ## return
   return(output)
 }
-
