@@ -11,7 +11,7 @@
 #' @param add [logical] (*with default*): allow overplotting of results
 #'
 #' @param \dots further arguments that can be passed to control the plot output. Currently supported
-#' are: `xlab`, `xlim`, `ylim`, `main`, `lwd`, `type`
+#' are: `xlab`, `xlim`, `ylim`, `main`, `lwd`, `type`, `col`, `grid`
 #'
 #' @return This function returns a graphical output
 #'
@@ -30,19 +30,22 @@ plot_RLumCarlo <- function(
   add = FALSE,
   ...){
 
-  avg <- results[,"avg"]
-  y_min <- results[,"y_min"]
-  y_max <- results[,"y_max"]
 
-  if(is.null(times)) times <- results[,"time"]
+ # Preset --------------------------------------------------------------------------------------
+  avg <- results[["avg"]]
+  y_min <- results[["y_min"]]
+  y_max <- results[["y_max"]]
+
+  if(is.null(times))
+    times <- results[["time"]]
 
   if(norm){ # normalization
     avg <- avg/max(avg)
     y_min  <-  y_min/max(y_min)
     y_max <- y_max/max(y_max)
-    ylab = "normalized average signal"
+    ylab = "Normalized average signal"
   } else {
-    ylab = "average signal [a.u.]"
+    ylab = "Averaged signal [a.u.]"
   }
 
   ##default plot settings
@@ -51,49 +54,64 @@ plot_RLumCarlo <- function(
       main = "",
       xlim = range(times),
       ylim = c(0, max(y_max)),
-      xlab = "Time [s]",
+      xlab = if(length(grep(pattern = "TL", attributes(results)$model, fixed = TRUE) == 1)) {
+        "Temperature [a.u.]"
+      } else {
+        "Time [s]"
+      },
       type = "l",
-      lwd = 2
+      lwd = 2,
+      grid = TRUE,
+      col = "red"
     ), val = list(...))
 
+  # Plotting ------------------------------------------------------------------------------------
+  ## check if plot was already called, if not just plot
+    if(add == FALSE || is.null(tryCatch(par(new =TRUE), warning = function(w) NULL))){
+      plot(NA, NA,
+        main = plot_settings$main,
+        xlab = plot_settings$xlab,
+        ylab = ylab,
+        type = plot_settings$type,
+        xlim = plot_settings$xlim,
+        ylim = plot_settings$ylim
+      )
 
-  if(add == FALSE){
+    }
 
-    plot(
-      x = times,
-      y = avg,
-      main = plot_settings$main,
-      xlab = plot_settings$xlab,
-      ylab = ylab,
-      type = plot_settings$type,
-      xlim = plot_settings$xlim,
-      ylim = plot_settings$ylim,
-      lwd = plot_settings$lwd)
-  } else {
+  ##add grid
+  if(plot_settings$grid) grid()
 
-    lines(
-      x = times,
-      y = avg,
-      main = plot_settings$main,
-      xlab = plot_settings$xlab,
-      ylab = ylab,
-      type = plot_settings$type,
-      xlim = plot_settings$xlim,
-      ylim = plot_settings$ylim,
-      lwd = plot_settings$lwd)
-  }
-
+  ## draw error pologyon
   polygon(x = c(times, rev(times)),
           y = c(y_min, rev(y_max)),
-          col = adjustcolor("red",alpha.f=0.5),
-          border = "red")
+          col = adjustcolor(plot_settings$col, alpha.f=0.2),
+          border = NA)
+
+  ## add average lines
+  lines(
+    x = times,
+    y = avg,
+    main = plot_settings$main,
+    xlab = plot_settings$xlab,
+    ylab = ylab,
+    col = adjustcolor(plot_settings$col, alpha.f=1),
+    type = plot_settings$type,
+    xlim = plot_settings$xlim,
+    ylim = plot_settings$ylim,
+    lwd = plot_settings$lwd)
 
   if(legend){
-    legend("topright",
-           legend = c("average", "min-max"),
-           lwd = 1,
-           bty = "n",
-           col = c("black", "red"))
+    legend(
+      "topright",
+      legend = c("average", "min-max"),
+      lwd = 1,
+      bty = "n",
+      col = c(
+        adjustcolor(plot_settings$col, alpha.f = 1),
+        adjustcolor(plot_settings$col, alpha.f = 0.3)
+      )
+    )
   }
 
 }
