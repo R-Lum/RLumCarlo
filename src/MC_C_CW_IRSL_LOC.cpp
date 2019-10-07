@@ -34,7 +34,7 @@ List MC_C_CW_IRSL_LOC(arma::vec times, int n_filled, double r, double A) {
             //draw random number
             r_num = runif(1);
 
-            if (r_num[0] < P)
+            if (r_num[0] < P * (n_filled / (r + n_filled)))
               n_filled = n_filled - 1;
 
             if (n_filled == 0)
