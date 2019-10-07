@@ -12,7 +12,7 @@
 #'
 #' @return This function returns a list.
 #'
-#' @section Function version: 0.0.2 [2017-01-31]
+#' @section Function version: 0.2.0
 #'
 #' @author Johannes Friedrich, University of Bayreuth (Germany), Sebastian Kreutzer, IRAMAT-CRP2A, Université Bordeaux Montaigne (France)
 #'

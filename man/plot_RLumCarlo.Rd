@@ -4,22 +4,22 @@
 \alias{plot_RLumCarlo}
 \title{Plot results from Monte-Carlo simulations with RLumCarlo}
 \usage{
-plot_RLumCarlo(results, times = NULL, norm = FALSE, legend = FALSE,
-  add = FALSE, ...)
+plot_RLumCarlo(results, times = NULL, plot_uncertainty = TRUE,
+  norm = FALSE, add = FALSE, ...)
 }
 \arguments{
 \item{results}{\link{data.frame} (\strong{required})}
 
 \item{times}{\link{numeric} (\emph{optinal}): Optional vector for the x-axis}
 
-\item{norm}{\link{logical} (\emph{with default}): Normalise curve to the highest intensity}
+\item{plot_uncertainty}{\link{logical} (\emph{with default}): Enable/disable uncertainty polygon plot}
 
-\item{legend}{\link{logical} (\emph{with default}): Enable/disable legend}
+\item{norm}{\link{logical} (\emph{with default}): Normalise curve to the highest intensity}
 
 \item{add}{\link{logical} (\emph{with default}): allow overplotting of results}
 
 \item{\dots}{further arguments that can be passed to control the plot output. Currently supported
-are: \code{xlab}, \code{xlim}, \code{ylim}, \code{main}, \code{lwd}, \code{type}}
+are: \code{xlab}, \code{xlim}, \code{ylim}, \code{main}, \code{lwd}, \code{type}, \code{pch}, \code{lty},\code{col}, \code{grid}, \code{legend}}
 }
 \value{
 This function returns a graphical output
@@ -37,6 +37,6 @@ Bordeaux Montaigne (France)
 } 
 
 \section{How to cite}{
-Friedrich, J., Kreutzer, S., 2019. plot_RLumCarlo(): Plot results from Monte-Carlo simulations with RLumCarlo. Function version 0.1.0. In: Friedrich, J., Kreutzer, S., Pagonis, V., Schmidt, C., 2019. RLumCarlo: Monte-Carlo Methods for Simulating Luminescence PhenomenaR package version 0.1.0.9000-17. https://CRAN.R-project.org/package=RLumModel
+Friedrich, J., Kreutzer, S., 2019. plot_RLumCarlo(): Plot results from Monte-Carlo simulations with RLumCarlo. Function version 0.1.0. In: Friedrich, J., Kreutzer, S., Pagonis, V., Schmidt, C., 2019. RLumCarlo: Monte-Carlo Methods for Simulating Luminescence PhenomenaR package version 0.1.0.9000-35. https://CRAN.R-project.org/package=RLumModel
 }
 

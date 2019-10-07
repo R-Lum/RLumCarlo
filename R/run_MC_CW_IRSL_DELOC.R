@@ -98,7 +98,7 @@ run_MC_CW_IRSL_DELOC <- function(
 
   }  # end c-loop
 
-  return(list(signal = temp,
-              time = times))
+  ## return model output
+  .return_ModelOutput(signal = temp, time = times)
 }
 

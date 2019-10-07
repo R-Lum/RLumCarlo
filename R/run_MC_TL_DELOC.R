@@ -103,7 +103,7 @@ run_MC_TL_DELOC <- function(
 
   }  # end c-loop
 
-  return(list(signal = temp,
-              time = times))
+  ## return model output
+  .return_ModelOutput(signal = temp, time = times)
 }
 

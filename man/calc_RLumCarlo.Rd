@@ -7,23 +7,24 @@
 calc_RLumCarlo(results)
 }
 \arguments{
-\item{results}{\code{\link{array}}:}
+\item{results}{\link{list} of class RLumCarlo_Model_Output: RLumCarlo simulation output object
+produced by all}
 }
 \value{
-This function returns a \code{\link{data.frame}}
+This function returns a \link{data.frame}
 }
 \description{
 Plot results from Monte-Carlo simulations with RLumCarlo
 }
 \section{Function version}{
- 0.0.1 [2017-01-27]
+ 0.1.0
 }
 
 \author{
-Johannes Friedrich, University of Bayreuth (Germany)
+Johannes Friedrich, University of Bayreuth (Germany), Sebastian Kreutzer, IRAMAT-CRP2A, UMR 5060, CNRS-Université Bordeaux Montagine, France
 } 
 
 \section{How to cite}{
-Friedrich, J., 2019. calc_RLumCarlo(): Plot results from Monte-Carlo simulations with RLumCarlo. Function version 0.0.1 [2017-01-27]. In: Friedrich, J., Kreutzer, S., Pagonis, V., Schmidt, C., 2019. RLumCarlo: Monte-Carlo Methods for Simulating Luminescence PhenomenaR package version 0.1.0.9000-17. https://CRAN.R-project.org/package=RLumModel
+Friedrich, J., Kreutzer, S., 2019. calc_RLumCarlo(): Plot results from Monte-Carlo simulations with RLumCarlo. Function version 0.1.0. In: Friedrich, J., Kreutzer, S., Pagonis, V., Schmidt, C., 2019. RLumCarlo: Monte-Carlo Methods for Simulating Luminescence PhenomenaR package version 0.1.0.9000-35. https://CRAN.R-project.org/package=RLumModel
 }
 

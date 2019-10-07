@@ -44,14 +44,22 @@ into RLumCarlo and how plot and extracts its data.
 
 # The models in RLumCarlo
 
+```{r, echo = FALSE}
+## extract models
+models <- list.files("../R/", pattern = "run_")
+models <- strtrim(models, nchar(models) - 2)
+models <- regmatches(models, regexpr("(?<=run\\_).*", models, perl = TRUE), invert = FALSE)
 
+## combine into data.frame
+df <- data.frame(
+  MODEL_NAME = models, 
+  R_CALL = paste0("run_", models, "()"),
+  R_FILE = paste0("R/run_", models, ".R"),
+  MODE_CORE = paste0("src/MC_C_", models, ".cpp"))
 
-| Model | R-file | C++ file | Function to call |
-|----------|-------------|--------------|------------------|
-TL$_{DELOC}$ | `run_MC_TL_DELOC.R` | `MC_C_TL_DELOC.cpp` | `run_MC_TL_DELOC()`|
-ITL$_{DELOC}$ | `run_MC_ISO_DELOC.R` | `MC_C_ISO_DELOC.cpp` | `run_MC_ISO_DELOC()`|
-CW-IRSL$_{DELOC}$ | `run_MC_CW_IRSL_DELOC.R` | `MC_C_CW_IRSL_DELOC.cpp` | `run_MC_CW_IRSL_DELOC()`|
-LM-OSL$_{DELOC}$ | `run_MC_LM_OSL_DELOC.R` | `MC_C_LM_OSL_DELOC.cpp` | `run_MC_LM_OSL_DELOC()`|
+knitr::kable(df)
+```
+
 
 # Figure 1
 
