@@ -10,7 +10,7 @@
 The **R** package ‘RLumCarlo’ by Johannes Friedrich (University of
 Bayreuth, Germany) & Sebastian Kreutzer (IRAMAT-CRP2A, UMR 5060, CNRS -
 Université Bordeaux Montaigne, France) provides a collection of various
-R functions modelling luminescence signals in feldspar.
+R functions modelling luminescence signals using Monte Carlo methods
 
 [![Project Status:
 Concept](http://www.repostatus.org/badges/latest/concept.svg)](https://www.repostatus.org/#concept)
@@ -56,21 +56,10 @@ To install a developer build other than ‘master’, replace the term
 
 ``` r
 run_MC_CW_IRSL(A = 0.12, rho = 0.003, times = 0:1000) %>%
-   calc_RLumCarlo() %>%
      plot_RLumCarlo(norm = T, legend = T)
 ```
 
 ![](man/figures/README-unnamed-chunk-2-1.png)<!-- -->
-
-This is the same as the following lines:
-
-``` r
-results <- run_MC_CW_IRSL(A = 0.12, rho = 0.003, times = 0:1000)
-calc <- calc_RLumCarlo(results) 
-plot_RLumCarlo(calc, norm = T, legend = T)
-```
-
-![](man/figures/README-unnamed-chunk-3-1.png)<!-- -->
 
 ## Note
 

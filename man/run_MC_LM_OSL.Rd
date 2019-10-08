@@ -46,7 +46,6 @@ Run Monte-Carlo simulation for LM-OSL
 run_MC_LM_OSL(A = 10000, rho = 0.0001, times = 1:100, clusters = 10, r = NULL,
  delta.r = 0.1,
  N_e = 200, method = "par", output = "signal") \%>\%
- calc_RLumCarlo() \%>\%
  plot_RLumCarlo(norm = T)
 
 }
@@ -54,7 +53,7 @@ run_MC_LM_OSL(A = 10000, rho = 0.0001, times = 1:100, clusters = 10, r = NULL,
 } 
 
 \section{How to cite}{
-Friedrich, J., 2019. run_MC_LM_OSL(): Run Monte-Carlo simulation for LM-OSL. Function version 0.1.0. In: Friedrich, J., Kreutzer, S., Pagonis, V., Schmidt, C., 2019. RLumCarlo: Monte-Carlo Methods for Simulating Luminescence PhenomenaR package version 0.1.0.9000-35. https://CRAN.R-project.org/package=RLumModel
+Friedrich, J., 2019. run_MC_LM_OSL(): Run Monte-Carlo simulation for LM-OSL. Function version 0.1.0. In: Friedrich, J., Kreutzer, S., Pagonis, V., Schmidt, C., 2019. RLumCarlo: Monte-Carlo Methods for Simulating Luminescence PhenomenaR package version 0.1.0.9000-41. https://CRAN.R-project.org/package=RLumModel
 }
 
 \references{

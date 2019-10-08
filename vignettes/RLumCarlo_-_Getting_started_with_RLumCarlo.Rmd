@@ -11,14 +11,14 @@ vignette: |
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
+library(RLumCarlo)
 ```
 
 ```{r, echo = FALSE, fig.align='center', message = FALSE}
 knitr::include_graphics("../man/figures/Logo_RLumCarlo.png")
-
-library(RLumCarlo)
 library(ggplot2)
 library(scales)
+library(kableExtra)
 
 ##https://github.com/JohannesFriedrich/EnergyBandModels
 theme <- theme(axis.text = element_text(size = 14),
@@ -52,30 +52,26 @@ models <- regmatches(models, regexpr("(?<=run\\_).*", models, perl = TRUE), inve
 
 ## combine into data.frame
 df <- data.frame(
-  MODEL_NAME = models, 
-  R_CALL = paste0("run_", models, "()"),
-  R_FILE = paste0("R/run_", models, ".R"),
-  MODE_CORE = paste0("src/MC_C_", models, ".cpp"))
+  `MODEL NAME` = models, 
+  `R CALL` = paste0("run_", models, "()"),
+  `R FILE` = paste0("R/run_", models, ".R"),
+  `MODE CORE` = paste0("src/MC_C_", models, ".cpp"))
 
-knitr::kable(df)
+knitr::kable(df) %>% kable_styling(full_width = T, font_size = 5)
 ```
 
 
 # Figure 1
 
 ```{r Fig 1, fig.align='center'}
-library(RLumCarlo)
-
 times <- seq(0, 5000)
 
 ## Run MC simulation
-
 run_MC_ISO(E = 1.2,
            s = 1e10,
            T = 200,
            rho = 0.007,
            times = times) %>%
-  calc_RLumCarlo() %>%
   plot_RLumCarlo(norm = T, legend = T)
 ```
 
@@ -86,74 +82,84 @@ run_MC_ISO(E = 1.2,
 times <- seq(0, 1000)
 
 ## Run MC simulation
-
 run_MC_CW_IRSL(A = 0.12, rho = 0.003, times = times) %>%
-calc_RLumCarlo() %>% plot_RLumCarlo(norm = T, legend = T)
+  plot_RLumCarlo(norm = T, legend = T)
 
 run_MC_CW_IRSL(A = 0.21, rho = 0.003, times = times) %>%
-calc_RLumCarlo() %>% plot_RLumCarlo(norm = T, add = T)
+  plot_RLumCarlo(norm = T, add = T)
 ```
 
 # Figure 3
 
 ```{r Fig 3, fig.align='center'}
-
 s <- 3.5e12
 rho <- 0.015
 E <- 1.45
 
 times <- seq(100, 450) # time = temperature
 
-results_rc0 <- run_MC_TL(s=s, E = E, rho = rho, r_c = 0, times = times) %>% 
-  calc_RLumCarlo()
-
-results_rc07 <- run_MC_TL(s=s, E = E, rho = rho, r_c = 0.7, times = times) %>% 
-  calc_RLumCarlo()
-
-results_rc077 <- run_MC_TL(s=s, E = E, rho = rho, r_c = 0.77, times = times) %>% 
-  calc_RLumCarlo()
-
-results_rc086 <- run_MC_TL(s=s, E = E, rho = rho, r_c = 0.86, times = times) %>% 
-  calc_RLumCarlo()
+results_rc0 <- run_MC_TL(s=s, E = E, rho = rho, r_c = 0, times = times) 
+results_rc07 <- run_MC_TL(s=s, E = E, rho = rho, r_c = 0.7, times = times) 
+results_rc077 <- run_MC_TL(s=s, E = E, rho = rho, r_c = 0.77, times = times) 
+results_rc086 <- run_MC_TL(s=s, E = E, rho = rho, r_c = 0.86, times = times) 
 ```
 
 ```{r,Plot average signal, fig.align='center', echo = F}
-
-plot(
-  x = times,
-  y = results_rc0$avg/max(results_rc0$avg),
+plot_RLumCarlo(
+  results = results_rc0, 
   type = "b",
   ylab = "normalized TL signal",
-  xlab = "Temperature [°C]"
+  xlab = "Temperature [°C]", 
+  plot_uncertainty = FALSE,
+  col = "black",
+  norm = TRUE
+  
 )
-lines(
-  x = times,
-  y = results_rc07$avg/max(results_rc0$avg),
+
+plot_RLumCarlo(
+  results_rc07,
+  norm = TRUE,
+  plot_uncertainty = FALSE,
+  add = TRUE,
+  col = "green",
   type = "p",
   pch = 6,
-  col = "green"
+  
 )
-lines(
-  x = times,
-  y = results_rc077$avg/max(results_rc0$avg),
+
+
+plot_RLumCarlo(
+  results_rc077,
+  norm = TRUE,
+  plot_uncertainty = FALSE,
+  add = TRUE,
+  col = "blue",
   type = "p",
   pch = 4,
-  col = "blue"
+  
 )
-lines(
-  x = times,
-  y = results_rc086$avg/max(results_rc0$avg),
-  type = "b",
+
+plot_RLumCarlo(
+  results_rc086,
+  norm = TRUE,
+  plot_uncertainty = FALSE,
+  add = TRUE,
+  col = "red",
+  type = "p",
   pch = 5,
-  col = "red"
+  
 )
 
-legend("topright",
-       legend = c("0", "5", "10", "50"),
-       pch = c(1,6,5,4),
-       col = c("black", "green", "blue", "red"))
 
-grid()
+legend(
+  "topright",
+  bty = "n",
+  legend = c("0", "5", "10", "50"),
+  pch = c(1, 6, 5, 4),
+  col = c("black", "green", "blue", "red")
+)
+
+
 ```
 
 # Figure 4
@@ -174,7 +180,6 @@ for(i in 1:length(r_c)){
     r_c = r_c[i],
     times = times
   ) %>%
-  calc_RLumCarlo() %>% 
   plot_RLumCarlo(legend = T, add = TRUE, col = i + 1)
 
 }

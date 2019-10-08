@@ -32,6 +32,11 @@ plot_RLumCarlo <- function(
   ...){
 
 
+ # Preparation ---------------------------------------------------------------------------------
+  if(class(results) == "RLumCarlo_Model_Output")
+    results <- summary(results)
+
+
  # Preset --------------------------------------------------------------------------------------
   avg <- results[["avg"]]
   y_min <- results[["y_min"]]
