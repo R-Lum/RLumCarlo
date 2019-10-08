@@ -1,3 +1,10 @@
+#' methods
+#'
+#' @md
+#' @name methods
+NULL
+
+#'
 #' @title Summarize RLumCarlo Modelling Results
 #'
 #' @description Summarize RLumCarlo Modelling results, so that they can be plotted easily
@@ -14,6 +21,8 @@
 #' @author Johannes Friedrich, University of Bayreuth (Germany), Sebastian Kreutzer, IRAMAT-CRP2A, UMR 5060, CNRS-Université Bordeaux Montagine (France)
 #'
 #' @method summary RLumCarlo_Model_Output
+#'
+#' @rdname methods
 #' @md
 #' @export
 summary.RLumCarlo_Model_Output <- function(object, ...){

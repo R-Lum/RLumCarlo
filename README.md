@@ -58,19 +58,19 @@ To install a developer build other than ‘master’, replace the term
 run_MC_CW_IRSL_TUN(A = 0.12, rho = 0.003, times = 0:1000) %>%
      plot_RLumCarlo(norm = T, legend = T)
 #>       time           mean            y_min            y_max       
-#>  Min.   :   0   Min.   :0.2905   Min.   :0.2745   Min.   :0.3108  
-#>  1st Qu.: 250   1st Qu.:0.3743   1st Qu.:0.3568   1st Qu.:0.4066  
-#>  Median : 500   Median :0.5188   Median :0.4987   Median :0.5399  
-#>  Mean   : 500   Mean   :0.7532   Mean   :0.7244   Mean   :0.7858  
-#>  3rd Qu.: 750   3rd Qu.:0.8794   3rd Qu.:0.8281   3rd Qu.:0.9388  
-#>  Max.   :1000   Max.   :3.7003   Max.   :3.6768   Max.   :3.7251  
+#>  Min.   :   0   Min.   :0.2922   Min.   :0.2643   Min.   :0.3171  
+#>  1st Qu.: 250   1st Qu.:0.3730   1st Qu.:0.3485   1st Qu.:0.3983  
+#>  Median : 500   Median :0.5199   Median :0.4843   Median :0.5819  
+#>  Mean   : 500   Mean   :0.7571   Mean   :0.7156   Mean   :0.8098  
+#>  3rd Qu.: 750   3rd Qu.:0.8764   3rd Qu.:0.8118   3rd Qu.:0.9766  
+#>  Max.   :1000   Max.   :3.7000   Max.   :3.6805   Max.   :3.7193  
 #>        sd               var           
-#>  Min.   :0.01105   Min.   :0.0001221  
-#>  1st Qu.:0.01400   1st Qu.:0.0001960  
-#>  Median :0.01618   Median :0.0002619  
-#>  Mean   :0.01945   Mean   :0.0004342  
-#>  3rd Qu.:0.02438   3rd Qu.:0.0005945  
-#>  Max.   :0.04464   Max.   :0.0019930
+#>  Min.   :0.01314   Min.   :0.0001727  
+#>  1st Qu.:0.01696   1st Qu.:0.0002875  
+#>  Median :0.02798   Median :0.0007830  
+#>  Mean   :0.02885   Mean   :0.0009817  
+#>  3rd Qu.:0.03957   3rd Qu.:0.0015657  
+#>  Max.   :0.06323   Max.   :0.0039977
 ```
 
 ![](man/figures/README-unnamed-chunk-2-1.png)<!-- -->
