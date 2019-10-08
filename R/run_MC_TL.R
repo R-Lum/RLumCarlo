@@ -34,7 +34,6 @@
 #'           rho = 0.015,
 #'           r_c = 0.85,
 #'           times = times) %>%
-#'   calc_RLumCarlo() %>%
 #'     plot_RLumCarlo(legend = T)
 #'}
 #' @md

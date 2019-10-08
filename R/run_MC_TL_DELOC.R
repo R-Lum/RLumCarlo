@@ -48,7 +48,6 @@
 #'  E = 1.45,
 #'  R = 1,
 #'  times = 100:450) %>%
-#'    calc_RLumCarlo() %>%
 #'    plot_RLumCarlo(legend = T)
 #'
 #' }

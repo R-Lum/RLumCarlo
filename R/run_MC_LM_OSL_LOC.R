@@ -43,7 +43,6 @@
 #'  A = 0.12,
 #'  r = 1,
 #'  times = 0:100) %>%
-#'    calc_RLumCarlo() %>%
 #'    plot_RLumCarlo(legend = T)
 #'
 #' }
