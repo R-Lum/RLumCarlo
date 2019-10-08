@@ -52,6 +52,9 @@ plot_RLumCarlo <- function(
 
     }
 
+    ## set add
+    add <- c(FALSE, rep(TRUE,length(object) - 1))
+
     for(i in 1:length(object)){
       do.call(what = plot_RLumCarlo, args = c(list(
         object[[i]],
@@ -59,7 +62,7 @@ plot_RLumCarlo <- function(
         plot_uncertainty = plot_uncertainty,
         norm = norm,
         col = col[i],
-        add = TRUE),
+        add = add[i]),
         plot_settings
       ))
 
@@ -85,13 +88,13 @@ plot_RLumCarlo <- function(
  ## extract values for the uncertainties
  if(!is.null(plot_uncertainty)){
   if(plot_uncertainty == "sd") {
-    y_min <-  avg -  object[["sd"]] / 2
-    y_max <-  avg +  object[["sd"]] / 2
+    y_min <-  avg -  object[["sd"]]
+    y_max <-  avg +  object[["sd"]]
 
 
   } else if (plot_uncertainty == "var") {
-    y_min <-  avg -  object[["var"]] / 2
-    y_max <-  avg +  object[["var"]] / 2
+    y_min <-  avg -  object[["var"]]
+    y_max <-  avg +  object[["var"]]
 
 
   } else {
@@ -127,7 +130,7 @@ plot_RLumCarlo <- function(
       xlim = range(times),
       ylim = if(is.null(y_max)) c(0, max(avg)) else c(0, max(y_max)),
       xlab = if(length(grep(pattern = "TL", attributes(object)$model, fixed = TRUE) == 1)) {
-        "Temperature [\u00b0 C]"
+        "Temperature [\u00b0C]"
       } else {
         "Time [s]"
       },
