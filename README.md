@@ -57,20 +57,6 @@ To install a developer build other than ‘master’, replace the term
 ``` r
 run_MC_CW_IRSL_TUN(A = 0.12, rho = 0.003, times = 0:1000) %>%
      plot_RLumCarlo(norm = T, legend = T)
-#>       time           mean            y_min            y_max       
-#>  Min.   :   0   Min.   :0.2922   Min.   :0.2643   Min.   :0.3171  
-#>  1st Qu.: 250   1st Qu.:0.3730   1st Qu.:0.3485   1st Qu.:0.3983  
-#>  Median : 500   Median :0.5199   Median :0.4843   Median :0.5819  
-#>  Mean   : 500   Mean   :0.7571   Mean   :0.7156   Mean   :0.8098  
-#>  3rd Qu.: 750   3rd Qu.:0.8764   3rd Qu.:0.8118   3rd Qu.:0.9766  
-#>  Max.   :1000   Max.   :3.7000   Max.   :3.6805   Max.   :3.7193  
-#>        sd               var           
-#>  Min.   :0.01314   Min.   :0.0001727  
-#>  1st Qu.:0.01696   1st Qu.:0.0002875  
-#>  Median :0.02798   Median :0.0007830  
-#>  Mean   :0.02885   Mean   :0.0009817  
-#>  3rd Qu.:0.03957   3rd Qu.:0.0015657  
-#>  Max.   :0.06323   Max.   :0.0039977
 ```
 
 ![](man/figures/README-unnamed-chunk-2-1.png)<!-- -->

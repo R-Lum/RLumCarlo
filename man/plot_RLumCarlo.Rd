@@ -4,11 +4,11 @@
 \alias{plot_RLumCarlo}
 \title{Plot results from Monte-Carlo simulations with RLumCarlo}
 \usage{
-plot_RLumCarlo(results, times = NULL, plot_uncertainty = TRUE,
+plot_RLumCarlo(object, times = NULL, plot_uncertainty = "range",
   norm = FALSE, add = FALSE, ...)
 }
 \arguments{
-\item{results}{\link{data.frame} (\strong{required})}
+\item{object}{\link{data.frame} (\strong{required})}
 
 \item{times}{\link{numeric} (\emph{optinal}): Optional vector for the x-axis}
 
@@ -37,6 +37,6 @@ Bordeaux Montaigne (France)
 } 
 
 \section{How to cite}{
-Friedrich, J., Kreutzer, S., 2019. plot_RLumCarlo(): Plot results from Monte-Carlo simulations with RLumCarlo. Function version 0.1.0. In: Friedrich, J., Kreutzer, S., Pagonis, V., Schmidt, C., 2019. RLumCarlo: Monte-Carlo Methods for Simulating Luminescence PhenomenaR package version 0.1.0.9000-51. https://CRAN.R-project.org/package=RLumModel
+Friedrich, J., Kreutzer, S., 2019. plot_RLumCarlo(): Plot results from Monte-Carlo simulations with RLumCarlo. Function version 0.1.0. In: Friedrich, J., Kreutzer, S., Pagonis, V., Schmidt, C., 2019. RLumCarlo: Monte-Carlo Methods for Simulating Luminescence PhenomenaR package version 0.1.0.9000-54. https://CRAN.R-project.org/package=RLumModel
 }
 
