@@ -8,7 +8,7 @@
 #' I_{LOC}(t) = -dn/dt = A * (n^2 / (r + n))
 #' }
 #'
-#' @param A [numeric] (**required**): [cm^3/s] The transition probability
+#' @param A [numeric] (**required**): The transition probability in cm^3/s
 #'
 #' @param times [numeric] (*with default*): The number of MC runs
 #'

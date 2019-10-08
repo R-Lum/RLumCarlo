@@ -8,7 +8,7 @@
 #' I_{DELOC}(t) = -dn/dt = p(t) * (n^2 / (NR + n(1-R)))
 #' }
 #'
-#' @param A [numeric] (**required**): [cm^3/s] The transition probability
+#' @param A [numeric] (**required**): The transition probability in cm^3/s
 #'
 #' @param times [numeric] (with default): The number of MC runs
 #'
@@ -28,7 +28,7 @@
 #'
 #' @return This function returns an [array] with dimension length(times) x length(r) x clusters
 #'
-#' @section Function version: 0.0.1
+#' @section Function version: 0.1.0
 #'
 #' @author Sebastian Kreutzer, IRAMAT-CRP2A, UMR 5060, CNRS - Université Bordeaux Montaigne (France)
 #'
