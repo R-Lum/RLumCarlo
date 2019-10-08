@@ -1,7 +1,7 @@
 #' Run Monte-Carlo simulation for LM-OSL
 #'
 #' @param A \code{\link{numeric}}
-#' @param rho \code{\link{numeric}}
+#' @param rho \code{\link{numeric}}: The calculated dimesionless Charge density (normally written Rho').
 #' @param times \code{\link{vector}} (with default)
 #' @param clusters \code{\link{numeric}} (with default):
 #' @param r \code{\link{numeric}} (with default):
@@ -18,7 +18,8 @@
 #' @author Johannes Friedrich, University of Bayreuth (Germany)
 #'
 #' @references
-#' Pagonis 2017
+#' 
+#' Pagonis, V. and Kulp, C. (2017) ‘Monte Carlo simulations of tunneling phenomena and nearest neighbor hopping mechanism in feldspars’, Journal of Luminescence. Elsevier, 181, pp. 114–120. doi: 10.1016/j.jlumin.2016.09.014.
 #'
 #' @examples
 #'

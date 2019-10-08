@@ -36,7 +36,7 @@
 #'
 #' @references
 #'
-#' ##TODO
+#' Pagonis, V. and Kulp, C. (2017) ‘Monte Carlo simulations of tunneling phenomena and nearest neighbor hopping mechanism in feldspars’, Journal of Luminescence. Elsevier, 181, pp. 114–120. doi: 10.1016/j.jlumin.2016.09.014.
 #'
 #' @examples
 #' ##============================================================================##

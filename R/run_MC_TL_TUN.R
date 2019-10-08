@@ -1,9 +1,9 @@
 #' Run Monte-Carlo simulation for TL
 #'
-#' @param s \code{\link{list}}
-#' @param E \code{\link{numeric}}
-#' @param rho \code{\link{numeric}}
-#' @param r_c \code{\link{numeric}} (with default)
+#' @param s \code{\link{list}} [list]
+#' @param E \code{\link{numeric}} [numeric]
+#' @param rho \code{\link{numeric}} [numeric]: The calculated dimesionless Charge density (normally written Rho').
+#' @param r_c \code{\link{numeric}} [numeric] (with default)
 #' @param times \code{\link{vector}} (with default)
 #' @param clusters \code{\link{numeric}} (with default):
 #' @param N_e \code{\link{numeric}} (with default):
@@ -19,7 +19,8 @@
 #' @author Johannes Friedrich, University of Bayreuth (Germany)
 #'
 #' @references
-#' Pagonis 2017
+#' 
+#' Pagonis, V. and Kulp, C. (2017) ‘Monte Carlo simulations of tunneling phenomena and nearest neighbor hopping mechanism in feldspars’, Journal of Luminescence. Elsevier, 181, pp. 114–120. doi: 10.1016/j.jlumin.2016.09.014.
 #'
 #' @examples
 #' \dontrun{

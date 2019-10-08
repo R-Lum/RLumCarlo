@@ -1,20 +1,29 @@
-#' Run Monte-Carlo simulation for isothermal measurements
+#' @Title Run Monte-Carlo simulation for isothermal measurements
 #'
-#' @param E [numeric] (**required**)
+#' @description Runs a Monte-Carlo (MC) simulation of isothermally stimulated luminesence (ISO-TL or ITL) using the .
 #'
-#' @param s [numeric] (**required**)
+#' @details
 #'
-#' @param T [numeric] (**required**)
+#' \deqn{
+#' I_{LOC}(t) = -dn/dt = A * (n^2 / (r + n))
+#' }
 #'
-#' @param rho [numeric] (**required**)
 #'
-#' @param times [numeric] (*with default*)
+#' @param s [numeric] (**required**): Escape frequency of the trap (s^-1).
 #'
-#' @param clusters [numeric] (*with default*):
+#' @param E [numeric] (**required**): Thermal activation energy of the trap (eV).
 #'
-#' @param r [numeric] (*with default*)
+#' @param T [numeric] (**required**): Temperature (deg. C).
 #'
-#' @param N_e [numeric] (*with default*)
+#' @param rho [numeric] (**required**): The calculated dimesionless Charge density (normally written Rho').
+#'
+#' @param times [numeric] (*with default*): The number of MC runs.
+#'
+#' @param clusters [numeric] (*with default*): The number of clusters.
+#'
+#' @param r [numeric] (*with default*): The retrapping ratio.
+#'
+#' @param N_e [numeric] (*with default*): The number of electrons. 
 #'
 #' @param method [character] (*with default*)
 #'
@@ -30,7 +39,8 @@
 #' UMR 5060, CNRS - Univerité Bordeaux Montaigne (France)
 #'
 #' @references
-#' Pagonis 2017
+#' 
+#' Pagonis, V. and Kulp, C. (2017) ‘Monte Carlo simulations of tunneling phenomena and nearest neighbor hopping mechanism in feldspars’, Journal of Luminescence. Elsevier, 181, pp. 114–120. doi: 10.1016/j.jlumin.2016.09.014.
 #'
 #' @examples
 #' \dontrun{
