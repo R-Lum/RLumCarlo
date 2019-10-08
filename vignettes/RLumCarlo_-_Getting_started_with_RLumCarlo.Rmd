@@ -1,6 +1,6 @@
 ---
 title: "Getting started with RLumCarlo"
-author: "Sebastian Kreutzer, Johannes Friedrich, Vasilis Pagnis, Christoph Schmidt"
+author: "Sebastian Kreutzer, Johannes Friedrich, Vasilis Pagonis, Christoph Schmidt"
 date: "Last modified: `r Sys.Date()`"
 output: pdf_document
 vignette: |
@@ -14,7 +14,7 @@ knitr::opts_chunk$set(echo = TRUE)
 ```
 
 ```{r, echo = FALSE, fig.align='center', message = FALSE}
-knitr::include_graphics("../docs/img/Logo_RLumCarlo.png")
+knitr::include_graphics("../man/figures/Logo_RLumCarlo.png")
 
 library(RLumCarlo)
 library(ggplot2)
@@ -40,11 +40,11 @@ into RLumCarlo and how plot and extracts its data.
 
 # A simple exlample
 
-
+TODO
 
 # The models in RLumCarlo
 
-```{r, echo = FALSE}
+```{r, echo = FALSE, message=FALSE}
 ## extract models
 models <- list.files("../R/", pattern = "run_")
 models <- strtrim(models, nchar(models) - 2)
@@ -77,7 +77,6 @@ run_MC_ISO(E = 1.2,
            times = times) %>%
   calc_RLumCarlo() %>%
   plot_RLumCarlo(norm = T, legend = T)
-grid()
 ```
 
 
@@ -93,7 +92,6 @@ calc_RLumCarlo() %>% plot_RLumCarlo(norm = T, legend = T)
 
 run_MC_CW_IRSL(A = 0.21, rho = 0.003, times = times) %>%
 calc_RLumCarlo() %>% plot_RLumCarlo(norm = T, add = T)
-grid()
 ```
 
 # Figure 3
@@ -105,7 +103,6 @@ rho <- 0.015
 E <- 1.45
 
 times <- seq(100, 450) # time = temperature
-
 
 results_rc0 <- run_MC_TL(s=s, E = E, rho = rho, r_c = 0, times = times) %>% 
   calc_RLumCarlo()
@@ -162,21 +159,24 @@ grid()
 # Figure 4
 
 ```{r Fig 4, fig.align='center'}
-
+## set parameters
 s <- 3.5e12
 rho <- 0.015
 E <- 1.45
-
 times <- seq(200, 500) # time = temperature
+r_c <- c(0.85, 1.13, 1.3)
 
-run_MC_TL(s=s, E = E, rho = rho, r_c = 0.85, times = times) %>%
-  calc_RLumCarlo() %>% plot_RLumCarlo(legend = T)
+for(i in 1:length(r_c)){
+  run_MC_TL(
+    s = s,
+    E = E,
+    rho = rho,
+    r_c = r_c[i],
+    times = times
+  ) %>%
+  calc_RLumCarlo() %>% 
+  plot_RLumCarlo(legend = T, add = TRUE, col = i + 1)
 
-run_MC_TL(s=s, E = E, rho = rho, r_c = 1.13, times = times) %>%
-  calc_RLumCarlo() %>% plot_RLumCarlo(add = T)
+}
 
-run_MC_TL(s=s, E = E, rho = rho, r_c = 1.3, times = times) %>%
-  calc_RLumCarlo() %>% plot_RLumCarlo(add = T)
-
-grid()
 ```
