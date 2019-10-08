@@ -26,29 +26,54 @@
 plot_RLumCarlo <- function(
   results,
   times = NULL,
-  plot_uncertainty = TRUE,
+  plot_uncertainty = "range",
   norm = FALSE,
   add = FALSE,
   ...){
 
 
  # Preparation ---------------------------------------------------------------------------------
-  if(class(results) == "RLumCarlo_Model_Output")
-    results <- summary(results)
+
+ ## try to summarise whenenver possible
+ if(class(results) == "RLumCarlo_Model_Output")
+    results <- summary(results, verbose = FALSE)
+
+ ## extract correct columns
+ avg <- results[["mean"]]
+ y_min <- y_max <- NULL
+
+ ## extract values for the uncertainties
+ if(!is.null(plot_uncertainty)){
+  if(plot_uncertainty == "sd") {
+    y_min <-  avg -  results[["sd"]] / 2
+    y_max <-  avg +  results[["sd"]] / 2
 
 
- # Preset --------------------------------------------------------------------------------------
-  avg <- results[["mean"]]
-  y_min <- results[["y_min"]]
-  y_max <- results[["y_max"]]
+  } else if (plot_uncertainty == "var") {
+    y_min <-  avg -  results[["var"]] / 2
+    y_max <-  avg +  results[["var"]] / 2
+
+
+  } else {
+    y_min <- results[["y_min"]]
+    y_max <- results[["y_max"]]
+
+  }
+
+ }
 
   if(is.null(times))
     times <- results[["time"]]
 
   if(norm){ # normalization
-    avg <- avg/max(avg)
-    y_min  <-  y_min/max(y_min)
-    y_max <- y_max/max(y_max)
+    avg <- avg / max(avg)
+
+    if(!is.null(plot_uncertainty)){
+      y_min <- y_min / max(y_min)
+      y_max <- y_max / max(y_max)
+
+    }
+
     ylab <- "Normalized average signal"
   } else {
     ylab <- "Averaged signal [a.u.]"
@@ -60,7 +85,7 @@ plot_RLumCarlo <- function(
     modifyList(x = list(
       main = "",
       xlim = range(times),
-      ylim = c(0, max(y_max)),
+      ylim = if(is.null(y_max)) c(0, max(avg)) else c(0, max(y_max)),
       xlab = if(length(grep(pattern = "TL", attributes(results)$model, fixed = TRUE) == 1)) {
         "Temperature [\u00b0 C]"
       } else {
@@ -75,6 +100,7 @@ plot_RLumCarlo <- function(
       col = "red",
       legend = TRUE
     ), val = list(...))
+
 
   # Plotting ------------------------------------------------------------------------------------
   ## check if plot was already called, if not just plot
@@ -94,7 +120,7 @@ plot_RLumCarlo <- function(
   if(plot_settings$grid) grid()
 
   ## draw error pologyon
-  if(plot_uncertainty){
+  if(!is.null(plot_uncertainty)){
   polygon(x = c(times, rev(times)),
           y = c(y_min, rev(y_max)),
           col = adjustcolor(plot_settings$col, alpha.f=0.3),
@@ -117,10 +143,10 @@ plot_RLumCarlo <- function(
     ylim = plot_settings$ylim,
     lwd = plot_settings$lwd)
 
-  if(plot_settings$legend && plot_uncertainty){
+  if(plot_settings$legend && !is.null(plot_uncertainty)){
     legend(
       "topright",
-      legend = c("average", "min-max"),
+      legend = c("mean", plot_uncertainty),
       lwd = 1,
       bty = "n",
       col = c(
