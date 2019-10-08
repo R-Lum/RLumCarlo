@@ -1,6 +1,6 @@
-#' @title Run Monte-Carlo simulation for CW-IRSL for GOT model
+#' @title Run Monte-Carlo simulation for CW-IRSL for delocalized transition
 #'
-#' @description Runs a Monte Carlo (MC) simulation of constant wave _ (CW-IRSL) using the generalized one trap (GOT) model.
+#' @description Runs a Monte-Carlo (MC) simulation of constant wave infrared stimulated luminesence (CW-IRSL) using one trap one recombination center (OTOR) model.
 #'
 #' @details
 #'
@@ -8,21 +8,21 @@
 #' I_{DELOC}(t) = -dn/dt = p(t) * (n^2 / (NR + n(1-R)))
 #' }
 #'
-#' @param A [numeric] (**required**): The transition probability in cm^3/s
+#' @param A [numeric] (**required**): The transition probability (cm^3/s).
 #'
-#' @param times [numeric] (with default): The number of MC runs
+#' @param times [numeric] (*with default*): The number of MC runs.
 #'
-#' @param clusters [numeric] (with default): The number of clusters.
+#' @param clusters [numeric] (*with default*): The number of clusters.
 #'
-#' @param N_e [integer] (with default): The number of electrons.
+#' @param N_e [integer] (*with default*): The number of electrons.
 #'
-#' @param n_filled [integer] (with default): The number of electron traps that are filled at the beginning of the simulation.
+#' @param n_filled [integer] (*with default*): The number of electron traps that are filled at the beginning of the simulation.
 #'
-#' @param R [numeric] (with default): The retrapping ratio
+#' @param R [numeric] (*with default*): The retrapping ratio.
 #'
-#' @param method [character] (with default):
+#' @param method [character] (*with default*):
 #'
-#' @param output [character] (with default):
+#' @param output [character] (*with default*):
 #'
 #' @param \dots further arguments
 #'

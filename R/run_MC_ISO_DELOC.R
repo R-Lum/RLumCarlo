@@ -1,6 +1,6 @@
-#' @title Run Monte-Carlo simulation for ISO for GOT model
+#' @title Run Monte-Carlo simulation for ISO for delocalized transition
 #'
-#' @description ##TODO
+#' @description Runs a Monte Carlo (MC) simulation of isothermally stimulated luminesence (ISO-TL or ITL) using the one trap one recombination center (OTOR) model.
 #'
 #' @details
 #'
@@ -8,25 +8,25 @@
 #' I_{DELOC}(t) = -dn/dt = p(t) * (n^2 / (NR + n(1-R)))
 #' }
 #'
-#' @param s [numeric] (*required*)
+#' @param s [numeric] (**required**): 
 #'
-#' @param E [numeric] (*required*)
+#' @param E [numeric] (**required**): 
 #'
-#' @param T [numeric] (*with default*)
+#' @param T [numeric] (*with default*): Temperature (C°).
 #'
-#' @param times [numeric] (with default)
+#' @param times [numeric] (*with default*): The number of MC runs.
 #'
-#' @param clusters [numeric] (with default):
+#' @param clusters [numeric] (*with default*): The number of clusters.
 #'
-#' @param N_e [integer] (with default)
+#' @param N_e [integer] (*with default*): The number of electrons.
 #'
-#' @param n_filled [integer] (with default)
+#' @param n_filled [integer] (*with default*): The number of electron traps that are filled at the beginning of the simulation.
 #'
-#' @param R [numeric] (with default):
+#' @param R [numeric] (*with default*): The retrapping ratio.
 #'
-#' @param method [character] (with default):
+#' @param method [character] (*with default*):
 #'
-#' @param output [character] (with default):
+#' @param output [character] (*with default*):
 #'
 #' @param \dots further arguments
 #'

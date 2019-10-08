@@ -8,15 +8,15 @@
 #' I_{LOC}(t) = -dn/dt = A * (n^2 / (r + n))
 #' }
 #'
-#' @param A [numeric] (**required**): The transition probability in cm^3/s
+#' @param A [numeric] (**required**): The transition probability (cm^3/s).
 #'
-#' @param times [numeric] (*with default*): The number of MC runs
+#' @param times [numeric] (*with default*): The number of MC runs.
 #'
 #' @param clusters [numeric] (*with default*): The number of clusters.
 #'
 #' @param n_filled [integer] (*with default*): The number of electron traps that are filled at the beginning of the simulation.
 #'
-#' @param r [numeric] (*with default*): The retrapping ratio
+#' @param r [numeric] (*with default*): The retrapping ratio.
 #'
 #' @param method [character] (*with default*):
 #'
