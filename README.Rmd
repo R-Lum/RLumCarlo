@@ -17,7 +17,7 @@ library(RLumCarlo)
 
 # RLumCarlo <img width=120px src="man/figures/Logo_RLumCarlo.png" align="right" />
 
-The **R** package 'RLumCarlo' by Johannes Friedrich (University of Bayreuth, Germany) & Sebastian Kreutzer (IRAMAT-CRP2A, UMR 5060, CNRS - Université Bordeaux Montaigne, France) provides a collection of various R functions modelling luminescence signals in feldspar.
+The **R** package 'RLumCarlo' by Johannes Friedrich (University of Bayreuth, Germany) & Sebastian Kreutzer (IRAMAT-CRP2A, UMR 5060, CNRS - Université Bordeaux Montaigne, France) provides a collection of various R functions modelling luminescence signals using Monte Carlo methods
 
 [![Project Status: Concept](http://www.repostatus.org/badges/latest/concept.svg)](https://www.repostatus.org/#concept)
 [![CRAN](http://www.r-pkg.org/badges/version/RLumCarlo)](https://cran.r-project.org/package=RLumCarlo)
@@ -59,16 +59,7 @@ of the wanted developer build (not available yet).
 
 ```{r}
 run_MC_CW_IRSL(A = 0.12, rho = 0.003, times = 0:1000) %>%
-   calc_RLumCarlo() %>%
      plot_RLumCarlo(norm = T, legend = T)
-```
-
-This is the same as the following lines:
-
-```{r}
-results <- run_MC_CW_IRSL(A = 0.12, rho = 0.003, times = 0:1000)
-calc <- calc_RLumCarlo(results) 
-plot_RLumCarlo(calc, norm = T, legend = T)
 ```
 
 ## Note
