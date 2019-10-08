@@ -1,6 +1,6 @@
 #' @title Run Monte-Carlo simulation for CW-IRSL for GOT model
 #'
-#' @description ##TODO
+#' @description Runs a Monte Carlo (MC) simulation of constant wave _ (CW-IRSL) using the generalized one trap (GOT) model.
 #'
 #' @details
 #'
@@ -8,17 +8,17 @@
 #' I_{DELOC}(t) = -dn/dt = p(t) * (n^2 / (NR + n(1-R)))
 #' }
 #'
-#' @param A [numeric] (*required*)
+#' @param A [numeric] (**required**): [cm^3/s] The transition probability
 #'
-#' @param times [numeric] (with default)
+#' @param times [numeric] (with default): The number of MC runs
 #'
-#' @param clusters [numeric] (with default):
+#' @param clusters [numeric] (with default): The number of clusters.
 #'
-#' @param N_e [integer] (with default)
+#' @param N_e [integer] (with default): The number of electrons.
 #'
-#' @param n_filled [integer] (with default)
+#' @param n_filled [integer] (with default): The number of electron traps that are filled at the beginning of the simulation.
 #'
-#' @param R [numeric] (with default):
+#' @param R [numeric] (with default): The retrapping ratio
 #'
 #' @param method [character] (with default):
 #'

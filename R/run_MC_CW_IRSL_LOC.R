@@ -1,6 +1,6 @@
 #' @title Run Monte-Carlo simulation for CW-IRSL for localised transition
 #'
-#' @description ##TODO
+#' @description Runs a Monte Carlo (MC) simulation of constant wave infrared stimulated luminesence (CW-IRSL) using the generalized one trap (GOT) model.
 #'
 #' @details
 #'
@@ -8,15 +8,15 @@
 #' I_{LOC}(t) = -dn/dt = A * (n^2 / (r + n))
 #' }
 #'
-#' @param A [numeric] (**required**)
+#' @param A [numeric] (**required**): [cm^3/s] The transition probability
 #'
-#' @param times [numeric] (*with default*):
+#' @param times [numeric] (*with default*): The number of MC runs
 #'
-#' @param clusters [numeric] (*with default*):
+#' @param clusters [numeric] (*with default*): The number of clusters.
 #'
-#' @param n_filled [integer] (*with default*):
+#' @param n_filled [integer] (*with default*): The number of electron traps that are filled at the beginning of the simulation.
 #'
-#' @param r [numeric] (*with default*):
+#' @param r [numeric] (*with default*): The retrapping ratio
 #'
 #' @param method [character] (*with default*):
 #'
