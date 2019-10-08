@@ -28,7 +28,7 @@ summary.RLumCarlo_Model_Output <- function(object, ...){
         sum(signal[x,])
       }, FUN.VALUE = 1)
 
-      avg <- y_min <- y_max <- sd <- sum_signal
+      avg <- y_min <- y_max <- sd <- var <- sum_signal
 
     } else {
       ## extract number of clusters
@@ -44,6 +44,7 @@ summary.RLumCarlo_Model_Output <- function(object, ...){
 
       mean <- rowMeans(sum_signal)
       sd <- apply(sum_signal, 1, sd)
+      var <- apply(sum_signal, 1, var)
       y_min <- apply(sum_signal, 1, min)
       y_max <- apply(sum_signal, 1, max)
 
@@ -51,7 +52,7 @@ summary.RLumCarlo_Model_Output <- function(object, ...){
 
 
   ## set output data.frame
-  output <- data.frame(time = times, mean = mean, y_min = y_min, y_max = y_max, sd = sd)
+  output <- data.frame(time = times, mean = mean, y_min = y_min, y_max = y_max, sd = sd, var = var)
   attr(output, "model") <- attributes(object)$model
 
   ## return the summary as terminal output from the data.frame
@@ -60,5 +61,3 @@ summary.RLumCarlo_Model_Output <- function(object, ...){
   ## return
   invisible(output)
 }
-
-
