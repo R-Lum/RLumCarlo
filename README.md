@@ -7,10 +7,8 @@
 
 # RLumCarlo <img width=120px src="man/figures/Logo_RLumCarlo.png" align="right" />
 
-The **R** package ‘RLumCarlo’ by Johannes Friedrich (University of
-Bayreuth, Germany) & Sebastian Kreutzer (IRAMAT-CRP2A, UMR 5060, CNRS -
-Université Bordeaux Montaigne, France) provides a collection of various
-R functions modelling luminescence signals using Monte Carlo methods
+The **R** package ‘RLumCarlo’ provides a collection of various R
+functions modelling luminescence signals using Monte Carlo methods.
 
 [![Project Status:
 Concept](http://www.repostatus.org/badges/latest/concept.svg)](https://www.repostatus.org/#concept)
@@ -56,10 +54,10 @@ To install a developer build other than ‘master’, replace the term
 
 ``` r
 run_MC_CW_IRSL_TUN(A = 0.12, rho = 0.003, times = 0:1000) %>%
-     plot_RLumCarlo(norm = T, legend = T)
+     plot_RLumCarlo(norm = TRUE, legend = TRUE)
 ```
 
-![](man/figures/README-unnamed-chunk-2-1.png)<!-- -->
+<img src="man/figures/README-unnamed-chunk-2-1.png" style="display: block; margin: auto;" />
 
 ## Note
 
