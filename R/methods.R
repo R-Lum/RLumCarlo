@@ -1,16 +1,18 @@
 #' methods
 #'
+#' @keywords internal
 #' @md
 #' @name methods
 NULL
 
-#'
 #' @title Summarize RLumCarlo Modelling Results
 #'
 #' @description Summarize RLumCarlo Modelling results, so that they can be plotted easily
 #'
 #' @param object [list] of class RLumCarlo_Model_Output: RLumCarlo simulation output object
 #' produced by all
+#'
+#' @param verbose [logical] (*with default*): enable/disable verbose mode
 #'
 #' @param ... further arguments passed to the method
 #'
@@ -20,12 +22,11 @@ NULL
 #'
 #' @author Johannes Friedrich, University of Bayreuth (Germany), Sebastian Kreutzer, IRAMAT-CRP2A, UMR 5060, CNRS-Université Bordeaux Montagine (France)
 #'
-#' @method summary RLumCarlo_Model_Output
-#'
-#' @rdname methods
 #' @md
+#' @method summary RLumCarlo_Model_Output
+#' @rdname methods
 #' @export
-summary.RLumCarlo_Model_Output <- function(object, ...){
+summary.RLumCarlo_Model_Output <- function(object, verbose = TRUE, ...){
 
   # copy input into new objects
   signal <- object[[1]]
@@ -65,7 +66,7 @@ summary.RLumCarlo_Model_Output <- function(object, ...){
   attr(output, "model") <- attributes(object)$model
 
   ## return the summary as terminal output from the data.frame
-  print(summary(output))
+  if(verbose) print(summary(output))
 
   ## return
   invisible(output)
