@@ -1,7 +1,7 @@
 #' @title Plot results from Monte-Carlo simulations with RLumCarlo
 #'
 #'
-#' @param results [data.frame] (**required**)
+#' @param object [data.frame] (**required**)
 #'
 #' @param times [numeric] (*optinal*): Optional vector for the x-axis
 #'
@@ -24,7 +24,7 @@
 #' @md
 #' @export
 plot_RLumCarlo <- function(
-  results,
+  object,
   times = NULL,
   plot_uncertainty = "range",
   norm = FALSE,
@@ -32,38 +32,78 @@ plot_RLumCarlo <- function(
   ...){
 
 
+ # Self-call -----------------------------------------------------------------------------------
+ if(class(object) == "list"){
+
+    ## double check the objects in the list
+    if(!all(sapply(object, class) == "RLumCarlo_Model_Output"))
+      stop("[plot_RLumCarlo()] At least one element in the list is not of class RLumCarlo_Model_Output!", call. = FALSE)
+
+    ##make sure the plot_settings do not interfere
+    plot_settings <- list(...)
+
+    ## overwrite or extract col
+    if("col" %in% plot_settings){
+      col <- rep(plot_settings$col, length.out = length(object))
+      plot_settings$col <- NULL
+
+    } else {
+     col <- 2:(length(object) + 1)
+
+    }
+
+    for(i in 1:length(object)){
+      do.call(what = plot_RLumCarlo, args = c(list(
+        object[[i]],
+        times = times,
+        plot_uncertainty = plot_uncertainty,
+        norm = norm,
+        col = col[i],
+        add = TRUE),
+        plot_settings
+      ))
+
+    }
+
+   return(NULL)
+ }
+
  # Preparation ---------------------------------------------------------------------------------
 
  ## try to summarise whenenver possible
- if(class(results) == "RLumCarlo_Model_Output")
-    results <- summary(results, verbose = FALSE)
+ if(class(object) != "RLumCarlo_Model_Output")
+   stop("[plot_RLumCarlo()] 'object' needs to be of class RLumCarlo_Model_Output!", call. = FALSE)
+
+
+ ## summarize
+ object <- summary(object, verbose = FALSE)
 
  ## extract correct columns
- avg <- results[["mean"]]
+ avg <- object[["mean"]]
  y_min <- y_max <- NULL
 
  ## extract values for the uncertainties
  if(!is.null(plot_uncertainty)){
   if(plot_uncertainty == "sd") {
-    y_min <-  avg -  results[["sd"]] / 2
-    y_max <-  avg +  results[["sd"]] / 2
+    y_min <-  avg -  object[["sd"]] / 2
+    y_max <-  avg +  object[["sd"]] / 2
 
 
   } else if (plot_uncertainty == "var") {
-    y_min <-  avg -  results[["var"]] / 2
-    y_max <-  avg +  results[["var"]] / 2
+    y_min <-  avg -  object[["var"]] / 2
+    y_max <-  avg +  object[["var"]] / 2
 
 
   } else {
-    y_min <- results[["y_min"]]
-    y_max <- results[["y_max"]]
+    y_min <- object[["y_min"]]
+    y_max <- object[["y_max"]]
 
   }
 
  }
 
   if(is.null(times))
-    times <- results[["time"]]
+    times <- object[["time"]]
 
   if(norm){ # normalization
     avg <- avg / max(avg)
@@ -86,7 +126,7 @@ plot_RLumCarlo <- function(
       main = "",
       xlim = range(times),
       ylim = if(is.null(y_max)) c(0, max(avg)) else c(0, max(y_max)),
-      xlab = if(length(grep(pattern = "TL", attributes(results)$model, fixed = TRUE) == 1)) {
+      xlab = if(length(grep(pattern = "TL", attributes(object)$model, fixed = TRUE) == 1)) {
         "Temperature [\u00b0 C]"
       } else {
         "Time [s]"
@@ -132,15 +172,10 @@ plot_RLumCarlo <- function(
   lines(
     x = times,
     y = avg,
-    main = plot_settings$main,
-    xlab = plot_settings$xlab,
-    ylab = ylab,
     col = adjustcolor(plot_settings$col, alpha.f=1),
     type = plot_settings$type,
     pch = plot_settings$pch,
     lty = plot_settings$lty,
-    xlim = plot_settings$xlim,
-    ylim = plot_settings$ylim,
     lwd = plot_settings$lwd)
 
   if(plot_settings$legend && !is.null(plot_uncertainty)){
@@ -157,3 +192,4 @@ plot_RLumCarlo <- function(
   }
 
 }
+
