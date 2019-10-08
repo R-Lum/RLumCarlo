@@ -62,7 +62,7 @@ plot_RLumCarlo <- function(
       xlim = range(times),
       ylim = c(0, max(y_max)),
       xlab = if(length(grep(pattern = "TL", attributes(results)$model, fixed = TRUE) == 1)) {
-        "Temperature [a.u.]"
+        "Temperature [\u00b0 C]"
       } else {
         "Time [s]"
       },
