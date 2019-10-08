@@ -49,6 +49,41 @@
 #'
 #' }
 #'
+#'#' @examples
+#' ##============================================================================##
+#' ## Example 2: Simulate CW-IRSL with several parameter changes
+#' ##============================================================================##
+#' \dontrun{
+#' 
+#'# define your parameters
+#'A=c(0.1,0.3,0.5,1)
+#'times=seq(0,60,1)
+#'s=1e12
+#'E=1
+#'R<-c(1e-7,1e-6,0.01,0.1) # sequence of different R values
+#'clusters=1000 # number of Monte Carlo simulations
+#'N_e =c(200, 500, 700, 400) # number of free electrons
+#'n_filled =c(200, 500, 100, 70) # number of filled traps
+#'method="par"
+#'output ="signal"
+#'col=c(1,2,3,4) # ifferent colours for the individual curves 
+#'plot_uncertainty <- c(T,F,T,F)  # do you want to see the uncertainty?
+#'add_TF <- c(F,rep(T, (length(R)-1)))
+# loop to plot different curves into one plot
+#'for (u in 1:length(R)){
+#'  results <-run_MC_CW_IRSL_DELOC(A=A[u], times, clusters =clusters, N_e = N_e[u],
+#'                                 n_filled = n_filled[u], R=R[u], method = method, output = output)
+#'  plot_RLumCarlo(results,add=add_TF[u],legend = F, col=col[u], main=" your plot")
+#'}
+# add your legend with your parameters
+#'legend("topright",ncol=4,cex=0.55,title = "parameters" ,legend=c(paste0("A = ", A),
+#'                                                                 paste0("n_filled = ", n_filled), 
+#'                                                                 paste0("N_e = ", N_e), 
+#'                                                                 paste0("R = ", R)),  text.col=col)
+#'
+#' }
+#'
+#'
 #' @md
 #' @export
 run_MC_CW_IRSL_DELOC <- function(
