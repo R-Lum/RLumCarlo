@@ -1,28 +1,28 @@
-#' @title Run Monte-Carlo simulation for LM-OSL for GOT model
+#' @title Run Monte-Carlo simulation for LM-OSL for delocalized transition
 #'
-#' @description ##TODO
+#' @description Runs a Monte-Carlo (MC) simulation of linearly modulated optically stimulated luminesence (LM-OSL) using the one trap one recombination center (OTOR) model.
 #'
-#' @details
+#' @details 
 #'
 #' \deqn{
 #' I_{DELOC}(t) = -dn/dt = p(t) * (n^2 / (NR + n(1-R)))
 #' }
 #'
-#' @param A [numeric] (*required*)
+#' @param A [numeric] (**required**): The transition probability (cm^3/s).
 #'
-#' @param times [numeric] (with default)
+#' @param times [numeric] (*with default*): The number of MC runs.
 #'
-#' @param clusters [numeric] (with default):
+#' @param clusters [numeric] (*with default*): The number of clusters.
 #'
-#' @param N_e [integer] (with default)
+#' @param N_e [integer] (*with default*): The number of electrons.
 #'
-#' @param n_filled [integer] (with default)
+#' @param n_filled [integer] (*with default*): The number of electron traps that are filled at the beginning of the simulation.
 #'
-#' @param R [numeric] (with default):
+#' @param R [numeric] (*with default*): The retrapping ratio.
 #'
-#' @param method [character] (with default):
+#' @param method [character] (*with default*):
 #'
-#' @param output [character] (with default):
+#' @param output [character] (*with default*):
 #'
 #' @param \dots further arguments
 #'

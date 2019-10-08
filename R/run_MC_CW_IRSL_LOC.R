@@ -1,6 +1,6 @@
 #' @title Run Monte-Carlo simulation for CW-IRSL for localised transition
 #'
-#' @description Runs a Monte Carlo (MC) simulation of constant wave infrared stimulated luminesence (CW-IRSL) using the generalized one trap (GOT) model.
+#' @description Runs a Monte-Carlo (MC) simulation of constant wave infrared stimulated luminesence (CW-IRSL) using the generalized one trap (GOT) model.
 #'
 #' @details
 #'
