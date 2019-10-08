@@ -8,25 +8,25 @@ run_MC_TL_TUN(s, E, rho, r_c, times, clusters = 10, N_e = 200,
   delta.r = 0.1, method = "par", output = "signal", ...)
 }
 \arguments{
-\item{s}{\code{\link{list}}}
+\item{s}{\link{list} (\strong{required}): Escape frequency of the trap (s^-1).}
 
-\item{E}{\code{\link{numeric}}}
+\item{E}{\link{numeric} (\strong{required}): Thermal activation energy of the trap (eV).}
 
-\item{rho}{\code{\link{numeric}}}
+\item{rho}{\link{numeric} (\strong{required}): The calculated dimesionless Charge density (normally written Rho').}
 
-\item{r_c}{\code{\link{numeric}} (with default)}
+\item{r_c}{\link{numeric} (\emph{with default}):}
 
-\item{times}{\code{\link{vector}} (with default)}
+\item{times}{\link{vector} (\emph{with default}): The number of MC runs.}
 
-\item{clusters}{\code{\link{numeric}} (with default):}
+\item{clusters}{\link{numeric} (\emph{with default}): The number of clusters.}
 
-\item{N_e}{\code{\link{numeric}} (with default):}
+\item{N_e}{\link{numeric} (\emph{with default}): The number of electrons}
 
-\item{delta.r}{\code{\link{numeric}} (with default):}
+\item{delta.r}{\link{numeric} (\emph{with default}):}
 
-\item{method}{\code{\link{character}} (with default):}
+\item{method}{\link{character} (\emph{with default}):}
 
-\item{output}{\code{\link{character}} (with default):}
+\item{output}{\link{character} (\emph{with default}):}
 
 \item{\dots}{further arguments}
 }
@@ -35,6 +35,9 @@ This function returns an \code{\link{array}} with dimension length(times) x leng
 }
 \description{
 Run Monte-Carlo simulation for TL
+}
+\details{
+ADD EQUATION
 }
 \section{Function version}{
  0.1.0
@@ -58,11 +61,11 @@ run_MC_TL_TUN(s = 3.5e12,
 } 
 
 \section{How to cite}{
-Friedrich, J., 2019. run_MC_TL_TUN(): Run Monte-Carlo simulation for TL. Function version 0.1.0. In: Friedrich, J., Kreutzer, S., Pagonis, V., Schmidt, C., 2019. RLumCarlo: Monte-Carlo Methods for Simulating Luminescence PhenomenaR package version 0.1.0.9000-55. https://CRAN.R-project.org/package=RLumModel
+Friedrich, J., 2019. run_MC_TL_TUN(): Run Monte-Carlo simulation for TL. Function version 0.1.0. In: Friedrich, J., Kreutzer, S., Pagonis, V., Schmidt, C., 2019. RLumCarlo: Monte-Carlo Methods for Simulating Luminescence PhenomenaR package version 0.1.0.9000-60. https://CRAN.R-project.org/package=RLumModel
 }
 
 \references{
-Pagonis 2017
+Pagonis, V. and Kulp, C. (2017) ‘Monte Carlo simulations of tunneling phenomena and nearest neighbor hopping mechanism in feldspars’, Journal of Luminescence. Elsevier, 181, pp. 114–120. doi: 10.1016/j.jlumin.2016.09.014.
 }
 \author{
 Johannes Friedrich, University of Bayreuth (Germany)

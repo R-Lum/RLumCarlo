@@ -2,31 +2,31 @@
 % Please edit documentation in R/run_MC_ISO_DELOC.R
 \name{run_MC_ISO_DELOC}
 \alias{run_MC_ISO_DELOC}
-\title{Run Monte-Carlo simulation for ISO for GOT model}
+\title{Run Monte-Carlo simulation for ISO for delocalized transition}
 \usage{
 run_MC_ISO_DELOC(s, E, T = 20, times, clusters = 10, N_e = 200,
   n_filled = N_e, R, method = "par", output = "signal", ...)
 }
 \arguments{
-\item{s}{\link{numeric} (\emph{required})}
+\item{s}{\link{numeric} (\strong{required}): Escape frequency of the trap (s^-1).}
 
-\item{E}{\link{numeric} (\emph{required})}
+\item{E}{\link{numeric} (\strong{required}): Thermal activation energy of the trap (eV).}
 
-\item{T}{\link{numeric} (\emph{with default})}
+\item{T}{\link{numeric} (\emph{with default}): Temperature (deg. C).}
 
-\item{times}{\link{numeric} (with default)}
+\item{times}{\link{numeric} (\emph{with default}): The number of MC runs.}
 
-\item{clusters}{\link{numeric} (with default):}
+\item{clusters}{\link{numeric} (\emph{with default}): The number of clusters.}
 
-\item{N_e}{\link{integer} (with default)}
+\item{N_e}{\link{integer} (\emph{with default}): The number of electrons.}
 
-\item{n_filled}{\link{integer} (with default)}
+\item{n_filled}{\link{integer} (\emph{with default}): The number of electron traps that are filled at the beginning of the simulation.}
 
-\item{R}{\link{numeric} (with default):}
+\item{R}{\link{numeric} (\emph{with default}): The retrapping ratio.}
 
-\item{method}{\link{character} (with default):}
+\item{method}{\link{character} (\emph{with default}):}
 
-\item{output}{\link{character} (with default):}
+\item{output}{\link{character} (\emph{with default}):}
 
 \item{\dots}{further arguments}
 }
@@ -34,7 +34,7 @@ run_MC_ISO_DELOC(s, E, T = 20, times, clusters = 10, N_e = 200,
 This function returns an \link{array} with dimension length(times) x length(r) x clusters
 }
 \description{
-##TODO
+Runs a Monte-Carlo (MC) simulation of isothermally stimulated luminesence (ISO-TL or ITL) using the one trap one recombination center (OTOR) model.
 }
 \details{
 \deqn{
@@ -63,11 +63,11 @@ run_MC_ISO_DELOC(
 } 
 
 \section{How to cite}{
-Kreutzer, S., 2019. run_MC_ISO_DELOC(): Run Monte-Carlo simulation for ISO for GOT model. Function version 0.0.1. In: Friedrich, J., Kreutzer, S., Pagonis, V., Schmidt, C., 2019. RLumCarlo: Monte-Carlo Methods for Simulating Luminescence PhenomenaR package version 0.1.0.9000-55. https://CRAN.R-project.org/package=RLumModel
+Kreutzer, S., 2019. run_MC_ISO_DELOC(): Run Monte-Carlo simulation for ISO for delocalized transition. Function version 0.0.1. In: Friedrich, J., Kreutzer, S., Pagonis, V., Schmidt, C., 2019. RLumCarlo: Monte-Carlo Methods for Simulating Luminescence PhenomenaR package version 0.1.0.9000-60. https://CRAN.R-project.org/package=RLumModel
 }
 
 \references{
-##TODO
+Pagonis, V. and Kulp, C. (2017) ‘Monte Carlo simulations of tunneling phenomena and nearest neighbor hopping mechanism in feldspars’, Journal of Luminescence. Elsevier, 181, pp. 114–120. doi: 10.1016/j.jlumin.2016.09.014.
 }
 \author{
 Sebastian Kreutzer, IRAMAT-CRP2A, UMR 5060, CNRS - Université Bordeaux Montaigne (France)

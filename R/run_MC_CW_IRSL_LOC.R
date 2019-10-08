@@ -26,13 +26,14 @@
 #'
 #' @return This function returns an [array] with dimension length(times) x length(r) x clusters
 #'
-#' @section Function version: 0.0.1
+#' @section Function version: 0.1.0
 #'
 #' @author Sebastian Kreutzer, IRAMAT-CRP2A, UMR 5060, CNRS - Université Bordeaux Montaigne (France)
 #'
 #' @references
 #'
-#' Pagonis, V. and Kulp, C. (2017) ‘Monte Carlo simulations of tunneling phenomena and nearest neighbor hopping mechanism in feldspars’, Journal of Luminescence. Elsevier, 181, pp. 114–120. doi: 10.1016/j.jlumin.2016.09.014.
+#' Pagonis, V. and Kulp, C., 2017. Monte Carlo simulations of tunneling phenomena and nearest neighbor hopping mechanism in feldspars.
+#' Journal of Luminescence 181, 114–120. doi: 10.1016/j.jlumin.2016.09.014.
 #'
 #' @examples
 #' ##============================================================================##

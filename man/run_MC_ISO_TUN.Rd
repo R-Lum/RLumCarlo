@@ -8,21 +8,21 @@ run_MC_ISO_TUN(E, s, T = 200, rho, times, clusters = 10, r = NULL,
   N_e = 200, method = "par", output = "signal", ...)
 }
 \arguments{
-\item{E}{\link{numeric} (\strong{required})}
+\item{E}{\link{numeric} (\strong{required}): Thermal activation energy of the trap (eV).}
 
-\item{s}{\link{numeric} (\strong{required})}
+\item{s}{\link{numeric} (\strong{required}): Escape frequency of the trap (s^-1).}
 
-\item{T}{\link{numeric} (\strong{required})}
+\item{T}{\link{numeric} (\strong{required}): Temperature (deg. C).}
 
-\item{rho}{\link{numeric} (\strong{required})}
+\item{rho}{\link{numeric} (\strong{required}): The calculated dimesionless Charge density (normally written Rho').}
 
-\item{times}{\link{numeric} (\emph{with default})}
+\item{times}{\link{numeric} (\emph{with default}): The number of MC runs.}
 
-\item{clusters}{\link{numeric} (\emph{with default}):}
+\item{clusters}{\link{numeric} (\emph{with default}): The number of clusters.}
 
-\item{r}{\link{numeric} (\emph{with default})}
+\item{r}{\link{numeric} (\emph{with default}): The retrapping ratio.}
 
-\item{N_e}{\link{numeric} (\emph{with default})}
+\item{N_e}{\link{numeric} (\emph{with default}): The number of electrons.}
 
 \item{method}{\link{character} (\emph{with default})}
 
@@ -34,7 +34,12 @@ run_MC_ISO_TUN(E, s, T = 200, rho, times, clusters = 10, r = NULL,
 This function returns a list.
 }
 \description{
-Run Monte-Carlo simulation for isothermal measurements
+Runs a Monte-Carlo (MC) simulation of isothermally stimulated luminesence (ISO-TL or ITL) using the .
+}
+\details{
+\deqn{
+I_{LOC}(t) = -dn/dt = A * (n^2 / (r + n))
+}
 }
 \section{Function version}{
  0.1.0
@@ -58,11 +63,11 @@ run_MC_ISO_TUN(
 } 
 
 \section{How to cite}{
-Friedrich, J., Kreutzer, S., 2019. run_MC_ISO_TUN(): Run Monte-Carlo simulation for isothermal measurements. Function version 0.1.0. In: Friedrich, J., Kreutzer, S., Pagonis, V., Schmidt, C., 2019. RLumCarlo: Monte-Carlo Methods for Simulating Luminescence PhenomenaR package version 0.1.0.9000-55. https://CRAN.R-project.org/package=RLumModel
+Friedrich, J., Kreutzer, S., 2019. run_MC_ISO_TUN(): Run Monte-Carlo simulation for isothermal measurements. Function version 0.1.0. In: Friedrich, J., Kreutzer, S., Pagonis, V., Schmidt, C., 2019. RLumCarlo: Monte-Carlo Methods for Simulating Luminescence PhenomenaR package version 0.1.0.9000-60. https://CRAN.R-project.org/package=RLumModel
 }
 
 \references{
-Pagonis 2017
+Pagonis, V. and Kulp, C., 2017. ‘Monte Carlo simulations of tunneling phenomena and nearest neighbor hopping mechanism in feldspars’, Journal of Luminescence 181, 114–120. \doi{10.1016/j.jlumin.2016.09.014}
 }
 \author{
 Johannes Friedrich, University of Bayreuth (Germany), Sebastian Kreutzer, IRAMAT-CRP2A,

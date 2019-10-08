@@ -2,27 +2,27 @@
 % Please edit documentation in R/run_MC_CW_IRSL_DELOC.R
 \name{run_MC_CW_IRSL_DELOC}
 \alias{run_MC_CW_IRSL_DELOC}
-\title{Run Monte-Carlo simulation for CW-IRSL for GOT model}
+\title{Run Monte-Carlo simulation for CW-IRSL for delocalized transition}
 \usage{
 run_MC_CW_IRSL_DELOC(A, times, clusters = 10, N_e = 200,
   n_filled = N_e, R, method = "par", output = "signal", ...)
 }
 \arguments{
-\item{A}{\link{numeric} (\strong{required}): The transition probability in cm^3/s}
+\item{A}{\link{numeric} (\strong{required}): The transition probability (cm^3/s).}
 
-\item{times}{\link{numeric} (with default): The number of MC runs}
+\item{times}{\link{numeric} (\emph{with default}): The number of MC runs.}
 
-\item{clusters}{\link{numeric} (with default): The number of clusters.}
+\item{clusters}{\link{numeric} (\emph{with default}): The number of clusters.}
 
-\item{N_e}{\link{integer} (with default): The number of electrons.}
+\item{N_e}{\link{integer} (\emph{with default}): The number of electrons.}
 
-\item{n_filled}{\link{integer} (with default): The number of electron traps that are filled at the beginning of the simulation.}
+\item{n_filled}{\link{integer} (\emph{with default}): The number of electron traps that are filled at the beginning of the simulation.}
 
-\item{R}{\link{numeric} (with default): The retrapping ratio}
+\item{R}{\link{numeric} (\emph{with default}): The retrapping ratio.}
 
-\item{method}{\link{character} (with default):}
+\item{method}{\link{character} (\emph{with default}):}
 
-\item{output}{\link{character} (with default):}
+\item{output}{\link{character} (\emph{with default}):}
 
 \item{\dots}{further arguments}
 }
@@ -30,7 +30,7 @@ run_MC_CW_IRSL_DELOC(A, times, clusters = 10, N_e = 200,
 This function returns an \link{array} with dimension length(times) x length(r) x clusters
 }
 \description{
-Runs a Monte Carlo (MC) simulation of constant wave _ (CW-IRSL) using the generalized one trap (GOT) model.
+Runs a Monte-Carlo (MC) simulation of constant wave infrared stimulated luminesence (CW-IRSL) using the one trap one recombination center (OTOR) model.
 }
 \details{
 \deqn{
@@ -54,14 +54,48 @@ run_MC_CW_IRSL_DELOC(
 
 }
 
+#' @examples
+##============================================================================##
+## Example 2: Simulate CW-IRSL DELOC with several parameter changes
+##============================================================================##
+\dontrun{
+
+# define your parameters
+A=c(0.1,0.3,0.5,1)
+times=seq(0,60,1)
+s=1e12
+E=1
+R<-c(1e-7,1e-6,0.01,0.1) # sequence of different R values
+clusters=1000 # number of Monte Carlo simulations
+N_e =c(200, 500, 700, 400) # number of free electrons
+n_filled =c(200, 500, 100, 70) # number of filled traps
+method="par"
+output ="signal"
+col=c(1,2,3,4) # ifferent colours for the individual curves
+plot_uncertainty <- c(T,F,T,F)  # do you want to see the uncertainty?
+add_TF <- c(F,rep(T, (length(R)-1)))
+for (u in 1:length(R)){
+ results <-run_MC_CW_IRSL_DELOC(A=A[u], times, clusters =clusters, N_e = N_e[u],
+                                n_filled = n_filled[u], R=R[u], method = method, output = output)
+ plot_RLumCarlo(results,add=add_TF[u],legend = F, col=col[u], main=" your plot")
+}
+legend("topright",ncol=4,cex=0.55,title = "parameters" ,legend=c(paste0("A = ", A),
+                                                                paste0("n_filled = ", n_filled),
+                                                                paste0("N_e = ", N_e),
+                                                                paste0("R = ", R)),  text.col=col)
+
+}
+
+
 } 
 
 \section{How to cite}{
-Kreutzer, S., 2019. run_MC_CW_IRSL_DELOC(): Run Monte-Carlo simulation for CW-IRSL for GOT model. Function version 0.1.0. In: Friedrich, J., Kreutzer, S., Pagonis, V., Schmidt, C., 2019. RLumCarlo: Monte-Carlo Methods for Simulating Luminescence PhenomenaR package version 0.1.0.9000-55. https://CRAN.R-project.org/package=RLumModel
+Kreutzer, S., 2019. run_MC_CW_IRSL_DELOC(): Run Monte-Carlo simulation for CW-IRSL for delocalized transition. Function version 0.1.0. In: Friedrich, J., Kreutzer, S., Pagonis, V., Schmidt, C., 2019. RLumCarlo: Monte-Carlo Methods for Simulating Luminescence PhenomenaR package version 0.1.0.9000-60. https://CRAN.R-project.org/package=RLumModel
 }
 
 \references{
-##TODO
+Pagonis, V. and Kulp, C., 2017. Monte Carlo simulations of tunneling phenomena and nearest neighbor hopping mechanism in feldspars,
+Journal of Luminescence 181, 114–120. \doi{10.1016/j.jlumin.2016.09.014}
 }
 \author{
 Sebastian Kreutzer, IRAMAT-CRP2A, UMR 5060, CNRS - Université Bordeaux Montaigne (France)

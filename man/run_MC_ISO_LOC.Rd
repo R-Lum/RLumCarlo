@@ -8,19 +8,19 @@ run_MC_ISO_LOC(s, E, T = 20, times, clusters = 10, n_filled = 100, r,
   method = "par", output = "signal", ...)
 }
 \arguments{
-\item{s}{\link{numeric} (\strong{required})}
+\item{s}{\link{numeric} (\strong{required}): Escape frequency of the trap (s^-1).}
 
-\item{E}{\link{numeric} (\strong{required})}
+\item{E}{\link{numeric} (\strong{required}): Thermal activation energy of the trap (eV).}
 
-\item{T}{\link{numeric} (\emph{with default})}
+\item{T}{\link{numeric} (\emph{with default}): Temperature (deg. C).}
 
-\item{times}{\link{numeric} (\emph{with default}):}
+\item{times}{\link{numeric} (\emph{with default}): The number of MC runs.}
 
-\item{clusters}{\link{numeric} (\emph{with default}):}
+\item{clusters}{\link{numeric} (\emph{with default}): The number of clusters.}
 
-\item{n_filled}{\link{integer} (\emph{with default}):}
+\item{n_filled}{\link{integer} (\emph{with default}): The number of electron traps that are filled at the beginning of the simulation.}
 
-\item{r}{\link{numeric} (\emph{with default}):}
+\item{r}{\link{numeric} (\emph{with default}): The retrapping ratio.}
 
 \item{method}{\link{character} (\emph{with default}):}
 
@@ -32,7 +32,7 @@ run_MC_ISO_LOC(s, E, T = 20, times, clusters = 10, n_filled = 100, r,
 This function returns an \link{array} with dimension length(times) x length(r) x clusters
 }
 \description{
-##TODO
+Runs a Monte-Carlo (MC) simulation of isothermally stimulated luminesence (ISO-TL or ITL) using the model.
 }
 \details{
 \deqn{
@@ -61,11 +61,11 @@ run_MC_ISO_LOC(
 } 
 
 \section{How to cite}{
-Kreutzer, S., 2019. run_MC_ISO_LOC(): Run Monte-Carlo simulation for ITL for localised transition. Function version 0.0.1. In: Friedrich, J., Kreutzer, S., Pagonis, V., Schmidt, C., 2019. RLumCarlo: Monte-Carlo Methods for Simulating Luminescence PhenomenaR package version 0.1.0.9000-55. https://CRAN.R-project.org/package=RLumModel
+Kreutzer, S., 2019. run_MC_ISO_LOC(): Run Monte-Carlo simulation for ITL for localised transition. Function version 0.0.1. In: Friedrich, J., Kreutzer, S., Pagonis, V., Schmidt, C., 2019. RLumCarlo: Monte-Carlo Methods for Simulating Luminescence PhenomenaR package version 0.1.0.9000-60. https://CRAN.R-project.org/package=RLumModel
 }
 
 \references{
-##TODO
+Pagonis, V. and Kulp, C. (2017) ‘Monte Carlo simulations of tunneling phenomena and nearest neighbor hopping mechanism in feldspars’, Journal of Luminescence. Elsevier, 181, pp. 114–120. doi: 10.1016/j.jlumin.2016.09.014.
 }
 \author{
 Sebastian Kreutzer, IRAMAT-CRP2A, UMR 5060, CNRS - Université Bordeaux Montaigne (France)
