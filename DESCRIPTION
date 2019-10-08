@@ -6,17 +6,23 @@ Date: 2019-10-08
 Author: Johannes Friedrich [aut, trl] (<https://orcid.org/0000-0002-0805-9547>),
     Sebastian Kreutzer [aut, trl, cre] (<https://orcid.org/0000-0002-0734-2199>),
     Vasilis Pagonis [aut] (<https://orcid.org/0000-0002-4852-9312>),
-    Christoph Schmidt [aut] (<https://orcid.org/0000-0002-2309-3209>)
+    Christoph Schmidt [aut] (<https://orcid.org/0000-0002-2309-3209>),
+    Ena Rajovic [ctb],
+    Alex Roy Duncan [ctb],
+    Christian Laag [ctb]
 Authors@R: c(
     person("Johannes", "Friedrich", role = c("aut","trl"), comment = c(ORCID = "0000-0002-0805-9547")),
     person("Sebastian", "Kreutzer", role = c("aut","trl","cre"), comment = c(ORCID = "0000-0002-0734-2199"),
             email = "sebastian.kreutzer@u-bordeaux-montaigne.fr"),
     person("Vasilis", "Pagonis", role = c("aut"), comment = c(ORCID = "0000-0002-4852-9312")),
-    person("Christoph", "Schmidt", role = c("aut"), comment = c(ORCID = "0000-0002-2309-3209"))
+    person("Christoph", "Schmidt", role = c("aut"), comment = c(ORCID = "0000-0002-2309-3209")),
+    person("Ena", "Rajovic", role = c("ctb")), 
+    person("Alex Roy", "Ducan", role = c("ctb")),
+    person("Christian", "Laag", role = c("ctb"))
     )
 Maintainer: Sebastian Kreutzer <sebastian.kreutzer@u-bordeaux-montaigne.fr>
-Description: A collection of functions to simulate luminescence signals with Monte-Carlo methods in the
-    mineral feldspar based on published models.
+Description: A Collection of Functions to Simulate Luminescence Production in Minerals using 
+    Monte-Carlo methods.
 Contact: Package Developer Team <sebastian.kreutzer@u-bordeaux-montaigne.fr>
 License: GPL-3
 BugReports: https://github.com/R-Lum/RLumCarlo/issues
@@ -24,16 +30,15 @@ Depends:
     R (>= 3.3.0),
     utils,
     magrittr
-URL: https://CRAN.R-project.org/package=RLumModel
-LinkingTo: Rcpp, 
-      RcppProgress,
-      RcppArmadillo
-Imports: abind,
-      doParallel,
-      foreach,
+URL: https://CRAN.R-project.org/package=RLumCarlo
+LinkingTo: Rcpp (>= 1.0.2), 
+      RcppArmadillo (>= 0.9.700.2.0)
+Imports: abind (>= 1.4-5),
+      doParallel (>= 1.0.15),
+      foreach (>= 1.4.7),
       parallel,
       methods,
-      Rcpp
+      Rcpp (>= 1.0.2)
 Suggests: R.rsp
 Encoding: UTF-8
 VignetteBuilder: R.rsp
