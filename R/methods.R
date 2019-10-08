@@ -11,7 +11,7 @@
 #'
 #' @section Function version: 0.1.0
 #'
-#' @author Johannes Friedrich, University of Bayreuth (Germany), Sebastian Kreutzer, IRAMAT-CRP2A, UMR 5060, CNRS-Université Bordeaux Montagine, France
+#' @author Johannes Friedrich, University of Bayreuth (Germany), Sebastian Kreutzer, IRAMAT-CRP2A, UMR 5060, CNRS-Université Bordeaux Montagine (France)
 #'
 #' @method summary RLumCarlo_Model_Output
 #' @md
@@ -28,7 +28,7 @@ summary.RLumCarlo_Model_Output <- function(object, ...){
         sum(signal[x,])
       }, FUN.VALUE = 1)
 
-      avg <- y_min <- y_max <- sum_signal
+      avg <- y_min <- y_max <- sd <- sum_signal
 
     } else {
       ## extract number of clusters
@@ -42,16 +42,23 @@ summary.RLumCarlo_Model_Output <- function(object, ...){
 
       })
 
-      avg <- rowMeans(sum_signal)
+      mean <- rowMeans(sum_signal)
+      sd <- apply(sum_signal, 1, sd)
       y_min <- apply(sum_signal, 1, min)
       y_max <- apply(sum_signal, 1, max)
 
     }
 
+
   ## set output data.frame
-  output <- data.frame(time = times, avg = avg, y_min = y_min, y_max = y_max)
+  output <- data.frame(time = times, mean = mean, y_min = y_min, y_max = y_max, sd = sd)
   attr(output, "model") <- attributes(object)$model
 
+  ## return the summary as terminal output from the data.frame
+  print(summary(output))
+
   ## return
-  return(output)
+  invisible(output)
 }
+
+
