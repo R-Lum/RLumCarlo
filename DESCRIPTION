@@ -1,7 +1,7 @@
 Package: RLumCarlo
 Type: Package
 Title: Monte-Carlo Methods for Simulating Luminescence Phenomena
-Version: 0.1.0.9000-60
+Version: 0.1.0.9000-61
 Date: 2019-10-08
 Author: Johannes Friedrich [aut, trl] (<https://orcid.org/0000-0002-0805-9547>),
     Sebastian Kreutzer [aut, trl, cre] (<https://orcid.org/0000-0002-0734-2199>),
@@ -17,7 +17,7 @@ Authors@R: c(
     person("Vasilis", "Pagonis", role = c("aut"), comment = c(ORCID = "0000-0002-4852-9312")),
     person("Christoph", "Schmidt", role = c("aut"), comment = c(ORCID = "0000-0002-2309-3209")),
     person("Ena", "Rajovic", role = c("ctb")), 
-    person("Alex Roy", "Ducan", role = c("ctb")),
+    person("Alex Roy", "Duncan", role = c("ctb")),
     person("Christian", "Laag", role = c("ctb"))
     )
 Maintainer: Sebastian Kreutzer <sebastian.kreutzer@u-bordeaux-montaigne.fr>
