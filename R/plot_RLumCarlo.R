@@ -38,7 +38,7 @@ plot_RLumCarlo <- function(
 
 
  # Preset --------------------------------------------------------------------------------------
-  avg <- results[["avg"]]
+  avg <- results[["mean"]]
   y_min <- results[["y_min"]]
   y_max <- results[["y_max"]]
 

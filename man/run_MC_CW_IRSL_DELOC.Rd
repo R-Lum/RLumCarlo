@@ -8,17 +8,17 @@ run_MC_CW_IRSL_DELOC(A, times, clusters = 10, N_e = 200,
   n_filled = N_e, R, method = "par", output = "signal", ...)
 }
 \arguments{
-\item{A}{\link{numeric} (\emph{required})}
+\item{A}{\link{numeric} (\strong{required}): The transition probability in cm^3/s}
 
-\item{times}{\link{numeric} (with default)}
+\item{times}{\link{numeric} (with default): The number of MC runs}
 
-\item{clusters}{\link{numeric} (with default):}
+\item{clusters}{\link{numeric} (with default): The number of clusters.}
 
-\item{N_e}{\link{integer} (with default)}
+\item{N_e}{\link{integer} (with default): The number of electrons.}
 
-\item{n_filled}{\link{integer} (with default)}
+\item{n_filled}{\link{integer} (with default): The number of electron traps that are filled at the beginning of the simulation.}
 
-\item{R}{\link{numeric} (with default):}
+\item{R}{\link{numeric} (with default): The retrapping ratio}
 
 \item{method}{\link{character} (with default):}
 
@@ -30,7 +30,7 @@ run_MC_CW_IRSL_DELOC(A, times, clusters = 10, N_e = 200,
 This function returns an \link{array} with dimension length(times) x length(r) x clusters
 }
 \description{
-##TODO
+Runs a Monte Carlo (MC) simulation of constant wave _ (CW-IRSL) using the generalized one trap (GOT) model.
 }
 \details{
 \deqn{
@@ -38,7 +38,7 @@ I_{DELOC}(t) = -dn/dt = p(t) * (n^2 / (NR + n(1-R)))
 }
 }
 \section{Function version}{
- 0.0.1
+ 0.1.0
 }
 
 \examples{
@@ -57,7 +57,7 @@ run_MC_CW_IRSL_DELOC(
 } 
 
 \section{How to cite}{
-Kreutzer, S., 2019. run_MC_CW_IRSL_DELOC(): Run Monte-Carlo simulation for CW-IRSL for GOT model. Function version 0.0.1. In: Friedrich, J., Kreutzer, S., Pagonis, V., Schmidt, C., 2019. RLumCarlo: Monte-Carlo Methods for Simulating Luminescence PhenomenaR package version 0.1.0.9000-44. https://CRAN.R-project.org/package=RLumModel
+Kreutzer, S., 2019. run_MC_CW_IRSL_DELOC(): Run Monte-Carlo simulation for CW-IRSL for GOT model. Function version 0.1.0. In: Friedrich, J., Kreutzer, S., Pagonis, V., Schmidt, C., 2019. RLumCarlo: Monte-Carlo Methods for Simulating Luminescence PhenomenaR package version 0.1.0.9000-47. https://CRAN.R-project.org/package=RLumModel
 }
 
 \references{

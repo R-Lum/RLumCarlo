@@ -8,15 +8,15 @@ run_MC_CW_IRSL_LOC(A, times, clusters = 10, n_filled = 100, r,
   method = "par", output = "signal", ...)
 }
 \arguments{
-\item{A}{\link{numeric} (\strong{required})}
+\item{A}{\link{numeric} (\strong{required}): The transition probability in cm^3/s}
 
-\item{times}{\link{numeric} (\emph{with default}):}
+\item{times}{\link{numeric} (\emph{with default}): The number of MC runs}
 
-\item{clusters}{\link{numeric} (\emph{with default}):}
+\item{clusters}{\link{numeric} (\emph{with default}): The number of clusters.}
 
-\item{n_filled}{\link{integer} (\emph{with default}):}
+\item{n_filled}{\link{integer} (\emph{with default}): The number of electron traps that are filled at the beginning of the simulation.}
 
-\item{r}{\link{numeric} (\emph{with default}):}
+\item{r}{\link{numeric} (\emph{with default}): The retrapping ratio}
 
 \item{method}{\link{character} (\emph{with default}):}
 
@@ -28,7 +28,7 @@ run_MC_CW_IRSL_LOC(A, times, clusters = 10, n_filled = 100, r,
 This function returns an \link{array} with dimension length(times) x length(r) x clusters
 }
 \description{
-##TODO
+Runs a Monte Carlo (MC) simulation of constant wave infrared stimulated luminesence (CW-IRSL) using the generalized one trap (GOT) model.
 }
 \details{
 \deqn{
@@ -55,7 +55,7 @@ run_MC_CW_IRSL_LOC(
 } 
 
 \section{How to cite}{
-Kreutzer, S., 2019. run_MC_CW_IRSL_LOC(): Run Monte-Carlo simulation for CW-IRSL for localised transition. Function version 0.0.1. In: Friedrich, J., Kreutzer, S., Pagonis, V., Schmidt, C., 2019. RLumCarlo: Monte-Carlo Methods for Simulating Luminescence PhenomenaR package version 0.1.0.9000-44. https://CRAN.R-project.org/package=RLumModel
+Kreutzer, S., 2019. run_MC_CW_IRSL_LOC(): Run Monte-Carlo simulation for CW-IRSL for localised transition. Function version 0.0.1. In: Friedrich, J., Kreutzer, S., Pagonis, V., Schmidt, C., 2019. RLumCarlo: Monte-Carlo Methods for Simulating Luminescence PhenomenaR package version 0.1.0.9000-47. https://CRAN.R-project.org/package=RLumModel
 }
 
 \references{

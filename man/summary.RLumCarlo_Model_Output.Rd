@@ -23,10 +23,10 @@ Summarize RLumCarlo Modelling results, so that they can be plotted easily
 }
 
 \author{
-Johannes Friedrich, University of Bayreuth (Germany), Sebastian Kreutzer, IRAMAT-CRP2A, UMR 5060, CNRS-Université Bordeaux Montagine, France
+Johannes Friedrich, University of Bayreuth (Germany), Sebastian Kreutzer, IRAMAT-CRP2A, UMR 5060, CNRS-Université Bordeaux Montagine (France)
 } 
 
 \section{How to cite}{
-Friedrich, J., Kreutzer, S., 2019. summary.RLumCarlo_Model_Output(): Summarize RLumCarlo Modelling Results. Function version 0.1.0. In: Friedrich, J., Kreutzer, S., Pagonis, V., Schmidt, C., 2019. RLumCarlo: Monte-Carlo Methods for Simulating Luminescence PhenomenaR package version 0.1.0.9000-44. https://CRAN.R-project.org/package=RLumModel
+Friedrich, J., Kreutzer, S., 2019. summary.RLumCarlo_Model_Output(): Summarize RLumCarlo Modelling Results. Function version 0.1.0. In: Friedrich, J., Kreutzer, S., Pagonis, V., Schmidt, C., 2019. RLumCarlo: Monte-Carlo Methods for Simulating Luminescence PhenomenaR package version 0.1.0.9000-47. https://CRAN.R-project.org/package=RLumModel
 }
 
