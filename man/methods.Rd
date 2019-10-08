@@ -30,7 +30,7 @@ Johannes Friedrich, University of Bayreuth (Germany), Sebastian Kreutzer, IRAMAT
 } 
 
 \section{How to cite}{
-Friedrich, J., Kreutzer, S., 2019. methods(): methods. Function version 0.1.0. In: Friedrich, J., Kreutzer, S., Pagonis, V., Schmidt, C., 2019. RLumCarlo: Monte-Carlo Methods for Simulating Luminescence PhenomenaR package version 0.1.0.9000-54. https://CRAN.R-project.org/package=RLumModel
+Friedrich, J., Kreutzer, S., 2019. methods(): methods. Function version 0.1.0. In: Friedrich, J., Kreutzer, S., Pagonis, V., Schmidt, C., 2019. RLumCarlo: Monte-Carlo Methods for Simulating Luminescence PhenomenaR package version 0.1.0.9000-55. https://CRAN.R-project.org/package=RLumModel
 }
 
 \keyword{internal}

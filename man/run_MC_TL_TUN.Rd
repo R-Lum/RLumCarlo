@@ -58,7 +58,7 @@ run_MC_TL_TUN(s = 3.5e12,
 } 
 
 \section{How to cite}{
-Friedrich, J., 2019. run_MC_TL_TUN(): Run Monte-Carlo simulation for TL. Function version 0.1.0. In: Friedrich, J., Kreutzer, S., Pagonis, V., Schmidt, C., 2019. RLumCarlo: Monte-Carlo Methods for Simulating Luminescence PhenomenaR package version 0.1.0.9000-54. https://CRAN.R-project.org/package=RLumModel
+Friedrich, J., 2019. run_MC_TL_TUN(): Run Monte-Carlo simulation for TL. Function version 0.1.0. In: Friedrich, J., Kreutzer, S., Pagonis, V., Schmidt, C., 2019. RLumCarlo: Monte-Carlo Methods for Simulating Luminescence PhenomenaR package version 0.1.0.9000-55. https://CRAN.R-project.org/package=RLumModel
 }
 
 \references{
