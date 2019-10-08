@@ -6,21 +6,6 @@
 
 using namespace Rcpp;
 
-// MC_C_CW_IRSL
-List MC_C_CW_IRSL(arma::vec times, int N_e, arma::vec r, double rho, double A);
-RcppExport SEXP _RLumCarlo_MC_C_CW_IRSL(SEXP timesSEXP, SEXP N_eSEXP, SEXP rSEXP, SEXP rhoSEXP, SEXP ASEXP) {
-BEGIN_RCPP
-    Rcpp::RObject rcpp_result_gen;
-    Rcpp::RNGScope rcpp_rngScope_gen;
-    Rcpp::traits::input_parameter< arma::vec >::type times(timesSEXP);
-    Rcpp::traits::input_parameter< int >::type N_e(N_eSEXP);
-    Rcpp::traits::input_parameter< arma::vec >::type r(rSEXP);
-    Rcpp::traits::input_parameter< double >::type rho(rhoSEXP);
-    Rcpp::traits::input_parameter< double >::type A(ASEXP);
-    rcpp_result_gen = Rcpp::wrap(MC_C_CW_IRSL(times, N_e, r, rho, A));
-    return rcpp_result_gen;
-END_RCPP
-}
 // MC_C_CW_IRSL_DELOC
 List MC_C_CW_IRSL_DELOC(arma::vec times, int N_e, int n_filled, double R, double A);
 RcppExport SEXP _RLumCarlo_MC_C_CW_IRSL_DELOC(SEXP timesSEXP, SEXP N_eSEXP, SEXP n_filledSEXP, SEXP RSEXP, SEXP ASEXP) {
@@ -50,9 +35,9 @@ BEGIN_RCPP
     return rcpp_result_gen;
 END_RCPP
 }
-// MC_C_ISO
-List MC_C_ISO(arma::vec times, int N_e, arma::vec r, double rho, double E, double s, double T);
-RcppExport SEXP _RLumCarlo_MC_C_ISO(SEXP timesSEXP, SEXP N_eSEXP, SEXP rSEXP, SEXP rhoSEXP, SEXP ESEXP, SEXP sSEXP, SEXP TSEXP) {
+// MC_C_CW_IRSL_TUN
+List MC_C_CW_IRSL_TUN(arma::vec times, int N_e, arma::vec r, double rho, double A);
+RcppExport SEXP _RLumCarlo_MC_C_CW_IRSL_TUN(SEXP timesSEXP, SEXP N_eSEXP, SEXP rSEXP, SEXP rhoSEXP, SEXP ASEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
@@ -60,10 +45,8 @@ BEGIN_RCPP
     Rcpp::traits::input_parameter< int >::type N_e(N_eSEXP);
     Rcpp::traits::input_parameter< arma::vec >::type r(rSEXP);
     Rcpp::traits::input_parameter< double >::type rho(rhoSEXP);
-    Rcpp::traits::input_parameter< double >::type E(ESEXP);
-    Rcpp::traits::input_parameter< double >::type s(sSEXP);
-    Rcpp::traits::input_parameter< double >::type T(TSEXP);
-    rcpp_result_gen = Rcpp::wrap(MC_C_ISO(times, N_e, r, rho, E, s, T));
+    Rcpp::traits::input_parameter< double >::type A(ASEXP);
+    rcpp_result_gen = Rcpp::wrap(MC_C_CW_IRSL_TUN(times, N_e, r, rho, A));
     return rcpp_result_gen;
 END_RCPP
 }
@@ -100,9 +83,9 @@ BEGIN_RCPP
     return rcpp_result_gen;
 END_RCPP
 }
-// MC_C_LM_OSL
-List MC_C_LM_OSL(arma::vec times, int N_e, arma::vec r, double rho, double A);
-RcppExport SEXP _RLumCarlo_MC_C_LM_OSL(SEXP timesSEXP, SEXP N_eSEXP, SEXP rSEXP, SEXP rhoSEXP, SEXP ASEXP) {
+// MC_C_ISO_TUN
+List MC_C_ISO_TUN(arma::vec times, int N_e, arma::vec r, double rho, double E, double s, double T);
+RcppExport SEXP _RLumCarlo_MC_C_ISO_TUN(SEXP timesSEXP, SEXP N_eSEXP, SEXP rSEXP, SEXP rhoSEXP, SEXP ESEXP, SEXP sSEXP, SEXP TSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
@@ -110,8 +93,10 @@ BEGIN_RCPP
     Rcpp::traits::input_parameter< int >::type N_e(N_eSEXP);
     Rcpp::traits::input_parameter< arma::vec >::type r(rSEXP);
     Rcpp::traits::input_parameter< double >::type rho(rhoSEXP);
-    Rcpp::traits::input_parameter< double >::type A(ASEXP);
-    rcpp_result_gen = Rcpp::wrap(MC_C_LM_OSL(times, N_e, r, rho, A));
+    Rcpp::traits::input_parameter< double >::type E(ESEXP);
+    Rcpp::traits::input_parameter< double >::type s(sSEXP);
+    Rcpp::traits::input_parameter< double >::type T(TSEXP);
+    rcpp_result_gen = Rcpp::wrap(MC_C_ISO_TUN(times, N_e, r, rho, E, s, T));
     return rcpp_result_gen;
 END_RCPP
 }
@@ -144,9 +129,9 @@ BEGIN_RCPP
     return rcpp_result_gen;
 END_RCPP
 }
-// MC_C_TL
-List MC_C_TL(arma::vec times, int N_e, arma::vec r, double rho, double E, double s);
-RcppExport SEXP _RLumCarlo_MC_C_TL(SEXP timesSEXP, SEXP N_eSEXP, SEXP rSEXP, SEXP rhoSEXP, SEXP ESEXP, SEXP sSEXP) {
+// MC_C_LM_OSL_TUN
+List MC_C_LM_OSL_TUN(arma::vec times, int N_e, arma::vec r, double rho, double A);
+RcppExport SEXP _RLumCarlo_MC_C_LM_OSL_TUN(SEXP timesSEXP, SEXP N_eSEXP, SEXP rSEXP, SEXP rhoSEXP, SEXP ASEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
@@ -154,9 +139,8 @@ BEGIN_RCPP
     Rcpp::traits::input_parameter< int >::type N_e(N_eSEXP);
     Rcpp::traits::input_parameter< arma::vec >::type r(rSEXP);
     Rcpp::traits::input_parameter< double >::type rho(rhoSEXP);
-    Rcpp::traits::input_parameter< double >::type E(ESEXP);
-    Rcpp::traits::input_parameter< double >::type s(sSEXP);
-    rcpp_result_gen = Rcpp::wrap(MC_C_TL(times, N_e, r, rho, E, s));
+    Rcpp::traits::input_parameter< double >::type A(ASEXP);
+    rcpp_result_gen = Rcpp::wrap(MC_C_LM_OSL_TUN(times, N_e, r, rho, A));
     return rcpp_result_gen;
 END_RCPP
 }
@@ -191,20 +175,36 @@ BEGIN_RCPP
     return rcpp_result_gen;
 END_RCPP
 }
+// MC_C_TL_TUN
+List MC_C_TL_TUN(arma::vec times, int N_e, arma::vec r, double rho, double E, double s);
+RcppExport SEXP _RLumCarlo_MC_C_TL_TUN(SEXP timesSEXP, SEXP N_eSEXP, SEXP rSEXP, SEXP rhoSEXP, SEXP ESEXP, SEXP sSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< arma::vec >::type times(timesSEXP);
+    Rcpp::traits::input_parameter< int >::type N_e(N_eSEXP);
+    Rcpp::traits::input_parameter< arma::vec >::type r(rSEXP);
+    Rcpp::traits::input_parameter< double >::type rho(rhoSEXP);
+    Rcpp::traits::input_parameter< double >::type E(ESEXP);
+    Rcpp::traits::input_parameter< double >::type s(sSEXP);
+    rcpp_result_gen = Rcpp::wrap(MC_C_TL_TUN(times, N_e, r, rho, E, s));
+    return rcpp_result_gen;
+END_RCPP
+}
 
 static const R_CallMethodDef CallEntries[] = {
-    {"_RLumCarlo_MC_C_CW_IRSL", (DL_FUNC) &_RLumCarlo_MC_C_CW_IRSL, 5},
     {"_RLumCarlo_MC_C_CW_IRSL_DELOC", (DL_FUNC) &_RLumCarlo_MC_C_CW_IRSL_DELOC, 5},
     {"_RLumCarlo_MC_C_CW_IRSL_LOC", (DL_FUNC) &_RLumCarlo_MC_C_CW_IRSL_LOC, 4},
-    {"_RLumCarlo_MC_C_ISO", (DL_FUNC) &_RLumCarlo_MC_C_ISO, 7},
+    {"_RLumCarlo_MC_C_CW_IRSL_TUN", (DL_FUNC) &_RLumCarlo_MC_C_CW_IRSL_TUN, 5},
     {"_RLumCarlo_MC_C_ISO_DELOC", (DL_FUNC) &_RLumCarlo_MC_C_ISO_DELOC, 7},
     {"_RLumCarlo_MC_C_ISO_LOC", (DL_FUNC) &_RLumCarlo_MC_C_ISO_LOC, 6},
-    {"_RLumCarlo_MC_C_LM_OSL", (DL_FUNC) &_RLumCarlo_MC_C_LM_OSL, 5},
+    {"_RLumCarlo_MC_C_ISO_TUN", (DL_FUNC) &_RLumCarlo_MC_C_ISO_TUN, 7},
     {"_RLumCarlo_MC_C_LM_OSL_DELOC", (DL_FUNC) &_RLumCarlo_MC_C_LM_OSL_DELOC, 5},
     {"_RLumCarlo_MC_C_LM_OSL_LOC", (DL_FUNC) &_RLumCarlo_MC_C_LM_OSL_LOC, 4},
-    {"_RLumCarlo_MC_C_TL", (DL_FUNC) &_RLumCarlo_MC_C_TL, 6},
+    {"_RLumCarlo_MC_C_LM_OSL_TUN", (DL_FUNC) &_RLumCarlo_MC_C_LM_OSL_TUN, 5},
     {"_RLumCarlo_MC_C_TL_DELOC", (DL_FUNC) &_RLumCarlo_MC_C_TL_DELOC, 6},
     {"_RLumCarlo_MC_C_TL_LOC", (DL_FUNC) &_RLumCarlo_MC_C_TL_LOC, 5},
+    {"_RLumCarlo_MC_C_TL_TUN", (DL_FUNC) &_RLumCarlo_MC_C_TL_TUN, 6},
     {NULL, NULL, 0}
 };
 

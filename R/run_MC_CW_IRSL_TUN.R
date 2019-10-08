@@ -26,12 +26,12 @@
 #' ## Example 1: Simulate CW-IRSL measurement
 #' ##============================================================================##
 #'
-#' run_MC_CW_IRSL(A = 0.12, rho = 0.003, times = 0:1000) %>%
+#' run_MC_CW_IRS_TUNL(A = 0.12, rho = 0.003, times = 0:1000) %>%
 #'     plot_RLumCarlo(norm = T, legend = T)
 #'}
 #' @md
 #' @export
-run_MC_CW_IRSL <- function(
+run_MC_CW_IRSL_TUN <- function(
   A,
   rho,
   times,
@@ -72,7 +72,7 @@ run_MC_CW_IRSL <- function(
     .combine = 'comb_array',
     .multicombine = TRUE) %dopar% {
 
-    results <- MC_C_CW_IRSL(
+    results <- MC_C_CW_IRSL_TUN(
         times = times,
         N_e = N_e,
         r = r,

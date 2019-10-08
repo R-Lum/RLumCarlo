@@ -39,7 +39,7 @@
 #' ##============================================================================##
 #'
 #' times <- seq(0, 5000)
-#' run_MC_ISO(
+#' run_MC_ISO_TUN(
 #'  E = 1.2,
 #'  s = 1e10,
 #'  T = 200,
@@ -49,7 +49,7 @@
 #'}
 #' @md
 #' @export
-run_MC_ISO <- function(
+run_MC_ISO_TUN <- function(
   E,
   s,
   T = 200,
@@ -88,7 +88,7 @@ run_MC_ISO <- function(
                   .combine = 'comb_array',
                   .multicombine = TRUE) %dopar% {
 
-    results <- MC_C_ISO(times = times,
+    results <- MC_C_ISO_TUN(times = times,
              N_e = N_e,
              r = r,
              rho = rho,

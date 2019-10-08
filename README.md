@@ -55,7 +55,7 @@ To install a developer build other than ‘master’, replace the term
 ### Simulating CW-IRSL measurements
 
 ``` r
-run_MC_CW_IRSL(A = 0.12, rho = 0.003, times = 0:1000) %>%
+run_MC_CW_IRSL_TUN(A = 0.12, rho = 0.003, times = 0:1000) %>%
      plot_RLumCarlo(norm = T, legend = T)
 ```
 

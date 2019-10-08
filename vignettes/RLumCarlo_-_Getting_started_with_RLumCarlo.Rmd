@@ -67,7 +67,7 @@ knitr::kable(df) %>% kable_styling(full_width = T, font_size = 5)
 times <- seq(0, 5000)
 
 ## Run MC simulation
-run_MC_ISO(E = 1.2,
+run_MC_ISO_TUN(E = 1.2,
            s = 1e10,
            T = 200,
            rho = 0.007,
@@ -82,10 +82,10 @@ run_MC_ISO(E = 1.2,
 times <- seq(0, 1000)
 
 ## Run MC simulation
-run_MC_CW_IRSL(A = 0.12, rho = 0.003, times = times) %>%
+run_MC_CW_IRSL_TUN(A = 0.12, rho = 0.003, times = times) %>%
   plot_RLumCarlo(norm = T, legend = T)
 
-run_MC_CW_IRSL(A = 0.21, rho = 0.003, times = times) %>%
+run_MC_CW_IRSL_TUN(A = 0.21, rho = 0.003, times = times) %>%
   plot_RLumCarlo(norm = T, add = T)
 ```
 
@@ -98,10 +98,10 @@ E <- 1.45
 
 times <- seq(100, 450) # time = temperature
 
-results_rc0 <- run_MC_TL(s=s, E = E, rho = rho, r_c = 0, times = times) 
-results_rc07 <- run_MC_TL(s=s, E = E, rho = rho, r_c = 0.7, times = times) 
-results_rc077 <- run_MC_TL(s=s, E = E, rho = rho, r_c = 0.77, times = times) 
-results_rc086 <- run_MC_TL(s=s, E = E, rho = rho, r_c = 0.86, times = times) 
+results_rc0 <- run_MC_TL_TUN(s=s, E = E, rho = rho, r_c = 0, times = times) 
+results_rc07 <- run_MC_TL_TUN(s=s, E = E, rho = rho, r_c = 0.7, times = times) 
+results_rc077 <- run_MC_TL_TUN(s=s, E = E, rho = rho, r_c = 0.77, times = times) 
+results_rc086 <- run_MC_TL_TUN(s=s, E = E, rho = rho, r_c = 0.86, times = times) 
 ```
 
 ```{r,Plot average signal, fig.align='center', echo = F}
@@ -173,7 +173,7 @@ times <- seq(200, 500) # time = temperature
 r_c <- c(0.85, 1.13, 1.3)
 
 for(i in 1:length(r_c)){
-  run_MC_TL(
+  run_MC_TL_TUN(
     s = s,
     E = E,
     rho = rho,

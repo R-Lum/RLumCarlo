@@ -2,8 +2,8 @@
 #include <RcppArmadillo.h>
 using namespace Rcpp;
 
-// [[Rcpp::export("MC_C_TL")]]
-List MC_C_TL(arma::vec times, int N_e, arma::vec r, double rho, double E, double s) {
+// [[Rcpp::export("MC_C_TL_TUN")]]
+List MC_C_TL_TUN(arma::vec times, int N_e, arma::vec r, double rho, double E, double s) {
 
   double k_B = 8.617*pow(10.0,-5.0);
 
