@@ -99,7 +99,8 @@ This project benefitted from the support by various funding bodies.
     PPP USA 2018, ID: 57387041)*.
 
   - The work of Sebastian Kreutzer as maintainer of the package was
-    supported by LabEx LaScArBxSK (ANR - n. ANR-10-LABX-52).
+    supported by [LabEx LaScArBx (ANR -
+    n. ANR-10-LABX-52)](https://lascarbx.labex.u-bordeaux.fr).
 
 ## Related projects
 
