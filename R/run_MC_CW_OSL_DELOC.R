@@ -20,9 +20,10 @@
 #'
 #' @param R [numeric] (*with default*): The retrapping ratio.
 #'
-#' @param method [character] (*with default*):
+#' @param method [character] (*with default*): sequential `'seq'` or parallel processing `'par'`
 #'
-#' @param output [character] (*with default*):
+#' @param output [character] (*with default*): output is either the `'signal'` (the default) or `'remaining_e'` (the remaining
+#' charges, electrons, in the trap)
 #'
 #' @param \dots further arguments
 #'
@@ -97,7 +98,14 @@ run_MC_CW_OSL_DELOC <- function(
   output = "signal",
   ...){
 
-  ## register backend ----
+# Integrity checks ----------------------------------------------------------------------------
+  if(!method %in% c("par", "seq"))
+    stop("[run_MC_CW_OSL_DELOC()] Allowed keywords for 'method' are either 'par' or 'seq'!", call. = FALSE)
+
+  if(!output %in% c("signal", "remaining_e"))
+    stop("[run_MC_CW_OSL_DELOC()] Allowed keywords for 'output' are either 'signal' or 'remaining_e'!", call. = FALSE)
+
+# Register multi-core backend -----------------------------------------------------------------
   cores <- detectCores()
   if(cores == 1) method <- "seq"
 
@@ -109,13 +117,12 @@ run_MC_CW_OSL_DELOC <- function(
     on.exit(stopCluster(cl))
 
   } else {
-
     cl <- parallel::makeCluster(cores-1)
     doParallel::registerDoParallel(cl)
     on.exit(stopCluster(cl))
   }
-  ## -----
 
+# Run model -----------------------------------------------------------------------------------
   temp <- foreach(c = 1:clusters,
                   .packages = 'RLumCarlo',
                   .combine = 'comb_array',
@@ -132,7 +139,7 @@ run_MC_CW_OSL_DELOC <- function(
 
   }  # end c-loop
 
-  ## return model output
-  .return_ModelOutput(signal = temp, time = times)
+# Return --------------------------------------------------------------------------------------
+.return_ModelOutput(signal = temp, time = times)
 }
 

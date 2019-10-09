@@ -7,7 +7,7 @@
 #' \deqn{
 #' I_{DELOC}(t) = -dn/dt = p(t) * (n^2 / (NR + n(1-R)))
 #' }
-#'  
+#'
 #' where in the function `N` := `N_e`:= `n` :=`n_filled`
 #' @param s [numeric] (**required**): Escape frequency of the trap (s^-1).
 #'
@@ -23,9 +23,10 @@
 #'
 #' @param R [numeric] (*with default*): The retrapping ratio.
 #'
-#' @param method [character] (*with default*): ##TODO
+#' @param method [character] (*with default*): sequential `'seq'` or parallel processing `'par'`
 #'
-#' @param output [character] (*with default*): ##TODO
+#' @param output [character] (*with default*): output is either the `'signal'` (the default) or `'remaining_e'` (the remaining
+#' charges, electrons, in the trap)
 #'
 #' @param \dots further arguments
 #'
@@ -38,7 +39,7 @@
 #' @references
 #'
 #' Pagonis, V., Friedrich, J., Discher, M., Müller-Kirschbaum, A., Schlosser, V., Kreutzer, S., Chen, R. and Schmidt, C., 2019. Excited state luminescence signals from a random distribution of defects: A new Monte Carlo simulation approach for feldspar. Journal of Luminescence 207, 266–272. \doi{10.1016/j.jlumin.2018.11.024}
-#' 
+#'
 #' Reuven, C. and S. Mckeever, 1997. Theory of thermoluminescence and related phenomena.
 #'
 #' @examples
@@ -54,7 +55,7 @@
 #'    plot_RLumCarlo(legend = T)
 #'
 #' }
-#' 
+#'
 #' #' @examples
 #' ##============================================================================##
 #' ## Example 2: Plot multiple TL stimulation TL curves in R with varying params
@@ -64,13 +65,13 @@
 #'times=seq(100,450,1)
 #'s=rep(3.5e12,4)
 #'E=rep(1.45,4)
-#'R<-c(0.7e-6,1e-6,0.01,0.1) 
-#'clusters=1000 
-#'N_e =c(400, 500, 700, 400) 
+#'R<-c(0.7e-6,1e-6,0.01,0.1)
+#'clusters=1000
+#'N_e =c(400, 500, 700, 400)
 #'n_filled =c(400, 500, 300, 70)
 #'method="par"
 #'output ="signal"
-#'col=c(1,2,3,4) # different colours for the individual curves 
+#'col=c(1,2,3,4) # different colours for the individual curves
 #'plot_uncertainty <- c(TRUE,TRUE,TRUE,TRUE)  # do you want to see the uncertainty?
 #'add_TF <- c(FALSE,rep(TRUE, (length(R)-1)))
 # loop to plot different curves into one plot
@@ -82,8 +83,8 @@
 # add your legend with your parameters
 #'legend("topright",ncol=5,cex=0.55,title = "parameters" ,legend=c(paste0("E = ", E),
 #'                                                                 paste0("s = ", s),
-#'                                                                 paste0("n_filled = ", n_filled), 
-#'                                                                 paste0("N_e = ", N_e), 
+#'                                                                 paste0("n_filled = ", n_filled),
+#'                                                                 paste0("N_e = ", N_e),
 #'                                                                 paste0("R = ", R)),  text.col=col)
 
 
@@ -103,7 +104,14 @@ run_MC_TL_DELOC <- function(
   output = "signal",
   ...){
 
-  ## register backend ----
+# Integrity checks ----------------------------------------------------------------------------
+  if(!method %in% c("par", "seq"))
+    stop("[run_MC_TL_DELOC()] Allowed keywords for 'method' are either 'par' or 'seq'!", call. = FALSE)
+
+  if(!output %in% c("signal", "remaining_e"))
+    stop("[run_MC_TL_DELOC()] Allowed keywords for 'output' are either 'signal' or 'remaining_e'!", call. = FALSE)
+
+# Register multi-core backend -----------------------------------------------------------------
   cores <- detectCores()
   if(cores == 1) method <- "seq"
 
@@ -115,13 +123,12 @@ run_MC_TL_DELOC <- function(
     on.exit(stopCluster(cl))
 
   } else {
-
     cl <- parallel::makeCluster(cores-1)
     doParallel::registerDoParallel(cl)
     on.exit(stopCluster(cl))
   }
-  ## -----
 
+# Run model -----------------------------------------------------------------------------------
   temp <- foreach(c = 1:clusters,
                   .packages = 'RLumCarlo',
                   .combine = 'comb_array',
@@ -139,7 +146,7 @@ run_MC_TL_DELOC <- function(
 
   }  # end c-loop
 
-  ## return model output
-  .return_ModelOutput(signal = temp, time = times)
+# Return --------------------------------------------------------------------------------------
+.return_ModelOutput(signal = temp, time = times)
 }
 
