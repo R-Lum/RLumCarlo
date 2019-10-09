@@ -6,21 +6,6 @@
 
 using namespace Rcpp;
 
-// MC_C_CW_IRSL_DELOC
-List MC_C_CW_IRSL_DELOC(arma::vec times, int N_e, int n_filled, double R, double A);
-RcppExport SEXP _RLumCarlo_MC_C_CW_IRSL_DELOC(SEXP timesSEXP, SEXP N_eSEXP, SEXP n_filledSEXP, SEXP RSEXP, SEXP ASEXP) {
-BEGIN_RCPP
-    Rcpp::RObject rcpp_result_gen;
-    Rcpp::RNGScope rcpp_rngScope_gen;
-    Rcpp::traits::input_parameter< arma::vec >::type times(timesSEXP);
-    Rcpp::traits::input_parameter< int >::type N_e(N_eSEXP);
-    Rcpp::traits::input_parameter< int >::type n_filled(n_filledSEXP);
-    Rcpp::traits::input_parameter< double >::type R(RSEXP);
-    Rcpp::traits::input_parameter< double >::type A(ASEXP);
-    rcpp_result_gen = Rcpp::wrap(MC_C_CW_IRSL_DELOC(times, N_e, n_filled, R, A));
-    return rcpp_result_gen;
-END_RCPP
-}
 // MC_C_CW_IRSL_LOC
 List MC_C_CW_IRSL_LOC(arma::vec times, int n_filled, double r, double A);
 RcppExport SEXP _RLumCarlo_MC_C_CW_IRSL_LOC(SEXP timesSEXP, SEXP n_filledSEXP, SEXP rSEXP, SEXP ASEXP) {
@@ -47,6 +32,21 @@ BEGIN_RCPP
     Rcpp::traits::input_parameter< double >::type rho(rhoSEXP);
     Rcpp::traits::input_parameter< double >::type A(ASEXP);
     rcpp_result_gen = Rcpp::wrap(MC_C_CW_IRSL_TUN(times, N_e, r, rho, A));
+    return rcpp_result_gen;
+END_RCPP
+}
+// MC_C_CW_OSL_DELOC
+List MC_C_CW_OSL_DELOC(arma::vec times, int N_e, int n_filled, double R, double A);
+RcppExport SEXP _RLumCarlo_MC_C_CW_OSL_DELOC(SEXP timesSEXP, SEXP N_eSEXP, SEXP n_filledSEXP, SEXP RSEXP, SEXP ASEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< arma::vec >::type times(timesSEXP);
+    Rcpp::traits::input_parameter< int >::type N_e(N_eSEXP);
+    Rcpp::traits::input_parameter< int >::type n_filled(n_filledSEXP);
+    Rcpp::traits::input_parameter< double >::type R(RSEXP);
+    Rcpp::traits::input_parameter< double >::type A(ASEXP);
+    rcpp_result_gen = Rcpp::wrap(MC_C_CW_OSL_DELOC(times, N_e, n_filled, R, A));
     return rcpp_result_gen;
 END_RCPP
 }
@@ -193,9 +193,9 @@ END_RCPP
 }
 
 static const R_CallMethodDef CallEntries[] = {
-    {"_RLumCarlo_MC_C_CW_IRSL_DELOC", (DL_FUNC) &_RLumCarlo_MC_C_CW_IRSL_DELOC, 5},
     {"_RLumCarlo_MC_C_CW_IRSL_LOC", (DL_FUNC) &_RLumCarlo_MC_C_CW_IRSL_LOC, 4},
     {"_RLumCarlo_MC_C_CW_IRSL_TUN", (DL_FUNC) &_RLumCarlo_MC_C_CW_IRSL_TUN, 5},
+    {"_RLumCarlo_MC_C_CW_OSL_DELOC", (DL_FUNC) &_RLumCarlo_MC_C_CW_OSL_DELOC, 5},
     {"_RLumCarlo_MC_C_ISO_DELOC", (DL_FUNC) &_RLumCarlo_MC_C_ISO_DELOC, 7},
     {"_RLumCarlo_MC_C_ISO_LOC", (DL_FUNC) &_RLumCarlo_MC_C_ISO_LOC, 6},
     {"_RLumCarlo_MC_C_ISO_TUN", (DL_FUNC) &_RLumCarlo_MC_C_ISO_TUN, 7},

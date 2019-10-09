@@ -2,9 +2,9 @@
 
 S3method(summary,RLumCarlo_Model_Output)
 export(plot_RLumCarlo)
-export(run_MC_CW_IRSL_DELOC)
 export(run_MC_CW_IRSL_LOC)
 export(run_MC_CW_IRSL_TUN)
+export(run_MC_CW_OSL_DELOC)
 export(run_MC_ISO_DELOC)
 export(run_MC_ISO_LOC)
 export(run_MC_ISO_TUN)

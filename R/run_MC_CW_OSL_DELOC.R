@@ -86,6 +86,7 @@
 #'
 #' @md
 #' @export
+run_MC_CW_OSL_DELOC <- function(
   A,
   times,
   clusters = 10,

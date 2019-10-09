@@ -1,5 +1,5 @@
 // +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-// Title:   MC_C_CW_IRSL_DELOC.cpp
+// Title:   MC_C_CW_OSL_DELOC.cpp
 // Author:  Sebastian Kreutzer, IRAMAT-CRP2A, Universite Bordeaux Montaigne (France), based on
 // code by Johannes Friedrich and equations provided by Vasilis Pagonis
 // Contact: sebastian.kreutzer@u-bordeaux-montaigne.fr
