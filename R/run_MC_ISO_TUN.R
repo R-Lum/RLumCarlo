@@ -1,6 +1,6 @@
-#' @title Run Monte-Carlo simulation for isothermal measurements for tunneling transition
+#' @title Run Monte-Carlo Simulation for Isothermal Measurements for Tunneling Transition
 #'
-#' @description Runs a Monte-Carlo (MC) simulation of isothermally stimulated luminesence (ISO-TL or ITL) using the tunneling (TUN) model. Tunneling transitions refers to the direct movement of electrons from a trap directly to the recombination center (*without passing go or collecting $200*).
+#' @description Runs a Monte-Carlo (MC) simulation of isothermally stimulated luminesence (ISO-TL or ITL) using the tunneling (TUN) model. Tunneling transitions refers to the direct movement of electrons from a trap directly to the recombination centre.
 #'
 #' @details
 #'
@@ -25,9 +25,10 @@
 #'
 #' @param N_e [numeric] (*with default*): The number of electrons.
 #'
-#' @param method [character] (*with default*): ##TODO
+#' @param method [character] (*with default*): sequential `'seq'` or parallel processing `'par'`
 #'
-#' @param output [character] (*with default*): ##TODO
+#' @param output [character] (*with default*): output is either the `'signal'` (the default) or `'remaining_e'` (the remaining
+#' charges, electrons, in the trap)
 #'
 #' @param \dots further arguments
 #'
@@ -52,14 +53,12 @@
 #' ##============================================================================##
 #' ## Example 1: Simulate isothermal measurement
 #' ##============================================================================##
-#'
-#' times <- seq(0, 5000)
 #' run_MC_ISO_TUN(
 #'  E = 1.2,
 #'  s = 1e10,
 #'  T = 200,
 #'  rho = 0.007,
-#'  times = times) %>%
+#'  times = 0:5000) %>%
 #'   plot_RLumCarlo(legend = T)
 #'}
 #' @md
@@ -77,8 +76,8 @@ run_MC_ISO_TUN <- function(
   output = "signal",
   ...){
 
-  ## register backend ----
-  cores <- parallel::detectCores()
+# Register multi-core backend -----------------------------------------------------------------
+  cores <- detectCores()
   if(cores == 1) method <- "seq"
 
   if(method != "par"){
@@ -86,18 +85,18 @@ run_MC_ISO_TUN <- function(
     doParallel::registerDoParallel(cl)
     ##ensures that we do not have any particular problems
     registerDoSEQ()
-    on.exit(parallel::stopCluster(cl))
+    on.exit(stopCluster(cl))
 
   } else {
-
     cl <- parallel::makeCluster(cores-1)
     doParallel::registerDoParallel(cl)
-    on.exit(parallel::stopCluster(cl))
+    on.exit(stopCluster(cl))
   }
-  ## -----
 
-  if(is.null(r)) r <- seq(from = 0, to = 2, by = 0.1)
+# Setting parameters --------------------------------------------------------------------------
+if(is.null(r)) r <- seq(from = 0, to = 2, by = 0.1)
 
+# Run model -----------------------------------------------------------------------------------
   temp <- foreach(c = 1:clusters,
                   .packages = 'RLumCarlo',
                   .combine = 'comb_array',
@@ -113,10 +112,8 @@ run_MC_ISO_TUN <- function(
              )
 
     return(results[[output]])
+  }
 
-  }  # end c-loop
-
-  ## return model output
-  .return_ModelOutput(signal = temp, time = times)
-
+# Return --------------------------------------------------------------------------------------
+.return_ModelOutput(signal = temp, time = times)
 }
