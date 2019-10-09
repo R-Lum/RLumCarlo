@@ -1,13 +1,14 @@
 #' @title Run Monte-Carlo simulation for ISO for delocalized transition
 #'
-#' @description Runs a Monte-Carlo (MC) simulation of isothermally stimulated luminesence (ISO-TL or ITL) using the one trap one recombination center (OTOR) model.
+#' @description Runs a Monte-Carlo (MC) simulation of isothermally stimulated luminesence (ISO-TL or ITL) using the one trap one recombination center (OTOR) model. Delocalized refers to involvement of the conduction band.
 #'
 #' @details
 #'
 #' \deqn{
 #' I_{DELOC}(t) = -dn/dt = p(t) * (n^2 / (NR + n(1-R)))
 #' }
-#'
+#' 
+#'Where in the function `n` := `n_filled` := `N` := `N_e`
 #' @param s [numeric] (**required**): Escape frequency of the trap (s^-1).
 #'
 #' @param E [numeric] (**required**): Thermal activation energy of the trap (eV).
@@ -24,9 +25,9 @@
 #'
 #' @param R [numeric] (*with default*): The retrapping ratio.
 #'
-#' @param method [character] (*with default*):
+#' @param method [character] (*with default*): ##TODO
 #'
-#' @param output [character] (*with default*):
+#' @param output [character] (*with default*): ##TODO
 #'
 #' @param \dots further arguments
 #'
@@ -38,7 +39,10 @@
 #'
 #' @references
 #'
-#' Pagonis, V. and Kulp, C. (2017) ‘Monte Carlo simulations of tunneling phenomena and nearest neighbor hopping mechanism in feldspars’, Journal of Luminescence. Elsevier, 181, pp. 114–120. doi: 10.1016/j.jlumin.2016.09.014.
+#' Pagonis, V., Friedrich, J., Discher, M., Müller-Kirschbaum, A., Schlosser, V., Kreutzer, S., Chen, R. and Schmidt, C., 2019. Excited state luminescence signals from a random distribution of defects: A new Monte Carlo simulation approach for feldspar. Journal of Luminescence 207, 266–272. \doi{10.1016/j.jlumin.2018.11.024}
+#' 
+#' Reuven, C. and S. Mckeever, 1997. Theory of thermoluminescence and related phenomena.
+
 #'
 #' @examples
 #' ##============================================================================##
