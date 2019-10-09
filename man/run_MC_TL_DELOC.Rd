@@ -22,9 +22,10 @@ run_MC_TL_DELOC(s, E, times, clusters = 10, N_e = 200,
 
 \item{R}{\link{numeric} (\emph{with default}): The retrapping ratio.}
 
-\item{method}{\link{character} (\emph{with default}): ##TODO}
+\item{method}{\link{character} (\emph{with default}): sequential \code{'seq'} or parallel processing \code{'par'}}
 
-\item{output}{\link{character} (\emph{with default}): ##TODO}
+\item{output}{\link{character} (\emph{with default}): output is either the \code{'signal'} (the default) or \code{'remaining_e'} (the remaining
+charges, electrons, in the trap)}
 
 \item{\dots}{further arguments}
 }
@@ -68,13 +69,13 @@ run_MC_TL_DELOC(
 times=seq(100,450,1)
 s=rep(3.5e12,4)
 E=rep(1.45,4)
-R<-c(0.7e-6,1e-6,0.01,0.1) 
-clusters=1000 
-N_e =c(400, 500, 700, 400) 
+R<-c(0.7e-6,1e-6,0.01,0.1)
+clusters=1000
+N_e =c(400, 500, 700, 400)
 n_filled =c(400, 500, 300, 70)
 method="par"
 output ="signal"
-col=c(1,2,3,4) # different colours for the individual curves 
+col=c(1,2,3,4) # different colours for the individual curves
 plot_uncertainty <- c(TRUE,TRUE,TRUE,TRUE)  # do you want to see the uncertainty?
 add_TF <- c(FALSE,rep(TRUE, (length(R)-1)))
 for (u in 1:length(R)){
@@ -84,15 +85,15 @@ for (u in 1:length(R)){
 }
 legend("topright",ncol=5,cex=0.55,title = "parameters" ,legend=c(paste0("E = ", E),
                                                                 paste0("s = ", s),
-                                                                paste0("n_filled = ", n_filled), 
-                                                                paste0("N_e = ", N_e), 
+                                                                paste0("n_filled = ", n_filled),
+                                                                paste0("N_e = ", N_e),
                                                                 paste0("R = ", R)),  text.col=col)
 }
 
 } 
 
 \section{How to cite}{
-Kreutzer, S., 2019. run_MC_TL_DELOC(): Run Monte-Carlo simulation for TL for delocalized transition. Function version 0.0.1. In: Friedrich, J., Kreutzer, S., Pagonis, V., Schmidt, C., 2019. RLumCarlo: Monte-Carlo Methods for Simulating Luminescence PhenomenaR package version 0.1.0.9000-70. 
+Kreutzer, S., 2019. run_MC_TL_DELOC(): Run Monte-Carlo simulation for TL for delocalized transition. Function version 0.0.1. In: Friedrich, J., Kreutzer, S., Pagonis, V., Schmidt, C., 2019. RLumCarlo: Monte-Carlo Methods for Simulating Luminescence PhenomenaR package version 0.1.0.9000-73. 
 }
 
 \references{

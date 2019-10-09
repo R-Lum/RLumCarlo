@@ -20,9 +20,10 @@ run_MC_CW_OSL_DELOC(A, times, clusters = 10, N_e = 200,
 
 \item{R}{\link{numeric} (\emph{with default}): The retrapping ratio.}
 
-\item{method}{\link{character} (\emph{with default}):}
+\item{method}{\link{character} (\emph{with default}): sequential \code{'seq'} or parallel processing \code{'par'}}
 
-\item{output}{\link{character} (\emph{with default}):}
+\item{output}{\link{character} (\emph{with default}): output is either the \code{'signal'} (the default) or \code{'remaining_e'} (the remaining
+charges, electrons, in the trap)}
 
 \item{\dots}{further arguments}
 }
@@ -90,7 +91,7 @@ legend("topright",ncol=4,cex=0.55,title = "parameters" ,legend=c(paste0("A = ", 
 } 
 
 \section{How to cite}{
-Kreutzer, S., 2019. run_MC_CW_OSL_DELOC(): Run Monte-Carlo simulation for CW-OSL for delocalized transition. Function version 0.1.0. In: Friedrich, J., Kreutzer, S., Pagonis, V., Schmidt, C., 2019. RLumCarlo: Monte-Carlo Methods for Simulating Luminescence PhenomenaR package version 0.1.0.9000-70. 
+Kreutzer, S., 2019. run_MC_CW_OSL_DELOC(): Run Monte-Carlo simulation for CW-OSL for delocalized transition. Function version 0.1.0. In: Friedrich, J., Kreutzer, S., Pagonis, V., Schmidt, C., 2019. RLumCarlo: Monte-Carlo Methods for Simulating Luminescence PhenomenaR package version 0.1.0.9000-73. 
 }
 
 \references{

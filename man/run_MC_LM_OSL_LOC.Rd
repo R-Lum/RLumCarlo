@@ -18,9 +18,10 @@ run_MC_LM_OSL_LOC(A, times, clusters = 10, n_filled = 100, r,
 
 \item{r}{\link{numeric} (\emph{with default}):}
 
-\item{method}{\link{character} (\emph{with default}):}
+\item{method}{\link{character} (\emph{with default}): sequential \code{'seq'} or parallel processing \code{'par'}}
 
-\item{output}{\link{character} (\emph{with default}):}
+\item{output}{\link{character} (\emph{with default}): output is either the \code{'signal'} (the default) or \code{'remaining_e'} (the remaining
+charges, electrons, in the trap)}
 
 \item{\dots}{further arguments}
 }
@@ -55,7 +56,7 @@ run_MC_LM_OSL_LOC(
 } 
 
 \section{How to cite}{
-Kreutzer, S., 2019. run_MC_LM_OSL_LOC(): Run Monte-Carlo simulation for LM-OSL for localized transition. Function version 0.0.1. In: Friedrich, J., Kreutzer, S., Pagonis, V., Schmidt, C., 2019. RLumCarlo: Monte-Carlo Methods for Simulating Luminescence PhenomenaR package version 0.1.0.9000-70. 
+Kreutzer, S., 2019. run_MC_LM_OSL_LOC(): Run Monte-Carlo simulation for LM-OSL for localized transition. Function version 0.0.1. In: Friedrich, J., Kreutzer, S., Pagonis, V., Schmidt, C., 2019. RLumCarlo: Monte-Carlo Methods for Simulating Luminescence PhenomenaR package version 0.1.0.9000-73. 
 }
 
 \references{
