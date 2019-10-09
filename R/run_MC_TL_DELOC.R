@@ -13,9 +13,9 @@
 #'
 #' @param E [numeric] (**required**): Thermal activation energy of the trap (eV).
 #'
-#' @param times [numeric] (*with default*): the number of MC runs.
+#' @param times [numeric] (*with default*): The specified time within the simulation with the same syntax as the function seq().
 #'
-#' @param clusters [numeric] (*with default*): the number of clusters.
+#' @param clusters [numeric] (*with default*): The number of MC runs.
 #'
 #' @param N_e [integer] (*with default*): The number of electrons.
 #'
@@ -60,7 +60,10 @@
 #' ##============================================================================##
 #' ## Example 2: Plot multiple TL stimulation TL curves in R with varying params
 #' ##============================================================================##
-#' \dontrun{
+#' 
+#'    
+#'     
+#'       \dontrun{
 #' # define your parameters
 #'times=seq(100,450,1)
 #'s=rep(3.5e12,4)

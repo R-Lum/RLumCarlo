@@ -1,6 +1,6 @@
 #' @title Run Monte-Carlo simulation for ITL for localised transition
 #'
-#' @description Runs a Monte-Carlo (MC) simulation of isothermally stimulated luminesence (ISO-TL or ITL) using the genralized one trap (GOT) model. Localized refers to the lack of involvement of the conduction band.
+#' @description Runs a Monte-Carlo (MC) simulation of isothermally stimulated luminesence (ISO-TL or ITL) using the genralized one trap (GOT) model. Localized refers to excitation of an electron before it recombines, but without the involvement of the conduction band.
 #'
 #' @details
 #'
@@ -15,13 +15,13 @@
 #'
 #' @param T [numeric] (*with default*): Temperature (deg. C).
 #'
-#' @param times [numeric] (*with default*): The number of MC runs.
+#' @param times [numeric] (*with default*): The specified time within the simulation with the same syntax as the function seq().
 #'
-#' @param clusters [numeric] (*with default*): The number of clusters.
+#' @param clusters [numeric] (*with default*): The number of MC runs.
 #'
 #' @param n_filled [integer] (*with default*): The number of electron traps that are filled at the beginning of the simulation.
 #'
-#' @param r [numeric] (*with default*): The retrapping ratio.
+#' @param r [numeric] (*with default*): The retrapping ratio for localized models (dimensionless). 
 #'
 #' @param method [character] (*with default*): sequential `'seq'` or parallel processing `'par'`
 #'
@@ -44,7 +44,11 @@
 #' ##============================================================================##
 #' ## Example 1: Simulate ITL
 #' ##============================================================================##
-#' \dontrun{
+#'
+#' 
+#'  
+#'   
+#'     \dontrun{
 #' run_MC_ISO_LOC(
 #'  s = 3.5e12,
 #'  E = 1.45,
@@ -54,6 +58,8 @@
 #'    plot_RLumCarlo(legend = T)
 #'
 #' }
+#' 
+#' 
 #'
 #' @md
 #' @export

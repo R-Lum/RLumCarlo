@@ -1,6 +1,6 @@
 #' @title Run Monte-Carlo simulation for TL for localised transition
 #'
-#' @description Runs a Monte-Carlo (MC) simulation of thermo-luminesence (LM-OSL) using the generalized one trap (GOT) model. Localized refers to the lack of involvement of the conduction band.
+#' @description Runs a Monte-Carlo (MC) simulation of thermo-luminesence (TL) using the generalized one trap (GOT) model. Localized refers to excitation of an electron before it recombines, but without the involvement of the conduction band.
 #'
 #' @details
 #'
@@ -13,9 +13,9 @@
 #'
 #' @param E [numeric] (**required**): Thermal activation energy of the trap (eV).
 #'
-#' @param times [numeric] (*with default*): The number of Mc runs.
+#' @param times [numeric] (*with default*): The specified time within the simulation with the same syntax as the function seq().
 #'
-#' @param clusters [numeric] (*with default*): The number of clusters.
+#' @param clusters [numeric] (*with default*): The number of MC runs.
 #'
 #' @param n_filled [integer] (*with default*): The number of electron traps that are filled at the beginning of the simulation.
 #'
@@ -42,6 +42,8 @@
 #' ##============================================================================##
 #' ## Example 1: Simulate TL
 #' ##============================================================================##
+#' 
+#' 
 #' \dontrun{
 #' run_MC_TL_LOC(
 #'  s = 3.5e12,
@@ -51,6 +53,8 @@
 #'    plot_RLumCarlo(legend = T)
 #'
 #' }
+#'
+#'
 #'
 #' @md
 #' @export

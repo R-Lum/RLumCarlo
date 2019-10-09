@@ -1,6 +1,6 @@
 #' @title Run Monte-Carlo Simulation for Isothermal Measurements for Tunneling Transition
 #'
-#' @description Runs a Monte-Carlo (MC) simulation of isothermally stimulated luminesence (ISO-TL or ITL) using the tunneling (TUN) model. Tunneling transitions refers to the direct movement of electrons from a trap directly to the recombination centre.
+#' @description Runs a Monte-Carlo (MC) simulation of isothermally stimulated luminesence (ISO-TL or ITL) using the tunneling (TUN) model. Tunneling refers to the movement of electrons from a trap directly to the recombination center.
 #'
 #' @details
 #'
@@ -15,13 +15,13 @@
 #'
 #' @param T [numeric] (**required**): Temperature (deg. C).
 #'
-#' @param rho [numeric] (**required**): The calculated dimesionless Charge density (normally written Rho').
+#' @param rho [numeric] (**required**): The calculated dimesionless charge density (normally written Rho') (also defined as (4\pi\rho/3)^1/3*r) where `\rho` := the density of recombination centers within the material given in m^3 and `r` is _).
 #'
-#' @param times [numeric] (*with default*): The number of MC runs.
+#' @param times [numeric] (*with default*): The specified time within the simulation with the same syntax as the function seq().
 #'
-#' @param clusters [numeric] (*with default*): The number of clusters.
+#' @param clusters [numeric] (*with default*): The number of MC runs.
 #'
-#' @param r [numeric] (*with default*): The retrapping ratio.
+#' @param r [numeric] (*with default*): The radius of tunneling (dimensionless) .
 #'
 #' @param N_e [numeric] (*with default*): The number of electrons.
 #'
@@ -44,8 +44,8 @@
 #' Pagonis, V. and Kulp, C., 2017. Monte Carlo simulations of tunneling phenomena and nearest neighbor hopping mechanism in feldspars. Journal of Luminescence 181, 114–120. \doi{10.1016/j.jlumin.2016.09.014}
 #'
 #' Pagonis, V., Friedrich, J., Discher, M., Müller-Kirschbaum, A., Schlosser, V., Kreutzer, S., Chen, R. and Schmidt, C., 2019. Excited state luminescence signals from a random distribution of defects: A new Monte Carlo simulation approach for feldspar. Journal of Luminescence 207, 266–272. \doi{10.1016/j.jlumin.2018.11.024}
-#'
-#' for a discussion of tunneling see:
+#' 
+#' For a discussion of tunneling see:
 #' Aitken, M.J., 1985. Thermoluminescence dating. 276-280. \doi{10.1002/gea.3340020110}
 #'
 #' @examples

@@ -15,9 +15,9 @@
 #'
 #' @param T [numeric] (*with default*): Temperature (deg. C).
 #'
-#' @param times [numeric] (*with default*): The number of MC runs.
+#' @param times [numeric] (*with default*): The specified time within the simulation with the same syntax as the function seq().
 #'
-#' @param clusters [numeric] (*with default*): The number of clusters.
+#' @param clusters [numeric] (*with default*): The number of MC runs.
 #'
 #' @param N_e [integer] (*with default*): The number of electrons.
 #'
@@ -43,12 +43,14 @@
 #' Pagonis, V., Friedrich, J., Discher, M., Müller-Kirschbaum, A., Schlosser, V., Kreutzer, S., Chen, R. and Schmidt, C., 2019. Excited state luminescence signals from a random distribution of defects: A new Monte Carlo simulation approach for feldspar. Journal of Luminescence 207, 266–272. \doi{10.1016/j.jlumin.2018.11.024}
 #'
 #' Reuven, C. and S. Mckeever, 1997. Theory of thermoluminescence and related phenomena.
-
 #'
 #' @examples
 #' ##============================================================================##
 #' ## Example 1: Simulate ITL
 #' ##============================================================================##
+#' 
+#' 
+#' 
 #' \dontrun{
 #' run_MC_ISO_DELOC(
 #'  s = 3.5e12,
@@ -59,6 +61,7 @@
 #'    plot_RLumCarlo(legend = T)
 #'
 #' }
+#'
 #'
 #' @md
 #' @export
