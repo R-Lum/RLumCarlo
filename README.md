@@ -37,9 +37,7 @@ distributions. Should *gcc* be not available, however, we kindly refer
 to the exhaustive collection of installation guides depending on the
 linux distribution.
 
-#### ii. Install the package
-
-To install the latest development builds directly from GitHub, run
+#### ii. Install the package from GitHub
 
 ``` r
 if(!require("devtools"))
@@ -47,13 +45,7 @@ if(!require("devtools"))
 devtools::install_github("R-Lum/RLumCarlo@master")
 ```
 
-To install a developer build other than ‘master’, replace the term
-‘master’ in the codeline by the name of the wanted developer build
-(not available yet).
-
 ## Examples
-
-### Simulating CW-IRSL measurements
 
 ``` r
 run_MC_CW_IRSL_TUN(A = 0.12, rho = 0.003, times = 0:1000) %>%
