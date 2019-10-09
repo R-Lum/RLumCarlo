@@ -12,9 +12,9 @@ run_MC_TL_LOC(s, E, times, clusters = 10, n_filled = 100, r,
 
 \item{E}{\link{numeric} (\strong{required}): Thermal activation energy of the trap (eV).}
 
-\item{times}{\link{numeric} (\emph{with default}): The number of Mc runs.}
+\item{times}{\link{numeric} (\emph{with default}): The specified time within the simulation with the same syntax as the function seq().}
 
-\item{clusters}{\link{numeric} (\emph{with default}): The number of clusters.}
+\item{clusters}{\link{numeric} (\emph{with default}): The number of MC runs.}
 
 \item{n_filled}{\link{integer} (\emph{with default}): The number of electron traps that are filled at the beginning of the simulation.}
 
@@ -31,7 +31,7 @@ charges, electrons, in the trap)}
 This function returns an \link{array} with dimension length(times) x length(r) x clusters
 }
 \description{
-Runs a Monte-Carlo (MC) simulation of thermo-luminesence (LM-OSL) using the generalized one trap (GOT) model. Localized refers to the lack of involvement of the conduction band.
+Runs a Monte-Carlo (MC) simulation of thermo-luminesence (TL) using the generalized one trap (GOT) model. Localized refers to excitation of an electron before it recombines, but without the involvement of the conduction band.
 }
 \details{
 \deqn{
@@ -48,6 +48,8 @@ where in the function \code{n} :=\code{n_filled}
 ##============================================================================##
 ## Example 1: Simulate TL
 ##============================================================================##
+
+
 \dontrun{
 run_MC_TL_LOC(
  s = 3.5e12,
@@ -58,10 +60,12 @@ run_MC_TL_LOC(
 
 }
 
+
+
 } 
 
 \section{How to cite}{
-Kreutzer, S., 2019. run_MC_TL_LOC(): Run Monte-Carlo simulation for TL for localised transition. Function version 0.1.0. In: Friedrich, J., Kreutzer, S., Pagonis, V., Schmidt, C., 2019. RLumCarlo: Monte-Carlo Methods for Simulating Luminescence PhenomenaR package version 0.1.0.9000-74. 
+Kreutzer, S., 2019. run_MC_TL_LOC(): Run Monte-Carlo simulation for TL for localised transition. Function version 0.1.0. In: Friedrich, J., Kreutzer, S., Pagonis, V., Schmidt, C., 2019. RLumCarlo: Monte-Carlo Methods for Simulating Luminescence PhenomenaR package version 0.1.0.9000-77. 
 }
 
 \references{

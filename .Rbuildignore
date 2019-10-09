@@ -40,6 +40,7 @@
 ^vignettes/.*cache$
 ^vignettes/.*files$
 ^vignettes/.*\.xsyg$
+^vignettes/.*\.log$
 
 # -- Exclude build stuff
 ^Makefile$

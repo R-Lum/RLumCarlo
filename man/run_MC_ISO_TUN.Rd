@@ -14,13 +14,13 @@ run_MC_ISO_TUN(E, s, T = 200, rho, times, clusters = 10, r = NULL,
 
 \item{T}{\link{numeric} (\strong{required}): Temperature (deg. C).}
 
-\item{rho}{\link{numeric} (\strong{required}): The calculated dimesionless Charge density (normally written Rho').}
+\item{rho}{\link{numeric} (\strong{required}): The calculated dimesionless charge density (normally written Rho') (also defined as (4 *  pi rho/3)^1/3*r) where \code{rho} := the density of recombination centers within the material given in m^3 and \code{r} is _).}
 
-\item{times}{\link{numeric} (\emph{with default}): The number of MC runs.}
+\item{times}{\link{numeric} (\emph{with default}): The specified time within the simulation with the same syntax as the function seq().}
 
-\item{clusters}{\link{numeric} (\emph{with default}): The number of clusters.}
+\item{clusters}{\link{numeric} (\emph{with default}): The number of MC runs.}
 
-\item{r}{\link{numeric} (\emph{with default}): The retrapping ratio.}
+\item{r}{\link{numeric} (\emph{with default}): The radius of tunneling (dimensionless) .}
 
 \item{N_e}{\link{numeric} (\emph{with default}): The number of electrons.}
 
@@ -35,7 +35,7 @@ charges, electrons, in the trap)}
 This function returns a list.
 }
 \description{
-Runs a Monte-Carlo (MC) simulation of isothermally stimulated luminesence (ISO-TL or ITL) using the tunneling (TUN) model. Tunneling transitions refers to the direct movement of electrons from a trap directly to the recombination centre.
+Runs a Monte-Carlo (MC) simulation of isothermally stimulated luminesence (ISO-TL or ITL) using the tunneling (TUN) model. Tunneling refers to the movement of electrons from a trap directly to the recombination center.
 }
 \details{
 \deqn{
@@ -59,12 +59,12 @@ run_MC_ISO_TUN(
  T = 200,
  rho = 0.007,
  times = 0:5000) \%>\%
-  plot_RLumCarlo(legend = T)
+  plot_RLumCarlo(legend = TRUE)
 }
 } 
 
 \section{How to cite}{
-Friedrich, J., Kreutzer, S., 2019. run_MC_ISO_TUN(): Run Monte-Carlo Simulation for Isothermal Measurements for Tunneling Transition. Function version 0.1.0. In: Friedrich, J., Kreutzer, S., Pagonis, V., Schmidt, C., 2019. RLumCarlo: Monte-Carlo Methods for Simulating Luminescence PhenomenaR package version 0.1.0.9000-74. 
+Friedrich, J., Kreutzer, S., 2019. run_MC_ISO_TUN(): Run Monte-Carlo Simulation for Isothermal Measurements for Tunneling Transition. Function version 0.1.0. In: Friedrich, J., Kreutzer, S., Pagonis, V., Schmidt, C., 2019. RLumCarlo: Monte-Carlo Methods for Simulating Luminescence PhenomenaR package version 0.1.0.9000-77. 
 }
 
 \references{
@@ -72,7 +72,7 @@ Pagonis, V. and Kulp, C., 2017. Monte Carlo simulations of tunneling phenomena a
 
 Pagonis, V., Friedrich, J., Discher, M., Müller-Kirschbaum, A., Schlosser, V., Kreutzer, S., Chen, R. and Schmidt, C., 2019. Excited state luminescence signals from a random distribution of defects: A new Monte Carlo simulation approach for feldspar. Journal of Luminescence 207, 266–272. \doi{10.1016/j.jlumin.2018.11.024}
 
-for a discussion of tunneling see:
+For a discussion of tunneling see:
 Aitken, M.J., 1985. Thermoluminescence dating. 276-280. \doi{10.1002/gea.3340020110}
 }
 \author{

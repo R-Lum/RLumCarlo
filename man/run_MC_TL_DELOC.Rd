@@ -12,9 +12,9 @@ run_MC_TL_DELOC(s, E, times, clusters = 10, N_e = 200,
 
 \item{E}{\link{numeric} (\strong{required}): Thermal activation energy of the trap (eV).}
 
-\item{times}{\link{numeric} (\emph{with default}): the number of MC runs.}
+\item{times}{\link{numeric} (\emph{with default}): The specified time within the simulation with the same syntax as the function seq().}
 
-\item{clusters}{\link{numeric} (\emph{with default}): the number of clusters.}
+\item{clusters}{\link{numeric} (\emph{with default}): The number of MC runs.}
 
 \item{N_e}{\link{integer} (\emph{with default}): The number of electrons.}
 
@@ -64,7 +64,10 @@ run_MC_TL_DELOC(
 ##============================================================================##
 ## Example 2: Plot multiple TL stimulation TL curves in R with varying params
 ##============================================================================##
-\dontrun{
+
+   
+    
+      \dontrun{
 # define your parameters
 times=seq(100,450,1)
 s=rep(3.5e12,4)
@@ -93,7 +96,7 @@ legend("topright",ncol=5,cex=0.55,title = "parameters" ,legend=c(paste0("E = ", 
 } 
 
 \section{How to cite}{
-Kreutzer, S., 2019. run_MC_TL_DELOC(): Run Monte-Carlo simulation for TL for delocalized transition. Function version 0.0.1. In: Friedrich, J., Kreutzer, S., Pagonis, V., Schmidt, C., 2019. RLumCarlo: Monte-Carlo Methods for Simulating Luminescence PhenomenaR package version 0.1.0.9000-74. 
+Kreutzer, S., 2019. run_MC_TL_DELOC(): Run Monte-Carlo simulation for TL for delocalized transition. Function version 0.0.1. In: Friedrich, J., Kreutzer, S., Pagonis, V., Schmidt, C., 2019. RLumCarlo: Monte-Carlo Methods for Simulating Luminescence PhenomenaR package version 0.1.0.9000-77. 
 }
 
 \references{

@@ -14,13 +14,13 @@ run_MC_ISO_LOC(s, E, T = 20, times, clusters = 10, n_filled = 100, r,
 
 \item{T}{\link{numeric} (\emph{with default}): Temperature (deg. C).}
 
-\item{times}{\link{numeric} (\emph{with default}): The number of MC runs.}
+\item{times}{\link{numeric} (\emph{with default}): The specified time within the simulation with the same syntax as the function seq().}
 
-\item{clusters}{\link{numeric} (\emph{with default}): The number of clusters.}
+\item{clusters}{\link{numeric} (\emph{with default}): The number of MC runs.}
 
 \item{n_filled}{\link{integer} (\emph{with default}): The number of electron traps that are filled at the beginning of the simulation.}
 
-\item{r}{\link{numeric} (\emph{with default}): The retrapping ratio.}
+\item{r}{\link{numeric} (\emph{with default}): The retrapping ratio for localized models (dimensionless).}
 
 \item{method}{\link{character} (\emph{with default}): sequential \code{'seq'} or parallel processing \code{'par'}}
 
@@ -33,7 +33,7 @@ charges, electrons, in the trap)}
 This function returns an \link{array} with dimension length(times) x length(r) x clusters
 }
 \description{
-Runs a Monte-Carlo (MC) simulation of isothermally stimulated luminesence (ISO-TL or ITL) using the genralized one trap (GOT) model. Localized refers to the lack of involvement of the conduction band.
+Runs a Monte-Carlo (MC) simulation of isothermally stimulated luminesence (ISO-TL or ITL) using the genralized one trap (GOT) model. Localized refers to excitation of an electron before it recombines, but without the involvement of the conduction band.
 }
 \details{
 \deqn{
@@ -50,7 +50,11 @@ Where in the function \code{n} := \code{n_filled} := \code{N} := \code{N_e}
 ##============================================================================##
 ## Example 1: Simulate ITL
 ##============================================================================##
-\dontrun{
+
+
+ 
+  
+    \dontrun{
 run_MC_ISO_LOC(
  s = 3.5e12,
  E = 1.45,
@@ -61,10 +65,12 @@ run_MC_ISO_LOC(
 
 }
 
+
+
 } 
 
 \section{How to cite}{
-Kreutzer, S., 2019. run_MC_ISO_LOC(): Run Monte-Carlo simulation for ITL for localised transition. Function version 0.0.1. In: Friedrich, J., Kreutzer, S., Pagonis, V., Schmidt, C., 2019. RLumCarlo: Monte-Carlo Methods for Simulating Luminescence PhenomenaR package version 0.1.0.9000-74. 
+Kreutzer, S., 2019. run_MC_ISO_LOC(): Run Monte-Carlo simulation for ITL for localised transition. Function version 0.0.1. In: Friedrich, J., Kreutzer, S., Pagonis, V., Schmidt, C., 2019. RLumCarlo: Monte-Carlo Methods for Simulating Luminescence PhenomenaR package version 0.1.0.9000-77. 
 }
 
 \references{

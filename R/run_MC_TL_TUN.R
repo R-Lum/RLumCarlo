@@ -60,11 +60,6 @@
 #'     plot_RLumCarlo(legend = T)
 #'}
 #'
-#'context("run_MC_TL_TUN")
-#'
-#'
-#'
-#'
 #' @md
 #' @export
 run_MC_TL_TUN <- function(
