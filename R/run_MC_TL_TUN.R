@@ -1,15 +1,31 @@
-#' Run Monte-Carlo simulation for TL
+#' @title Run Monte-Carlo simulation for TL
 #'
-#' @param s \code{\link{list}} [list]
-#' @param E \code{\link{numeric}} [numeric]
-#' @param rho \code{\link{numeric}} [numeric]: The calculated dimesionless Charge density (normally written Rho').
-#' @param r_c \code{\link{numeric}} [numeric] (with default)
-#' @param times \code{\link{vector}} (with default)
-#' @param clusters \code{\link{numeric}} (with default):
-#' @param N_e \code{\link{numeric}} (with default):
-#' @param delta.r \code{\link{numeric}} (with default):
-#' @param method \code{\link{character}} (with default):
-#' @param output \code{\link{character}} (with default):
+#' @description
+#'
+#' @details
+#'
+#'  ADD EQUATION
+#'
+#' @param s [list] (**required**): Escape frequency of the trap (s^-1).
+#'
+#' @param E [numeric] (**required**): Thermal activation energy of the trap (eV).
+#'
+#' @param rho [numeric] (**required**): The calculated dimesionless Charge density (normally written Rho').
+#'
+#' @param r_c [numeric] (*with default*):
+#'
+#' @param times [vector] (*with default*): The number of MC runs.
+#'
+#' @param clusters  [numeric] (*with default*): The number of clusters.
+#'
+#' @param N_e [numeric] (*with default*): The number of electrons
+#'
+#' @param delta.r [numeric] (*with default*):
+#'
+#' @param method [character] (*with default*):
+#'
+#' @param output [character] (*with default*):
+#'
 #' @param \dots further arguments
 #'
 #' @return This function returns an \code{\link{array}} with dimension length(times) x length(r) x clusters
@@ -19,7 +35,7 @@
 #' @author Johannes Friedrich, University of Bayreuth (Germany)
 #'
 #' @references
-#' 
+#'
 #' Pagonis, V. and Kulp, C. (2017) ‘Monte Carlo simulations of tunneling phenomena and nearest neighbor hopping mechanism in feldspars’, Journal of Luminescence. Elsevier, 181, pp. 114–120. doi: 10.1016/j.jlumin.2016.09.014.
 #'
 #' @examples
