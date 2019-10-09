@@ -68,7 +68,7 @@ plot_RLumCarlo <- function(
 
     }
 
-   return(NULL)
+   return(invisible(NULL))
  }
 
  # Preparation ---------------------------------------------------------------------------------
