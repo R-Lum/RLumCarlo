@@ -1,6 +1,6 @@
 #' @title Run Monte-Carlo simulation for CW-IRSL for delocalized transition
 #'
-#' @description Runs a Monte-Carlo (MC) simulation of constant wave infrared stimulated luminesence (CW-IRSL) using one trap one recombination center (OTOR) model.
+#' @description Runs a Monte-Carlo (MC) simulation of constant wave infrared stimulated luminesence (CW-IRSL) using the one trap one recombination center (OTOR) model.
 #'
 #' @details
 #'
