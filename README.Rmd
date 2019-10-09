@@ -76,6 +76,17 @@ This program is free software: you can redistribute it and/or modify it under th
 
 This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the [GNU General Public License](https://github.com/R-Lum/RLumCarlo/blob/master/LICENSE) for more details.
 
+## <span class="glyphicon glyphicon-euro"></span> Funding
+
+This project benefitted from the support by various funding bodies. 
+
+* The initial work by Johannes Friedrich, Sebastian Kreutzer and Christoph Schmidt was supported by the [DFG (2015–2018, SCHM 3051/4-1, "Modelling quartz luminescence signal dynamics relevant for dating and dosimetry", SCHM 3051/4-1)](https://gepris.dfg.de/gepris/projekt/279969851). 
+
+* Later financial support was secured through the project *ULTIMO: Unifying Luminescence Models of quartz and feldspar (German Academic Exchange Service) DAAD: Deutscher Akademischer Austauschdienst DAAD PPP USA 2018, ID: 57387041)*. 
+
+* The work of Sebastian Kreutzer as maintainer of the package was supported 
+by [LabEx LaScArBx (ANR - n. ANR-10-LABX-52)](https://lascarbx.labex.u-bordeaux.fr).
+
 ## Related projects 
 
 * [Luminescence](https://github.com/R-Lum/Luminescence)
