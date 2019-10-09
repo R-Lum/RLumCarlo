@@ -51,10 +51,10 @@
 #'
 #'#' @examples
 #' ##============================================================================##
-#' ## Example 2: Simulate CW-IRSL with several parameter changes
+#' ## Example 2: Simulate CW-IRSL DELOC with several parameter changes
 #' ##============================================================================##
 #' \dontrun{
-#' 
+#'
 #'# define your parameters
 #'A=c(0.1,0.3,0.5,1)
 #'times=seq(0,60,1)
@@ -67,7 +67,6 @@
 #'method="par"
 #'output ="signal"
 #'col=c(1,2,3,4) # ifferent colours for the individual curves
-#'col=c(1,2,3,4) # ifferent colours for the individual curves 
 #'plot_uncertainty <- c(T,F,T,F)  # do you want to see the uncertainty?
 #'add_TF <- c(F,rep(T, (length(R)-1)))
 # loop to plot different curves into one plot
@@ -78,8 +77,8 @@
 #'}
 # add your legend with your parameters
 #'legend("topright",ncol=4,cex=0.55,title = "parameters" ,legend=c(paste0("A = ", A),
-#'                                                                 paste0("n_filled = ", n_filled), 
-#'                                                                 paste0("N_e = ", N_e), 
+#'                                                                 paste0("n_filled = ", n_filled),
+#'                                                                 paste0("N_e = ", N_e),
 #'                                                                 paste0("R = ", R)),  text.col=col)
 #'
 #' }
