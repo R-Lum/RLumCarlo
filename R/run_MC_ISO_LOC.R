@@ -1,6 +1,6 @@
 #' @title Run Monte-Carlo simulation for ITL for localised transition
 #'
-#' @description Runs a Monte-Carlo (MC) simulation of isothermally stimulated luminesence (ISO-TL or ITL) using the model.
+#' @description Runs a Monte Carlo (MC) simulation of isothermally stimulated luminesence (ISO-TL or ITL) using the one trap one recombination center (OTOR) model.
 #'
 #' @details
 #'
@@ -8,11 +8,11 @@
 #' I_{LOC}(t) = -dn/dt = p(t) * (n^2 / (r + n))
 #' }
 #'
-#' @param s [numeric] (**required**): Escape frequency of the trap (s^-1).
+#' @param s [numeric] (**required**):
 #'
-#' @param E [numeric] (**required**): Thermal activation energy of the trap (eV).
+#' @param E [numeric] (**required**):
 #'
-#' @param T [numeric] (*with default*): Temperature (deg. C).
+#' @param T [numeric] (*with default*): [CÂ°] Temperature.
 #'
 #' @param times [numeric] (*with default*): The number of MC runs.
 #'
