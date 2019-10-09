@@ -28,8 +28,10 @@ test_that("basic run", {
   ))
 
   ## check output
-  expect_s3_class(results, class = "RLumCarlo_Model_Output")
-  expect_length(results, 2)
+  expect_s3_class(results_par, class = "RLumCarlo_Model_Output")
+  expect_length(results_par, 2)
+  expect_s3_class(results_seq, class = "RLumCarlo_Model_Output")
+  expect_length(results_seq, 2)
 
 })
 
