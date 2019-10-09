@@ -2,7 +2,7 @@
 % Please edit documentation in R/run_MC_TL_TUN.R
 \name{run_MC_TL_TUN}
 \alias{run_MC_TL_TUN}
-\title{Run Monte-Carlo simulation for TL for tunneling transition}
+\title{Run Monte-Carlo Simulation for TL using Tunnelling Transition}
 \usage{
 run_MC_TL_TUN(s, E, rho, r_c, times, clusters = 10, N_e = 200,
   delta.r = 0.1, method = "par", output = "signal", ...)
@@ -24,9 +24,10 @@ run_MC_TL_TUN(s, E, rho, r_c, times, clusters = 10, N_e = 200,
 
 \item{delta.r}{\link{numeric} (\emph{with default}): The approriate distance interval along the r axis (dimensionless).}
 
-\item{method}{\link{character} (\emph{with default}): ##TODO}
+\item{method}{\link{character} (\emph{with default}): sequential \code{'seq'} or parallel processing \code{'par'}}
 
-\item{output}{\link{character} (\emph{with default}): ##TODO}
+\item{output}{\link{character} (\emph{with default}): output is either the \code{'signal'} (the default) or \code{'remaining_e'} (the remaining
+charges, electrons, in the trap)}
 
 \item{\dots}{further arguments}
 }
@@ -34,7 +35,8 @@ run_MC_TL_TUN(s, E, rho, r_c, times, clusters = 10, N_e = 200,
 This function returns an \code{\link{array}} with dimension length(times) x length(r) x clusters
 }
 \description{
-Runs a Monte-Carlo (MC) simulation of thermo-luminesence (LM-OSL) using the tunneling (TUN) model. Tunneling transitions refers to the direct movement of electrons from a trap directly to the recombination center (\emph{without passing go or collecting $200}).
+Runs a Monte-Carlo (MC) simulation of thermo-luminesence (TL) using the tunneling (TUN) model.
+Tunneling transitions refers to the direct movement of electrons from a trap directly to the recombination centre.
 }
 \details{
 \deqn{
@@ -52,20 +54,17 @@ where in the function \code{N} := \code{N_e} := \code{rho} := \code{rho'} := \co
 ##============================================================================##
 ## Example 1: Simulate TL measurement
 ##============================================================================##
-
-times <- seq(200, 500) # time = temperature
-
 run_MC_TL_TUN(s = 3.5e12,
           E = 1.45,
           rho = 0.015,
           r_c = 0.85,
-          times = times) \%>\%
+          times = 200:500) \%>\%
     plot_RLumCarlo(legend = T)
 }
 } 
 
 \section{How to cite}{
-Friedrich, J., 2019. run_MC_TL_TUN(): Run Monte-Carlo simulation for TL for tunneling transition. Function version 0.1.0. In: Friedrich, J., Kreutzer, S., Pagonis, V., Schmidt, C., 2019. RLumCarlo: Monte-Carlo Methods for Simulating Luminescence PhenomenaR package version 0.1.0.9000-67. 
+Friedrich, J., Kreutzer, S., 2019. run_MC_TL_TUN(): Run Monte-Carlo Simulation for TL using Tunnelling Transition. Function version 0.1.0. In: Friedrich, J., Kreutzer, S., Pagonis, V., Schmidt, C., 2019. RLumCarlo: Monte-Carlo Methods for Simulating Luminescence PhenomenaR package version 0.1.0.9000-68. 
 }
 
 \references{
@@ -73,9 +72,9 @@ Pagonis, V. and Kulp, C., 2017. Monte Carlo simulations of tunneling phenomena a
 
 Pagonis, V., Friedrich, J., Discher, M., Müller-Kirschbaum, A., Schlosser, V., Kreutzer, S., Chen, R. and Schmidt, C., 2019. Excited state luminescence signals from a random distribution of defects: A new Monte Carlo simulation approach for feldspar. Journal of Luminescence 207, 266–272. \doi{10.1016/j.jlumin.2018.11.024}
 
-for a discussion of tunneling see:
+\strong{Further reading}
 Aitken, M.J., 1985. Thermoluminescence dating. 276-280. \doi{10.1002/gea.3340020110}
 }
 \author{
-Johannes Friedrich, University of Bayreuth (Germany)
+Johannes Friedrich, University of Bayreuth (Germany), Sebastian Kreutzer, IRAMAT-CRP2A, UMR 5060, Université Bordeaux Montaigne (France)
 }

@@ -10,8 +10,8 @@
 #include <RcppArmadillo.h>
 using namespace Rcpp;
 
-// [[Rcpp::export("MC_C_CW_IRSL_DELOC")]]
-List MC_C_CW_IRSL_DELOC(arma::vec times, int N_e, int n_filled, double R, double A) {
+// [[Rcpp::export("MC_C_CW_OSL_DELOC")]]
+List MC_C_CW_OSL_DELOC(arma::vec times, int N_e, int n_filled, double R, double A) {
   //N >> N_e total: concentration of traps [cm^-3]
   //n >> n_filled: concentration of filled traps [cm^-3]
   //t >> times: refers basically to the temperature

@@ -2,7 +2,7 @@
 % Please edit documentation in R/run_MC_ISO_TUN.R
 \name{run_MC_ISO_TUN}
 \alias{run_MC_ISO_TUN}
-\title{Run Monte-Carlo simulation for isothermal measurements for tunneling transition}
+\title{Run Monte-Carlo Simulation for Isothermal Measurements for Tunneling Transition}
 \usage{
 run_MC_ISO_TUN(E, s, T = 200, rho, times, clusters = 10, r = NULL,
   N_e = 200, method = "par", output = "signal", ...)
@@ -24,9 +24,10 @@ run_MC_ISO_TUN(E, s, T = 200, rho, times, clusters = 10, r = NULL,
 
 \item{N_e}{\link{numeric} (\emph{with default}): The number of electrons.}
 
-\item{method}{\link{character} (\emph{with default}): ##TODO}
+\item{method}{\link{character} (\emph{with default}): sequential \code{'seq'} or parallel processing \code{'par'}}
 
-\item{output}{\link{character} (\emph{with default}): ##TODO}
+\item{output}{\link{character} (\emph{with default}): output is either the \code{'signal'} (the default) or \code{'remaining_e'} (the remaining
+charges, electrons, in the trap)}
 
 \item{\dots}{further arguments}
 }
@@ -34,7 +35,7 @@ run_MC_ISO_TUN(E, s, T = 200, rho, times, clusters = 10, r = NULL,
 This function returns a list.
 }
 \description{
-Runs a Monte-Carlo (MC) simulation of isothermally stimulated luminesence (ISO-TL or ITL) using the tunneling (TUN) model. Tunneling transitions refers to the direct movement of electrons from a trap directly to the recombination center (\emph{without passing go or collecting $200}).
+Runs a Monte-Carlo (MC) simulation of isothermally stimulated luminesence (ISO-TL or ITL) using the tunneling (TUN) model. Tunneling transitions refers to the direct movement of electrons from a trap directly to the recombination centre.
 }
 \details{
 \deqn{
@@ -52,20 +53,18 @@ Where in the function \code{n} := \code{n_filled} := \code{N} := \code{N_e} := \
 ##============================================================================##
 ## Example 1: Simulate isothermal measurement
 ##============================================================================##
-
-times <- seq(0, 5000)
 run_MC_ISO_TUN(
  E = 1.2,
  s = 1e10,
  T = 200,
  rho = 0.007,
- times = times) \%>\%
+ times = 0:5000) \%>\%
   plot_RLumCarlo(legend = T)
 }
 } 
 
 \section{How to cite}{
-Friedrich, J., Kreutzer, S., 2019. run_MC_ISO_TUN(): Run Monte-Carlo simulation for isothermal measurements for tunneling transition. Function version 0.1.0. In: Friedrich, J., Kreutzer, S., Pagonis, V., Schmidt, C., 2019. RLumCarlo: Monte-Carlo Methods for Simulating Luminescence PhenomenaR package version 0.1.0.9000-67. 
+Friedrich, J., Kreutzer, S., 2019. run_MC_ISO_TUN(): Run Monte-Carlo Simulation for Isothermal Measurements for Tunneling Transition. Function version 0.1.0. In: Friedrich, J., Kreutzer, S., Pagonis, V., Schmidt, C., 2019. RLumCarlo: Monte-Carlo Methods for Simulating Luminescence PhenomenaR package version 0.1.0.9000-68. 
 }
 
 \references{

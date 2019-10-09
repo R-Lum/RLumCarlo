@@ -1,6 +1,6 @@
-#' @title Run Monte-Carlo simulation for CW-IRSL for delocalized transition
+#' @title Run Monte-Carlo simulation for CW-OSL for delocalized transition
 #'
-#' @description Runs a Monte-Carlo (MC) simulation of constant wave infrared stimulated luminesence (CW-IRSL) using the one trap one recombination center (OTOR) model.
+#' @description Runs a Monte-Carlo (MC) simulation of constant wave infrared stimulated luminesence (CW-OSL) using the one trap one recombination center (OTOR) model.
 #'
 #' @details
 #'
@@ -38,10 +38,10 @@
 #'
 #' @examples
 #' ##============================================================================##
-#' ## Example 1: Simulate CW-IRSL
+#' ## Example 1: Simulate CW-OSL
 #' ##============================================================================##
 #' \dontrun{
-#' run_MC_CW_IRSL_DELOC(
+#' run_MC_CW_OSL_DELOC(
 #'  A = 0.12,
 #'  R = 1,
 #'  times = 0:100) %>%
@@ -51,7 +51,7 @@
 #'
 #'#' @examples
 #' ##============================================================================##
-#' ## Example 2: Simulate CW-IRSL DELOC with several parameter changes
+#' ## Example 2: Simulate CW-OSL DELOC with several parameter changes
 #' ##============================================================================##
 #' \dontrun{
 #'
@@ -71,7 +71,7 @@
 #'add_TF <- c(F,rep(T, (length(R)-1)))
 # loop to plot different curves into one plot
 #'for (u in 1:length(R)){
-#'  results <-run_MC_CW_IRSL_DELOC(A=A[u], times, clusters =clusters, N_e = N_e[u],
+#'  results <-run_MC_CW_OSL_DELOC(A=A[u], times, clusters =clusters, N_e = N_e[u],
 #'                                 n_filled = n_filled[u], R=R[u], method = method, output = output)
 #'  plot_RLumCarlo(results,add=add_TF[u],legend = F, col=col[u], main=" your plot")
 #'}
@@ -86,7 +86,6 @@
 #'
 #' @md
 #' @export
-run_MC_CW_IRSL_DELOC <- function(
   A,
   times,
   clusters = 10,
@@ -121,7 +120,7 @@ run_MC_CW_IRSL_DELOC <- function(
                   .combine = 'comb_array',
                   .multicombine = TRUE) %dopar% {
 
-    results <- MC_C_CW_IRSL_DELOC(
+    results <- MC_C_CW_OSL_DELOC(
       times = times,
       N_e = N_e,
       n_filled = n_filled,
