@@ -34,15 +34,14 @@ electrons <- data.frame(
 
 # Scope
 
-RLumCarlo is collection of energ-band models to simulate luminescence signal production using Monte-Carlo (MC) methods. This document aims at providing an overview and a brief introduction to RLumCarlo 
-and on how to use the models. The first section, will, however, provide a brief introduction 
-into RLumCarlo and how plot and extracts its data.
-
-# A simple exlample
-
-TODO
+RLumCarlo is collection of energy-band models to simulate luminescence signals using Monte-Carlo (MC) methods. This document aims at providing an overview and a brief introduction to RLumCarlo. 
 
 # The models in RLumCarlo
+
+The following tables lists the models implemented in RLumCarlo along with the R function call 
+and the corresponding R and C++ files. The modelling takes place in the C++ functions which 
+are wrapped by the R functions with a similar name. If you, however, want to cross-check the 
+code, you should inspect files with the ending '.cpp'. 
 
 ```{r, echo = FALSE, message=FALSE}
 ## extract models
@@ -62,38 +61,79 @@ knitr::kable(df, booktabs = TRUE, linesep = "\\addlinespace") %>%
   column_spec(1, bold = TRUE)
 ```
 
+Each model can be run by calling one of the **R** functions starting with `run_`. Currently 
+three different model types (TUN: tunneling, LOC: localised transition, DELOC: delocalised 
+transition) are implemented for the stimulation types TL, IRSL, LM-OSL, and ISO (isothermal). 
+Please note that each model has different parameters and requirements. 
 
+# Examples
 
+## Example 1: A first example
 
-# Figure 1
-
-```{r Fig 1, fig.align='center'}
-times <- seq(0, 5000)
-
-## Run MC simulation
-run_MC_ISO_TUN(E = 1.2,
-           s = 1e10,
-           T = 200,
-           rho = 0.007,
-           times = times) %>%
+The first examples simulates an iso-thermal curve using the tunneling model. 
+```{r Fig 1, fig.align='center', cache=TRUE}
+results <- run_MC_ISO_TUN(
+  E = 1.2,
+  s = 1e10,
+  T = 200,
+  rho = 0.007,
+  times = seq(0, 5000)
+) %T>%
   plot_RLumCarlo(norm = TRUE, legend = TRUE)
 ```
 
+The modelling output is an object of class `RLumCarlo_Model_Output`, which is basically 
+a list consisting of an array and a vector. 
 
-# Figure 2
+```{r}
+str(results)
+```
+
+While this represents the full modelling output results, the interpretation might be less 
+straight forward and the user may want to condense the information via `summary()`. 
+The function `summary()` is also used internally by the function `plot_RLumCarlo()`.
+
+```{r}
+df <- summary(results)
+head(df)
+```
+
+The call summarises the modelling results and returns a terminal output and a `data.frame` with, 
+e.g., the mean or the standard deviation, which can be used to create plots for further insight. 
+For instance, the stimulation time agains the relative standard deviation: 
+
+```{r, fig.align="center"}
+plot(
+  x = df$time,
+  y = (df$sd / df$mean) * 100,
+  pch = 20, 
+  col = rgb(0,0,0,.1),
+  xlab = "Stimulation time [s]",
+  ylab = "cv [%]"
+)
+```
+
+## Example 2: Combining two plots
+
+The following example uses continuous wave (CW) infrared light stimulation (IRSL), and combines
+two plots in one single plot window.
 
 ```{r Fig 2, fig.align='center'}
 times <- seq(0, 1000)
 
 ## Run MC simulation
 run_MC_CW_IRSL_TUN(A = 0.12, rho = 0.003, times = times) %>%
-  plot_RLumCarlo(norm = T, legend = T)
+  plot_RLumCarlo(norm = TRUE, legend = TRUE)
 
 run_MC_CW_IRSL_TUN(A = 0.21, rho = 0.003, times = times) %>%
-  plot_RLumCarlo(norm = T, add = T)
+  plot_RLumCarlo(norm = TRUE, add = TRUE)
 ```
 
-# Figure 3
+## Example 3: Testing parameters
+
+The example above can be further extended to test the effect of different parameters. 
+Contrary to the example above, here the results are stored in a `list` and `plot_RLumCarlo()` 
+is called only one time. 
 
 ```{r Fig 3, fig.align='center', cache = TRUE}
 s <- 3.5e12
@@ -113,7 +153,7 @@ results <- lapply(r_c, function(x) {
 })
 ```
 
-```{r,Plot average signal, fig.align='center', echo = TRUE, cache = TRUE}
+```{r,Plot average signal, fig.align='center', echo = FALSE, cache = TRUE}
 plot_RLumCarlo(
   object = results, 
   ylab = "normalized TL signal",
@@ -132,6 +172,4 @@ legend(
   lty = 1,
   col = c("black", "green", "blue", "red")
 )
-
-
 ```
