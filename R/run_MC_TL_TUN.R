@@ -74,6 +74,13 @@ run_MC_TL_TUN <- function(
   output = "signal",
   ...){
 
+ # Integrity checks ----------------------------------------------------------------------------
+  if(!method %in% c("par", "seq"))
+    stop("[run_MC_ISO_TUN()] Allowed keywords for 'method' are either 'par' or 'seq'!", call. = FALSE)
+
+  if(!output %in% c("signal", "remaining_e"))
+    stop("[run_MC_ISO_TUN()] Allowed keywords for 'output' are either 'signal' or 'remaining_e'!", call. = FALSE)
+
 # Register multi-core backend -----------------------------------------------------------------
   cores <- detectCores()
   if(cores == 1) method <- "seq"
