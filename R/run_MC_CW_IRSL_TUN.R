@@ -19,9 +19,10 @@
 #'
 #' @param N_e [numeric] (*with default*): The number of electrons
 #'
-#' @param method [character] (*with default*):
+#' @param method [character] (*with default*): sequential `'seq'` or parallel processing `'par'`
 #'
-#' @param output [character] (*with default*):
+#' @param output [character] (*with default*): output is either the `'signal'` (the default) or `'remaining_e'` (the remaining
+#' charges, electrons, in the trap)
 #'
 #' @param \dots further arguments
 #'
@@ -58,51 +59,55 @@ run_MC_CW_IRSL_TUN <- function(
   output = "signal",
   ...){
 
+# Integrity checks ----------------------------------------------------------------------------
+  if(!method %in% c("par", "seq"))
+    stop("[run_MC_CW_IRSL_TUN()] Allowed keywords for 'method' are either 'par' or 'seq'!", call. = FALSE)
 
-  ## register backend ----
-  cores <- parallel::detectCores()
+  if(!output %in% c("signal", "remaining_e"))
+    stop("[run_MC_CW_IRSL_TUN()] Allowed keywords for 'output' are either 'signal' or 'remaining_e'!", call. = FALSE)
+
+# Register multi-core backend -----------------------------------------------------------------
+  cores <- detectCores()
   if(cores == 1) method <- "seq"
 
   if(method != "par"){
-
     cl <- parallel::makeCluster(1)
     doParallel::registerDoParallel(cl)
-
     ##ensures that we do not have any particular problems
     registerDoSEQ()
-    on.exit(parallel::stopCluster(cl))
+    on.exit(stopCluster(cl))
 
   } else {
     cl <- parallel::makeCluster(cores-1)
     doParallel::registerDoParallel(cl)
-    on.exit(parallel::stopCluster(cl))
+    on.exit(stopCluster(cl))
   }
 
-  ## -----
 
- if(is.null(r)) r <- seq(from = 0, to = 2, by = 0.1)
+# Setting parameters --------------------------------------------------------------------------
+if(is.null(r)) r <- seq(from = 0, to = 2, by = 0.1)
 
-  temp <- foreach(
-    c = 1:clusters,
-    .packages = 'RLumCarlo',
-    .combine = 'comb_array',
-    .multicombine = TRUE) %dopar% {
+# Run model -----------------------------------------------------------------------------------
+temp <- foreach(
+  c = 1:clusters,
+  .packages = 'RLumCarlo',
+  .combine = 'comb_array',
+  .multicombine = TRUE
+) %dopar% {
+  results <- MC_C_CW_IRSL_TUN(
+    times = times,
+    N_e = N_e,
+    r = r,
+    rho = rho,
+    A = A
+  )
 
-    results <- MC_C_CW_IRSL_TUN(
-        times = times,
-        N_e = N_e,
-        r = r,
-        rho = rho,
-        A = A
-    )
+  return(results[[output]])
 
-   return(results[[output]])
+}  # end c-loop
 
-  }  # end c-loop
-
-  ## return model output
-  .return_ModelOutput(signal = temp, time = times)
-
+# Return --------------------------------------------------------------------------------------
+.return_ModelOutput(signal = temp, time = times)
 }
 
 
