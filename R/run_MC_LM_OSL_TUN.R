@@ -1,31 +1,14 @@
-#' @title Run Monte-Carlo simulation for LM-OSL
-#' 
-#' @description 
-#' 
-#' @details 
-#' 
-#' \deqn{
-#' 
-#' }
+#' Run Monte-Carlo simulation for LM-OSL
 #'
-#' @param A [numeric] (**required**): The transition probaility (cm^3/s).
-#' 
-#' @param rho [numeric] (**required**): The calculated dimesionless Charge density (normally written Rho').
-#' 
-#' @param times [vector] (*with default*): The number of MC runs.
-#' 
-#' @param clusters [numeric] (*with default*): The number of clusters.
-#' 
-#' @param r [numeric] (*with default*): The retrapping ratio.
-#' 
-#' @param delta.r [numeric] (*with default*):
-#' 
-#' @param N_e [numeric] (*with default*): The number of electrons.
-#' 
-#' @param method [character] (*with default*):
-#' 
-#' @param output [character] (*with default*):
-#' 
+#' @param A \code{\link{numeric}}
+#' @param rho \code{\link{numeric}}: The calculated dimesionless Charge density (normally written Rho').
+#' @param times \code{\link{vector}} (with default)
+#' @param clusters \code{\link{numeric}} (with default):
+#' @param r \code{\link{numeric}} (with default):
+#' @param delta.r \code{\link{numeric}} (with default):
+#' @param N_e \code{\link{numeric}} (with default):
+#' @param method \code{\link{character}} (with default):
+#' @param output \code{\link{character}} (with default):
 #' @param \dots further arguments
 #'
 #' @return This function returns a list.
