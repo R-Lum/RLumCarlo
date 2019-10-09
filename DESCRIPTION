@@ -1,8 +1,8 @@
 Package: RLumCarlo
 Type: Package
 Title: Monte-Carlo Methods for Simulating Luminescence Phenomena
-Version: 0.1.0.9000-61
-Date: 2019-10-08
+Version: 0.1.0.9000-62
+Date: 2019-10-09
 Author: Johannes Friedrich [aut, trl] (<https://orcid.org/0000-0002-0805-9547>),
     Sebastian Kreutzer [aut, trl, cre] (<https://orcid.org/0000-0002-0734-2199>),
     Vasilis Pagonis [aut] (<https://orcid.org/0000-0002-4852-9312>),
@@ -26,20 +26,24 @@ Description: A Collection of Functions to Simulate Luminescence Production in Mi
 Contact: Package Developer Team <sebastian.kreutzer@u-bordeaux-montaigne.fr>
 License: GPL-3
 BugReports: https://github.com/R-Lum/RLumCarlo/issues
-Depends:
-    R (>= 3.3.0),
-    utils,
-    magrittr
+Depends: 
+  R (>= 3.3.0),
+  utils,
+  magrittr
 URL: https://CRAN.R-project.org/package=RLumCarlo
-LinkingTo: Rcpp (>= 1.0.2), 
-      RcppArmadillo (>= 0.9.700.2.0)
-Imports: abind (>= 1.4-5),
-      doParallel (>= 1.0.15),
-      foreach (>= 1.4.7),
-      parallel,
-      methods,
-      Rcpp (>= 1.0.2)
-Suggests: R.rsp
+LinkingTo: 
+  Rcpp (>= 1.0.2), 
+  RcppArmadillo (>= 0.9.700.2.0)
+Imports: 
+  abind (>= 1.4-5),
+  doParallel (>= 1.0.15),
+  foreach (>= 1.4.7),
+  parallel,
+  methods,
+  Rcpp (>= 1.0.2)
+Suggests: 
+  R.rsp (>= 0.43.1),
+  testthat (>= 2.0.0)
 Encoding: UTF-8
 VignetteBuilder: R.rsp
 RoxygenNote: 6.1.1
