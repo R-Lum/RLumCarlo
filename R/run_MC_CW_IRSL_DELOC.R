@@ -51,7 +51,7 @@
 #'
 #'#' @examples
 #' ##============================================================================##
-#' ## Example 2: Simulate CW-IRSL DELOC with several parameter changes
+#' ## Example 2: Simulate CW-IRSL with several parameter changes
 #' ##============================================================================##
 #' \dontrun{
 #' 
