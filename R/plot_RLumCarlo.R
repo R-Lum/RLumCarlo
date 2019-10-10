@@ -42,10 +42,14 @@ plot_RLumCarlo <- function(
 
 
  # Self-call -----------------------------------------------------------------------------------
- if(class(object) == "list"){
+ if(class(object)[1] == "list"){
     ## double check the objects in the list
     if(!all(sapply(object, class) == "RLumCarlo_Model_Output"))
       stop("[plot_RLumCarlo()] At least one element in the list is not of class RLumCarlo_Model_Output!", call. = FALSE)
+
+    ## summarize object already here (if we use lapply we use the class information)
+    for(i in 1:length(object))
+      object[[i]] <- summary(object[[i]], verbose = FALSE)
 
     ## set plot settings for which vectors make sense
     ## all other values are either explicit arguments are they are piped via the
@@ -61,7 +65,8 @@ plot_RLumCarlo <- function(
       pch = 1,
       lty = 1,
       lwd = 2,
-      type = "l"
+      type = "l",
+      ylim = c(0, max(vapply(object, function(x) max(x[["y_max"]]), numeric(1))))
 
     )
 
@@ -88,6 +93,7 @@ plot_RLumCarlo <- function(
         plot_uncertainty = plot_uncertainty,
         norm = norm,
         add = add[i],
+        ylim = plot_settings$ylim,
         col = plot_settings$col[i],
         pch = plot_settings$pch[i],
         lty = plot_settings$lty[i],
@@ -105,11 +111,12 @@ plot_RLumCarlo <- function(
  # Preparation ---------------------------------------------------------------------------------
 
  ## try to summarise whenenver possible
- if(class(object) != "RLumCarlo_Model_Output")
+ if(!"RLumCarlo_Model_Output" %in% class(object))
    stop("[plot_RLumCarlo()] 'object' needs to be of class RLumCarlo_Model_Output!", call. = FALSE)
 
  ## summarize
- object <- summary(object, verbose = FALSE)
+ if("RLumCarlo_Model_Output" %in% class(object) && class(object)[1] != "data.frame")
+   object <- summary(object, verbose = FALSE)
 
  ## extract correct columns
  avg <- object[["mean"]]
