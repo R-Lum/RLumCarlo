@@ -10,7 +10,7 @@
 #'
 #'Where in the function `n` := `n_filled` := `N` := `N_e`
 #'
-#'#' @param E [numeric] (**required**): Thermal activation energy of the trap (eV).
+#' @param E [numeric] (**required**): Thermal activation energy of the trap (eV).
 #'
 #' @param s [numeric] (**required**): The frequency factor of the trap (s^-1).
 #'
