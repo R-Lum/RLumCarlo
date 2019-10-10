@@ -5,7 +5,9 @@
 #'
 #' @param times [numeric] (*optinal*): Optional vector for the x-axis
 #'
-#' @param plot_uncertainty [logical] (*with default*): Enable/disable uncertainty polygon plot
+#' @param plot_uncertainty [logical] (*with default*): sets the nature of the show uncertainty, allowed
+#' values are `range`, `sd` (standard deviation), `var` (variance) and `NULL` disables the uncertaintiy
+#' visualisation
 #'
 #' @param norm  [logical] (*with default*): Normalise curve to the highest intensity
 #'
@@ -116,8 +118,8 @@ plot_RLumCarlo <- function(
       y_max <- y_max / max(y_max)
 
     }
-
     ylab <- "Normalized average signal"
+
   } else {
     ylab <- "Averaged signal [a.u.]"
 
