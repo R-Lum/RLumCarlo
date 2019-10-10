@@ -5,13 +5,21 @@
 #' @details
 #'
 #' \deqn{
-#' p(t) = A * (t / P) * e ^ (-r' / \rho' ^ (-1 / 3))
-#' }
-#' \deqn{
-#' I_{TUN}(t) = 3 * n * p(t) *  r' ^ 2 * e ^ (-r' ^ 3)
+#' p(t) = A * (t / P) * e^{(-r' / \rho'^{(-1 / 3)})}
 #' }
 #'
-#'Where in the function: \cr `p(t)` := `The experimental stimulation mode` \cr `t` := `Time` \cr `P` := `Maximum stimulation time` \cr `e` := `Exponential function`\cr `r'` := `r` \cr \eqn{\rho'} := rho  \cr `n` := `The instantaneous number of electrons` 
+#' \deqn{
+#' I_{TUN}(t) = 3 * n * p(t) *  (r')^2 * e^{(-r'^3)}
+#' }
+#'
+#'Where in the function: \cr
+#' `p(t)` := The experimental stimulation mode \cr
+#' `t` := `Time` \cr
+#' `P` := Maximum stimulation time \cr
+#' `e` := Exponential function\cr
+#' `r`' := `r` \cr
+#' \eqn{\rho}' := rho  \cr
+#' `n` := The instantaneous number of electrons
 #'
 #' @param A [numeric] (**required**): The optical excitation rate from ground state of trap to excited state of trap (s^-1).
 #'
@@ -44,7 +52,7 @@
 #'
 #' @references
 #' Huntley, D.J., 2006. An explanation of the power-law decay of luminescence. Journal of Physics: Condensed Matter, 18(4), 1359.\doi{10.1088/0953-8984/18/4/020}
-#' 
+#'
 #' Pagonis, V. and Kulp, C., 2017. Monte Carlo simulations of tunneling phenomena and nearest neighbor hopping mechanism in feldspars. Journal of Luminescence 181, 114–120. \doi{10.1016/j.jlumin.2016.09.014}
 #'
 #' Pagonis, V., Friedrich, J., Discher, M., Müller-Kirschbaum, A., Schlosser, V., Kreutzer, S., Chen, R. and Schmidt, C., 2019. Excited state luminescence signals from a random distribution of defects: A new Monte Carlo simulation approach for feldspar. Journal of Luminescence 207, 266–272. \doi{10.1016/j.jlumin.2018.11.024}

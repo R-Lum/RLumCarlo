@@ -8,7 +8,7 @@ run_MC_LM_OSL_TUN(A, rho, times, clusters = 10, r_c = 0,
   delta.r = 0.1, N_e = 200, method = "par", output = "signal", ...)
 }
 \arguments{
-\item{A}{\link{numeric} (\strong{required}): The optical excitation rate from trap to conduction band (s^-1).}
+\item{A}{\link{numeric} (\strong{required}): The optical excitation rate from ground state of trap to excited state of trap (s^-1).}
 
 \item{rho}{\link{numeric} (\strong{required}): The density of recombination centers (defined as rho' in Huntley 2006) (unitless).}
 
@@ -39,13 +39,21 @@ Runs a Monte-Carlo (MC) simulation of linearly modulated optically stimulated lu
 }
 \details{
 \deqn{
-p(t) = A * (t / p) * e ^ (-r / rho ^ (-1 / 3))
-}
-\deqn{
-I_{TUN}(t) = 3 * n * p(t) *  r ^ 2 * e ^ (-r ^ 3)
+p(t) = A * (t / P) * e^{(-r' / \rho'^{(-1 / 3)})}
 }
 
-Where in the function \code{n} := \code{n_filled}:= \code{t} := \code{times}
+\deqn{
+I_{TUN}(t) = 3 * n * p(t) *  (r')^2 * e^{(-r'^3)}
+}
+
+Where in the function: \cr
+\code{p(t)} := The experimental stimulation mode \cr
+\code{t} := \code{Time} \cr
+\code{P} := Maximum stimulation time \cr
+\code{e} := Exponential function\cr
+\code{r}' := \code{r} \cr
+\eqn{\rho}' := rho  \cr
+\code{n} := The instantaneous number of electrons
 }
 \section{Function version}{
  0.1.0
@@ -66,10 +74,12 @@ run_MC_LM_OSL_TUN(A = 10000, rho = 0.0001, times = 1:100, clusters = 10, r = NUL
 } 
 
 \section{How to cite}{
-Friedrich, J., 2019. run_MC_LM_OSL_TUN(): Run Monte-Carlo simulation for LM-OSL for tunneling transition. Function version 0.1.0. In: Friedrich, J., Kreutzer, S., Pagonis, V., Schmidt, C., 2019. RLumCarlo: Monte-Carlo Methods for Simulating Luminescence PhenomenaR package version 0.1.0.9000-90. 
+Friedrich, J., 2019. run_MC_LM_OSL_TUN(): Run Monte-Carlo simulation for LM-OSL for tunneling transition. Function version 0.1.0. In: Friedrich, J., Kreutzer, S., Pagonis, V., Schmidt, C., 2019. RLumCarlo: Monte-Carlo Methods for Simulating Luminescence PhenomenaR package version 0.1.0.9000-98. 
 }
 
 \references{
+Huntley, D.J., 2006. An explanation of the power-law decay of luminescence. Journal of Physics: Condensed Matter, 18(4), 1359.\doi{10.1088/0953-8984/18/4/020}
+
 Pagonis, V. and Kulp, C., 2017. Monte Carlo simulations of tunneling phenomena and nearest neighbor hopping mechanism in feldspars. Journal of Luminescence 181, 114–120. \doi{10.1016/j.jlumin.2016.09.014}
 
 Pagonis, V., Friedrich, J., Discher, M., Müller-Kirschbaum, A., Schlosser, V., Kreutzer, S., Chen, R. and Schmidt, C., 2019. Excited state luminescence signals from a random distribution of defects: A new Monte Carlo simulation approach for feldspar. Journal of Luminescence 207, 266–272. \doi{10.1016/j.jlumin.2018.11.024}

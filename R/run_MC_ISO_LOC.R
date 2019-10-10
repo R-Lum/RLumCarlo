@@ -7,10 +7,15 @@
 #' \deqn{
 #' I_{LOC}(t) = -dn/dt = (s * e^-E/k_b*T_ISO) * (n^2 / (r + n)))
 #' }
-#' 
-#' Where in the function: \cr `t` := `Time` \cr `e`:= `Exponentional function` \cr \eqn{k_{B}} := `Boltzmann constant` \cr \eqn{T_{ISO}} = `T` \cr `n` := `n_filled` \cr `N` := `N_e`
 #'
-#'Where in the function \cr `n` := `n_filled` \cr `N` := `N_e`
+#' Where in the function: \cr
+#'  `t` := `Time` \cr
+#'  `e`:= `Exponentional function` \cr
+#'  \eqn{k_{B}} := `Boltzmann constant` \cr
+#'  \eqn{T_{ISO}} = `T` \cr
+#'  n := `n_filled` \cr
+#'  `N` := `N_e`
+#'
 #'
 #' @param E [numeric] (**required**): Thermal activation energy of the trap (eV).
 #'
@@ -24,7 +29,7 @@
 #'
 #' @param n_filled [integer] (*with default*): The number of filled electron traps at the beginning of the simulation (unitless).
 #'
-#' @param r [numeric] (*with default*): the localized retrapping ratio (unitless). 
+#' @param r [numeric] (*with default*): the localized retrapping ratio (unitless).
 #'
 #' @param method [character] (*with default*): sequential `'seq'` or parallel processing `'par'`
 #'
@@ -48,9 +53,9 @@
 #' ## Example 1: Simulate ITL
 #' ##============================================================================##
 #'
-#' 
-#'  
-#'   
+#'
+#'
+#'
 #'     \dontrun{
 #' run_MC_ISO_LOC(
 #'  s = 3.5e12,
@@ -61,8 +66,8 @@
 #'    plot_RLumCarlo(legend = T)
 #'
 #' }
-#' 
-#' 
+#'
+#'
 #'
 #' @md
 #' @export

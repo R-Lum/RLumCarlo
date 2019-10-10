@@ -16,7 +16,7 @@ run_MC_LM_OSL_LOC(A, times, clusters = 10, n_filled = 100, r,
 
 \item{n_filled}{\link{integer} (\emph{with default}): The number of filled electron traps at the beginning of the simulation (unitless).}
 
-\item{r}{\link{numeric} (\emph{with default}): The retrapping ratio (unitless)}
+\item{r}{\link{numeric} (\emph{with default}): The localized retrapping ratio (unitless)}
 
 \item{method}{\link{character} (\emph{with default}): sequential \code{'seq'} or parallel processing \code{'par'}}
 
@@ -33,8 +33,13 @@ Runs a Monte-Carlo (MC) simulation of linearly modulated optically stimulated lu
 }
 \details{
 \deqn{
-I_{DELOC}(t) = -dn/dt = p(t) * (n^2 / (NR + n(1-R)))
+I_{LOC}(t) = -dn/dt = p(t) * (n^2 / (r + n))
 }
+
+Where in the function: \cr
+\code{t} := \code{Time} \cr
+\code{p(t)} := The experimental stimulation mode \cr
+\code{n} := The Instantaneous number of electrons
 }
 \section{Function version}{
  0.1.0
@@ -56,7 +61,7 @@ run_MC_LM_OSL_LOC(
 } 
 
 \section{How to cite}{
-Kreutzer, S., 2019. run_MC_LM_OSL_LOC(): Run Monte-Carlo simulation for LM-OSL for localized transition. Function version 0.1.0. In: Friedrich, J., Kreutzer, S., Pagonis, V., Schmidt, C., 2019. RLumCarlo: Monte-Carlo Methods for Simulating Luminescence PhenomenaR package version 0.1.0.9000-90. 
+Kreutzer, S., 2019. run_MC_LM_OSL_LOC(): Run Monte-Carlo simulation for LM-OSL for localized transition. Function version 0.1.0. In: Friedrich, J., Kreutzer, S., Pagonis, V., Schmidt, C., 2019. RLumCarlo: Monte-Carlo Methods for Simulating Luminescence PhenomenaR package version 0.1.0.9000-98. 
 }
 
 \references{

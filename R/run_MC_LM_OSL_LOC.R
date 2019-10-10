@@ -7,8 +7,11 @@
 #' \deqn{
 #' I_{LOC}(t) = -dn/dt = p(t) * (n^2 / (r + n))
 #' }
-#' 
-#' Where in the function: \cr `t` := `Time` \cr `p(t)` := `The experimental stimulation mode` \cr `n` := `The Instantaneous number of electrons`
+#'
+#' Where in the function: \cr
+#' `t` := `Time` \cr
+#' `p(t)` := The experimental stimulation mode \cr
+#' `n` := The Instantaneous number of electrons
 #'
 #' @param A [numeric] (**required**): The optical excitation rate from trap to conduction band (s^-1).
 #'

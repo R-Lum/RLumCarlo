@@ -7,8 +7,12 @@
 #' \deqn{
 #' I_{DELOC}(t) = -dn/dt = p(t) * (n^2 / (N*R + n(1-R)))
 #' }
-#' 
-#' Where in the function: \cr `t` := `Time` \cr `p(t)` := `The experimental stimulation mode` \cr `n` := `The Instantaneous number of electrons` \cr `N` = `N_e`
+#'
+#' Where in the function: \cr
+#' `t` := `Time` \cr
+#' `p(t)` := The experimental stimulation mode \cr
+#' `n` := The Instantaneous number of electrons \cr
+#' `N` = `N_e`
 #'
 #' @param A [numeric] (**required**): The optical excitation rate from trap to conduction band (s^-1).
 #'

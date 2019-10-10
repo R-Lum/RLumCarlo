@@ -12,7 +12,7 @@ run_MC_ISO_LOC(s, E, T = 20, times, clusters = 10, n_filled = 100, r,
 
 \item{E}{\link{numeric} (\strong{required}): Thermal activation energy of the trap (eV).}
 
-\item{T}{\link{numeric} (\emph{with default}): Temperature (degrees C).}
+\item{T}{\link{numeric} (\emph{with default}): Constant stimulation temperature (degrees C).}
 
 \item{times}{\link{numeric} (\emph{with default}): The sequence of temperature steps within the simulation (s).}
 
@@ -20,7 +20,7 @@ run_MC_ISO_LOC(s, E, T = 20, times, clusters = 10, n_filled = 100, r,
 
 \item{n_filled}{\link{integer} (\emph{with default}): The number of filled electron traps at the beginning of the simulation (unitless).}
 
-\item{r}{\link{numeric} (\emph{with default}): the retrapping ratio (unitless).}
+\item{r}{\link{numeric} (\emph{with default}): the localized retrapping ratio (unitless).}
 
 \item{method}{\link{character} (\emph{with default}): sequential \code{'seq'} or parallel processing \code{'par'}}
 
@@ -37,10 +37,16 @@ Runs a Monte-Carlo (MC) simulation of isothermally stimulated luminesence (ISO-T
 }
 \details{
 \deqn{
-ISO I_{LOC}(t) = -dn/dt = (s * e^-E/kT_ITL/ISO) * (n^2 / (r + n)))
+I_{LOC}(t) = -dn/dt = (s * e^-E/k_b*T_ISO) * (n^2 / (r + n)))
 }
 
-Where in the function \code{n} := \code{n_filled} := \code{N} := \code{N_e}
+Where in the function: \cr
+\code{t} := \code{Time} \cr
+\code{e}:= \code{Exponentional function} \cr
+\eqn{k_{B}} := \code{Boltzmann constant} \cr
+\eqn{T_{ISO}} = \code{T} \cr
+n := \code{n_filled} \cr
+\code{N} := \code{N_e}
 }
 \section{Function version}{
  0.0.1
@@ -52,8 +58,8 @@ Where in the function \code{n} := \code{n_filled} := \code{N} := \code{N_e}
 ##============================================================================##
 
 
- 
-  
+
+
     \dontrun{
 run_MC_ISO_LOC(
  s = 3.5e12,
@@ -70,7 +76,7 @@ run_MC_ISO_LOC(
 } 
 
 \section{How to cite}{
-Kreutzer, S., 2019. run_MC_ISO_LOC(): Run Monte-Carlo simulation for ISO-TL for localized transition. Function version 0.0.1. In: Friedrich, J., Kreutzer, S., Pagonis, V., Schmidt, C., 2019. RLumCarlo: Monte-Carlo Methods for Simulating Luminescence PhenomenaR package version 0.1.0.9000-90. 
+Kreutzer, S., 2019. run_MC_ISO_LOC(): Run Monte-Carlo simulation for ISO-TL for localized transition. Function version 0.0.1. In: Friedrich, J., Kreutzer, S., Pagonis, V., Schmidt, C., 2019. RLumCarlo: Monte-Carlo Methods for Simulating Luminescence PhenomenaR package version 0.1.0.9000-98. 
 }
 
 \references{

@@ -8,7 +8,12 @@
 #' I_{LOC}(t) = -dn/dt = (s * e^-E/k_b * T) * (n^2 / (r + n))
 #' }
 #'
-#'Where in the function: \cr `t` := `Time` \cr `e`:= `Exponentional function` \cr \eqn{k_{B}} := `Boltzmann constant` \cr `T`= `Temperature` \cr `n` := `The Instantaneous number of electrons`
+#'Where in the function: \cr
+#' `t` := `Time` \cr
+#' `e`:= Exponentional function \cr
+#' \eqn{k_{B}} := Boltzmann constant \cr
+#' `T` := `Temperature` \cr
+#' `n` := The Instantaneous number of electrons
 #'
 #' @param E [numeric] (**required**): Thermal activation energy of the trap (eV).
 #'
@@ -19,7 +24,7 @@
 #' @param clusters [numeric] (*with default*): The number of MC run (unitless).
 #'
 #' @param n_filled [integer] (*with default*): The number of filled electron traps at the beginning of the simulation (unitless).
-#' 
+#'
 #' @param r [numeric] (*with default*): The localized retrapping ratio (unitless).
 #'
 #' @param method [character] (*with default*): sequential `'seq'` or parallel processing `'par'`
@@ -43,8 +48,8 @@
 #' ##============================================================================##
 #' ## Example 1: Simulate TL
 #' ##============================================================================##
-#' 
-#' 
+#'
+#'
 #' \dontrun{
 #' run_MC_TL_LOC(
 #'  s = 3.5e12,

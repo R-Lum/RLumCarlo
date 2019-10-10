@@ -16,7 +16,7 @@ run_MC_CW_IRSL_LOC(A, times, clusters = 10, n_filled = 100, r,
 
 \item{n_filled}{\link{integer} (\emph{with default}): The number of filled electron traps at the beginning of the simulation (unitless).}
 
-\item{r}{\link{numeric} (\emph{with default}): The retrapping ratio (unitless).}
+\item{r}{\link{numeric} (\emph{with default}): The localized retrapping ratio (unitless).}
 
 \item{method}{\link{character} (\emph{with default}): sequential \code{'seq'} or parallel processing \code{'par'}}
 
@@ -35,6 +35,10 @@ Runs a Monte-Carlo (MC) simulation of constant wave infrared stimulated luminese
 \deqn{
 I_{LOC}(t) = -dn/dt = A * (n^2 / (r + n))
 }
+
+Where in the function: \cr
+t := Time \cr
+n := `n_filled``
 }
 \section{Function version}{
  0.1.0
@@ -56,7 +60,7 @@ run_MC_CW_IRSL_LOC(
 } 
 
 \section{How to cite}{
-Kreutzer, S., 2019. run_MC_CW_IRSL_LOC(): Run Monte-Carlo simulation for CW-IRSL for localized transition. Function version 0.1.0. In: Friedrich, J., Kreutzer, S., Pagonis, V., Schmidt, C., 2019. RLumCarlo: Monte-Carlo Methods for Simulating Luminescence PhenomenaR package version 0.1.0.9000-90. 
+Kreutzer, S., 2019. run_MC_CW_IRSL_LOC(): Run Monte-Carlo simulation for CW-IRSL for localized transition. Function version 0.1.0. In: Friedrich, J., Kreutzer, S., Pagonis, V., Schmidt, C., 2019. RLumCarlo: Monte-Carlo Methods for Simulating Luminescence PhenomenaR package version 0.1.0.9000-98. 
 }
 
 \references{

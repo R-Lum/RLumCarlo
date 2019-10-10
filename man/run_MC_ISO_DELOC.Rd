@@ -12,7 +12,7 @@ run_MC_ISO_DELOC(s, E, T = 20, times, clusters = 10, N_e = 200,
 
 \item{E}{\link{numeric} (\strong{required}): Thermal activation energy of the trap (eV).}
 
-\item{T}{\link{numeric} (\emph{with default}): Temperature (degrees C).}
+\item{T}{\link{numeric} (\emph{with default}): Constant stimulation temperature (degrees C).}
 
 \item{times}{\link{numeric} (\emph{with default}): the sequence of temperature steps within the simulation (s).}
 
@@ -22,7 +22,7 @@ run_MC_ISO_DELOC(s, E, T = 20, times, clusters = 10, N_e = 200,
 
 \item{n_filled}{\link{integer} (\emph{with default}): The number of filled electron traps at the beginning of the simulation (unitless).}
 
-\item{R}{\link{numeric} (\emph{with default}): The retrapping ratio (unitless).}
+\item{R}{\link{numeric} (\emph{with default}): The delocalized retrapping ratio (unitless).}
 
 \item{method}{\link{character} (\emph{with default}): sequential \code{'seq'} or parallel processing \code{'par'}}
 
@@ -39,10 +39,16 @@ Runs a Monte-Carlo (MC) simulation of isothermally stimulated luminesence (ISO-T
 }
 \details{
 \deqn{
-ISO I_{DELOC}(t) = -dn/dt =(s * e^-E/kT_ITL/ISO) * (n^2 / (NR + n(1-R)))
+I_{DELOC}(t) = -dn/dt =(s * e^-E/k_{b} * T_{ISO}) * (n^2 / (NR + n(1-R)))
 }
 
-Where in the function \code{n} := \code{n_filled} := \code{N} := \code{N_e}
+Where in the function: \cr
+\code{t} := \code{Time} \cr
+\code{e}:= Exponentional function \cr
+\eqn{k_{B}} := Boltzmann constant \cr
+\eqn{T_{ISO}} = \code{T} \cr
+\code{n} := \code{n_filled} \cr
+\code{N} := \code{N_e}
 }
 \section{Function version}{
  0.0.1
@@ -70,7 +76,7 @@ run_MC_ISO_DELOC(
 } 
 
 \section{How to cite}{
-Kreutzer, S., 2019. run_MC_ISO_DELOC(): Run Monte-Carlo simulation for ISO-TL for delocalized transition. Function version 0.0.1. In: Friedrich, J., Kreutzer, S., Pagonis, V., Schmidt, C., 2019. RLumCarlo: Monte-Carlo Methods for Simulating Luminescence PhenomenaR package version 0.1.0.9000-90. 
+Kreutzer, S., 2019. run_MC_ISO_DELOC(): Run Monte-Carlo simulation for ISO-TL for delocalized transition. Function version 0.0.1. In: Friedrich, J., Kreutzer, S., Pagonis, V., Schmidt, C., 2019. RLumCarlo: Monte-Carlo Methods for Simulating Luminescence PhenomenaR package version 0.1.0.9000-98. 
 }
 
 \references{

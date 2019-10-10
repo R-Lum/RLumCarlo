@@ -8,7 +8,13 @@
 #' I_{DELOC}(t) = -dn/dt =(s * e^-E/k_{b} * T_{ISO}) * (n^2 / (NR + n(1-R)))
 #' }
 #'
-#' Where in the function: \cr `t` := `Time` \cr `e`:= `Exponentional function` \cr \eqn{k_{B}} := `Boltzmann constant` \cr \eqn{T_{ISO}} = `T` \cr `n` := `n_filled` \cr `N` := `N_e`
+#' Where in the function: \cr
+#' `t` := `Time` \cr
+#' `e`:= Exponentional function \cr
+#' \eqn{k_{B}} := Boltzmann constant \cr
+#' \eqn{T_{ISO}} = `T` \cr
+#' `n` := `n_filled` \cr
+#' `N` := `N_e`
 #'
 #' @param E [numeric] (**required**): Thermal activation energy of the trap (eV).
 #'
@@ -49,9 +55,9 @@
 #' ##============================================================================##
 #' ## Example 1: Simulate ITL
 #' ##============================================================================##
-#' 
-#' 
-#' 
+#'
+#'
+#'
 #' \dontrun{
 #' run_MC_ISO_DELOC(
 #'  s = 3.5e12,

@@ -11,7 +11,7 @@ test_that("basic run", {
     rho = 0.015,
     r_c = r,
     times = 100:120,
-    method = "par"
+    method = "seq"
   )})
 
   time <- run_MC_ISO_TUN(

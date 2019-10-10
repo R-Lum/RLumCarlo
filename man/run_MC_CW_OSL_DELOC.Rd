@@ -18,7 +18,7 @@ run_MC_CW_OSL_DELOC(A, times, clusters = 10, N_e = 200,
 
 \item{n_filled}{\link{integer} (\emph{with default}): The number of filled electron traps at the beginning of the simulation (unitless).}
 
-\item{R}{\link{numeric} (\emph{with default}): The retrapping ratio (unitless).}
+\item{R}{\link{numeric} (\emph{with default}): The delocalized retrapping ratio (unitless).}
 
 \item{method}{\link{character} (\emph{with default}): sequential \code{'seq'} or parallel processing \code{'par'}}
 
@@ -35,8 +35,14 @@ Runs a Monte-Carlo (MC) simulation of constant wave optically stimulated lumines
 }
 \details{
 \deqn{
-I_{DELOC}(t) = -dn/dt = p(t) * (n^2 / (NR + n(1-R)))
+I_{DELOC}(t) = -dn/dt = p(t) * (n^2 / (N*R + n(1-R)))
 }
+
+Where in the function: \cr
+\code{t} := \code{Time} \cr
+\code{p(t)} := The experimental stimulation mode \cr
+\code{n} := The Instantaneous number of electrons \cr
+\code{N} = \code{N_e}
 }
 \section{Function version}{
  0.1.0
@@ -91,7 +97,7 @@ legend("topright",ncol=4,cex=0.55,title = "parameters" ,legend=c(paste0("A = ", 
 } 
 
 \section{How to cite}{
-Kreutzer, S., 2019. run_MC_CW_OSL_DELOC(): Run Monte-Carlo simulation for CW-OSL for delocalized transition. Function version 0.1.0. In: Friedrich, J., Kreutzer, S., Pagonis, V., Schmidt, C., 2019. RLumCarlo: Monte-Carlo Methods for Simulating Luminescence PhenomenaR package version 0.1.0.9000-90. 
+Kreutzer, S., 2019. run_MC_CW_OSL_DELOC(): Run Monte-Carlo simulation for CW-OSL for delocalized transition. Function version 0.1.0. In: Friedrich, J., Kreutzer, S., Pagonis, V., Schmidt, C., 2019. RLumCarlo: Monte-Carlo Methods for Simulating Luminescence PhenomenaR package version 0.1.0.9000-98. 
 }
 
 \references{

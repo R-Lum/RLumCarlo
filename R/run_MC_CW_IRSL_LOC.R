@@ -7,8 +7,10 @@
 #' \deqn{
 #' I_{LOC}(t) = -dn/dt = A * (n^2 / (r + n))
 #' }
-#' 
-#' Where in the function: \cr `t` := `Time` \cr `n` := `n_filled`
+#'
+#' Where in the function: \cr
+#'  t := Time \cr
+#'  n := `n_filled``
 #'
 #' @param A [numeric] (**required**): The optical excitation rate from trap to conduction band (s^-1).
 #'
@@ -36,7 +38,7 @@
 #' @references
 #'
 #' Pagonis, V., Friedrich, J., Discher, M., Müller-Kirschbaum, A., Schlosser, V., Kreutzer, S., Chen, R. and Schmidt, C., 2019. Excited state luminescence signals from a random distribution of defects: A new Monte Carlo simulation approach for feldspar. Journal of Luminescence 207, 266–272. \doi{10.1016/j.jlumin.2018.11.024}
-#' 
+#'
 #' Reuven, C. and S. Mckeever, 1997. Theory of thermoluminescence and related phenomena.
 #'
 #' @examples

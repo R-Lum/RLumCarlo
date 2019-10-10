@@ -8,10 +8,16 @@
 #' I_{DELOC}(t) = -dn/dt = (s * e^-E/k_{b} * T) * (n^2 / (N * R + n(1-R))))
 #' }
 #'
-#' Where in the function: \cr `t` := `Time` \cr `e`:= `Exponentional function` \cr \eqn{k_{B}} := `Boltzmann constant` \cr `T`= `Temperature` \cr `n` := `The Instantaneous number of electrons` \cr `N` = `N_e`
-#' 
+#' Where in the function: \cr
+#' `t` := `Time` \cr
+#' `e`:= Exponentional function \cr
+#' \eqn{k_{B}} := Boltzmann constant \cr
+#' `T`= Temperature \cr
+#' `n` :=  The Instantaneous number of electrons \cr
+#' `N` := `N_e`
+#'
 #' @param E [numeric] (**required**): Thermal activation energy of the trap (eV).
-#' 
+#'
 #' @param s [numeric] (**required**): The frequency factor of the trap (s^-1).
 #'
 #' @param times [numeric] (*with default*): The sequence of temperature steps within the simulation (s).
@@ -61,9 +67,9 @@
 #' ##============================================================================##
 #' ## Example 2: Plot multiple TL stimulation TL curves in R with varying params
 #' ##============================================================================##
-#' 
-#'    
-#'     
+#'
+#'
+#'
 #'       \dontrun{
 #' # define your parameters
 #'times=seq(100,450,1)
