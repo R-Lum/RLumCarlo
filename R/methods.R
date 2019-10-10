@@ -68,6 +68,9 @@ summary.RLumCarlo_Model_Output <- function(object, verbose = TRUE, ...){
   ## return the summary as terminal output from the data.frame
   if(verbose) print(summary(output))
 
+  ##add class
+  class(output) <- c("data.frame", class(object))
+
   ## return
   invisible(output)
 }
