@@ -21,7 +21,9 @@
 #'
 #' @param clusters [numeric] (*with default*): The number of MC runs.
 #'
-#' @param r [numeric] (*with default*): The radius of tunneling (dimensionless) .
+#' @param r_c [numeric] (*with default*): The radius of tunneling (dimensionless)
+#'
+#' @param delta.r [numeric] (*with default*):
 #'
 #' @param N_e [numeric] (*with default*): The number of electrons.
 #'
@@ -70,8 +72,9 @@ run_MC_ISO_TUN <- function(
   rho,
   times,
   clusters = 10,
-  r = NULL,
-  N_e = 200,
+  r_c = 0,
+  delta.r = 0.1,
+  N_e = 200L,
   method = "par",
   output = "signal",
   ...){
@@ -101,7 +104,7 @@ run_MC_ISO_TUN <- function(
   }
 
 # Setting parameters --------------------------------------------------------------------------
-if(is.null(r)) r <- seq(from = 0, to = 2, by = 0.1)
+r <- seq(abs(r_c[1]), 2, abs(delta.r[1]))
 
 # Run model -----------------------------------------------------------------------------------
   temp <- foreach(c = 1:clusters,

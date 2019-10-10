@@ -14,7 +14,7 @@
 #'
 #' @param clusters [numeric] (*with default*): The number of clusters.
 #'
-#' @param r [numeric] (*with default*): The retrapping ratio.
+#' @param r_c [numeric] (*with default*): The retrapping ratio.
 #'
 #' @param delta.r [numeric] (*with default*):
 #'
@@ -56,7 +56,7 @@ run_MC_LM_OSL_TUN <- function(
   rho,
   times,
   clusters = 10,
-  r = NULL,
+  r_c = 0,
   delta.r = 0.1,
   N_e = 200,
   method = "par",
@@ -89,7 +89,7 @@ run_MC_LM_OSL_TUN <- function(
 
 
 # Setting parameters --------------------------------------------------------------------------
-  if(is.null(r)) r <- seq(from = 0, to = 2, by = 0.1)
+  r <- seq(abs(r_c), 2, abs(delta.r))
 
 # Run model -----------------------------------------------------------------------------------
   temp <- foreach(

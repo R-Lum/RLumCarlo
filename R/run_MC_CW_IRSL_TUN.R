@@ -15,7 +15,9 @@
 #'
 #' @param clusters [numeric] (*with default*): The number of clusters.
 #'
-#' @param r [numeric] (*with default*): The retrapping ratio.
+#' @param r_c [numeric] (*with default*): The retrapping ratio.
+#'
+#' @param delta.r [numeric] (*with default*):
 #'
 #' @param N_e [numeric] (*with default*): The number of electrons
 #'
@@ -53,7 +55,8 @@ run_MC_CW_IRSL_TUN <- function(
   rho,
   times,
   clusters = 10,
-  r = NULL,
+  r_c = 0,
+  delta.r = 0.1,
   N_e = 200,
   method = "seq",
   output = "signal",
@@ -85,7 +88,7 @@ run_MC_CW_IRSL_TUN <- function(
 
 
 # Setting parameters --------------------------------------------------------------------------
-if(is.null(r)) r <- seq(from = 0, to = 2, by = 0.1)
+r <- seq(abs(r_c[1]), 2, abs(delta.r[1]))
 
 # Run model -----------------------------------------------------------------------------------
 temp <- foreach(

@@ -66,7 +66,7 @@ run_MC_TL_TUN <- function(
   s,
   E,
   rho,
-  r_c,
+  r_c = 0,
   times,
   clusters = 10,
   N_e = 200,
@@ -101,7 +101,7 @@ run_MC_TL_TUN <- function(
 
 
 # Setting parameters --------------------------------------------------------------------------
-  r <- seq(r_c, 2, delta.r)
+  r <- seq(abs(r_c), 2, abs(delta.r))
 
 
 # Run model -----------------------------------------------------------------------------------
