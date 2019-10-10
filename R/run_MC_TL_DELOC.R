@@ -51,7 +51,7 @@
 #'
 #' @examples
 #' ##============================================================================##
-#' ## Example 1: Simulate TL
+#' ## Example 1: Single Plot for Monte-Carlo (MC) simulations for delocalized TL
 #' ##============================================================================##
 #' \dontrun{
 #' run_MC_TL_DELOC(
@@ -59,6 +59,7 @@
 #'  E = 1.45,
 #'  R = 1,
 #'  times = 100:450) %>%
+#'  #Plot results of the MC simulation
 #'    plot_RLumCarlo(legend = T)
 #'
 #' }
