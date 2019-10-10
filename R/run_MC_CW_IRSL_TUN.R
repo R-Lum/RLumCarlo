@@ -71,8 +71,7 @@
 #'times = 0:500,
 #'delta.r = 1e-1,
 #'method = "seq"
-#')) %>%
-#'     plot_RLumCarlo(norm = T, legend = T)
+#')) %>% plot_RLumCarlo(norm = T, legend = T)
 #'}
 #' @md
 #' @export
