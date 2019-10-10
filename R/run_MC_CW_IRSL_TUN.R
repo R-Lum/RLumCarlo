@@ -62,7 +62,16 @@
 #' ## Example 1: Simulate CW-IRSL measurement
 #' ##============================================================================##
 #'
-#' run_MC_CW_IRS_TUNL(A = 0.12, rho = 0.003, times = 0:1000) %>%
+#' run_MC_CW_IRSL_TUN(
+#'A = 1,
+#'clusters= 500,
+#'rho = 1e-4,
+#'N_e = 1E4,
+#'r_c = 2,
+#'times = 0:500,
+#'delta.r = 1e-1,
+#'method = "seq"
+#')) %>%
 #'     plot_RLumCarlo(norm = T, legend = T)
 #'}
 #' @md
