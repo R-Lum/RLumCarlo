@@ -17,7 +17,7 @@
 #'
 #' @param norm [logical] (*with default*): normalise curve to the highest intensity
 #'
-#' @param add [logical] (*with default*): allow overplotting of results by adding this curve to
+#' @param add [logical] (*with default*): allows overplotting of results by adding curve to
 #' an existing plot
 #'
 #' @param \dots further arguments that can be passed to control the plot output. Currently supported
