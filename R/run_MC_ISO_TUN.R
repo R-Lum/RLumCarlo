@@ -5,13 +5,16 @@
 #' @details
 #'
 #' \deqn{
-#' p(t) = s * e ^ (-E / kB * T) * e ^ (-r / rho ^ 1 / 3)
+#' p(t) = s * e ^ (-E / k_{B} * T) * e ^ (-r' / \rho' ^ 1 / 3)
 #' }
 #' \deqn{
-#' I_{TUN}(t) = 3 * n * p(t) *  r ^ 2 * e ^ (-r ^ 3)
+#' I_{TUN}(t) = 3 * n * p(t) *  r' ^ 2 * e ^ (-r' ^ 3)
 #' }
 #'
-#' Where in the function `n` := `n_filled` := `t`:= `times`
+#' Where in the function: \cr `p(t)` := `The experimental stimulation mode` \cr `e`:= `Exponentional function` \cr \eqn{k_{B}} := `Boltzmann constant` \cr `r'` := `r` \cr \eqn{\rho'} := `rho` \cr `t` := `Time` \cr `n` := `The Instantaneous number of electrons`
+#' 
+#' 
+#' \cr `n` := `n_filled` \cr `t`:= `times`
 #'
 #' @param E [numeric] (**required**): Thermal activation energy of the trap (eV).
 #'
