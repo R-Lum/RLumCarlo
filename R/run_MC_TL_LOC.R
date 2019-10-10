@@ -46,18 +46,19 @@
 #'
 #' @examples
 #' ##============================================================================##
-#' ## Example 1: Simulate TL
-#' ##============================================================================##
-#'
-#'
+#' ## Example 1: Single Plot for Monte-Carlo (MC) simulations for localized TL
+#' ##============================================================================## 
 #' \dontrun{
 #' run_MC_TL_LOC(
-#'  s = 3.5e12,
-#'  E = 1.45,
-#'  r = 1,
-#'  times = 100:450) %>%
+#'  s = 1e8,
+#'  E = 0.5,
+#'  times = 0:100,
+#'  clusters = 1e1,
+#'  n_filled = 1,
+#'  r = 1e-7) %>%
+#'  #Plot results of the MC simulation
 #'    plot_RLumCarlo(legend = T)
-#'
+#'    
 #' }
 #'
 #'

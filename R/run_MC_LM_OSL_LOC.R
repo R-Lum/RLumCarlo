@@ -42,13 +42,14 @@
 #'
 #' @examples
 #' ##============================================================================##
-#' ## Example 1: Simulate LM-OSL
+#' ## Example 1: Single Plot for Monte-Carlo (MC) simulations for localized LM-OSL
 #' ##============================================================================##
 #' \dontrun{
 #' run_MC_LM_OSL_LOC(
 #'  A = 0.12,
 #'  r = 1,
 #'  times = 0:100) %>%
+#'  #Plot results of the MC simulation
 #'    plot_RLumCarlo(legend = T)
 #'
 #' }

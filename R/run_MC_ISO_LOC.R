@@ -50,19 +50,16 @@
 #'
 #' @examples
 #' ##============================================================================##
-#' ## Example 1: Simulate ITL
+#' ## Example 1: Single Plot for Monte-Carlo (MC) simulations for localized ISO-TL
 #' ##============================================================================##
-#'
-#'
-#'
-#'
-#'     \dontrun{
+#' \dontrun{
 #' run_MC_ISO_LOC(
 #'  s = 3.5e12,
 #'  E = 1.45,
 #'  T = 200,
 #'  r = 1,
 #'  times = 0:10000) %>%
+#'  #Plot results of the MC simulation
 #'    plot_RLumCarlo(legend = T)
 #'
 #' }
