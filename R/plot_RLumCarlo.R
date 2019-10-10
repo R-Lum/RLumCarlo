@@ -93,7 +93,7 @@ plot_RLumCarlo <- function(
         plot_uncertainty = plot_uncertainty,
         norm = norm,
         add = add[i],
-        ylim = range(plot_settings$ylim),
+        ylim = if(norm) c(0,1) else range(plot_settings$ylim),
         col = plot_settings$col[i],
         pch = plot_settings$pch[i],
         lty = plot_settings$lty[i],
