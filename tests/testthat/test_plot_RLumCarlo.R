@@ -14,6 +14,14 @@ test_that("basic run", {
     method = "par"
   )})
 
+  time <- run_MC_ISO_TUN(
+      s = 3.5e12,
+      E = 1.45,
+      rho = 0.015,
+      r_c = 0.5,
+      times = 100:120,
+      method = "seq")
+
   ## break plot function
   expect_error(plot_RLumCarlo(object = "error"), "'object' needs to be of class RLumCarlo_Model_Output!")
   expect_error(plot_RLumCarlo(object = list("error")), "At least one element in the list is not of class RLumCarlo_Model_Output!")
@@ -28,6 +36,7 @@ test_that("basic run", {
 
   ## plot the list
   expect_silent(plot_RLumCarlo(object = results_par, main = "Test 2"))
+  expect_silent(plot_RLumCarlo(object = time, main = "Test 2"))
   expect_silent(plot_RLumCarlo(object = rep(results_par,4), main = "Rainbow"))
 
 })
