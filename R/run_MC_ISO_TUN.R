@@ -73,11 +73,16 @@
 #' ## Example 1: Simulate isothermal measurement
 #' ##============================================================================##
 #' run_MC_ISO_TUN(
-#'  E = 1.2,
-#'  s = 1e10,
-#'  T = 200,
-#'  rho = 0.007,
-#'  times = 0:5000) %>%
+#'E = 0.5,
+#'s = 1E8,
+#'clusters= 100,
+#'rho = 1e-7,
+#'N_e = 10,
+#'r_c = 0.01,
+#'times = 0:500,
+#'delta.r = 1e-3,
+#'method = "seq"
+#') %>%
 #'   plot_RLumCarlo(legend = TRUE)
 #'}
 #' @md
