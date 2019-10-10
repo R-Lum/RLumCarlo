@@ -20,9 +20,15 @@ test_that("basic run", {
 
   ## simple run, one dataset
   expect_silent(plot_RLumCarlo(object = results_par[[1]]))
+  expect_silent(plot_RLumCarlo(object = results_par[[1]], norm = TRUE))
+  expect_silent(plot_RLumCarlo(object = results_par[[1]], plot_uncertainty = NULL))
+  expect_silent(plot_RLumCarlo(object = results_par[[1]], plot_uncertainty = "sd"))
+  expect_silent(plot_RLumCarlo(object = results_par[[1]], plot_uncertainty = "var"))
+  expect_silent(plot_RLumCarlo(object = results_par[[1]], plot_uncertainty = "range"))
 
   ## plot the list
   expect_silent(plot_RLumCarlo(object = results_par, main = "Test 2"))
+  expect_silent(plot_RLumCarlo(object = rep(results_par,4), main = "Rainbow"))
 
 })
 

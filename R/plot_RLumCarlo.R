@@ -93,7 +93,7 @@ plot_RLumCarlo <- function(
         plot_uncertainty = plot_uncertainty,
         norm = norm,
         add = add[i],
-        ylim = plot_settings$ylim,
+        ylim = range(plot_settings$ylim),
         col = plot_settings$col[i],
         pch = plot_settings$pch[i],
         lty = plot_settings$lty[i],
@@ -181,7 +181,6 @@ plot_RLumCarlo <- function(
       col = khroma::colour("bright")(7)[2],
       legend = TRUE
     ), val = list(...))
-
 
   # Plotting ------------------------------------------------------------------------------------
   ## check if plot was already called, if not just plot
