@@ -4,7 +4,7 @@
 \alias{run_MC_LM_OSL_TUN}
 \title{Run Monte-Carlo simulation for LM-OSL}
 \usage{
-run_MC_LM_OSL_TUN(A, rho, times, clusters = 10, r = NULL,
+run_MC_LM_OSL_TUN(A, rho, times, clusters = 10, r_c = 0,
   delta.r = 0.1, N_e = 200, method = "par", output = "signal", ...)
 }
 \arguments{
@@ -16,7 +16,7 @@ run_MC_LM_OSL_TUN(A, rho, times, clusters = 10, r = NULL,
 
 \item{clusters}{\link{numeric} (\emph{with default}): The number of clusters.}
 
-\item{r}{\link{numeric} (\emph{with default}): The retrapping ratio.}
+\item{r_c}{\link{numeric} (\emph{with default}): The retrapping ratio.}
 
 \item{delta.r}{\link{numeric} (\emph{with default}):}
 
@@ -57,7 +57,7 @@ run_MC_LM_OSL_TUN(A = 10000, rho = 0.0001, times = 1:100, clusters = 10, r = NUL
 } 
 
 \section{How to cite}{
-Friedrich, J., 2019. run_MC_LM_OSL_TUN(): Run Monte-Carlo simulation for LM-OSL. Function version 0.1.0. In: Friedrich, J., Kreutzer, S., Pagonis, V., Schmidt, C., 2019. RLumCarlo: Monte-Carlo Methods for Simulating Luminescence PhenomenaR package version 0.1.0.9000-79. 
+Friedrich, J., 2019. run_MC_LM_OSL_TUN(): Run Monte-Carlo simulation for LM-OSL. Function version 0.1.0. In: Friedrich, J., Kreutzer, S., Pagonis, V., Schmidt, C., 2019. RLumCarlo: Monte-Carlo Methods for Simulating Luminescence PhenomenaR package version 0.1.0.9000-84. 
 }
 
 \references{

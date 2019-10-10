@@ -1,8 +1,8 @@
 Package: RLumCarlo
 Type: Package
 Title: Monte-Carlo Methods for Simulating Luminescence Phenomena
-Version: 0.1.0.9000-79
-Date: 2019-10-09
+Version: 0.1.0.9000-84
+Date: 2019-10-10
 Author: Johannes Friedrich [aut, trl] (<https://orcid.org/0000-0002-0805-9547>),
     Sebastian Kreutzer [aut, trl, cre] (<https://orcid.org/0000-0002-0734-2199>),
     Vasilis Pagonis [aut] (<https://orcid.org/0000-0002-4852-9312>),
@@ -38,6 +38,7 @@ Imports:
   abind (>= 1.4-5),
   doParallel (>= 1.0.15),
   foreach (>= 1.4.7),
+  khroma (>= 1.2.0),
   parallel,
   methods,
   Rcpp (>= 1.0.2)

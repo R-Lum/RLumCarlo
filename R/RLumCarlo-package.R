@@ -9,7 +9,7 @@
 #' @docType package
 #' @author Johannes Friedrich (University of Bayreuth, Germany), Sebastian Kreutzer, IRAMAT-CRP2A, UMR 5060, CNRS-Université Bordeaux Montaigne (France), Vasilis Pagonis, McDaniel College Westminster (MD, USA), Christoph Schmidt, University of Bayreuth (Germany)
 #'
-#' @importFrom grDevices adjustcolor
+#' @importFrom grDevices adjustcolor rainbow
 #' @import magrittr
 #' @import abind
 #' @import foreach

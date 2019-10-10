@@ -4,8 +4,9 @@
 \alias{run_MC_ISO_TUN}
 \title{Run Monte-Carlo Simulation for Isothermal Measurements for Tunneling Transition}
 \usage{
-run_MC_ISO_TUN(E, s, T = 200, rho, times, clusters = 10, r = NULL,
-  N_e = 200, method = "par", output = "signal", ...)
+run_MC_ISO_TUN(E, s, T = 200, rho, times, clusters = 10, r_c = 0,
+  delta.r = 0.1, N_e = 200L, method = "par", output = "signal",
+  ...)
 }
 \arguments{
 \item{E}{\link{numeric} (\strong{required}): Thermal activation energy of the trap (eV).}
@@ -20,7 +21,9 @@ run_MC_ISO_TUN(E, s, T = 200, rho, times, clusters = 10, r = NULL,
 
 \item{clusters}{\link{numeric} (\emph{with default}): The number of MC runs.}
 
-\item{r}{\link{numeric} (\emph{with default}): The radius of tunneling (dimensionless) .}
+\item{r_c}{\link{numeric} (\emph{with default}): The radius of tunneling (dimensionless)}
+
+\item{delta.r}{\link{numeric} (\emph{with default}):}
 
 \item{N_e}{\link{numeric} (\emph{with default}): The number of electrons.}
 
@@ -64,7 +67,7 @@ run_MC_ISO_TUN(
 } 
 
 \section{How to cite}{
-Friedrich, J., Kreutzer, S., 2019. run_MC_ISO_TUN(): Run Monte-Carlo Simulation for Isothermal Measurements for Tunneling Transition. Function version 0.1.0. In: Friedrich, J., Kreutzer, S., Pagonis, V., Schmidt, C., 2019. RLumCarlo: Monte-Carlo Methods for Simulating Luminescence PhenomenaR package version 0.1.0.9000-79. 
+Friedrich, J., Kreutzer, S., 2019. run_MC_ISO_TUN(): Run Monte-Carlo Simulation for Isothermal Measurements for Tunneling Transition. Function version 0.1.0. In: Friedrich, J., Kreutzer, S., Pagonis, V., Schmidt, C., 2019. RLumCarlo: Monte-Carlo Methods for Simulating Luminescence PhenomenaR package version 0.1.0.9000-84. 
 }
 
 \references{

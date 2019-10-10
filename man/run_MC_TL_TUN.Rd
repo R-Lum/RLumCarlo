@@ -4,7 +4,7 @@
 \alias{run_MC_TL_TUN}
 \title{Run Monte-Carlo Simulation for TL using Tunnelling Transition}
 \usage{
-run_MC_TL_TUN(s, E, rho, r_c, times, clusters = 10, N_e = 200,
+run_MC_TL_TUN(s, E, rho, r_c = 0, times, clusters = 10, N_e = 200,
   delta.r = 0.1, method = "par", output = "signal", ...)
 }
 \arguments{
@@ -65,7 +65,7 @@ run_MC_TL_TUN(s = 3.5e12,
 } 
 
 \section{How to cite}{
-Friedrich, J., Kreutzer, S., 2019. run_MC_TL_TUN(): Run Monte-Carlo Simulation for TL using Tunnelling Transition. Function version 0.1.0. In: Friedrich, J., Kreutzer, S., Pagonis, V., Schmidt, C., 2019. RLumCarlo: Monte-Carlo Methods for Simulating Luminescence PhenomenaR package version 0.1.0.9000-79. 
+Friedrich, J., Kreutzer, S., 2019. run_MC_TL_TUN(): Run Monte-Carlo Simulation for TL using Tunnelling Transition. Function version 0.1.0. In: Friedrich, J., Kreutzer, S., Pagonis, V., Schmidt, C., 2019. RLumCarlo: Monte-Carlo Methods for Simulating Luminescence PhenomenaR package version 0.1.0.9000-84. 
 }
 
 \references{

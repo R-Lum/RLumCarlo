@@ -4,8 +4,8 @@
 \alias{run_MC_CW_IRSL_TUN}
 \title{Run Monte-Carlo simulation for CW-IRSL}
 \usage{
-run_MC_CW_IRSL_TUN(A, rho, times, clusters = 10, r = NULL, N_e = 200,
-  method = "seq", output = "signal", ...)
+run_MC_CW_IRSL_TUN(A, rho, times, clusters = 10, r_c = 0,
+  delta.r = 0.1, N_e = 200, method = "seq", output = "signal", ...)
 }
 \arguments{
 \item{A}{\link{numeric} (\strong{required}): The transition probability (cm^3/s).}
@@ -16,7 +16,9 @@ run_MC_CW_IRSL_TUN(A, rho, times, clusters = 10, r = NULL, N_e = 200,
 
 \item{clusters}{\link{numeric} (\emph{with default}): The number of clusters.}
 
-\item{r}{\link{numeric} (\emph{with default}): The retrapping ratio.}
+\item{r_c}{\link{numeric} (\emph{with default}): The retrapping ratio.}
+
+\item{delta.r}{\link{numeric} (\emph{with default}):}
 
 \item{N_e}{\link{numeric} (\emph{with default}): The number of electrons}
 
@@ -53,7 +55,7 @@ run_MC_CW_IRS_TUNL(A = 0.12, rho = 0.003, times = 0:1000) \%>\%
 } 
 
 \section{How to cite}{
-Friedrich, J., Kreutzer, S., 2019. run_MC_CW_IRSL_TUN(): Run Monte-Carlo simulation for CW-IRSL. Function version 0.2.0. In: Friedrich, J., Kreutzer, S., Pagonis, V., Schmidt, C., 2019. RLumCarlo: Monte-Carlo Methods for Simulating Luminescence PhenomenaR package version 0.1.0.9000-79. 
+Friedrich, J., Kreutzer, S., 2019. run_MC_CW_IRSL_TUN(): Run Monte-Carlo simulation for CW-IRSL. Function version 0.2.0. In: Friedrich, J., Kreutzer, S., Pagonis, V., Schmidt, C., 2019. RLumCarlo: Monte-Carlo Methods for Simulating Luminescence PhenomenaR package version 0.1.0.9000-84. 
 }
 
 \references{
