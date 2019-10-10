@@ -3,8 +3,15 @@
 #' @description
 #'
 #' @details
+#' 
+#' \deqn{
+#' p(t) = A * (t / p) * e ^ (-r / rho ^ (-1 / 3)) 
+#' }
+#' \deqn{
+#' I_{TUN}(t) = 3 * n * p(t) *  r ^ 2 * e ^ (-r ^ 3) 
+#' }
 #'
-#'  ADD EQUATION
+#'Where in the function `n` := `n_filled`:= `t` := `times` 
 #'
 #' @param A [numeric] (**required**): The transition probaility (cm^3/s).
 #'
