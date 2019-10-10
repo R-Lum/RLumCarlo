@@ -5,21 +5,22 @@
 #' @details
 #'
 #' \deqn{
-#' I_{LOC}(t) = -dn/dt = p(t) * (n^2 / (r + n))
+#' TL I_{LOC}(t) = -dn/dt = (s * e^-E/kT) * (n^2 / (r + n))
 #' }
 #'
 #'where in the function `n` :=`n_filled`
-#' @param s [numeric] (**required**): Escape frequency of the trap (s^-1).
 #'
-#' @param E [numeric] (**required**): Thermal activation energy of the trap (eV).
+#'#' @param E [numeric] (**required**): Thermal activation energy of the trap (eV).
 #'
-#' @param times [numeric] (*with default*): The specified time within the simulation with the same syntax as the function seq().
+#' @param s [numeric] (**required**): The frequency factor of the trap (s^-1).
 #'
-#' @param clusters [numeric] (*with default*): The number of MC runs.
+#' @param times [numeric] (*with default*): The sequence of temperature steps within the simulation (degrees C).
 #'
-#' @param n_filled [integer] (*with default*): The number of electron traps that are filled at the beginning of the simulation.
+#' @param clusters [numeric] (*with default*): The number of MC run (unitless).
 #'
-#' @param r [numeric] (*with default*): The retrapping ratio.
+#' @param n_filled [integer] (*with default*): The number of filled electron traps at the beginning of the simulation (unitless).
+#' 
+#' @param r [numeric] (*with default*): Retrapping ratio (unitless).
 #'
 #' @param method [character] (*with default*): sequential `'seq'` or parallel processing `'par'`
 #'

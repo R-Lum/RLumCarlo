@@ -8,24 +8,25 @@
 #' I_{TUN}(t) = -dn/dt = A * (n^2 / (r + n))
 #' }
 #'
-#' Where in the function `n` := `n_filled` := `N` := `N_e` := `rho` := `rho'` := `r_c` := `rho'_c`
-#' @param s [numeric] (**required**): Escape frequency of the trap (s^-1).
-#'
+#' Where in the function `n` := `n_filled` := `N` := `N_e` := \eqn{\rho} := \eqn{\rho'} := `r_c` := \eqn{\rho_{c}'}
+#' 
 #' @param E [numeric] (**required**): Thermal activation energy of the trap (eV).
+#' 
+#' @param s [numeric] (**required**): Frequency factor of the trap (s^-1).
 #'
-#' @param T [numeric] (**required**): Temperature (deg. C).
+#' @param T [numeric] (**required**): Temperature (degrees C).
 #'
-#' @param rho [numeric] (**required**): The calculated dimesionless charge density (normally written Rho') (also defined as (4 *  pi rho/3)^1/3*r) where `rho` := the density of recombination centers within the material given in m^3 and `r` is _).
+#' @param rho [numeric] (**required**): The density of recombination centers (defined as rho' in Huntley 2006) (unitless).
 #'
-#' @param times [numeric] (*with default*): The specified time within the simulation with the same syntax as the function seq().
+#' @param times [numeric] (*with default*): The sequence of time steps within the simulation (s).
 #'
-#' @param clusters [numeric] (*with default*): The number of MC runs.
+#' @param clusters [numeric] (*with default*): The number of MC runs (unitless).
 #'
 #' @param r_c [numeric] (*with default*): The radius of tunneling (dimensionless)
 #'
 #' @param delta.r [numeric] (*with default*):
 #'
-#' @param N_e [numeric] (*with default*): The number of electrons.
+#' @param r [numeric] (*with default*): The radius of tunneling (unitless).
 #'
 #' @param method [character] (*with default*): sequential `'seq'` or parallel processing `'par'`
 #'

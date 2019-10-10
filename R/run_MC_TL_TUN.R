@@ -9,22 +9,25 @@
 #' I_{TUN}(t) = -dn/dt = A * (n^2 / (r + n))
 #' }
 #'
-#'where in the function `N` := `N_e` := `rho` := `rho'` := `r_c` := `rho'_c`
-#' @param s [list] (**required**): Escape frequency of the trap (s^-1).
+#' where in the function `N` := `N_e` := \eqn{\rho} := \eqn{\rho'} := `r_c` := \eqn{\rho_{c}'}
 #'
 #' @param E [numeric] (**required**): Thermal activation energy of the trap (eV).
 #'
-#' @param rho [numeric] (**required**): The calculated dimesionless Charge density.
+#' @param s [list] (**required**): The frequency factor of the trap (s^-1).
 #'
-#' @param r_c [numeric] (*with default*): The dimensionless minimal critical radius.
+#' @param rho [numeric] (**required**): The density of recombination centers (defined as rho' in Huntley 2006) (unitless).
 #'
-#' @param times [vector] (*with default*): The number of MC runs.
+#' @param r_c [numeric] (*with default*): Distance parameter (unitless).
 #'
-#' @param clusters  [numeric] (*with default*): The number of clusters.
+#' @param times [vector] (*with default*): The sequence of temperature steps within the simulation (degrees C)
+#' 
+#' @param clusters  [numeric] (*with default*): The number of MC runs (unitless).
 #'
-#' @param N_e [numeric] (*with default*): The number of electrons
+#' @param N_e [numeric] (*with default*): The total number of electron traps available (unitless).
 #'
-#' @param delta.r [numeric] (*with default*): The approriate distance interval along the r axis (dimensionless).
+#' @param delta.r [numeric] (*with default*): The  increments of r_c (unitless).
+#' 
+#' @param r [numeric] (*with default*): The radius of tunneling (unitless).
 #'
 #' @param method [character] (*with default*): sequential `'seq'` or parallel processing `'par'`
 #'
