@@ -79,7 +79,7 @@ more details.
 
 ## <span class="glyphicon glyphicon-euro"></span> Funding
 
-This project benefitted from the support by various funding bodies.
+This project benefitted from support by various funding bodies.
 
   - The initial work by Johannes Friedrich, Sebastian Kreutzer and
     Christoph Schmidt was supported by the [DFG (2015–2018,

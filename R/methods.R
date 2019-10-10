@@ -1,4 +1,4 @@
-#' methods
+#' @title methods
 #'
 #' @keywords internal
 #' @md
