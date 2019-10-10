@@ -20,7 +20,7 @@
 #'
 #' @param s [numeric] (**required**): Frequency factor of the trap (s^-1).
 #'
-#' @param T [numeric] (**required**): Temperature (degrees C).
+#' @param T [numeric] (**required**): Constant stimulation temperature (degrees C).
 #'
 #' @param rho [numeric] (**required**): The density of recombination centers (defined as rho' in Huntley 2006) (unitless).
 #'
@@ -51,6 +51,8 @@
 #' UMR 5060, CNRS - Univerité Bordeaux Montaigne (France)
 #'
 #' @references
+#' Huntley, D.J., 2006. An explanation of the power-law decay of luminescence. Journal of Physics: Condensed Matter, 18(4), 1359.\doi{10.1088/0953-8984/18/4/020}
+#' 
 #' Pagonis, V. and Kulp, C., 2017. Monte Carlo simulations of tunneling phenomena and nearest neighbor hopping mechanism in feldspars. Journal of Luminescence 181, 114–120. \doi{10.1016/j.jlumin.2016.09.014}
 #'
 #' Pagonis, V., Friedrich, J., Discher, M., Müller-Kirschbaum, A., Schlosser, V., Kreutzer, S., Chen, R. and Schmidt, C., 2019. Excited state luminescence signals from a random distribution of defects: A new Monte Carlo simulation approach for feldspar. Journal of Luminescence 207, 266–272. \doi{10.1016/j.jlumin.2018.11.024}
