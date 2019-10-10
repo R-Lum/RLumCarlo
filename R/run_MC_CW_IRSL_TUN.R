@@ -3,8 +3,14 @@
 #' @description Runs a Monte-Carlo (MC) simulation of constant wave infrared stimulated luminesence (CW-IRSL) using the model.
 #'
 #' @details
+#' \deqn{
+#' p(t) = A * e ^ (-r / rho ^ (-1 / 3)) 
+#' }
+#' \deqn{
+#' I_{TUN}(t) = 3 * n * p(t) *  r ^ 2 * e ^ (-r ^ 3) 
+#' }
 #'
-#' ####equation here please####
+#'Where in the function `n` := `n_filled`:= `t` := `times` 
 #'
 #'
 #' @param A [numeric] (**required**): The transition probability (cm^3/s).

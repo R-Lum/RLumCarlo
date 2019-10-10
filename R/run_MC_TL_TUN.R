@@ -4,12 +4,15 @@
 #' Tunneling transitions refers to the direct movement of electrons from a trap directly to the recombination centre.
 #'
 #' @details
-#'
+#' 
 #' \deqn{
-#' I_{TUN}(t) = -dn/dt = A * (n^2 / (r + n))
+#' p(t) = s * e ^ (-E / kB * T) * e ^ (-r / rho ^ 1 / 3)
 #' }
-#'
-#' where in the function `N` := `N_e` := \eqn{\rho} := \eqn{\rho'} := `r_c` := \eqn{\rho_{c}'}
+#' \deqn{
+#' I_{TUN}(t) = 3 * n * p(t) *  r ^ 2 * e ^ (-r ^ 3) 
+#' }
+#' 
+#' Where in the function `n` := `n_filled` := `t`:= `times`:= \eqn{\rho} := \eqn{\rho'} := `r_c` := \eqn{\rho_{c}'}
 #'
 #' @param E [numeric] (**required**): Thermal activation energy of the trap (eV).
 #'
