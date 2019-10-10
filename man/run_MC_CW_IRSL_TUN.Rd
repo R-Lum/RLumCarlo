@@ -8,19 +8,19 @@ run_MC_CW_IRSL_TUN(A, rho, times, clusters = 10, r_c = 0,
   delta.r = 0.1, N_e = 200, method = "seq", output = "signal", ...)
 }
 \arguments{
-\item{A}{\link{numeric} (\strong{required}): The transition probability (cm^3/s).}
+\item{A}{\link{numeric} (\strong{required}): The optical excitation rate from trap to conduction band (s^-1).}
 
-\item{rho}{\link{numeric} (\strong{required}): The calculated dimesionless Charge density (normally written Rho').}
+\item{rho}{\link{numeric} (\strong{required}): The density of recombination centers (defined as rho' in Huntley 2006) (unitless).}
 
-\item{times}{\link{numeric} (\emph{with default}): The number of MC runs.}
+\item{times}{\link{numeric} (\emph{with default}): The sequence of temperature steps within the simulation (s).}
 
-\item{clusters}{\link{numeric} (\emph{with default}): The number of clusters.}
+\item{clusters}{\link{numeric} (\emph{with default}): The number of MC runs (unitless).}
 
 \item{r_c}{\link{numeric} (\emph{with default}): The retrapping ratio.}
 
 \item{delta.r}{\link{numeric} (\emph{with default}):}
 
-\item{N_e}{\link{numeric} (\emph{with default}): The number of electrons}
+\item{N_e}{\link{numeric} (\emph{width default}): The total number of electron traps available (unitless).}
 
 \item{method}{\link{character} (\emph{with default}): sequential \code{'seq'} or parallel processing \code{'par'}}
 
@@ -28,15 +28,24 @@ run_MC_CW_IRSL_TUN(A, rho, times, clusters = 10, r_c = 0,
 charges, electrons, in the trap)}
 
 \item{\dots}{further arguments}
+
+\item{r}{\link{numeric} (\emph{with default}): The radius of tunneling (unitless).}
 }
 \value{
 This function returns a list.
 }
 \description{
-Runs a Monte-Carlo (MC) simulation of constant wave infrared stimulated luminesence (CW-IRSL) using the model.
+Runs a Monte-Carlo (MC) simulation of constant wave infrared stimulated luminesence (CW-IRSL) using the model. Tunneling refers to the direct movement of electrons from a trap directly to the recombination center.
 }
 \details{
-####equation here please####
+\deqn{
+p(t) = A * e ^ (-r / rho ^ (-1 / 3))
+}
+\deqn{
+I_{TUN}(t) = 3 * n * p(t) *  r ^ 2 * e ^ (-r ^ 3)
+}
+
+Where in the function \code{n} := \code{n_filled}:= \code{t} := \code{times}
 }
 \section{Function version}{
  0.2.0
@@ -55,11 +64,13 @@ run_MC_CW_IRS_TUNL(A = 0.12, rho = 0.003, times = 0:1000) \%>\%
 } 
 
 \section{How to cite}{
-Friedrich, J., Kreutzer, S., 2019. run_MC_CW_IRSL_TUN(): Run Monte-Carlo simulation for CW-IRSL. Function version 0.2.0. In: Friedrich, J., Kreutzer, S., Pagonis, V., Schmidt, C., 2019. RLumCarlo: Monte-Carlo Methods for Simulating Luminescence PhenomenaR package version 0.1.0.9000-85. 
+Friedrich, J., Kreutzer, S., 2019. run_MC_CW_IRSL_TUN(): Run Monte-Carlo simulation for CW-IRSL. Function version 0.2.0. In: Friedrich, J., Kreutzer, S., Pagonis, V., Schmidt, C., 2019. RLumCarlo: Monte-Carlo Methods for Simulating Luminescence PhenomenaR package version 0.1.0.9000-87. 
 }
 
 \references{
-Pagonis, V. and Kulp, C. (2017) ‘Monte Carlo simulations of tunneling phenomena and nearest neighbor hopping mechanism in feldspars’, Journal of Luminescence. Elsevier, 181, pp. 114–120. doi: 10.1016/j.jlumin.2016.09.014.
+Pagonis, V., Friedrich, J., Discher, M., Müller-Kirschbaum, A., Schlosser, V., Kreutzer, S., Chen, R. and Schmidt, C., 2019. Excited state luminescence signals from a random distribution of defects: A new Monte Carlo simulation approach for feldspar. Journal of Luminescence 207, 266–272. \doi{10.1016/j.jlumin.2018.11.024}
+
+Reuven, C. and S. Mckeever, 1997. Theory of thermoluminescence and related phenomena.
 }
 \author{
 Johannes Friedrich, University of Bayreuth (Germany), Sebastian Kreutzer, IRAMAT-CRP2A, UMR 5060, Université Bordeaux Montaigne (France)

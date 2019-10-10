@@ -2,27 +2,27 @@
 % Please edit documentation in R/run_MC_TL_TUN.R
 \name{run_MC_TL_TUN}
 \alias{run_MC_TL_TUN}
-\title{Run Monte-Carlo Simulation for TL using Tunnelling Transition}
+\title{Run Monte-Carlo Simulation for TL for tunnelling transition}
 \usage{
 run_MC_TL_TUN(s, E, rho, r_c = 0, times, clusters = 10, N_e = 200,
   delta.r = 0.1, method = "par", output = "signal", ...)
 }
 \arguments{
-\item{s}{\link{list} (\strong{required}): Escape frequency of the trap (s^-1).}
+\item{s}{\link{list} (\strong{required}): The frequency factor of the trap (s^-1).}
 
 \item{E}{\link{numeric} (\strong{required}): Thermal activation energy of the trap (eV).}
 
-\item{rho}{\link{numeric} (\strong{required}): The calculated dimesionless Charge density.}
+\item{rho}{\link{numeric} (\strong{required}): The density of recombination centers (defined as rho' in Huntley 2006) (unitless).}
 
-\item{r_c}{\link{numeric} (\emph{with default}): The dimensionless minimal critical radius.}
+\item{r_c}{\link{numeric} (\emph{with default}): Distance parameter (radius of tunneling) (unitless).}
 
-\item{times}{\link{vector} (\emph{with default}): The number of MC runs.}
+\item{times}{\link{vector} (\emph{with default}): The sequence of temperature steps within the simulation (s).}
 
-\item{clusters}{\link{numeric} (\emph{with default}): The number of clusters.}
+\item{clusters}{\link{numeric} (\emph{with default}): The number of MC runs (unitless).}
 
-\item{N_e}{\link{numeric} (\emph{with default}): The number of electrons}
+\item{N_e}{\link{numeric} (\emph{with default}): The total number of electron traps available (unitless).}
 
-\item{delta.r}{\link{numeric} (\emph{with default}): The approriate distance interval along the r axis (dimensionless).}
+\item{delta.r}{\link{numeric} (\emph{with default}): The  increments of r_c (unitless).}
 
 \item{method}{\link{character} (\emph{with default}): sequential \code{'seq'} or parallel processing \code{'par'}}
 
@@ -30,20 +30,24 @@ run_MC_TL_TUN(s, E, rho, r_c = 0, times, clusters = 10, N_e = 200,
 charges, electrons, in the trap)}
 
 \item{\dots}{further arguments}
+
+\item{r}{\link{numeric} (\emph{with default}): The radius of tunneling (unitless).}
 }
 \value{
 This function returns an \code{\link{array}} with dimension length(times) x length(r) x clusters
 }
 \description{
-Runs a Monte-Carlo (MC) simulation of thermo-luminesence (TL) using the tunneling (TUN) model.
-Tunneling transitions refers to the direct movement of electrons from a trap directly to the recombination centre.
+Runs a Monte-Carlo (MC) simulation of thermo-luminesence (TL) using the tunneling (TUN) model. Tunneling refers to the direct movement of electrons from a trap directly to the recombination center
 }
 \details{
 \deqn{
-I_{TUN}(t) = -dn/dt = A * (n^2 / (r + n))
+p(t) = s * e ^ (-E / kB * T) * e ^ (-r / rho ^ 1 / 3)
+}
+\deqn{
+I_{TUN}(t) = 3 * n * p(t) *  r ^ 2 * e ^ (-r ^ 3) 
 }
 
-where in the function \code{N} := \code{N_e} := \code{rho} := \code{rho'} := \code{r_c} := \code{rho'_c}
+Where in the function \code{n} := \code{n_filled} := \code{t}:= \code{times}:= \eqn{\rho} := \eqn{\rho'} := \code{r_c} := \eqn{\rho_{c}'}
 }
 \section{Function version}{
  0.1.0
@@ -65,7 +69,7 @@ run_MC_TL_TUN(s = 3.5e12,
 } 
 
 \section{How to cite}{
-Friedrich, J., Kreutzer, S., 2019. run_MC_TL_TUN(): Run Monte-Carlo Simulation for TL using Tunnelling Transition. Function version 0.1.0. In: Friedrich, J., Kreutzer, S., Pagonis, V., Schmidt, C., 2019. RLumCarlo: Monte-Carlo Methods for Simulating Luminescence PhenomenaR package version 0.1.0.9000-85. 
+Friedrich, J., Kreutzer, S., 2019. run_MC_TL_TUN(): Run Monte-Carlo Simulation for TL for tunnelling transition. Function version 0.1.0. In: Friedrich, J., Kreutzer, S., Pagonis, V., Schmidt, C., 2019. RLumCarlo: Monte-Carlo Methods for Simulating Luminescence PhenomenaR package version 0.1.0.9000-87. 
 }
 
 \references{

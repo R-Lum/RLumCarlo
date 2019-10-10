@@ -2,23 +2,23 @@
 % Please edit documentation in R/run_MC_TL_LOC.R
 \name{run_MC_TL_LOC}
 \alias{run_MC_TL_LOC}
-\title{Run Monte-Carlo simulation for TL for localised transition}
+\title{Run Monte-Carlo simulation for TL for localized transition}
 \usage{
 run_MC_TL_LOC(s, E, times, clusters = 10, n_filled = 100, r,
   method = "par", output = "signal", ...)
 }
 \arguments{
-\item{s}{\link{numeric} (\strong{required}): Escape frequency of the trap (s^-1).}
+\item{s}{\link{numeric} (\strong{required}): The frequency factor of the trap (s^-1).}
 
 \item{E}{\link{numeric} (\strong{required}): Thermal activation energy of the trap (eV).}
 
-\item{times}{\link{numeric} (\emph{with default}): The specified time within the simulation with the same syntax as the function seq().}
+\item{times}{\link{numeric} (\emph{with default}): The sequence of temperature steps within the simulation (s).}
 
-\item{clusters}{\link{numeric} (\emph{with default}): The number of MC runs.}
+\item{clusters}{\link{numeric} (\emph{with default}): The number of MC run (unitless).}
 
-\item{n_filled}{\link{integer} (\emph{with default}): The number of electron traps that are filled at the beginning of the simulation.}
+\item{n_filled}{\link{integer} (\emph{with default}): The number of filled electron traps at the beginning of the simulation (unitless).}
 
-\item{r}{\link{numeric} (\emph{with default}): The retrapping ratio.}
+\item{r}{\link{numeric} (\emph{with default}): The retrapping ratio (unitless).}
 
 \item{method}{\link{character} (\emph{with default}): sequential \code{'seq'} or parallel processing \code{'par'}}
 
@@ -35,7 +35,7 @@ Runs a Monte-Carlo (MC) simulation of thermo-luminesence (TL) using the generali
 }
 \details{
 \deqn{
-I_{LOC}(t) = -dn/dt = p(t) * (n^2 / (r + n))
+TL I_{LOC}(t) = -dn/dt = (s * e^-E/kT) * (n^2 / (r + n))
 }
 
 where in the function \code{n} :=\code{n_filled}
@@ -65,7 +65,7 @@ run_MC_TL_LOC(
 } 
 
 \section{How to cite}{
-Kreutzer, S., 2019. run_MC_TL_LOC(): Run Monte-Carlo simulation for TL for localised transition. Function version 0.1.0. In: Friedrich, J., Kreutzer, S., Pagonis, V., Schmidt, C., 2019. RLumCarlo: Monte-Carlo Methods for Simulating Luminescence PhenomenaR package version 0.1.0.9000-85. 
+Kreutzer, S., 2019. run_MC_TL_LOC(): Run Monte-Carlo simulation for TL for localized transition. Function version 0.1.0. In: Friedrich, J., Kreutzer, S., Pagonis, V., Schmidt, C., 2019. RLumCarlo: Monte-Carlo Methods for Simulating Luminescence PhenomenaR package version 0.1.0.9000-87. 
 }
 
 \references{

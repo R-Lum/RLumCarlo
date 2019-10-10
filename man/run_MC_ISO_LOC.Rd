@@ -2,25 +2,25 @@
 % Please edit documentation in R/run_MC_ISO_LOC.R
 \name{run_MC_ISO_LOC}
 \alias{run_MC_ISO_LOC}
-\title{Run Monte-Carlo simulation for ITL for localised transition}
+\title{Run Monte-Carlo simulation for ISO-TL for localized transition}
 \usage{
 run_MC_ISO_LOC(s, E, T = 20, times, clusters = 10, n_filled = 100, r,
   method = "par", output = "signal", ...)
 }
 \arguments{
-\item{s}{\link{numeric} (\strong{required}): Escape frequency of the trap (s^-1).}
+\item{s}{\link{numeric} (\strong{required}): The frequency factor of the trap (s^-1).}
 
 \item{E}{\link{numeric} (\strong{required}): Thermal activation energy of the trap (eV).}
 
-\item{T}{\link{numeric} (\emph{with default}): Temperature (deg. C).}
+\item{T}{\link{numeric} (\emph{with default}): Temperature (degrees C).}
 
-\item{times}{\link{numeric} (\emph{with default}): The specified time within the simulation with the same syntax as the function seq().}
+\item{times}{\link{numeric} (\emph{with default}): The sequence of temperature steps within the simulation (s).}
 
-\item{clusters}{\link{numeric} (\emph{with default}): The number of MC runs.}
+\item{clusters}{\link{numeric} (\emph{with default}): The number of MC runs (unitless).}
 
-\item{n_filled}{\link{integer} (\emph{with default}): The number of electron traps that are filled at the beginning of the simulation.}
+\item{n_filled}{\link{integer} (\emph{with default}): The number of filled electron traps at the beginning of the simulation (unitless).}
 
-\item{r}{\link{numeric} (\emph{with default}): The retrapping ratio for localized models (dimensionless).}
+\item{r}{\link{numeric} (\emph{with default}): the retrapping ratio (unitless).}
 
 \item{method}{\link{character} (\emph{with default}): sequential \code{'seq'} or parallel processing \code{'par'}}
 
@@ -37,7 +37,7 @@ Runs a Monte-Carlo (MC) simulation of isothermally stimulated luminesence (ISO-T
 }
 \details{
 \deqn{
-I_{LOC}(t) = -dn/dt = p(t) * (n^2 / (r + n))
+ISO I_{LOC}(t) = -dn/dt = (s * e^-E/kT_ITL/ISO) * (n^2 / (r + n)))
 }
 
 Where in the function \code{n} := \code{n_filled} := \code{N} := \code{N_e}
@@ -70,7 +70,7 @@ run_MC_ISO_LOC(
 } 
 
 \section{How to cite}{
-Kreutzer, S., 2019. run_MC_ISO_LOC(): Run Monte-Carlo simulation for ITL for localised transition. Function version 0.0.1. In: Friedrich, J., Kreutzer, S., Pagonis, V., Schmidt, C., 2019. RLumCarlo: Monte-Carlo Methods for Simulating Luminescence PhenomenaR package version 0.1.0.9000-85. 
+Kreutzer, S., 2019. run_MC_ISO_LOC(): Run Monte-Carlo simulation for ISO-TL for localized transition. Function version 0.0.1. In: Friedrich, J., Kreutzer, S., Pagonis, V., Schmidt, C., 2019. RLumCarlo: Monte-Carlo Methods for Simulating Luminescence PhenomenaR package version 0.1.0.9000-87. 
 }
 
 \references{

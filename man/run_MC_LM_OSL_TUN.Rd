@@ -2,25 +2,25 @@
 % Please edit documentation in R/run_MC_LM_OSL_TUN.R
 \name{run_MC_LM_OSL_TUN}
 \alias{run_MC_LM_OSL_TUN}
-\title{Run Monte-Carlo simulation for LM-OSL}
+\title{Run Monte-Carlo simulation for LM-OSL for tunneling transition}
 \usage{
 run_MC_LM_OSL_TUN(A, rho, times, clusters = 10, r_c = 0,
   delta.r = 0.1, N_e = 200, method = "par", output = "signal", ...)
 }
 \arguments{
-\item{A}{\link{numeric} (\strong{required}): The transition probaility (cm^3/s).}
+\item{A}{\link{numeric} (\strong{required}): The optical excitation rate from trap to conduction band (s^-1).}
 
-\item{rho}{\link{numeric} (\strong{required}): The calculated dimesionless Charge density (normally written Rho').}
+\item{rho}{\link{numeric} (\strong{required}): The density of recombination centers (defined as rho' in Huntley 2006) (unitless).}
 
-\item{times}{\link{vector} (\emph{with default}): The number of MC runs.}
+\item{times}{\link{vector} (\emph{with default}): The sequence of temperature steps within the simulation (s).}
 
 \item{clusters}{\link{numeric} (\emph{with default}): The number of clusters.}
 
 \item{r_c}{\link{numeric} (\emph{with default}): The retrapping ratio.}
 
-\item{delta.r}{\link{numeric} (\emph{with default}):}
+\item{delta.r}{\link{numeric} (\emph{with default}): Increments of r_c (unitless).}
 
-\item{N_e}{\link{numeric} (\emph{with default}): The number of electrons.}
+\item{N_e}{\link{numeric} (\emph{width default}): The total number of electron traps available (unitless).}
 
 \item{method}{\link{character} (\emph{with default}): sequential \code{'seq'} or parallel processing \code{'par'}}
 
@@ -28,15 +28,24 @@ run_MC_LM_OSL_TUN(A, rho, times, clusters = 10, r_c = 0,
 charges, electrons, in the trap)}
 
 \item{\dots}{further arguments}
+
+\item{r}{\link{numeric} (\emph{with default}): The radius of tunneling (unitless).}
 }
 \value{
 This function returns a list.
 }
 \description{
-Run Monte-Carlo simulation for LM-OSL
+Runs a Monte-Carlo (MC) simulation of linearly modulated optically stimulated luminesence (LM-OSL) using the tunneling (TUN) model. Tunneling refers to the direct movement of electrons from a trap directly to the recombination center
 }
 \details{
-ADD EQUATION
+\deqn{
+p(t) = A * (t / p) * e ^ (-r / rho ^ (-1 / 3))
+}
+\deqn{
+I_{TUN}(t) = 3 * n * p(t) *  r ^ 2 * e ^ (-r ^ 3)
+}
+
+Where in the function \code{n} := \code{n_filled}:= \code{t} := \code{times}
 }
 \section{Function version}{
  0.1.0
@@ -57,11 +66,16 @@ run_MC_LM_OSL_TUN(A = 10000, rho = 0.0001, times = 1:100, clusters = 10, r = NUL
 } 
 
 \section{How to cite}{
-Friedrich, J., 2019. run_MC_LM_OSL_TUN(): Run Monte-Carlo simulation for LM-OSL. Function version 0.1.0. In: Friedrich, J., Kreutzer, S., Pagonis, V., Schmidt, C., 2019. RLumCarlo: Monte-Carlo Methods for Simulating Luminescence PhenomenaR package version 0.1.0.9000-85. 
+Friedrich, J., 2019. run_MC_LM_OSL_TUN(): Run Monte-Carlo simulation for LM-OSL for tunneling transition. Function version 0.1.0. In: Friedrich, J., Kreutzer, S., Pagonis, V., Schmidt, C., 2019. RLumCarlo: Monte-Carlo Methods for Simulating Luminescence PhenomenaR package version 0.1.0.9000-87. 
 }
 
 \references{
-Pagonis, V. and Kulp, C. (2017) ‘Monte Carlo simulations of tunneling phenomena and nearest neighbor hopping mechanism in feldspars’, Journal of Luminescence. Elsevier, 181, pp. 114–120. doi: 10.1016/j.jlumin.2016.09.014.
+Pagonis, V. and Kulp, C., 2017. Monte Carlo simulations of tunneling phenomena and nearest neighbor hopping mechanism in feldspars. Journal of Luminescence 181, 114–120. \doi{10.1016/j.jlumin.2016.09.014}
+
+Pagonis, V., Friedrich, J., Discher, M., Müller-Kirschbaum, A., Schlosser, V., Kreutzer, S., Chen, R. and Schmidt, C., 2019. Excited state luminescence signals from a random distribution of defects: A new Monte Carlo simulation approach for feldspar. Journal of Luminescence 207, 266–272. \doi{10.1016/j.jlumin.2018.11.024}
+
+\strong{Further reading}
+Aitken, M.J., 1985. Thermoluminescence dating. 276-280. \doi{10.1002/gea.3340020110}
 }
 \author{
 Johannes Friedrich, University of Bayreuth (Germany)

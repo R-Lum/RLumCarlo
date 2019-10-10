@@ -2,7 +2,7 @@
 % Please edit documentation in R/run_MC_ISO_TUN.R
 \name{run_MC_ISO_TUN}
 \alias{run_MC_ISO_TUN}
-\title{Run Monte-Carlo Simulation for Isothermal Measurements for Tunneling Transition}
+\title{Run Monte-Carlo Simulation for ISO-TL for tunneling transition}
 \usage{
 run_MC_ISO_TUN(E, s, T = 200, rho, times, clusters = 10, r_c = 0,
   delta.r = 0.1, N_e = 200L, method = "par", output = "signal",
@@ -11,21 +11,21 @@ run_MC_ISO_TUN(E, s, T = 200, rho, times, clusters = 10, r_c = 0,
 \arguments{
 \item{E}{\link{numeric} (\strong{required}): Thermal activation energy of the trap (eV).}
 
-\item{s}{\link{numeric} (\strong{required}): Escape frequency of the trap (s^-1).}
+\item{s}{\link{numeric} (\strong{required}): Frequency factor of the trap (s^-1).}
 
-\item{T}{\link{numeric} (\strong{required}): Temperature (deg. C).}
+\item{T}{\link{numeric} (\strong{required}): Temperature (degrees C).}
 
-\item{rho}{\link{numeric} (\strong{required}): The calculated dimesionless charge density (normally written Rho') (also defined as (4 *  pi rho/3)^1/3*r) where \code{rho} := the density of recombination centers within the material given in m^3 and \code{r} is _).}
+\item{rho}{\link{numeric} (\strong{required}): The density of recombination centers (defined as rho' in Huntley 2006) (unitless).}
 
-\item{times}{\link{numeric} (\emph{with default}): The specified time within the simulation with the same syntax as the function seq().}
+\item{times}{\link{numeric} (\emph{with default}): The sequence of temperature steps within the simulation (s).}
 
-\item{clusters}{\link{numeric} (\emph{with default}): The number of MC runs.}
+\item{clusters}{\link{numeric} (\emph{with default}): The number of MC runs (unitless).}
 
 \item{r_c}{\link{numeric} (\emph{with default}): The radius of tunneling (dimensionless)}
 
 \item{delta.r}{\link{numeric} (\emph{with default}):}
 
-\item{N_e}{\link{numeric} (\emph{with default}): The number of electrons.}
+\item{N_e}{\link{numeric} (\emph{width default}): The total number of electron traps available (unitless).}
 
 \item{method}{\link{character} (\emph{with default}): sequential \code{'seq'} or parallel processing \code{'par'}}
 
@@ -33,19 +33,24 @@ run_MC_ISO_TUN(E, s, T = 200, rho, times, clusters = 10, r_c = 0,
 charges, electrons, in the trap)}
 
 \item{\dots}{further arguments}
+
+\item{r}{\link{numeric} (\emph{with default}): The radius of tunneling (unitless).}
 }
 \value{
 This function returns a list.
 }
 \description{
-Runs a Monte-Carlo (MC) simulation of isothermally stimulated luminesence (ISO-TL or ITL) using the tunneling (TUN) model. Tunneling refers to the movement of electrons from a trap directly to the recombination center.
+Runs a Monte-Carlo (MC) simulation of isothermally stimulated luminesence (ISO-TL or ITL) using the tunneling (TUN) model. Tunneling refers to the direct movement of electrons from a trap directly to the recombination center.
 }
 \details{
 \deqn{
-I_{TUN}(t) = -dn/dt = A * (n^2 / (r + n))
+p(t) = s * e ^ (-E / kB * T) * e ^ (-r / rho ^ 1 / 3)
+}
+\deqn{
+I_{TUN}(t) = 3 * n * p(t) *  r ^ 2 * e ^ (-r ^ 3)
 }
 
-Where in the function \code{n} := \code{n_filled} := \code{N} := \code{N_e} := \code{rho} := \code{rho'} := \code{r_c} := \code{rho'_c}
+Where in the function \code{n} := \code{n_filled} := \code{t}:= \code{times}
 }
 \section{Function version}{
  0.1.0
@@ -67,7 +72,7 @@ run_MC_ISO_TUN(
 } 
 
 \section{How to cite}{
-Friedrich, J., Kreutzer, S., 2019. run_MC_ISO_TUN(): Run Monte-Carlo Simulation for Isothermal Measurements for Tunneling Transition. Function version 0.1.0. In: Friedrich, J., Kreutzer, S., Pagonis, V., Schmidt, C., 2019. RLumCarlo: Monte-Carlo Methods for Simulating Luminescence PhenomenaR package version 0.1.0.9000-85. 
+Friedrich, J., Kreutzer, S., 2019. run_MC_ISO_TUN(): Run Monte-Carlo Simulation for ISO-TL for tunneling transition. Function version 0.1.0. In: Friedrich, J., Kreutzer, S., Pagonis, V., Schmidt, C., 2019. RLumCarlo: Monte-Carlo Methods for Simulating Luminescence PhenomenaR package version 0.1.0.9000-87. 
 }
 
 \references{
@@ -75,7 +80,7 @@ Pagonis, V. and Kulp, C., 2017. Monte Carlo simulations of tunneling phenomena a
 
 Pagonis, V., Friedrich, J., Discher, M., Müller-Kirschbaum, A., Schlosser, V., Kreutzer, S., Chen, R. and Schmidt, C., 2019. Excited state luminescence signals from a random distribution of defects: A new Monte Carlo simulation approach for feldspar. Journal of Luminescence 207, 266–272. \doi{10.1016/j.jlumin.2018.11.024}
 
-For a discussion of tunneling see:
+\strong{Further reading}
 Aitken, M.J., 1985. Thermoluminescence dating. 276-280. \doi{10.1002/gea.3340020110}
 }
 \author{

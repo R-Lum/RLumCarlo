@@ -2,21 +2,21 @@
 % Please edit documentation in R/run_MC_CW_IRSL_LOC.R
 \name{run_MC_CW_IRSL_LOC}
 \alias{run_MC_CW_IRSL_LOC}
-\title{Run Monte-Carlo simulation for CW-IRSL for localised transition}
+\title{Run Monte-Carlo simulation for CW-IRSL for localized transition}
 \usage{
 run_MC_CW_IRSL_LOC(A, times, clusters = 10, n_filled = 100, r,
   method = "par", output = "signal", ...)
 }
 \arguments{
-\item{A}{\link{numeric} (\strong{required}): The transition probability (cm^3/s).}
+\item{A}{\link{numeric} (\strong{required}): The optical excitation rate from trap to conduction band (s^-1).}
 
-\item{times}{\link{numeric} (\emph{with default}): The number of MC runs.}
+\item{times}{\link{numeric} (\emph{with default}): The sequence of temperature steps within the simulation (s).}
 
-\item{clusters}{\link{numeric} (\emph{with default}): The number of clusters.}
+\item{clusters}{\link{numeric} (\emph{with default}): The number of MC runs (unitless).}
 
-\item{n_filled}{\link{integer} (\emph{with default}): The number of electron traps that are filled at the beginning of the simulation.}
+\item{n_filled}{\link{integer} (\emph{with default}): The number of filled electron traps at the beginning of the simulation (unitless).}
 
-\item{r}{\link{numeric} (\emph{with default}): The retrapping ratio.}
+\item{r}{\link{numeric} (\emph{with default}): The retrapping ratio (unitless).}
 
 \item{method}{\link{character} (\emph{with default}): sequential \code{'seq'} or parallel processing \code{'par'}}
 
@@ -29,7 +29,7 @@ charges, electrons, in the trap)}
 This function returns an \link{array} with dimension length(times) x length(r) x clusters
 }
 \description{
-Runs a Monte-Carlo (MC) simulation of constant wave infrared stimulated luminesence (CW-IRSL) using the generalized one trap (GOT) model.
+Runs a Monte-Carlo (MC) simulation of constant wave infrared stimulated luminesence (CW-IRSL) using the generalized one trap (GOT) model. Localized refers to excitation of an electron before it recombines, but without the involvement of the conduction band.
 }
 \details{
 \deqn{
@@ -56,12 +56,13 @@ run_MC_CW_IRSL_LOC(
 } 
 
 \section{How to cite}{
-Kreutzer, S., 2019. run_MC_CW_IRSL_LOC(): Run Monte-Carlo simulation for CW-IRSL for localised transition. Function version 0.1.0. In: Friedrich, J., Kreutzer, S., Pagonis, V., Schmidt, C., 2019. RLumCarlo: Monte-Carlo Methods for Simulating Luminescence PhenomenaR package version 0.1.0.9000-85. 
+Kreutzer, S., 2019. run_MC_CW_IRSL_LOC(): Run Monte-Carlo simulation for CW-IRSL for localized transition. Function version 0.1.0. In: Friedrich, J., Kreutzer, S., Pagonis, V., Schmidt, C., 2019. RLumCarlo: Monte-Carlo Methods for Simulating Luminescence PhenomenaR package version 0.1.0.9000-87. 
 }
 
 \references{
-Pagonis, V. and Kulp, C., 2017. Monte Carlo simulations of tunneling phenomena and nearest neighbor hopping mechanism in feldspars.
-Journal of Luminescence 181, 114–120. doi: 10.1016/j.jlumin.2016.09.014.
+Pagonis, V., Friedrich, J., Discher, M., Müller-Kirschbaum, A., Schlosser, V., Kreutzer, S., Chen, R. and Schmidt, C., 2019. Excited state luminescence signals from a random distribution of defects: A new Monte Carlo simulation approach for feldspar. Journal of Luminescence 207, 266–272. \doi{10.1016/j.jlumin.2018.11.024}
+
+Reuven, C. and S. Mckeever, 1997. Theory of thermoluminescence and related phenomena.
 }
 \author{
 Sebastian Kreutzer, IRAMAT-CRP2A, UMR 5060, CNRS - Université Bordeaux Montaigne (France)

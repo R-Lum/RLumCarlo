@@ -13,8 +13,6 @@
 #' @param times [numeric] (*with default*): The sequence of temperature steps within the simulation (s).
 #'
 #' @param clusters [numeric] (*with default*): The number of MC runs (unitless).
-#' 
-#' @param N_e [integer] (*with defaults*): The total number of electron traps available (unitless).
 #'
 #' @param n_filled [integer] (*with default*): The number of filled electron traps at the beginning of the simulation (unitless).
 #'

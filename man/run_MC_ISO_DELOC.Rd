@@ -2,27 +2,27 @@
 % Please edit documentation in R/run_MC_ISO_DELOC.R
 \name{run_MC_ISO_DELOC}
 \alias{run_MC_ISO_DELOC}
-\title{Run Monte-Carlo simulation for ISO for delocalized transition}
+\title{Run Monte-Carlo simulation for ISO-TL for delocalized transition}
 \usage{
 run_MC_ISO_DELOC(s, E, T = 20, times, clusters = 10, N_e = 200,
   n_filled = N_e, R, method = "par", output = "signal", ...)
 }
 \arguments{
-\item{s}{\link{numeric} (\strong{required}): Escape frequency of the trap (s^-1).}
+\item{s}{\link{numeric} (\strong{required}): The frequency factor of the trap (s^-1).}
 
 \item{E}{\link{numeric} (\strong{required}): Thermal activation energy of the trap (eV).}
 
-\item{T}{\link{numeric} (\emph{with default}): Temperature (deg. C).}
+\item{T}{\link{numeric} (\emph{with default}): Temperature (degrees C).}
 
-\item{times}{\link{numeric} (\emph{with default}): The specified time within the simulation with the same syntax as the function seq().}
+\item{times}{\link{numeric} (\emph{with default}): the sequence of temperature steps within the simulation (s).}
 
-\item{clusters}{\link{numeric} (\emph{with default}): The number of MC runs.}
+\item{clusters}{\link{numeric} (\emph{with default}): The number of MC runs (unitless).}
 
-\item{N_e}{\link{integer} (\emph{with default}): The number of electrons.}
+\item{N_e}{\link{integer} (\emph{with default}): The total number of electron traps available (unitless).}
 
-\item{n_filled}{\link{integer} (\emph{with default}): The number of electron traps that are filled at the beginning of the simulation.}
+\item{n_filled}{\link{integer} (\emph{with default}): The number of filled electron traps at the beginning of the simulation (unitless).}
 
-\item{R}{\link{numeric} (\emph{with default}): The retrapping ratio.}
+\item{R}{\link{numeric} (\emph{with default}): The retrapping ratio (unitless).}
 
 \item{method}{\link{character} (\emph{with default}): sequential \code{'seq'} or parallel processing \code{'par'}}
 
@@ -39,7 +39,7 @@ Runs a Monte-Carlo (MC) simulation of isothermally stimulated luminesence (ISO-T
 }
 \details{
 \deqn{
-I_{DELOC}(t) = -dn/dt = p(t) * (n^2 / (NR + n(1-R)))
+ISO I_{DELOC}(t) = -dn/dt =(s * e^-E/kT_ITL/ISO) * (n^2 / (NR + n(1-R)))
 }
 
 Where in the function \code{n} := \code{n_filled} := \code{N} := \code{N_e}
@@ -70,7 +70,7 @@ run_MC_ISO_DELOC(
 } 
 
 \section{How to cite}{
-Kreutzer, S., 2019. run_MC_ISO_DELOC(): Run Monte-Carlo simulation for ISO for delocalized transition. Function version 0.0.1. In: Friedrich, J., Kreutzer, S., Pagonis, V., Schmidt, C., 2019. RLumCarlo: Monte-Carlo Methods for Simulating Luminescence PhenomenaR package version 0.1.0.9000-85. 
+Kreutzer, S., 2019. run_MC_ISO_DELOC(): Run Monte-Carlo simulation for ISO-TL for delocalized transition. Function version 0.0.1. In: Friedrich, J., Kreutzer, S., Pagonis, V., Schmidt, C., 2019. RLumCarlo: Monte-Carlo Methods for Simulating Luminescence PhenomenaR package version 0.1.0.9000-87. 
 }
 
 \references{
