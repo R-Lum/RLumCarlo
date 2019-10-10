@@ -1,4 +1,4 @@
-#' @title Run Monte-Carlo simulation for TL for localised transition
+#' @title Run Monte-Carlo simulation for TL for localized transition
 #'
 #' @description Runs a Monte-Carlo (MC) simulation of thermo-luminesence (TL) using the generalized one trap (GOT) model. Localized refers to excitation of an electron before it recombines, but without the involvement of the conduction band.
 #'
@@ -14,13 +14,13 @@
 #'
 #' @param s [numeric] (**required**): The frequency factor of the trap (s^-1).
 #'
-#' @param times [numeric] (*with default*): The sequence of temperature steps within the simulation (degrees C).
+#' @param times [numeric] (*with default*): The sequence of temperature steps within the simulation (s).
 #'
 #' @param clusters [numeric] (*with default*): The number of MC run (unitless).
 #'
 #' @param n_filled [integer] (*with default*): The number of filled electron traps at the beginning of the simulation (unitless).
 #' 
-#' @param r [numeric] (*with default*): Retrapping ratio (unitless).
+#' @param r [numeric] (*with default*): The retrapping ratio (unitless).
 #'
 #' @param method [character] (*with default*): sequential `'seq'` or parallel processing `'par'`
 #'

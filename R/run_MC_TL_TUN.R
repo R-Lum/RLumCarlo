@@ -1,7 +1,6 @@
-#' @title Run Monte-Carlo Simulation for TL using Tunnelling Transition
+#' @title Run Monte-Carlo Simulation for TL for tunnelling transition
 #'
-#' @description Runs a Monte-Carlo (MC) simulation of thermo-luminesence (TL) using the tunneling (TUN) model.
-#' Tunneling transitions refers to the direct movement of electrons from a trap directly to the recombination centre.
+#' @description Runs a Monte-Carlo (MC) simulation of thermo-luminesence (TL) using the tunneling (TUN) model. Tunneling refers to the direct movement of electrons from a trap directly to the recombination center
 #'
 #' @details
 #' 
@@ -20,9 +19,9 @@
 #'
 #' @param rho [numeric] (**required**): The density of recombination centers (defined as rho' in Huntley 2006) (unitless).
 #'
-#' @param r_c [numeric] (*with default*): Distance parameter (unitless).
+#' @param r_c [numeric] (*with default*): Distance parameter (radius of tunneling) (unitless).
 #'
-#' @param times [vector] (*with default*): The sequence of temperature steps within the simulation (degrees C)
+#' @param times [vector] (*with default*): The sequence of temperature steps within the simulation (s).
 #' 
 #' @param clusters  [numeric] (*with default*): The number of MC runs (unitless).
 #'

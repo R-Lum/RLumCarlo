@@ -1,8 +1,8 @@
-#' @title Run Monte-Carlo simulation for LM-OSL
+#' @title Run Monte-Carlo simulation for LM-OSL for tunneling transition
 #'
-#' @description
+#' @description Runs a Monte-Carlo (MC) simulation of linearly modulated optically stimulated luminesence (LM-OSL) using the tunneling (TUN) model. Tunneling refers to the direct movement of electrons from a trap directly to the recombination center
 #'
-#' @details
+#' @details  
 #' 
 #' \deqn{
 #' p(t) = A * (t / p) * e ^ (-r / rho ^ (-1 / 3)) 
@@ -13,19 +13,19 @@
 #'
 #'Where in the function `n` := `n_filled`:= `t` := `times` 
 #'
-#' @param A [numeric] (**required**): The transition probaility (cm^3/s).
+#' @param A [numeric] (**required**): The optical excitation rate from trap to conduction band (s^-1).
 #'
-#' @param rho [numeric] (**required**): The calculated dimesionless Charge density (normally written Rho').
+#' @param rho [numeric] (**required**): The density of recombination centers (defined as rho' in Huntley 2006) (unitless).
 #'
-#' @param times [vector] (*with default*): The number of MC runs.
+#' @param times [vector] (*with default*): The sequence of temperature steps within the simulation (s).
 #'
 #' @param clusters [numeric] (*with default*): The number of clusters.
 #'
 #' @param r_c [numeric] (*with default*): The retrapping ratio.
 #'
-#' @param delta.r [numeric] (*with default*):
+#' @param r [numeric] (*with default*): The radius of tunneling (unitless).
 #'
-#' @param N_e [numeric] (*with default*): The number of electrons.
+#' @param delta.r [numeric] (*with default*): Increments of r_c (unitless).
 #'
 #' @param method [character] (*with default*): sequential `'seq'` or parallel processing `'par'`
 #'
@@ -40,7 +40,13 @@
 #'
 #' @author Johannes Friedrich, University of Bayreuth (Germany)
 #'
-#' @references Pagonis, V., Friedrich, J., Discher, M., Müller-Kirschbaum, A., Schlosser, V., Kreutzer, S., Chen, R. and Schmidt, C., 2019. Excited state luminescence signals from a random distribution of defects: A new Monte Carlo simulation approach for feldspar. Journal of Luminescence 207, 266–272. \doi{10.1016/j.jlumin.2018.11.024}
+#' @references 
+#' Pagonis, V. and Kulp, C., 2017. Monte Carlo simulations of tunneling phenomena and nearest neighbor hopping mechanism in feldspars. Journal of Luminescence 181, 114–120. \doi{10.1016/j.jlumin.2016.09.014}
+#'
+#' Pagonis, V., Friedrich, J., Discher, M., Müller-Kirschbaum, A., Schlosser, V., Kreutzer, S., Chen, R. and Schmidt, C., 2019. Excited state luminescence signals from a random distribution of defects: A new Monte Carlo simulation approach for feldspar. Journal of Luminescence 207, 266–272. \doi{10.1016/j.jlumin.2018.11.024}
+#'
+#' **Further reading**
+#' Aitken, M.J., 1985. Thermoluminescence dating. 276-280. \doi{10.1002/gea.3340020110}
 #'
 #' @examples
 #'

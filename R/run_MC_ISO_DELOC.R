@@ -1,4 +1,4 @@
-#' @title Run Monte-Carlo simulation for ISO for delocalized transition
+#' @title Run Monte-Carlo simulation for ISO-TL for delocalized transition
 #'
 #' @description Runs a Monte-Carlo (MC) simulation of isothermally stimulated luminesence (ISO-TL or ITL) using the one trap one recombination center (OTOR) model. Delocalized refers to involvement of the conduction band.
 #'
@@ -16,7 +16,7 @@
 #'
 #' @param T [numeric] (*with default*): Temperature (degrees C).
 #'
-#' @param times [numeric] (*with default*): the sequence of time steps within the simulation (s)
+#' @param times [numeric] (*with default*): the sequence of temperature steps within the simulation (s).
 #'
 #' @param clusters [numeric] (*with default*): The number of MC runs (unitless).
 #'
@@ -24,7 +24,7 @@
 #'
 #' @param n_filled [integer] (*with default*): The number of filled electron traps at the beginning of the simulation (unitless).
 #'
-#' @param R [numeric] (*with default*): Retrapping ratio (unitless).
+#' @param R [numeric] (*with default*): The retrapping ratio (unitless).
 #'
 #' @param method [character] (*with default*): sequential `'seq'` or parallel processing `'par'`
 #'

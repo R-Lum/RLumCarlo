@@ -1,6 +1,6 @@
-#' @title Run Monte-Carlo Simulation for Isothermal Measurements for Tunneling Transition
+#' @title Run Monte-Carlo Simulation for ISO-TL for tunneling transition
 #'
-#' @description Runs a Monte-Carlo (MC) simulation of isothermally stimulated luminesence (ISO-TL or ITL) using the tunneling (TUN) model. Tunneling refers to the movement of electrons from a trap directly to the recombination center.
+#' @description Runs a Monte-Carlo (MC) simulation of isothermally stimulated luminesence (ISO-TL or ITL) using the tunneling (TUN) model. Tunneling refers to the direct movement of electrons from a trap directly to the recombination center.
 #'
 #' @details
 #' 
@@ -21,7 +21,7 @@
 #'
 #' @param rho [numeric] (**required**): The density of recombination centers (defined as rho' in Huntley 2006) (unitless).
 #'
-#' @param times [numeric] (*with default*): The sequence of time steps within the simulation (s).
+#' @param times [numeric] (*with default*): The sequence of temperature steps within the simulation (s).
 #'
 #' @param clusters [numeric] (*with default*): The number of MC runs (unitless).
 #'
@@ -45,9 +45,12 @@
 #' @author Johannes Friedrich, University of Bayreuth (Germany), Sebastian Kreutzer, IRAMAT-CRP2A,
 #' UMR 5060, CNRS - Univerité Bordeaux Montaigne (France)
 #'
-#' @references Pagonis, V., Friedrich, J., Discher, M., Müller-Kirschbaum, A., Schlosser, V., Kreutzer, S., Chen, R. and Schmidt, C., 2019. Excited state luminescence signals from a random distribution of defects: A new Monte Carlo simulation approach for feldspar. Journal of Luminescence 207, 266–272. \doi{10.1016/j.jlumin.2018.11.024}
+#' @references 
+#' Pagonis, V. and Kulp, C., 2017. Monte Carlo simulations of tunneling phenomena and nearest neighbor hopping mechanism in feldspars. Journal of Luminescence 181, 114–120. \doi{10.1016/j.jlumin.2016.09.014}
 #'
-#' For a discussion of tunneling see:
+#' Pagonis, V., Friedrich, J., Discher, M., Müller-Kirschbaum, A., Schlosser, V., Kreutzer, S., Chen, R. and Schmidt, C., 2019. Excited state luminescence signals from a random distribution of defects: A new Monte Carlo simulation approach for feldspar. Journal of Luminescence 207, 266–272. \doi{10.1016/j.jlumin.2018.11.024}
+#'
+#' **Further reading**
 #' Aitken, M.J., 1985. Thermoluminescence dating. 276-280. \doi{10.1002/gea.3340020110}
 #'
 #' @examples

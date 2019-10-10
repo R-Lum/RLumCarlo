@@ -1,6 +1,6 @@
 #' @title Run Monte-Carlo simulation for LM-OSL for localized transition
 #'
-#' @description Runs a Monte-Carlo (MC) simulation of linearly modulated optically stimulated luminesence (LM-OSL) using the generalized one trap (GOT) model.
+#' @description Runs a Monte-Carlo (MC) simulation of linearly modulated optically stimulated luminesence (LM-OSL) using the generalized one trap (GOT) model. Localized refers to excitation of an electron before it recombines, but without the involvement of the conduction band.
 #'
 #' @details
 #'
@@ -8,15 +8,17 @@
 #' I_{DELOC}(t) = -dn/dt = p(t) * (n^2 / (NR + n(1-R)))
 #' }
 #'
-#' @param A [numeric] (**required**): The transition probability (cm^3/s).
+#' @param A [numeric] (**required**): The optical excitation rate from trap to conduction band (s^-1).
 #'
-#' @param times [numeric] (*with default*): The number of MC runs.
+#' @param times [numeric] (*with default*): The sequence of temperature steps within the simulation (s).
 #'
-#' @param clusters [numeric] (*with default*): The number of clusters.
+#' @param clusters [numeric] (*with default*): The number of MC runs (unitless).
+#' 
+#' @param N_e [integer] (*with defaults*): The total number of electron traps available (unitless).
 #'
-#' @param n_filled [integer] (*with default*): The number of electron traps that are filled at the beginning of the simulation.
+#' @param n_filled [integer] (*with default*): The number of filled electron traps at the beginning of the simulation (unitless).
 #'
-#' @param r [numeric] (*with default*):
+#' @param r [numeric] (*with default*): The retrapping ratio (unitless)
 #'
 #' @param method [character] (*with default*): sequential `'seq'` or parallel processing `'par'`
 #'
@@ -33,7 +35,7 @@
 #'
 #' @references
 #'
-#' Pagonis, V. and Kulp, C. (2017) ‘Monte Carlo simulations of tunneling phenomena and nearest neighbor hopping mechanism in feldspars’, Journal of Luminescence. Elsevier, 181, pp. 114–120. doi: 10.1016/j.jlumin.2016.09.014.
+#' Pagonis, V., Friedrich, J., Discher, M., Müller-Kirschbaum, A., Schlosser, V., Kreutzer, S., Chen, R. and Schmidt, C., 2019. Excited state luminescence signals from a random distribution of defects: A new Monte Carlo simulation approach for feldspar. Journal of Luminescence 207, 266–272. \doi{10.1016/j.jlumin.2018.11.024}
 #'
 #' @examples
 #' ##============================================================================##

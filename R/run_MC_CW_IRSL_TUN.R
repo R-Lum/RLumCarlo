@@ -1,6 +1,6 @@
 #' @title Run Monte-Carlo simulation for CW-IRSL
 #'
-#' @description Runs a Monte-Carlo (MC) simulation of constant wave infrared stimulated luminesence (CW-IRSL) using the model.
+#' @description Runs a Monte-Carlo (MC) simulation of constant wave infrared stimulated luminesence (CW-IRSL) using the model. Tunneling refers to the direct movement of electrons from a trap directly to the recombination center.
 #'
 #' @details
 #' \deqn{
@@ -13,19 +13,19 @@
 #'Where in the function `n` := `n_filled`:= `t` := `times` 
 #'
 #'
-#' @param A [numeric] (**required**): The transition probability (cm^3/s).
+#' @param A [numeric] (**required**): The optical excitation rate from trap to conduction band (s^-1).
 #'
-#' @param rho [numeric] (**required**): The calculated dimesionless Charge density (normally written Rho').
+#' @param rho [numeric] (**required**): The density of recombination centers (defined as rho' in Huntley 2006) (unitless).
 #'
-#' @param times [numeric] (*with default*): The number of MC runs.
+#' @param times [numeric] (*with default*): The sequence of temperature steps within the simulation (s).
 #'
-#' @param clusters [numeric] (*with default*): The number of clusters.
+#' @param clusters [numeric] (*with default*): The number of MC runs (unitless).
 #'
 #' @param r_c [numeric] (*with default*): The retrapping ratio.
 #'
 #' @param delta.r [numeric] (*with default*):
 #'
-#' @param N_e [numeric] (*with default*): The number of electrons
+#' @param r [numeric] (*with default*): The radius of tunneling (unitless).
 #'
 #' @param method [character] (*with default*): sequential `'seq'` or parallel processing `'par'`
 #'
@@ -41,6 +41,8 @@
 #' @author Johannes Friedrich, University of Bayreuth (Germany), Sebastian Kreutzer, IRAMAT-CRP2A, UMR 5060, Université Bordeaux Montaigne (France)
 #'
 #' @references Pagonis, V., Friedrich, J., Discher, M., Müller-Kirschbaum, A., Schlosser, V., Kreutzer, S., Chen, R. and Schmidt, C., 2019. Excited state luminescence signals from a random distribution of defects: A new Monte Carlo simulation approach for feldspar. Journal of Luminescence 207, 266–272. \doi{10.1016/j.jlumin.2018.11.024}
+#' 
+#' Reuven, C. and S. Mckeever, 1997. Theory of thermoluminescence and related phenomena.
 #'
 #' @examples
 #' \dontrun{
