@@ -10,7 +10,7 @@ test_that("basic run", {
     E = 1.45,
     rho = 0.015,
     r_c = r,
-    times = 100:500,
+    times = 100:120,
     method = "par"
   )})
 
