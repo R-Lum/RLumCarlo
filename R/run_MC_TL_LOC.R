@@ -5,10 +5,10 @@
 #' @details
 #'
 #' \deqn{
-#' TL I_{LOC}(t) = -dn/dt = (s * e^-E/kT) * (n^2 / (r + n))
+#' I_{LOC}(t) = -dn/dt = (s * e^-E/k_b * T) * (n^2 / (r + n))
 #' }
 #'
-#'where in the function `n` :=`n_filled`
+#'Where in the function: \cr `t` := `Time` \cr `e`:= `Exponentional function` \cr \eqn{k_{B}} := `Boltzmann constant` \cr `T`= `Temperature` \cr `n` := `The Instantaneous number of electrons`
 #'
 #' @param E [numeric] (**required**): Thermal activation energy of the trap (eV).
 #'
@@ -20,7 +20,7 @@
 #'
 #' @param n_filled [integer] (*with default*): The number of filled electron traps at the beginning of the simulation (unitless).
 #' 
-#' @param r [numeric] (*with default*): The retrapping ratio (unitless).
+#' @param r [numeric] (*with default*): The localized retrapping ratio (unitless).
 #'
 #' @param method [character] (*with default*): sequential `'seq'` or parallel processing `'par'`
 #'

@@ -5,16 +5,18 @@
 #' @details
 #'
 #' \deqn{
-#' ISO I_{LOC}(t) = -dn/dt = (s * e^-E/kT_ITL/ISO) * (n^2 / (r + n)))
+#' I_{LOC}(t) = -dn/dt = (s * e^-E/k_b*T_ISO) * (n^2 / (r + n)))
 #' }
+#' 
+#' Where in the function: \cr `t` := `Time` \cr `e`:= `Exponentional function` \cr \eqn{k_{B}} := `Boltzmann constant` \cr \eqn{T_{ISO}} = `T` \cr `n` := `n_filled` \cr `N` := `N_e`
 #'
-#'Where in the function `n` := `n_filled` := `N` := `N_e`
+#'Where in the function \cr `n` := `n_filled` \cr `N` := `N_e`
 #'
 #' @param E [numeric] (**required**): Thermal activation energy of the trap (eV).
 #'
 #' @param s [numeric] (**required**): The frequency factor of the trap (s^-1).
 #'
-#' @param T [numeric] (*with default*): Temperature (degrees C).
+#' @param T [numeric] (*with default*): Constant stimulation temperature (degrees C).
 #'
 #' @param times [numeric] (*with default*): The sequence of temperature steps within the simulation (s).
 #'
@@ -22,7 +24,7 @@
 #'
 #' @param n_filled [integer] (*with default*): The number of filled electron traps at the beginning of the simulation (unitless).
 #'
-#' @param r [numeric] (*with default*): the retrapping ratio (unitless). 
+#' @param r [numeric] (*with default*): the localized retrapping ratio (unitless). 
 #'
 #' @param method [character] (*with default*): sequential `'seq'` or parallel processing `'par'`
 #'

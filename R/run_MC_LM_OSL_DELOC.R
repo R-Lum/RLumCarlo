@@ -5,8 +5,10 @@
 #' @details
 #'
 #' \deqn{
-#' I_{DELOC}(t) = -dn/dt = p(t) * (n^2 / (NR + n(1-R)))
+#' I_{DELOC}(t) = -dn/dt = p(t) * (n^2 / (N*R + n(1-R)))
 #' }
+#' 
+#' Where in the function: \cr `t` := `Time` \cr `p(t)` := `The experimental stimulation mode` \cr `n` := `The Instantaneous number of electrons` \cr `N` = `N_e`
 #'
 #' @param A [numeric] (**required**): The optical excitation rate from trap to conduction band (s^-1).
 #'
@@ -18,7 +20,7 @@
 #'
 #' @param n_filled [integer] (*with default*): The number of filled electron traps at the beginning of the simulation (unitless).
 #'
-#' @param R [numeric] (*with default*): The retrapping ratio (unitless).
+#' @param R [numeric] (*with default*): The delocalized retrapping ratio (unitless).
 #'
 #' @param method [character] (*with default*): sequential `'seq'` or parallel processing `'par'`
 #'

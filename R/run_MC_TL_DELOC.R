@@ -5,10 +5,10 @@
 #' @details
 #'
 #' \deqn{
-#' TL I_{DELOC}(t) = -dn/dt = (s * e^-E/kT) * (n^2 / (NR + n(1-R))))
+#' I_{DELOC}(t) = -dn/dt = (s * e^-E/k_{b} * T) * (n^2 / (N * R + n(1-R))))
 #' }
 #'
-#' where in the function `N` := `N_e`:= `n` :=`n_filled`
+#' Where in the function: \cr `t` := `Time` \cr `e`:= `Exponentional function` \cr \eqn{k_{B}} := `Boltzmann constant` \cr `T`= `Temperature` \cr `n` := `The Instantaneous number of electrons` \cr `N` = `N_e`
 #' 
 #' @param E [numeric] (**required**): Thermal activation energy of the trap (eV).
 #' 
@@ -22,7 +22,7 @@
 #'
 #' @param n_filled [integer] (*with default*): The number of filled electron traps at the beginning of the simulation (unitless).
 #'
-#' @param R [numeric] (*with default*): The retrapping ratio (unitless).
+#' @param R [numeric] (*with default*): The delocalized retrapping ratio (unitless).
 #'
 #' @param method [character] (*with default*): sequential `'seq'` or parallel processing `'par'`
 #'
