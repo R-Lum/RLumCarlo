@@ -19,6 +19,7 @@ knitr::include_graphics("../man/figures/Logo_RLumCarlo.png")
 library(ggplot2)
 library(scales)
 library(kableExtra)
+library(knitr)
 
 ##https://github.com/JohannesFriedrich/EnergyBandModels
 theme <- theme(axis.text = element_text(size = 14),
@@ -65,6 +66,21 @@ Each model can be run by calling one of the **R** functions starting with `run_`
 three different model types (TUN: tunneling, LOC: localised transition, DELOC: delocalised 
 transition) are implemented for the stimulation types TL, IRSL, LM-OSL, and ISO (isothermal). 
 Please note that each model has different parameters and requirements. 
+
+The following table summarizes the parameters used in the implemented MC models along with their physical meaning, units and the range of realistic values. This range represents just a rough guideline and might be exceeded for particular cases.
+
+```{r, echo = FALSE, message=FALSE}
+
+variables <- read.table("Variable definitions and realistic values for RLumCarlo.csv", sep = ";")
+knitr::kable(variables, booktabs = TRUE, longtable = TRUE, format = "latex", col.names = c("Stimulation mode","Parameter","Parameter description","Unit","Realistic values"), linesep = "\\addlinespace", align = c("l", "l", "l", "l", "l"), escape = FALSE, row.names = FALSE) %>%
+  kable_styling(full_width = FALSE, font_size = 8) %>% 
+  column_spec(1, bold = TRUE, width = "11em") %>%
+  column_spec(2, bold = F, width = "5em") %>%
+  column_spec(3, bold = F, width = "27em") %>%
+  column_spec(4, bold = F, width = "3em") %>%
+  column_spec(5, bold = F, width = "5em")
+
+```
 
 # Examples
 
@@ -181,9 +197,7 @@ plot_RLumCarlo(
   xlab = "Temperature [°C]", 
   plot_uncertainty = "range",
   legend = FALSE,
-  col = c("black", "green", "blue", "red"),
   norm = TRUE
-  
 )
 
 legend(
@@ -191,6 +205,6 @@ legend(
   bty = "n",
   legend = paste0("r_c: ", r_c),
   lty = 1,
-  col = c("black", "green", "blue", "red")
+  col = khroma::colour("bright")(length(r_c))
 )
 ```
