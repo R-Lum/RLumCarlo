@@ -21,9 +21,9 @@ Authors@R: c(
     person("Christian", "Laag", role = c("ctb"))
     )
 Maintainer: Sebastian Kreutzer <sebastian.kreutzer@u-bordeaux-montaigne.fr>
-Description: A collection of functions to simulate luminescence production in minerals using 
-    Monte-Carlo methods. Implemented are models for delocalised, localised and tunnelling transition. 
-    Supported stimulation methods are TL, CW-OSL, LM-OSL and ITL.
+Description: A collection of functions to simulate luminescence production in minerals using Monte-Carlo methods. 
+    Implemented are models for delocalised, localised and tunnelling transitions. 
+    Supported stimulation methods are TL, CW-OSL, LM-OSL, LM-IRSL, and ITL (ISO-TL).
 Contact: Package Developer Team <sebastian.kreutzer@u-bordeaux-montaigne.fr>
 License: GPL-3
 BugReports: https://github.com/R-Lum/RLumCarlo/issues
