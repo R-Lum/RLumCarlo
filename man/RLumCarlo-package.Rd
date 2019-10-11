@@ -10,9 +10,9 @@
 \figure{Logo_RLumCarlo.png}{options: width="50px" alt="https://github.com/R-Lum/RLumCarlo"}\cr
 }}
 \description{
-A collection of functions to simulate luminescence production in minerals using
-Monte-Carlo methods. Implemented are models for delocalised, localised and tunnelling transition.
-Supported stimulation methods are TL, CW-OSL, LM-OSL and ITL.
+A collection of functions to simulate luminescence production in minerals using Monte-Carlo methods.
+Implemented are models for delocalised, localised and tunnelling transitions.
+Supported stimulation methods are TL, CW-OSL, LM-OSL, LM-IRSL, and ITL (ISO-TL).
 }
 \details{
 \bold{Funding}
