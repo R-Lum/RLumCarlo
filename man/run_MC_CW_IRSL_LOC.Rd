@@ -46,13 +46,14 @@ n := `n_filled``
 
 \examples{
 ##============================================================================##
-## Example 1: Simulate CW-IRSL
+## Example 1: Single Plot for Monte-Carlo (MC) simulations for localized CW_IRSL
 ##============================================================================##
 \dontrun{
 run_MC_CW_IRSL_LOC(
  A = 0.12,
  r = 1,
  times = 0:100) \%>\%
+ #Plot results of the MC simulation
    plot_RLumCarlo(legend = T)
 
 }
@@ -60,7 +61,7 @@ run_MC_CW_IRSL_LOC(
 } 
 
 \section{How to cite}{
-Kreutzer, S., 2019. run_MC_CW_IRSL_LOC(): Run Monte-Carlo simulation for CW-IRSL for localized transition. Function version 0.1.0. In: Friedrich, J., Kreutzer, S., Pagonis, V., Schmidt, C., 2019. RLumCarlo: Monte-Carlo Methods for Simulating Luminescence PhenomenaR package version 0.1.0.9000-98. 
+Kreutzer, S., 2019. run_MC_CW_IRSL_LOC(): Run Monte-Carlo simulation for CW-IRSL for localized transition. Function version 0.1.0. In: Friedrich, J., Kreutzer, S., Pagonis, V., Schmidt, C., 2019. RLumCarlo: Monte-Carlo Methods for Simulating Luminescence PhenomenaR package version 0.1.0.9000-101. 
 }
 
 \references{

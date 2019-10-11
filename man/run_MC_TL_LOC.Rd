@@ -51,18 +51,19 @@ Where in the function: \cr
 
 \examples{
 ##============================================================================##
-## Example 1: Simulate TL
-##============================================================================##
-
-
+## Example 1: Single Plot for Monte-Carlo (MC) simulations for localized TL
+##============================================================================## 
 \dontrun{
 run_MC_TL_LOC(
- s = 3.5e12,
- E = 1.45,
- r = 1,
- times = 100:450) \%>\%
+ s = 1e8,
+ E = 0.5,
+ times = 0:100,
+ clusters = 1e1,
+ n_filled = 1,
+ r = 1e-7) \%>\%
+ #Plot results of the MC simulation
    plot_RLumCarlo(legend = T)
-
+   
 }
 
 
@@ -70,7 +71,7 @@ run_MC_TL_LOC(
 } 
 
 \section{How to cite}{
-Kreutzer, S., 2019. run_MC_TL_LOC(): Run Monte-Carlo simulation for TL for localized transition. Function version 0.1.0. In: Friedrich, J., Kreutzer, S., Pagonis, V., Schmidt, C., 2019. RLumCarlo: Monte-Carlo Methods for Simulating Luminescence PhenomenaR package version 0.1.0.9000-98. 
+Kreutzer, S., 2019. run_MC_TL_LOC(): Run Monte-Carlo simulation for TL for localized transition. Function version 0.1.0. In: Friedrich, J., Kreutzer, S., Pagonis, V., Schmidt, C., 2019. RLumCarlo: Monte-Carlo Methods for Simulating Luminescence PhenomenaR package version 0.1.0.9000-101. 
 }
 
 \references{

@@ -50,13 +50,14 @@ Where in the function: \cr
 
 \examples{
 ##============================================================================##
-## Example 1: Simulate LM-OSL
+## Example 1: Single Plot for Monte-Carlo (MC) simulations for delocalized LM-OSL
 ##============================================================================##
 \dontrun{
 run_MC_LM_OSL_DELOC(
  A = 0.12,
  R = 1,
  times = 0:100) \%>\%
+ #Plot results of the MC simulation
    plot_RLumCarlo(legend = T)
 
 }
@@ -64,7 +65,7 @@ run_MC_LM_OSL_DELOC(
 } 
 
 \section{How to cite}{
-Kreutzer, S., 2019. run_MC_LM_OSL_DELOC(): Run Monte-Carlo simulation for LM-OSL for delocalized transition. Function version 0.1.0. In: Friedrich, J., Kreutzer, S., Pagonis, V., Schmidt, C., 2019. RLumCarlo: Monte-Carlo Methods for Simulating Luminescence PhenomenaR package version 0.1.0.9000-98. 
+Kreutzer, S., 2019. run_MC_LM_OSL_DELOC(): Run Monte-Carlo simulation for LM-OSL for delocalized transition. Function version 0.1.0. In: Friedrich, J., Kreutzer, S., Pagonis, V., Schmidt, C., 2019. RLumCarlo: Monte-Carlo Methods for Simulating Luminescence PhenomenaR package version 0.1.0.9000-101. 
 }
 
 \references{

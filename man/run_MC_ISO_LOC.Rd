@@ -54,19 +54,16 @@ n := \code{n_filled} \cr
 
 \examples{
 ##============================================================================##
-## Example 1: Simulate ITL
+## Example 1: Single Plot for Monte-Carlo (MC) simulations for localized ISO-TL
 ##============================================================================##
-
-
-
-
-    \dontrun{
+\dontrun{
 run_MC_ISO_LOC(
  s = 3.5e12,
  E = 1.45,
  T = 200,
  r = 1,
  times = 0:10000) \%>\%
+ #Plot results of the MC simulation
    plot_RLumCarlo(legend = T)
 
 }
@@ -76,7 +73,7 @@ run_MC_ISO_LOC(
 } 
 
 \section{How to cite}{
-Kreutzer, S., 2019. run_MC_ISO_LOC(): Run Monte-Carlo simulation for ISO-TL for localized transition. Function version 0.0.1. In: Friedrich, J., Kreutzer, S., Pagonis, V., Schmidt, C., 2019. RLumCarlo: Monte-Carlo Methods for Simulating Luminescence PhenomenaR package version 0.1.0.9000-98. 
+Kreutzer, S., 2019. run_MC_ISO_LOC(): Run Monte-Carlo simulation for ISO-TL for localized transition. Function version 0.0.1. In: Friedrich, J., Kreutzer, S., Pagonis, V., Schmidt, C., 2019. RLumCarlo: Monte-Carlo Methods for Simulating Luminescence PhenomenaR package version 0.1.0.9000-101. 
 }
 
 \references{

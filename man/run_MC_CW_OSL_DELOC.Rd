@@ -50,13 +50,14 @@ Where in the function: \cr
 
 \examples{
 ##============================================================================##
-## Example 1: Simulate CW-OSL
+## Example 1: Single Plot for Monte-Carlo (MC) simulations for delocalized CW-OSL
 ##============================================================================##
 \dontrun{
 run_MC_CW_OSL_DELOC(
  A = 0.12,
  R = 1,
  times = 0:100) \%>\%
+ #Plot results of the MC simulation
    plot_RLumCarlo(legend = T)
 
 }
@@ -68,17 +69,17 @@ run_MC_CW_OSL_DELOC(
 \dontrun{
 
 # define your parameters
-A=c(0.1,0.3,0.5,1)
-times=seq(0,60,1)
-s=1e12
-E=1
+A <- c(0.1,0.3,0.5,1)
+times <- seq(0,60,1)
+s <- 1e12
+E<- 1
 R<-c(1e-7,1e-6,0.01,0.1) # sequence of different R values
-clusters=1000 # number of Monte Carlo simulations
-N_e =c(200, 500, 700, 400) # number of free electrons
-n_filled =c(200, 500, 100, 70) # number of filled traps
-method="par"
-output ="signal"
-col=c(1,2,3,4) # ifferent colours for the individual curves
+clusters <- 1000 # number of Monte Carlo simulations
+N_e <- c(200, 500, 700, 400) # number of free electrons
+n_filled <- c(200, 500, 100, 70) # number of filled traps
+method <-"par"
+output <- "signal"
+col <- c(1,2,3,4) # ifferent colours for the individual curves
 plot_uncertainty <- c(T,F,T,F)  # do you want to see the uncertainty?
 add_TF <- c(F,rep(T, (length(R)-1)))
 for (u in 1:length(R)){
@@ -97,7 +98,7 @@ legend("topright",ncol=4,cex=0.55,title = "parameters" ,legend=c(paste0("A = ", 
 } 
 
 \section{How to cite}{
-Kreutzer, S., 2019. run_MC_CW_OSL_DELOC(): Run Monte-Carlo simulation for CW-OSL for delocalized transition. Function version 0.1.0. In: Friedrich, J., Kreutzer, S., Pagonis, V., Schmidt, C., 2019. RLumCarlo: Monte-Carlo Methods for Simulating Luminescence PhenomenaR package version 0.1.0.9000-98. 
+Kreutzer, S., 2019. run_MC_CW_OSL_DELOC(): Run Monte-Carlo simulation for CW-OSL for delocalized transition. Function version 0.1.0. In: Friedrich, J., Kreutzer, S., Pagonis, V., Schmidt, C., 2019. RLumCarlo: Monte-Carlo Methods for Simulating Luminescence PhenomenaR package version 0.1.0.9000-101. 
 }
 
 \references{

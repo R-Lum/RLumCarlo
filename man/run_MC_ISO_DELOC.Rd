@@ -56,11 +56,8 @@ Where in the function: \cr
 
 \examples{
 ##============================================================================##
-## Example 1: Simulate ITL
+## Example 1: Single Plot for Monte-Carlo (MC) simulations for delocalized ISO-TL
 ##============================================================================##
-
-
-
 \dontrun{
 run_MC_ISO_DELOC(
  s = 3.5e12,
@@ -68,6 +65,7 @@ run_MC_ISO_DELOC(
  T = 200,
  R = 1,
  times = 0:10000) \%>\%
+ #Plot results of the MC simulation
    plot_RLumCarlo(legend = T)
 
 }
@@ -76,7 +74,7 @@ run_MC_ISO_DELOC(
 } 
 
 \section{How to cite}{
-Kreutzer, S., 2019. run_MC_ISO_DELOC(): Run Monte-Carlo simulation for ISO-TL for delocalized transition. Function version 0.0.1. In: Friedrich, J., Kreutzer, S., Pagonis, V., Schmidt, C., 2019. RLumCarlo: Monte-Carlo Methods for Simulating Luminescence PhenomenaR package version 0.1.0.9000-98. 
+Kreutzer, S., 2019. run_MC_ISO_DELOC(): Run Monte-Carlo simulation for ISO-TL for delocalized transition. Function version 0.0.1. In: Friedrich, J., Kreutzer, S., Pagonis, V., Schmidt, C., 2019. RLumCarlo: Monte-Carlo Methods for Simulating Luminescence PhenomenaR package version 0.1.0.9000-101. 
 }
 
 \references{
