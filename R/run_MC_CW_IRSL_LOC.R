@@ -48,10 +48,15 @@
 #' \dontrun{
 #' run_MC_CW_IRSL_LOC(
 #'  A = 0.12,
-#'  r = 1,
-#'  times = 0:100) %>%
+#'  times = 0:100,
+#'  clusters = 50,
+#'  n_filled = 1,
+#'  r = 1e-7,
+#'  method = "seq",
+#'  output = "signal"
+#' ) %>%
 #'  #Plot results of the MC simulation
-#'    plot_RLumCarlo(legend = T)
+#' plot_RLumCarlo(legend = T)
 #'
 #' }
 #'

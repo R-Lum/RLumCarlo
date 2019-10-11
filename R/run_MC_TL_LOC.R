@@ -53,15 +53,12 @@
 #'  s = 1e8,
 #'  E = 0.5,
 #'  times = 0:100,
-#'  clusters = 1e1,
-#'  n_filled = 1,
-#'  r = 1e-7) %>%
+#'  r = 1e-7
+#' ) %>%
 #'  #Plot results of the MC simulation
-#'    plot_RLumCarlo(legend = T)
+#' plot_RLumCarlo(legend = T)
 #'    
 #' }
-#'
-#'
 #'
 #' @md
 #' @export

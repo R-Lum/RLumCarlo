@@ -68,23 +68,27 @@
 #' Aitken, M.J., 1985. Thermoluminescence dating. 276-280. \doi{10.1002/gea.3340020110}
 #'
 #' @examples
+#' ##============================================================================##
+#' ## Example 1: Single Plot for Monte-Carlo (MC) simulations for tunneling ISO-TL
+#' ##============================================================================##
 #' \dontrun{
-#' ##============================================================================##
-#' ## Example 1: Simulate isothermal measurement
-#' ##============================================================================##
 #' run_MC_ISO_TUN(
-#'E = 0.5,
-#'s = 1E8,
-#'clusters= 100,
-#'rho = 1e-7,
-#'N_e = 10,
-#'r_c = 0.01,
-#'times = 0:500,
-#'delta.r = 1e-3,
-#'method = "seq"
-#') %>%
-#'   plot_RLumCarlo(legend = TRUE)
+#'  E = 0.002,
+#'  s = 1e16,
+#'  T = 50,
+#'  rho = 1e-4,
+#'  times = 0:10,
+#'  clusters = 100,
+#'  N_e = 2,
+#'  r_c = 1e-4,
+#'  delta.r = 0.5,
+#'  method = "par"
+#' ) %>%
+#'  ##Plot results of the MC simulation
+#' plot_RLumCarlo(legend = TRUE)
+#'
 #'}
+#'
 #' @md
 #' @export
 run_MC_ISO_TUN <- function(

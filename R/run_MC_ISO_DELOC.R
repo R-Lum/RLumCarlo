@@ -61,9 +61,10 @@
 #'  E = 1.45,
 #'  T = 200,
 #'  R = 1,
-#'  times = 0:10000) %>%
+#'  times = 0:10000
+#' ) %>%
 #'  #Plot results of the MC simulation
-#'    plot_RLumCarlo(legend = T)
+#' plot_RLumCarlo(legend = T)
 #'
 #' }
 #'

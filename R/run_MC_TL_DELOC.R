@@ -57,10 +57,11 @@
 #' run_MC_TL_DELOC(
 #'  s = 3.5e12,
 #'  E = 1.45,
-#'  R = 1,
-#'  times = 100:450) %>%
+#'  R = 0.1,
+#'  times = 100:450
+#' ) %>%
 #'  #Plot results of the MC simulation
-#'    plot_RLumCarlo(legend = T)
+#' plot_RLumCarlo(legend = T)
 #'
 #' }
 #'

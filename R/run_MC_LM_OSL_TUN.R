@@ -61,14 +61,23 @@
 #' Aitken, M.J., 1985. Thermoluminescence dating. 276-280. \doi{10.1002/gea.3340020110}
 #'
 #' @examples
-#'
-#'\dontrun{
-#'
-#'##TODO: Primary example, should be verified
-#'run_MC_LM_OSL_TUN(A = 10000, rho = 0.0001, times = 1:100, clusters = 10, r = NULL,
-#'  delta.r = 0.1,
-#'  N_e = 200, method = "par", output = "signal") %>%
-#'  plot_RLumCarlo(norm = T)
+#' ##============================================================================##
+#' ## Example 1: Single Plot for Monte-Carlo (MC) simulations for tunneling LM_OSL
+#' ##============================================================================##
+#' \dontrun{
+#' run_MC_LM_OSL_TUN(
+#'  A = 1,
+#'  rho = 1e-7,
+#'  times = 0:100,
+#'  clusters = 3,
+#'  N_e = 2,
+#'  r_c = 0.001,
+#'  delta.r = 1e-1,
+#'  method = "par",
+#'  output = "signal"
+#' ) %>%
+#'  # Plot results of the MC simulation
+#' plot_RLumCarlo(norm = T)
 #'
 #'}
 #'

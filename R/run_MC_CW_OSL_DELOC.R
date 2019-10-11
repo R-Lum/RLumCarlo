@@ -51,14 +51,15 @@
 #' \dontrun{
 #' run_MC_CW_OSL_DELOC(
 #'  A = 0.12,
-#'  R = 1,
-#'  times = 0:100) %>%
+#'  R = 0.1,
+#'  times = 0:100
+#' ) %>%
 #'  #Plot results of the MC simulation
-#'    plot_RLumCarlo(legend = T)
+#' plot_RLumCarlo(legend = T)
 #'
 #' }
 #'
-#'#' @examples
+#' @examples
 #' ##============================================================================##
 #' ## Example 2: Simulate CW-OSL DELOC with several parameter changes
 #' ##============================================================================##

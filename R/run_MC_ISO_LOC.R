@@ -49,18 +49,20 @@
 #' Pagonis, V., Friedrich, J., Discher, M., Müller-Kirschbaum, A., Schlosser, V., Kreutzer, S., Chen, R. and Schmidt, C., 2019. Excited state luminescence signals from a random distribution of defects: A new Monte Carlo simulation approach for feldspar. Journal of Luminescence 207, 266–272. \doi{10.1016/j.jlumin.2018.11.024}
 #'
 #' @examples
+#' \dontrun{
 #' ##============================================================================##
 #' ## Example 1: Single Plot for Monte-Carlo (MC) simulations for localized ISO-TL
 #' ##============================================================================##
 #' \dontrun{
 #' run_MC_ISO_LOC(
-#'  s = 3.5e12,
 #'  E = 1.45,
+#'  s = 3.5e12,
 #'  T = 200,
-#'  r = 1,
-#'  times = 0:10000) %>%
+#'  times = 0:10000,
+#'  r = 1
+#' ) %>%
 #'  #Plot results of the MC simulation
-#'    plot_RLumCarlo(legend = T)
+#' plot_RLumCarlo(legend = T)
 #'
 #' }
 #'

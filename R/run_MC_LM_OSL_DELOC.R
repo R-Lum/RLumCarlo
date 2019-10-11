@@ -52,10 +52,11 @@
 #' \dontrun{
 #' run_MC_LM_OSL_DELOC(
 #'  A = 0.12,
-#'  R = 1,
-#'  times = 0:100) %>%
+#'  R = 0.1,
+#'  times = 0:100
+#' ) %>%
 #'  #Plot results of the MC simulation
-#'    plot_RLumCarlo(legend = T)
+#' plot_RLumCarlo(legend = T)
 #'
 #' }
 #'

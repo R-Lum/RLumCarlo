@@ -64,21 +64,23 @@
 #' Aitken, M.J., 1985. Thermoluminescence dating. 276-280. \doi{10.1002/gea.3340020110}
 #'
 #' @examples
-#' \dontrun{
 #' ##============================================================================##
 #' ## Example 1: Simulate TL measurement
 #' ##============================================================================##
+#' \dontrun{
 #' run_MC_TL_TUN(
-#'s = 1e8,
-#'E = 0.5,
-#'rho = 1e-7,
-#'r_c = 0.1,
-#'times = seq(0,700,10), 
-#'clusters = 100, 
-#'N_e = 20, 
-#'delta.r = 1e-3
-#') %>%
-#'     plot_RLumCarlo(legend = T)
+#'  s = 1e8,
+#'  E = 0.5,
+#'  rho = 1e-7,
+#'  r_c = 0.1,
+#'  times = seq(0,700,10), 
+#'  clusters = 100, 
+#'  N_e = 20, 
+#'  delta.r = 1e-3
+#' ) %>%
+#'  #Plot results of the MC simulation
+#' plot_RLumCarlo(legend = T)
+#' 
 #'}
 #'
 #' @md
