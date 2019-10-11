@@ -67,27 +67,31 @@ Where in the function: \cr
 }
 
 \examples{
+##============================================================================##
+## Example 1: Single Plot for Monte-Carlo (MC) simulations for tunneling ISO-TL
+##============================================================================##
 \dontrun{
-##============================================================================##
-## Example 1: Simulate isothermal measurement
-##============================================================================##
 run_MC_ISO_TUN(
-E = 0.5,
-s = 1E8,
-clusters= 100,
-rho = 1e-7,
-N_e = 10,
-r_c = 0.01,
-times = 0:500,
-delta.r = 1e-3,
-method = "seq"
+ E = 0.002,
+ s = 1e16,
+ T = 50,
+ rho = 1e-4,
+ times = 0:10,
+ clusters = 100,
+ N_e = 2,
+ r_c = 1e-4,
+ delta.r = 0.5,
+ method = "par"
 ) \%>\%
-  plot_RLumCarlo(legend = TRUE)
+ ##Plot results of the MC simulation
+plot_RLumCarlo(legend = TRUE)
+
 }
+
 } 
 
 \section{How to cite}{
-Friedrich, J., Kreutzer, S., 2019. run_MC_ISO_TUN(): Run Monte-Carlo Simulation for ISO-TL for tunneling transition. Function version 0.1.0. In: Friedrich, J., Kreutzer, S., Pagonis, V., Schmidt, C., 2019. RLumCarlo: Monte-Carlo Methods for Simulating Luminescence PhenomenaR package version 0.1.0.9000-101. 
+Friedrich, J., Kreutzer, S., 2019. run_MC_ISO_TUN(): Run Monte-Carlo Simulation for ISO-TL for tunneling transition. Function version 0.1.0. In: Friedrich, J., Kreutzer, S., Pagonis, V., Schmidt, C., 2019. RLumCarlo: Monte-Carlo Methods for Simulating Luminescence PhenomenaR package version 0.1.0.9000-102. 
 }
 
 \references{

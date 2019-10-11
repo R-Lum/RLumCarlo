@@ -59,27 +59,28 @@ r' := \code{r} \cr
 }
 
 \examples{
+##============================================================================##
+## Example 1: Single Plot for Monte-Carlo (MC) simulations for tunneling CW-IRSL
+##============================================================================##
 \dontrun{
-
-##============================================================================##
-## Example 1: Simulate CW-IRSL measurement
-##============================================================================##
-
 run_MC_CW_IRSL_TUN(
-A = 1,
-clusters= 500,
-rho = 1e-4,
-N_e = 1E4,
-r_c = 2,
-times = 0:500,
-delta.r = 1e-1,
-method = "seq"
-)) \%>\% plot_RLumCarlo(norm = T, legend = T)
+ A = 0.8,
+ rho = 1e-4,
+ times = 0:1000,
+ r_c = 0.05,
+ delta.r = 1e-2,
+ method = "par",
+ output = "signal"
+) \%>\%
+   #Plot results of the MC simulation
+plot_RLumCarlo(norm = T, legend = T)
+
 }
+
 } 
 
 \section{How to cite}{
-Friedrich, J., Kreutzer, S., 2019. run_MC_CW_IRSL_TUN(): Run Monte-Carlo simulation for CW-IRSL. Function version 0.2.0. In: Friedrich, J., Kreutzer, S., Pagonis, V., Schmidt, C., 2019. RLumCarlo: Monte-Carlo Methods for Simulating Luminescence PhenomenaR package version 0.1.0.9000-101. 
+Friedrich, J., Kreutzer, S., 2019. run_MC_CW_IRSL_TUN(): Run Monte-Carlo simulation for CW-IRSL. Function version 0.2.0. In: Friedrich, J., Kreutzer, S., Pagonis, V., Schmidt, C., 2019. RLumCarlo: Monte-Carlo Methods for Simulating Luminescence PhenomenaR package version 0.1.0.9000-102. 
 }
 
 \references{

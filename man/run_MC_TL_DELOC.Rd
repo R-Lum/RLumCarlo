@@ -60,10 +60,11 @@ Where in the function: \cr
 run_MC_TL_DELOC(
  s = 3.5e12,
  E = 1.45,
- R = 1,
- times = 100:450) \%>\%
+ R = 0.1,
+ times = 100:450
+) \%>\%
  #Plot results of the MC simulation
-   plot_RLumCarlo(legend = T)
+plot_RLumCarlo(legend = T)
 
 }
 
@@ -103,7 +104,7 @@ legend("topright",ncol=5,cex=0.55,title = "parameters" ,legend=c(paste0("E = ", 
 } 
 
 \section{How to cite}{
-Kreutzer, S., 2019. run_MC_TL_DELOC(): Run Monte-Carlo simulation for TL for delocalized transition. Function version 0.0.1. In: Friedrich, J., Kreutzer, S., Pagonis, V., Schmidt, C., 2019. RLumCarlo: Monte-Carlo Methods for Simulating Luminescence PhenomenaR package version 0.1.0.9000-101. 
+Kreutzer, S., 2019. run_MC_TL_DELOC(): Run Monte-Carlo simulation for TL for delocalized transition. Function version 0.0.1. In: Friedrich, J., Kreutzer, S., Pagonis, V., Schmidt, C., 2019. RLumCarlo: Monte-Carlo Methods for Simulating Luminescence PhenomenaR package version 0.1.0.9000-102. 
 }
 
 \references{
