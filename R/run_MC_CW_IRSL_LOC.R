@@ -1,6 +1,6 @@
 #' @title Run Monte-Carlo simulation for CW-IRSL for localized transition
 #'
-#' @description Runs a Monte-Carlo (MC) simulation of constant wave infrared stimulated luminesence (CW-IRSL) using the generalized one trap (GOT) model. Localized refers to excitation of an electron before it recombines, but without the involvement of the conduction band.
+#' @description Runs a Monte-Carlo (MC) simulation of constant wave infrared stimulated luminesence (CW-IRSL) using the generalized one trap (GOT) model. Localized refers to an excited state that is shared by the electron and the recombination center, so that the conduction band is not involved in the recombination process.
 #'
 #' @details
 #'
@@ -12,9 +12,9 @@
 #'  t := Time \cr
 #'  n := `n_filled``
 #'
-#' @param A [numeric] (**required**): The optical excitation rate from trap to conduction band (s^-1).
+#' @param A [numeric] (**required**): The optical excitation rate from trap to the excited state (s^-1).
 #'
-#' @param times [numeric] (*with default*): The sequence of temperature steps within the simulation (s).
+#' @param times [numeric] (*with default*): The sequence of time steps within the simulation (s).
 #'
 #' @param clusters [numeric] (*with default*): The number of MC runs (unitless).
 #'
@@ -22,7 +22,7 @@
 #'
 #' @param r [numeric] (*with default*): The localized retrapping ratio (unitless).
 #'
-#' @param method [character] (*with default*): sequential `'seq'` or parallel processing `'par'`
+#' @param method [character] (*with default*): sequential `'seq'` or parallel `'par'`processing 
 #'
 #' @param output [character] (*with default*): output is either the `'signal'` (the default) or `'remaining_e'` (the remaining
 #' charges, electrons, in the trap)
