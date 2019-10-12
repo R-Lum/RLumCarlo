@@ -69,19 +69,17 @@
 #' ##============================================================================##
 #' \dontrun{
 #' run_MC_TL_TUN(
-#'  s = 1e8,
-#'  E = 0.5,
-#'  rho = 1e-7,
-#'  r_c = 0.1,
-#'  times = seq(0,700,10), 
-#'  clusters = 100, 
-#'  N_e = 20, 
-#'  delta.r = 1e-3
+#'  s = 1e12,
+#'  E = 0.9,
+#'  rho = 1,
+#'  r_c = 1,
+#'  times = 0:180,
+#'  delta.r = 1e-1
 #' ) %>%
 #'  #Plot results of the MC simulation
 #' plot_RLumCarlo(legend = T)
 #' 
-#'}
+#' }
 #'
 #' @md
 #' @export

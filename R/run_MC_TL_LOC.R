@@ -50,10 +50,10 @@
 #' ##============================================================================## 
 #' \dontrun{
 #' run_MC_TL_LOC(
-#'  s = 1e8,
-#'  E = 0.5,
-#'  times = 0:100,
-#'  r = 1e-7
+#'  s = 1e14,
+#'  E = 0.9,
+#'  times = 0:180,
+#'  r = 1e4
 #' ) %>%
 #'  #Plot results of the MC simulation
 #' plot_RLumCarlo(legend = T)
