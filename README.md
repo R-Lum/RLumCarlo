@@ -47,8 +47,6 @@ devtools::install_github("R-Lum/RLumCarlo@master")
 
 ## Examples
 
-s
-
 ``` r
 run_MC_CW_IRSL_TUN(A = 0.12, rho = 0.003, times = 0:1000) %>%
      plot_RLumCarlo(norm = TRUE, legend = TRUE)
