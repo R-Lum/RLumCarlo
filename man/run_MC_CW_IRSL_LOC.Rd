@@ -2,7 +2,7 @@
 % Please edit documentation in R/run_MC_CW_IRSL_LOC.R
 \name{run_MC_CW_IRSL_LOC}
 \alias{run_MC_CW_IRSL_LOC}
-\title{Run Monte-Carlo simulation for CW-IRSL for localized transition}
+\title{Monte-Carlo Simulation for CW-IRSL for Localized Transition}
 \usage{
 run_MC_CW_IRSL_LOC(A, times, clusters = 10, n_filled = 100, r,
   method = "par", output = "signal", ...)
@@ -29,7 +29,10 @@ charges, electrons, in the trap)}
 This function returns an \link{array} with dimension length(times) x length(r) x clusters
 }
 \description{
-Runs a Monte-Carlo (MC) simulation of constant wave infrared stimulated luminesence (CW-IRSL) using the generalized one trap (GOT) model. Localized refers to an excited state that is shared by the electron and the recombination center, so that the conduction band is not involved in the recombination process.
+Runs a Monte-Carlo (MC) simulation of constant wave infrared stimulated luminesence
+(CW-IRSL) using the generalized one trap (GOT) model. Localized refers to an excited state
+that is shared by the electron and the recombination centre,
+so that the conduction band is not involved in the recombination process.
 }
 \details{
 \deqn{
@@ -67,11 +70,14 @@ plot_RLumCarlo(legend = T)
 } 
 
 \section{How to cite}{
-Kreutzer, S., 2019. run_MC_CW_IRSL_LOC(): Run Monte-Carlo simulation for CW-IRSL for localized transition. Function version 0.1.0. In: Friedrich, J., Kreutzer, S., Pagonis, V., Schmidt, C., 2019. RLumCarlo: Monte-Carlo Methods for Simulating Luminescence PhenomenaR package version 0.1.0.9000-103. 
+Kreutzer, S., 2019. run_MC_CW_IRSL_LOC(): Monte-Carlo Simulation for CW-IRSL for Localized Transition. Function version 0.1.0. In: Friedrich, J., Kreutzer, S., Pagonis, V., Schmidt, C., 2019. RLumCarlo: Monte-Carlo Methods for Simulating Luminescence PhenomenaR package version 0.1.0.9000-106. 
 }
 
 \references{
-Pagonis, V., Friedrich, J., Discher, M., Müller-Kirschbaum, A., Schlosser, V., Kreutzer, S., Chen, R. and Schmidt, C., 2019. Excited state luminescence signals from a random distribution of defects: A new Monte Carlo simulation approach for feldspar. Journal of Luminescence 207, 266–272. \doi{10.1016/j.jlumin.2018.11.024}
+Pagonis, V., Friedrich, J., Discher, M., Müller-Kirschbaum, A., Schlosser, V., Kreutzer, S.,
+Chen, R. and Schmidt, C., 2019. Excited state luminescence signals from a
+random distribution of defects: A new Monte Carlo simulation approach for feldspar.
+Journal of Luminescence 207, 266–272. \doi{10.1016/j.jlumin.2018.11.024}
 
 Reuven, C. and S. Mckeever, 1997. Theory of thermoluminescence and related phenomena.
 }

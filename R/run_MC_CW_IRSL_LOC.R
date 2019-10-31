@@ -1,6 +1,9 @@
-#' @title Run Monte-Carlo simulation for CW-IRSL for localized transition
+#' @title Monte-Carlo Simulation for CW-IRSL for Localized Transition
 #'
-#' @description Runs a Monte-Carlo (MC) simulation of constant wave infrared stimulated luminesence (CW-IRSL) using the generalized one trap (GOT) model. Localized refers to an excited state that is shared by the electron and the recombination center, so that the conduction band is not involved in the recombination process.
+#' @description Runs a Monte-Carlo (MC) simulation of constant wave infrared stimulated luminesence
+#' (CW-IRSL) using the generalized one trap (GOT) model. Localized refers to an excited state
+#' that is shared by the electron and the recombination centre,
+#' so that the conduction band is not involved in the recombination process.
 #'
 #' @details
 #'
@@ -22,7 +25,7 @@
 #'
 #' @param r [numeric] (*with default*): The localized retrapping ratio (unitless).
 #'
-#' @param method [character] (*with default*): sequential `'seq'` or parallel `'par'`processing 
+#' @param method [character] (*with default*): sequential `'seq'` or parallel `'par'`processing
 #'
 #' @param output [character] (*with default*): output is either the `'signal'` (the default) or `'remaining_e'` (the remaining
 #' charges, electrons, in the trap)
@@ -37,7 +40,10 @@
 #'
 #' @references
 #'
-#' Pagonis, V., Friedrich, J., Discher, M., Müller-Kirschbaum, A., Schlosser, V., Kreutzer, S., Chen, R. and Schmidt, C., 2019. Excited state luminescence signals from a random distribution of defects: A new Monte Carlo simulation approach for feldspar. Journal of Luminescence 207, 266–272. \doi{10.1016/j.jlumin.2018.11.024}
+#' Pagonis, V., Friedrich, J., Discher, M., Müller-Kirschbaum, A., Schlosser, V., Kreutzer, S.,
+#' Chen, R. and Schmidt, C., 2019. Excited state luminescence signals from a
+#' random distribution of defects: A new Monte Carlo simulation approach for feldspar.
+#' Journal of Luminescence 207, 266–272. \doi{10.1016/j.jlumin.2018.11.024}
 #'
 #' Reuven, C. and S. Mckeever, 1997. Theory of thermoluminescence and related phenomena.
 #'

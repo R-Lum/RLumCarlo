@@ -104,7 +104,7 @@ legend("topright",ncol=5,cex=0.55,title = "parameters" ,legend=c(paste0("E = ", 
 } 
 
 \section{How to cite}{
-Kreutzer, S., 2019. run_MC_TL_DELOC(): Run Monte-Carlo simulation for TL for delocalized transition. Function version 0.0.1. In: Friedrich, J., Kreutzer, S., Pagonis, V., Schmidt, C., 2019. RLumCarlo: Monte-Carlo Methods for Simulating Luminescence PhenomenaR package version 0.1.0.9000-103. 
+Kreutzer, S., 2019. run_MC_TL_DELOC(): Run Monte-Carlo simulation for TL for delocalized transition. Function version 0.0.1. In: Friedrich, J., Kreutzer, S., Pagonis, V., Schmidt, C., 2019. RLumCarlo: Monte-Carlo Methods for Simulating Luminescence PhenomenaR package version 0.1.0.9000-106. 
 }
 
 \references{

@@ -2,7 +2,7 @@
 % Please edit documentation in R/run_MC_TL_TUN.R
 \name{run_MC_TL_TUN}
 \alias{run_MC_TL_TUN}
-\title{Run Monte-Carlo Simulation for TL for tunnelling transition}
+\title{Run Monte-Carlo simulation for TL for tunnelling transitions}
 \usage{
 run_MC_TL_TUN(s, E, rho, r_c = 0, times, clusters = 10, N_e = 200,
   delta.r = 0.1, method = "par", output = "signal", ...)
@@ -12,11 +12,14 @@ run_MC_TL_TUN(s, E, rho, r_c = 0, times, clusters = 10, N_e = 200,
 
 \item{E}{\link{numeric} (\strong{required}): Thermal activation energy of the trap (eV).}
 
-\item{rho}{\link{numeric} (\strong{required}): The density of recombination centers (defined as rho' in Huntley 2006) (unitless).}
+\item{rho}{\link{numeric} (\strong{required}): The density of recombination centers
+(defined as rho' in Huntley 2006) (unitless).}
 
-\item{r_c}{\link{numeric} (\emph{with default}): Distance parameter (radius of tunneling) (unitless).}
+\item{r_c}{\link{numeric} (\emph{with default}): Critical distance (>0) that is to be inserted if
+the sample has been thermally and/or optically pretreated, so that the electron-hole
+pairs within `r_c`` have already recombined (unitless).}
 
-\item{times}{\link{vector} (\emph{with default}): The sequence of temperature steps within the simulation (s).}
+\item{times}{\link{vector} (\emph{wih default}): The sequence of time steps within the simulation (s).}
 
 \item{clusters}{\link{numeric} (\emph{with default}): The number of MC runs (unitless).}
 
@@ -24,39 +27,37 @@ run_MC_TL_TUN(s, E, rho, r_c = 0, times, clusters = 10, N_e = 200,
 
 \item{delta.r}{\link{numeric} (\emph{with default}): The  increments of r_c (unitless).}
 
-\item{method}{\link{character} (\emph{with default}): sequential \code{'seq'} or parallel processing \code{'par'}}
+\item{method}{\link{character} (\emph{with default}): sequential \code{'seq'} or parallel processing \code{'par'}.}
 
-\item{output}{\link{character} (\emph{with default}): output is either the \code{'signal'} (the default) or \code{'remaining_e'} (the remaining
-charges, electrons, in the trap)}
+\item{output}{\link{character} (\emph{with default}): output is either the \code{'signal'} (the default)
+or \code{'remaining_e'} (the remaining charges, electrons, in the trap).}
 
 \item{\dots}{further arguments}
-
-\item{r}{\link{numeric} (\emph{with default}): The radius of tunneling (unitless).}
 }
 \value{
 This function returns an \code{\link{array}} with dimension length(times) x length(r) x clusters
 }
 \description{
-Runs a Monte-Carlo (MC) simulation of thermo-luminesence (TL) using the tunneling (TUN) model. Tunneling refers to the direct movement of electrons from a trap directly to the recombination center
+Runs a Monte-Carlo (MC) simulation of thermo-luminesence (TL) caused by
+tunnelling (TUN) transitions. Tunneling refers to the direct recombination of
+electrons from a trap directly from the excited state of the trap, without involvement of the conduction band.
 }
 \details{
 \deqn{
-p(t) = s * e ^ (-E / k_{B} * T) * e^{(-r' / \rho'^{1 / 3}})
+p(t) = (s * exp(-E /(k_{B} * T))) * e^{(-r' / \rho'^{1 / 3})}
 }
-
 \deqn{
-I_{TUN}(t) = 3 * n * p(t) *  (r')^2 * e^{(-(r')^3)}
+I_{TUN}(t) = 3 * n * p(t) *  r'^{2 * e^{(-r'^3)}}
 }
 
 Where in the function: \cr
 \code{p(t)} := The experimental stimulation mode \cr
-\code{e}:= Exponentional function \cr
 \eqn{k_{B}} := Boltzmann constant \cr
-\code{T} := \code{Temperature} \cr
+\code{T} := Temperature \cr
 \code{r}' := \code{r} \cr
-\eqn{\rho} := \code{rho} \cr
+\eqn{\rho}' := Density of recombination centers \cr
 \code{t} := \code{Time} \cr
-\code{n} := The Instantaneous number of electrons
+\code{n} := The instantaneous number of electrons
 }
 \section{Function version}{
  0.1.0
@@ -64,18 +65,16 @@ Where in the function: \cr
 
 \examples{
 ##============================================================================##
-## Example 1: Simulate TL measurement
+## Example 1: Single Plot for Monte-Carlo (MC) simulations for tunneling TL
 ##============================================================================##
 \dontrun{
 run_MC_TL_TUN(
- s = 1e8,
- E = 0.5,
- rho = 1e-7,
- r_c = 0.1,
- times = seq(0,700,10), 
- clusters = 100, 
- N_e = 20, 
- delta.r = 1e-3
+ s = 1e12,
+ E = 0.9,
+ rho = 1,
+ r_c = 1,
+ times = 0:180,
+ delta.r = 1e-1
 ) \%>\%
  #Plot results of the MC simulation
 plot_RLumCarlo(legend = T)
@@ -85,19 +84,26 @@ plot_RLumCarlo(legend = T)
 } 
 
 \section{How to cite}{
-Friedrich, J., Kreutzer, S., 2019. run_MC_TL_TUN(): Run Monte-Carlo Simulation for TL for tunnelling transition. Function version 0.1.0. In: Friedrich, J., Kreutzer, S., Pagonis, V., Schmidt, C., 2019. RLumCarlo: Monte-Carlo Methods for Simulating Luminescence PhenomenaR package version 0.1.0.9000-103. 
+Friedrich, J., Kreutzer, S., 2019. run_MC_TL_TUN(): Run Monte-Carlo simulation for TL for tunnelling transitions. Function version 0.1.0. In: Friedrich, J., Kreutzer, S., Pagonis, V., Schmidt, C., 2019. RLumCarlo: Monte-Carlo Methods for Simulating Luminescence PhenomenaR package version 0.1.0.9000-106. 
 }
 
 \references{
-Huntley, D.J., 2006. An explanation of the power-law decay of luminescence. Journal of Physics: Condensed Matter, 18(4), 1359.\doi{10.1088/0953-8984/18/4/020}
+Huntley, D.J., 2006. An explanation of the power-law decay of luminescence.
+Journal of Physics: Condensed Matter, 18(4), 1359.\doi{10.1088/0953-8984/18/4/020}
 
-Pagonis, V. and Kulp, C., 2017. Monte Carlo simulations of tunneling phenomena and nearest neighbor hopping mechanism in feldspars. Journal of Luminescence 181, 114–120. \doi{10.1016/j.jlumin.2016.09.014}
+Pagonis, V. and Kulp, C., 2017. Monte Carlo simulations of tunneling
+phenomena and nearest neighbor hopping mechanism in feldspars.
+Journal of Luminescence 181, 114–120. \doi{10.1016/j.jlumin.2016.09.014}
 
-Pagonis, V., Friedrich, J., Discher, M., Müller-Kirschbaum, A., Schlosser, V., Kreutzer, S., Chen, R. and Schmidt, C., 2019. Excited state luminescence signals from a random distribution of defects: A new Monte Carlo simulation approach for feldspar. Journal of Luminescence 207, 266–272. \doi{10.1016/j.jlumin.2018.11.024}
+Pagonis, V., Friedrich, J., Discher, M., Müller-Kirschbaum, A., Schlosser, V., Kreutzer, S.,
+Chen, R. and Schmidt, C., 2019. Excited state luminescence signals from a random
+distribution of defects: A new Monte Carlo simulation approach for feldspar.
+Journal of Luminescence 207, 266–272. \doi{10.1016/j.jlumin.2018.11.024}
 
 \strong{Further reading}
-Aitken, M.J., 1985. Thermoluminescence dating. 276-280. \doi{10.1002/gea.3340020110}
+Aitken, M.J., 1985. Thermoluminescence dating. Academic Press.
 }
 \author{
-Johannes Friedrich, University of Bayreuth (Germany), Sebastian Kreutzer, IRAMAT-CRP2A, UMR 5060, Université Bordeaux Montaigne (France)
+Johannes Friedrich, University of Bayreuth (Germany), Sebastian Kreutzer,
+IRAMAT-CRP2A, UMR 5060, Université Bordeaux Montaigne (France)
 }

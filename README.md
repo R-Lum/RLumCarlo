@@ -18,6 +18,27 @@ Concept](http://www.repostatus.org/badges/latest/concept.svg)](https://www.repos
 Status](https://travis-ci.com/R-Lum/RLumCarlo.svg?token=ymRxA7NeJn6EE7PixZr8&branch=master)](https://travis-ci.com/R-Lum/RLumCarlo)
 [![codecov](https://codecov.io/gh/R-Lum/RLumCarlo/branch/master/graph/badge.svg?token=W0q5JUInf7)](https://codecov.io/gh/R-Lum/RLumCarlo)
 
+## TODOs before CRAN submission
+
+### Check documentation
+
+  - RLumCarlo-package.R
+  - methods.R
+  - plot\_RLumCarlo.R
+  - run\_MC\_CW\_IRSL\_LOC.R
+  - run\_MC\_CW\_IRSL\_TUN.R
+  - run\_MC\_CW\_OSL\_DELOC.R
+  - run\_MC\_ISO\_DELOC.R
+  - run\_MC\_ISO\_LOC.R
+  - run\_MC\_ISO\_TUN.R
+  - run\_MC\_LM\_OSL\_DELOC.R
+  - run\_MC\_LM\_OSL\_LOC.R
+  - run\_MC\_LM\_OSL\_TUN.R
+  - run\_MC\_TL\_DELOC.R
+  - run\_MC\_TL\_LOC.R
+  - run\_MC\_TL\_TUN.R
+  - utils.R
+
 ## Installation
 
 #### i. Requirements
