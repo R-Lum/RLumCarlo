@@ -28,9 +28,9 @@ The **R** package 'RLumCarlo' provides a collection of various R functions model
 
 ## TODOs before CRAN submission
 
-### Check documentation
+### Check documentation and examples
 
-* RLumCarlo-package.R
+* ~~RLumCarlo-package.R~~
 * methods.R
 * plot_RLumCarlo.R
 * run_MC_CW_IRSL_LOC.R
@@ -46,6 +46,19 @@ The **R** package 'RLumCarlo' provides a collection of various R functions model
 * run_MC_TL_LOC.R
 * run_MC_TL_TUN.R
 * utils.R
+
+* Documentation checked by Christoph? 
+* Documentation verified by Vasilis?
+
+### Others
+
+* Check vignette and update vignette
+* Write CRAN comments
+* Double check ORCID for authors
+* Double check DESCIRPTION file
+* run WIN-builder tests for all releases
+* Are all CI tests green
+* Set proper version number
 
 
 ## Installation
