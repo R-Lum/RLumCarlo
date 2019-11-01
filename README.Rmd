@@ -31,7 +31,7 @@ The **R** package 'RLumCarlo' provides a collection of various R functions model
 ### Check documentation and examples
 
 * ~~RLumCarlo-package.R~~
-* methods.R
+* ~~methods.R~~
 * plot_RLumCarlo.R
 * run_MC_CW_IRSL_LOC.R
 * run_MC_CW_IRSL_TUN.R

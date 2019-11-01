@@ -1,16 +1,16 @@
-#' @title methods
+#' methods_RLumCarlo
 #'
 #' @keywords internal
 #' @md
-#' @name methods
+#' @name methods_RLumCarlo
 NULL
 
 #' @title Summarize RLumCarlo Modelling Results
 #'
-#' @description Summarize RLumCarlo Modelling results, so that they can be plotted easily
+#' @description Summarize RLumCarlo modelling results for easy plotting
 #'
 #' @param object [list] of class RLumCarlo_Model_Output: RLumCarlo simulation output object
-#' produced by all
+#' produced by all `run_` functions
 #'
 #' @param verbose [logical] (*with default*): enable/disable verbose mode
 #'
@@ -20,11 +20,12 @@ NULL
 #'
 #' @section Function version: 0.1.0
 #'
-#' @author Johannes Friedrich, University of Bayreuth (Germany), Sebastian Kreutzer, IRAMAT-CRP2A, UMR 5060, CNRS-Université Bordeaux Montagine (France)
+#' @author Johannes Friedrich, University of Bayreuth (Germany),
+#' Sebastian Kreutzer, IRAMAT-CRP2A, UMR 5060, CNRS-Université Bordeaux Montaigne (France)
 #'
 #' @md
 #' @method summary RLumCarlo_Model_Output
-#' @rdname methods
+#' @rdname methods_RLumCarlo
 #' @export
 summary.RLumCarlo_Model_Output <- function(object, verbose = TRUE, ...){
 
