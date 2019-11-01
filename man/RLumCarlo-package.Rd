@@ -10,23 +10,23 @@
 \figure{Logo_RLumCarlo.png}{options: width="50px" alt="https://github.com/R-Lum/RLumCarlo"}\cr
 }}
 \description{
-A collection of functions to simulate luminescence production in minerals using Monte-Carlo methods.
-Implemented are models for delocalised, localised and tunnelling transitions.
-Supported stimulation methods are TL, CW-OSL, LM-OSL, LM-IRSL, and ITL (ISO-TL).
+A collection of functions to simulate luminescence production in dosimeters
+using Monte-Carlo methods. Implemented are models for delocalised, localised and tunnelling
+transitions. Supported stimulation modes are TL, CW-OSL, LM-OSL, LM-IRSL, and ITL (ISO-TL).
 }
 \details{
 \bold{Funding}
 
-This project benefitted from support by various funding bodies.
+The development of RLumCarlo benefitted from the support by various funding bodies:
 \itemize{
 \item The initial work by Johannes Friedrich, Sebastian Kreutzer and Christoph Schmidt
-was supported by the DFG (2015–2018, SCHM 3051/4-1, "Modelling quartz luminescence signal
-dynamics relevant for dating and dosimetry", SCHM 3051/4-1).
-\item Later financial support was secured through the project "ULTIMO: Unifying Luminescence Models of
-quartz and feldspar (German Academic Exchange Service)
-DAAD: Deutscher Akademischer Austauschdienst DAAD PPP USA 2018, ID: 57387041).
+was supported by the Deutsche Forschungsgemmeinschaft (DFG, 2015–2018, SCHM 3051/4-1,
+"Modelling quartz luminescence signal dynamics relevant for dating and dosimetry", SCHM 3051/4-1).
+\item Later work (2018-2019) was secured through the project "ULTIMO: Unifying Luminescence Models of
+quartz and feldspar DAAD: Deutscher Akademischer Austauschdienst
+(German Academic Exchange Service). Framework: DAAD PPP USA 2018, ID: 57387041.
 \item The work of Sebastian Kreutzer as maintainer of the package was supported
-by LabEx LaScArBx (ANR - n. ANR-10-LABX-52).
+by LabEx LaScArBx (ANR - n. ANR-10-LABX-52) between 2017 and 2019.
 }
 }
 \references{

@@ -20,24 +20,53 @@ Status](https://travis-ci.com/R-Lum/RLumCarlo.svg?token=ymRxA7NeJn6EE7PixZr8&bra
 
 ## TODOs before CRAN submission
 
-### Check documentation
+### Check documentation and examples
 
-  - RLumCarlo-package.R
-  - methods.R
-  - plot\_RLumCarlo.R
-  - run\_MC\_CW\_IRSL\_LOC.R
-  - run\_MC\_CW\_IRSL\_TUN.R
+  - ~~RLumCarlo-package.R~~
+
+  - ~~methods.R~~
+
+  - ~~plot\_RLumCarlo.R~~
+
+  - ~~utils.R~~
+
+  - ~~run\_MC\_CW\_IRSL\_LOC.R~~
+
+  - ~~run\_MC\_CW\_IRSL\_TUN.R~~
+
   - run\_MC\_CW\_OSL\_DELOC.R
+
   - run\_MC\_ISO\_DELOC.R
+
   - run\_MC\_ISO\_LOC.R
+
   - run\_MC\_ISO\_TUN.R
+
   - run\_MC\_LM\_OSL\_DELOC.R
+
   - run\_MC\_LM\_OSL\_LOC.R
+
   - run\_MC\_LM\_OSL\_TUN.R
+
   - run\_MC\_TL\_DELOC.R
+
   - run\_MC\_TL\_LOC.R
+
   - run\_MC\_TL\_TUN.R
-  - utils.R
+
+  - Documentation checked by Christoph?
+
+  - Documentation verified by Vasilis?
+
+### Others
+
+  - Check vignette and update vignette
+  - Write CRAN comments
+  - Double check ORCID for authors
+  - Double check DESCIRPTION file
+  - run WIN-builder tests for all releases
+  - Are all CI tests green
+  - Set proper version number
 
 ## Installation
 
