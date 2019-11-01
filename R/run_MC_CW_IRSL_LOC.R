@@ -1,6 +1,6 @@
 #' @title Monte-Carlo Simulation for CW-IRSL for Localized Transition
 #'
-#' @description Runs a Monte-Carlo (MC) simulation of constant wave infrared stimulated luminesence
+#' @description Runs a Monte-Carlo (MC) simulation of constant-wave infrared stimulated luminesence
 #' (CW-IRSL) using the generalized one trap (GOT) model. Localized refers to an excited state
 #' that is shared by the electron and the recombination centre,
 #' so that the conduction band is not involved in the recombination process.
@@ -11,9 +11,11 @@
 #' I_{LOC}(t) = -dn/dt = A * (n^2 / (r + n))
 #' }
 #'
-#' Where in the function: \cr
-#'  t := Time \cr
-#'  n := `n_filled``
+#' where in the function: \cr
+#'  A := optical excitation rate from trap to the excited state (s^-1) \cr
+#'  r := localised retrapping ratio (unitless) \cr
+#'  t := time (s)\cr
+#'  n := number of filled electron traps
 #'
 #' @param A [numeric] (**required**): The optical excitation rate from trap to the excited state (s^-1).
 #'
@@ -21,37 +23,38 @@
 #'
 #' @param clusters [numeric] (*with default*): The number of MC runs (unitless).
 #'
-#' @param n_filled [integer] (*with default*): The number of filled electron traps at the beginning of the simulation (unitless).
+#' @param n_filled [integer] (*with default*): The number of filled electron traps at the beginning
+#' of the simulation (unitless).
 #'
 #' @param r [numeric] (*with default*): The localized retrapping ratio (unitless).
 #'
 #' @param method [character] (*with default*): sequential `'seq'` or parallel `'par'`processing
 #'
-#' @param output [character] (*with default*): output is either the `'signal'` (the default) or `'remaining_e'` (the remaining
-#' charges, electrons, in the trap)
+#' @param output [character] (*with default*): output is either the `'signal'` (the default) or
+#' `'remaining_e'` (the remaining charges/electrons, in the trap)
 #'
 #' @param \dots further arguments
 #'
-#' @return This function returns an [array] with dimension length(times) x length(r) x clusters
+#' @return This function returns an object of class `RLumCarlo_Model_Output` which
+#' is a [list] consisting of an [array] with dimension length(times) x length(r) x clusters
+#' and a [numeric] time vector.
 #'
 #' @section Function version: 0.1.0
 #'
 #' @author Sebastian Kreutzer, IRAMAT-CRP2A, UMR 5060, CNRS - Université Bordeaux Montaigne (France)
 #'
 #' @references
-#'
 #' Pagonis, V., Friedrich, J., Discher, M., Müller-Kirschbaum, A., Schlosser, V., Kreutzer, S.,
 #' Chen, R. and Schmidt, C., 2019. Excited state luminescence signals from a
 #' random distribution of defects: A new Monte Carlo simulation approach for feldspar.
 #' Journal of Luminescence 207, 266–272. \doi{10.1016/j.jlumin.2018.11.024}
 #'
-#' Reuven, C. and S. Mckeever, 1997. Theory of thermoluminescence and related phenomena.
+#' **Further reading**
+#'
+#' Chen, R., McKeever, S.W.S., 1997. Theory of Thermoluminescence and Related Phenomena.
+#' WORLD SCIENTIFIC. \doi{10.1142/2781}
 #'
 #' @examples
-#' ##============================================================================##
-#' ## Example 1: Single Plot for Monte-Carlo (MC) simulations for localized CW_IRSL
-#' ##============================================================================##
-#' \dontrun{
 #' run_MC_CW_IRSL_LOC(
 #'  A = 0.12,
 #'  times = 0:100,
@@ -61,12 +64,9 @@
 #'  method = "seq",
 #'  output = "signal"
 #' ) %>%
-#'  #Plot results of the MC simulation
-#' plot_RLumCarlo(legend = T)
+#' plot_RLumCarlo(legend = TRUE)
 #'
-#' }
-#'
-#'
+#' @keywords models data
 #' @md
 #' @export
 run_MC_CW_IRSL_LOC <- function(
@@ -119,7 +119,6 @@ run_MC_CW_IRSL_LOC <- function(
     return(results[[output]])
 
   }  # end c-loop
-
 
 # Return --------------------------------------------------------------------------------------
   .return_ModelOutput(signal = temp, time = times)
