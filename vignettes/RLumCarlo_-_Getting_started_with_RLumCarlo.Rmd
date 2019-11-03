@@ -1,7 +1,7 @@
 ---
 title: "Getting started with RLumCarlo"
 author: "Sebastian Kreutzer, Johannes Friedrich, Vasilis Pagonis, Christoph Schmidt"
-date: "Last modified: `r Sys.Date()`"
+date: "RLumCarlo: v`r packageVersion('RLumCarlo')` | Last modified: `r Sys.Date()`"
 output: pdf_document
 vignette: |
   %\VignetteIndexEntry{RLumCarlo - Getting started with RLumCarlo}         
@@ -35,14 +35,11 @@ electrons <- data.frame(
 
 # Scope
 
-RLumCarlo is collection of energy-band models to simulate luminescence signals using Monte-Carlo (MC) methods. This document aims at providing an overview and a brief introduction to RLumCarlo. 
+RLumCarlo is a collection of energy-band models to simulate luminescence signals using Monte-Carlo (MC) methods for various stimulation modes. This document aims at supplementing the package documentation and elaborates the package examples. 
 
 # The models in RLumCarlo
 
-The following tables lists the models implemented in RLumCarlo along with the **R** function call 
-and the corresponding R (\*.R) and C++ (\*.cpp) files. The modelling takes place in the C++ functions which 
-are wrapped by the R functions with a similar name. If you, however, want to cross-check the 
-code, you should inspect files with the ending '.cpp'. 
+The following table lists all models implemented in RLumCarlo along with the **R** function call and the corresponding R (\*.R) and C++ (\*.cpp) files. The modelling takes place in the C++ functions which are wrapped by the R functions with a similar name. If you, however, want to cross-check the code, you should inspect files with the ending '.cpp'. 
 
 ```{r, echo = FALSE, message=FALSE}
 ## extract models
@@ -52,8 +49,8 @@ models <- regmatches(models, regexpr("(?<=run\\_).*", models, perl = TRUE), inve
 
 ## combine into data.frame
 df <- data.frame(
-  `MODEL NAME` = models, 
-  `R CALL` = paste0("run_", models, "()"),
+  `MODEL_NAME` = models, 
+  `R_CALL` = paste0("run_", models, "()"),
   `FILES` = paste0("R/run_", models, ".R \n src/MC_C_", models, ".cpp"), 
   stringsAsFactors = FALSE)
 
@@ -62,12 +59,12 @@ knitr::kable(df, booktabs = TRUE, linesep = "\\addlinespace") %>%
   column_spec(1, bold = TRUE)
 ```
 
-Each model can be run by calling one of the **R** functions starting with `run_`. Currently 
-three different model types (TUN: tunneling, LOC: localised transition, DELOC: delocalised 
-transition) are implemented for the stimulation types TL, IRSL, LM-OSL, and ISO (isothermal). 
+Each model is run by calling one of the **R** functions starting with `run_`. Currently, three different model types (TUN: tunnelling, LOC: localised transition, DELOC: delocalised transition) are implemented for the stimulation types TL, IRSL, LM-OSL, and ISO (isothermal). 
 Please note that each model has different parameters and requirements. 
 
-The following table summarizes the parameters used in the implemented MC models along with their physical meaning, units and the range of realistic values. This range represents just a rough guideline and might be exceeded for particular cases.
+# RLumCarlo model parameters and variables
+
+The following table summarises the parameters used in the implemented MC models along with their physical meaning, units and the range of realistic values. This range represents just a rough guideline and might be exceeded for particular cases.
 
 ```{r, echo = FALSE, message=FALSE}
 
@@ -84,13 +81,21 @@ knitr::kable(variables, booktabs = TRUE, longtable = TRUE, format = "latex", col
 
 # Examples
 
+The following examples exemplify the capacity of RLumCarlo, by using an example with longer simulation times than allowed for the standard package examples, which aim at a functionality test. 
+
 ## Example 1: A first example
 
-The first examples simulates an iso-thermal curve using the tunneling model. Returned are either
-the simulated signal or the estimated remaining charges. The Function `plot_RLumCarlo()` provides
-an easy way to visualise the modelling results. 
+The first examples iso-thermal curve using the tunnelling model (other models work 
+similar). Returned are either the simulated signal or the estimated remaining charges. The Function `plot_RLumCarlo()` provides an easy way to visualise the modelling results and is here called using the 
+tee operator `%T>` from the package `magrittr` (which is imported by RLumCarlo). Simulation results are stored in the object `results` while, at the same time, piped to the function 
+`plot_RLumCarlo()` for the output visualisation. 
 
-### Modell the signal  
+### Model the signal  
+ 
+The most obvious modelling output is the luminescence signal itself, our example below simulates an iso-thermal (ITL) signal for a temperature (`T`) of 200 $^{\circ}$C over 
+5,000 s using a tunnelling transition model. Trap parameters are E = 1.2 (eV) for the trap 
+depth and a frequency factor for $1\times10^{10}$ (1/s). The parameter `rho` ($\rho$) defines the recombination centre density. 
+
 ```{r Fig 1, fig.align='center', cache=TRUE}
 results <- run_MC_ISO_TUN(
   E = 1.2,
@@ -102,7 +107,10 @@ results <- run_MC_ISO_TUN(
   plot_RLumCarlo(norm = TRUE, legend = TRUE)
 ```
 
-### Modell remaining charges
+### Model remaining charges
+
+The first example can be slightly varified. Instead of the luminescence signal, the variant returns the number of remaining electrons in the trap. 
+
 ```{r Fig 2, fig.align='center', cache=TRUE}
 results <- run_MC_ISO_TUN(
   E = 1.2,
@@ -119,15 +127,13 @@ results <- run_MC_ISO_TUN(
 ```
 
 ### Understanding the numerical output
-The modelling output is an object of class `RLumCarlo_Model_Output`, which is basically 
-a list consisting of an array and a vector. 
+In both cases the modelling output is an object of class `RLumCarlo_Model_Output`, which is basically a list consisting of an array and a vector. 
 
 ```{r}
 str(results)
 ```
 
-While this represents the full modelling output results, its interpretation might be less 
-straight forward and the user may want to condense the information via `summary()`. 
+While this represents the full modelling output results, its interpretation might be less straight forward, and the user may want to condense the information via `summary()`. 
 The function `summary()` is also used internally by the function `plot_RLumCarlo()`.
 
 ```{r}
@@ -135,9 +141,7 @@ df <- summary(results)
 head(df)
 ```
 
-The call summarises the modelling results and returns a terminal output and a `data.frame` with, 
-e.g., the mean or the standard deviation, which can be used to create plots for further insight. 
-For instance, the stimulation time agains the relative standard deviation: 
+The call summarises the modelling results and returns a terminal output and a `data.frame` with, e.g., the mean or the standard deviation, which can be used to create plots for further insight. For instance, the stimulation time against coefficient of variation (CV, in %): 
  
 ```{r Fig 3, fig.align="center"}
 plot(
@@ -146,16 +150,16 @@ plot(
   pch = 20, 
   col = rgb(0,0,0,.1),
   xlab = "Stimulation time [s]",
-  ylab = "cv [%]"
+  ylab = "CV [%]"
 )
 ```
 
 ## Example 2: Combining two plots
 
-The following example uses continuous wave (CW) infrared light stimulation (IRSL), and combines
-two plots in one single plot window.
+The following examples use again the tunneling model but for continuous wave (CW) infrared light stimulation (IRSL), and they combine two plots in one single plot window. 
 
 ```{r Fig 4, fig.align='center'}
+## set time vector 
 times <- seq(0, 1000)
 
 ## Run MC simulation
@@ -170,14 +174,15 @@ run_MC_CW_IRSL_TUN(A = 0.21, rho = 0.003, times = times) %>%
 
 The example above can be further extended to test the effect of different parameters. 
 Contrary to the example above, here the results are stored in a `list` and `plot_RLumCarlo()` 
-is called only one time. 
+is called only one time and it will then iterate automatically over the results to 
+create a combined plot.
 
 ```{r Fig 5, fig.align='center', cache = TRUE}
 s <- 3.5e12
 rho <- 0.015
 E <- 1.45
 r_c <- c(0,0.7,0.77,0.86, 0.97)
-times <- seq(100, 450) # time = temperature
+times <- seq(100, 450) # here time = temperature
 results <- lapply(r_c, function(x) {
   run_MC_TL_TUN(
     s = s,
@@ -190,16 +195,22 @@ results <- lapply(r_c, function(x) {
 })
 ```
 
-```{r Fig 6,Plot average signal, fig.align='center', echo = FALSE, cache = TRUE}
+The plot output can be highly customised to provide a better visual experience, e.g., 
+the manual setting of the colours and the legend.
+
+```{r Fig 6,Plot average signal, fig.align='center', echo = TRUE, cache = TRUE}
+## plot curves, but without legend
 plot_RLumCarlo(
   object = results, 
-  ylab = "normalized TL signal",
-  xlab = "Temperature [°C]", 
+  ylab = "normalised TL signal",
+  xlab = "Temperature [\u00b0C]", 
   plot_uncertainty = "range",
+  col = khroma::colour("bright")(length(r_c)),
   legend = FALSE,
   norm = TRUE
 )
 
+## add legend manually
 legend(
   "topright",
   bty = "n",
