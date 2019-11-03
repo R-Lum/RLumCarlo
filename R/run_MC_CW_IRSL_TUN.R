@@ -64,6 +64,8 @@
 #'
 #' **Further reading**
 #'
+#' Aitken, M.J., 1985. Thermoluminescence dating. Academic Press.
+#'
 #' Chen, R., McKeever, S.W.S., 1997. Theory of Thermoluminescence and Related Phenomena.
 #' WORLD SCIENTIFIC. \doi{10.1142/2781}
 #'
