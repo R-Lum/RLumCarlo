@@ -2,7 +2,7 @@
 % Please edit documentation in R/run_MC_TL_LOC.R
 \name{run_MC_TL_LOC}
 \alias{run_MC_TL_LOC}
-\title{Run Monte-Carlo simulation for TL for localized transition}
+\title{Run Monte-Carlo Simulation for TL for Localized transition}
 \usage{
 run_MC_TL_LOC(s, E, times, clusters = 10, n_filled = 100, r,
   method = "par", output = "signal", ...)
@@ -16,22 +16,27 @@ run_MC_TL_LOC(s, E, times, clusters = 10, n_filled = 100, r,
 
 \item{clusters}{\link{numeric} (\emph{with default}): The number of MC run (unitless).}
 
-\item{n_filled}{\link{integer} (\emph{with default}): The number of filled electron traps at the beginning of the simulation (unitless).}
+\item{n_filled}{\link{integer} (\emph{with default}): The number of filled electron traps at
+the beginning of the simulation (unitless).}
 
 \item{r}{\link{numeric} (\emph{with default}): The localized retrapping ratio (unitless).}
 
 \item{method}{\link{character} (\emph{with default}): sequential \code{'seq'} or parallel processing \code{'par'}}
 
-\item{output}{\link{character} (\emph{with default}): output is either the \code{'signal'} (the default) or \code{'remaining_e'} (the remaining
-charges, electrons, in the trap)}
+\item{output}{\link{character} (\emph{with default}): output is either the \code{'signal'} (the default) or
+\code{'remaining_e'} (the remaining charges, electrons, in the trap)}
 
 \item{\dots}{further arguments}
 }
 \value{
-This function returns an \link{array} with dimension length(times) x length(r) x clusters
+This function returns an object of class \code{RLumCarlo_Model_Output} which
+is a \link{list} consisting of an \link{array} with dimension length(times) x length(r) x clusters
+and a \link{numeric} time vector.
 }
 \description{
-Runs a Monte-Carlo (MC) simulation of thermo-luminesence (TL) using the generalized one trap (GOT) model. Localized refers to excitation of an electron before it recombines, but without the involvement of the conduction band.
+Runs a Monte-Carlo (MC) simulation of thermo-luminesence (TL) using
+the generalized one trap (GOT) model. Localized refers to excitation of an electron before it
+recombines, but without the involvement of the conduction band.
 }
 \details{
 \deqn{
@@ -40,35 +45,40 @@ I_{LOC}(t) = -dn/dt = (s * e^-E/k_b * T) * (n^2 / (r + n))
 
 Where in the function: \cr
 \code{t} := \code{Time} \cr
-\code{e}:= Exponentional function \cr
 \eqn{k_{B}} := Boltzmann constant \cr
-\code{T} := \code{Temperature} \cr
-\code{n} := The Instantaneous number of electrons
+T := Temperature \cr
+E := the trap depth (eV) \cr
+n := The Instantaneous number of electrons \cr
+r := the localised retrapping ratio (unitless)
 }
 \section{Function version}{
  0.1.0
 }
 
 \examples{
-##============================================================================##
-## Example 1: Single Plot for Monte-Carlo (MC) simulations for localized TL
-##============================================================================## 
-\dontrun{
 run_MC_TL_LOC(
  s = 1e14,
  E = 0.9,
- times = 0:180,
- r = 1e4
-) \%>\%
- #Plot results of the MC simulation
-plot_RLumCarlo(legend = T)
-   
+ times = 50:100,
+ method = "seq",
+ clusters = 2,
+ r = 1e4) \%>\%
+plot_RLumCarlo()
+
+} 
+
+\section{How to cite}{
+Kreutzer, S., 2019. run_MC_TL_LOC(): Run Monte-Carlo Simulation for TL for Localized transition. Function version 0.1.0. In: Friedrich, J., Kreutzer, S., Pagonis, V., Schmidt, C., 2019. RLumCarlo: Monte-Carlo Methods for Simulating Luminescence PhenomenaR package version 0.1.0.9000-121. 
 }
 
-}
 \references{
-Pagonis, V., Friedrich, J., Discher, M., Müller-Kirschbaum, A., Schlosser, V., Kreutzer, S., Chen, R. and Schmidt, C., 2019. Excited state luminescence signals from a random distribution of defects: A new Monte Carlo simulation approach for feldspar. Journal of Luminescence 207, 266–272. \doi{10.1016/j.jlumin.2018.11.024}
+Pagonis, V., Friedrich, J., Discher, M., Müller-Kirschbaum, A., Schlosser, V.,
+reutzer, S., Chen, R. and Schmidt, C., 2019. Excited state luminescence signals
+from a random distribution of defects: A new Monte Carlo simulation approach for feldspar.
+Journal of Luminescence 207, 266–272. \doi{10.1016/j.jlumin.2018.11.024}
 }
 \author{
 Sebastian Kreutzer, IRAMAT-CRP2A, UMR 5060, CNRS - Université Bordeaux Montaigne (France)
 }
+\keyword{data}
+\keyword{models}

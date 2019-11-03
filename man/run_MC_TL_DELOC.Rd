@@ -2,7 +2,7 @@
 % Please edit documentation in R/run_MC_TL_DELOC.R
 \name{run_MC_TL_DELOC}
 \alias{run_MC_TL_DELOC}
-\title{Run Monte-Carlo simulation for TL for delocalized transition}
+\title{Run Monte-Carlo Simulation for TL for Delocalized Transition}
 \usage{
 run_MC_TL_DELOC(s, E, times, clusters = 10, N_e = 200,
   n_filled = N_e, R, method = "par", output = "signal", ...)
@@ -18,22 +18,27 @@ run_MC_TL_DELOC(s, E, times, clusters = 10, N_e = 200,
 
 \item{N_e}{\link{integer} (\emph{with default}): The total number of electron traps available (unitless).}
 
-\item{n_filled}{\link{integer} (\emph{with default}): The number of filled electron traps at the beginning of the simulation (unitless).}
+\item{n_filled}{\link{integer} (\emph{with default}): The number of filled electron traps at the beginning
+of the simulation (unitless).}
 
 \item{R}{\link{numeric} (\emph{with default}): The delocalized retrapping ratio (unitless).}
 
 \item{method}{\link{character} (\emph{with default}): sequential \code{'seq'} or parallel processing \code{'par'}}
 
-\item{output}{\link{character} (\emph{with default}): output is either the \code{'signal'} (the default) or \code{'remaining_e'} (the remaining
-charges, electrons, in the trap)}
+\item{output}{\link{character} (\emph{with default}): output is either the \code{'signal'} (the default) or
+\code{'remaining_e'} (the remaining charges, electrons, in the trap)}
 
 \item{\dots}{further arguments}
 }
 \value{
-This function returns an \link{array} with dimension length(times) x length(r) x clusters
+This function returns an object of class \code{RLumCarlo_Model_Output} which
+is a \link{list} consisting of an \link{array} with dimension length(times) x length(r) x clusters
+and a \link{numeric} time vector.
 }
 \description{
-Runs a Monte-Carlo (MC) simulation of thermo-luminesence (TL) using the one trap one recombination center (OTOR) model. Delocalized refers to involvement of the conduction band.
+Runs a Monte-Carlo (MC) simulation of thermo-luminesence (TL)
+using the one trap one recombination center (OTOR) model.
+Delocalized refers to involvement of the conduction band.
 }
 \details{
 \deqn{
@@ -42,71 +47,97 @@ I_{DELOC}(t) = -dn/dt = (s * e^-E/k_{b} * T) * (n^2 / (N * R + n(1-R))))
 
 Where in the function: \cr
 \code{t} := \code{Time} \cr
-\code{e}:= Exponentional function \cr
 \eqn{k_{B}} := Boltzmann constant \cr
 \code{T}= Temperature \cr
 \code{n} :=  The Instantaneous number of electrons \cr
 \code{N} := \code{N_e}
 }
 \section{Function version}{
- 0.0.1
+ 0.1.0
 }
 
 \examples{
-##============================================================================##
-## Example 1: Single Plot for Monte-Carlo (MC) simulations for delocalized TL
-##============================================================================##
-\dontrun{
 run_MC_TL_DELOC(
  s = 3.5e12,
  E = 1.45,
  R = 0.1,
- times = 100:450
-) \%>\%
- #Plot results of the MC simulation
-plot_RLumCarlo(legend = T)
+ method = 'seq',
+ clusters = 3,
+ times = 150:350) \%>\%
+plot_RLumCarlo(legend = TRUE)
 
-}
-
-#' @examples
-##============================================================================##
+\dontrun{
+#' ##=========================================================================##
 ## Example 2: Plot multiple TL stimulation TL curves in R with varying params
 ##============================================================================##
-
-
-
-      \dontrun{
 # define your parameters
-times=seq(100,450,1)
-s=rep(3.5e12,4)
-E=rep(1.45,4)
-R<-c(0.7e-6,1e-6,0.01,0.1)
-clusters=1000
-N_e =c(400, 500, 700, 400)
-n_filled =c(400, 500, 300, 70)
-method="par"
-output ="signal"
-col=c(1,2,3,4) # different colours for the individual curves
-plot_uncertainty <- c(TRUE,TRUE,TRUE,TRUE)  # do you want to see the uncertainty?
-add_TF <- c(FALSE,rep(TRUE, (length(R)-1)))
+times <- seq(100, 450, 1)
+s <- rep(3.5e12, 4)
+E <- rep(1.45, 4)
+R <- c(0.7e-6, 1e-6, 0.01, 0.1)
+clusters <- 1000
+N_e <- c(400, 500, 700, 400)
+n_filled <- c(400, 500, 300, 70)
+method <- "par"
+output <- "signal"
+col <- c(1, 2, 3, 4) # different colours for the individual curves
+plot_uncertainty <- c(TRUE, TRUE, TRUE, TRUE)  # do you want to see the uncertainty?
+add_TF <- c(FALSE, rep(TRUE, (length(R) - 1)))
+
+# loop to plot different curves into one plot
 for (u in 1:length(R)){
- results <-run_MC_TL_DELOC(times=times, s=s[u],E=E[u], clusters =clusters, N_e = N_e[u],
-                           n_filled = n_filled[u], R=R[u], method = method, output = output)
- plot_RLumCarlo(results,add=add_TF[u],legend = FALSE, col=col[u], main=" your plot", ylim=c(0,20))
+ results <- run_MC_TL_DELOC(
+  times=times,
+  s = s[u],
+  E = E[u],
+  clusters = clusters,
+  N_e = N_e[u],
+  n_filled = n_filled[u],
+  R = R[u],
+  method = method,
+  output = output)
+
+plot_RLumCarlo(
+ results,
+ add = add_TF[u],
+ legend = FALSE,
+ col=col[u],
+ main = " your plot",
+ ylim=c(0,20))
 }
-legend("topright",ncol=5,cex=0.55,title = "parameters" ,legend=c(paste0("E = ", E),
-                                                                paste0("s = ", s),
-                                                                paste0("n_filled = ", n_filled),
-                                                                paste0("N_e = ", N_e),
-                                                                paste0("R = ", R)),  text.col=col)
+#add your legend with your parameters
+legend("topright",
+  ncol = 5,
+  cex = 0.55,
+  bty = "n",
+  title = "parameters",
+  legend = c(
+   paste0("E = ", E),
+   paste0("s = ", s),
+   paste0("n_filled = ", n_filled),
+   paste0("N_e = ", N_e), paste0("R = ", R)),
+   text.col = col)
 }
 
+} 
+
+\section{How to cite}{
+Kreutzer, S., 2019. run_MC_TL_DELOC(): Run Monte-Carlo Simulation for TL for Delocalized Transition. Function version 0.1.0. In: Friedrich, J., Kreutzer, S., Pagonis, V., Schmidt, C., 2019. RLumCarlo: Monte-Carlo Methods for Simulating Luminescence PhenomenaR package version 0.1.0.9000-121. 
 }
+
 \references{
-Pagonis, V., Friedrich, J., Discher, M., Müller-Kirschbaum, A., Schlosser, V., Kreutzer, S., Chen, R. and Schmidt, C., 2019. Excited state luminescence signals from a random distribution of defects: A new Monte Carlo simulation approach for feldspar. Journal of Luminescence 207, 266–272. \doi{10.1016/j.jlumin.2018.11.024}
+Pagonis, V., Friedrich, J., Discher, M., Müller-Kirschbaum, A., Schlosser, V., Kreutzer, S.,
+Chen, R. and Schmidt, C., 2019. Excited state luminescence signals from a random distribution
+of defects: A new Monte Carlo simulation approach for feldspar.
+Journal of Luminescence 207, 266–272. \doi{10.1016/j.jlumin.2018.11.024}
 
-Reuven, C. and S. Mckeever, 1997. Theory of thermoluminescence and related phenomena.
+\strong{Further reading}
+
+Chen, R., McKeever, S.W.S., 1997. Theory of Thermoluminescence and Related Phenomena.
+WORLD SCIENTIFIC. \doi{10.1142/2781}
 }
 \author{
 Sebastian Kreutzer, IRAMAT-CRP2A, UMR 5060, CNRS - Université Bordeaux Montaigne (France)
 }
+\keyword{data}
+\keyword{models}

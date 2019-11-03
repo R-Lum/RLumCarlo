@@ -37,7 +37,9 @@ of nearest recombination centres (r', which is preset at 2)}
 \item{\dots}{further arguments}
 }
 \value{
-This function returns an object of class \code{RLumCarlo_Model_Output}
+This function returns an object of class \code{RLumCarlo_Model_Output} which
+is a \link{list} consisting of an \link{array} with dimension length(times) x length(r) x clusters
+and a \link{numeric} time vector.
 }
 \description{
 Runs a Monte-Carlo (MC) simulation of isothermally stimulated luminesence
@@ -58,7 +60,6 @@ I_{TUN}(t) = 3 * n * p(t) *  (r')^{2 * e^{(-r'^3)}}
 
 Where in the function: \cr
 \code{p(t)} := The experimental stimulation mode \cr
-\code{e}:= Exponentional function \cr
 \eqn{k_{B}} := Boltzmann constant \cr
 \code{r} := \code{r} \cr
 \eqn{\rho} := \code{rho} \cr
@@ -85,7 +86,12 @@ run_MC_ISO_TUN(
  method = "seq") \%>\%
  plot_RLumCarlo(legend = TRUE)
 
+} 
+
+\section{How to cite}{
+Friedrich, J., Kreutzer, S., 2019. run_MC_ISO_TUN(): Monte-Carlo Simulation for Isothermal-TL for Tunneling Transition. Function version 0.1.0. In: Friedrich, J., Kreutzer, S., Pagonis, V., Schmidt, C., 2019. RLumCarlo: Monte-Carlo Methods for Simulating Luminescence PhenomenaR package version 0.1.0.9000-121. 
 }
+
 \references{
 Pagonis, V. and Kulp, C., 2017. Monte Carlo simulations of tunneling phenomena
 and nearest neighbor hopping mechanism in feldspars.
@@ -106,3 +112,5 @@ Journal of Luminescence 207, 266–272. \doi{10.1016/j.jlumin.2018.11.024}
 Johannes Friedrich, University of Bayreuth (Germany),
 Sebastian Kreutzer, IRAMAT-CRP2A, UMR 5060, CNRS - Université Bordeaux Montaigne (France)
 }
+\keyword{data}
+\keyword{models}

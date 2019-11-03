@@ -2,21 +2,25 @@
 % Please edit documentation in R/run_MC_LM_OSL_TUN.R
 \name{run_MC_LM_OSL_TUN}
 \alias{run_MC_LM_OSL_TUN}
-\title{Run Monte-Carlo simulation for LM-OSL for tunneling transition}
+\title{Run Monte-Carlo Simulation for LM-OSL for Tunneling Transition}
 \usage{
 run_MC_LM_OSL_TUN(A, rho, times, clusters = 10, r_c = 0,
   delta.r = 0.1, N_e = 200, method = "par", output = "signal", ...)
 }
 \arguments{
-\item{A}{\link{numeric} (\strong{required}): The optical excitation rate from ground state of trap to excited state of trap (s^-1).}
+\item{A}{\link{numeric} (\strong{required}): The optical excitation rate from ground state of trap to
+excited state of trap (s^-1).}
 
-\item{rho}{\link{numeric} (\strong{required}): The density of recombination centers (defined as rho' in Huntley 2006) (unitless).}
+\item{rho}{\link{numeric} (\strong{required}): The density of recombination centers (defined as rho'
+in Huntley 2006) (unitless).}
 
 \item{times}{\link{vector} (\emph{with default}): The sequence of temperature steps within the simulation (s).}
 
 \item{clusters}{\link{numeric} (\emph{with default}): The number of clusters.}
 
-\item{r_c}{\link{numeric} (\emph{with default}): The retrapping ratio.}
+\item{r_c}{\link{numeric} (\emph{with default}): Critical distance (>0) that is to be inserted if the
+sample has 1 been thermally and/or optically pretreated, so that the electron-hole pairs
+within \code{r_c} have already recombined}
 
 \item{delta.r}{\link{numeric} (\emph{with default}): Increments of r_c (unitless).}
 
@@ -24,18 +28,20 @@ run_MC_LM_OSL_TUN(A, rho, times, clusters = 10, r_c = 0,
 
 \item{method}{\link{character} (\emph{with default}): sequential \code{'seq'} or parallel processing \code{'par'}}
 
-\item{output}{\link{character} (\emph{with default}): output is either the \code{'signal'} (the default) or \code{'remaining_e'} (the remaining
-charges, electrons, in the trap)}
+\item{output}{\link{character} (\emph{with default}): output is either the \code{'signal'} (the default) or
+\code{'remaining_e'} (the remaining charges, electrons, in the trap)}
 
 \item{\dots}{further arguments}
-
-\item{r}{\link{numeric} (\emph{with default}): The radius of tunneling (unitless).}
 }
 \value{
-This function returns a list.
+This function returns an object of class \code{RLumCarlo_Model_Output} which
+is a \link{list} consisting of an \link{array} with dimension length(times) x length(r) x clusters
+and a \link{numeric} time vector.
 }
 \description{
-Runs a Monte-Carlo (MC) simulation of linearly modulated optically stimulated luminesence (LM-OSL) using the tunneling (TUN) model. Tunneling refers to the direct movement of electrons from a trap directly to the recombination center
+Runs a Monte-Carlo (MC) simulation of linearly modulated optically stimulated
+luminesence (LM-OSL) using the tunneling (TUN) model. Tunneling refers to the direct movement
+of electrons from a trap directly to the recombination center
 }
 \details{
 \deqn{
@@ -47,50 +53,55 @@ I_{TUN}(t) = 3 * n * p(t) *  (r')^2 * e^{(-r'^3)}
 }
 
 Where in the function: \cr
-\code{p(t)} := The experimental stimulation mode \cr
-\code{t} := \code{Time} \cr
-\code{P} := Maximum stimulation time \cr
-\code{e} := Exponential function\cr
-\code{r}' := \code{r} \cr
+p(t) := The experimental stimulation mode \cr
+t := \code{Time} \cr
+P := Maximum stimulation time \cr
+r' := \code{r} \cr
 \eqn{\rho}' := rho  \cr
-\code{n} := The instantaneous number of electrons
+n := The instantaneous number of electrons
 }
 \section{Function version}{
  0.1.0
 }
 
 \examples{
-##============================================================================##
-## Example 1: Single Plot for Monte-Carlo (MC) simulations for tunneling LM_OSL
-##============================================================================##
-\dontrun{
 run_MC_LM_OSL_TUN(
  A = 1,
  rho = 1e-7,
- times = 0:100,
+ times = 0:10,
  clusters = 3,
  N_e = 2,
  r_c = 0.001,
  delta.r = 1e-1,
- method = "par",
- output = "signal"
-) \%>\%
- # Plot results of the MC simulation
-plot_RLumCarlo(norm = T)
+ method = "seq",
+ output = "signal") \%>\%
+plot_RLumCarlo(norm = TRUE)
 
+} 
+
+\section{How to cite}{
+Friedrich, J., Kreutzer, S., 2019. run_MC_LM_OSL_TUN(): Run Monte-Carlo Simulation for LM-OSL for Tunneling Transition. Function version 0.1.0. In: Friedrich, J., Kreutzer, S., Pagonis, V., Schmidt, C., 2019. RLumCarlo: Monte-Carlo Methods for Simulating Luminescence PhenomenaR package version 0.1.0.9000-121. 
 }
 
-}
 \references{
-Huntley, D.J., 2006. An explanation of the power-law decay of luminescence. Journal of Physics: Condensed Matter, 18(4), 1359.\doi{10.1088/0953-8984/18/4/020}
+Huntley, D.J., 2006. An explanation of the power-law decay of luminescence.
+Journal of Physics: Condensed Matter, 18(4), 1359.\doi{10.1088/0953-8984/18/4/020}
 
-Pagonis, V. and Kulp, C., 2017. Monte Carlo simulations of tunneling phenomena and nearest neighbor hopping mechanism in feldspars. Journal of Luminescence 181, 114–120. \doi{10.1016/j.jlumin.2016.09.014}
+Pagonis, V. and Kulp, C., 2017. Monte Carlo simulations of tunneling phenomena
+and nearest neighbor hopping mechanism in feldspars. Journal of Luminescence 181, 114–120.
+\doi{10.1016/j.jlumin.2016.09.014}
 
-Pagonis, V., Friedrich, J., Discher, M., Müller-Kirschbaum, A., Schlosser, V., Kreutzer, S., Chen, R. and Schmidt, C., 2019. Excited state luminescence signals from a random distribution of defects: A new Monte Carlo simulation approach for feldspar. Journal of Luminescence 207, 266–272. \doi{10.1016/j.jlumin.2018.11.024}
+Pagonis, V., Friedrich, J., Discher, M., Müller-Kirschbaum, A., Schlosser, V., Kreutzer, S.,
+Chen, R. and Schmidt, C., 2019. Excited state luminescence signals from a random distribution of
+defects: A new Monte Carlo simulation approach for feldspar. Journal of Luminescence 207, 266–272.
+\doi{10.1016/j.jlumin.2018.11.024}
 
 \strong{Further reading}
-Aitken, M.J., 1985. Thermoluminescence dating. 276-280. \doi{10.1002/gea.3340020110}
+Aitken, M.J., 1985. Thermoluminescence dating. Academic Press.
 }
 \author{
-Johannes Friedrich, University of Bayreuth (Germany)
+Johannes Friedrich, University of Bayreuth (Germany),
+Sebastian Kreutzer, IRAMAT-CRP2A, UMR 5060, CNRS-Université Bordeaux Montaigne (France)
 }
+\keyword{data}
+\keyword{models}

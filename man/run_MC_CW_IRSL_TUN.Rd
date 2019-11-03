@@ -74,7 +74,12 @@ run_MC_CW_IRSL_TUN(
   output = "signal") \%>\%
  plot_RLumCarlo(norm = TRUE, legend = TRUE)
 
+} 
+
+\section{How to cite}{
+Friedrich, J., Kreutzer, S., 2019. run_MC_CW_IRSL_TUN(): Run Monte-Carlo Simulation for CW-IRSL for Tunneling Transition. Function version 0.2.0. In: Friedrich, J., Kreutzer, S., Pagonis, V., Schmidt, C., 2019. RLumCarlo: Monte-Carlo Methods for Simulating Luminescence PhenomenaR package version 0.1.0.9000-121. 
 }
+
 \references{
 Huntley, D.J., 2006. An explanation of the power-law decay of luminescence.
 Journal of Physics: Condensed Matter, 18(4), 1359.\doi{10.1088/0953-8984/18/4/020}
@@ -85,6 +90,8 @@ A new Monte Carlo simulation approach for feldspar.
 Journal of Luminescence 207, 266–272. \doi{10.1016/j.jlumin.2018.11.024}
 
 \strong{Further reading}
+
+Aitken, M.J., 1985. Thermoluminescence dating. Academic Press.
 
 Chen, R., McKeever, S.W.S., 1997. Theory of Thermoluminescence and Related Phenomena.
 WORLD SCIENTIFIC. \doi{10.1142/2781}

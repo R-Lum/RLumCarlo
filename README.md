@@ -7,8 +7,9 @@
 
 # RLumCarlo <img width=120px src="man/figures/Logo_RLumCarlo.png" align="right" />
 
-The **R** package ‘RLumCarlo’ provides a collection of various R
-functions modelling luminescence signals using Monte Carlo methods.
+The **R** package ‘RLumCarlo’ provides a collection of R functions
+modelling luminescence production in isolators and semiconductors for
+various stimulation modes using Monte Carlo methods.
 
 [![Project Status:
 Concept](http://www.repostatus.org/badges/latest/concept.svg)](https://www.repostatus.org/#concept)
@@ -42,17 +43,17 @@ Status](https://travis-ci.com/R-Lum/RLumCarlo.svg?token=ymRxA7NeJn6EE7PixZr8&bra
 
   - ~~run\_MC\_ISO\_TUN.R~~
 
-  - run\_MC\_LM\_OSL\_DELOC.R
+  - ~~run\_MC\_LM\_OSL\_DELOC.R~~
 
-  - run\_MC\_LM\_OSL\_LOC.R
+  - ~~run\_MC\_LM\_OSL\_LOC.R~~
 
-  - run\_MC\_LM\_OSL\_TUN.R
+  - ~~run\_MC\_LM\_OSL\_TUN.R~~
 
-  - run\_MC\_TL\_DELOC.R
+  - ~~run\_MC\_TL\_DELOC.R~~
 
-  - run\_MC\_TL\_LOC.R
+  - ~~run\_MC\_TL\_LOC.R~~
 
-  - run\_MC\_TL\_TUN.R
+  - ~~run\_MC\_TL\_TUN.R~~
 
   - Documentation checked by Christoph?
 
@@ -61,7 +62,7 @@ Status](https://travis-ci.com/R-Lum/RLumCarlo.svg?token=ymRxA7NeJn6EE7PixZr8&bra
 ### Others
 
   - Check vignette and update vignette
-  - Write CRAN comments
+  - ~~Write CRAN comments~~
   - Double check ORCID for authors
   - Double check DESCIRPTION file
   - run WIN-builder tests for all releases

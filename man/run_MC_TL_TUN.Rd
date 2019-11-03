@@ -2,7 +2,7 @@
 % Please edit documentation in R/run_MC_TL_TUN.R
 \name{run_MC_TL_TUN}
 \alias{run_MC_TL_TUN}
-\title{Run Monte-Carlo simulation for TL for tunnelling transitions}
+\title{Run Monte-Carlo Simulation for TL for Tunnelling Transitions}
 \usage{
 run_MC_TL_TUN(s, E, rho, r_c = 0, times, clusters = 10, N_e = 200,
   delta.r = 0.1, method = "par", output = "signal", ...)
@@ -25,7 +25,7 @@ pairs within `r_c`` have already recombined (unitless).}
 
 \item{N_e}{\link{numeric} (\emph{with default}): The total number of electron traps available (unitless).}
 
-\item{delta.r}{\link{numeric} (\emph{with default}): The  increments of r_c (unitless).}
+\item{delta.r}{\link{numeric} (\emph{with default}): The increments of r_c (unitless).}
 
 \item{method}{\link{character} (\emph{with default}): sequential \code{'seq'} or parallel processing \code{'par'}.}
 
@@ -35,12 +35,15 @@ or \code{'remaining_e'} (the remaining charges, electrons, in the trap).}
 \item{\dots}{further arguments}
 }
 \value{
-This function returns an \code{\link{array}} with dimension length(times) x length(r) x clusters
+This function returns an object of class \code{RLumCarlo_Model_Output} which
+is a \link{list} consisting of an \link{array} with dimension length(times) x length(r) x clusters
+and a \link{numeric} time vector.
 }
 \description{
 Runs a Monte-Carlo (MC) simulation of thermo-luminesence (TL) caused by
 tunnelling (TUN) transitions. Tunneling refers to the direct recombination of
-electrons from a trap directly from the excited state of the trap, without involvement of the conduction band.
+electrons from a trap directly from the excited state of the trap, without
+involvement of the conduction band.
 }
 \details{
 \deqn{
@@ -51,37 +54,36 @@ I_{TUN}(t) = 3 * n * p(t) *  r'^{2 * e^{(-r'^3)}}
 }
 
 Where in the function: \cr
-\code{p(t)} := The experimental stimulation mode \cr
+p(t) := The experimental stimulation mode \cr
 \eqn{k_{B}} := Boltzmann constant \cr
-\code{T} := Temperature \cr
-\code{r}' := \code{r} \cr
+T := Temperature \cr
+r' := \code{r} electron-hole distance (unitless) \cr
 \eqn{\rho}' := Density of recombination centers \cr
-\code{t} := \code{Time} \cr
-\code{n} := The instantaneous number of electrons
+t := Time \cr
+n := The instantaneous number of electrons
 }
 \section{Function version}{
  0.1.0
 }
 
 \examples{
-##============================================================================##
-## Example 1: Single Plot for Monte-Carlo (MC) simulations for tunneling TL
-##============================================================================##
-\dontrun{
 run_MC_TL_TUN(
  s = 1e12,
  E = 0.9,
  rho = 1,
  r_c = 1,
- times = 0:180,
- delta.r = 1e-1
-) \%>\%
- #Plot results of the MC simulation
-plot_RLumCarlo(legend = T)
+ times = 80:120,
+ clusters = 2,
+ method = 'seq',
+ delta.r = 1e-1) \%>\%
+plot_RLumCarlo()
 
+} 
+
+\section{How to cite}{
+Friedrich, J., Kreutzer, S., 2019. run_MC_TL_TUN(): Run Monte-Carlo Simulation for TL for Tunnelling Transitions. Function version 0.1.0. In: Friedrich, J., Kreutzer, S., Pagonis, V., Schmidt, C., 2019. RLumCarlo: Monte-Carlo Methods for Simulating Luminescence PhenomenaR package version 0.1.0.9000-121. 
 }
 
-}
 \references{
 Huntley, D.J., 2006. An explanation of the power-law decay of luminescence.
 Journal of Physics: Condensed Matter, 18(4), 1359.\doi{10.1088/0953-8984/18/4/020}
@@ -102,3 +104,5 @@ Aitken, M.J., 1985. Thermoluminescence dating. Academic Press.
 Johannes Friedrich, University of Bayreuth (Germany), Sebastian Kreutzer,
 IRAMAT-CRP2A, UMR 5060, Université Bordeaux Montaigne (France)
 }
+\keyword{data}
+\keyword{models}
