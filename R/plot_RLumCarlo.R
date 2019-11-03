@@ -33,6 +33,7 @@
 #' @author Johannes Friedrich, University of Bayreuth (Germany), Sebastian Kreutzer, IRAMAT-CRP2A, UMR 5060,
 #' Université Bordeaux Montaigne (France)
 #'
+#' @keywords hplot
 #' @md
 #' @export
 plot_RLumCarlo <- function(
