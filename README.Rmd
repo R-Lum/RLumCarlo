@@ -44,8 +44,8 @@ The **R** package 'RLumCarlo' provides a collection of various R functions model
 * ~~run_MC_LM_OSL_LOC.R~~
 * ~~run_MC_LM_OSL_TUN.R~~
 * ~~run_MC_TL_DELOC.R~~
-* run_MC_TL_LOC.R
-* run_MC_TL_TUN.R
+* ~~run_MC_TL_LOC.R~~
+* ~~run_MC_TL_TUN.R~~
 
 * Documentation checked by Christoph? 
 * Documentation verified by Vasilis?

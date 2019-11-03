@@ -1,8 +1,9 @@
-#' @title Run Monte-Carlo simulation for TL for tunnelling transitions
+#' @title Run Monte-Carlo Simulation for TL for Tunnelling Transitions
 #'
 #' @description Runs a Monte-Carlo (MC) simulation of thermo-luminesence (TL) caused by
 #' tunnelling (TUN) transitions. Tunneling refers to the direct recombination of
-#' electrons from a trap directly from the excited state of the trap, without involvement of the conduction band.
+#' electrons from a trap directly from the excited state of the trap, without
+#' involvement of the conduction band.
 #'
 #' @details
 #'
@@ -14,13 +15,13 @@
 #' }
 #'
 #' Where in the function: \cr
-#' `p(t)` := The experimental stimulation mode \cr
+#' p(t) := The experimental stimulation mode \cr
 #' \eqn{k_{B}} := Boltzmann constant \cr
-#' `T` := Temperature \cr
-#' `r`' := `r` \cr
+#' T := Temperature \cr
+#' r' := `r` electron-hole distance (unitless) \cr
 #' \eqn{\rho}' := Density of recombination centers \cr
-#' `t` := `Time` \cr
-#' `n` := The instantaneous number of electrons
+#' t := Time \cr
+#' n := The instantaneous number of electrons
 #'
 #' @param E [numeric] (**required**): Thermal activation energy of the trap (eV).
 #'
@@ -39,7 +40,7 @@
 #'
 #' @param N_e [numeric] (*with default*): The total number of electron traps available (unitless).
 #'
-#' @param delta.r [numeric] (*with default*): The  increments of r_c (unitless).
+#' @param delta.r [numeric] (*with default*): The increments of r_c (unitless).
 #'
 #' @param method [character] (*with default*): sequential `'seq'` or parallel processing `'par'`.
 #'
@@ -48,7 +49,9 @@
 #'
 #' @param \dots further arguments
 #'
-#' @return This function returns an \code{\link{array}} with dimension length(times) x length(r) x clusters
+#' @return This function returns an object of class `RLumCarlo_Model_Output` which
+#' is a [list] consisting of an [array] with dimension length(times) x length(r) x clusters
+#' and a [numeric] time vector.
 #'
 #' @section Function version: 0.1.0
 #'
@@ -72,23 +75,18 @@
 #' Aitken, M.J., 1985. Thermoluminescence dating. Academic Press.
 #'
 #' @examples
-#' ##============================================================================##
-#' ## Example 1: Single Plot for Monte-Carlo (MC) simulations for tunneling TL
-#' ##============================================================================##
-#' \dontrun{
 #' run_MC_TL_TUN(
 #'  s = 1e12,
 #'  E = 0.9,
 #'  rho = 1,
 #'  r_c = 1,
-#'  times = 0:180,
-#'  delta.r = 1e-1
-#' ) %>%
-#'  #Plot results of the MC simulation
-#' plot_RLumCarlo(legend = T)
+#'  times = 80:120,
+#'  clusters = 2,
+#'  method = 'seq',
+#'  delta.r = 1e-1) %>%
+#' plot_RLumCarlo()
 #'
-#' }
-#'
+#' @keywords models data
 #' @md
 #' @export
 run_MC_TL_TUN <- function(
