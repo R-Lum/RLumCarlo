@@ -36,7 +36,7 @@ The **R** package 'RLumCarlo' provides a collection of various R functions model
 * ~~utils.R~~
 * ~~run_MC_CW_IRSL_LOC.R~~
 * ~~run_MC_CW_IRSL_TUN.R~~
-* run_MC_CW_OSL_DELOC.R
+* ~~run_MC_CW_OSL_DELOC.R~~
 * run_MC_ISO_DELOC.R
 * run_MC_ISO_LOC.R
 * run_MC_ISO_TUN.R

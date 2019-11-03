@@ -1,6 +1,8 @@
-#' @title Run Monte-Carlo simulation for CW-OSL for delocalized transition
+#' @title Run Monte-Carlo Simulation for CW-OSL for Delocalized Transition
 #'
-#' @description Runs a Monte-Carlo (MC) simulation of constant wave optically stimulated luminesence (CW-OSL) using the one trap one recombination center (OTOR) model. Delocalized refers to involvement of the conduction band.
+#' @description Runs a Monte-Carlo (MC) simulation of constant wave optically stimulated luminesence
+#' (CW-OSL) using the one trap one recombination center (OTOR) model.
+#' The term delocalized here refers to the involvement of the conduction band.
 #'
 #' @details
 #'
@@ -9,10 +11,11 @@
 #' }
 #'
 #' Where in the function: \cr
-#' `t` := `Time` \cr
-#' `p(t)` := The experimental stimulation mode \cr
-#' `n` := The Instantaneous number of electrons \cr
-#' `N` = `N_e`
+#'  t := Time \cr
+#'  p(t) := The experimental stimulation mode \cr
+#'  n := The instantaneous number of electrons \cr
+#'  N := `N_e` the available number of electron traps available \cr
+#'  R := Delocalised retrapping ratio
 #'
 #' @param A [numeric] (**required**): The optical excitation rate from trap to conduction band (s^-1).
 #'
@@ -22,78 +25,99 @@
 #'
 #' @param N_e [integer] (*with default*): The total number of electron traps available (unitless).
 #'
-#' @param n_filled [integer] (*with default*): The number of filled electron traps at the beginning of the simulation (unitless).
+#' @param n_filled [integer] (*with default*): The number of filled electron traps at the beginning
+#' of the simulation (unitless).
 #'
 #' @param R [numeric] (*with default*): The delocalized retrapping ratio (unitless).
 #'
 #' @param method [character] (*with default*): sequential `'seq'` or parallel processing `'par'`
 #'
-#' @param output [character] (*with default*): output is either the `'signal'` (the default) or `'remaining_e'` (the remaining
-#' charges, electrons, in the trap)
+#' @param output [character] (*with default*): output is either the `'signal'` (the default) or
+#' `'remaining_e'` (the remaining charges, electrons, in the trap)
 #'
 #' @param \dots further arguments
 #'
-#' @return This function returns an [array] with dimension length(times) x length(r) x clusters
+#' @return This function returns an object of class `RLumCarlo_Model_Output` which
+#' is a [list] consisting of an [array] with dimension length(times) x length(r) x clusters
+#' and a [numeric] time vector.
 #'
 #' @section Function version: 0.1.0
 #'
 #' @author Sebastian Kreutzer, IRAMAT-CRP2A, UMR 5060, CNRS - Université Bordeaux Montaigne (France)
 #'
 #' @references
-#' Pagonis, V., Friedrich, J., Discher, M., Müller-Kirschbaum, A., Schlosser, V., Kreutzer, S., Chen, R. and Schmidt, C., 2019. Excited state luminescence signals from a random distribution of defects: A new Monte Carlo simulation approach for feldspar. Journal of Luminescence 207, 266–272. \doi{10.1016/j.jlumin.2018.11.024}
+#' Pagonis, V., Friedrich, J., Discher, M., Müller-Kirschbaum, A., Schlosser, V., Kreutzer, S.,
+#' Chen, R. and Schmidt, C., 2019. Excited state luminescence signals from a random
+#' distribution of defects: A new Monte Carlo simulation approach for feldspar.
+#' Journal of Luminescence 207, 266–272. \doi{10.1016/j.jlumin.2018.11.024}
 #'
-#' Reuven, C. and S. Mckeever, 1997. Theory of thermoluminescence and related phenomena.
+#' **Further reading**
+#'
+#' Chen, R., McKeever, S.W.S., 1997. Theory of Thermoluminescence and Related Phenomena.
+#' WORLD SCIENTIFIC. \doi{10.1142/2781}
 #'
 #' @examples
-#' ##============================================================================##
-#' ## Example 1: Single Plot for Monte-Carlo (MC) simulations for delocalized CW-OSL
-#' ##============================================================================##
-#' \dontrun{
 #' run_MC_CW_OSL_DELOC(
 #'  A = 0.12,
 #'  R = 0.1,
-#'  times = 0:100
-#' ) %>%
-#'  #Plot results of the MC simulation
-#' plot_RLumCarlo(legend = T)
+#'  times = 0:10,
+#'  clusters = 10,
+#'  method = "seq") %>%
+#' plot_RLumCarlo(legend = TRUE)
 #'
-#' }
-#'
-#' @examples
-#' ##============================================================================##
-#' ## Example 2: Simulate CW-OSL DELOC with several parameter changes
-#' ##============================================================================##
+#' ##===============##
+#' ## A long example
+#' ##===============##
 #' \dontrun{
 #'
-#'# define your parameters
-#'A <- c(0.1,0.3,0.5,1)
-#'times <- seq(0,60,1)
-#'s <- 1e12
-#'E<- 1
-#'R<-c(1e-7,1e-6,0.01,0.1) # sequence of different R values
-#'clusters <- 1000 # number of Monte Carlo simulations
-#'N_e <- c(200, 500, 700, 400) # number of free electrons
-#'n_filled <- c(200, 500, 100, 70) # number of filled traps
-#'method <-"par"
-#'output <- "signal"
-#'col <- c(1,2,3,4) # ifferent colours for the individual curves
-#'plot_uncertainty <- c(T,F,T,F)  # do you want to see the uncertainty?
-#'add_TF <- c(F,rep(T, (length(R)-1)))
-# loop to plot different curves into one plot
-#'for (u in 1:length(R)){
-#'  results <-run_MC_CW_OSL_DELOC(A=A[u], times, clusters =clusters, N_e = N_e[u],
-#'                                 n_filled = n_filled[u], R=R[u], method = method, output = output)
-#'  plot_RLumCarlo(results,add=add_TF[u],legend = F, col=col[u], main=" your plot")
-#'}
-# add your legend with your parameters
-#'legend("topright",ncol=4,cex=0.55,title = "parameters" ,legend=c(paste0("A = ", A),
-#'                                                                 paste0("n_filled = ", n_filled),
-#'                                                                 paste0("N_e = ", N_e),
-#'                                                                 paste0("R = ", R)),  text.col=col)
+#' A <- c(0.1,0.3,0.5,1)
+#' times <- seq(0, 60, 1)
+#' s <- 1e12
+#' E <- 1
+#' R <- c(1e-7, 1e-6, 0.01, 0.1) # sequence of different R values
+#' clusters <- 1000 # number of Monte Carlo simulations
+#' N_e <- c(200, 500, 700, 400) # number of free electrons
+#' n_filled <- c(200, 500, 100, 70) # number of filled traps
+#' method <-"par"
+#' output <- "signal"
+#' col <- c(1,2,3,4) # ifferent colours for the individual curves
+#' plot_uncertainty <- c(TRUE,FALSE,TRUE,FALSE)  # do you want to see the uncertainty?
+#' add_TF <- c(FALSE,rep(TRUE, (length(R)-1)))
 #'
+#' #loop to plot different curves into one plotfor
+#' for (u in 1:length(R)){
+#'  results <- run_MC_CW_OSL_DELOC(
+#'   A = A[u],
+#'   times,
+#'   clusters = clusters,
+#'   N_e = N_e[u],
+#'   n_filled = n_filled[u],
+#'   R = R[u],
+#'   method = method,
+#'   output = output)
+#'
+#' plot_RLumCarlo(
+#' results,
+#'  add = add_TF[u],
+#'  legend = FALSE,
+#'  col = col[u],
+#'  main = "Delocalised Transition")
 #' }
+#' # add your legend with your parameters
+#' legend("topright",
+#'   ncol = 4,
+#'   cex = 0.55,
+#'   title = "parameters",
+#'   legend=c(
+#'    paste0("A = ", A),
+#'    paste0("n_filled = ", n_filled),
+#'    paste0("N_e = ", N_e),
+#'    paste0("R = ", R)),
+#'    bty = "n",
+#'    text.col = col)
+#'}
 #'
-#'
+#' @keywords models data
 #' @md
 #' @export
 run_MC_CW_OSL_DELOC <- function(
@@ -151,4 +175,3 @@ run_MC_CW_OSL_DELOC <- function(
 # Return --------------------------------------------------------------------------------------
 .return_ModelOutput(signal = temp, time = times)
 }
-
