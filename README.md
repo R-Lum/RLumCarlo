@@ -34,13 +34,13 @@ Status](https://travis-ci.com/R-Lum/RLumCarlo.svg?token=ymRxA7NeJn6EE7PixZr8&bra
 
   - ~~run\_MC\_CW\_IRSL\_TUN.R~~
 
-  - run\_MC\_CW\_OSL\_DELOC.R
+  - ~~run\_MC\_CW\_OSL\_DELOC.R~~
 
-  - run\_MC\_ISO\_DELOC.R
+  - ~~run\_MC\_ISO\_DELOC.R~~
 
-  - run\_MC\_ISO\_LOC.R
+  - ~~run\_MC\_ISO\_LOC.R~~
 
-  - run\_MC\_ISO\_TUN.R
+  - ~~run\_MC\_ISO\_TUN.R~~
 
   - run\_MC\_LM\_OSL\_DELOC.R
 
