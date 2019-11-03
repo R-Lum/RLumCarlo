@@ -19,7 +19,6 @@
 #'
 #' Where in the function: \cr
 #' `p(t)` := The experimental stimulation mode \cr
-#' `e`:= Exponentional function \cr
 #' \eqn{k_{B}} := Boltzmann constant \cr
 #' `r` := `r` \cr
 #' \eqn{\rho} := `rho` \cr
@@ -55,7 +54,9 @@
 #'
 #' @param \dots further arguments
 #'
-#' @return This function returns an object of class `RLumCarlo_Model_Output`
+#' @return This function returns an object of class `RLumCarlo_Model_Output` which
+#' is a [list] consisting of an [array] with dimension length(times) x length(r) x clusters
+#' and a [numeric] time vector.
 #'
 #' @section Function version: 0.1.0
 #'
@@ -92,6 +93,7 @@
 #'  method = "seq") %>%
 #'  plot_RLumCarlo(legend = TRUE)
 #'
+#' @keywords models data
 #' @md
 #' @export
 run_MC_ISO_TUN <- function(
