@@ -53,7 +53,7 @@ The **R** package 'RLumCarlo' provides a collection of various R functions model
 ### Others
 
 * Check vignette and update vignette
-* Write CRAN comments
+* ~~Write CRAN comments~~
 * Double check ORCID for authors
 * Double check DESCIRPTION file
 * run WIN-builder tests for all releases
