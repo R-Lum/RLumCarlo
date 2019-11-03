@@ -65,9 +65,19 @@ Status](https://travis-ci.com/R-Lum/RLumCarlo.svg?token=ymRxA7NeJn6EE7PixZr8&bra
   - ~~Write CRAN comments~~
   - Double check ORCID for authors
   - Double check DESCIRPTION file
-  - run WIN-builder tests for all releases
-  - Are all CI tests green
   - Set proper version number
+
+### Last steps
+
+  - Delete this list but follow-up the things below
+  - run WIN-builder tests for all releases
+  - run as-CRAN
+  - Are all CI tests green
+  - Set up webpage for RLumCarlo
+  - Make sure that the repository is public before the CRAN submission,
+    otherwise the links will not work
+  - CRAN submission
+  - Add the usual GitHub community things
 
 ## Installation
 
