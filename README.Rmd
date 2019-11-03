@@ -17,7 +17,7 @@ library(RLumCarlo)
 
 # RLumCarlo <img width=120px src="man/figures/Logo_RLumCarlo.png" align="right" />
 
-The **R** package 'RLumCarlo' provides a collection of various R functions modelling luminescence signals using Monte Carlo methods.
+The **R** package 'RLumCarlo' provides a collection of R functions modelling luminescence production in isolators and semiconductors for various stimulation modes using Monte Carlo methods.
 
 [![Project Status: Concept](http://www.repostatus.org/badges/latest/concept.svg)](https://www.repostatus.org/#concept)
 [![CRAN](http://www.r-pkg.org/badges/version/RLumCarlo)](https://cran.r-project.org/package=RLumCarlo)
@@ -59,7 +59,6 @@ The **R** package 'RLumCarlo' provides a collection of various R functions model
 * run WIN-builder tests for all releases
 * Are all CI tests green
 * Set proper version number
-
 
 ## Installation
 
