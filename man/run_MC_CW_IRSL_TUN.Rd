@@ -2,23 +2,35 @@
 % Please edit documentation in R/run_MC_CW_IRSL_TUN.R
 \name{run_MC_CW_IRSL_TUN}
 \alias{run_MC_CW_IRSL_TUN}
-\title{Run Monte-Carlo Simulation for CW-IRSL for Tunneling Transition}
+\title{Run Monte-Carlo Simulation for CW-IRSL (tunneling transitions)}
 \usage{
-run_MC_CW_IRSL_TUN(A, rho, times, clusters = 10, r_c = 0,
-  delta.r = 0.1, N_e = 200, method = "seq", output = "signal", ...)
+run_MC_CW_IRSL_TUN(
+  A,
+  rho,
+  times,
+  clusters = 10,
+  r_c = 0,
+  delta.r = 0.1,
+  N_e = 200,
+  method = "seq",
+  output = "signal",
+  ...
+)
 }
 \arguments{
-\item{A}{\link{numeric} (\strong{required}): The optical excitation rate from ground state of trap to excited state of trap (s^-1).}
+\item{A}{\link{numeric} (\strong{required}): The optical excitation rate from ground state of trap to
+excited state of trap (s^-1).}
 
-\item{rho}{\link{numeric} (\strong{required}): The density of recombination centers (defined as rho' in Huntley 2006) (unitless).}
+\item{rho}{\link{numeric} (\strong{required}): The density of recombination centers
+(defined as \eqn{\rho}' in Huntley 2006) (unitless).}
 
 \item{times}{\link{numeric} (\emph{with default}): The sequence of time steps within the simulation (s).}
 
 \item{clusters}{\link{numeric} (\emph{with default}): The number of MC runs (unitless).}
 
-\item{r_c}{\link{numeric} (\emph{with default}): Critical distance (>0) that is to be inserted if the
-sample has 1 been thermally and/or optically pretreated, so that the electron-hole pairs
-within r_c have already recombined}
+\item{r_c}{\link{numeric} (\emph{with default}): Critical distance (>0) that must be provided if the
+sample has 1 been thermally and/or optically pretreated. This parameter expresses the fact
+that electron-hole pairs within a critical radius \code{r_c} have already been recombined.}
 
 \item{delta.r}{\link{numeric} (\emph{with default}): Increments of the unitless distance parameter r}
 
@@ -37,22 +49,20 @@ is a \link{list} consisting of an \link{array} with dimension length(times) x le
 and a \link{numeric} time vector.
 }
 \description{
-Runs a Monte-Carlo (MC) simulation of constant wave infrared stimulated luminesence
-(CW-IRSL) using the model for tunneling transiation.
-Tunneling refers to the direct movement of electrons from the excited state of a trap directly
-to the recombination center.
+Runs a Monte-Carlo (MC) simulation of continuous wave infrared stimulated luminesence
+(CW-IRSL) using the model for tunneling transiation. Tunneling refers to quantum mechanical
+tunneling processes from the excited state of the trapped charge,
+into a state of the recombination center.
 }
 \details{
-\deqn{
-p(t) = A * e^{(-r' / \rho^{(-1 / 3)})}
-}
+\strong{The model}
 
 \deqn{
-I_{TUN}(t) = 3 * n * p(t) *  (r')^2 * e^{(-r'^3)}
+I_{TUN}(r',t) = -dn/dt = A * exp(-(\rho')^(-1/3)*r')* n (r',t)
 }
 
 Where in the function: \cr
-p(t) := The experimental stimulation mode \cr
+A := Excitation rate from ground state of the trap to the excited state (1/s) \cr
 r' := the unitless tunneling radius \cr
 \eqn{\rho}' := \code{rho} the unitless density of recombination centres \cr
 t := time (s) \cr
@@ -68,7 +78,7 @@ run_MC_CW_IRSL_TUN(
  rho = 1e-4,
  times = 0:10,
  r_c = 0.05,
- delta.r = 1e-2,
+ delta.r = 0.1,
  method = "seq",
  clusters = 2,
   output = "signal") \%>\%
@@ -77,12 +87,12 @@ run_MC_CW_IRSL_TUN(
 } 
 
 \section{How to cite}{
-Friedrich, J., Kreutzer, S., 2019. run_MC_CW_IRSL_TUN(): Run Monte-Carlo Simulation for CW-IRSL for Tunneling Transition. Function version 0.2.0. In: Friedrich, J., Kreutzer, S., Pagonis, V., Schmidt, C., 2019. RLumCarlo: Monte-Carlo Methods for Simulating Luminescence PhenomenaR package version 0.1.0.9000-122. 
+Friedrich, J., Kreutzer, S., 2019. run_MC_CW_IRSL_TUN(): Run Monte-Carlo Simulation for CW-IRSL (tunneling transitions). Function version 0.2.0. In: Friedrich, J., Kreutzer, S., Pagonis, V., Schmidt, C., 2019. RLumCarlo: Monte-Carlo Methods for Simulating Luminescence PhenomenaR package version 0.1.0.9000-127. 
 }
 
 \references{
 Huntley, D.J., 2006. An explanation of the power-law decay of luminescence.
-Journal of Physics: Condensed Matter, 18(4), 1359.\doi{10.1088/0953-8984/18/4/020}
+Journal of Physics: Condensed Matter, 18(4), 1359. \doi{10.1088/0953-8984/18/4/020}
 
 Pagonis, V., Friedrich, J., Discher, M., Müller-Kirschbaum, A., Schlosser, V., Kreutzer, S.,
 Chen, R. and Schmidt, C., 2019. Excited state luminescence signals from a random distribution of defects:
@@ -92,6 +102,10 @@ Journal of Luminescence 207, 266–272. \doi{10.1016/j.jlumin.2018.11.024}
 \strong{Further reading}
 
 Aitken, M.J., 1985. Thermoluminescence dating. Academic Press.
+
+Jain, M., Guralnik, B., Andersen, M.T., 2012. Stimulated luminescence emission from
+localized recombination in randomly distributed defects.
+J. Phys.: Condens. Matter 24, 385402. \doi{10.1088/0953-8984/24/38/385402}
 
 Chen, R., McKeever, S.W.S., 1997. Theory of Thermoluminescence and Related Phenomena.
 WORLD SCIENTIFIC. \doi{10.1142/2781}

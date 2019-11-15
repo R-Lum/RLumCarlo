@@ -1,31 +1,37 @@
-#' @title Run Monte-Carlo Simulation for LM-OSL for Localized Transition
+#' @title Run Monte-Carlo Simulation for LM-OSL (localized transitions)
 #'
 #' @description Runs a Monte-Carlo (MC) simulation of linearly modulated optically stimulated
-#' luminesence (LM-OSL) using the generalized one trap (GOT) model. Localized refers to excitation
-#' of an electron before it recombines, but without the involvement of the conduction band.
+#' luminesence (LM-OSL) using the generalized one trap (GOT) model. Localized transitions refer to
+#' transitions which do not involve the conduction or valence band. These transitions take place
+#' between the ground state and an excited state of the trapped charge, and also involve a state of the
+#' recombination center.
 #'
 #' @details
 #'
+#' **The model**
+#'
 #' \deqn{
-#' I_{LOC}(t) = -dn/dt = p(t) * (n^2 / (r + n))
+#' I_{LOC}(t) = -dn/dt = (A * t/P) * (n^2 / (r + n))
 #' }
 #'
 #' Where in the function: \cr
-#'  t :=  Time (s) \cr
-#'  p(t) := The experimental stimulation mode \cr
-#'  n := The Instantaneous number of electrons \cr
-#'  r := localized retrapping ratio (unitless)
+#'  A := optical excitation rate from the trap to the conduction band \cr
+#'  P := total excitation time \cr
+#'  t := Time (s) \cr
+#'  n := `n_filled` The instantaneous number of electrons \cr
+#'  r := The retrapping ratio for localized transitions \cr
+#'  P := the total stimulation period (s)
 #'
-#' @param A [numeric] (**required**): The optical excitation rate from trap to conduction band (s^-1).
+#' @param A [numeric] (**required**): The optical excitation rate from trap to conduction band (s^-1)
 #'
-#' @param times [numeric] (*with default*): The sequence of temperature steps within the simulation (s).
+#' @param times [numeric] (*with default*): The sequence of time steps within the simulation (s)
 #'
-#' @param clusters [numeric] (*with default*): The number of MC runs (unitless).
+#' @param clusters [numeric] (*with default*): The number of MC runs (unitless)
 #'
 #' @param n_filled [integer] (*with default*): The number of filled electron traps at the
-#' beginning of the simulation (unitless).
+#' beginning of the simulation (unitless)
 #'
-#' @param r [numeric] (*with default*): The localized retrapping ratio (unitless)
+#' @param r [numeric] (*with default*): The retrapping ratio for localized transitions
 #'
 #' @param method [character] (*with default*): sequential `'seq'` or parallel processing `'par'`
 #'
@@ -35,7 +41,7 @@
 #' @param \dots further arguments
 #'
 #' @return This function returns an object of class `RLumCarlo_Model_Output` which
-#' is a [list] consisting of an [array] with dimension length(times) x length(r) x clusters
+#' is a [list] consisting of an [array] with dimension length(times) x clusters
 #' and a [numeric] time vector.
 #'
 #' @section Function version: 0.1.0
@@ -49,6 +55,7 @@
 #' Journal of Luminescence 207, 266–272. \doi{10.1016/j.jlumin.2018.11.024}
 #'
 #' @examples
+#' ## short example
 #' run_MC_TL_LOC(
 #'  s = 1e8,
 #'  E = 0.5,
@@ -59,6 +66,20 @@
 #'  method = "seq",
 #'  output = "signal") %>%
 #' plot_RLumCarlo(legend = TRUE)
+#'
+#' \dontrun{
+#' ## the long (meaningful) example
+#' run_MC_TL_LOC(
+#'  s = 1e8,
+#'  E = 0.6,
+#'  times = 0:100,
+#'  clusters = 100,
+#'  n_filled = 100,
+#'  r = 1e-7,
+#'  method = "par",
+#'  output = "signal") %>%
+#' plot_RLumCarlo(legend = TRUE)
+#' }
 #'
 #' @keywords models data
 #' @md

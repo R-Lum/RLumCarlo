@@ -1,4 +1,4 @@
-#' @title Run Monte-Carlo Simulation for LM-OSL for Delocalized Transition
+#' @title Run Monte-Carlo Simulation for LM-OSL (delocalized transitions)
 #'
 #' @description Runs a Monte-Carlo (MC) simulation of linearly modulated optically stimulated
 #' luminesence (LM-OSL) using the one trap one recombination center (OTOR) model.
@@ -6,29 +6,32 @@
 #'
 #' @details
 #'
+#' **The model**
+#'
 #' \deqn{
-#' I_{DELOC}(t) = -dn/dt = p(t) * (n^2 / (N*R + n(1-R)))
+#' I_{DELOC}(t) = -dn/dt = A * (n^2 / (N*R + n(1-R)))
 #' }
 #'
 #' Where in the function: \cr
 #'  t := Time (s) \cr
-#'  p(t) := The experimental stimulation mode \cr
-#'  n := The Instantaneous number of electrons \cr
-#'  R := delocalized retrapping ratio (unitless) \cr
-#'  N := `N_e` total number of electron traps available (unitless)
+#'  A := The optical excitation rate from trap to conduction band \cr
+#'  n := `n_filled` The Instantaneous number of electrons \cr
+#'  R :=  The retrapping ratio for delocalized transitions \cr
+#'  N := `N_e` total number of electron traps available (unitless) \cr
+#'  P := total stimulation time"
 #'
-#' @param A [numeric] (**required**): The optical excitation rate from trap to conduction band (s^-1).
+#' @param A [numeric] (**required**): The optical excitation rate from trap to conduction band (s^-1)
 #'
-#' @param times [numeric] (*with default*): The sequence of temperature steps within the simulation (s).
+#' @param times [numeric] (*with default*): The sequence of temperature steps within the simulation (s)
 #'
-#' @param clusters [numeric] (*with default*): The number of MC runs (unitless).
+#' @param clusters [numeric] (*with default*): The number of MC runs (unitless)
 #'
-#' @param N_e [integer] (*with default*): The total number of electron traps available (unitless).
+#' @param N_e [integer] (*with default*): The total number of electron traps available (unitless)
 #'
 #' @param n_filled [integer] (*with default*): The number of filled electron traps at the beginning
-#' of the simulation (unitless).
+#' of the simulation (unitless)
 #'
-#' @param R [numeric] (*with default*): The delocalized retrapping ratio (unitless).
+#' @param R [numeric] (*with default*): The retrapping ratio for delocalized transitions
 #'
 #' @param method [character] (*with default*): sequential `'seq'` or parallel processing `'par'`
 #'
@@ -38,7 +41,7 @@
 #' @param \dots further arguments
 #'
 #' @return This function returns an object of class `RLumCarlo_Model_Output` which
-#' is a [list] consisting of an [array] with dimension length(times) x length(r) x clusters
+#' is a [list] consisting of an [array] with dimension length(times) x clusters
 #' and a [numeric] time vector.
 #'
 #' @section Function version: 0.1.0

@@ -2,22 +2,30 @@
 % Please edit documentation in R/run_MC_LM_OSL_LOC.R
 \name{run_MC_LM_OSL_LOC}
 \alias{run_MC_LM_OSL_LOC}
-\title{Run Monte-Carlo Simulation for LM-OSL for Localized Transition}
+\title{Run Monte-Carlo Simulation for LM-OSL (localized transitions)}
 \usage{
-run_MC_LM_OSL_LOC(A, times, clusters = 10, n_filled = 100, r,
-  method = "par", output = "signal", ...)
+run_MC_LM_OSL_LOC(
+  A,
+  times,
+  clusters = 10,
+  n_filled = 100,
+  r,
+  method = "par",
+  output = "signal",
+  ...
+)
 }
 \arguments{
-\item{A}{\link{numeric} (\strong{required}): The optical excitation rate from trap to conduction band (s^-1).}
+\item{A}{\link{numeric} (\strong{required}): The optical excitation rate from trap to conduction band (s^-1)}
 
-\item{times}{\link{numeric} (\emph{with default}): The sequence of temperature steps within the simulation (s).}
+\item{times}{\link{numeric} (\emph{with default}): The sequence of time steps within the simulation (s)}
 
-\item{clusters}{\link{numeric} (\emph{with default}): The number of MC runs (unitless).}
+\item{clusters}{\link{numeric} (\emph{with default}): The number of MC runs (unitless)}
 
 \item{n_filled}{\link{integer} (\emph{with default}): The number of filled electron traps at the
-beginning of the simulation (unitless).}
+beginning of the simulation (unitless)}
 
-\item{r}{\link{numeric} (\emph{with default}): The localized retrapping ratio (unitless)}
+\item{r}{\link{numeric} (\emph{with default}): The retrapping ratio for localized transitions}
 
 \item{method}{\link{character} (\emph{with default}): sequential \code{'seq'} or parallel processing \code{'par'}}
 
@@ -28,30 +36,37 @@ or \code{'remaining_e'} (the remaining charges, electrons, in the trap)}
 }
 \value{
 This function returns an object of class \code{RLumCarlo_Model_Output} which
-is a \link{list} consisting of an \link{array} with dimension length(times) x length(r) x clusters
+is a \link{list} consisting of an \link{array} with dimension length(times) x clusters
 and a \link{numeric} time vector.
 }
 \description{
 Runs a Monte-Carlo (MC) simulation of linearly modulated optically stimulated
-luminesence (LM-OSL) using the generalized one trap (GOT) model. Localized refers to excitation
-of an electron before it recombines, but without the involvement of the conduction band.
+luminesence (LM-OSL) using the generalized one trap (GOT) model. Localized transitions refer to
+transitions which do not involve the conduction or valence band. These transitions take place
+between the ground state and an excited state of the trapped charge, and also involve a state of the
+recombination center.
 }
 \details{
+\strong{The model}
+
 \deqn{
-I_{LOC}(t) = -dn/dt = p(t) * (n^2 / (r + n))
+I_{LOC}(t) = -dn/dt = (A * t/P) * (n^2 / (r + n))
 }
 
 Where in the function: \cr
-t :=  Time (s) \cr
-p(t) := The experimental stimulation mode \cr
-n := The Instantaneous number of electrons \cr
-r := localized retrapping ratio (unitless)
+A := optical excitation rate from the trap to the conduction band \cr
+P := total excitation time \cr
+t := Time (s) \cr
+n := \code{n_filled} The instantaneous number of electrons \cr
+r := The retrapping ratio for localized transitions \cr
+P := the total stimulation period (s)
 }
 \section{Function version}{
  0.1.0
 }
 
 \examples{
+## short example
 run_MC_TL_LOC(
  s = 1e8,
  E = 0.5,
@@ -63,10 +78,24 @@ run_MC_TL_LOC(
  output = "signal") \%>\%
 plot_RLumCarlo(legend = TRUE)
 
+\dontrun{
+## the long (meaningful) example
+run_MC_TL_LOC(
+ s = 1e8,
+ E = 0.6,
+ times = 0:100,
+ clusters = 100,
+ n_filled = 100,
+ r = 1e-7,
+ method = "par",
+ output = "signal") %>%
+plot_RLumCarlo(legend = TRUE)
+}
+
 } 
 
 \section{How to cite}{
-Kreutzer, S., 2019. run_MC_LM_OSL_LOC(): Run Monte-Carlo Simulation for LM-OSL for Localized Transition. Function version 0.1.0. In: Friedrich, J., Kreutzer, S., Pagonis, V., Schmidt, C., 2019. RLumCarlo: Monte-Carlo Methods for Simulating Luminescence PhenomenaR package version 0.1.0.9000-122. 
+Kreutzer, S., 2019. run_MC_LM_OSL_LOC(): Run Monte-Carlo Simulation for LM-OSL (localized transitions). Function version 0.1.0. In: Friedrich, J., Kreutzer, S., Pagonis, V., Schmidt, C., 2019. RLumCarlo: Monte-Carlo Methods for Simulating Luminescence PhenomenaR package version 0.1.0.9000-127. 
 }
 
 \references{

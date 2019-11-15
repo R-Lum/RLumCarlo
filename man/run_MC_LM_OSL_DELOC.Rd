@@ -2,24 +2,33 @@
 % Please edit documentation in R/run_MC_LM_OSL_DELOC.R
 \name{run_MC_LM_OSL_DELOC}
 \alias{run_MC_LM_OSL_DELOC}
-\title{Run Monte-Carlo Simulation for LM-OSL for Delocalized Transition}
+\title{Run Monte-Carlo Simulation for LM-OSL (delocalized transitions)}
 \usage{
-run_MC_LM_OSL_DELOC(A, times, clusters = 10, N_e = 200,
-  n_filled = N_e, R, method = "par", output = "signal", ...)
+run_MC_LM_OSL_DELOC(
+  A,
+  times,
+  clusters = 10,
+  N_e = 200,
+  n_filled = N_e,
+  R,
+  method = "par",
+  output = "signal",
+  ...
+)
 }
 \arguments{
-\item{A}{\link{numeric} (\strong{required}): The optical excitation rate from trap to conduction band (s^-1).}
+\item{A}{\link{numeric} (\strong{required}): The optical excitation rate from trap to conduction band (s^-1)}
 
-\item{times}{\link{numeric} (\emph{with default}): The sequence of temperature steps within the simulation (s).}
+\item{times}{\link{numeric} (\emph{with default}): The sequence of temperature steps within the simulation (s)}
 
-\item{clusters}{\link{numeric} (\emph{with default}): The number of MC runs (unitless).}
+\item{clusters}{\link{numeric} (\emph{with default}): The number of MC runs (unitless)}
 
-\item{N_e}{\link{integer} (\emph{with default}): The total number of electron traps available (unitless).}
+\item{N_e}{\link{integer} (\emph{with default}): The total number of electron traps available (unitless)}
 
 \item{n_filled}{\link{integer} (\emph{with default}): The number of filled electron traps at the beginning
-of the simulation (unitless).}
+of the simulation (unitless)}
 
-\item{R}{\link{numeric} (\emph{with default}): The delocalized retrapping ratio (unitless).}
+\item{R}{\link{numeric} (\emph{with default}): The retrapping ratio for delocalized transitions}
 
 \item{method}{\link{character} (\emph{with default}): sequential \code{'seq'} or parallel processing \code{'par'}}
 
@@ -30,7 +39,7 @@ or \code{'remaining_e'} (the remaining charges, electrons, in the trap)}
 }
 \value{
 This function returns an object of class \code{RLumCarlo_Model_Output} which
-is a \link{list} consisting of an \link{array} with dimension length(times) x length(r) x clusters
+is a \link{list} consisting of an \link{array} with dimension length(times) x clusters
 and a \link{numeric} time vector.
 }
 \description{
@@ -39,16 +48,19 @@ luminesence (LM-OSL) using the one trap one recombination center (OTOR) model.
 Delocalized refers to involvement of the conduction band.
 }
 \details{
+\strong{The model}
+
 \deqn{
-I_{DELOC}(t) = -dn/dt = p(t) * (n^2 / (N*R + n(1-R)))
+I_{DELOC}(t) = -dn/dt = A * (n^2 / (N*R + n(1-R)))
 }
 
 Where in the function: \cr
 t := Time (s) \cr
-p(t) := The experimental stimulation mode \cr
-n := The Instantaneous number of electrons \cr
-R := delocalized retrapping ratio (unitless) \cr
-N := \code{N_e} total number of electron traps available (unitless)
+A := The optical excitation rate from trap to conduction band \cr
+n := \code{n_filled} The Instantaneous number of electrons \cr
+R :=  The retrapping ratio for delocalized transitions \cr
+N := \code{N_e} total number of electron traps available (unitless) \cr
+P := total stimulation time"
 }
 \section{Function version}{
  0.1.0
@@ -66,7 +78,7 @@ plot_RLumCarlo(legend = TRUE)
 } 
 
 \section{How to cite}{
-Kreutzer, S., 2019. run_MC_LM_OSL_DELOC(): Run Monte-Carlo Simulation for LM-OSL for Delocalized Transition. Function version 0.1.0. In: Friedrich, J., Kreutzer, S., Pagonis, V., Schmidt, C., 2019. RLumCarlo: Monte-Carlo Methods for Simulating Luminescence PhenomenaR package version 0.1.0.9000-122. 
+Kreutzer, S., 2019. run_MC_LM_OSL_DELOC(): Run Monte-Carlo Simulation for LM-OSL (delocalized transitions). Function version 0.1.0. In: Friedrich, J., Kreutzer, S., Pagonis, V., Schmidt, C., 2019. RLumCarlo: Monte-Carlo Methods for Simulating Luminescence PhenomenaR package version 0.1.0.9000-127. 
 }
 
 \references{

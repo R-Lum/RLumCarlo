@@ -1,8 +1,8 @@
 Package: RLumCarlo
 Type: Package
 Title: Monte-Carlo Methods for Simulating Luminescence Phenomena
-Version: 0.1.0.9000-122
-Date: 2019-11-04
+Version: 0.1.0.9000-127
+Date: 2019-11-15
 Author: Johannes Friedrich [aut, trl] (<https://orcid.org/0000-0002-0805-9547>),
     Sebastian Kreutzer [aut, trl, cre] (<https://orcid.org/0000-0002-0734-2199>),
     Vasilis Pagonis [aut] (<https://orcid.org/0000-0002-4852-9312>),
@@ -21,7 +21,7 @@ Authors@R: c(
     person("Christian", "Laag", role = c("ctb"), comment = c(ORCID = "0000-0002-6012-1029"))
     )
 Maintainer: Sebastian Kreutzer <sebastian.kreutzer@u-bordeaux-montaigne.fr>
-Description: A collection of functions to simulate luminescence production in minerals using Monte-Carlo methods. 
+Description: A collection of functions to simulate luminescence production in dosimetric materials using Monte-Carlo methods. 
     Implemented are models for delocalised, localised and tunnelling transitions. 
     Supported stimulation methods are TL, CW-OSL, LM-OSL, LM-IRSL, and ITL (ISO-TL).
 Contact: Package Developer Team <sebastian.kreutzer@u-bordeaux-montaigne.fr>
@@ -48,4 +48,4 @@ Suggests:
   testthat (>= 2.0.0)
 Encoding: UTF-8
 VignetteBuilder: R.rsp
-RoxygenNote: 6.1.1
+RoxygenNote: 7.0.0

@@ -2,29 +2,38 @@
 % Please edit documentation in R/run_MC_LM_OSL_TUN.R
 \name{run_MC_LM_OSL_TUN}
 \alias{run_MC_LM_OSL_TUN}
-\title{Run Monte-Carlo Simulation for LM-OSL for Tunneling Transition}
+\title{Run Monte-Carlo Simulation for LM-OSL (tunneling transitions)}
 \usage{
-run_MC_LM_OSL_TUN(A, rho, times, clusters = 10, r_c = 0,
-  delta.r = 0.1, N_e = 200, method = "par", output = "signal", ...)
+run_MC_LM_OSL_TUN(
+  A,
+  rho,
+  times,
+  clusters = 10,
+  r_c = 0,
+  delta.r = 0.1,
+  N_e = 200,
+  method = "par",
+  output = "signal",
+  ...
+)
 }
 \arguments{
-\item{A}{\link{numeric} (\strong{required}): The optical excitation rate from ground state of trap to
-excited state of trap (s^-1).}
+\item{A}{\link{numeric} (\strong{required}): The effective optical excitation rate for the tunneling process}
 
-\item{rho}{\link{numeric} (\strong{required}): The density of recombination centers (defined as rho'
-in Huntley 2006) (unitless).}
+\item{rho}{\link{numeric} (\strong{required}): The dimensionless density of recombination centers
+(defined as \eqn{\rho}' in Huntley 2006) (unitless)}
 
-\item{times}{\link{vector} (\emph{with default}): The sequence of temperature steps within the simulation (s).}
+\item{times}{\link{numeric} (\emph{with default}): The sequence of time steps within the simulation (s)}
 
-\item{clusters}{\link{numeric} (\emph{with default}): The number of clusters.}
+\item{clusters}{\link{numeric} (\emph{with default}): The number of MC runs}
 
-\item{r_c}{\link{numeric} (\emph{with default}): Critical distance (>0) that is to be inserted if the
-sample has 1 been thermally and/or optically pretreated, so that the electron-hole pairs
-within \code{r_c} have already recombined}
+\item{r_c}{\link{numeric} (\emph{with default}): Critical distance (>0) that is to be used if the
+sample has 1 been thermally and/or optically pretreated. This parameter expresses the fact
+that electron-hole pairs within a critical radius \code{r_c} have already been recombined.}
 
-\item{delta.r}{\link{numeric} (\emph{with default}): Increments of r_c (unitless).}
+\item{delta.r}{\link{numeric} (\emph{with default}): Increments of r_c (unitless)}
 
-\item{N_e}{\link{numeric} (\emph{width default}): The total number of electron traps available (unitless).}
+\item{N_e}{\link{numeric} (\emph{width default}): The total number of electron traps available (unitless)}
 
 \item{method}{\link{character} (\emph{with default}): sequential \code{'seq'} or parallel processing \code{'par'}}
 
@@ -40,21 +49,20 @@ and a \link{numeric} time vector.
 }
 \description{
 Runs a Monte-Carlo (MC) simulation of linearly modulated optically stimulated
-luminesence (LM-OSL) using the tunneling (TUN) model. Tunneling refers to the direct movement
-of electrons from a trap directly to the recombination center
+luminesence (LM-OSL) using the tunneling (TUN) model. Tunneling refers to quantum mechanical
+tunneling processes from the excited state of the trapped charge,
+into a state of the recombination center.
 }
 \details{
-\deqn{
-p(t) = A * (t / P) * e^{(-r' / \rho'^{(-1 / 3)})}
-}
+\strong{The model}
 
 \deqn{
-I_{TUN}(t) = 3 * n * p(t) *  (r')^2 * e^{(-r'^3)}
+I_{TUN}(r',t) = -dn/dt = (A * t/P) * exp(-(\rho')^(-1/3) * r') * n(r',t)
 }
 
 Where in the function: \cr
-p(t) := The experimental stimulation mode \cr
-t := \code{Time} \cr
+A := the effective optical excitation rate for the tunneling process \cr
+t := Time \cr
 P := Maximum stimulation time \cr
 r' := \code{r} \cr
 \eqn{\rho}' := rho  \cr
@@ -65,6 +73,7 @@ n := The instantaneous number of electrons
 }
 
 \examples{
+##the short example
 run_MC_LM_OSL_TUN(
  A = 1,
  rho = 1e-7,
@@ -77,10 +86,25 @@ run_MC_LM_OSL_TUN(
  output = "signal") \%>\%
 plot_RLumCarlo(norm = TRUE)
 
+\dontrun{
+## the long (meaningful) example
+run_MC_LM_OSL_TUN(
+ A = 1,
+ rho = 1e-3,
+ times = 0:1000,
+ clusters = 30,
+ N_e = 100,
+ r_c = 0.1,
+ delta.r = 1e-1,
+ method = "par",
+ output = "signal") %>%
+plot_RLumCarlo(norm = TRUE)
+}
+
 } 
 
 \section{How to cite}{
-Friedrich, J., Kreutzer, S., 2019. run_MC_LM_OSL_TUN(): Run Monte-Carlo Simulation for LM-OSL for Tunneling Transition. Function version 0.1.0. In: Friedrich, J., Kreutzer, S., Pagonis, V., Schmidt, C., 2019. RLumCarlo: Monte-Carlo Methods for Simulating Luminescence PhenomenaR package version 0.1.0.9000-122. 
+Friedrich, J., Kreutzer, S., 2019. run_MC_LM_OSL_TUN(): Run Monte-Carlo Simulation for LM-OSL (tunneling transitions). Function version 0.1.0. In: Friedrich, J., Kreutzer, S., Pagonis, V., Schmidt, C., 2019. RLumCarlo: Monte-Carlo Methods for Simulating Luminescence PhenomenaR package version 0.1.0.9000-127. 
 }
 
 \references{
@@ -98,6 +122,10 @@ defects: A new Monte Carlo simulation approach for feldspar. Journal of Luminesc
 
 \strong{Further reading}
 Aitken, M.J., 1985. Thermoluminescence dating. Academic Press.
+
+Jain, M., Guralnik, B., Andersen, M.T., 2012. Stimulated luminescence emission from
+localized recombination in randomly distributed defects.
+J. Phys.: Condens. Matter 24, 385402. \doi{10.1088/0953-8984/24/38/385402}
 }
 \author{
 Johannes Friedrich, University of Bayreuth (Germany),

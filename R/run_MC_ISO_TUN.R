@@ -1,40 +1,36 @@
-#' @title Monte-Carlo Simulation for Isothermal-TL for Tunneling Transition
+#' @title Monte-Carlo Simulation for Isothermal-TL (tunneling transitions)
 #'
 #' @description Runs a Monte-Carlo (MC) simulation of isothermally stimulated luminesence
-#' (ISO-TL or ITL) using the tunneling (TUN) model. Tunneling refers to the direct transition
-#' of electrons from an excited state directly into the recombination center without
-#' involving the conduction band.
+#' (ISO-TL or ITL) using the tunneling (TUN) model. Tunneling refers to quantum mechanical
+#' tunneling processes from the excited state of the trapped charge,
+#' into a state of the recombination center.
 #'
 #' @details
 #'
-#' ** Model description **
+#' **The model**
 #'
 #' \deqn{
-#' p(t) = s * e ^ (-E / k_{B} * T) * e^{(-r' / \rho'^{1 / 3})}
-#' }
-#'
-#' \deqn{
-#' I_{TUN}(t) = 3 * n * p(t) *  (r')^{2 * e^{(-r'^3)}}
+#' I_{TUN}(r',t) = -dn/dt = (s * exp(-E/(k_{B}*T_{ISO}))) * exp(-(\rho')^(-1/3) * r') * n (r',t)
 #' }
 #'
 #' Where in the function: \cr
-#' `p(t)` := The experimental stimulation mode \cr
+#' E := thermal activation energy (eV) \cr
+#' s := the effective frequency factor for the tunneling process (1/s) \cr
+#' \eqn{T_{ISO}} := The temperature of the isothermal experiment (degrees C)\cr
 #' \eqn{k_{B}} := Boltzmann constant \cr
-#' `r` := `r` \cr
-#' \eqn{\rho} := `rho` \cr
-#' `t` := `Time` \cr
+#' `r` := the unitless tunneling radius \cr
+#' \eqn{\rho} := `rho` the unitless density of recombination centres \cr
+#' `t` := Time (s) \cr
 #' `n` := The Instantaneous number of electrons \cr
-#' `n` := `n_filled` \cr
-#' `t`:= `times`
 #'
 #' @param E [numeric] (**required**): Thermal activation energy of the trap (eV).
 #'
-#' @param s [numeric] (**required**): Frequency factor of the trap (s^-1).
+#' @param s [numeric] (**required**): The effective frequency factor for the tunneling process (1/s).
 #'
 #' @param T [numeric] (*with default*): Constant stimulation temperature (degrees C).
 #'
-#' @param rho [numeric] (**required**): The density of recombination centres
-#' (defined as rho' in Huntley 2006) (unitless).
+#' @param rho [numeric] (**required**): The dimensionless density of recombination centres
+#' (defined as \eqn{\rho}' in Huntley 2006) (unitless).
 #'
 #' @param times [numeric] (*with default*): The sequence of temperature steps within the simulation (s).
 #'
@@ -42,10 +38,12 @@
 #'
 #' @param N_e [numeric] (*width default*): The total number of electron traps available (unitless).
 #'
-#' @param r_c [numeric] (*with default*): The radius of tunneling (dimensionless)
+#' @param r_c [numeric] (*with default*): Critical distance (>0) that must be provided if the
+#' sample has 1 been thermally and/or optically pretreated. This parameter expresses the fact
+#' that electron-hole pairs within a critical radius `r_c` have already been recombined.
 #'
 #' @param delta.r [numeric] (*with default*): Fractional change of the dimensionless distance
-#' of nearest recombination centres (r', which is preset at 2)
+#' of nearest recombination centres (r')
 #'
 #' @param method [character] (*with default*): sequential `'seq'` or parallel processing `'par'`
 #'
@@ -74,12 +72,17 @@
 #' Huntley, D.J., 2006. An explanation of the power-law decay of luminescence.
 #' Journal of Physics: Condensed Matter, 18(4), 1359.\doi{10.1088/0953-8984/18/4/020}
 #'
+#' Jain, M., Guralnik, B., Andersen, M.T., 2012. Stimulated luminescence emission from
+#' localized recombination in randomly distributed defects.
+#' J. Phys.: Condens. Matter 24, 385402. \doi{10.1088/0953-8984/24/38/385402}
+#'
 #' Pagonis, V., Friedrich, J., Discher, M., Müller-Kirschbaum, A., Schlosser, V., Kreutzer, S.,
 #' Chen, R. and Schmidt, C., 2019. Excited state luminescence signals from a random
 #' distribution of defects: A new Monte Carlo simulation approach for feldspar.
 #' Journal of Luminescence 207, 266–272. \doi{10.1016/j.jlumin.2018.11.024}
 #'
 #' @examples
+#' ## short example
 #' run_MC_ISO_TUN(
 #'  E = .8,
 #'  s = 1e16,
@@ -92,6 +95,22 @@
 #'  delta.r = 0.5,
 #'  method = "seq") %>%
 #'  plot_RLumCarlo(legend = TRUE)
+#'
+#' \dontrun{
+#' ## long (meaningful) example
+#' run_MC_ISO_TUN(
+#'  E = .8,
+#'  s = 1e16,
+#'  T = 50,
+#'  rho = 1e-4,
+#'  times = 0:100,
+#'  clusters = 1000,
+#'  N_e = 200,
+#'  r_c = 1e-4,
+#'  delta.r = 0.5,
+#'  method = "par") %>%
+#'  plot_RLumCarlo(legend = TRUE)
+#' }
 #'
 #' @keywords models data
 #' @md

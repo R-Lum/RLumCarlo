@@ -2,24 +2,33 @@
 % Please edit documentation in R/run_MC_TL_LOC.R
 \name{run_MC_TL_LOC}
 \alias{run_MC_TL_LOC}
-\title{Run Monte-Carlo Simulation for TL for Localized transition}
+\title{Run Monte-Carlo Simulation for TL (localized transitions)}
 \usage{
-run_MC_TL_LOC(s, E, times, clusters = 10, n_filled = 100, r,
-  method = "par", output = "signal", ...)
+run_MC_TL_LOC(
+  s,
+  E,
+  times,
+  clusters = 10,
+  n_filled = 100,
+  r,
+  method = "par",
+  output = "signal",
+  ...
+)
 }
 \arguments{
-\item{s}{\link{numeric} (\strong{required}): The frequency factor of the trap (s^-1).}
+\item{s}{\link{numeric} (\strong{required}): The frequency factor of the trap (s^-1)}
 
-\item{E}{\link{numeric} (\strong{required}): Thermal activation energy of the trap (eV).}
+\item{E}{\link{numeric} (\strong{required}): Thermal activation energy of the trap (eV)}
 
-\item{times}{\link{numeric} (\emph{with default}): The sequence of temperature steps within the simulation (s).}
+\item{times}{\link{numeric} (\emph{with default}): The sequence of temperature steps within the simulation (s)}
 
-\item{clusters}{\link{numeric} (\emph{with default}): The number of MC run (unitless).}
+\item{clusters}{\link{numeric} (\emph{with default}): The number of MC run (unitless)}
 
 \item{n_filled}{\link{integer} (\emph{with default}): The number of filled electron traps at
-the beginning of the simulation (unitless).}
+the beginning of the simulation (unitless)}
 
-\item{r}{\link{numeric} (\emph{with default}): The localized retrapping ratio (unitless).}
+\item{r}{\link{numeric} (\emph{with default}): The localized retrapping ratio (unitless)}
 
 \item{method}{\link{character} (\emph{with default}): sequential \code{'seq'} or parallel processing \code{'par'}}
 
@@ -30,32 +39,38 @@ the beginning of the simulation (unitless).}
 }
 \value{
 This function returns an object of class \code{RLumCarlo_Model_Output} which
-is a \link{list} consisting of an \link{array} with dimension length(times) x length(r) x clusters
+is a \link{list} consisting of an \link{array} with dimension length(times) x clusters
 and a \link{numeric} time vector.
 }
 \description{
 Runs a Monte-Carlo (MC) simulation of thermo-luminesence (TL) using
-the generalized one trap (GOT) model. Localized refers to excitation of an electron before it
-recombines, but without the involvement of the conduction band.
+the generalized one trap (GOT) model. Localized transitions refer to transitions
+which do not involve the conduction or valence band. These transitions take place between the
+ground state and an excited state of the trapped charge, and also involve a state of the
+recombination center.
 }
 \details{
+\strong{The model}
+
 \deqn{
-I_{LOC}(t) = -dn/dt = (s * e^-E/k_b * T) * (n^2 / (r + n))
+I_{LOC}(t) = -dn/dt = (s * exp(-E/(k_{B} * T))) * (n^2 / (r + n))
 }
 
 Where in the function: \cr
-\code{t} := \code{Time} \cr
+E := the thermal activation energy (eV) \cr
+s := the frequency factor for the trap (1/s) \cr
+t := time (s) \cr
 \eqn{k_{B}} := Boltzmann constant \cr
-T := Temperature \cr
-E := the trap depth (eV) \cr
-n := The Instantaneous number of electrons \cr
-r := the localised retrapping ratio (unitless)
+T := temperature (degrees C) \cr
+n := the Instantaneous number of electrons \cr
+r := the retrapping ratio for localized transitions
 }
 \section{Function version}{
  0.1.0
 }
 
 \examples{
+## the short example
 run_MC_TL_LOC(
  s = 1e14,
  E = 0.9,
@@ -65,10 +80,23 @@ run_MC_TL_LOC(
  r = 1e4) \%>\%
 plot_RLumCarlo()
 
+\dontrun{
+## the long (meaningful) example
+run_MC_TL_LOC(
+ s = 1e14,
+ E = 0.9,
+ times = 50:100,
+ method = "par",
+ clusters = 100,
+ r = 1e4) %>%
+plot_RLumCarlo()
+
+}
+
 } 
 
 \section{How to cite}{
-Kreutzer, S., 2019. run_MC_TL_LOC(): Run Monte-Carlo Simulation for TL for Localized transition. Function version 0.1.0. In: Friedrich, J., Kreutzer, S., Pagonis, V., Schmidt, C., 2019. RLumCarlo: Monte-Carlo Methods for Simulating Luminescence PhenomenaR package version 0.1.0.9000-122. 
+Kreutzer, S., 2019. run_MC_TL_LOC(): Run Monte-Carlo Simulation for TL (localized transitions). Function version 0.1.0. In: Friedrich, J., Kreutzer, S., Pagonis, V., Schmidt, C., 2019. RLumCarlo: Monte-Carlo Methods for Simulating Luminescence PhenomenaR package version 0.1.0.9000-127. 
 }
 
 \references{

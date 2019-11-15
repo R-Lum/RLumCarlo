@@ -1,29 +1,30 @@
-#' @title Run Monte-Carlo Simulation for CW-IRSL for Tunneling Transition
+#' @title Run Monte-Carlo Simulation for CW-IRSL (tunneling transitions)
 #'
-#' @description Runs a Monte-Carlo (MC) simulation of constant wave infrared stimulated luminesence
-#' (CW-IRSL) using the model for tunneling transiation.
-#' Tunneling refers to the direct movement of electrons from the excited state of a trap directly
-#' to the recombination center.
+#' @description Runs a Monte-Carlo (MC) simulation of continuous wave infrared stimulated luminesence
+#' (CW-IRSL) using the model for tunneling transiation. Tunneling refers to quantum mechanical
+#' tunneling processes from the excited state of the trapped charge,
+#' into a state of the recombination center.
 #'
 #' @details
-#' \deqn{
-#' p(t) = A * e^{(-r' / \rho^{(-1 / 3)})}
-#' }
+#'
+#' **The model**
 #'
 #' \deqn{
-#' I_{TUN}(t) = 3 * n * p(t) *  (r')^2 * e^{(-r'^3)}
+#' I_{TUN}(r',t) = -dn/dt = A * exp(-(\rho')^(-1/3)*r')* n (r',t)
 #' }
 #'
 #'Where in the function: \cr
-#' p(t) := The experimental stimulation mode \cr
+#' A := Excitation rate from ground state of the trap to the excited state (1/s) \cr
 #' r' := the unitless tunneling radius \cr
 #' \eqn{\rho}' := `rho` the unitless density of recombination centres \cr
 #' t := time (s) \cr
 #' n := The Instantaneous number of electrons
 #'
-#' @param A [numeric] (**required**): The optical excitation rate from ground state of trap to excited state of trap (s^-1).
+#' @param A [numeric] (**required**): The optical excitation rate from ground state of trap to
+#' excited state of trap (s^-1).
 #'
-#' @param rho [numeric] (**required**): The density of recombination centers (defined as rho' in Huntley 2006) (unitless).
+#' @param rho [numeric] (**required**): The density of recombination centers
+#' (defined as \eqn{\rho}' in Huntley 2006) (unitless).
 #'
 #' @param times [numeric] (*with default*): The sequence of time steps within the simulation (s).
 #'
@@ -31,9 +32,9 @@
 #'
 #' @param N_e [numeric] (*width default*): The total number of electron traps available (unitless).
 #'
-#' @param r_c [numeric] (*with default*): Critical distance (>0) that is to be inserted if the
-#' sample has 1 been thermally and/or optically pretreated, so that the electron-hole pairs
-#' within r_c have already recombined
+#' @param r_c [numeric] (*with default*): Critical distance (>0) that must be provided if the
+#' sample has 1 been thermally and/or optically pretreated. This parameter expresses the fact
+#' that electron-hole pairs within a critical radius `r_c` have already been recombined.
 #'
 #' @param delta.r [numeric] (*with default*): Increments of the unitless distance parameter r
 #'
@@ -55,7 +56,7 @@
 #'
 #' @references
 #' Huntley, D.J., 2006. An explanation of the power-law decay of luminescence.
-#' Journal of Physics: Condensed Matter, 18(4), 1359.\doi{10.1088/0953-8984/18/4/020}
+#' Journal of Physics: Condensed Matter, 18(4), 1359. \doi{10.1088/0953-8984/18/4/020}
 #'
 #' Pagonis, V., Friedrich, J., Discher, M., Müller-Kirschbaum, A., Schlosser, V., Kreutzer, S.,
 #' Chen, R. and Schmidt, C., 2019. Excited state luminescence signals from a random distribution of defects:
@@ -66,6 +67,10 @@
 #'
 #' Aitken, M.J., 1985. Thermoluminescence dating. Academic Press.
 #'
+#' Jain, M., Guralnik, B., Andersen, M.T., 2012. Stimulated luminescence emission from
+#' localized recombination in randomly distributed defects.
+#' J. Phys.: Condens. Matter 24, 385402. \doi{10.1088/0953-8984/24/38/385402}
+#'
 #' Chen, R., McKeever, S.W.S., 1997. Theory of Thermoluminescence and Related Phenomena.
 #' WORLD SCIENTIFIC. \doi{10.1142/2781}
 #'
@@ -75,7 +80,7 @@
 #'  rho = 1e-4,
 #'  times = 0:10,
 #'  r_c = 0.05,
-#'  delta.r = 1e-2,
+#'  delta.r = 0.1,
 #'  method = "seq",
 #'  clusters = 2,
 #'   output = "signal") %>%

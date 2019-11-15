@@ -1,44 +1,46 @@
 #' @title Run Monte-Carlo Simulation for CW-OSL for Delocalized Transition
 #'
-#' @description Runs a Monte-Carlo (MC) simulation of constant wave optically stimulated luminesence
+#' @description Runs a Monte-Carlo (MC) simulation of continuous wave optically stimulated luminesence
 #' (CW-OSL) using the one trap one recombination center (OTOR) model.
 #' The term delocalized here refers to the involvement of the conduction band.
 #'
 #' @details
 #'
+#' **The model**
+#'
 #' \deqn{
-#' I_{DELOC}(t) = -dn/dt = p(t) * (n^2 / (N*R + n(1-R)))
+#' I_{DELOC}(t) = -dn/dt = A * (n^2 / (N*R + n(1-R)))
 #' }
 #'
 #' Where in the function: \cr
 #'  t := Time \cr
-#'  p(t) := The experimental stimulation mode \cr
-#'  n := The instantaneous number of electrons \cr
+#'  A := The optical excitation rate from trap to conduction band \cr
+#'  n := `n_filled` The instantaneous number of electrons \cr
 #'  N := `N_e` the available number of electron traps available \cr
-#'  R := Delocalised retrapping ratio
+#'  R := Retrapping ratio for delocalized transitions
 #'
-#' @param A [numeric] (**required**): The optical excitation rate from trap to conduction band (s^-1).
+#' @param A [numeric] (**required**): The optical excitation rate from trap to conduction band (s^-1)
 #'
 #' @param times [numeric] (*with default*): The sequence of temperature steps within the simulation (s)
 #'
-#' @param clusters [numeric] (*with default*): The number of MC runs (unitless).
+#' @param clusters [numeric] (*with default*): The number of MC runs (unitless)
 #'
-#' @param N_e [integer] (*with default*): The total number of electron traps available (unitless).
+#' @param N_e [integer] (*with default*): The total number of electron traps available (unitless)
 #'
 #' @param n_filled [integer] (*with default*): The number of filled electron traps at the beginning
-#' of the simulation (unitless).
+#' of the simulation (unitless)
 #'
-#' @param R [numeric] (*with default*): The delocalized retrapping ratio (unitless).
+#' @param R [numeric] (*with default*): The retrapping ratio for delocalized transitions (unitless)
 #'
-#' @param method [character] (*with default*): sequential `'seq'` or parallel processing `'par'`
+#' @param method [character] (*with default*): Sequential `'seq'` or parallel processing `'par'`
 #'
-#' @param output [character] (*with default*): output is either the `'signal'` (the default) or
+#' @param output [character] (*with default*): Output is either the `'signal'` (the default) or
 #' `'remaining_e'` (the remaining charges, electrons, in the trap)
 #'
 #' @param \dots further arguments
 #'
 #' @return This function returns an object of class `RLumCarlo_Model_Output` which
-#' is a [list] consisting of an [array] with dimension length(times) x length(r) x clusters
+#' is a [list] consisting of an [array] with dimension length(times) x clusters
 #' and a [numeric] time vector.
 #'
 #' @section Function version: 0.1.0
@@ -57,6 +59,7 @@
 #' WORLD SCIENTIFIC. \doi{10.1142/2781}
 #'
 #' @examples
+#' ## brief example
 #' run_MC_CW_OSL_DELOC(
 #'  A = 0.12,
 #'  R = 0.1,
@@ -65,9 +68,7 @@
 #'  method = "seq") %>%
 #' plot_RLumCarlo(legend = TRUE)
 #'
-#' ##===============##
 #' ## A long example
-#' ##===============##
 #' \dontrun{
 #'
 #' A <- c(0.1,0.3,0.5,1)

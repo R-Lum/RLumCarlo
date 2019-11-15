@@ -4,57 +4,69 @@
 \alias{run_MC_CW_OSL_DELOC}
 \title{Run Monte-Carlo Simulation for CW-OSL for Delocalized Transition}
 \usage{
-run_MC_CW_OSL_DELOC(A, times, clusters = 10, N_e = 200,
-  n_filled = N_e, R, method = "par", output = "signal", ...)
+run_MC_CW_OSL_DELOC(
+  A,
+  times,
+  clusters = 10,
+  N_e = 200,
+  n_filled = N_e,
+  R,
+  method = "par",
+  output = "signal",
+  ...
+)
 }
 \arguments{
-\item{A}{\link{numeric} (\strong{required}): The optical excitation rate from trap to conduction band (s^-1).}
+\item{A}{\link{numeric} (\strong{required}): The optical excitation rate from trap to conduction band (s^-1)}
 
 \item{times}{\link{numeric} (\emph{with default}): The sequence of temperature steps within the simulation (s)}
 
-\item{clusters}{\link{numeric} (\emph{with default}): The number of MC runs (unitless).}
+\item{clusters}{\link{numeric} (\emph{with default}): The number of MC runs (unitless)}
 
-\item{N_e}{\link{integer} (\emph{with default}): The total number of electron traps available (unitless).}
+\item{N_e}{\link{integer} (\emph{with default}): The total number of electron traps available (unitless)}
 
 \item{n_filled}{\link{integer} (\emph{with default}): The number of filled electron traps at the beginning
-of the simulation (unitless).}
+of the simulation (unitless)}
 
-\item{R}{\link{numeric} (\emph{with default}): The delocalized retrapping ratio (unitless).}
+\item{R}{\link{numeric} (\emph{with default}): The retrapping ratio for delocalized transitions (unitless)}
 
-\item{method}{\link{character} (\emph{with default}): sequential \code{'seq'} or parallel processing \code{'par'}}
+\item{method}{\link{character} (\emph{with default}): Sequential \code{'seq'} or parallel processing \code{'par'}}
 
-\item{output}{\link{character} (\emph{with default}): output is either the \code{'signal'} (the default) or
+\item{output}{\link{character} (\emph{with default}): Output is either the \code{'signal'} (the default) or
 \code{'remaining_e'} (the remaining charges, electrons, in the trap)}
 
 \item{\dots}{further arguments}
 }
 \value{
 This function returns an object of class \code{RLumCarlo_Model_Output} which
-is a \link{list} consisting of an \link{array} with dimension length(times) x length(r) x clusters
+is a \link{list} consisting of an \link{array} with dimension length(times) x clusters
 and a \link{numeric} time vector.
 }
 \description{
-Runs a Monte-Carlo (MC) simulation of constant wave optically stimulated luminesence
+Runs a Monte-Carlo (MC) simulation of continuous wave optically stimulated luminesence
 (CW-OSL) using the one trap one recombination center (OTOR) model.
 The term delocalized here refers to the involvement of the conduction band.
 }
 \details{
+\strong{The model}
+
 \deqn{
-I_{DELOC}(t) = -dn/dt = p(t) * (n^2 / (N*R + n(1-R)))
+I_{DELOC}(t) = -dn/dt = A * (n^2 / (N*R + n(1-R)))
 }
 
 Where in the function: \cr
 t := Time \cr
-p(t) := The experimental stimulation mode \cr
-n := The instantaneous number of electrons \cr
+A := The optical excitation rate from trap to conduction band \cr
+n := \code{n_filled} The instantaneous number of electrons \cr
 N := \code{N_e} the available number of electron traps available \cr
-R := Delocalised retrapping ratio
+R := Retrapping ratio for delocalized transitions
 }
 \section{Function version}{
  0.1.0
 }
 
 \examples{
+## brief example
 run_MC_CW_OSL_DELOC(
  A = 0.12,
  R = 0.1,
@@ -63,9 +75,7 @@ run_MC_CW_OSL_DELOC(
  method = "seq") \%>\%
 plot_RLumCarlo(legend = TRUE)
 
-##===============##
 ## A long example
-##===============##
 \dontrun{
 
 A <- c(0.1,0.3,0.5,1)
@@ -118,7 +128,7 @@ legend("topright",
 } 
 
 \section{How to cite}{
-Kreutzer, S., 2019. run_MC_CW_OSL_DELOC(): Run Monte-Carlo Simulation for CW-OSL for Delocalized Transition. Function version 0.1.0. In: Friedrich, J., Kreutzer, S., Pagonis, V., Schmidt, C., 2019. RLumCarlo: Monte-Carlo Methods for Simulating Luminescence PhenomenaR package version 0.1.0.9000-122. 
+Kreutzer, S., 2019. run_MC_CW_OSL_DELOC(): Run Monte-Carlo Simulation for CW-OSL for Delocalized Transition. Function version 0.1.0. In: Friedrich, J., Kreutzer, S., Pagonis, V., Schmidt, C., 2019. RLumCarlo: Monte-Carlo Methods for Simulating Luminescence PhenomenaR package version 0.1.0.9000-127. 
 }
 
 \references{

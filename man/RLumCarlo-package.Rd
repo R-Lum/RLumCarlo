@@ -10,7 +10,7 @@
 \figure{Logo_RLumCarlo.png}{options: width="50px" alt="https://github.com/R-Lum/RLumCarlo"}\cr
 }}
 \description{
-A collection of functions to simulate luminescence production in dosimeters
+A collection of functions to simulate luminescence production in dosimetric materials
 using Monte-Carlo methods. Implemented are models for delocalised, localised and tunnelling
 transitions. Supported stimulation modes are TL, CW-OSL, LM-OSL, LM-IRSL, and ITL (ISO-TL).
 }

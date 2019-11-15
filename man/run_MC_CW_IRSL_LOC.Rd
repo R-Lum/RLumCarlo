@@ -2,24 +2,32 @@
 % Please edit documentation in R/run_MC_CW_IRSL_LOC.R
 \name{run_MC_CW_IRSL_LOC}
 \alias{run_MC_CW_IRSL_LOC}
-\title{Monte-Carlo Simulation for CW-IRSL for Localized Transition}
+\title{Monte-Carlo Simulation for CW-IRSL (localized transitions)}
 \usage{
-run_MC_CW_IRSL_LOC(A, times, clusters = 10, n_filled = 100, r,
-  method = "par", output = "signal", ...)
+run_MC_CW_IRSL_LOC(
+  A,
+  times,
+  clusters = 10,
+  n_filled = 100,
+  r,
+  method = "par",
+  output = "signal",
+  ...
+)
 }
 \arguments{
-\item{A}{\link{numeric} (\strong{required}): The optical excitation rate from trap to the excited state (s^-1).}
+\item{A}{\link{numeric} (\strong{required}): The optical excitation rate from trap to the excited state (s^-1)}
 
-\item{times}{\link{numeric} (\emph{with default}): The sequence of time steps within the simulation (s).}
+\item{times}{\link{numeric} (\emph{with default}): The sequence of time steps within the simulation (s)}
 
-\item{clusters}{\link{numeric} (\emph{with default}): The number of MC runs (unitless).}
+\item{clusters}{\link{numeric} (\emph{with default}): The number of MC runs (unitless)}
 
 \item{n_filled}{\link{integer} (\emph{with default}): The number of filled electron traps at the beginning
-of the simulation (unitless).}
+of the simulation (unitless)}
 
-\item{r}{\link{numeric} (\emph{with default}): The localized retrapping ratio (unitless).}
+\item{r}{\link{numeric} (\emph{with default}): The retrapping ratio for localized transitions}
 
-\item{method}{\link{character} (\emph{with default}): sequential \code{'seq'} or parallel \code{'par'}processing}
+\item{method}{\link{character} (\emph{with default}): Sequential \code{'seq'} or parallel \code{'par'}processing}
 
 \item{output}{\link{character} (\emph{with default}): output is either the \code{'signal'} (the default) or
 \code{'remaining_e'} (the remaining charges/electrons, in the trap)}
@@ -28,23 +36,25 @@ of the simulation (unitless).}
 }
 \value{
 This function returns an object of class \code{RLumCarlo_Model_Output} which
-is a \link{list} consisting of an \link{array} with dimension length(times) x length(r) x clusters
+is a \link{list} consisting of an \link{array} with dimension \code{length(times)} x clusters
 and a \link{numeric} time vector.
 }
 \description{
-Runs a Monte-Carlo (MC) simulation of constant-wave infrared stimulated luminesence
-(CW-IRSL) using the generalized one trap (GOT) model. Localized refers to an excited state
-that is shared by the electron and the recombination centre,
-so that the conduction band is not involved in the recombination process.
+Runs a Monte-Carlo (MC) simulation of continuous wave infrared stimulated luminesence
+(CW-IRSL) using the generalized one trap (GOT) model. Localized transitions refer to transitions
+which do not involve the conduction or valence band. These transitions take place between the
+ground state and an excited state of the trapped charge, and also involve a state of the
+recombination center.
 }
 \details{
+\strong{The model}
 \deqn{
 I_{LOC}(t) = -dn/dt = A * (n^2 / (r + n))
 }
 
 where in the function: \cr
-A := optical excitation rate from trap to the excited state (s^-1) \cr
-r := localised retrapping ratio (unitless) \cr
+A := optical excitation rate from the ground stateinto the excited state of the trapped charge (s^-1) \cr
+r := retrapping ratio for localized transitions \cr
 t := time (s)\cr
 n := number of filled electron traps
 }
@@ -57,7 +67,7 @@ run_MC_CW_IRSL_LOC(
  A = 0.12,
  times = 0:100,
  clusters = 50,
- n_filled = 1,
+ n_filled = 2,
  r = 1e-7,
  method = "seq",
  output = "signal"
@@ -67,7 +77,7 @@ plot_RLumCarlo(legend = TRUE)
 } 
 
 \section{How to cite}{
-Kreutzer, S., 2019. run_MC_CW_IRSL_LOC(): Monte-Carlo Simulation for CW-IRSL for Localized Transition. Function version 0.1.0. In: Friedrich, J., Kreutzer, S., Pagonis, V., Schmidt, C., 2019. RLumCarlo: Monte-Carlo Methods for Simulating Luminescence PhenomenaR package version 0.1.0.9000-122. 
+Kreutzer, S., 2019. run_MC_CW_IRSL_LOC(): Monte-Carlo Simulation for CW-IRSL (localized transitions). Function version 0.1.0. In: Friedrich, J., Kreutzer, S., Pagonis, V., Schmidt, C., 2019. RLumCarlo: Monte-Carlo Methods for Simulating Luminescence PhenomenaR package version 0.1.0.9000-127. 
 }
 
 \references{

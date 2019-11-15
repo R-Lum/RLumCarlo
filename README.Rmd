@@ -48,7 +48,9 @@ The **R** package 'RLumCarlo' provides a collection of R functions modelling lum
 * ~~run_MC_TL_TUN.R~~
 
 * Documentation checked by Christoph? 
-* Documentation verified by Vasilis?
+* ~~Documentation verified by Vasilis?~~
+* Vignette checked by Vasilis?
+* Vignette checked by Christoph?
 
 ### Others
 

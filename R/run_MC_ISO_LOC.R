@@ -1,13 +1,17 @@
-#' @title Run Monte-Carlo simulation for ISO-TL for Localized Transition
+#' @title Run Monte-Carlo simulation for ISO-TL (localized transitions)
 #'
 #' @description Runs a Monte-Carlo (MC) simulation of isothermally stimulated luminesence
-#' (ISO-TL or ITL) using the genralized one trap (GOT) model. Localized refers to excitation
-#' of an electron before it recombines, but without the involvement of the conduction band.
+#' (ISO-TL or ITL) using the genralized one trap (GOT) model. Localized transitions refer to transitions
+#' which do no involve the conduction or valence band. These transitions take place between the
+#' ground state and an excited state of the trapped charge, and also involve a state of the
+#' recombination center.
 #'
 #' @details
 #'
+#' **The model**
+#'
 #' \deqn{
-#' I_{LOC}(t) = -dn/dt = (s * e^-E/k_b*T_ISO) * (n^2 / (r + n)))
+#' I_{LOC}(t) = -dn/dt = (s * exp(-E/(k_{B} * T_{ISO}))) * (n^2 / (r + n)))
 #' }
 #'
 #' Where in the function: \cr
@@ -15,25 +19,27 @@
 #'  \eqn{k_{B}} := `Boltzmann constant` \cr
 #'  \eqn{T_{ISO}} = Isothermal temperature \cr
 #'  n := `n_filled` \cr
-#'  r := the localized retrapping ratio (unitless) \cr
+#'  s := frequency factor of the trap (1/s) \cr
+#'  E := activation energy of the trap (eV) \cr
+#'  r := retrapping ratio for localized transitions \cr
 #'
-#' @param E [numeric] (**required**): Thermal activation energy of the trap (eV).
+#' @param E [numeric] (**required**): Thermal activation energy of the trap (eV)
 #'
-#' @param s [numeric] (**required**): The frequency factor of the trap (s^-1).
+#' @param s [numeric] (**required**): The frequency factor of the trap (s^-1)
 #'
-#' @param T [numeric] (*with default*): Constant stimulation temperature (degrees C).
+#' @param T [numeric] (*with default*): Constant stimulation temperature (degrees C)
 #'
 #' @param times [numeric] (*with default*): The sequence of temperature steps within the
-#' simulation (s).
+#' simulation (s)
 #'
-#' @param clusters [numeric] (*with default*): The number of MC runs (unitless).
+#' @param clusters [numeric] (*with default*): The number of MC runs (unitless)
 #'
 #' @param n_filled [integer] (*with default*): The number of filled electron traps at the
-#' beginning of the simulation (unitless).
+#' beginning of the simulation (unitless)
 #'
-#' @param r [numeric] (*with default*): the localized retrapping ratio (unitless).
+#' @param r [numeric] (*with default*): The retrapping ratio for localized transitions.
 #'
-#' @param method [character] (*with default*): sequential `'seq'` or parallel processing `'par'`
+#' @param method [character] (*with default*): Sequential `'seq'` or parallel processing `'par'`
 #'
 #' @param output [character] (*with default*): output is either the `'signal'` (the default) or
 #' `'remaining_e'` (the remaining charges, electrons, in the trap)
@@ -41,7 +47,7 @@
 #' @param \dots further arguments
 #'
 #' @return This function returns an object of class `RLumCarlo_Model_Output` which
-#' is a [list] consisting of an [array] with dimension length(times) x length(r) x clusters
+#' is a [list] consisting of an [array] with dimension length(times) x clusters
 #' and a [numeric] time vector.
 #'
 #' @section Function version: 0.1.0

@@ -1,44 +1,42 @@
-#' @title Run Monte-Carlo Simulation for LM-OSL for Tunneling Transition
+#' @title Run Monte-Carlo Simulation for LM-OSL (tunneling transitions)
 #'
 #' @description Runs a Monte-Carlo (MC) simulation of linearly modulated optically stimulated
-#' luminesence (LM-OSL) using the tunneling (TUN) model. Tunneling refers to the direct movement
-#' of electrons from a trap directly to the recombination center
+#' luminesence (LM-OSL) using the tunneling (TUN) model. Tunneling refers to quantum mechanical
+#' tunneling processes from the excited state of the trapped charge,
+#' into a state of the recombination center.
 #'
 #' @details
 #'
-#' \deqn{
-#' p(t) = A * (t / P) * e^{(-r' / \rho'^{(-1 / 3)})}
-#' }
+#' **The model**
 #'
 #' \deqn{
-#' I_{TUN}(t) = 3 * n * p(t) *  (r')^2 * e^{(-r'^3)}
+#' I_{TUN}(r',t) = -dn/dt = (A * t/P) * exp(-(\rho')^(-1/3) * r') * n(r',t)
 #' }
 #'
-#'Where in the function: \cr
-#'  p(t) := The experimental stimulation mode \cr
-#'  t := `Time` \cr
+#' Where in the function: \cr
+#'  A := the effective optical excitation rate for the tunneling process \cr
+#'  t := Time \cr
 #'  P := Maximum stimulation time \cr
 #'  r' := `r` \cr
-#' \eqn{\rho}' := rho  \cr
+#'\eqn{\rho}' := rho  \cr
 #'  n := The instantaneous number of electrons
 #'
-#' @param A [numeric] (**required**): The optical excitation rate from ground state of trap to
-#' excited state of trap (s^-1).
+#' @param A [numeric] (**required**): The effective optical excitation rate for the tunneling process
 #'
-#' @param rho [numeric] (**required**): The density of recombination centers (defined as rho'
-#' in Huntley 2006) (unitless).
+#' @param rho [numeric] (**required**): The dimensionless density of recombination centers
+#' (defined as \eqn{\rho}' in Huntley 2006) (unitless)
 #'
-#' @param times [vector] (*with default*): The sequence of temperature steps within the simulation (s).
+#' @param times [numeric] (*with default*): The sequence of time steps within the simulation (s)
 #'
-#' @param clusters [numeric] (*with default*): The number of clusters.
+#' @param clusters [numeric] (*with default*): The number of MC runs
 #'
-#' @param N_e [numeric] (*width default*): The total number of electron traps available (unitless).
+#' @param N_e [numeric] (*width default*): The total number of electron traps available (unitless)
 #'
-#' @param r_c [numeric] (*with default*): Critical distance (>0) that is to be inserted if the
-#' sample has 1 been thermally and/or optically pretreated, so that the electron-hole pairs
-#' within `r_c` have already recombined
+#' @param r_c [numeric] (*with default*): Critical distance (>0) that is to be used if the
+#' sample has 1 been thermally and/or optically pretreated. This parameter expresses the fact
+#' that electron-hole pairs within a critical radius `r_c` have already been recombined.
 #'
-#' @param delta.r [numeric] (*with default*): Increments of r_c (unitless).
+#' @param delta.r [numeric] (*with default*): Increments of r_c (unitless)
 #'
 #' @param method [character] (*with default*): sequential `'seq'` or parallel processing `'par'`
 #'
@@ -72,7 +70,12 @@
 #' **Further reading**
 #' Aitken, M.J., 1985. Thermoluminescence dating. Academic Press.
 #'
+#' Jain, M., Guralnik, B., Andersen, M.T., 2012. Stimulated luminescence emission from
+#' localized recombination in randomly distributed defects.
+#' J. Phys.: Condens. Matter 24, 385402. \doi{10.1088/0953-8984/24/38/385402}
+#'
 #' @examples
+#' ##the short example
 #' run_MC_LM_OSL_TUN(
 #'  A = 1,
 #'  rho = 1e-7,
@@ -84,6 +87,21 @@
 #'  method = "seq",
 #'  output = "signal") %>%
 #' plot_RLumCarlo(norm = TRUE)
+#'
+#' \dontrun{
+#' ## the long (meaningful) example
+#' run_MC_LM_OSL_TUN(
+#'  A = 1,
+#'  rho = 1e-3,
+#'  times = 0:1000,
+#'  clusters = 30,
+#'  N_e = 100,
+#'  r_c = 0.1,
+#'  delta.r = 1e-1,
+#'  method = "par",
+#'  output = "signal") %>%
+#' plot_RLumCarlo(norm = TRUE)
+#' }
 #'
 #' @keywords models data
 #' @md

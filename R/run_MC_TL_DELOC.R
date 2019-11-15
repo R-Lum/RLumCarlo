@@ -1,4 +1,4 @@
-#' @title Run Monte-Carlo Simulation for TL for Delocalized Transition
+#' @title Run Monte-Carlo Simulation for TL (delocalized transitions)
 #'
 #' @description Runs a Monte-Carlo (MC) simulation of thermo-luminesence (TL)
 #' using the one trap one recombination center (OTOR) model.
@@ -6,31 +6,35 @@
 #'
 #' @details
 #'
+#' **The model**
+#'
 #' \deqn{
-#' I_{DELOC}(t) = -dn/dt = (s * e^-E/k_{b} * T) * (n^2 / (N * R + n(1-R))))
+#' I_{DELOC}(t) = -dn/dt = (s*exp(-E/(k_{B}*T))) * (n^2 / (N * R + n(1-R))))
 #' }
 #'
 #' Where in the function: \cr
+#'  E := the thermal activation enery (eV) \cr
+#'  s := The frequency factor in 1/s \cr
 #' `t` := `Time` \cr
 #' \eqn{k_{B}} := Boltzmann constant \cr
 #' `T`= Temperature \cr
-#' `n` :=  The Instantaneous number of electrons \cr
+#' `n` := `n_filled` The Instantaneous number of electrons \cr
 #' `N` := `N_e`
 #'
-#' @param E [numeric] (**required**): Thermal activation energy of the trap (eV).
+#' @param E [numeric] (**required**): Thermal activation energy of the trap (eV)
 #'
-#' @param s [numeric] (**required**): The frequency factor of the trap (s^-1).
+#' @param s [numeric] (**required**): The frequency factor of the trap (s^-1)
 #'
-#' @param times [numeric] (*with default*): The sequence of temperature steps within the simulation (s).
+#' @param times [numeric] (*with default*): The sequence of temperature steps within the simulation (s)
 #'
-#' @param clusters [numeric] (*with default*): The number of MC runs (unitless).
+#' @param clusters [numeric] (*with default*): The number of MC runs (unitless)
 #'
-#' @param N_e [integer] (*with default*): The total number of electron traps available (unitless).
+#' @param N_e [integer] (*with default*): The total number of electron traps available (unitless)
 #'
 #' @param n_filled [integer] (*with default*): The number of filled electron traps at the beginning
-#' of the simulation (unitless).
+#' of the simulation (unitless)
 #'
-#' @param R [numeric] (*with default*): The delocalized retrapping ratio (unitless).
+#' @param R [numeric] (*with default*): Retrapping ratio for delocalized transitions
 #'
 #' @param method [character] (*with default*): sequential `'seq'` or parallel processing `'par'`
 #'
@@ -40,7 +44,7 @@
 #' @param \dots further arguments
 #'
 #' @return This function returns an object of class `RLumCarlo_Model_Output` which
-#' is a [list] consisting of an [array] with dimension length(times) x length(r) x clusters
+#' is a [list] consisting of an [array] with dimension length(times) x clusters
 #' and a [numeric] time vector.
 #'
 #' @section Function version: 0.1.0
@@ -60,6 +64,7 @@
 #' WORLD SCIENTIFIC. \doi{10.1142/2781}
 #'
 #' @examples
+#' ## the short example
 #' run_MC_TL_DELOC(
 #'  s = 3.5e12,
 #'  E = 1.45,
@@ -70,15 +75,13 @@
 #' plot_RLumCarlo(legend = TRUE)
 #'
 #' \dontrun{
-#' #' ##=========================================================================##
-#' ## Example 2: Plot multiple TL stimulation TL curves in R with varying params
-#' ##============================================================================##
+#' ## the long (meaningful) example
 #' # define your parameters
 #' times <- seq(100, 450, 1)
 #' s <- rep(3.5e12, 4)
 #' E <- rep(1.45, 4)
 #' R <- c(0.7e-6, 1e-6, 0.01, 0.1)
-#' clusters <- 1000
+#' clusters <- 300
 #' N_e <- c(400, 500, 700, 400)
 #' n_filled <- c(400, 500, 300, 70)
 #' method <- "par"

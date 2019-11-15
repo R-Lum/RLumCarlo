@@ -2,26 +2,36 @@
 % Please edit documentation in R/run_MC_TL_DELOC.R
 \name{run_MC_TL_DELOC}
 \alias{run_MC_TL_DELOC}
-\title{Run Monte-Carlo Simulation for TL for Delocalized Transition}
+\title{Run Monte-Carlo Simulation for TL (delocalized transitions)}
 \usage{
-run_MC_TL_DELOC(s, E, times, clusters = 10, N_e = 200,
-  n_filled = N_e, R, method = "par", output = "signal", ...)
+run_MC_TL_DELOC(
+  s,
+  E,
+  times,
+  clusters = 10,
+  N_e = 200,
+  n_filled = N_e,
+  R,
+  method = "par",
+  output = "signal",
+  ...
+)
 }
 \arguments{
-\item{s}{\link{numeric} (\strong{required}): The frequency factor of the trap (s^-1).}
+\item{s}{\link{numeric} (\strong{required}): The frequency factor of the trap (s^-1)}
 
-\item{E}{\link{numeric} (\strong{required}): Thermal activation energy of the trap (eV).}
+\item{E}{\link{numeric} (\strong{required}): Thermal activation energy of the trap (eV)}
 
-\item{times}{\link{numeric} (\emph{with default}): The sequence of temperature steps within the simulation (s).}
+\item{times}{\link{numeric} (\emph{with default}): The sequence of temperature steps within the simulation (s)}
 
-\item{clusters}{\link{numeric} (\emph{with default}): The number of MC runs (unitless).}
+\item{clusters}{\link{numeric} (\emph{with default}): The number of MC runs (unitless)}
 
-\item{N_e}{\link{integer} (\emph{with default}): The total number of electron traps available (unitless).}
+\item{N_e}{\link{integer} (\emph{with default}): The total number of electron traps available (unitless)}
 
 \item{n_filled}{\link{integer} (\emph{with default}): The number of filled electron traps at the beginning
-of the simulation (unitless).}
+of the simulation (unitless)}
 
-\item{R}{\link{numeric} (\emph{with default}): The delocalized retrapping ratio (unitless).}
+\item{R}{\link{numeric} (\emph{with default}): Retrapping ratio for delocalized transitions}
 
 \item{method}{\link{character} (\emph{with default}): sequential \code{'seq'} or parallel processing \code{'par'}}
 
@@ -32,7 +42,7 @@ of the simulation (unitless).}
 }
 \value{
 This function returns an object of class \code{RLumCarlo_Model_Output} which
-is a \link{list} consisting of an \link{array} with dimension length(times) x length(r) x clusters
+is a \link{list} consisting of an \link{array} with dimension length(times) x clusters
 and a \link{numeric} time vector.
 }
 \description{
@@ -41,15 +51,19 @@ using the one trap one recombination center (OTOR) model.
 Delocalized refers to involvement of the conduction band.
 }
 \details{
+\strong{The model}
+
 \deqn{
-I_{DELOC}(t) = -dn/dt = (s * e^-E/k_{b} * T) * (n^2 / (N * R + n(1-R))))
+I_{DELOC}(t) = -dn/dt = (s*exp(-E/(k_{B}*T))) * (n^2 / (N * R + n(1-R))))
 }
 
 Where in the function: \cr
+E := the thermal activation enery (eV) \cr
+s := The frequency factor in 1/s \cr
 \code{t} := \code{Time} \cr
 \eqn{k_{B}} := Boltzmann constant \cr
 \code{T}= Temperature \cr
-\code{n} :=  The Instantaneous number of electrons \cr
+\code{n} := \code{n_filled} The Instantaneous number of electrons \cr
 \code{N} := \code{N_e}
 }
 \section{Function version}{
@@ -57,6 +71,7 @@ Where in the function: \cr
 }
 
 \examples{
+## the short example
 run_MC_TL_DELOC(
  s = 3.5e12,
  E = 1.45,
@@ -67,15 +82,13 @@ run_MC_TL_DELOC(
 plot_RLumCarlo(legend = TRUE)
 
 \dontrun{
-#' ##=========================================================================##
-## Example 2: Plot multiple TL stimulation TL curves in R with varying params
-##============================================================================##
+## the long (meaningful) example
 # define your parameters
 times <- seq(100, 450, 1)
 s <- rep(3.5e12, 4)
 E <- rep(1.45, 4)
 R <- c(0.7e-6, 1e-6, 0.01, 0.1)
-clusters <- 1000
+clusters <- 300
 N_e <- c(400, 500, 700, 400)
 n_filled <- c(400, 500, 300, 70)
 method <- "par"
@@ -122,7 +135,7 @@ legend("topright",
 } 
 
 \section{How to cite}{
-Kreutzer, S., 2019. run_MC_TL_DELOC(): Run Monte-Carlo Simulation for TL for Delocalized Transition. Function version 0.1.0. In: Friedrich, J., Kreutzer, S., Pagonis, V., Schmidt, C., 2019. RLumCarlo: Monte-Carlo Methods for Simulating Luminescence PhenomenaR package version 0.1.0.9000-122. 
+Kreutzer, S., 2019. run_MC_TL_DELOC(): Run Monte-Carlo Simulation for TL (delocalized transitions). Function version 0.1.0. In: Friedrich, J., Kreutzer, S., Pagonis, V., Schmidt, C., 2019. RLumCarlo: Monte-Carlo Methods for Simulating Luminescence PhenomenaR package version 0.1.0.9000-127. 
 }
 
 \references{
