@@ -1,12 +1,14 @@
 ---
-title: "Getting started with RLumCarlo"
+title: "RLumCarlo: Tedious features - fine examples"
 author: "Sebastian Kreutzer, Johannes Friedrich, Vasilis Pagonis, Christoph Schmidt"
 date: "RLumCarlo: v`r packageVersion('RLumCarlo')` | Last modified: `r Sys.Date()`"
-output: pdf_document
+output: 
+  pdf_document: 
+    number_sections: yes
 vignette: |
   %\VignetteIndexEntry{RLumCarlo - Getting started with RLumCarlo}         
-  %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}{inputenc}
+  %\VignetteEngine{knitr::rmarkdown}
 ---
 
 ```{r setup, include=FALSE}
@@ -51,7 +53,7 @@ models <- regmatches(models, regexpr("(?<=run\\_).*", models, perl = TRUE), inve
 df <- data.frame(
   `MODEL_NAME` = models, 
   `R_CALL` = paste0("run_", models, "()"),
-  `FILES` = paste0("R/run_", models, ".R \n src/MC_C_", models, ".cpp"), 
+  `CORRESPONDING_FILES` = paste0("R/run_", models, ".R \n src/MC_C_", models, ".cpp"), 
   stringsAsFactors = FALSE)
 
 knitr::kable(df, booktabs = TRUE, linesep = "\\addlinespace") %>% 

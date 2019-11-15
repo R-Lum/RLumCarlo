@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.7.29)  3 NOV 2019 18:23
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.11.11)  15 NOV 2019 18:53
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -663,34 +663,34 @@ Package xcolor Info: Model `wave' substituted by `hsb' on input line 1371.
 ) (./RLumCarlo_-_Getting_started_with_RLumCarlo.aux)
 \openout1 = `RLumCarlo_-_Getting_started_with_RLumCarlo.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 143.
-LaTeX Font Info:    ... okay on input line 143.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 143.
-LaTeX Font Info:    ... okay on input line 143.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 143.
-LaTeX Font Info:    ... okay on input line 143.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 143.
-LaTeX Font Info:    ... okay on input line 143.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 143.
-LaTeX Font Info:    ... okay on input line 143.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 143.
-LaTeX Font Info:    ... okay on input line 143.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 143.
-LaTeX Font Info:    Try loading font information for TS1+cmr on input line 143.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 147.
+LaTeX Font Info:    ... okay on input line 147.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 147.
+LaTeX Font Info:    ... okay on input line 147.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 147.
+LaTeX Font Info:    ... okay on input line 147.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 147.
+LaTeX Font Info:    ... okay on input line 147.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 147.
+LaTeX Font Info:    ... okay on input line 147.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 147.
+LaTeX Font Info:    ... okay on input line 147.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 147.
+LaTeX Font Info:    Try loading font information for TS1+cmr on input line 147.
 
 (/Users/kreutzer/Library/TinyTeX/texmf-dist/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
-LaTeX Font Info:    ... okay on input line 143.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 143.
-LaTeX Font Info:    ... okay on input line 143.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 143.
-LaTeX Font Info:    ... okay on input line 143.
-LaTeX Font Info:    Try loading font information for T1+lmr on input line 143.
+LaTeX Font Info:    ... okay on input line 147.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 147.
+LaTeX Font Info:    ... okay on input line 147.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 147.
+LaTeX Font Info:    ... okay on input line 147.
+LaTeX Font Info:    Try loading font information for T1+lmr on input line 147.
 (/Users/kreutzer/Library/TinyTeX/texmf-dist/tex/latex/lm/t1lmr.fd
 File: t1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Info: Redefining \microtypecontext on input line 143.
+LaTeX Info: Redefining \microtypecontext on input line 147.
 Package microtype Info: Generating PDF output.
 Package microtype Info: Character protrusion enabled (level 2).
 Package microtype Info: Using protrusion set `basicmath'.
@@ -739,7 +739,7 @@ File: mt-cmr.cfg 2013/05/19 v2.2 microtype config. file: Computer Modern Roman
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
 \AtBeginShipoutBox=\box48
-Package hyperref Info: Link coloring OFF on input line 143.
+Package hyperref Info: Link coloring OFF on input line 147.
 (/Users/kreutzer/Library/TinyTeX/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
 
@@ -749,9 +749,9 @@ Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 )
 \c@section@level=\count140
 )
-LaTeX Info: Redefining \ref on input line 143.
-LaTeX Info: Redefining \pageref on input line 143.
-LaTeX Info: Redefining \nameref on input line 143.
+LaTeX Info: Redefining \ref on input line 147.
+LaTeX Info: Redefining \pageref on input line 147.
+LaTeX Info: Redefining \nameref on input line 147.
 (./RLumCarlo_-_Getting_started_with_RLumCarlo.out) (./RLumCarlo_-_Getting_start
 ed_with_RLumCarlo.out)
 \@outlinefile=\write4
@@ -780,51 +780,51 @@ e
 File: ../man/figures/Logo_RLumCarlo.png Graphic file (type png)
 <use ../man/figures/Logo_RLumCarlo.png>
 Package pdftex.def Info: ../man/figures/Logo_RLumCarlo.png  used on input line 
-146.
+150.
 (pdftex.def)             Requested size: 72.2731pt x 70.82764pt.
-LaTeX Font Info:    Try loading font information for OT1+lmr on input line 167.
+LaTeX Font Info:    Try loading font information for OT1+lmr on input line 171.
 
 (/Users/kreutzer/Library/TinyTeX/texmf-dist/tex/latex/lm/ot1lmr.fd
 File: ot1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for OML+lmm on input line 167.
+LaTeX Font Info:    Try loading font information for OML+lmm on input line 171.
 
 (/Users/kreutzer/Library/TinyTeX/texmf-dist/tex/latex/lm/omllmm.fd
 File: omllmm.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for OMS+lmsy on input line 167
+LaTeX Font Info:    Try loading font information for OMS+lmsy on input line 171
 .
 (/Users/kreutzer/Library/TinyTeX/texmf-dist/tex/latex/lm/omslmsy.fd
 File: omslmsy.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for OMX+lmex on input line 167
+LaTeX Font Info:    Try loading font information for OMX+lmex on input line 171
 .
 (/Users/kreutzer/Library/TinyTeX/texmf-dist/tex/latex/lm/omxlmex.fd
 File: omxlmex.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 167.
+(Font)              <8> on input line 171.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 167.
+(Font)              <6> on input line 171.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <5> on input line 167.
-LaTeX Font Info:    Try loading font information for U+msa on input line 167.
+(Font)              <5> on input line 171.
+LaTeX Font Info:    Try loading font information for U+msa on input line 171.
 (/Users/kreutzer/Library/TinyTeX/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 ) (/Users/kreutzer/Library/TinyTeX/texmf-dist/tex/latex/microtype/mt-msa.cfg
 File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 167.
+LaTeX Font Info:    Try loading font information for U+msb on input line 171.
 (/Users/kreutzer/Library/TinyTeX/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) (/Users/kreutzer/Library/TinyTeX/texmf-dist/tex/latex/microtype/mt-msb.cfg
 File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
 )
-Underfull \hbox (badness 10000) in paragraph at lines 167--209
+Underfull \hbox (badness 10000) in paragraph at lines 171--213
 
  []
 
-LaTeX Font Info:    Try loading font information for T1+lmtt on input line 211.
+LaTeX Font Info:    Try loading font information for T1+lmtt on input line 215.
 
 (/Users/kreutzer/Library/TinyTeX/texmf-dist/tex/latex/lm/t1lmtt.fd
 File: t1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
@@ -832,50 +832,50 @@ File: t1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
 
 {/Users/kreutzer/Library/TinyTeX/texmf-var/fonts/map/pdftex/updmap/pdftex.map} 
 <../man/figures/Logo_RLumCarlo.png>]
-Overfull \hbox (23.74498pt too wide) in alignment at lines 228--269
+Overfull \hbox (23.74498pt too wide) in alignment at lines 232--273
  [] [] [] [] [] 
  []
 
 
-Underfull \vbox (badness 10000) detected at line 269
+Underfull \vbox (badness 10000) detected at line 273
  []
 
 
-Overfull \hbox (23.74498pt too wide) in alignment at lines 269--309
+Overfull \hbox (23.74498pt too wide) in alignment at lines 273--313
  [] [] [] [] [] 
  []
 
 
-Overfull \hbox (23.74498pt too wide) in alignment at lines 309--349
+Overfull \hbox (23.74498pt too wide) in alignment at lines 313--353
  [] [] [] [] [] 
  []
 
 [2]
-Overfull \hbox (23.74498pt too wide) in alignment at lines 349--389
+Overfull \hbox (23.74498pt too wide) in alignment at lines 353--393
  [] [] [] [] [] 
  []
 
 
-Overfull \hbox (23.74498pt too wide) in alignment at lines 389--398
+Overfull \hbox (23.74498pt too wide) in alignment at lines 393--402
  [] [] [] [] [] 
  []
 
 [3]
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10> on input line 427.
+(Font)              <10> on input line 431.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7> on input line 427.
+(Font)              <7> on input line 431.
 
-Package xcolor Warning: Incompatible color definition on input line 432.
+Package xcolor Warning: Incompatible color definition on input line 436.
 
 [4]
 LaTeX Font Info:    Font shape `T1/lmtt/bx/n' in size <10> not available
-(Font)              Font shape `T1/lmtt/b/n' tried instead on input line 434.
+(Font)              Font shape `T1/lmtt/b/n' tried instead on input line 438.
 
-Package xcolor Warning: Incompatible color definition on input line 443.
+Package xcolor Warning: Incompatible color definition on input line 447.
 
 
-Package xcolor Warning: Incompatible color definition on input line 443.
+Package xcolor Warning: Incompatible color definition on input line 447.
 
 <RLumCarlo_-_Getting_started_with_RLumCarlo_files/figure-latex/Fig 1-1.pdf, id=
 86, 440.64626pt x 251.94125pt>
@@ -884,16 +884,16 @@ File: RLumCarlo_-_Getting_started_with_RLumCarlo_files/figure-latex/Fig 1-1.pdf
 <use RLumCarlo_-_Getting_started_with_RLumCarlo_files/figure-latex/Fig 1-1.pdf>
 
 Package pdftex.def Info: RLumCarlo_-_Getting_started_with_RLumCarlo_files/figur
-e-latex/Fig 1-1.pdf  used on input line 445.
+e-latex/Fig 1-1.pdf  used on input line 449.
 (pdftex.def)             Requested size: 440.64517pt x 251.94063pt.
 
-Package xcolor Warning: Incompatible color definition on input line 454.
+Package xcolor Warning: Incompatible color definition on input line 458.
 
 
-Package xcolor Warning: Incompatible color definition on input line 469.
+Package xcolor Warning: Incompatible color definition on input line 473.
 
 
-Package xcolor Warning: Incompatible color definition on input line 469.
+Package xcolor Warning: Incompatible color definition on input line 473.
 
 <RLumCarlo_-_Getting_started_with_RLumCarlo_files/figure-latex/Fig 2-1.pdf, id=
 87, 440.64626pt x 251.94125pt>
@@ -902,47 +902,47 @@ File: RLumCarlo_-_Getting_started_with_RLumCarlo_files/figure-latex/Fig 2-1.pdf
 <use RLumCarlo_-_Getting_started_with_RLumCarlo_files/figure-latex/Fig 2-1.pdf>
 
 Package pdftex.def Info: RLumCarlo_-_Getting_started_with_RLumCarlo_files/figur
-e-latex/Fig 2-1.pdf  used on input line 471.
+e-latex/Fig 2-1.pdf  used on input line 475.
 (pdftex.def)             Requested size: 440.64517pt x 251.94063pt.
 [5 <./RLumCarlo_-_Getting_started_with_RLumCarlo_files/figure-latex/Fig 1-1.pdf
 >]
 
-Package xcolor Warning: Incompatible color definition on input line 481.
-
-
 Package xcolor Warning: Incompatible color definition on input line 485.
 
 
-Package xcolor Warning: Incompatible color definition on input line 485.
+Package xcolor Warning: Incompatible color definition on input line 489.
 
 
-Package xcolor Warning: Incompatible color definition on input line 505.
+Package xcolor Warning: Incompatible color definition on input line 489.
 
 
 Package xcolor Warning: Incompatible color definition on input line 509.
 
 
-Package xcolor Warning: Incompatible color definition on input line 509.
+Package xcolor Warning: Incompatible color definition on input line 513.
+
+
+Package xcolor Warning: Incompatible color definition on input line 513.
 
 [6 <./RLumCarlo_-_Getting_started_with_RLumCarlo_files/figure-latex/Fig 2-1.pdf
 >]
 
-Package xcolor Warning: Incompatible color definition on input line 528.
-
-
 Package xcolor Warning: Incompatible color definition on input line 532.
 
 
-Package xcolor Warning: Incompatible color definition on input line 532.
+Package xcolor Warning: Incompatible color definition on input line 536.
 
 
-Package xcolor Warning: Incompatible color definition on input line 550.
+Package xcolor Warning: Incompatible color definition on input line 536.
 
 
-Package xcolor Warning: Incompatible color definition on input line 561.
+Package xcolor Warning: Incompatible color definition on input line 554.
 
 
-Package xcolor Warning: Incompatible color definition on input line 561.
+Package xcolor Warning: Incompatible color definition on input line 565.
+
+
+Package xcolor Warning: Incompatible color definition on input line 565.
 
 <RLumCarlo_-_Getting_started_with_RLumCarlo_files/figure-latex/Fig 3-1.pdf, id=
 121, 440.64626pt x 251.94125pt>
@@ -951,27 +951,27 @@ File: RLumCarlo_-_Getting_started_with_RLumCarlo_files/figure-latex/Fig 3-1.pdf
 <use RLumCarlo_-_Getting_started_with_RLumCarlo_files/figure-latex/Fig 3-1.pdf>
 
 Package pdftex.def Info: RLumCarlo_-_Getting_started_with_RLumCarlo_files/figur
-e-latex/Fig 3-1.pdf  used on input line 563.
+e-latex/Fig 3-1.pdf  used on input line 567.
 (pdftex.def)             Requested size: 440.64517pt x 251.94063pt.
 
-Package xcolor Warning: Incompatible color definition on input line 573.
+Package xcolor Warning: Incompatible color definition on input line 577.
 
 
-Package xcolor Warning: Incompatible color definition on input line 585.
+Package xcolor Warning: Incompatible color definition on input line 589.
 
 
-Package xcolor Warning: Incompatible color definition on input line 585.
+Package xcolor Warning: Incompatible color definition on input line 589.
 
 
-Package xcolor Warning: Incompatible color definition on input line 585.
+Package xcolor Warning: Incompatible color definition on input line 589.
 
 [7 <./RLumCarlo_-_Getting_started_with_RLumCarlo_files/figure-latex/Fig 3-1.pdf
 >]
 
-Package xcolor Warning: Incompatible color definition on input line 585.
+Package xcolor Warning: Incompatible color definition on input line 589.
 
 
-Package xcolor Warning: Incompatible color definition on input line 585.
+Package xcolor Warning: Incompatible color definition on input line 589.
 
 <RLumCarlo_-_Getting_started_with_RLumCarlo_files/figure-latex/Fig 4-1.pdf, id=
 140, 440.64626pt x 251.94125pt>
@@ -980,27 +980,27 @@ File: RLumCarlo_-_Getting_started_with_RLumCarlo_files/figure-latex/Fig 4-1.pdf
 <use RLumCarlo_-_Getting_started_with_RLumCarlo_files/figure-latex/Fig 4-1.pdf>
 
 Package pdftex.def Info: RLumCarlo_-_Getting_started_with_RLumCarlo_files/figur
-e-latex/Fig 4-1.pdf  used on input line 587.
+e-latex/Fig 4-1.pdf  used on input line 591.
 (pdftex.def)             Requested size: 440.64517pt x 251.94063pt.
 
-Package xcolor Warning: Incompatible color definition on input line 599.
+Package xcolor Warning: Incompatible color definition on input line 603.
 
 
-Package xcolor Warning: Incompatible color definition on input line 617.
+Package xcolor Warning: Incompatible color definition on input line 621.
 
 
-Package xcolor Warning: Incompatible color definition on input line 617.
+Package xcolor Warning: Incompatible color definition on input line 621.
 
 
-Package xcolor Warning: Incompatible color definition on input line 622.
+Package xcolor Warning: Incompatible color definition on input line 626.
 
 [8 <./RLumCarlo_-_Getting_started_with_RLumCarlo_files/figure-latex/Fig 4-1.pdf
 >]
 
-Package xcolor Warning: Incompatible color definition on input line 644.
+Package xcolor Warning: Incompatible color definition on input line 648.
 
 
-Package xcolor Warning: Incompatible color definition on input line 644.
+Package xcolor Warning: Incompatible color definition on input line 648.
 
 <RLumCarlo_-_Getting_started_with_RLumCarlo_files/figure-latex/Fig 6,Plot avera
 ge signal-1.pdf, id=158, 440.64626pt x 251.94125pt>
@@ -1009,28 +1009,28 @@ average signal-1.pdf Graphic file (type pdf)
 <use RLumCarlo_-_Getting_started_with_RLumCarlo_files/figure-latex/Fig 6,Plot a
 verage signal-1.pdf>
 Package pdftex.def Info: RLumCarlo_-_Getting_started_with_RLumCarlo_files/figur
-e-latex/Fig 6,Plot average signal-1.pdf  used on input line 646.
+e-latex/Fig 6,Plot average signal-1.pdf  used on input line 650.
 (pdftex.def)             Requested size: 440.64517pt x 251.94063pt.
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 649.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 653.
 [9 <./RLumCarlo_-_Getting_started_with_RLumCarlo_files/figure-latex/Fig 6,Plot 
 average signal-1.pdf>]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 649.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 653.
 (./RLumCarlo_-_Getting_started_with_RLumCarlo.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 649.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 649.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 653.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 653.
 Package rerunfilecheck Info: File `RLumCarlo_-_Getting_started_with_RLumCarlo.o
 ut' has not changed.
-(rerunfilecheck)             Checksum: E12F262E34CFF1B931BDA06B3C194A97;1800.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 649.
+(rerunfilecheck)             Checksum: 2F0C89B02CA5761C503F255AC9D1C9C1;1843.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 653.
  ) 
 Here is how much of TeX's memory you used:
- 14537 strings out of 494553
- 214439 string characters out of 6174236
- 362999 words of memory out of 5000000
+ 14535 strings out of 494553
+ 214384 string characters out of 6176446
+ 363158 words of memory out of 5000000
  17886 multiletter control sequences out of 15000+600000
  58997 words of font info for 78 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 32i,13n,38p,1005b,456s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 32i,13n,38p,1005b,457s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/Users/kreutzer/Library/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}{/Us
 ers/kreutzer/Library/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}{/User
 s/kreutzer/Library/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}{/Users/kreu
@@ -1051,8 +1051,8 @@ ts/type1/public/lm/lmsy7.pfb></Users/kreutzer/Library/TinyTeX/texmf-dist/fonts/
 type1/public/lm/lmtk10.pfb></Users/kreutzer/Library/TinyTeX/texmf-dist/fonts/ty
 pe1/public/lm/lmtt10.pfb></Users/kreutzer/Library/TinyTeX/texmf-dist/fonts/type
 1/public/lm/lmtti10.pfb>
-Output written on RLumCarlo_-_Getting_started_with_RLumCarlo.pdf (9 pages, 7526
-87 bytes).
+Output written on RLumCarlo_-_Getting_started_with_RLumCarlo.pdf (9 pages, 7540
+55 bytes).
 PDF statistics:
  238 PDF objects out of 1000 (max. 8388607)
  192 compressed objects within 2 object streams
