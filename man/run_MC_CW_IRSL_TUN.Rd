@@ -18,8 +18,8 @@ run_MC_CW_IRSL_TUN(
 )
 }
 \arguments{
-\item{A}{\link{numeric} (\strong{required}): The optical excitation rate from ground state of trap to
-excited state of trap (s^-1).}
+\item{A}{\link{numeric} (\strong{required}): The optical excitation rate from the ground state of trap to
+the excited state of trap (s^-1).}
 
 \item{rho}{\link{numeric} (\strong{required}): The density of recombination centers
 (defined as \eqn{\rho}' in Huntley 2006) (unitless).}
@@ -29,17 +29,19 @@ excited state of trap (s^-1).}
 \item{clusters}{\link{numeric} (\emph{with default}): The number of MC runs (unitless).}
 
 \item{r_c}{\link{numeric} (\emph{with default}): Critical distance (>0) that must be provided if the
-sample has 1 been thermally and/or optically pretreated. This parameter expresses the fact
-that electron-hole pairs within a critical radius \code{r_c} have already been recombined.}
+sample has been thermally and/or optically pretreated. This parameter expresses the fact
+that electron-hole pairs within a critical radius \code{r_c} have already recombined.}
 
 \item{delta.r}{\link{numeric} (\emph{with default}): Increments of the unitless distance parameter r}
 
 \item{N_e}{\link{numeric} (\emph{width default}): The total number of electron traps available (unitless).}
 
-\item{method}{\link{character} (\emph{with default}): sequential \code{'seq'} or parallel processing \code{'par'}}
+\item{method}{\link{character} (\emph{with default}): Sequential \code{'seq'} or parallel \code{'par'}processing. In
+the parallel mode the function tries to run the simulation on multiple CPU cores (if available) with
+a positive effect on the computation time.}
 
 \item{output}{\link{character} (\emph{with default}): output is either the \code{'signal'} (the default) or
-\code{'remaining_e'} (the remaining charges, electrons, in the trap)}
+\code{'remaining_e'} (the remaining charges/electrons in the trap)}
 
 \item{\dots}{further arguments}
 }
@@ -50,23 +52,23 @@ and a \link{numeric} time vector.
 }
 \description{
 Runs a Monte-Carlo (MC) simulation of continuous wave infrared stimulated luminesence
-(CW-IRSL) using the model for tunneling transiation. Tunneling refers to quantum mechanical
+(CW-IRSL) using the model for tunneling transiations. Tunneling refers to quantum mechanical
 tunneling processes from the excited state of the trapped charge,
-into a state of the recombination center.
+into a recombination center.
 }
 \details{
 \strong{The model}
 
 \deqn{
-I_{TUN}(r',t) = -dn/dt = A * exp(-(\rho')^(-1/3)*r')* n (r',t)
+I_{TUN}(r',t) = -dn/dt = A * exp(-(\rho')^{-1/3} * r')* n (r',t)
 }
 
 Where in the function: \cr
-A := Excitation rate from ground state of the trap to the excited state (1/s) \cr
+A := excitation rate from ground state of the trap to the excited state (1/s) \cr
 r' := the unitless tunneling radius \cr
-\eqn{\rho}' := \code{rho} the unitless density of recombination centres \cr
+\eqn{\rho}' := \verb{rho'} the unitless density of recombination centres (see Huntley (2006)) \cr
 t := time (s) \cr
-n := The Instantaneous number of electrons
+n := the instantaneous number of electrons
 }
 \section{Function version}{
  0.2.0
@@ -87,7 +89,7 @@ run_MC_CW_IRSL_TUN(
 } 
 
 \section{How to cite}{
-Friedrich, J., Kreutzer, S., 2019. run_MC_CW_IRSL_TUN(): Run Monte-Carlo Simulation for CW-IRSL (tunneling transitions). Function version 0.2.0. In: Friedrich, J., Kreutzer, S., Pagonis, V., Schmidt, C., 2019. RLumCarlo: Monte-Carlo Methods for Simulating Luminescence PhenomenaR package version 0.1.0.9000-127. 
+Friedrich, J., Kreutzer, S., 2019. run_MC_CW_IRSL_TUN(): Run Monte-Carlo Simulation for CW-IRSL (tunneling transitions). Function version 0.2.0. In: Friedrich, J., Kreutzer, S., Pagonis, V., Schmidt, C., 2019. RLumCarlo: Monte-Carlo Methods for Simulating Luminescence PhenomenaR package version 0.1.0.9000-129. 
 }
 
 \references{

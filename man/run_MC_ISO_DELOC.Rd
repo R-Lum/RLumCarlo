@@ -23,9 +23,9 @@ run_MC_ISO_DELOC(
 
 \item{E}{\link{numeric} (\strong{required}): Thermal activation energy of the trap (eV)}
 
-\item{T}{\link{numeric} (\emph{with default}): Constant stimulation temperature (degrees C)}
+\item{T}{\link{numeric} (\emph{with default}): Constant stimulation temperature (degress C)}
 
-\item{times}{\link{numeric} (\emph{with default}): The sequence of temperature steps within the simulation (s)}
+\item{times}{\link{numeric} (\emph{with default}): The sequence of time steps within the simulation (s)}
 
 \item{clusters}{\link{numeric} (\emph{with default}): The number of MC runs (unitless)}
 
@@ -36,7 +36,9 @@ beginning of the simulation (unitless)}
 
 \item{R}{\link{numeric} (\emph{with default}): The delocalized retrapping ratio (unitless)}
 
-\item{method}{\link{character} (\emph{with default}): Sequential \code{'seq'} or parallel processing \code{'par'}}
+\item{method}{\link{character} (\emph{with default}): Sequential \code{'seq'} or parallel \code{'par'}processing. In
+the parallel mode the function tries to run the simulation on multiple CPU cores (if available) with
+a positive effect on the computation time.}
 
 \item{output}{\link{character} (\emph{with default}): Output is either the \code{'signal'} (the default) or
 \code{'remaining_e'} (the remaining charges, electrons, in the trap)}
@@ -61,14 +63,14 @@ I_{DELOC}(t) = -dn/dt = (s * exp(-E/(k_{B} * T_{ISO}))) * (n^2 / (N*R + n(1-R)))
 }
 
 Where in the function: \cr
-\code{t} := Time \cr
+t := time \cr
 \eqn{k_{B}} := Boltzmann constant \cr
-\eqn{T_{ISO}} = Temperature of the isothermal experiment \cr
-n := \code{n_filled} the number of filled electron traps at the beginning of the simulation\cr
-E := The trap depth in eV \cr
-s := The frequency factor in 1/s \cr
-N := \code{N_e} is the total number of electron traps available (unitless) \cr
-R := The retrapping ratio for delocalized transitions
+\eqn{T_{ISO}} = temperature of the isothermal experiment \cr
+n := \code{n_filled}, the number of filled electron traps at the beginning of the simulation\cr
+E := the trap depth in eV \cr
+s := the frequency factor in 1/s \cr
+N := \code{N_e}, the total number of electron traps available (unitless) \cr
+R := the retrapping ratio for delocalized transitions
 }
 \section{Function version}{
  0.1.0
@@ -87,7 +89,7 @@ plot_RLumCarlo(legend = TRUE)
 } 
 
 \section{How to cite}{
-Kreutzer, S., 2019. run_MC_ISO_DELOC(): Run Monte-Carlo Simulation for ISO-TL (delocalized transitions). Function version 0.1.0. In: Friedrich, J., Kreutzer, S., Pagonis, V., Schmidt, C., 2019. RLumCarlo: Monte-Carlo Methods for Simulating Luminescence PhenomenaR package version 0.1.0.9000-127. 
+Kreutzer, S., 2019. run_MC_ISO_DELOC(): Run Monte-Carlo Simulation for ISO-TL (delocalized transitions). Function version 0.1.0. In: Friedrich, J., Kreutzer, S., Pagonis, V., Schmidt, C., 2019. RLumCarlo: Monte-Carlo Methods for Simulating Luminescence PhenomenaR package version 0.1.0.9000-129. 
 }
 
 \references{

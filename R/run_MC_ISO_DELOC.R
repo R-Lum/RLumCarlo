@@ -13,22 +13,22 @@
 #' }
 #'
 #' Where in the function: \cr
-#' `t` := Time \cr
+#' t := time \cr
 #' \eqn{k_{B}} := Boltzmann constant \cr
-#' \eqn{T_{ISO}} = Temperature of the isothermal experiment \cr
-#'  n := `n_filled` the number of filled electron traps at the beginning of the simulation\cr
-#'  E := The trap depth in eV \cr
-#'  s := The frequency factor in 1/s \cr
-#'  N := `N_e` is the total number of electron traps available (unitless) \cr
-#'  R := The retrapping ratio for delocalized transitions
+#' \eqn{T_{ISO}} = temperature of the isothermal experiment \cr
+#'  n := `n_filled`, the number of filled electron traps at the beginning of the simulation\cr
+#'  E := the trap depth in eV \cr
+#'  s := the frequency factor in 1/s \cr
+#'  N := `N_e`, the total number of electron traps available (unitless) \cr
+#'  R := the retrapping ratio for delocalized transitions
 #'
 #' @param E [numeric] (**required**): Thermal activation energy of the trap (eV)
 #'
 #' @param s [numeric] (**required**): The frequency factor of the trap (s^-1)
 #'
-#' @param T [numeric] (*with default*): Constant stimulation temperature (degrees C)
+#' @param T [numeric] (*with default*): Constant stimulation temperature (degress C)
 #'
-#' @param times [numeric] (*with default*): The sequence of temperature steps within the simulation (s)
+#' @param times [numeric] (*with default*): The sequence of time steps within the simulation (s)
 #'
 #' @param clusters [numeric] (*with default*): The number of MC runs (unitless)
 #'
@@ -39,7 +39,9 @@
 #'
 #' @param R [numeric] (*with default*): The delocalized retrapping ratio (unitless)
 #'
-#' @param method [character] (*with default*): Sequential `'seq'` or parallel processing `'par'`
+#' @param method [character] (*with default*): Sequential `'seq'` or parallel `'par'`processing. In
+#' the parallel mode the function tries to run the simulation on multiple CPU cores (if available) with
+#' a positive effect on the computation time.
 #'
 #' @param output [character] (*with default*): Output is either the `'signal'` (the default) or
 #' `'remaining_e'` (the remaining charges, electrons, in the trap)

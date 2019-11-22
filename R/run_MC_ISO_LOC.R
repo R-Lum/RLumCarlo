@@ -1,9 +1,9 @@
 #' @title Run Monte-Carlo simulation for ISO-TL (localized transitions)
 #'
 #' @description Runs a Monte-Carlo (MC) simulation of isothermally stimulated luminesence
-#' (ISO-TL or ITL) using the genralized one trap (GOT) model. Localized transitions refer to transitions
+#' (ISO-TL or ITL) using the generalized one trap (GOT) model. Localized transitions refer to transitions
 #' which do no involve the conduction or valence band. These transitions take place between the
-#' ground state and an excited state of the trapped charge, and also involve a state of the
+#' ground state and an excited state of the trapped charge, and also involve an excited state of the
 #' recombination center.
 #'
 #' @details
@@ -29,7 +29,7 @@
 #'
 #' @param T [numeric] (*with default*): Constant stimulation temperature (degrees C)
 #'
-#' @param times [numeric] (*with default*): The sequence of temperature steps within the
+#' @param times [numeric] (*with default*): The sequence of time steps within the
 #' simulation (s)
 #'
 #' @param clusters [numeric] (*with default*): The number of MC runs (unitless)
@@ -39,10 +39,12 @@
 #'
 #' @param r [numeric] (*with default*): The retrapping ratio for localized transitions.
 #'
-#' @param method [character] (*with default*): Sequential `'seq'` or parallel processing `'par'`
+#' @param method [character] (*with default*): Sequential `'seq'` or parallel `'par'`processing. In
+#' the parallel mode the function tries to run the simulation on multiple CPU cores (if available) with
+#' a positive effect on the computation time.
 #'
 #' @param output [character] (*with default*): output is either the `'signal'` (the default) or
-#' `'remaining_e'` (the remaining charges, electrons, in the trap)
+#' `'remaining_e'` (the remaining charges/electrons in the trap)
 #'
 #' @param \dots further arguments
 #'

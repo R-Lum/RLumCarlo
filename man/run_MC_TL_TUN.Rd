@@ -38,7 +38,9 @@ that electron-hole pairs within a critical radius \code{r_c} have already been r
 
 \item{delta.r}{\link{numeric} (\emph{with default}): The increments of \code{r_c} (unitless)}
 
-\item{method}{\link{character} (\emph{with default}): sequential \code{'seq'} or parallel processing \code{'par'}.}
+\item{method}{\link{character} (\emph{with default}): Sequential \code{'seq'} or parallel \code{'par'}processing. In
+the parallel mode the function tries to run the simulation on multiple CPU cores (if available) with
+a positive effect on the computation time.}
 
 \item{output}{\link{character} (\emph{with default}): output is either the \code{'signal'} (the default)
 or \code{'remaining_e'} (the remaining charges, electrons, in the trap)}
@@ -107,7 +109,7 @@ plot_RLumCarlo()
 } 
 
 \section{How to cite}{
-Friedrich, J., Kreutzer, S., 2019. run_MC_TL_TUN(): Run Monte-Carlo Simulation for TL (tunneling transitions). Function version 0.1.0. In: Friedrich, J., Kreutzer, S., Pagonis, V., Schmidt, C., 2019. RLumCarlo: Monte-Carlo Methods for Simulating Luminescence PhenomenaR package version 0.1.0.9000-127. 
+Friedrich, J., Kreutzer, S., 2019. run_MC_TL_TUN(): Run Monte-Carlo Simulation for TL (tunneling transitions). Function version 0.1.0. In: Friedrich, J., Kreutzer, S., Pagonis, V., Schmidt, C., 2019. RLumCarlo: Monte-Carlo Methods for Simulating Luminescence PhenomenaR package version 0.1.0.9000-129. 
 }
 
 \references{

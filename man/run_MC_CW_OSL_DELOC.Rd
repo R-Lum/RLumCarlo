@@ -2,7 +2,7 @@
 % Please edit documentation in R/run_MC_CW_OSL_DELOC.R
 \name{run_MC_CW_OSL_DELOC}
 \alias{run_MC_CW_OSL_DELOC}
-\title{Run Monte-Carlo Simulation for CW-OSL for Delocalized Transition}
+\title{Run Monte-Carlo Simulation for CW-OSL (delocalized transitions)}
 \usage{
 run_MC_CW_OSL_DELOC(
   A,
@@ -30,7 +30,9 @@ of the simulation (unitless)}
 
 \item{R}{\link{numeric} (\emph{with default}): The retrapping ratio for delocalized transitions (unitless)}
 
-\item{method}{\link{character} (\emph{with default}): Sequential \code{'seq'} or parallel processing \code{'par'}}
+\item{method}{\link{character} (\emph{with default}): Sequential \code{'seq'} or parallel \code{'par'}processing. In
+the parallel mode the function tries to run the simulation on multiple CPU cores (if available) with
+a positive effect on the computation time.}
 
 \item{output}{\link{character} (\emph{with default}): Output is either the \code{'signal'} (the default) or
 \code{'remaining_e'} (the remaining charges, electrons, in the trap)}
@@ -55,11 +57,11 @@ I_{DELOC}(t) = -dn/dt = A * (n^2 / (N*R + n(1-R)))
 }
 
 Where in the function: \cr
-t := Time \cr
-A := The optical excitation rate from trap to conduction band \cr
-n := \code{n_filled} The instantaneous number of electrons \cr
+t := time \cr
+A := the optical excitation rate from trap to conduction band \cr
+n := \code{n_filled}, the instantaneous number of electrons \cr
 N := \code{N_e} the available number of electron traps available \cr
-R := Retrapping ratio for delocalized transitions
+R := retrapping ratio for delocalized transitions
 }
 \section{Function version}{
  0.1.0
@@ -128,7 +130,7 @@ legend("topright",
 } 
 
 \section{How to cite}{
-Kreutzer, S., 2019. run_MC_CW_OSL_DELOC(): Run Monte-Carlo Simulation for CW-OSL for Delocalized Transition. Function version 0.1.0. In: Friedrich, J., Kreutzer, S., Pagonis, V., Schmidt, C., 2019. RLumCarlo: Monte-Carlo Methods for Simulating Luminescence PhenomenaR package version 0.1.0.9000-127. 
+Kreutzer, S., 2019. run_MC_CW_OSL_DELOC(): Run Monte-Carlo Simulation for CW-OSL (delocalized transitions). Function version 0.1.0. In: Friedrich, J., Kreutzer, S., Pagonis, V., Schmidt, C., 2019. RLumCarlo: Monte-Carlo Methods for Simulating Luminescence PhenomenaR package version 0.1.0.9000-129. 
 }
 
 \references{

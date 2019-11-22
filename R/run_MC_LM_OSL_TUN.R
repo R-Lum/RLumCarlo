@@ -38,7 +38,9 @@
 #'
 #' @param delta.r [numeric] (*with default*): Increments of r_c (unitless)
 #'
-#' @param method [character] (*with default*): sequential `'seq'` or parallel processing `'par'`
+#' @param method [character] (*with default*): Sequential `'seq'` or parallel `'par'`processing. In
+#' the parallel mode the function tries to run the simulation on multiple CPU cores (if available) with
+#' a positive effect on the computation time.
 #'
 #' @param output [character] (*with default*): output is either the `'signal'` (the default) or
 #' `'remaining_e'` (the remaining charges, electrons, in the trap)

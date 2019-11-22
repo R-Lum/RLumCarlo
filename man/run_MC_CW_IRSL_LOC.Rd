@@ -16,7 +16,7 @@ run_MC_CW_IRSL_LOC(
 )
 }
 \arguments{
-\item{A}{\link{numeric} (\strong{required}): The optical excitation rate from trap to the excited state (s^-1)}
+\item{A}{\link{numeric} (\strong{required}): The optical excitation rate from the ground state of the trap to the excited state (s^-1)}
 
 \item{times}{\link{numeric} (\emph{with default}): The sequence of time steps within the simulation (s)}
 
@@ -27,10 +27,12 @@ of the simulation (unitless)}
 
 \item{r}{\link{numeric} (\emph{with default}): The retrapping ratio for localized transitions}
 
-\item{method}{\link{character} (\emph{with default}): Sequential \code{'seq'} or parallel \code{'par'}processing}
+\item{method}{\link{character} (\emph{with default}): Sequential \code{'seq'} or parallel \code{'par'}processing. In
+the parallel mode the function tries to run the simulation on multiple CPU cores (if available) with
+a positive effect on the computation time.}
 
 \item{output}{\link{character} (\emph{with default}): output is either the \code{'signal'} (the default) or
-\code{'remaining_e'} (the remaining charges/electrons, in the trap)}
+\code{'remaining_e'} (the remaining charges/electrons in the trap)}
 
 \item{\dots}{further arguments}
 }
@@ -43,7 +45,7 @@ and a \link{numeric} time vector.
 Runs a Monte-Carlo (MC) simulation of continuous wave infrared stimulated luminesence
 (CW-IRSL) using the generalized one trap (GOT) model. Localized transitions refer to transitions
 which do not involve the conduction or valence band. These transitions take place between the
-ground state and an excited state of the trapped charge, and also involve a state of the
+ground state and an excited state of the trapped charge, and also involve an excited state of the
 recombination center.
 }
 \details{
@@ -53,7 +55,7 @@ I_{LOC}(t) = -dn/dt = A * (n^2 / (r + n))
 }
 
 where in the function: \cr
-A := optical excitation rate from the ground stateinto the excited state of the trapped charge (s^-1) \cr
+A := optical excitation rate from the ground state into the excited state of the trapped charge (s^-1) \cr
 r := retrapping ratio for localized transitions \cr
 t := time (s)\cr
 n := number of filled electron traps
@@ -77,7 +79,7 @@ plot_RLumCarlo(legend = TRUE)
 } 
 
 \section{How to cite}{
-Kreutzer, S., 2019. run_MC_CW_IRSL_LOC(): Monte-Carlo Simulation for CW-IRSL (localized transitions). Function version 0.1.0. In: Friedrich, J., Kreutzer, S., Pagonis, V., Schmidt, C., 2019. RLumCarlo: Monte-Carlo Methods for Simulating Luminescence PhenomenaR package version 0.1.0.9000-127. 
+Kreutzer, S., 2019. run_MC_CW_IRSL_LOC(): Monte-Carlo Simulation for CW-IRSL (localized transitions). Function version 0.1.0. In: Friedrich, J., Kreutzer, S., Pagonis, V., Schmidt, C., 2019. RLumCarlo: Monte-Carlo Methods for Simulating Luminescence PhenomenaR package version 0.1.0.9000-129. 
 }
 
 \references{

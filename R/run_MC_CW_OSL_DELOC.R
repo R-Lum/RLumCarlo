@@ -1,4 +1,4 @@
-#' @title Run Monte-Carlo Simulation for CW-OSL for Delocalized Transition
+#' @title Run Monte-Carlo Simulation for CW-OSL (delocalized transitions)
 #'
 #' @description Runs a Monte-Carlo (MC) simulation of continuous wave optically stimulated luminesence
 #' (CW-OSL) using the one trap one recombination center (OTOR) model.
@@ -13,11 +13,11 @@
 #' }
 #'
 #' Where in the function: \cr
-#'  t := Time \cr
-#'  A := The optical excitation rate from trap to conduction band \cr
-#'  n := `n_filled` The instantaneous number of electrons \cr
+#'  t := time \cr
+#'  A := the optical excitation rate from trap to conduction band \cr
+#'  n := `n_filled`, the instantaneous number of electrons \cr
 #'  N := `N_e` the available number of electron traps available \cr
-#'  R := Retrapping ratio for delocalized transitions
+#'  R := retrapping ratio for delocalized transitions
 #'
 #' @param A [numeric] (**required**): The optical excitation rate from trap to conduction band (s^-1)
 #'
@@ -32,7 +32,9 @@
 #'
 #' @param R [numeric] (*with default*): The retrapping ratio for delocalized transitions (unitless)
 #'
-#' @param method [character] (*with default*): Sequential `'seq'` or parallel processing `'par'`
+#' @param method [character] (*with default*): Sequential `'seq'` or parallel `'par'`processing. In
+#' the parallel mode the function tries to run the simulation on multiple CPU cores (if available) with
+#' a positive effect on the computation time.
 #'
 #' @param output [character] (*with default*): Output is either the `'signal'` (the default) or
 #' `'remaining_e'` (the remaining charges, electrons, in the trap)
