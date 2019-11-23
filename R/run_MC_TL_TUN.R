@@ -1,38 +1,38 @@
 #' @title Run Monte-Carlo Simulation for TL (tunneling transitions)
 #'
-#' @description Runs a Monte-Carlo (MC) simulation of thermo-luminesence (TL) caused by
+#' @description Runs a Monte-Carlo (MC) simulation of thermoluminesence (TL) caused by
 #' tunnelling (TUN) transitions.  Tunneling refers to quantum mechanical
 #' tunneling processes from the excited state of the trapped charge,
-#' into a state of the recombination center.
+#' into a recombination center.
 #'
 #' @details
 #'
 #' **The model**
 #'
 #' \deqn{
-#' I_{TUN}(r',t) = -dn/dt = (s * exp(-E/(k_{B} * T))) * exp(-(\rho')^(-1/3) * r') * n(r',t)
+#' I_{TUN}(r',t) = -dn/dt = (s * exp(-E/(k_{B} * T))) * exp(-(\rho')^{-1/3} * r') * n(r',t)
 #' }
 #'
 #' Where in the function: \cr
-#' s := effective frequency for the tunneling process (1/s) \cr
+#' s := frequency for the tunneling process (s^-1) \cr
 #' E := thermal activation energy (eV) \cr
 #' \eqn{k_{B}} := Boltzmann constant \cr
 #' T := temperature \cr
-#' r' := `r` electron-hole distance (unitless) \cr
-#' \eqn{\rho}' := Density of recombination centers \cr
+#' r' := the unitless tunneling radius \cr
+#' \eqn{\rho}' := `rho'`, the unitless density of recombination centres (see Huntley (2006)) \cr
 #' t := time (s) \cr
-#' n := The instantaneous number of electrons
+#' n := the instantaneous number of electrons
 #'
 #' @param E [numeric] (**required**): Thermal activation energy of the trap (eV)
 #'
-#' @param s [list] (**required**): The effective frequency factor for the tunneling process (1/s)
+#' @param s [list] (**required**): The frequency factor for the tunneling process (s^-1)
 #'
 #' @param rho [numeric] (**required**): The dimensionless density of recombination centers
 #' (defined as \eqn{\rho}' in Huntley 2006)
 #'
 #' @param r_c [numeric] (*with default*): Critical distance (>0) that is to be used if
 #' the sample has been thermally and/or optically pretreated. This parameter expresses the fact
-#' that electron-hole pairs within a critical radius `r_c` have already been recombined.
+#' that electron-hole pairs within a critical radius `r_c` have already recombined.
 #'
 #' @param times [vector] (*wih default*): The sequence of time steps within the simulation (s)
 #'
@@ -47,7 +47,7 @@
 #' a positive effect on the computation time.
 #'
 #' @param output [character] (*with default*): output is either the `'signal'` (the default)
-#' or `'remaining_e'` (the remaining charges, electrons, in the trap)
+#' or `'remaining_e'` (the remaining charges/electrons in the trap)
 #'
 #' @param \dots further arguments
 #'
@@ -62,7 +62,7 @@
 #'
 #' @references
 #' Huntley, D.J., 2006. An explanation of the power-law decay of luminescence.
-#' Journal of Physics: Condensed Matter, 18(4), 1359.\doi{10.1088/0953-8984/18/4/020}
+#' Journal of Physics: Condensed Matter, 18(4), 1359. \doi{10.1088/0953-8984/18/4/020}
 #'
 #' Pagonis, V. and Kulp, C., 2017. Monte Carlo simulations of tunneling
 #' phenomena and nearest neighbor hopping mechanism in feldspars.
@@ -74,6 +74,7 @@
 #' Journal of Luminescence 207, 266–272. \doi{10.1016/j.jlumin.2018.11.024}
 #'
 #' **Further reading**
+#'
 #' Aitken, M.J., 1985. Thermoluminescence dating. Academic Press.
 #'
 #' Jain, M., Guralnik, B., Andersen, M.T., 2012. Stimulated luminescence emission from
@@ -95,7 +96,7 @@
 #'
 #' \dontrun{
 #' ## the long (meaningful example)
-#' run_MC_TL_TUN(
+#' results <- run_MC_TL_TUN(
 #'  s = 1e12,
 #'  E = 0.9,
 #'  rho = 0.01,
@@ -103,8 +104,10 @@
 #'  times = 80:220,
 #'  clusters = 100,
 #'  method = 'par',
-#'  delta.r = 1e-1) %>%
-#' plot_RLumCarlo()
+#'  delta.r = 1e-1)
+#'
+#' ## plot
+#' plot_RLumCarlo(results)
 #' }
 #'
 #' @keywords models data

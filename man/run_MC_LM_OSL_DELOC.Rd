@@ -77,7 +77,12 @@ run_MC_LM_OSL_DELOC(
  clusters = 10) \%>\%
 plot_RLumCarlo(legend = TRUE)
 
+} 
+
+\section{How to cite}{
+Kreutzer, S., 2019. run_MC_LM_OSL_DELOC(): Run Monte-Carlo Simulation for LM-OSL (delocalized transitions). Function version 0.1.0. In: Friedrich, J., Kreutzer, S., Pagonis, V., Schmidt, C., 2019. RLumCarlo: Monte-Carlo Methods for Simulating Luminescence PhenomenaR package version 0.1.0.9000-131. 
 }
+
 \references{
 Pagonis, V., Friedrich, J., Discher, M., Müller-Kirschbaum, A., Schlosser, V., Kreutzer, S.,
 Chen, R. and Schmidt, C., 2019. Excited state luminescence signals from a random distribution of

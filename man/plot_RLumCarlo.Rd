@@ -51,5 +51,10 @@ that can be best distinguished, in particular by colour-blind users.
 \author{
 Johannes Friedrich, University of Bayreuth (Germany), Sebastian Kreutzer, IRAMAT-CRP2A, UMR 5060,
 Université Bordeaux Montaigne (France)
+} 
+
+\section{How to cite}{
+Friedrich, J., Kreutzer, S., 2019. plot_RLumCarlo(): Plot RLumCarlo Monte-Carlo Simulation Results. Function version 0.1.0. In: Friedrich, J., Kreutzer, S., Pagonis, V., Schmidt, C., 2019. RLumCarlo: Monte-Carlo Methods for Simulating Luminescence PhenomenaR package version 0.1.0.9000-131. 
 }
+
 \keyword{hplot}

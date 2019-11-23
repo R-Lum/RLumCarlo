@@ -104,7 +104,12 @@ results <- run_MC_LM_OSL_TUN(
 plot_RLumCarlo(results, norm = TRUE)
 }
 
+} 
+
+\section{How to cite}{
+Friedrich, J., Kreutzer, S., 2019. run_MC_LM_OSL_TUN(): Run Monte-Carlo Simulation for LM-OSL (tunneling transitions). Function version 0.1.0. In: Friedrich, J., Kreutzer, S., Pagonis, V., Schmidt, C., 2019. RLumCarlo: Monte-Carlo Methods for Simulating Luminescence PhenomenaR package version 0.1.0.9000-131. 
 }
+
 \references{
 Huntley, D.J., 2006. An explanation of the power-law decay of luminescence.
 Journal of Physics: Condensed Matter, 18(4), 1359.\doi{10.1088/0953-8984/18/4/020}

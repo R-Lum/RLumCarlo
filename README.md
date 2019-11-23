@@ -55,7 +55,7 @@ Status](https://travis-ci.com/R-Lum/RLumCarlo.svg?token=ymRxA7NeJn6EE7PixZr8&bra
 
   - ~~run\_MC\_TL\_TUN.R~~
 
-  - Documentation checked by Christoph?
+  - ~~Documentation checked by Christoph?~~
 
   - ~~Documentation verified by Vasilis?~~
 

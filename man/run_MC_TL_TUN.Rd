@@ -19,7 +19,7 @@ run_MC_TL_TUN(
 )
 }
 \arguments{
-\item{s}{\link{list} (\strong{required}): The effective frequency factor for the tunneling process (1/s)}
+\item{s}{\link{list} (\strong{required}): The frequency factor for the tunneling process (s^-1)}
 
 \item{E}{\link{numeric} (\strong{required}): Thermal activation energy of the trap (eV)}
 
@@ -28,7 +28,7 @@ run_MC_TL_TUN(
 
 \item{r_c}{\link{numeric} (\emph{with default}): Critical distance (>0) that is to be used if
 the sample has been thermally and/or optically pretreated. This parameter expresses the fact
-that electron-hole pairs within a critical radius \code{r_c} have already been recombined.}
+that electron-hole pairs within a critical radius \code{r_c} have already recombined.}
 
 \item{times}{\link{vector} (\emph{wih default}): The sequence of time steps within the simulation (s)}
 
@@ -43,7 +43,7 @@ the parallel mode the function tries to run the simulation on multiple CPU cores
 a positive effect on the computation time.}
 
 \item{output}{\link{character} (\emph{with default}): output is either the \code{'signal'} (the default)
-or \code{'remaining_e'} (the remaining charges, electrons, in the trap)}
+or \code{'remaining_e'} (the remaining charges/electrons in the trap)}
 
 \item{\dots}{further arguments}
 }
@@ -53,27 +53,27 @@ is a \link{list} consisting of an \link{array} with dimension length(times) x le
 and a \link{numeric} time vector.
 }
 \description{
-Runs a Monte-Carlo (MC) simulation of thermo-luminesence (TL) caused by
+Runs a Monte-Carlo (MC) simulation of thermoluminesence (TL) caused by
 tunnelling (TUN) transitions.  Tunneling refers to quantum mechanical
 tunneling processes from the excited state of the trapped charge,
-into a state of the recombination center.
+into a recombination center.
 }
 \details{
 \strong{The model}
 
 \deqn{
-I_{TUN}(r',t) = -dn/dt = (s * exp(-E/(k_{B} * T))) * exp(-(\rho')^(-1/3) * r') * n(r',t)
+I_{TUN}(r',t) = -dn/dt = (s * exp(-E/(k_{B} * T))) * exp(-(\rho')^{-1/3} * r') * n(r',t)
 }
 
 Where in the function: \cr
-s := effective frequency for the tunneling process (1/s) \cr
+s := frequency for the tunneling process (s^-1) \cr
 E := thermal activation energy (eV) \cr
 \eqn{k_{B}} := Boltzmann constant \cr
 T := temperature \cr
-r' := \code{r} electron-hole distance (unitless) \cr
-\eqn{\rho}' := Density of recombination centers \cr
+r' := the unitless tunneling radius \cr
+\eqn{\rho}' := \verb{rho'}, the unitless density of recombination centres (see Huntley (2006)) \cr
 t := time (s) \cr
-n := The instantaneous number of electrons
+n := the instantaneous number of electrons
 }
 \section{Function version}{
  0.1.0
@@ -94,7 +94,7 @@ plot_RLumCarlo()
 
 \dontrun{
 ## the long (meaningful example)
-run_MC_TL_TUN(
+results <- run_MC_TL_TUN(
  s = 1e12,
  E = 0.9,
  rho = 0.01,
@@ -102,14 +102,21 @@ run_MC_TL_TUN(
  times = 80:220,
  clusters = 100,
  method = 'par',
- delta.r = 1e-1) \%>\%
-plot_RLumCarlo()
+ delta.r = 1e-1)
+
+## plot
+plot_RLumCarlo(results)
 }
 
+} 
+
+\section{How to cite}{
+Friedrich, J., Kreutzer, S., 2019. run_MC_TL_TUN(): Run Monte-Carlo Simulation for TL (tunneling transitions). Function version 0.1.0. In: Friedrich, J., Kreutzer, S., Pagonis, V., Schmidt, C., 2019. RLumCarlo: Monte-Carlo Methods for Simulating Luminescence PhenomenaR package version 0.1.0.9000-131. 
 }
+
 \references{
 Huntley, D.J., 2006. An explanation of the power-law decay of luminescence.
-Journal of Physics: Condensed Matter, 18(4), 1359.\doi{10.1088/0953-8984/18/4/020}
+Journal of Physics: Condensed Matter, 18(4), 1359. \doi{10.1088/0953-8984/18/4/020}
 
 Pagonis, V. and Kulp, C., 2017. Monte Carlo simulations of tunneling
 phenomena and nearest neighbor hopping mechanism in feldspars.
@@ -121,6 +128,7 @@ distribution of defects: A new Monte Carlo simulation approach for feldspar.
 Journal of Luminescence 207, 266–272. \doi{10.1016/j.jlumin.2018.11.024}
 
 \strong{Further reading}
+
 Aitken, M.J., 1985. Thermoluminescence dating. Academic Press.
 
 Jain, M., Guralnik, B., Andersen, M.T., 2012. Stimulated luminescence emission from

@@ -1,10 +1,10 @@
 #' @title Run Monte-Carlo Simulation for TL (localized transitions)
 #'
-#' @description Runs a Monte-Carlo (MC) simulation of thermo-luminesence (TL) using
+#' @description Runs a Monte-Carlo (MC) simulation of thermoluminesence (TL) using
 #' the generalized one trap (GOT) model. Localized transitions refer to transitions
 #' which do not involve the conduction or valence band. These transitions take place between the
-#' ground state and an excited state of the trapped charge, and also involve a state of the
-#' recombination center.
+#' ground state and an excited state of the trapped charge, and also involve an excited
+#' state of the recombination center.
 #'
 #' @details
 #'
@@ -16,11 +16,11 @@
 #'
 #'Where in the function: \cr
 #' E := the thermal activation energy (eV) \cr
-#' s := the frequency factor for the trap (1/s) \cr
+#' s := the frequency factor for the trap (s^-1) \cr
 #' t := time (s) \cr
 #' \eqn{k_{B}} := Boltzmann constant \cr
 #' T := temperature (degrees C) \cr
-#' n := the Instantaneous number of electrons \cr
+#' n := the instantaneous number of electrons \cr
 #' r := the retrapping ratio for localized transitions
 #'
 #' @param E [numeric] (**required**): Thermal activation energy of the trap (eV)
@@ -41,7 +41,7 @@
 #' a positive effect on the computation time.
 #'
 #' @param output [character] (*with default*): output is either the `'signal'` (the default) or
-#' `'remaining_e'` (the remaining charges, electrons, in the trap)
+#' `'remaining_e'` (the remaining charges/electrons in the trap)
 #'
 #' @param \dots further arguments
 #'
@@ -72,14 +72,16 @@
 #'
 #' \dontrun{
 #' ## the long (meaningful) example
-#' run_MC_TL_LOC(
+#' results <- run_MC_TL_LOC(
 #'  s = 1e14,
 #'  E = 0.9,
 #'  times = 50:100,
 #'  method = "par",
 #'  clusters = 100,
-#'  r = 1e4) %>%
-#' plot_RLumCarlo()
+#'  r = 1e4)
+#'
+#' ## plot
+#' plot_RLumCarlo(results)
 #'
 #' }
 #'
