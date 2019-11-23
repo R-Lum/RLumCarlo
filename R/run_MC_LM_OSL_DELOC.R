@@ -13,16 +13,16 @@
 #' }
 #'
 #' Where in the function: \cr
-#'  t := Time (s) \cr
-#'  A := The optical excitation rate from trap to conduction band \cr
-#'  n := `n_filled` The Instantaneous number of electrons \cr
-#'  R :=  The retrapping ratio for delocalized transitions \cr
-#'  N := `N_e` total number of electron traps available (unitless) \cr
+#'  t := time (s) \cr
+#'  A := the optical excitation rate from trap to conduction band \cr
+#'  n := `n_filled`, the tnstantaneous number of electrons \cr
+#'  R :=  the retrapping ratio for delocalized transitions \cr
+#'  N := `N_e`, the total number of electron traps available (unitless) \cr
 #'  P := total stimulation time"
 #'
 #' @param A [numeric] (**required**): The optical excitation rate from trap to conduction band (s^-1)
 #'
-#' @param times [numeric] (*with default*): The sequence of temperature steps within the simulation (s)
+#' @param times [numeric] (*with default*): The sequence of time steps within the simulation (s)
 #'
 #' @param clusters [numeric] (*with default*): The number of MC runs (unitless)
 #'
@@ -38,7 +38,7 @@
 #' a positive effect on the computation time.
 #'
 #' @param output [character] (*with default*): output is either the `'signal'` (the default)
-#' or `'remaining_e'` (the remaining charges, electrons, in the trap)
+#' or `'remaining_e'` (the remaining charges/electrons in the trap)
 #'
 #' @param \dots further arguments
 #'

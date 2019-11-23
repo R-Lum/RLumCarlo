@@ -1,6 +1,6 @@
 #' @title Run Monte-Carlo Simulation for TL (delocalized transitions)
 #'
-#' @description Runs a Monte-Carlo (MC) simulation of thermo-luminesence (TL)
+#' @description Runs a Monte-Carlo (MC) simulation of thermoluminesence (TL)
 #' using the one trap one recombination center (OTOR) model.
 #' Delocalized refers to involvement of the conduction band.
 #'
@@ -14,12 +14,12 @@
 #'
 #' Where in the function: \cr
 #'  E := the thermal activation enery (eV) \cr
-#'  s := The frequency factor in 1/s \cr
-#' `t` := `Time` \cr
+#'  s := the frequency factor in (s^-1) \cr
+#'  t := time \cr
 #' \eqn{k_{B}} := Boltzmann constant \cr
-#' `T`= Temperature \cr
-#' `n` := `n_filled` The Instantaneous number of electrons \cr
-#' `N` := `N_e`
+#'  T := temperature \cr
+#'  n := `n_filled`, the instantaneous number of electrons \cr
+#'  N := `N_e`, the total number of electron traps available (unitless) \cr
 #'
 #' @param E [numeric] (**required**): Thermal activation energy of the trap (eV)
 #'
@@ -41,7 +41,7 @@
 #' a positive effect on the computation time.
 #'
 #' @param output [character] (*with default*): output is either the `'signal'` (the default) or
-#' `'remaining_e'` (the remaining charges, electrons, in the trap)
+#' `'remaining_e'` (the remaining charges/electrons in the trap)
 #'
 #' @param \dots further arguments
 #'

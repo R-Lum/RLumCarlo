@@ -1,46 +1,47 @@
-#' @title Monte-Carlo Simulation for Isothermal-TL (tunneling transitions)
+#' @title Monte-Carlo Simulation for ISO-TL (tunneling transitions)
 #'
 #' @description Runs a Monte-Carlo (MC) simulation of isothermally stimulated luminesence
 #' (ISO-TL or ITL) using the tunneling (TUN) model. Tunneling refers to quantum mechanical
 #' tunneling processes from the excited state of the trapped charge,
-#' into a state of the recombination center.
+#' into the recombination center.
 #'
 #' @details
 #'
 #' **The model**
 #'
 #' \deqn{
-#' I_{TUN}(r',t) = -dn/dt = (s * exp(-E/(k_{B}*T_{ISO}))) * exp(-(\rho')^(-1/3) * r') * n (r',t)
+#' I_{TUN}(r',t) = -dn/dt = (s * exp(-E/(k_{B}*T_{ISO}))) * exp(-(\rho')^{-1/3} * r') * n (r',t)
 #' }
 #'
 #' Where in the function: \cr
 #' E := thermal activation energy (eV) \cr
-#' s := the effective frequency factor for the tunneling process (1/s) \cr
-#' \eqn{T_{ISO}} := The temperature of the isothermal experiment (degrees C)\cr
+#' s := the effective frequency factor for the tunneling process (s^-1) \cr
+#' \eqn{T_{ISO}} := the temperature of the isothermal experiment (degrees C)\cr
 #' \eqn{k_{B}} := Boltzmann constant \cr
-#' `r` := the unitless tunneling radius \cr
-#' \eqn{\rho} := `rho` the unitless density of recombination centres \cr
-#' `t` := Time (s) \cr
-#' `n` := The Instantaneous number of electrons \cr
+#' r' := the unitless tunneling radius \cr
+#' \eqn{\rho} := `rho` the unitless density of recombination centres see Huntley (2006) \cr
+#' `t` := time (s) \cr
+#' `n` := the instantaneous number of electrons \cr
 #'
 #' @param E [numeric] (**required**): Thermal activation energy of the trap (eV).
 #'
-#' @param s [numeric] (**required**): The effective frequency factor for the tunneling process (1/s).
+#' @param s [numeric] (**required**): The effective frequency factor for the
+#' tunneling process (s^-1).
 #'
 #' @param T [numeric] (*with default*): Constant stimulation temperature (degrees C).
 #'
 #' @param rho [numeric] (**required**): The dimensionless density of recombination centres
 #' (defined as \eqn{\rho}' in Huntley 2006) (unitless).
 #'
-#' @param times [numeric] (*with default*): The sequence of temperature steps within the simulation (s).
+#' @param times [numeric] (*with default*): The sequence of time steps within the simulation (s).
 #'
 #' @param clusters [numeric] (*with default*): The number of MC runs (unitless).
 #'
 #' @param N_e [numeric] (*width default*): The total number of electron traps available (unitless).
 #'
 #' @param r_c [numeric] (*with default*): Critical distance (>0) that must be provided if the
-#' sample has 1 been thermally and/or optically pretreated. This parameter expresses the fact
-#' that electron-hole pairs within a critical radius `r_c` have already been recombined.
+#' sample has been thermally and/or optically pretreated. This parameter expresses the fact
+#' that electron-hole pairs within a critical radius `r_c` have already recombined.
 #'
 #' @param delta.r [numeric] (*with default*): Fractional change of the dimensionless distance
 #' of nearest recombination centres (r')
@@ -50,7 +51,7 @@
 #' a positive effect on the computation time.
 #'
 #' @param output [character] (*with default*): output is either the `'signal'` (the default) or
-#' `'remaining_e'` (the remaining charges, electrons, in the trap)
+#' `'remaining_e'` (the remaining charges/electrons in the trap)
 #'
 #' @param \dots further arguments
 #'
@@ -100,7 +101,7 @@
 #'
 #' \dontrun{
 #' ## long (meaningful) example
-#' run_MC_ISO_TUN(
+#' results <- run_MC_ISO_TUN(
 #'  E = .8,
 #'  s = 1e16,
 #'  T = 50,
@@ -110,8 +111,9 @@
 #'  N_e = 200,
 #'  r_c = 1e-4,
 #'  delta.r = 0.5,
-#'  method = "par") %>%
-#'  plot_RLumCarlo(legend = TRUE)
+#'  method = "par")
+#'
+#' plot_RLumCarlo(results, legend = TRUE)
 #' }
 #'
 #' @keywords models data

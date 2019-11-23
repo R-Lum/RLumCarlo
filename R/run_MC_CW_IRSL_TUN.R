@@ -80,11 +80,11 @@
 #' run_MC_CW_IRSL_TUN(
 #'  A = 0.8,
 #'  rho = 1e-4,
-#'  times = 0:10,
+#'  times = 0:50,
 #'  r_c = 0.05,
 #'  delta.r = 0.1,
 #'  method = "seq",
-#'  clusters = 2,
+#'  clusters = 10,
 #'   output = "signal") %>%
 #'  plot_RLumCarlo(norm = TRUE, legend = TRUE)
 #'

@@ -68,7 +68,7 @@ t := time \cr
 \eqn{T_{ISO}} = temperature of the isothermal experiment \cr
 n := \code{n_filled}, the number of filled electron traps at the beginning of the simulation\cr
 E := the trap depth in eV \cr
-s := the frequency factor in 1/s \cr
+s := the frequency factor in (s^-1) \cr
 N := \code{N_e}, the total number of electron traps available (unitless) \cr
 R := the retrapping ratio for delocalized transitions
 }
@@ -86,12 +86,7 @@ run_MC_ISO_DELOC(
  times = 0:100) \%>\%
 plot_RLumCarlo(legend = TRUE)
 
-} 
-
-\section{How to cite}{
-Kreutzer, S., 2019. run_MC_ISO_DELOC(): Run Monte-Carlo Simulation for ISO-TL (delocalized transitions). Function version 0.1.0. In: Friedrich, J., Kreutzer, S., Pagonis, V., Schmidt, C., 2019. RLumCarlo: Monte-Carlo Methods for Simulating Luminescence PhenomenaR package version 0.1.0.9000-129. 
 }
-
 \references{
 Pagonis, V., Friedrich, J., Discher, M., Müller-Kirschbaum, A., Schlosser, V.,
 Kreutzer, S., Chen, R. and Schmidt, C., 2019. Excited state luminescence signals

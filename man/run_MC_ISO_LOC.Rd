@@ -63,9 +63,9 @@ I_{LOC}(t) = -dn/dt = (s * exp(-E/(k_{B} * T_{ISO}))) * (n^2 / (r + n)))
 }
 
 Where in the function: \cr
-\code{t} := Time (s) \cr
-\eqn{k_{B}} := \verb{Boltzmann constant} \cr
-\eqn{T_{ISO}} = Isothermal temperature \cr
+\code{t} := time (s) \cr
+\eqn{k_{B}} := Boltzmann constant \cr
+\eqn{T_{ISO}} "= isothermal temperature \cr
 n := \code{n_filled} \cr
 s := frequency factor of the trap (1/s) \cr
 E := activation energy of the trap (eV) \cr
@@ -85,12 +85,7 @@ run_MC_ISO_LOC(
  r = 1) \%>\%
 plot_RLumCarlo(legend = TRUE)
 
-} 
-
-\section{How to cite}{
-Kreutzer, S., 2019. run_MC_ISO_LOC(): Run Monte-Carlo simulation for ISO-TL (localized transitions). Function version 0.1.0. In: Friedrich, J., Kreutzer, S., Pagonis, V., Schmidt, C., 2019. RLumCarlo: Monte-Carlo Methods for Simulating Luminescence PhenomenaR package version 0.1.0.9000-129. 
 }
-
 \references{
 Pagonis, V., Friedrich, J., Discher, M., Müller-Kirschbaum, A., Schlosser, V.,
 Kreutzer, S., Chen, R. and Schmidt, C., 2019. Excited state luminescence signals from a

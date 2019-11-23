@@ -3,8 +3,8 @@
 #' @description Runs a Monte-Carlo (MC) simulation of linearly modulated optically stimulated
 #' luminesence (LM-OSL) using the generalized one trap (GOT) model. Localized transitions refer to
 #' transitions which do not involve the conduction or valence band. These transitions take place
-#' between the ground state and an excited state of the trapped charge, and also involve a state of the
-#' recombination center.
+#' between the ground state and an excited state of the trapped charge, and also involve
+#' a an excited state of the recombination center.
 #'
 #' @details
 #'
@@ -17,9 +17,9 @@
 #' Where in the function: \cr
 #'  A := optical excitation rate from the trap to the conduction band \cr
 #'  P := total excitation time \cr
-#'  t := Time (s) \cr
-#'  n := `n_filled` The instantaneous number of electrons \cr
-#'  r := The retrapping ratio for localized transitions \cr
+#'  t := time (s) \cr
+#'  n := `n_filled`, the instantaneous number of electrons \cr
+#'  r := the retrapping ratio for localized transitions \cr
 #'  P := the total stimulation period (s)
 #'
 #' @param A [numeric] (**required**): The optical excitation rate from trap to conduction band (s^-1)
@@ -58,7 +58,8 @@
 #'
 #' @examples
 #' ## short example
-#' run_MC_TL_LOC(
+#' run_MC_LM_OSL_LOC(
+#'  A = 1,
 #'  s = 1e8,
 #'  E = 0.5,
 #'  times = 0:40,
@@ -71,7 +72,8 @@
 #'
 #' \dontrun{
 #' ## the long (meaningful) example
-#' run_MC_TL_LOC(
+#' results <- run_MC_LM_OSL_LOC(
+#'  A = 1,
 #'  s = 1e8,
 #'  E = 0.6,
 #'  times = 0:100,
@@ -79,8 +81,10 @@
 #'  n_filled = 100,
 #'  r = 1e-7,
 #'  method = "par",
-#'  output = "signal") %>%
-#' plot_RLumCarlo(legend = TRUE)
+#'  output = "signal")
+#'
+#' ## plot
+#' plot_RLumCarlo(results, legend = TRUE)
 #' }
 #'
 #' @keywords models data

@@ -2,7 +2,7 @@
 % Please edit documentation in R/run_MC_ISO_TUN.R
 \name{run_MC_ISO_TUN}
 \alias{run_MC_ISO_TUN}
-\title{Monte-Carlo Simulation for Isothermal-TL (tunneling transitions)}
+\title{Monte-Carlo Simulation for ISO-TL (tunneling transitions)}
 \usage{
 run_MC_ISO_TUN(
   E,
@@ -22,20 +22,21 @@ run_MC_ISO_TUN(
 \arguments{
 \item{E}{\link{numeric} (\strong{required}): Thermal activation energy of the trap (eV).}
 
-\item{s}{\link{numeric} (\strong{required}): The effective frequency factor for the tunneling process (1/s).}
+\item{s}{\link{numeric} (\strong{required}): The effective frequency factor for the
+tunneling process (s^-1).}
 
 \item{T}{\link{numeric} (\emph{with default}): Constant stimulation temperature (degrees C).}
 
 \item{rho}{\link{numeric} (\strong{required}): The dimensionless density of recombination centres
 (defined as \eqn{\rho}' in Huntley 2006) (unitless).}
 
-\item{times}{\link{numeric} (\emph{with default}): The sequence of temperature steps within the simulation (s).}
+\item{times}{\link{numeric} (\emph{with default}): The sequence of time steps within the simulation (s).}
 
 \item{clusters}{\link{numeric} (\emph{with default}): The number of MC runs (unitless).}
 
 \item{r_c}{\link{numeric} (\emph{with default}): Critical distance (>0) that must be provided if the
-sample has 1 been thermally and/or optically pretreated. This parameter expresses the fact
-that electron-hole pairs within a critical radius \code{r_c} have already been recombined.}
+sample has been thermally and/or optically pretreated. This parameter expresses the fact
+that electron-hole pairs within a critical radius \code{r_c} have already recombined.}
 
 \item{delta.r}{\link{numeric} (\emph{with default}): Fractional change of the dimensionless distance
 of nearest recombination centres (r')}
@@ -47,7 +48,7 @@ the parallel mode the function tries to run the simulation on multiple CPU cores
 a positive effect on the computation time.}
 
 \item{output}{\link{character} (\emph{with default}): output is either the \code{'signal'} (the default) or
-\code{'remaining_e'} (the remaining charges, electrons, in the trap)}
+\code{'remaining_e'} (the remaining charges/electrons in the trap)}
 
 \item{\dots}{further arguments}
 }
@@ -60,24 +61,24 @@ and a \link{numeric} time vector.
 Runs a Monte-Carlo (MC) simulation of isothermally stimulated luminesence
 (ISO-TL or ITL) using the tunneling (TUN) model. Tunneling refers to quantum mechanical
 tunneling processes from the excited state of the trapped charge,
-into a state of the recombination center.
+into the recombination center.
 }
 \details{
 \strong{The model}
 
 \deqn{
-I_{TUN}(r',t) = -dn/dt = (s * exp(-E/(k_{B}*T_{ISO}))) * exp(-(\rho')^(-1/3) * r') * n (r',t)
+I_{TUN}(r',t) = -dn/dt = (s * exp(-E/(k_{B}*T_{ISO}))) * exp(-(\rho')^{-1/3} * r') * n (r',t)
 }
 
 Where in the function: \cr
 E := thermal activation energy (eV) \cr
-s := the effective frequency factor for the tunneling process (1/s) \cr
-\eqn{T_{ISO}} := The temperature of the isothermal experiment (degrees C)\cr
+s := the effective frequency factor for the tunneling process (s^-1) \cr
+\eqn{T_{ISO}} := the temperature of the isothermal experiment (degrees C)\cr
 \eqn{k_{B}} := Boltzmann constant \cr
-\code{r} := the unitless tunneling radius \cr
-\eqn{\rho} := \code{rho} the unitless density of recombination centres \cr
-\code{t} := Time (s) \cr
-\code{n} := The Instantaneous number of electrons \cr
+r' := the unitless tunneling radius \cr
+\eqn{\rho} := \code{rho} the unitless density of recombination centres see Huntley (2006) \cr
+\code{t} := time (s) \cr
+\code{n} := the instantaneous number of electrons \cr
 }
 \section{Function version}{
  0.1.0
@@ -100,7 +101,7 @@ run_MC_ISO_TUN(
 
 \dontrun{
 ## long (meaningful) example
-run_MC_ISO_TUN(
+results <- run_MC_ISO_TUN(
  E = .8,
  s = 1e16,
  T = 50,
@@ -110,16 +111,12 @@ run_MC_ISO_TUN(
  N_e = 200,
  r_c = 1e-4,
  delta.r = 0.5,
- method = "par") %>%
- plot_RLumCarlo(legend = TRUE)
+ method = "par")
+
+plot_RLumCarlo(results, legend = TRUE)
 }
 
-} 
-
-\section{How to cite}{
-Friedrich, J., Kreutzer, S., 2019. run_MC_ISO_TUN(): Monte-Carlo Simulation for Isothermal-TL (tunneling transitions). Function version 0.1.0. In: Friedrich, J., Kreutzer, S., Pagonis, V., Schmidt, C., 2019. RLumCarlo: Monte-Carlo Methods for Simulating Luminescence PhenomenaR package version 0.1.0.9000-129. 
 }
-
 \references{
 Pagonis, V. and Kulp, C., 2017. Monte Carlo simulations of tunneling phenomena
 and nearest neighbor hopping mechanism in feldspars.

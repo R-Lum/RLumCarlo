@@ -15,9 +15,9 @@
 #' }
 #'
 #' Where in the function: \cr
-#'  `t` := Time (s) \cr
-#'  \eqn{k_{B}} := `Boltzmann constant` \cr
-#'  \eqn{T_{ISO}} = Isothermal temperature \cr
+#'  `t` := time (s) \cr
+#'  \eqn{k_{B}} := Boltzmann constant \cr
+#'  \eqn{T_{ISO}} "= isothermal temperature \cr
 #'  n := `n_filled` \cr
 #'  s := frequency factor of the trap (1/s) \cr
 #'  E := activation energy of the trap (eV) \cr

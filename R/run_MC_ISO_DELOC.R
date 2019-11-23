@@ -18,7 +18,7 @@
 #' \eqn{T_{ISO}} = temperature of the isothermal experiment \cr
 #'  n := `n_filled`, the number of filled electron traps at the beginning of the simulation\cr
 #'  E := the trap depth in eV \cr
-#'  s := the frequency factor in 1/s \cr
+#'  s := the frequency factor in (s^-1) \cr
 #'  N := `N_e`, the total number of electron traps available (unitless) \cr
 #'  R := the retrapping ratio for delocalized transitions
 #'

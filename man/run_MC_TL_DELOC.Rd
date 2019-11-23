@@ -38,7 +38,7 @@ the parallel mode the function tries to run the simulation on multiple CPU cores
 a positive effect on the computation time.}
 
 \item{output}{\link{character} (\emph{with default}): output is either the \code{'signal'} (the default) or
-\code{'remaining_e'} (the remaining charges, electrons, in the trap)}
+\code{'remaining_e'} (the remaining charges/electrons in the trap)}
 
 \item{\dots}{further arguments}
 }
@@ -48,7 +48,7 @@ is a \link{list} consisting of an \link{array} with dimension length(times) x cl
 and a \link{numeric} time vector.
 }
 \description{
-Runs a Monte-Carlo (MC) simulation of thermo-luminesence (TL)
+Runs a Monte-Carlo (MC) simulation of thermoluminesence (TL)
 using the one trap one recombination center (OTOR) model.
 Delocalized refers to involvement of the conduction band.
 }
@@ -61,12 +61,12 @@ I_{DELOC}(t) = -dn/dt = (s*exp(-E/(k_{B}*T))) * (n^2 / (N * R + n(1-R))))
 
 Where in the function: \cr
 E := the thermal activation enery (eV) \cr
-s := The frequency factor in 1/s \cr
-\code{t} := \code{Time} \cr
+s := the frequency factor in (s^-1) \cr
+t := time \cr
 \eqn{k_{B}} := Boltzmann constant \cr
-\code{T}= Temperature \cr
-\code{n} := \code{n_filled} The Instantaneous number of electrons \cr
-\code{N} := \code{N_e}
+T := temperature \cr
+n := \code{n_filled}, the instantaneous number of electrons \cr
+N := \code{N_e}, the total number of electron traps available (unitless) \cr
 }
 \section{Function version}{
  0.1.0
@@ -134,12 +134,7 @@ legend("topright",
    text.col = col)
 }
 
-} 
-
-\section{How to cite}{
-Kreutzer, S., 2019. run_MC_TL_DELOC(): Run Monte-Carlo Simulation for TL (delocalized transitions). Function version 0.1.0. In: Friedrich, J., Kreutzer, S., Pagonis, V., Schmidt, C., 2019. RLumCarlo: Monte-Carlo Methods for Simulating Luminescence PhenomenaR package version 0.1.0.9000-129. 
 }
-
 \references{
 Pagonis, V., Friedrich, J., Discher, M., Müller-Kirschbaum, A., Schlosser, V., Kreutzer, S.,
 Chen, R. and Schmidt, C., 2019. Excited state luminescence signals from a random distribution

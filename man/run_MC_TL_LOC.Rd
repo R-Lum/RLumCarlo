@@ -90,17 +90,12 @@ run_MC_TL_LOC(
  times = 50:100,
  method = "par",
  clusters = 100,
- r = 1e4) %>%
+ r = 1e4) \%>\%
 plot_RLumCarlo()
 
 }
 
-} 
-
-\section{How to cite}{
-Kreutzer, S., 2019. run_MC_TL_LOC(): Run Monte-Carlo Simulation for TL (localized transitions). Function version 0.1.0. In: Friedrich, J., Kreutzer, S., Pagonis, V., Schmidt, C., 2019. RLumCarlo: Monte-Carlo Methods for Simulating Luminescence PhenomenaR package version 0.1.0.9000-129. 
 }
-
 \references{
 Pagonis, V., Friedrich, J., Discher, M., Müller-Kirschbaum, A., Schlosser, V.,
 reutzer, S., Chen, R. and Schmidt, C., 2019. Excited state luminescence signals

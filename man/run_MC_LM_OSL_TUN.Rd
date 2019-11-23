@@ -53,22 +53,22 @@ and a \link{numeric} time vector.
 Runs a Monte-Carlo (MC) simulation of linearly modulated optically stimulated
 luminesence (LM-OSL) using the tunneling (TUN) model. Tunneling refers to quantum mechanical
 tunneling processes from the excited state of the trapped charge,
-into a state of the recombination center.
+into a recombination center.
 }
 \details{
 \strong{The model}
 
 \deqn{
-I_{TUN}(r',t) = -dn/dt = (A * t/P) * exp(-(\rho')^(-1/3) * r') * n(r',t)
+I_{TUN}(r',t) = -dn/dt = (A * t/P) * exp(-(\rho')^{-1/3} * r') * n(r',t)
 }
 
 Where in the function: \cr
-A := the effective optical excitation rate for the tunneling process \cr
-t := Time \cr
-P := Maximum stimulation time \cr
-r' := \code{r} \cr
-\eqn{\rho}' := rho  \cr
-n := The instantaneous number of electrons
+A := the optical excitation rate for the tunneling process \cr
+t := time (s) \cr
+P := maximum stimulation time \cr
+r' := the unitless tunneling radius \cr
+\eqn{\rho} := \code{rho} the unitless density of recombination centres see Huntley (2006) \cr
+n := the instantaneous number of electrons
 }
 \section{Function version}{
  0.1.0
@@ -80,8 +80,8 @@ run_MC_LM_OSL_TUN(
  A = 1,
  rho = 1e-7,
  times = 0:10,
- clusters = 3,
- N_e = 2,
+ clusters = 10,
+ N_e = 100,
  r_c = 0.001,
  delta.r = 1e-1,
  method = "seq",
@@ -90,7 +90,7 @@ plot_RLumCarlo(norm = TRUE)
 
 \dontrun{
 ## the long (meaningful) example
-run_MC_LM_OSL_TUN(
+results <- run_MC_LM_OSL_TUN(
  A = 1,
  rho = 1e-3,
  times = 0:1000,
@@ -99,16 +99,12 @@ run_MC_LM_OSL_TUN(
  r_c = 0.1,
  delta.r = 1e-1,
  method = "par",
- output = "signal") %>%
-plot_RLumCarlo(norm = TRUE)
+ output = "signal")
+
+plot_RLumCarlo(results, norm = TRUE)
 }
 
-} 
-
-\section{How to cite}{
-Friedrich, J., Kreutzer, S., 2019. run_MC_LM_OSL_TUN(): Run Monte-Carlo Simulation for LM-OSL (tunneling transitions). Function version 0.1.0. In: Friedrich, J., Kreutzer, S., Pagonis, V., Schmidt, C., 2019. RLumCarlo: Monte-Carlo Methods for Simulating Luminescence PhenomenaR package version 0.1.0.9000-129. 
 }
-
 \references{
 Huntley, D.J., 2006. An explanation of the power-law decay of luminescence.
 Journal of Physics: Condensed Matter, 18(4), 1359.\doi{10.1088/0953-8984/18/4/020}

@@ -19,7 +19,7 @@ run_MC_LM_OSL_DELOC(
 \arguments{
 \item{A}{\link{numeric} (\strong{required}): The optical excitation rate from trap to conduction band (s^-1)}
 
-\item{times}{\link{numeric} (\emph{with default}): The sequence of temperature steps within the simulation (s)}
+\item{times}{\link{numeric} (\emph{with default}): The sequence of time steps within the simulation (s)}
 
 \item{clusters}{\link{numeric} (\emph{with default}): The number of MC runs (unitless)}
 
@@ -35,7 +35,7 @@ the parallel mode the function tries to run the simulation on multiple CPU cores
 a positive effect on the computation time.}
 
 \item{output}{\link{character} (\emph{with default}): output is either the \code{'signal'} (the default)
-or \code{'remaining_e'} (the remaining charges, electrons, in the trap)}
+or \code{'remaining_e'} (the remaining charges/electrons in the trap)}
 
 \item{\dots}{further arguments}
 }
@@ -57,11 +57,11 @@ I_{DELOC}(t) = -dn/dt = A * (n^2 / (N*R + n(1-R)))
 }
 
 Where in the function: \cr
-t := Time (s) \cr
-A := The optical excitation rate from trap to conduction band \cr
-n := \code{n_filled} The Instantaneous number of electrons \cr
-R :=  The retrapping ratio for delocalized transitions \cr
-N := \code{N_e} total number of electron traps available (unitless) \cr
+t := time (s) \cr
+A := the optical excitation rate from trap to conduction band \cr
+n := \code{n_filled}, the tnstantaneous number of electrons \cr
+R :=  the retrapping ratio for delocalized transitions \cr
+N := \code{N_e}, the total number of electron traps available (unitless) \cr
 P := total stimulation time"
 }
 \section{Function version}{
@@ -77,12 +77,7 @@ run_MC_LM_OSL_DELOC(
  clusters = 10) \%>\%
 plot_RLumCarlo(legend = TRUE)
 
-} 
-
-\section{How to cite}{
-Kreutzer, S., 2019. run_MC_LM_OSL_DELOC(): Run Monte-Carlo Simulation for LM-OSL (delocalized transitions). Function version 0.1.0. In: Friedrich, J., Kreutzer, S., Pagonis, V., Schmidt, C., 2019. RLumCarlo: Monte-Carlo Methods for Simulating Luminescence PhenomenaR package version 0.1.0.9000-129. 
 }
-
 \references{
 Pagonis, V., Friedrich, J., Discher, M., Müller-Kirschbaum, A., Schlosser, V., Kreutzer, S.,
 Chen, R. and Schmidt, C., 2019. Excited state luminescence signals from a random distribution of
