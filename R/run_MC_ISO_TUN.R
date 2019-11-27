@@ -16,26 +16,26 @@
 #' Where in the function: \cr
 #' E := thermal activation energy (eV) \cr
 #' s := the effective frequency factor for the tunneling process (s^-1) \cr
-#' \eqn{T_{ISO}} := the temperature of the isothermal experiment (degrees C)\cr
-#' \eqn{k_{B}} := Boltzmann constant \cr
+#' \eqn{T_{ISO}} := the temperature of the isothermal experiment (°C)\cr
+#' \eqn{k_{B}} := Boltzmann constant (8.617 x 10^-5 eV K^-1)\cr
 #' r' := the unitless tunneling radius \cr
 #' \eqn{\rho} := `rho` the unitless density of recombination centres see Huntley (2006) \cr
-#' `t` := time (s) \cr
-#' `n` := the instantaneous number of electrons \cr
+#'  t := time (s) \cr
+#'  n := the instantaneous number of electrons \cr
 #'
 #' @param E [numeric] (**required**): Thermal activation energy of the trap (eV).
 #'
 #' @param s [numeric] (**required**): The effective frequency factor for the
 #' tunneling process (s^-1).
 #'
-#' @param T [numeric] (*with default*): Constant stimulation temperature (degrees C).
+#' @param T [numeric] (*with default*): Constant stimulation temperature (°C).
 #'
 #' @param rho [numeric] (**required**): The dimensionless density of recombination centres
 #' (defined as \eqn{\rho}' in Huntley 2006) (unitless).
 #'
 #' @param times [numeric] (*with default*): The sequence of time steps within the simulation (s).
 #'
-#' @param clusters [numeric] (*with default*): The number of MC runs (unitless).
+#' @param clusters [numeric] (*with default*): The number of created clusters for the MC runs
 #'
 #' @param N_e [numeric] (*width default*): The total number of electron traps available (unitless).
 #'
@@ -117,6 +117,7 @@
 #' }
 #'
 #' @keywords models data
+#' @encoding UTF-8
 #' @md
 #' @export
 run_MC_ISO_TUN <- function(

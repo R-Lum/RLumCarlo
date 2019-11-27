@@ -32,11 +32,12 @@ are: \code{xlab}, \code{ylab}, \code{xlim}, \code{ylim}, \code{main}, \code{lwd}
 The arguments \code{lwd}, \code{type}, \code{pch}, \code{lty}, \code{col} can be provided as a vector if \code{object} is a \link{list}}
 }
 \value{
-This function returns a graphical output
+This function returns a graphical output which is the visualisation of the modelling
+output.
 }
 \description{
 Visualise 'RLumCarlo' modelling results without
-extracting the values manually. Typically visualised values are the averaged signal
+extracting the values manually. Typically visualised are the averaged signal
 or the number of remaining electrons, with a polygon
 indicating modelling uncertainties.
 }
@@ -54,7 +55,7 @@ Université Bordeaux Montaigne (France)
 } 
 
 \section{How to cite}{
-Friedrich, J., Kreutzer, S., 2019. plot_RLumCarlo(): Plot RLumCarlo Monte-Carlo Simulation Results. Function version 0.1.0. In: Friedrich, J., Kreutzer, S., Pagonis, V., Schmidt, C., 2019. RLumCarlo: Monte-Carlo Methods for Simulating Luminescence Phenomena. R package version 0.1.0.9000-133. 
+Friedrich, J., Kreutzer, S., 2019. plot_RLumCarlo(): Plot RLumCarlo Monte-Carlo Simulation Results. Function version 0.1.0. In: Friedrich, J., Kreutzer, S., Pagonis, V., Schmidt, C., 2019. RLumCarlo: Monte-Carlo Methods for Simulating Luminescence Phenomena. R package version 0.1.0.9000-137. 
 }
 
 \keyword{hplot}

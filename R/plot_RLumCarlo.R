@@ -1,7 +1,7 @@
 #' @title Plot RLumCarlo Monte-Carlo Simulation Results
 #'
 #' @description Visualise 'RLumCarlo' modelling results without
-#' extracting the values manually. Typically visualised values are the averaged signal
+#' extracting the values manually. Typically visualised are the averaged signal
 #' or the number of remaining electrons, with a polygon
 #' indicating modelling uncertainties.
 #'
@@ -26,7 +26,8 @@
 #' are: `xlab`, `ylab`, `xlim`, `ylim`, `main`, `lwd`, `type`, `pch`, `lty`,`col`, `grid`, `legend`.
 #' The arguments `lwd`, `type`, `pch`, `lty`, `col` can be provided as a vector if `object` is a [list]
 #'
-#' @return This function returns a graphical output
+#' @return This function returns a graphical output which is the visualisation of the modelling
+#' output.
 #'
 #' @section Function version: 0.1.0
 #'

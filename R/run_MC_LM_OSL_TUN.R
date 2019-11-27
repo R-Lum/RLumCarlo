@@ -14,9 +14,9 @@
 #' }
 #'
 #' Where in the function: \cr
-#'  A := the optical excitation rate for the tunneling process \cr
+#'  A := the optical excitation rate for the tunneling process (1/s)\cr
 #'  t := time (s) \cr
-#'  P := maximum stimulation time \cr
+#'  P := maximum stimulation time (s) \cr
 #'  r' := the unitless tunneling radius \cr
 #'  \eqn{\rho} := `rho` the unitless density of recombination centres see Huntley (2006) \cr
 #'  n := the instantaneous number of electrons
@@ -107,6 +107,7 @@
 #' }
 #'
 #' @keywords models data
+#' @encoding UTF-8
 #' @md
 #' @export
 run_MC_LM_OSL_TUN <- function(

@@ -28,7 +28,7 @@
 #'
 #' @param times [numeric] (*with default*): The sequence of time steps within the simulation (s).
 #'
-#' @param clusters [numeric] (*with default*): The number of MC runs (unitless).
+#' @param clusters [numeric] (*with default*): The number of created clusters for the MC runs
 #'
 #' @param N_e [numeric] (*width default*): The total number of electron traps available (unitless).
 #'
@@ -89,6 +89,7 @@
 #'  plot_RLumCarlo(norm = TRUE, legend = TRUE)
 #'
 #' @keywords models data
+#' @encoding UTF-8
 #' @md
 #' @export
 run_MC_CW_IRSL_TUN <- function(

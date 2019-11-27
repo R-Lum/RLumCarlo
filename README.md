@@ -73,6 +73,7 @@ Status](https://travis-ci.com/R-Lum/RLumCarlo.svg?token=ymRxA7NeJn6EE7PixZr8&bra
 
 ### Last steps
 
+  - Remove this document and make a local copy
   - Delete this list but follow-up the things below
   - run WIN-builder tests for all releases
   - run as-CRAN
@@ -119,13 +120,6 @@ run_MC_CW_IRSL_TUN(A = 0.12, rho = 0.003, times = 0:1000) %>%
 
 <img src="man/figures/README-unnamed-chunk-2-1.png" style="display: block; margin: auto;" />
 
-## Note
-
-**The package comes without any guarantee\!**
-
-Please further note that this version is a development version and may
-change day by day. For stable branches please visit the package on CRAN.
-
 ## License
 
 This program is free software: you can redistribute it and/or modify it
@@ -142,7 +136,8 @@ more details.
 
 ## <span class="glyphicon glyphicon-euro"></span> Funding
 
-This project benefitted from support by various funding bodies.
+The development of RLumCarlo benefitted from the support by various
+funding bodies:
 
   - The initial work by Johannes Friedrich, Sebastian Kreutzer and
     Christoph Schmidt was supported by the [DFG (2015–2018,
@@ -157,7 +152,8 @@ This project benefitted from support by various funding bodies.
 
   - The work of Sebastian Kreutzer as maintainer of the package was
     supported by [LabEx LaScArBx (ANR -
-    n. ANR-10-LABX-52)](https://lascarbx.labex.u-bordeaux.fr).
+    n. ANR-10-LABX-52)](https://lascarbx.labex.u-bordeaux.fr) between
+    2017 and 2019.
 
 ## Related projects
 

@@ -18,8 +18,8 @@
 #' E := the thermal activation energy (eV) \cr
 #' s := the frequency factor for the trap (s^-1) \cr
 #' t := time (s) \cr
-#' \eqn{k_{B}} := Boltzmann constant \cr
-#' T := temperature (degrees C) \cr
+#' \eqn{k_{B}} := Boltzmann constant (8.617 x 10^-5 eV K^-1)\cr
+#' T := temperature (°C) \cr
 #' n := the instantaneous number of electrons \cr
 #' r := the retrapping ratio for localized transitions
 #'
@@ -29,7 +29,7 @@
 #'
 #' @param times [numeric] (*with default*): The sequence of temperature steps within the simulation (s)
 #'
-#' @param clusters [numeric] (*with default*): The number of MC run (unitless)
+#' @param clusters [numeric] (*with default*): The number of created clusters for the MC runs
 #'
 #' @param n_filled [integer] (*with default*): The number of filled electron traps at
 #' the beginning of the simulation (unitless)
@@ -86,6 +86,7 @@
 #' }
 #'
 #' @keywords models data
+#' @encoding UTF-8
 #' @md
 #' @export
 run_MC_TL_LOC <- function(

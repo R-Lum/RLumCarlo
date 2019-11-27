@@ -13,8 +13,8 @@
 #' }
 #'
 #' Where in the function: \cr
-#'  t := time \cr
-#'  A := the optical excitation rate from trap to conduction band \cr
+#'  t := time (s) \cr
+#'  A := the optical excitation rate from trap to conduction band (1/s)\cr
 #'  n := `n_filled`, the instantaneous number of electrons \cr
 #'  N := `N_e` the available number of electron traps available \cr
 #'  R := retrapping ratio for delocalized transitions
@@ -23,7 +23,7 @@
 #'
 #' @param times [numeric] (*with default*): The sequence of temperature steps within the simulation (s)
 #'
-#' @param clusters [numeric] (*with default*): The number of MC runs (unitless)
+#' @param clusters [numeric] (*with default*): The number of created clusters for the MC runs
 #'
 #' @param N_e [integer] (*with default*): The total number of electron traps available (unitless)
 #'
@@ -72,7 +72,6 @@
 #'
 #' ## A long example
 #' \dontrun{
-#'
 #' A <- c(0.1,0.3,0.5,1)
 #' times <- seq(0, 60, 1)
 #' s <- 1e12
@@ -87,7 +86,7 @@
 #' plot_uncertainty <- c(TRUE,FALSE,TRUE,FALSE)  # do you want to see the uncertainty?
 #' add_TF <- c(FALSE,rep(TRUE, (length(R)-1)))
 #'
-#' #loop to plot different curves into one plotfor
+#' ## loop to plot different curves into one plot
 #' for (u in 1:length(R)){
 #'  results <- run_MC_CW_OSL_DELOC(
 #'   A = A[u],
@@ -121,6 +120,7 @@
 #'}
 #'
 #' @keywords models data
+#' @encoding UTF-8
 #' @md
 #' @export
 run_MC_CW_OSL_DELOC <- function(

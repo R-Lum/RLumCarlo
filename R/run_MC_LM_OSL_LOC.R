@@ -15,8 +15,8 @@
 #' }
 #'
 #' Where in the function: \cr
-#'  A := optical excitation rate from the trap to the conduction band \cr
-#'  P := total excitation time \cr
+#'  A := optical excitation rate from the trap to the conduction band (1/s)\cr
+#'  P := total excitation time (s) \cr
 #'  t := time (s) \cr
 #'  n := `n_filled`, the instantaneous number of electrons \cr
 #'  r := the retrapping ratio for localized transitions \cr
@@ -26,7 +26,7 @@
 #'
 #' @param times [numeric] (*with default*): The sequence of time steps within the simulation (s)
 #'
-#' @param clusters [numeric] (*with default*): The number of MC runs (unitless)
+#' @param clusters [numeric] (*with default*): The number of created clusters for the MC runs
 #'
 #' @param n_filled [integer] (*with default*): The number of filled electron traps at the
 #' beginning of the simulation (unitless)
@@ -88,6 +88,7 @@
 #' }
 #'
 #' @keywords models data
+#' @encoding UTF-8
 #' @md
 #' @export
 run_MC_LM_OSL_LOC <- function(

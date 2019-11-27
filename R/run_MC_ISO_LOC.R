@@ -15,9 +15,9 @@
 #' }
 #'
 #' Where in the function: \cr
-#'  `t` := time (s) \cr
-#'  \eqn{k_{B}} := Boltzmann constant \cr
-#'  \eqn{T_{ISO}} "= isothermal temperature \cr
+#'  t := time (s) \cr
+#'  \eqn{k_{B}} := Boltzmann constant (8.617 x 10^-5 eV K^-1)\cr
+#'  \eqn{T_{ISO}} := isothermal temperature (°C) \cr
 #'  n := `n_filled` \cr
 #'  s := frequency factor of the trap (1/s) \cr
 #'  E := activation energy of the trap (eV) \cr
@@ -27,12 +27,12 @@
 #'
 #' @param s [numeric] (**required**): The frequency factor of the trap (s^-1)
 #'
-#' @param T [numeric] (*with default*): Constant stimulation temperature (degrees C)
+#' @param T [numeric] (*with default*): Constant stimulation temperature (°C)
 #'
 #' @param times [numeric] (*with default*): The sequence of time steps within the
 #' simulation (s)
 #'
-#' @param clusters [numeric] (*with default*): The number of MC runs (unitless)
+#' @param clusters [numeric] (*with default*): The number of created clusters for the MC runs
 #'
 #' @param n_filled [integer] (*with default*): The number of filled electron traps at the
 #' beginning of the simulation (unitless)
@@ -73,6 +73,7 @@
 #' plot_RLumCarlo(legend = TRUE)
 #'
 #' @keywords models data
+#' @encoding UTF-8
 #' @md
 #' @export
 run_MC_ISO_LOC <- function(

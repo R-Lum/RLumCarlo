@@ -16,8 +16,8 @@
 #' Where in the function: \cr
 #' s := frequency for the tunneling process (s^-1) \cr
 #' E := thermal activation energy (eV) \cr
-#' \eqn{k_{B}} := Boltzmann constant \cr
-#' T := temperature \cr
+#' \eqn{k_{B}} := Boltzmann constant (8.617 x 10^-5 eV K^-1)\cr
+#' T := temperature (°C)\cr
 #' r' := the unitless tunneling radius \cr
 #' \eqn{\rho}' := `rho'`, the unitless density of recombination centres (see Huntley (2006)) \cr
 #' t := time (s) \cr
@@ -36,7 +36,7 @@
 #'
 #' @param times [vector] (*wih default*): The sequence of time steps within the simulation (s)
 #'
-#' @param clusters  [numeric] (*with default*): The number of MC runs (unitless)
+#' @param clusters [numeric] (*with default*): The number of created clusters for the MC runs
 #'
 #' @param N_e [numeric] (*with default*): The total number of electron traps available (unitless)
 #'
@@ -111,6 +111,7 @@
 #' }
 #'
 #' @keywords models data
+#' @encoding UTF-8
 #' @md
 #' @export
 run_MC_TL_TUN <- function(

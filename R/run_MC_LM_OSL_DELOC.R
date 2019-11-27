@@ -14,17 +14,17 @@
 #'
 #' Where in the function: \cr
 #'  t := time (s) \cr
-#'  A := the optical excitation rate from trap to conduction band \cr
+#'  A := the optical excitation rate from trap to conduction band (1/s)\cr
 #'  n := `n_filled`, the tnstantaneous number of electrons \cr
 #'  R :=  the retrapping ratio for delocalized transitions \cr
 #'  N := `N_e`, the total number of electron traps available (unitless) \cr
-#'  P := total stimulation time"
+#'  P := total stimulation time (s)
 #'
 #' @param A [numeric] (**required**): The optical excitation rate from trap to conduction band (s^-1)
 #'
 #' @param times [numeric] (*with default*): The sequence of time steps within the simulation (s)
 #'
-#' @param clusters [numeric] (*with default*): The number of MC runs (unitless)
+#' @param clusters [numeric] (*with default*): The number of created clusters for the MC runs
 #'
 #' @param N_e [integer] (*with default*): The total number of electron traps available (unitless)
 #'
@@ -71,6 +71,7 @@
 #' plot_RLumCarlo(legend = TRUE)
 #'
 #' @keywords models data
+#' @encoding UTF-8
 #' @md
 #' @export
 run_MC_LM_OSL_DELOC <- function(

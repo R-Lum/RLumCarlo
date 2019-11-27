@@ -14,10 +14,10 @@
 #'
 #' Where in the function: \cr
 #' t := time \cr
-#' \eqn{k_{B}} := Boltzmann constant \cr
-#' \eqn{T_{ISO}} = temperature of the isothermal experiment \cr
+#' \eqn{k_{B}} := Boltzmann constant (8.617 x 10^-5 eV K^-1) \cr
+#' \eqn{T_{ISO}} = temperature of the isothermal experiment (°C) \cr
 #'  n := `n_filled`, the number of filled electron traps at the beginning of the simulation\cr
-#'  E := the trap depth in eV \cr
+#'  E := the trap depth (eV) \cr
 #'  s := the frequency factor in (s^-1) \cr
 #'  N := `N_e`, the total number of electron traps available (unitless) \cr
 #'  R := the retrapping ratio for delocalized transitions
@@ -26,11 +26,11 @@
 #'
 #' @param s [numeric] (**required**): The frequency factor of the trap (s^-1)
 #'
-#' @param T [numeric] (*with default*): Constant stimulation temperature (degress C)
+#' @param T [numeric] (*with default*): Constant stimulation temperature (°C)
 #'
 #' @param times [numeric] (*with default*): The sequence of time steps within the simulation (s)
 #'
-#' @param clusters [numeric] (*with default*): The number of MC runs (unitless)
+#' @param clusters [numeric] (*with default*): The number of created clusters for the MC runs
 #'
 #' @param N_e [integer] (*with default*): The total number of electron traps available (unitless)
 #'
@@ -79,6 +79,7 @@
 #' plot_RLumCarlo(legend = TRUE)
 #'
 #' @keywords models data
+#' @encoding UTF-8
 #' @md
 #' @export
 run_MC_ISO_DELOC <- function(

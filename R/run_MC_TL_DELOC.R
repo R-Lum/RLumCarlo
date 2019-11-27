@@ -15,9 +15,9 @@
 #' Where in the function: \cr
 #'  E := the thermal activation enery (eV) \cr
 #'  s := the frequency factor in (s^-1) \cr
-#'  t := time \cr
-#' \eqn{k_{B}} := Boltzmann constant \cr
-#'  T := temperature \cr
+#'  t := time (s) \cr
+#' \eqn{k_{B}} := Boltzmann constant (8.617 x 10^-5 eV K^-1)\cr
+#'  T := temperature (°C) \cr
 #'  n := `n_filled`, the instantaneous number of electrons \cr
 #'  N := `N_e`, the total number of electron traps available (unitless) \cr
 #'
@@ -27,7 +27,7 @@
 #'
 #' @param times [numeric] (*with default*): The sequence of temperature steps within the simulation (s)
 #'
-#' @param clusters [numeric] (*with default*): The number of MC runs (unitless)
+#' @param clusters [numeric] (*with default*): The number of created clusters for the MC runs
 #'
 #' @param N_e [integer] (*with default*): The total number of electron traps available (unitless)
 #'
@@ -129,6 +129,7 @@
 #'
 #' @keywords models data
 #' @md
+#' @encoding UTF-8
 #' @export
 run_MC_TL_DELOC <- function(
   s,
