@@ -104,12 +104,6 @@ run_MC_CW_IRSL_TUN(A = 0.12, rho = 0.003, times = 0:1000) %>%
      plot_RLumCarlo(norm = TRUE, legend = TRUE)
 ```
 
-## Note
-
-**The package comes without any guarantee!**
-
-Please further note that this version is a development version and may change day by day. For stable branches please visit the package on CRAN.
-
 ## License
 
 This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or any later version.
@@ -118,14 +112,14 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
 
 ## <span class="glyphicon glyphicon-euro"></span> Funding
 
-This project benefitted from support by various funding bodies. 
+The development of RLumCarlo benefitted from the support by various funding bodies:
 
 * The initial work by Johannes Friedrich, Sebastian Kreutzer and Christoph Schmidt was supported by the [DFG (2015–2018, SCHM 3051/4-1, "Modelling quartz luminescence signal dynamics relevant for dating and dosimetry", SCHM 3051/4-1)](https://gepris.dfg.de/gepris/projekt/279969851). 
 
 * Later financial support was secured through the project *ULTIMO: Unifying Luminescence Models of quartz and feldspar (German Academic Exchange Service) DAAD: Deutscher Akademischer Austauschdienst DAAD PPP USA 2018, ID: 57387041)*. 
 
 * The work of Sebastian Kreutzer as maintainer of the package was supported 
-by [LabEx LaScArBx (ANR - n. ANR-10-LABX-52)](https://lascarbx.labex.u-bordeaux.fr).
+by [LabEx LaScArBx (ANR - n. ANR-10-LABX-52)](https://lascarbx.labex.u-bordeaux.fr) between 2017 and 2019.
 
 ## Related projects 
 
