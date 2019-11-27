@@ -61,6 +61,7 @@ The **R** package 'RLumCarlo' provides a collection of R functions modelling lum
 * Set proper version number
 
 ### Last steps
+* Remove this document and make a local copy
 * Delete this list but follow-up the things below
 * run WIN-builder tests for all releases
 * run as-CRAN

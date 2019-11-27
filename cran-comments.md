@@ -3,12 +3,12 @@ Dear CRAN-Team,
 This contribution is a new R package submission. Our package deals with the simulation of 
 luminescence production in isolators and semiconductors (e.g., natural minerals such as quartz 
 or feldspar) using different stimulation modes. In contrast to other work, which uses coupled 
-differential equations, the simulation base on Monte Carlo runs allowing us to estimate 
+differential equations, the simulation bases on Monte-Carlo runs allowing us to estimate 
 (for the first time) the stochastic uncertainties of luminescence production. 
 
-Each function comes with a minimal running example, and a vignette provides further elaborated examples. 
+Each function comes with a short example, and a vignette provides further elaborated examples. 
 
-The package has no reverse dependencies and was developed and carefully tested in compliance 
+Our package has no reverse dependencies and was developed and carefully tested in compliance 
 with the CRAN policy. We summarise further information on the test environment below. 
 The package is licenced under GPL-3. 
 
