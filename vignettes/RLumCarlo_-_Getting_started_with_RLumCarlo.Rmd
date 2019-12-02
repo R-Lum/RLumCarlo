@@ -109,7 +109,7 @@ Simulation results are stored in the object `results` while, at the same time, p
 The most obvious modelling output is the luminescence signal itself, our example below simulates an 
 iso-thermal (ITL) signal for a temperature (`T`) of 200 $^{\circ}$C over 
 5,000 s using a tunnelling transition model. Trap parameters are $E = 1.2$ eV for the trap 
-depth and a frequency factor for $1\times10^{10}$ (1/s). The parameter `rho` ($\rho$) defines the 
+depth and a frequency factor for $1\times10^{10}$ (1/s). The parameter `rho` ($\rho'$) defines the 
 recombination centre density. 
 
 ```{r Fig 1, fig.align='center', cache=TRUE, fig.height=4, fig.width=5}
@@ -126,7 +126,7 @@ results <- run_MC_ISO_TUN(
 ### Model remaining charges
 
 The first example can be slightly altered to provide alternative insight. 
-Instead of the luminescence signal, below the variant returns 
+Instead of the luminescence signal, the variant below returns 
 the number of remaining electrons in the trap. 
 
 ```{r Fig 2, fig.align='center', cache=TRUE, fig.height=4, fig.width=5}
