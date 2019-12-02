@@ -9,7 +9,7 @@
 #' **The model**
 #'
 #' \deqn{
-#' I_{DELOC}(t) = -dn/dt = A * (n^2 / (N*R + n(1-R)))
+#' I_{DELOC}(t) = -dn/dt = A * t/P * (n^2 / (N*R + n(1-R)))
 #' }
 #'
 #' Where in the function: \cr

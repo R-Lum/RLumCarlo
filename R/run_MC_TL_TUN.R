@@ -2,8 +2,8 @@
 #'
 #' @description Runs a Monte-Carlo (MC) simulation of thermoluminesence (TL) caused by
 #' tunnelling (TUN) transitions.  Tunneling refers to quantum mechanical
-#' tunneling processes from the excited state of the trapped charge,
-#' into a recombination center.
+#' tunneling processes from the excited state of the trap into a recombination center.
+#' The heating rate in this function is assumed to be 1 K/s.
 #'
 #' @details
 #'
@@ -21,11 +21,11 @@
 #' r' := the unitless tunneling radius \cr
 #' \eqn{\rho}' := `rho'`, the unitless density of recombination centres (see Huntley (2006)) \cr
 #' t := time (s) \cr
-#' n := the instantaneous number of electrons
+#' n := the instantaneous number of electrons at distance r'
 #'
 #' @param E [numeric] (**required**): Thermal activation energy of the trap (eV)
 #'
-#' @param s [list] (**required**): The frequency factor for the tunneling process (s^-1)
+#' @param s [list] (**required**): The effective frequency factor for the tunneling process (s^-1)
 #'
 #' @param rho [numeric] (**required**): The dimensionless density of recombination centers
 #' (defined as \eqn{\rho}' in Huntley 2006)
@@ -34,13 +34,14 @@
 #' the sample has been thermally and/or optically pretreated. This parameter expresses the fact
 #' that electron-hole pairs within a critical radius `r_c` have already recombined.
 #'
-#' @param times [vector] (*wih default*): The sequence of time steps within the simulation (s)
+#' @param times [vector] (*wih default*): The sequence of time steps within the simulation (s).
+#' The heating rate is assumed to be 1 K/s.
 #'
 #' @param clusters [numeric] (*with default*): The number of created clusters for the MC runs
 #'
 #' @param N_e [numeric] (*with default*): The total number of electron traps available (unitless)
 #'
-#' @param delta.r [numeric] (*with default*): The increments of `r_c` (unitless)
+#' @param delta.r [numeric] (*with default*): The increments of the dimensionless distance r'
 #'
 #' @param method [character] (*with default*): Sequential `'seq'` or parallel `'par'`processing. In
 #' the parallel mode the function tries to run the simulation on multiple CPU cores (if available) with
@@ -87,9 +88,9 @@
 #'  s = 1e12,
 #'  E = 0.9,
 #'  rho = 1,
-#'  r_c = 1,
+#'  r_c = 0.1,
 #'  times = 80:120,
-#'  clusters = 2,
+#'  clusters = 50,
 #'  method = 'seq',
 #'  delta.r = 1e-1) %>%
 #' plot_RLumCarlo()

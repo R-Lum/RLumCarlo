@@ -3,7 +3,7 @@
 #' @description Runs a Monte-Carlo (MC) simulation of continuous wave infrared stimulated luminesence
 #' (CW-IRSL) using the generalized one trap (GOT) model. Localized transitions refer to transitions
 #' which do not involve the conduction or valence band. These transitions take place between the
-#' ground state and an excited state of the trapped charge, and also involve an excited state of the
+#' ground state and an excited state of the trapped charge, and also involve an energy state of the
 #' recombination center.
 #'
 #' @details
@@ -14,7 +14,7 @@
 #' }
 #'
 #' where in the function: \cr
-#'  A := optical excitation rate from the ground state into the excited state of the trapped charge (s^-1) \cr
+#'  A := optical excitation rate from the ground state into the excited state of the trap (s^-1) \cr
 #'  r := retrapping ratio for localized transitions \cr
 #'  t := time (s)\cr
 #'  n := number of filled electron traps

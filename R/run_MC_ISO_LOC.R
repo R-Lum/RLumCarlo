@@ -3,7 +3,7 @@
 #' @description Runs a Monte-Carlo (MC) simulation of isothermally stimulated luminesence
 #' (ISO-TL or ITL) using the generalized one trap (GOT) model. Localized transitions refer to transitions
 #' which do no involve the conduction or valence band. These transitions take place between the
-#' ground state and an excited state of the trapped charge, and also involve an excited state of the
+#' ground state and an excited state of the trapped charge, and also involve an energy state of the
 #' recombination center.
 #'
 #' @details

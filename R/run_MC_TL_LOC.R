@@ -3,8 +3,8 @@
 #' @description Runs a Monte-Carlo (MC) simulation of thermoluminesence (TL) using
 #' the generalized one trap (GOT) model. Localized transitions refer to transitions
 #' which do not involve the conduction or valence band. These transitions take place between the
-#' ground state and an excited state of the trapped charge, and also involve an excited
-#' state of the recombination center.
+#' ground state and an excited state of the trapped charge, and also involve an energy
+#' state of the recombination center. The heating rate in this function is assumed to be 1 K/s.
 #'
 #' @details
 #'
@@ -27,7 +27,8 @@
 #'
 #' @param s [numeric] (**required**): The frequency factor of the trap (s^-1)
 #'
-#' @param times [numeric] (*with default*): The sequence of temperature steps within the simulation (s)
+#' @param times [numeric] (*with default*): The sequence of temperature steps within the simulation (s).
+#' The heating is assumed to be 1 K/s.
 #'
 #' @param clusters [numeric] (*with default*): The number of created clusters for the MC runs
 #'
@@ -66,8 +67,8 @@
 #'  E = 0.9,
 #'  times = 50:100,
 #'  method = "seq",
-#'  clusters = 2,
-#'  r = 1e4) %>%
+#'  clusters = 30,
+#'  r = 1) %>%
 #' plot_RLumCarlo()
 #'
 #' \dontrun{
@@ -78,7 +79,7 @@
 #'  times = 50:100,
 #'  method = "par",
 #'  clusters = 100,
-#'  r = 1e4)
+#'  r = 1)
 #'
 #' ## plot
 #' plot_RLumCarlo(results)

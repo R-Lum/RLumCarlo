@@ -1,8 +1,8 @@
 #' @title Run Monte-Carlo Simulation for CW-IRSL (tunneling transitions)
 #'
 #' @description Runs a Monte-Carlo (MC) simulation of continuous wave infrared stimulated luminesence
-#' (CW-IRSL) using the model for tunneling transiations. Tunneling refers to quantum mechanical
-#' tunneling processes from the excited state of the trapped charge,
+#' (CW-IRSL) using the model for tunneling transitions. Tunneling refers to quantum mechanical
+#' tunneling processes from the excited state of the trap,
 #' into a recombination center.
 #'
 #' @details
@@ -14,14 +14,14 @@
 #' }
 #'
 #'Where in the function: \cr
-#' A := excitation rate from ground state of the trap to the excited state (1/s) \cr
+#' A := effective optical excitation rate for the tunneling process (s^-1) \cr
 #' r' := the unitless tunneling radius \cr
 #' \eqn{\rho}' := `rho'` the unitless density of recombination centres (see Huntley (2006)) \cr
 #' t := time (s) \cr
-#' n := the instantaneous number of electrons
+#' n := the instantaneous number of electrons corresponding to the radius r' at time t
 #'
-#' @param A [numeric] (**required**): The optical excitation rate from the ground state of trap to
-#' the excited state of trap (s^-1).
+#' @param A [numeric] (**required**): The effective optical excitation rate for the tunneling process
+#' (s^-1).
 #'
 #' @param rho [numeric] (**required**): The density of recombination centers
 #' (defined as \eqn{\rho}' in Huntley 2006) (unitless).
@@ -36,7 +36,7 @@
 #' sample has been thermally and/or optically pretreated. This parameter expresses the fact
 #' that electron-hole pairs within a critical radius `r_c` have already recombined.
 #'
-#' @param delta.r [numeric] (*with default*): Increments of the unitless distance parameter r
+#' @param delta.r [numeric] (*with default*): Increments of the unitless distance parameter r'
 #'
 #' @param method [character] (*with default*): Sequential `'seq'` or parallel `'par'`processing. In
 #' the parallel mode the function tries to run the simulation on multiple CPU cores (if available) with

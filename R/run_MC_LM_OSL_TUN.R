@@ -14,12 +14,12 @@
 #' }
 #'
 #' Where in the function: \cr
-#'  A := the optical excitation rate for the tunneling process (1/s)\cr
+#'  A := the optical excitation rate for the tunneling process (s^-1)\cr
 #'  t := time (s) \cr
 #'  P := maximum stimulation time (s) \cr
 #'  r' := the unitless tunneling radius \cr
 #'  \eqn{\rho} := `rho` the unitless density of recombination centres see Huntley (2006) \cr
-#'  n := the instantaneous number of electrons
+#'  n := the instantaneous number of electrons corresponding to the radius r'
 #'
 #' @param A [numeric] (**required**): The effective optical excitation rate for the tunneling process
 #'
@@ -36,7 +36,7 @@
 #' sample has 1 been thermally and/or optically pretreated. This parameter expresses the fact
 #' that electron-hole pairs within a critical radius `r_c` have already been recombined.
 #'
-#' @param delta.r [numeric] (*with default*): Increments of r_c (unitless)
+#' @param delta.r [numeric] (*with default*): Increments of dimensionless distance r'
 #'
 #' @param method [character] (*with default*): Sequential `'seq'` or parallel `'par'`processing. In
 #' the parallel mode the function tries to run the simulation on multiple CPU cores (if available) with
@@ -84,7 +84,7 @@
 #'  times = 0:10,
 #'  clusters = 10,
 #'  N_e = 100,
-#'  r_c = 0.001,
+#'  r_c = 0.2,
 #'  delta.r = 1e-1,
 #'  method = "seq",
 #'  output = "signal") %>%

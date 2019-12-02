@@ -2,7 +2,8 @@
 #'
 #' @description Runs a Monte-Carlo (MC) simulation of thermoluminesence (TL)
 #' using the one trap one recombination center (OTOR) model.
-#' Delocalized refers to involvement of the conduction band.
+#' Delocalized refers to involvement of the conduction band. The heating rate in this function
+#' is assumed to be 1 K/s.
 #'
 #' @details
 #'
@@ -25,7 +26,8 @@
 #'
 #' @param s [numeric] (**required**): The frequency factor of the trap (s^-1)
 #'
-#' @param times [numeric] (*with default*): The sequence of temperature steps within the simulation (s)
+#' @param times [numeric] (*with default*): The sequence of temperature steps within the simulation (s).
+#' The heating rate in this function is assumed to be 1 K/s.
 #'
 #' @param clusters [numeric] (*with default*): The number of created clusters for the MC runs
 #'
@@ -72,7 +74,7 @@
 #'  E = 1.45,
 #'  R = 0.1,
 #'  method = 'seq',
-#'  clusters = 3,
+#'  clusters = 100,
 #'  times = 150:350) %>%
 #' plot_RLumCarlo(legend = TRUE)
 #'

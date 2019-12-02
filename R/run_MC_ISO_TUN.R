@@ -21,7 +21,7 @@
 #' r' := the unitless tunneling radius \cr
 #' \eqn{\rho} := `rho` the unitless density of recombination centres see Huntley (2006) \cr
 #'  t := time (s) \cr
-#'  n := the instantaneous number of electrons \cr
+#'  n := the instantaneous number of electrons corresponding to the radius r' \cr
 #'
 #' @param E [numeric] (**required**): Thermal activation energy of the trap (eV).
 #'
@@ -93,8 +93,8 @@
 #'  rho = 1e-4,
 #'  times = 0:100,
 #'  clusters = 10,
-#'  N_e = 2,
-#'  r_c = 1e-4,
+#'  N_e = 100,
+#'  r_c = 0.2,
 #'  delta.r = 0.5,
 #'  method = "seq") %>%
 #'  plot_RLumCarlo(legend = TRUE)
@@ -109,8 +109,8 @@
 #'  times = 0:100,
 #'  clusters = 1000,
 #'  N_e = 200,
-#'  r_c = 1e-4,
-#'  delta.r = 0.5,
+#'  r_c = 0.1,
+#'  delta.r = 0.05,
 #'  method = "par")
 #'
 #' plot_RLumCarlo(results, legend = TRUE)
@@ -129,7 +129,7 @@ run_MC_ISO_TUN <- function(
   clusters = 10,
   r_c = 0,
   delta.r = 0.1,
-  N_e = 200L,
+  N_e = 200,
   method = "par",
   output = "signal",
   ...){
