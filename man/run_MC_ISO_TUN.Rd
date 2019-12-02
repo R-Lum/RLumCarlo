@@ -14,7 +14,7 @@ run_MC_ISO_TUN(
   clusters = 10,
   r_c = 0,
   delta.r = 0.1,
-  N_e = 200L,
+  N_e = 200,
   method = "par",
   output = "signal",
   ...
@@ -79,7 +79,7 @@ s := the effective frequency factor for the tunneling process (s^-1) \cr
 r' := the unitless tunneling radius \cr
 \eqn{\rho} := \code{rho} the unitless density of recombination centres see Huntley (2006) \cr
 t := time (s) \cr
-n := the instantaneous number of electrons \cr
+n := the instantaneous number of electrons corresponding to the radius r' \cr
 }
 \section{Function version}{
  0.1.0
@@ -94,8 +94,8 @@ run_MC_ISO_TUN(
  rho = 1e-4,
  times = 0:100,
  clusters = 10,
- N_e = 2,
- r_c = 1e-4,
+ N_e = 100,
+ r_c = 0.2,
  delta.r = 0.5,
  method = "seq") \%>\%
  plot_RLumCarlo(legend = TRUE)
@@ -110,8 +110,8 @@ results <- run_MC_ISO_TUN(
  times = 0:100,
  clusters = 1000,
  N_e = 200,
- r_c = 1e-4,
- delta.r = 0.5,
+ r_c = 0.1,
+ delta.r = 0.05,
  method = "par")
 
 plot_RLumCarlo(results, legend = TRUE)
@@ -120,7 +120,7 @@ plot_RLumCarlo(results, legend = TRUE)
 } 
 
 \section{How to cite}{
-Friedrich, J., Kreutzer, S., 2019. run_MC_ISO_TUN(): Monte-Carlo Simulation for ISO-TL (tunneling transitions). Function version 0.1.0. In: Friedrich, J., Kreutzer, S., Pagonis, V., Schmidt, C., 2019. RLumCarlo: Monte-Carlo Methods for Simulating Luminescence Phenomena. R package version 0.1.0.9000-137. 
+Friedrich, J., Kreutzer, S., 2019. run_MC_ISO_TUN(): Monte-Carlo Simulation for ISO-TL (tunneling transitions). Function version 0.1.0. In: Friedrich, J., Kreutzer, S., Pagonis, V., Schmidt, C., 2019. RLumCarlo: Monte-Carlo Methods for Simulating Luminescence Phenomena. R package version 0.1.0.9000-138. 
 }
 
 \references{

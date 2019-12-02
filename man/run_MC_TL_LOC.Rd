@@ -22,7 +22,8 @@ run_MC_TL_LOC(
 
 \item{E}{\link{numeric} (\strong{required}): Thermal activation energy of the trap (eV)}
 
-\item{times}{\link{numeric} (\emph{with default}): The sequence of temperature steps within the simulation (s)}
+\item{times}{\link{numeric} (\emph{with default}): The sequence of temperature steps within the simulation (s).
+The heating is assumed to be 1 K/s.}
 
 \item{clusters}{\link{numeric} (\emph{with default}): The number of created clusters for the MC runs}
 
@@ -49,8 +50,8 @@ and a \link{numeric} time vector.
 Runs a Monte-Carlo (MC) simulation of thermoluminesence (TL) using
 the generalized one trap (GOT) model. Localized transitions refer to transitions
 which do not involve the conduction or valence band. These transitions take place between the
-ground state and an excited state of the trapped charge, and also involve an excited
-state of the recombination center.
+ground state and an excited state of the trapped charge, and also involve an energy
+state of the recombination center. The heating rate in this function is assumed to be 1 K/s.
 }
 \details{
 \strong{The model}
@@ -79,8 +80,8 @@ run_MC_TL_LOC(
  E = 0.9,
  times = 50:100,
  method = "seq",
- clusters = 2,
- r = 1e4) \%>\%
+ clusters = 30,
+ r = 1) \%>\%
 plot_RLumCarlo()
 
 \dontrun{
@@ -91,7 +92,7 @@ results <- run_MC_TL_LOC(
  times = 50:100,
  method = "par",
  clusters = 100,
- r = 1e4)
+ r = 1)
 
 ## plot
 plot_RLumCarlo(results)
@@ -101,7 +102,7 @@ plot_RLumCarlo(results)
 } 
 
 \section{How to cite}{
-Kreutzer, S., 2019. run_MC_TL_LOC(): Run Monte-Carlo Simulation for TL (localized transitions). Function version 0.1.0. In: Friedrich, J., Kreutzer, S., Pagonis, V., Schmidt, C., 2019. RLumCarlo: Monte-Carlo Methods for Simulating Luminescence Phenomena. R package version 0.1.0.9000-137. 
+Kreutzer, S., 2019. run_MC_TL_LOC(): Run Monte-Carlo Simulation for TL (localized transitions). Function version 0.1.0. In: Friedrich, J., Kreutzer, S., Pagonis, V., Schmidt, C., 2019. RLumCarlo: Monte-Carlo Methods for Simulating Luminescence Phenomena. R package version 0.1.0.9000-138. 
 }
 
 \references{

@@ -53,7 +53,7 @@ and a \link{numeric} time vector.
 Runs a Monte-Carlo (MC) simulation of isothermally stimulated luminesence
 (ISO-TL or ITL) using the generalized one trap (GOT) model. Localized transitions refer to transitions
 which do no involve the conduction or valence band. These transitions take place between the
-ground state and an excited state of the trapped charge, and also involve an excited state of the
+ground state and an excited state of the trapped charge, and also involve an energy state of the
 recombination center.
 }
 \details{
@@ -89,7 +89,7 @@ plot_RLumCarlo(legend = TRUE)
 } 
 
 \section{How to cite}{
-Kreutzer, S., 2019. run_MC_ISO_LOC(): Run Monte-Carlo simulation for ISO-TL (localized transitions). Function version 0.1.0. In: Friedrich, J., Kreutzer, S., Pagonis, V., Schmidt, C., 2019. RLumCarlo: Monte-Carlo Methods for Simulating Luminescence Phenomena. R package version 0.1.0.9000-137. 
+Kreutzer, S., 2019. run_MC_ISO_LOC(): Run Monte-Carlo simulation for ISO-TL (localized transitions). Function version 0.1.0. In: Friedrich, J., Kreutzer, S., Pagonis, V., Schmidt, C., 2019. RLumCarlo: Monte-Carlo Methods for Simulating Luminescence Phenomena. R package version 0.1.0.9000-138. 
 }
 
 \references{

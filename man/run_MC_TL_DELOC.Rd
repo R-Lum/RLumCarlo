@@ -23,7 +23,8 @@ run_MC_TL_DELOC(
 
 \item{E}{\link{numeric} (\strong{required}): Thermal activation energy of the trap (eV)}
 
-\item{times}{\link{numeric} (\emph{with default}): The sequence of temperature steps within the simulation (s)}
+\item{times}{\link{numeric} (\emph{with default}): The sequence of temperature steps within the simulation (s).
+The heating rate in this function is assumed to be 1 K/s.}
 
 \item{clusters}{\link{numeric} (\emph{with default}): The number of created clusters for the MC runs}
 
@@ -51,7 +52,8 @@ and a \link{numeric} time vector.
 \description{
 Runs a Monte-Carlo (MC) simulation of thermoluminesence (TL)
 using the one trap one recombination center (OTOR) model.
-Delocalized refers to involvement of the conduction band.
+Delocalized refers to involvement of the conduction band. The heating rate in this function
+is assumed to be 1 K/s.
 }
 \details{
 \strong{The model}
@@ -80,7 +82,7 @@ run_MC_TL_DELOC(
  E = 1.45,
  R = 0.1,
  method = 'seq',
- clusters = 3,
+ clusters = 100,
  times = 150:350) \%>\%
 plot_RLumCarlo(legend = TRUE)
 
@@ -138,7 +140,7 @@ legend("topright",
 } 
 
 \section{How to cite}{
-Kreutzer, S., 2019. run_MC_TL_DELOC(): Run Monte-Carlo Simulation for TL (delocalized transitions). Function version 0.1.0. In: Friedrich, J., Kreutzer, S., Pagonis, V., Schmidt, C., 2019. RLumCarlo: Monte-Carlo Methods for Simulating Luminescence Phenomena. R package version 0.1.0.9000-137. 
+Kreutzer, S., 2019. run_MC_TL_DELOC(): Run Monte-Carlo Simulation for TL (delocalized transitions). Function version 0.1.0. In: Friedrich, J., Kreutzer, S., Pagonis, V., Schmidt, C., 2019. RLumCarlo: Monte-Carlo Methods for Simulating Luminescence Phenomena. R package version 0.1.0.9000-138. 
 }
 
 \references{

@@ -59,7 +59,7 @@ Status](https://travis-ci.com/R-Lum/RLumCarlo.svg?token=ymRxA7NeJn6EE7PixZr8&bra
 
   - ~~Documentation verified by Vasilis?~~
 
-  - Vignette checked by Vasilis?
+  - ~~Vignette checked by Vasilis?~~
 
   - Vignette checked by Christoph?
 

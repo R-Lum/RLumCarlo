@@ -32,7 +32,7 @@ run_MC_LM_OSL_TUN(
 sample has 1 been thermally and/or optically pretreated. This parameter expresses the fact
 that electron-hole pairs within a critical radius \code{r_c} have already been recombined.}
 
-\item{delta.r}{\link{numeric} (\emph{with default}): Increments of r_c (unitless)}
+\item{delta.r}{\link{numeric} (\emph{with default}): Increments of dimensionless distance r'}
 
 \item{N_e}{\link{numeric} (\emph{width default}): The total number of electron traps available (unitless)}
 
@@ -64,12 +64,12 @@ I_{TUN}(r',t) = -dn/dt = (A * t/P) * exp(-(\rho')^{-1/3} * r') * n(r',t)
 }
 
 Where in the function: \cr
-A := the optical excitation rate for the tunneling process (1/s)\cr
+A := the optical excitation rate for the tunneling process (s^-1)\cr
 t := time (s) \cr
 P := maximum stimulation time (s) \cr
 r' := the unitless tunneling radius \cr
 \eqn{\rho} := \code{rho} the unitless density of recombination centres see Huntley (2006) \cr
-n := the instantaneous number of electrons
+n := the instantaneous number of electrons corresponding to the radius r'
 }
 \section{Function version}{
  0.1.0
@@ -83,7 +83,7 @@ run_MC_LM_OSL_TUN(
  times = 0:10,
  clusters = 10,
  N_e = 100,
- r_c = 0.001,
+ r_c = 0.2,
  delta.r = 1e-1,
  method = "seq",
  output = "signal") \%>\%
@@ -108,7 +108,7 @@ plot_RLumCarlo(results, norm = TRUE)
 } 
 
 \section{How to cite}{
-Friedrich, J., Kreutzer, S., 2019. run_MC_LM_OSL_TUN(): Run Monte-Carlo Simulation for LM-OSL (tunneling transitions). Function version 0.1.0. In: Friedrich, J., Kreutzer, S., Pagonis, V., Schmidt, C., 2019. RLumCarlo: Monte-Carlo Methods for Simulating Luminescence Phenomena. R package version 0.1.0.9000-137. 
+Friedrich, J., Kreutzer, S., 2019. run_MC_LM_OSL_TUN(): Run Monte-Carlo Simulation for LM-OSL (tunneling transitions). Function version 0.1.0. In: Friedrich, J., Kreutzer, S., Pagonis, V., Schmidt, C., 2019. RLumCarlo: Monte-Carlo Methods for Simulating Luminescence Phenomena. R package version 0.1.0.9000-138. 
 }
 
 \references{

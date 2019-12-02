@@ -20,7 +20,7 @@ run_MC_TL_TUN(
 )
 }
 \arguments{
-\item{s}{\link{list} (\strong{required}): The frequency factor for the tunneling process (s^-1)}
+\item{s}{\link{list} (\strong{required}): The effective frequency factor for the tunneling process (s^-1)}
 
 \item{E}{\link{numeric} (\strong{required}): Thermal activation energy of the trap (eV)}
 
@@ -31,13 +31,14 @@ run_MC_TL_TUN(
 the sample has been thermally and/or optically pretreated. This parameter expresses the fact
 that electron-hole pairs within a critical radius \code{r_c} have already recombined.}
 
-\item{times}{\link{vector} (\emph{wih default}): The sequence of time steps within the simulation (s)}
+\item{times}{\link{vector} (\emph{wih default}): The sequence of time steps within the simulation (s).
+The heating rate is assumed to be 1 K/s.}
 
 \item{clusters}{\link{numeric} (\emph{with default}): The number of created clusters for the MC runs}
 
 \item{N_e}{\link{numeric} (\emph{with default}): The total number of electron traps available (unitless)}
 
-\item{delta.r}{\link{numeric} (\emph{with default}): The increments of \code{r_c} (unitless)}
+\item{delta.r}{\link{numeric} (\emph{with default}): The increments of the dimensionless distance r'}
 
 \item{method}{\link{character} (\emph{with default}): Sequential \code{'seq'} or parallel \code{'par'}processing. In
 the parallel mode the function tries to run the simulation on multiple CPU cores (if available) with
@@ -56,8 +57,8 @@ and a \link{numeric} time vector.
 \description{
 Runs a Monte-Carlo (MC) simulation of thermoluminesence (TL) caused by
 tunnelling (TUN) transitions.  Tunneling refers to quantum mechanical
-tunneling processes from the excited state of the trapped charge,
-into a recombination center.
+tunneling processes from the excited state of the trap into a recombination center.
+The heating rate in this function is assumed to be 1 K/s.
 }
 \details{
 \strong{The model}
@@ -74,7 +75,7 @@ T := temperature (°C)\cr
 r' := the unitless tunneling radius \cr
 \eqn{\rho}' := \verb{rho'}, the unitless density of recombination centres (see Huntley (2006)) \cr
 t := time (s) \cr
-n := the instantaneous number of electrons
+n := the instantaneous number of electrons at distance r'
 }
 \section{Function version}{
  0.1.0
@@ -86,9 +87,9 @@ run_MC_TL_TUN(
  s = 1e12,
  E = 0.9,
  rho = 1,
- r_c = 1,
+ r_c = 0.1,
  times = 80:120,
- clusters = 2,
+ clusters = 50,
  method = 'seq',
  delta.r = 1e-1) \%>\%
 plot_RLumCarlo()
@@ -112,7 +113,7 @@ plot_RLumCarlo(results)
 } 
 
 \section{How to cite}{
-Friedrich, J., Kreutzer, S., 2019. run_MC_TL_TUN(): Run Monte-Carlo Simulation for TL (tunneling transitions). Function version 0.1.0. In: Friedrich, J., Kreutzer, S., Pagonis, V., Schmidt, C., 2019. RLumCarlo: Monte-Carlo Methods for Simulating Luminescence Phenomena. R package version 0.1.0.9000-137. 
+Friedrich, J., Kreutzer, S., 2019. run_MC_TL_TUN(): Run Monte-Carlo Simulation for TL (tunneling transitions). Function version 0.1.0. In: Friedrich, J., Kreutzer, S., Pagonis, V., Schmidt, C., 2019. RLumCarlo: Monte-Carlo Methods for Simulating Luminescence Phenomena. R package version 0.1.0.9000-138. 
 }
 
 \references{

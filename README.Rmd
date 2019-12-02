@@ -49,7 +49,7 @@ The **R** package 'RLumCarlo' provides a collection of R functions modelling lum
 
 * ~~Documentation checked by Christoph?~~
 * ~~Documentation verified by Vasilis?~~
-* Vignette checked by Vasilis?
+* ~~Vignette checked by Vasilis?~~
 * Vignette checked by Christoph?
 
 ### Others

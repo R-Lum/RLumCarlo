@@ -54,7 +54,7 @@ Delocalized refers to involvement of the conduction band.
 \strong{The model}
 
 \deqn{
-I_{DELOC}(t) = -dn/dt = A * (n^2 / (N*R + n(1-R)))
+I_{DELOC}(t) = -dn/dt = A * t/P * (n^2 / (N*R + n(1-R)))
 }
 
 Where in the function: \cr
@@ -81,7 +81,7 @@ plot_RLumCarlo(legend = TRUE)
 } 
 
 \section{How to cite}{
-Kreutzer, S., 2019. run_MC_LM_OSL_DELOC(): Run Monte-Carlo Simulation for LM-OSL (delocalized transitions). Function version 0.1.0. In: Friedrich, J., Kreutzer, S., Pagonis, V., Schmidt, C., 2019. RLumCarlo: Monte-Carlo Methods for Simulating Luminescence Phenomena. R package version 0.1.0.9000-137. 
+Kreutzer, S., 2019. run_MC_LM_OSL_DELOC(): Run Monte-Carlo Simulation for LM-OSL (delocalized transitions). Function version 0.1.0. In: Friedrich, J., Kreutzer, S., Pagonis, V., Schmidt, C., 2019. RLumCarlo: Monte-Carlo Methods for Simulating Luminescence Phenomena. R package version 0.1.0.9000-138. 
 }
 
 \references{
