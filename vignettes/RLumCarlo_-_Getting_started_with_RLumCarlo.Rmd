@@ -39,7 +39,7 @@ electrons <- data.frame(
 
 RLumCarlo is a collection of energy-band models to simulate luminescence signals in dosimeteric materials
 using Monte-Carlo (MC) methods for various stimulation modes. This document aims at supplementing 
-the package documentation and it elaborates the package examples. 
+the package documentation and elaborating the package examples. 
 
 # The models in RLumCarlo
 
@@ -97,8 +97,8 @@ simulation times than allowed for the standard package examples, which aim at a 
 
 ## Example 1: A first example
 
-The first examples an iso-thermal curve using the tunnelling model (other models work 
-similar). Returned are either the simulated signal or the estimated remaining charges. 
+The first example is an iso-thermal decay curve using the tunnelling model (other models work 
+similarly). Returned are either the simulated signal or the estimated remaining trapped charge carriers. 
 The Function `plot_RLumCarlo()` provides an easy way to visualise the modelling results and 
 is here called using the tee operator `%T>` from the package `magrittr` (which is imported by RLumCarlo). 
 Simulation results are stored in the object `results` while, at the same time, piped to the function 
@@ -109,7 +109,7 @@ Simulation results are stored in the object `results` while, at the same time, p
 The most obvious modelling output is the luminescence signal itself, our example below simulates an 
 iso-thermal (ITL) signal for a temperature (`T`) of 200 $^{\circ}$C over 
 5,000 s using a tunnelling transition model. Trap parameters are $E = 1.2$ eV for the trap 
-depth and a frequency factor for $1\times10^{10}$ (1/s). The parameter `rho` ($\rho'$) defines the 
+depth and a frequency factor of $1\times10^{10}$ (1/s). The parameter `rho` ($\rho'$) defines the 
 recombination centre density. 
 
 ```{r Fig 1, fig.align='center', cache=TRUE, fig.height=4, fig.width=5}
