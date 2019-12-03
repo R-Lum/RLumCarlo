@@ -130,7 +130,7 @@ legend("topright",
 } 
 
 \section{How to cite}{
-Kreutzer, S., 2019. run_MC_CW_OSL_DELOC(): Run Monte-Carlo Simulation for CW-OSL (delocalized transitions). Function version 0.1.0. In: Friedrich, J., Kreutzer, S., Pagonis, V., Schmidt, C., 2019. RLumCarlo: Monte-Carlo Methods for Simulating Luminescence Phenomena. R package version 0.1.0.9000-138. 
+Kreutzer, S., 2019. run_MC_CW_OSL_DELOC(): Run Monte-Carlo Simulation for CW-OSL (delocalized transitions). Function version 0.1.0. In: Friedrich, J., Kreutzer, S., Pagonis, V., Schmidt, C., 2019. RLumCarlo: Monte-Carlo Methods for Simulating Luminescence Phenomena. R package version 0.1.0. 
 }
 
 \references{

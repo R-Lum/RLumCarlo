@@ -80,7 +80,7 @@ plot_RLumCarlo(legend = TRUE)
 } 
 
 \section{How to cite}{
-Kreutzer, S., 2019. run_MC_CW_IRSL_LOC(): Monte-Carlo Simulation for CW-IRSL (localized transitions). Function version 0.1.0. In: Friedrich, J., Kreutzer, S., Pagonis, V., Schmidt, C., 2019. RLumCarlo: Monte-Carlo Methods for Simulating Luminescence Phenomena. R package version 0.1.0.9000-138. 
+Kreutzer, S., 2019. run_MC_CW_IRSL_LOC(): Monte-Carlo Simulation for CW-IRSL (localized transitions). Function version 0.1.0. In: Friedrich, J., Kreutzer, S., Pagonis, V., Schmidt, C., 2019. RLumCarlo: Monte-Carlo Methods for Simulating Luminescence Phenomena. R package version 0.1.0. 
 }
 
 \references{
