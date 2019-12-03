@@ -58,7 +58,7 @@ The **R** package 'RLumCarlo' provides a collection of R functions modelling lum
 * ~~Write CRAN comments~~
 * Double check ORCID for authors
 * Double check DESCIRPTION file
-* Set proper version number
+* ~~Set proper version number~~
 
 ### Last steps
 * Remove this document and make a local copy
