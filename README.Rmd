@@ -56,8 +56,8 @@ The **R** package 'RLumCarlo' provides a collection of R functions modelling lum
 
 * Check vignette and update vignette
 * ~~Write CRAN comments~~
-* Double check ORCID for authors
-* Double check DESCIRPTION file
+* ~~Double check ORCID for authors~~
+* ~~Double check DESCIRPTION file~~
 * ~~Set proper version number~~
 
 ### Last steps
