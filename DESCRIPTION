@@ -13,18 +13,18 @@ Author: Johannes Friedrich [aut, trl] (<https://orcid.org/0000-0002-0805-9547>),
 Authors@R: c(
     person("Johannes", "Friedrich", role = c("aut","trl"), comment = c(ORCID = "0000-0002-0805-9547")),
     person("Sebastian", "Kreutzer", role = c("aut","trl","cre"), comment = c(ORCID = "0000-0002-0734-2199"),
-            email = "sebastian.kreutzer@u-bordeaux-montaigne.fr"),
+            email = "sebastian.kreutzer@aber.ac.uk"),
     person("Vasilis", "Pagonis", role = c("aut"), comment = c(ORCID = "0000-0002-4852-9312")),
     person("Christoph", "Schmidt", role = c("aut"), comment = c(ORCID = "0000-0002-2309-3209")),
     person("Ena", "Rajovic", role = c("ctb")), 
     person("Alex Roy", "Duncan", role = c("ctb")),
     person("Christian", "Laag", role = c("ctb"), comment = c(ORCID = "0000-0002-6012-1029"))
     )
-Maintainer: Sebastian Kreutzer <sebastian.kreutzer@u-bordeaux-montaigne.fr>
+Maintainer: Sebastian Kreutzer <aber.ac.ukr>
 Description: A collection of functions to simulate luminescence production in dosimetric materials using Monte-Carlo methods. 
     Implemented are models for delocalised, localised and tunnelling transitions. 
     Supported stimulation methods are TL, CW-OSL, LM-OSL, LM-IRSL, and ITL (ISO-TL).
-Contact: Package Developer Team <sebastian.kreutzer@u-bordeaux-montaigne.fr>
+Contact: Package Developer Team <sebastian.kreutzer@aber.ac.uk>
 License: GPL-3
 BugReports: https://github.com/R-Lum/RLumCarlo/issues
 Depends: 
