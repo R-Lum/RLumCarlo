@@ -34,12 +34,12 @@
 #' @docType package
 #'
 #' @author Johannes Friedrich, University of Bayreuth (Germany), \cr
-#' Sebastian Kreutzer, IRAMAT-CRP2A, UMR 5060, CNRS-Université Bordeaux Montaigne (France), \cr
+#' Sebastian Kreutzer, Geography & Earth Sciences, Aberystwyth University (United Kingdom) \cr
 #' Vasilis Pagonis, McDaniel College Westminster (MD, USA), \cr
 #' Christoph Schmidt, University of Bayreuth (Germany), \cr
 #' Ena Rajovic, University of Bayreuth (Germany), \cr
 #' Alex Roy Duncan, University of Bayreuth (Germany), \cr
-#' Christian Laag, University of Bayreuth (Germany)
+#' Christian Laag, Institut de Physique du Globe de Paris, Université de Paris (France)
 #'
 #' @references
 #'
