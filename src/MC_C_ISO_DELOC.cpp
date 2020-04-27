@@ -48,7 +48,8 @@ List MC_C_ISO_DELOC(arma::vec times, int N_e, int n_filled, double R, double E, 
 
           } // end n_filled
 
-          //calculate signal and remaining filled
+          //calculate signal and remaining filled (here we have n_filled^2 before
+          //we have this per particle)
           signal(t,0) = P * (pow(n_filled,2) / (N_e * R + n_filled * (1 - R)));
           remaining_e(t,0) = n_filled;
 
