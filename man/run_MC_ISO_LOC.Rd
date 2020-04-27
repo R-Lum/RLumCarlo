@@ -99,7 +99,7 @@ random distribution of defects: A new Monte Carlo simulation approach for feldsp
 Journal of Luminescence 207, 266–272. \doi{10.1016/j.jlumin.2018.11.024}
 }
 \author{
-Sebastian Kreutzer, IRAMAT-CRP2A, UMR 5060, CNRS - Université Bordeaux Montaigne (France)
+Sebastian Kreutzer, Geography & Earth Sciences, Aberystwyth University (United Kingdom)
 }
 \keyword{data}
 \keyword{models}

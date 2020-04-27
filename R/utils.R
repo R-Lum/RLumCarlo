@@ -1,9 +1,9 @@
 ## +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 ## Internal, non-exported package functions
 ## +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-#' Combine Model Ouput Array
+#' Combine Model Output Array
 #'
-#' @param ... Arrrays to be combined
+#' @param ... Arrays to be combined
 #'
 #' @author Johannes Friedrich, University of Bayreuth (Germany)
 #'
@@ -32,7 +32,11 @@ comb_array <- function(...) abind::abind(..., along = 3)
   return(list)
 }
 
-#' Register Multi-Core backend
+#' @title Register Multi-Core back end (helper function)
+#'
+#' @param method [character] (*with default*): Sequential `'seq'` or parallel `'par'`processing. In
+#' the parallel mode the function tries to run the simulation on multiple CPU cores (if available) with
+#' a positive effect on the computation time.
 #'
 #'@md
 #'@noRd

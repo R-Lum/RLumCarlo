@@ -105,7 +105,7 @@ Chen, R., McKeever, S.W.S., 1997. Theory of Thermoluminescence and Related Pheno
 WORLD SCIENTIFIC. \doi{10.1142/2781}
 }
 \author{
-Sebastian Kreutzer, IRAMAT-CRP2A, UMR 5060, CNRS - Université Bordeaux Montaigne (France)
+Sebastian Kreutzer, Geography & Earth Sciences, Aberystwyth University (United Kingdom)
 }
 \keyword{data}
 \keyword{models}

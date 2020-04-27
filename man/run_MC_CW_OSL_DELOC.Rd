@@ -46,8 +46,8 @@ is a \link{list} consisting of an \link{array} with dimension length(times) x cl
 and a \link{numeric} time vector.
 }
 \description{
-Runs a Monte-Carlo (MC) simulation of continuous wave optically stimulated luminesence
-(CW-OSL) using the one trap one recombination center (OTOR) model.
+Runs a Monte-Carlo (MC) simulation of continuous wave optically stimulated luminescence
+(CW-OSL) using the one trap one recombination centre (OTOR) model.
 The term delocalized here refers to the involvement of the conduction band.
 }
 \details{
@@ -145,7 +145,7 @@ Chen, R., McKeever, S.W.S., 1997. Theory of Thermoluminescence and Related Pheno
 WORLD SCIENTIFIC. \doi{10.1142/2781}
 }
 \author{
-Sebastian Kreutzer, IRAMAT-CRP2A, UMR 5060, CNRS - Université Bordeaux Montaigne (France)
+Sebastian Kreutzer, Geography & Earth Sciences, Aberystwyth University (United Kingdom)
 }
 \keyword{data}
 \keyword{models}
