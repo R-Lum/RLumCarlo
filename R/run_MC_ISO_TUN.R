@@ -62,7 +62,7 @@
 #' @section Function version: 0.1.0
 #'
 #' @author Johannes Friedrich, University of Bayreuth (Germany),
-#' Sebastian Kreutzer, IRAMAT-CRP2A, UMR 5060, CNRS - Université Bordeaux Montaigne (France)
+#' Sebastian Kreutzer, Geography & Earth Sciences, Aberystwyth University (United Kingdom)
 #'
 #' @references
 #' Pagonis, V. and Kulp, C., 2017. Monte Carlo simulations of tunneling phenomena

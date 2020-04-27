@@ -1,6 +1,6 @@
 #' @title Run Monte-Carlo Simulation for CW-OSL (delocalized transitions)
 #'
-#' @description Runs a Monte-Carlo (MC) simulation of continuous wave optically stimulated luminesence
+#' @description Runs a Monte-Carlo (MC) simulation of continuous wave optically stimulated luminescence
 #' (CW-OSL) using the one trap one recombination center (OTOR) model.
 #' The term delocalized here refers to the involvement of the conduction band.
 #'
@@ -47,7 +47,7 @@
 #'
 #' @section Function version: 0.1.0
 #'
-#' @author Sebastian Kreutzer, IRAMAT-CRP2A, UMR 5060, CNRS - Université Bordeaux Montaigne (France)
+#' @author Sebastian Kreutzer, Geography & Earth Sciences, Aberystwyth University (United Kingdom)
 #'
 #' @references
 #' Pagonis, V., Friedrich, J., Discher, M., Müller-Kirschbaum, A., Schlosser, V., Kreutzer, S.,
