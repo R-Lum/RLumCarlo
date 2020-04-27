@@ -10,7 +10,6 @@
 #' @noRd
 comb_array <- function(...) abind::abind(..., along = 3)
 
-
 #' Create RLumCarlo Model Output List
 #'
 #' @param signal [numeric] (**required**): signal vector
@@ -20,7 +19,7 @@ comb_array <- function(...) abind::abind(..., along = 3)
 #' @param model [character] (*with default*): the name of the model, the functions tries
 #' to set this automatically.
 #'
-#' @author Sebastian Kreutzer, IRAMAT-CRP2A, UMR 5060, CNRS-Université Bordeaux-Montaigne (France)
+#' @author Sebastian Kreutzer, Geography & Earth Sciences, Aberystwyth University (United Kingdom)
 #'
 #' @md
 #' @noRd
@@ -33,4 +32,32 @@ comb_array <- function(...) abind::abind(..., along = 3)
   return(list)
 }
 
+#' Register Multi-Core backend
+#'
+#'@md
+#'@noRd
+.registerClusters <- function(method){
+  ## check the method parameter
+  if(!method %in% c("par", "seq"))
+    stop(paste0("[",as.character(sys.call(which = -1))[1],"()] Allowed keywords for 'method' are either 'par' or 'seq'!"),
+             call. = FALSE)
+
+  ##get number of cores
+  cores <- parallel::detectCores()
+  if(cores == 1) method <- "seq"
+
+  if(method != "par"){
+    cl <- parallel::makeCluster(1)
+    doParallel::registerDoParallel(cl)
+    ##ensures that we do not have any particular problems
+    foreach::registerDoSEQ()
+
+  } else {
+    cl <- parallel::makeCluster(cores-1)
+    doParallel::registerDoParallel(cl)
+
+  }
+
+  return(cl)
+}
 

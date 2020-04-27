@@ -1,7 +1,7 @@
 #' @title Run Monte-Carlo Simulation for CW-OSL (delocalized transitions)
 #'
 #' @description Runs a Monte-Carlo (MC) simulation of continuous wave optically stimulated luminescence
-#' (CW-OSL) using the one trap one recombination center (OTOR) model.
+#' (CW-OSL) using the one trap one recombination centre (OTOR) model.
 #' The term delocalized here refers to the involvement of the conduction band.
 #'
 #' @details
@@ -135,28 +135,12 @@ run_MC_CW_OSL_DELOC <- function(
   ...){
 
 # Integrity checks ----------------------------------------------------------------------------
-  if(!method %in% c("par", "seq"))
-    stop("[run_MC_CW_OSL_DELOC()] Allowed keywords for 'method' are either 'par' or 'seq'!", call. = FALSE)
-
   if(!output %in% c("signal", "remaining_e"))
     stop("[run_MC_CW_OSL_DELOC()] Allowed keywords for 'output' are either 'signal' or 'remaining_e'!", call. = FALSE)
 
 # Register multi-core backend -----------------------------------------------------------------
-  cores <- detectCores()
-  if(cores == 1) method <- "seq"
-
-  if(method != "par"){
-    cl <- parallel::makeCluster(1)
-    doParallel::registerDoParallel(cl)
-    ##ensures that we do not have any particular problems
-    registerDoSEQ()
-    on.exit(stopCluster(cl))
-
-  } else {
-    cl <- parallel::makeCluster(cores-1)
-    doParallel::registerDoParallel(cl)
-    on.exit(stopCluster(cl))
-  }
+  cl <- .registerClusters(method)
+  on.exit(parallel::stopCluster(cl))
 
 # Run model -----------------------------------------------------------------------------------
   temp <- foreach(c = 1:clusters,
@@ -173,7 +157,7 @@ run_MC_CW_OSL_DELOC <- function(
 
     return(results[[output]])
 
-  }  # end c-loop
+  }  # end c++-loop
 
 # Return --------------------------------------------------------------------------------------
 .return_ModelOutput(signal = temp, time = times)
