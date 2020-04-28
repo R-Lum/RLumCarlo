@@ -80,11 +80,11 @@
 #' ##the short example
 #' run_MC_LM_OSL_TUN(
 #'  A = 1,
-#'  rho = 1e-7,
-#'  times = 0:10,
+#'  rho = 1e-3,
+#'  times = 0:100,
 #'  clusters = 10,
 #'  N_e = 100,
-#'  r_c = 0.2,
+#'  r_c = 0.1,
 #'  delta.r = 1e-1,
 #'  method = "seq",
 #'  output = "signal") %>%
