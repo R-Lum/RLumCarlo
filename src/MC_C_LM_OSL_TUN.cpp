@@ -33,6 +33,7 @@ List MC_C_LM_OSL_TUN(arma::vec times, int N_e, arma::vec r, double rho, double A
 
         for(std::size_t j = 0; j < n_filled; ++j){
 
+          //draw random number
           r_num = runif(1);
 
           if (r_num[0] < P)
