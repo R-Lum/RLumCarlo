@@ -53,7 +53,7 @@
 #' @param output [character] (*with default*): output is either the `'signal'` (the default) or
 #' `'remaining_e'` (the remaining charges/electrons in the trap)
 #'
-#' @param \dots further arguments
+#' #' @param \dots further arguments, such as `cores` to control the number of used CPU cores or `verbose` to silence the terminal
 #'
 #' @return This function returns an object of class `RLumCarlo_Model_Output` which
 #' is a [list] consisting of an [array] with dimension length(times) x length(r) x clusters
@@ -140,7 +140,7 @@ run_MC_ISO_TUN <- function(
          call. = FALSE)
 
 # Register multi-core back end ----------------------------------------------------------------
-cl <- .registerClusters(method)
+cl <- .registerClusters(method, ...)
 on.exit(parallel::stopCluster(cl))
 
 # Setting parameters --------------------------------------------------------------------------
