@@ -2,7 +2,7 @@
 #'
 #' @description Runs a Monte-Carlo (MC) simulation of thermoluminescence (TL)
 #' using the one trap one recombination centre (OTOR) model.
-#' Delocalized refers to involvement of the conduction band. The heating rate in this function
+#' Delocalised refers to involvement of the conduction band. The heating rate in this function
 #' is assumed to be 1 K/s.
 #'
 #' @details

@@ -26,7 +26,7 @@ visualisation.}
 \item{add}{\link{logical} (\emph{with default}): allows overplotting of results by adding curves to
 an existing plot. This argument is handled automatically if \code{object} is of type \link{list}}
 
-\item{\dots}{further arguments that can be passed to control the plot output largely
+\item{\dots}{further argument, that can be passed to control the plot output largely
 following the argument names in \link[graphics:plot.default]{graphics::plot.default}. Currently supported
 are: \code{xlab}, \code{ylab}, \code{xlim}, \code{ylim}, \code{main}, \code{lwd}, \code{type}, \code{pch}, \code{lty},\code{col}, \code{grid}, \code{legend}.
 The arguments \code{lwd}, \code{type}, \code{pch}, \code{lty}, \code{col} can be provided as a vector if \code{object} is a \link{list}}

@@ -42,7 +42,7 @@ a positive effect on the computation time.}
 \item{output}{\link{character} (\emph{with default}): output is either the \code{'signal'} (the default) or
 \code{'remaining_e'} (the remaining charges/electrons in the trap)}
 
-\item{\dots}{further arguments}
+\item{\dots}{further arguments, such as \code{cores} to control the number of used CPU cores or \code{verbose} to silence the terminal}
 }
 \value{
 This function returns an object of class \code{RLumCarlo_Model_Output} which
@@ -50,9 +50,9 @@ is a \link{list} consisting of an \link{array} with dimension length(times) x cl
 and a \link{numeric} time vector.
 }
 \description{
-Runs a Monte-Carlo (MC) simulation of thermoluminesence (TL)
-using the one trap one recombination center (OTOR) model.
-Delocalized refers to involvement of the conduction band. The heating rate in this function
+Runs a Monte-Carlo (MC) simulation of thermoluminescence (TL)
+using the one trap one recombination centre (OTOR) model.
+Delocalised refers to involvement of the conduction band. The heating rate in this function
 is assumed to be 1 K/s.
 }
 \details{
@@ -63,11 +63,12 @@ I_{DELOC}(t) = -dn/dt = (s*exp(-E/(k_{B}*T))) * (n^2 / (N * R + n(1-R))))
 }
 
 Where in the function: \cr
-E := the thermal activation enery (eV) \cr
+E := the thermal activation energy (eV) \cr
 s := the frequency factor in (s^-1) \cr
 t := time (s) \cr
 \eqn{k_{B}} := Boltzmann constant (8.617 x 10^-5 eV K^-1)\cr
 T := temperature (°C) \cr
+R := Delocalised retrapping ratio
 n := \code{n_filled}, the instantaneous number of electrons \cr
 N := \code{N_e}, the total number of electron traps available (dimensionless) \cr
 }

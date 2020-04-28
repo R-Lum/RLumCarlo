@@ -36,7 +36,7 @@ a positive effect on the computation time.}
 \item{output}{\link{character} (\emph{with default}): output is either the \code{'signal'} (the default)
 or \code{'remaining_e'} (the remaining charges, electrons, in the trap)}
 
-\item{\dots}{further arguments}
+\item{\dots}{further arguments, such as \code{cores} to control the number of used CPU cores or \code{verbose} to silence the terminal}
 }
 \value{
 This function returns an object of class \code{RLumCarlo_Model_Output} which
@@ -72,8 +72,6 @@ r := the retrapping ratio for localized transitions
 ## short example
 run_MC_LM_OSL_LOC(
  A = 1,
- s = 1e8,
- E = 0.5,
  times = 0:40,
  clusters = 10,
  n_filled = 100,
@@ -86,8 +84,6 @@ plot_RLumCarlo(legend = TRUE)
 ## the long (meaningful) example
 results <- run_MC_LM_OSL_LOC(
  A = 1,
- s = 1e8,
- E = 0.6,
  times = 0:100,
  clusters = 100,
  n_filled = 100,

@@ -47,7 +47,7 @@ a positive effect on the computation time.}
 \item{output}{\link{character} (\emph{with default}): output is either the \code{'signal'} (the default)
 or \code{'remaining_e'} (the remaining charges/electrons in the trap)}
 
-\item{\dots}{further arguments}
+\item{\dots}{further arguments, such as \code{cores} to control the number of used CPU cores or \code{verbose} to silence the terminal}
 }
 \value{
 This function returns an object of class \code{RLumCarlo_Model_Output} which
