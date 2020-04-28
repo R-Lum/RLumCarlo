@@ -8,6 +8,7 @@
 
 // [[Rcpp::depends(RcppArmadillo)]]
 #include <RcppArmadillo.h>
+#include "util.h"
 using namespace Rcpp;
 
 // [[Rcpp::export("MC_C_ISO_DELOC")]]
@@ -19,6 +20,9 @@ List MC_C_ISO_DELOC(arma::vec times, int N_e, int n_filled, double R, double E, 
   //s: frequency factor [1/s]
   //T: temperature [deg. C]
   //R: capture coefficient
+
+  //determine delta_t which allows to have delta t != 1
+  double delta_t = calc_deltat(times);
 
    // set Boltzmann's constant
   double k_B = 8.617*pow(10.0,-5.0);
@@ -40,7 +44,7 @@ List MC_C_ISO_DELOC(arma::vec times, int N_e, int n_filled, double R, double E, 
             //draw random number
             r_num = runif(1);
 
-            if (r_num[0] < P * (n_filled / (N_e * R + n_filled * (1 - R))))
+            if (r_num[0] < P * delta_t * (n_filled / (N_e * R + n_filled * (1 - R))))
               n_filled = n_filled - 1;
 
             if (n_filled == 0)

@@ -8,6 +8,7 @@
 
 // [[Rcpp::depends(RcppArmadillo)]]
 #include <RcppArmadillo.h>
+#include "util.h"
 using namespace Rcpp;
 
 // [[Rcpp::export("MC_C_LM_OSL_DELOC")]]
@@ -18,6 +19,9 @@ List MC_C_LM_OSL_DELOC(arma::vec times, int N_e, int n_filled, double R, double 
   //A detrapping parameter [s^-1]
   //R: capture coefficient
 
+  //determine delta_t which allows to have delta t != 1
+  double delta_t = calc_deltat(times);
+
   // set output matrices
   NumericMatrix signal (times.size(), 1);
   NumericMatrix remaining_e (times.size(), 1);
@@ -26,8 +30,8 @@ List MC_C_LM_OSL_DELOC(arma::vec times, int N_e, int n_filled, double R, double 
     //t-loop, means run over time/temperature
     for(std::size_t t = 0; t < times.size(); ++t){
 
-      //this is out p(t) ... use A here to keep things consistent ... this is for LM-OSL
-      double P = A * (times[t]/max(times));
+      //this is p(t) ... use A here to keep things consistent ... this is for LM-OSL
+      double P = A * delta_t * (times[t]/max(times));
 
           //n_filled; decide whether and electron will be excitated
           for(int j = 0; j < n_filled; ++j){

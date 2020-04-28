@@ -8,6 +8,7 @@
 
 // [[Rcpp::depends(RcppArmadillo)]]
 #include <RcppArmadillo.h>
+#include "util.h"
 using namespace Rcpp;
 
 // [[Rcpp::export("MC_C_CW_IRSL_LOC")]]
@@ -17,12 +18,15 @@ List MC_C_CW_IRSL_LOC(arma::vec times, int n_filled, double r, double A) {
   //r: detrapping ratio [cm^-3]
   //A: detrapping parameter [s^-1]
 
+  //determine delta_t which allows to have delta t != 1
+  double delta_t = calc_deltat(times);
+
   // set output matrices
   NumericMatrix signal (times.size(), 1);
   NumericMatrix remaining_e (times.size(), 1);
   NumericVector r_num;
 
-    //this is p(t) ... here to keeo the code easy and consistent
+    //this is p(t) ... here to keep the code easy and consistent
     double P = A;
 
     //t-loop, means run over time
@@ -34,7 +38,7 @@ List MC_C_CW_IRSL_LOC(arma::vec times, int n_filled, double r, double A) {
             //draw random number
             r_num = runif(1);
 
-            if (r_num[0] < P * (n_filled / (r + n_filled)))
+            if (r_num[0] < P * delta_t * (n_filled / (r + n_filled)))
               n_filled = n_filled - 1;
 
             if (n_filled == 0)

@@ -19,7 +19,7 @@ List MC_C_CW_OSL_DELOC(arma::vec times, int N_e, int n_filled, double R, double 
   //A detrapping parameter [s^-1]
   //R: capture coefficient
 
-  //set variables
+  //determine delta_t which allows to have delta t != 1
   double delta_t = calc_deltat(times);
 
   // set output matrices
@@ -27,7 +27,7 @@ List MC_C_CW_OSL_DELOC(arma::vec times, int N_e, int n_filled, double R, double 
   NumericMatrix remaining_e (times.size(), 1);
   NumericVector r_num;
 
-  //this is out p(t) ... use A here to keep things consistent
+  //this is p(t) ... use A here to keep things consistent
   double P = A;
 
     //t-loop, means run over time/temperature

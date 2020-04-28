@@ -8,6 +8,7 @@
 
 // [[Rcpp::depends(RcppArmadillo)]]
 #include <RcppArmadillo.h>
+#include "util.h"
 using namespace Rcpp;
 
 // [[Rcpp::export("MC_C_TL_DELOC")]]
@@ -22,6 +23,9 @@ List MC_C_TL_DELOC(arma::vec times, int N_e, int n_filled, double R, double E, d
    // set Boltzmann's constant
   double k_B = 8.617*pow(10.0,-5.0);
 
+  //determine delta_t which allows to have delta t != 1
+  double delta_t = calc_deltat(times);
+
   // set output matrices
   NumericMatrix signal (times.size(), 1);
   NumericMatrix remaining_e (times.size(), 1);
@@ -31,7 +35,7 @@ List MC_C_TL_DELOC(arma::vec times, int N_e, int n_filled, double R, double E, d
     for(std::size_t t = 0; t < times.size(); ++t){
 
           //this is out p(t)
-          double P =  s * exp(-E/(k_B * (273 + times[t])));
+          double P =  delta_t * s * exp(-E/(k_B * (273 + times[t])));
 
           //n_filled; decide whether and electron will be excitated
           for(int j = 0; j < n_filled; ++j){

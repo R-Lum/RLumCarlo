@@ -1,5 +1,14 @@
+// +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+// Title:   MC_C_CW_OSL_DELOC.cpp
+// Author:  Johannes Friedrich, University of Bayreuth (Germany), Sebastian Kreutzer, Geography & Earth Sciences, Aberystwyth University (United Kingdom), based on
+// equations provided by Vasilis Pagonis
+// Contact: sebastian.kreutzer@aber.ac.uk
+// Date:    Sun Feb 24 14:59:39 2019
+// +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
 // [[Rcpp::depends(RcppArmadillo)]]
 #include <RcppArmadillo.h>
+#include "util.h"
 using namespace Rcpp;
 
 // [[Rcpp::export("MC_C_TL_TUN")]]
@@ -7,9 +16,11 @@ List MC_C_TL_TUN(arma::vec times, int N_e, arma::vec r, double rho, double E, do
 
   double k_B = 8.617*pow(10.0,-5.0);
 
+  //determine delta_t which allows to have delta t != 1
+  double delta_t = calc_deltat(times);
+
   NumericMatrix signal (times.size(), r.size());
   NumericMatrix remaining_e (times.size(), r.size());
-
 
     for(std::size_t k = 0; k < r.size(); ++k){
 
@@ -17,7 +28,7 @@ List MC_C_TL_TUN(arma::vec times, int N_e, arma::vec r, double rho, double E, do
 
       for(std::size_t t = 0; t < times.size(); ++t){
 
-        double P =  s * exp(-E/(k_B * (273 + times[t]))) * exp(-(pow(rho,-1.0/3)) * r[k]);
+        double P =  delta_t * s * exp(-E/(k_B * (273 + times[t]))) * exp(-(pow(rho,-1.0/3)) * r[k]);
 
         for(std::size_t j = 0; j < n_filled; ++j){
 

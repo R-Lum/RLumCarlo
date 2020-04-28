@@ -8,6 +8,7 @@
 
 // [[Rcpp::depends(RcppArmadillo)]]
 #include <RcppArmadillo.h>
+#include "util.h"
 using namespace Rcpp;
 
 // [[Rcpp::export("MC_C_ISO_LOC")]]
@@ -21,6 +22,9 @@ List MC_C_ISO_LOC(arma::vec times, int n_filled, double r, double E, double s, d
 
    // set Boltzmann's constant
   double k_B = 8.617*pow(10.0,-5.0);
+
+  //determine delta_t which allows to have delta t != 1
+  double delta_t = calc_deltat(times);
 
   // set output matrices
   NumericMatrix signal (times.size(), 1);
@@ -39,7 +43,7 @@ List MC_C_ISO_LOC(arma::vec times, int n_filled, double r, double E, double s, d
             //draw random number
             r_num = runif(1);
 
-            if (r_num[0] < P * (n_filled / (r + n_filled)))
+            if (r_num[0] < P * delta_t * (n_filled / (r + n_filled)))
               n_filled = n_filled - 1;
 
             if (n_filled == 0)
