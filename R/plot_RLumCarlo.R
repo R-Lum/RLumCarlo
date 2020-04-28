@@ -21,7 +21,7 @@
 #' @param add [logical] (*with default*): allows overplotting of results by adding curves to
 #' an existing plot. This argument is handled automatically if `object` is of type [list]
 #'
-#' @param \dots further arguments that can be passed to control the plot output largely
+#' @param \dots further argument, that can be passed to control the plot output largely
 #' following the argument names in [graphics::plot.default]. Currently supported
 #' are: `xlab`, `ylab`, `xlim`, `ylim`, `main`, `lwd`, `type`, `pch`, `lty`,`col`, `grid`, `legend`.
 #' The arguments `lwd`, `type`, `pch`, `lty`, `col` can be provided as a vector if `object` is a [list]
