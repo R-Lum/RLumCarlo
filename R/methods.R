@@ -27,7 +27,7 @@ NULL
 #' @method summary RLumCarlo_Model_Output
 #' @rdname methods_RLumCarlo
 #' @export
-summary.RLumCarlo_Model_Output <- function(object, verbose = FALSE, ...){
+summary.RLumCarlo_Model_Output <- function(object, verbose = TRUE, ...){
 
   # copy input into new objects
   signal <- object[[1]]
