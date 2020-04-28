@@ -35,5 +35,16 @@ test_that("basic run", {
     method = "seq"
   )), "data.frame")
 
+  ## check verbose (one cluster)
+  expect_silent(summary(run_MC_TL_TUN(
+    s = 3.5e12,
+    E = 1.45,
+    rho = 0.015,
+    r_c = 0.5,
+    times = 100:110,
+    clusters = 1,
+    method = "seq"
+  ), verbose = FALSE))
+
 })
 
