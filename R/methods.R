@@ -34,12 +34,13 @@ summary.RLumCarlo_Model_Output <- function(object, verbose = TRUE, ...){
   times <- object[[2]]
 
   # melt objects
-  if(length(dim(object)) == 2) {
+  # the first case is the 1-cluster case
+  if(length(dim(object$signal)) == 2) {
       sum_signal <- vapply(1:length(times), function(x){
         sum(signal[x,])
       }, FUN.VALUE = 1)
 
-      avg <- y_min <- y_max <- sd <- var <- sum_signal
+      mean <- y_min <- y_max <- sd <- var <- sum_signal
 
     } else {
       ## extract number of clusters
