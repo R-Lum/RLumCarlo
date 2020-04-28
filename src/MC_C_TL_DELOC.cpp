@@ -1,8 +1,8 @@
 // +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 // Title:   MC_C_TL_DELOC.cpp
-// Author:  Sebastian Kreutzer, IRAMAT-CRP2A, Universite Bordeaux Montaigne (France), based on
+// Author:  Sebastian Kreutzer, Geography & Earth Sciences, Aberystwyth University (United Kingdom), based on
 // code by Johannes Friedrich and equations provided by Vasilis Pagonis
-// Contact: sebastian.kreutzer@u-bordeaux-montaigne.fr
+// Contact: sebastian.kreutzer@aber.ac.uk
 // Date:    Sun Feb 24 14:59:39 2019
 // +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
