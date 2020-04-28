@@ -5,7 +5,7 @@
 \alias{summary.RLumCarlo_Model_Output}
 \title{methods_RLumCarlo}
 \usage{
-\method{summary}{RLumCarlo_Model_Output}(object, verbose = FALSE, ...)
+\method{summary}{RLumCarlo_Model_Output}(object, verbose = TRUE, ...)
 }
 \arguments{
 \item{object}{\link{list} of class RLumCarlo_Model_Output: RLumCarlo simulation output object
