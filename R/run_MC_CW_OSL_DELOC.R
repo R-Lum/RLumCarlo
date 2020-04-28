@@ -25,12 +25,12 @@
 #'
 #' @param clusters [numeric] (*with default*): The number of created clusters for the MC runs
 #'
-#' @param N_e [integer] (*with default*): The total number of electron traps available (unitless)
+#' @param N_e [integer] (*with default*): The total number of electron traps available (dimensionless)
 #'
 #' @param n_filled [integer] (*with default*): The number of filled electron traps at the beginning
-#' of the simulation (unitless)
+#' of the simulation (dimensionless)
 #'
-#' @param R [numeric] (*with default*): The retrapping ratio for delocalized transitions (unitless)
+#' @param R [numeric] (*with default*): The retrapping ratio for delocalized transitions (dimensionless)
 #'
 #' @param method [character] (*with default*): Sequential `'seq'` or parallel `'par'`processing. In
 #' the parallel mode the function tries to run the simulation on multiple CPU cores (if available) with

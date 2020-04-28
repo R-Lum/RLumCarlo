@@ -1,8 +1,8 @@
 #' @title Run Monte-Carlo Simulation for ISO-TL (delocalized transitions)
 #'
-#' @description Runs a Monte-Carlo (MC) simulation of isothermally stimulated luminesence
-#' (ISO-TL or ITL) using the one trap one recombination center (OTOR) model.
-#' Delocalized refers to involvement of the conduction band.
+#' @description Runs a Monte-Carlo (MC) simulation of isothermally stimulated luminescence
+#' (ISO-TL or ITL) using the one trap one recombination centre (OTOR) model.
+#' Delocalised refers to involvement of the conduction band.
 #'
 #' @details
 #'
@@ -19,7 +19,7 @@
 #'  n := `n_filled`, the number of filled electron traps at the beginning of the simulation\cr
 #'  E := the trap depth (eV) \cr
 #'  s := the frequency factor in (s^-1) \cr
-#'  N := `N_e`, the total number of electron traps available (unitless) \cr
+#'  N := `N_e`, the total number of electron traps available (dimensionless) \cr
 #'  R := the retrapping ratio for delocalized transitions
 #'
 #' @param E [numeric] (**required**): Thermal activation energy of the trap (eV)
@@ -32,12 +32,12 @@
 #'
 #' @param clusters [numeric] (*with default*): The number of created clusters for the MC runs
 #'
-#' @param N_e [integer] (*with default*): The total number of electron traps available (unitless)
+#' @param N_e [integer] (*with default*): The total number of electron traps available (dimensionless)
 #'
 #' @param n_filled [integer] (*with default*): The number of filled electron traps at the
-#' beginning of the simulation (unitless)
+#' beginning of the simulation (dimensionless)
 #'
-#' @param R [numeric] (*with default*): The delocalized retrapping ratio (unitless)
+#' @param R [numeric] (*with default*): The delocalized retrapping ratio (dimensionless)
 #'
 #' @param method [character] (*with default*): Sequential `'seq'` or parallel `'par'`processing. In
 #' the parallel mode the function tries to run the simulation on multiple CPU cores (if available) with

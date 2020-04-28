@@ -20,7 +20,7 @@
 #' \eqn{k_{B}} := Boltzmann constant (8.617 x 10^-5 eV K^-1)\cr
 #'  T := temperature (°C) \cr
 #'  n := `n_filled`, the instantaneous number of electrons \cr
-#'  N := `N_e`, the total number of electron traps available (unitless) \cr
+#'  N := `N_e`, the total number of electron traps available (dimensionless) \cr
 #'
 #' @param E [numeric] (**required**): Thermal activation energy of the trap (eV)
 #'
@@ -31,10 +31,10 @@
 #'
 #' @param clusters [numeric] (*with default*): The number of created clusters for the MC runs
 #'
-#' @param N_e [integer] (*with default*): The total number of electron traps available (unitless)
+#' @param N_e [integer] (*with default*): The total number of electron traps available (dimensionless)
 #'
 #' @param n_filled [integer] (*with default*): The number of filled electron traps at the beginning
-#' of the simulation (unitless)
+#' of the simulation (dimensionless)
 #'
 #' @param R [numeric] (*with default*): Retrapping ratio for delocalized transitions
 #'

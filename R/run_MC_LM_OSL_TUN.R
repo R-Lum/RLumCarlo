@@ -1,9 +1,9 @@
-#' @title Run Monte-Carlo Simulation for LM-OSL (tunneling transitions)
+#' @title Run Monte-Carlo Simulation for LM-OSL (tunnelling transitions)
 #'
 #' @description Runs a Monte-Carlo (MC) simulation of linearly modulated optically stimulated
-#' luminesence (LM-OSL) using the tunneling (TUN) model. Tunneling refers to quantum mechanical
-#' tunneling processes from the excited state of the trapped charge,
-#' into a recombination center.
+#' luminescence (LM-OSL) using the tunnelling (TUN) model. Tunnelling refers to quantum mechanical
+#' tunnelling processes from the excited state of the trapped charge,
+#' into a recombination centre.
 #'
 #' @details
 #'
@@ -14,23 +14,23 @@
 #' }
 #'
 #' Where in the function: \cr
-#'  A := the optical excitation rate for the tunneling process (s^-1)\cr
+#'  A := the optical excitation rate for the tunnelling process (s^-1)\cr
 #'  t := time (s) \cr
 #'  P := maximum stimulation time (s) \cr
-#'  r' := the unitless tunneling radius \cr
-#'  \eqn{\rho} := `rho` the unitless density of recombination centres see Huntley (2006) \cr
+#'  r' := the dimensionless tunnelling radius \cr
+#'  \eqn{\rho} := `rho` the dimensionless density of recombination centres see Huntley (2006) \cr
 #'  n := the instantaneous number of electrons corresponding to the radius r'
 #'
-#' @param A [numeric] (**required**): The effective optical excitation rate for the tunneling process
+#' @param A [numeric] (**required**): The effective optical excitation rate for the tunnelling process
 #'
-#' @param rho [numeric] (**required**): The dimensionless density of recombination centers
-#' (defined as \eqn{\rho}' in Huntley 2006) (unitless)
+#' @param rho [numeric] (**required**): The dimensionless density of recombination centres
+#' (defined as \eqn{\rho}' in Huntley 2006) (dimensionless)
 #'
 #' @param times [numeric] (*with default*): The sequence of time steps within the simulation (s)
 #'
 #' @param clusters [numeric] (*with default*): The number of MC runs
 #'
-#' @param N_e [numeric] (*width default*): The total number of electron traps available (unitless)
+#' @param N_e [numeric] (*width default*): The total number of electron traps available (dimensionless)
 #'
 #' @param r_c [numeric] (*with default*): Critical distance (>0) that is to be used if the
 #' sample has 1 been thermally and/or optically pretreated. This parameter expresses the fact

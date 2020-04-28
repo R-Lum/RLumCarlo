@@ -1,10 +1,10 @@
 #' @title Run Monte-Carlo Simulation for TL (localized transitions)
 #'
-#' @description Runs a Monte-Carlo (MC) simulation of thermoluminesence (TL) using
+#' @description Runs a Monte-Carlo (MC) simulation of thermoluminescence (TL) using
 #' the generalized one trap (GOT) model. Localized transitions refer to transitions
 #' which do not involve the conduction or valence band. These transitions take place between the
 #' ground state and an excited state of the trapped charge, and also involve an energy
-#' state of the recombination center. The heating rate in this function is assumed to be 1 K/s.
+#' state of the recombination centre. The heating rate in this function is assumed to be 1 K/s.
 #'
 #' @details
 #'
@@ -33,9 +33,9 @@
 #' @param clusters [numeric] (*with default*): The number of created clusters for the MC runs
 #'
 #' @param n_filled [integer] (*with default*): The number of filled electron traps at
-#' the beginning of the simulation (unitless)
+#' the beginning of the simulation (dimensionless)
 #'
-#' @param r [numeric] (*with default*): The localized retrapping ratio (unitless)
+#' @param r [numeric] (*with default*): The localized retrapping ratio (dimensionless)
 #'
 #' @param method [character] (*with default*): Sequential `'seq'` or parallel `'par'`processing. In
 #' the parallel mode the function tries to run the simulation on multiple CPU cores (if available) with

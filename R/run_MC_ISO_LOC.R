@@ -1,10 +1,10 @@
 #' @title Run Monte-Carlo simulation for ISO-TL (localized transitions)
 #'
-#' @description Runs a Monte-Carlo (MC) simulation of isothermally stimulated luminesence
+#' @description Runs a Monte-Carlo (MC) simulation of isothermally stimulated luminescence
 #' (ISO-TL or ITL) using the generalized one trap (GOT) model. Localized transitions refer to transitions
 #' which do no involve the conduction or valence band. These transitions take place between the
 #' ground state and an excited state of the trapped charge, and also involve an energy state of the
-#' recombination center.
+#' recombination centre.
 #'
 #' @details
 #'
@@ -35,7 +35,7 @@
 #' @param clusters [numeric] (*with default*): The number of created clusters for the MC runs
 #'
 #' @param n_filled [integer] (*with default*): The number of filled electron traps at the
-#' beginning of the simulation (unitless)
+#' beginning of the simulation (dimensionless)
 #'
 #' @param r [numeric] (*with default*): The retrapping ratio for localized transitions.
 #'

@@ -1,8 +1,8 @@
-#' @title Run Monte-Carlo Simulation for TL (tunneling transitions)
+#' @title Run Monte-Carlo Simulation for TL (tunnelling transitions)
 #'
-#' @description Runs a Monte-Carlo (MC) simulation of thermoluminesence (TL) caused by
-#' tunnelling (TUN) transitions.  Tunneling refers to quantum mechanical
-#' tunneling processes from the excited state of the trap into a recombination center.
+#' @description Runs a Monte-Carlo (MC) simulation of thermoluminescence (TL) caused by
+#' tunnelling (TUN) transitions. Tunnelling refers to quantum mechanical
+#' tunnelling processes from the excited state of the trap into a recombination centre.
 #' The heating rate in this function is assumed to be 1 K/s.
 #'
 #' @details
@@ -18,8 +18,8 @@
 #' E := thermal activation energy (eV) \cr
 #' \eqn{k_{B}} := Boltzmann constant (8.617 x 10^-5 eV K^-1)\cr
 #' T := temperature (°C)\cr
-#' r' := the unitless tunneling radius \cr
-#' \eqn{\rho}' := `rho'`, the unitless density of recombination centres (see Huntley (2006)) \cr
+#' r' := the dimensionless tunneling radius \cr
+#' \eqn{\rho}' := `rho'`, the dimensionless density of recombination centres (see Huntley (2006)) \cr
 #' t := time (s) \cr
 #' n := the instantaneous number of electrons at distance r'
 #'
@@ -39,7 +39,7 @@
 #'
 #' @param clusters [numeric] (*with default*): The number of created clusters for the MC runs
 #'
-#' @param N_e [numeric] (*with default*): The total number of electron traps available (unitless)
+#' @param N_e [numeric] (*with default*): The total number of electron traps available (dimensionless)
 #'
 #' @param delta.r [numeric] (*with default*): The increments of the dimensionless distance r'
 #'

@@ -1,10 +1,10 @@
 #' @title Monte-Carlo Simulation for CW-IRSL (localized transitions)
 #'
-#' @description Runs a Monte-Carlo (MC) simulation of continuous wave infrared stimulated luminesence
+#' @description Runs a Monte-Carlo (MC) simulation of continuous wave infrared stimulated luminescence
 #' (CW-IRSL) using the generalized one trap (GOT) model. Localized transitions refer to transitions
 #' which do not involve the conduction or valence band. These transitions take place between the
 #' ground state and an excited state of the trapped charge, and also involve an energy state of the
-#' recombination center.
+#' recombination centre.
 #'
 #' @details
 #'
@@ -26,7 +26,7 @@
 #' @param clusters [numeric] (*with default*): The number of created clusters for the MC runs
 #'
 #' @param n_filled [integer] (*with default*): The number of filled electron traps at the beginning
-#' of the simulation (unitless)
+#' of the simulation (dimensionless)
 #'
 #' @param r [numeric] (*with default*): The retrapping ratio for localized transitions
 #'

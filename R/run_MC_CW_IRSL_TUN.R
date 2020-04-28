@@ -1,9 +1,9 @@
-#' @title Run Monte-Carlo Simulation for CW-IRSL (tunneling transitions)
+#' @title Run Monte-Carlo Simulation for CW-IRSL (tunnelling transitions)
 #'
-#' @description Runs a Monte-Carlo (MC) simulation of continuous wave infrared stimulated luminesence
-#' (CW-IRSL) using the model for tunneling transitions. Tunneling refers to quantum mechanical
-#' tunneling processes from the excited state of the trap,
-#' into a recombination center.
+#' @description Runs a Monte-Carlo (MC) simulation of continuous wave infrared stimulated luminescence
+#' (CW-IRSL) using the model for tunnelling transitions. Tunnelling refers to quantum mechanical
+#' tunnelling processes from the excited state of the trap,
+#' into a recombination centre.
 #'
 #' @details
 #'
@@ -14,29 +14,29 @@
 #' }
 #'
 #'Where in the function: \cr
-#' A := effective optical excitation rate for the tunneling process (s^-1) \cr
-#' r' := the unitless tunneling radius \cr
-#' \eqn{\rho}' := `rho'` the unitless density of recombination centres (see Huntley (2006)) \cr
+#' A := effective optical excitation rate for the tunnelling process (s^-1) \cr
+#' r' := the dimensionless tunnelling radius \cr
+#' \eqn{\rho}' := `rho'` the dimensionless density of recombination centres (see Huntley (2006)) \cr
 #' t := time (s) \cr
 #' n := the instantaneous number of electrons corresponding to the radius r' at time t
 #'
-#' @param A [numeric] (**required**): The effective optical excitation rate for the tunneling process
+#' @param A [numeric] (**required**): The effective optical excitation rate for the tunnelling process
 #' (s^-1).
 #'
-#' @param rho [numeric] (**required**): The density of recombination centers
-#' (defined as \eqn{\rho}' in Huntley 2006) (unitless).
+#' @param rho [numeric] (**required**): The density of recombination centres
+#' (defined as \eqn{\rho}' in Huntley 2006) (dimensionless).
 #'
 #' @param times [numeric] (*with default*): The sequence of time steps within the simulation (s).
 #'
 #' @param clusters [numeric] (*with default*): The number of created clusters for the MC runs
 #'
-#' @param N_e [numeric] (*width default*): The total number of electron traps available (unitless).
+#' @param N_e [numeric] (*width default*): The total number of electron traps available (dimensionless).
 #'
 #' @param r_c [numeric] (*with default*): Critical distance (>0) that must be provided if the
 #' sample has been thermally and/or optically pretreated. This parameter expresses the fact
 #' that electron-hole pairs within a critical radius `r_c` have already recombined.
 #'
-#' @param delta.r [numeric] (*with default*): Increments of the unitless distance parameter r'
+#' @param delta.r [numeric] (*with default*): Increments of the dimensionless distance parameter r'
 #'
 #' @param method [character] (*with default*): Sequential `'seq'` or parallel `'par'`processing. In
 #' the parallel mode the function tries to run the simulation on multiple CPU cores (if available) with

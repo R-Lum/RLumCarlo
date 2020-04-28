@@ -1,9 +1,9 @@
-#' @title Monte-Carlo Simulation for ISO-TL (tunneling transitions)
+#' @title Monte-Carlo Simulation for ISO-TL (tunnelling transitions)
 #'
-#' @description Runs a Monte-Carlo (MC) simulation of isothermally stimulated luminesence
-#' (ISO-TL or ITL) using the tunneling (TUN) model. Tunneling refers to quantum mechanical
-#' tunneling processes from the excited state of the trapped charge,
-#' into the recombination center.
+#' @description Runs a Monte-Carlo (MC) simulation of isothermally stimulated luminescence
+#' (ISO-TL or ITL) using the tunnelling (TUN) model. Tunnelling refers to quantum mechanical
+#' tunnelling processes from the excited state of the trapped charge,
+#' into the recombination centre.
 #'
 #' @details
 #'
@@ -15,29 +15,29 @@
 #'
 #' Where in the function: \cr
 #' E := thermal activation energy (eV) \cr
-#' s := the effective frequency factor for the tunneling process (s^-1) \cr
+#' s := the effective frequency factor for the tunnelling process (s^-1) \cr
 #' \eqn{T_{ISO}} := the temperature of the isothermal experiment (°C)\cr
 #' \eqn{k_{B}} := Boltzmann constant (8.617 x 10^-5 eV K^-1)\cr
-#' r' := the unitless tunneling radius \cr
-#' \eqn{\rho} := `rho` the unitless density of recombination centres see Huntley (2006) \cr
+#' r' := the dimensionless tunnelling radius \cr
+#' \eqn{\rho} := `rho` the dimensionless density of recombination centres see Huntley (2006) \cr
 #'  t := time (s) \cr
 #'  n := the instantaneous number of electrons corresponding to the radius r' \cr
 #'
 #' @param E [numeric] (**required**): Thermal activation energy of the trap (eV).
 #'
 #' @param s [numeric] (**required**): The effective frequency factor for the
-#' tunneling process (s^-1).
+#' tunnelling process (s^-1).
 #'
 #' @param T [numeric] (*with default*): Constant stimulation temperature (°C).
 #'
 #' @param rho [numeric] (**required**): The dimensionless density of recombination centres
-#' (defined as \eqn{\rho}' in Huntley 2006) (unitless).
+#' (defined as \eqn{\rho}' in Huntley 2006) (dimensionless).
 #'
 #' @param times [numeric] (*with default*): The sequence of time steps within the simulation (s).
 #'
 #' @param clusters [numeric] (*with default*): The number of created clusters for the MC runs
 #'
-#' @param N_e [numeric] (*width default*): The total number of electron traps available (unitless).
+#' @param N_e [numeric] (*width default*): The total number of electron traps available (dimensionless).
 #'
 #' @param r_c [numeric] (*with default*): Critical distance (>0) that must be provided if the
 #' sample has been thermally and/or optically pretreated. This parameter expresses the fact

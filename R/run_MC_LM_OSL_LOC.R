@@ -1,10 +1,10 @@
 #' @title Run Monte-Carlo Simulation for LM-OSL (localized transitions)
 #'
 #' @description Runs a Monte-Carlo (MC) simulation of linearly modulated optically stimulated
-#' luminesence (LM-OSL) using the generalized one trap (GOT) model. Localized transitions refer to
+#' luminescence (LM-OSL) using the generalized one trap (GOT) model. Localized transitions refer to
 #' transitions which do not involve the conduction or valence band. These transitions take place
 #' between the ground state and an excited state of the trap, and also involve
-#' a an energy state of the recombination center.
+#' a an energy state of the recombination centre.
 #'
 #' @details
 #'
@@ -29,7 +29,7 @@
 #' @param clusters [numeric] (*with default*): The number of created clusters for the MC runs
 #'
 #' @param n_filled [integer] (*with default*): The number of filled electron traps at the
-#' beginning of the simulation (unitless)
+#' beginning of the simulation (dimensionless)
 #'
 #' @param r [numeric] (*with default*): The retrapping ratio for localized transitions
 #'

@@ -1,8 +1,8 @@
 #' @title Run Monte-Carlo Simulation for LM-OSL (delocalized transitions)
 #'
 #' @description Runs a Monte-Carlo (MC) simulation of linearly modulated optically stimulated
-#' luminesence (LM-OSL) using the one trap one recombination center (OTOR) model.
-#' Delocalized refers to involvement of the conduction band.
+#' luminescence (LM-OSL) using the one trap one recombination centre (OTOR) model.
+#' Delocalised refers to involvement of the conduction band.
 #'
 #' @details
 #'
@@ -15,9 +15,9 @@
 #' Where in the function: \cr
 #'  t := time (s) \cr
 #'  A := the optical excitation rate from trap to conduction band (1/s)\cr
-#'  n := `n_filled`, the tnstantaneous number of electrons \cr
+#'  n := `n_filled`, the instantaneous number of electrons \cr
 #'  R :=  the retrapping ratio for delocalized transitions \cr
-#'  N := `N_e`, the total number of electron traps available (unitless) \cr
+#'  N := `N_e`, the total number of electron traps available (dimensionless) \cr
 #'  P := total stimulation time (s)
 #'
 #' @param A [numeric] (**required**): The optical excitation rate from trap to conduction band (s^-1)
@@ -26,10 +26,10 @@
 #'
 #' @param clusters [numeric] (*with default*): The number of created clusters for the MC runs
 #'
-#' @param N_e [integer] (*with default*): The total number of electron traps available (unitless)
+#' @param N_e [integer] (*with default*): The total number of electron traps available (dimensionless)
 #'
 #' @param n_filled [integer] (*with default*): The number of filled electron traps at the beginning
-#' of the simulation (unitless)
+#' of the simulation (dimensionless)
 #'
 #' @param R [numeric] (*with default*): The retrapping ratio for delocalized transitions
 #'
