@@ -138,7 +138,7 @@ run_MC_CW_OSL_DELOC <- function(
   if(!output %in% c("signal", "remaining_e"))
     stop("[run_MC_CW_OSL_DELOC()] Allowed keywords for 'output' are either 'signal' or 'remaining_e'!", call. = FALSE)
 
-# Register multi-core backend -----------------------------------------------------------------
+# Register multi-core back end ----------------------------------------------------------------
   cl <- .registerClusters(method)
   on.exit(parallel::stopCluster(cl))
 
