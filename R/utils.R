@@ -42,7 +42,7 @@ comb_array <- function(...) abind::abind(..., along = 3)
 #'
 #'@md
 #'@noRd
-.registerClusters <- function(method, cores = parallel::detectCores(), verbose = TRUE){
+.registerClusters <- function(method, cores = parallel::detectCores(), verbose = FALSE){
   ## check the method parameter
   if(!method %in% c("par", "seq"))
     stop(paste0("[",as.character(sys.call(which = -1))[1],"()] Allowed keywords for 'method' are either 'par' or 'seq'!"),

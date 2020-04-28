@@ -51,7 +51,6 @@ devtools::install_github("R-Lum/RLumCarlo@master")
 ``` r
 run_MC_CW_IRSL_TUN(A = 0.12, rho = 0.003, times = 0:1000) %>%
      plot_RLumCarlo(norm = TRUE, legend = TRUE)
-#> socket cluster with 1 nodes on host 'localhost'
 ```
 
 <img src="man/figures/README-unnamed-chunk-2-1.png" style="display: block; margin: auto;" />
