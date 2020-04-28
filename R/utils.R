@@ -38,17 +38,19 @@ comb_array <- function(...) abind::abind(..., along = 3)
 #' the parallel mode the function tries to run the simulation on multiple CPU cores (if available) with
 #' a positive effect on the computation time.
 #'
+#' @param cores [integer] (*with default*): allows to specify the number of used cores
+#'
 #'@md
 #'@noRd
-.registerClusters <- function(method){
+.registerClusters <- function(method, cores = parallel::detectCores(), verbose = TRUE){
   ## check the method parameter
   if(!method %in% c("par", "seq"))
     stop(paste0("[",as.character(sys.call(which = -1))[1],"()] Allowed keywords for 'method' are either 'par' or 'seq'!"),
              call. = FALSE)
 
   ##get number of cores
-  cores <- parallel::detectCores()
-  if(cores == 1) method <- "seq"
+  if(is.na(cores) || is.null(cores) || !is.numeric(cores) || cores == 1)
+    method <- "seq"
 
   if(method != "par"){
     cl <- parallel::makeCluster(1)
@@ -57,10 +59,14 @@ comb_array <- function(...) abind::abind(..., along = 3)
     foreach::registerDoSEQ()
 
   } else {
+    ##we never use all cores, this is not nice
     cl <- parallel::makeCluster(cores-1)
     doParallel::registerDoParallel(cl)
 
   }
+
+  ##provide a feedback
+  if(verbose) print(cl)
 
   return(cl)
 }
