@@ -8,6 +8,7 @@
 
 // [[Rcpp::depends(RcppArmadillo)]]
 #include <RcppArmadillo.h>
+#include "util.h"
 using namespace Rcpp;
 
 // [[Rcpp::export("MC_C_CW_OSL_DELOC")]]
@@ -18,13 +19,16 @@ List MC_C_CW_OSL_DELOC(arma::vec times, int N_e, int n_filled, double R, double 
   //A detrapping parameter [s^-1]
   //R: capture coefficient
 
+  //set variables
+  double delta_t = calc_deltat(times);
+
   // set output matrices
   NumericMatrix signal (times.size(), 1);
   NumericMatrix remaining_e (times.size(), 1);
   NumericVector r_num;
 
   //this is out p(t) ... use A here to keep things consistent
-  double P =  A;
+  double P = A;
 
     //t-loop, means run over time/temperature
     for(std::size_t t = 0; t < times.size(); ++t){
@@ -35,7 +39,7 @@ List MC_C_CW_OSL_DELOC(arma::vec times, int N_e, int n_filled, double R, double 
             //draw random number
             r_num = runif(1);
 
-            if (r_num[0] < P * (n_filled / (N_e * R + n_filled * (1 - R))))
+            if (r_num[0] < P * delta_t * (n_filled / (N_e * R + n_filled * (1 - R))))
               n_filled = n_filled - 1;
 
             if (n_filled == 0)
