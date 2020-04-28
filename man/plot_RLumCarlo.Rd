@@ -50,8 +50,8 @@ that can be best distinguished, in particular by colour-blind users.
 }
 
 \author{
-Johannes Friedrich, University of Bayreuth (Germany), Sebastian Kreutzer, IRAMAT-CRP2A, UMR 5060,
-Université Bordeaux Montaigne (France)
+Johannes Friedrich, University of Bayreuth (Germany),
+Sebastian Kreutzer, Geography & Earth Sciences, Aberystwyth University (United Kingdom)
 } 
 
 \section{How to cite}{

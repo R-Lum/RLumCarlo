@@ -24,12 +24,12 @@ run_MC_CW_OSL_DELOC(
 
 \item{clusters}{\link{numeric} (\emph{with default}): The number of created clusters for the MC runs}
 
-\item{N_e}{\link{integer} (\emph{with default}): The total number of electron traps available (unitless)}
+\item{N_e}{\link{integer} (\emph{with default}): The total number of electron traps available (dimensionless)}
 
 \item{n_filled}{\link{integer} (\emph{with default}): The number of filled electron traps at the beginning
-of the simulation (unitless)}
+of the simulation (dimensionless)}
 
-\item{R}{\link{numeric} (\emph{with default}): The retrapping ratio for delocalized transitions (unitless)}
+\item{R}{\link{numeric} (\emph{with default}): The retrapping ratio for delocalized transitions (dimensionless)}
 
 \item{method}{\link{character} (\emph{with default}): Sequential \code{'seq'} or parallel \code{'par'}processing. In
 the parallel mode the function tries to run the simulation on multiple CPU cores (if available) with

@@ -3,7 +3,7 @@
 \encoding{UTF-8}
 \name{run_MC_ISO_TUN}
 \alias{run_MC_ISO_TUN}
-\title{Monte-Carlo Simulation for ISO-TL (tunneling transitions)}
+\title{Monte-Carlo Simulation for ISO-TL (tunnelling transitions)}
 \usage{
 run_MC_ISO_TUN(
   E,
@@ -24,12 +24,12 @@ run_MC_ISO_TUN(
 \item{E}{\link{numeric} (\strong{required}): Thermal activation energy of the trap (eV).}
 
 \item{s}{\link{numeric} (\strong{required}): The effective frequency factor for the
-tunneling process (s^-1).}
+tunnelling process (s^-1).}
 
 \item{T}{\link{numeric} (\emph{with default}): Constant stimulation temperature (°C).}
 
 \item{rho}{\link{numeric} (\strong{required}): The dimensionless density of recombination centres
-(defined as \eqn{\rho}' in Huntley 2006) (unitless).}
+(defined as \eqn{\rho}' in Huntley 2006) (dimensionless).}
 
 \item{times}{\link{numeric} (\emph{with default}): The sequence of time steps within the simulation (s).}
 
@@ -42,7 +42,7 @@ that electron-hole pairs within a critical radius \code{r_c} have already recomb
 \item{delta.r}{\link{numeric} (\emph{with default}): Fractional change of the dimensionless distance
 of nearest recombination centres (r')}
 
-\item{N_e}{\link{numeric} (\emph{width default}): The total number of electron traps available (unitless).}
+\item{N_e}{\link{numeric} (\emph{width default}): The total number of electron traps available (dimensionless).}
 
 \item{method}{\link{character} (\emph{with default}): Sequential \code{'seq'} or parallel \code{'par'}processing. In
 the parallel mode the function tries to run the simulation on multiple CPU cores (if available) with
@@ -59,10 +59,10 @@ is a \link{list} consisting of an \link{array} with dimension length(times) x le
 and a \link{numeric} time vector.
 }
 \description{
-Runs a Monte-Carlo (MC) simulation of isothermally stimulated luminesence
-(ISO-TL or ITL) using the tunneling (TUN) model. Tunneling refers to quantum mechanical
-tunneling processes from the excited state of the trapped charge,
-into the recombination center.
+Runs a Monte-Carlo (MC) simulation of isothermally stimulated luminescence
+(ISO-TL or ITL) using the tunnelling (TUN) model. Tunnelling refers to quantum mechanical
+tunnelling processes from the excited state of the trapped charge,
+into the recombination centre.
 }
 \details{
 \strong{The model}
@@ -73,11 +73,11 @@ I_{TUN}(r',t) = -dn/dt = (s * exp(-E/(k_{B}*T_{ISO}))) * exp(-(\rho')^{-1/3} * r
 
 Where in the function: \cr
 E := thermal activation energy (eV) \cr
-s := the effective frequency factor for the tunneling process (s^-1) \cr
+s := the effective frequency factor for the tunnelling process (s^-1) \cr
 \eqn{T_{ISO}} := the temperature of the isothermal experiment (°C)\cr
 \eqn{k_{B}} := Boltzmann constant (8.617 x 10^-5 eV K^-1)\cr
-r' := the unitless tunneling radius \cr
-\eqn{\rho} := \code{rho} the unitless density of recombination centres see Huntley (2006) \cr
+r' := the dimensionless tunnelling radius \cr
+\eqn{\rho} := \code{rho} the dimensionless density of recombination centres see Huntley (2006) \cr
 t := time (s) \cr
 n := the instantaneous number of electrons corresponding to the radius r' \cr
 }
@@ -120,7 +120,7 @@ plot_RLumCarlo(results, legend = TRUE)
 } 
 
 \section{How to cite}{
-Friedrich, J., Kreutzer, S., 2020. run_MC_ISO_TUN(): Monte-Carlo Simulation for ISO-TL (tunneling transitions). Function version 0.1.0. In: Friedrich, J., Kreutzer, S., Pagonis, V., Schmidt, C., 2020. RLumCarlo: Monte-Carlo Methods for Simulating Luminescence Phenomena. R package version 0.1.0. 
+Friedrich, J., Kreutzer, S., 2020. run_MC_ISO_TUN(): Monte-Carlo Simulation for ISO-TL (tunnelling transitions). Function version 0.1.0. In: Friedrich, J., Kreutzer, S., Pagonis, V., Schmidt, C., 2020. RLumCarlo: Monte-Carlo Methods for Simulating Luminescence Phenomena. R package version 0.1.0. 
 }
 
 \references{

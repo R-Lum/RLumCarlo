@@ -3,7 +3,7 @@
 \encoding{UTF-8}
 \name{run_MC_LM_OSL_TUN}
 \alias{run_MC_LM_OSL_TUN}
-\title{Run Monte-Carlo Simulation for LM-OSL (tunneling transitions)}
+\title{Run Monte-Carlo Simulation for LM-OSL (tunnelling transitions)}
 \usage{
 run_MC_LM_OSL_TUN(
   A,
@@ -19,10 +19,10 @@ run_MC_LM_OSL_TUN(
 )
 }
 \arguments{
-\item{A}{\link{numeric} (\strong{required}): The effective optical excitation rate for the tunneling process}
+\item{A}{\link{numeric} (\strong{required}): The effective optical excitation rate for the tunnelling process}
 
-\item{rho}{\link{numeric} (\strong{required}): The dimensionless density of recombination centers
-(defined as \eqn{\rho}' in Huntley 2006) (unitless)}
+\item{rho}{\link{numeric} (\strong{required}): The dimensionless density of recombination centres
+(defined as \eqn{\rho}' in Huntley 2006) (dimensionless)}
 
 \item{times}{\link{numeric} (\emph{with default}): The sequence of time steps within the simulation (s)}
 
@@ -34,7 +34,7 @@ that electron-hole pairs within a critical radius \code{r_c} have already been r
 
 \item{delta.r}{\link{numeric} (\emph{with default}): Increments of dimensionless distance r'}
 
-\item{N_e}{\link{numeric} (\emph{width default}): The total number of electron traps available (unitless)}
+\item{N_e}{\link{numeric} (\emph{width default}): The total number of electron traps available (dimensionless)}
 
 \item{method}{\link{character} (\emph{with default}): Sequential \code{'seq'} or parallel \code{'par'}processing. In
 the parallel mode the function tries to run the simulation on multiple CPU cores (if available) with
@@ -52,9 +52,9 @@ and a \link{numeric} time vector.
 }
 \description{
 Runs a Monte-Carlo (MC) simulation of linearly modulated optically stimulated
-luminesence (LM-OSL) using the tunneling (TUN) model. Tunneling refers to quantum mechanical
-tunneling processes from the excited state of the trapped charge,
-into a recombination center.
+luminescence (LM-OSL) using the tunnelling (TUN) model. Tunnelling refers to quantum mechanical
+tunnelling processes from the excited state of the trapped charge,
+into a recombination centre.
 }
 \details{
 \strong{The model}
@@ -64,11 +64,11 @@ I_{TUN}(r',t) = -dn/dt = (A * t/P) * exp(-(\rho')^{-1/3} * r') * n(r',t)
 }
 
 Where in the function: \cr
-A := the optical excitation rate for the tunneling process (s^-1)\cr
+A := the optical excitation rate for the tunnelling process (s^-1)\cr
 t := time (s) \cr
 P := maximum stimulation time (s) \cr
-r' := the unitless tunneling radius \cr
-\eqn{\rho} := \code{rho} the unitless density of recombination centres see Huntley (2006) \cr
+r' := the dimensionless tunnelling radius \cr
+\eqn{\rho} := \code{rho} the dimensionless density of recombination centres see Huntley (2006) \cr
 n := the instantaneous number of electrons corresponding to the radius r'
 }
 \section{Function version}{
@@ -108,7 +108,7 @@ plot_RLumCarlo(results, norm = TRUE)
 } 
 
 \section{How to cite}{
-Friedrich, J., Kreutzer, S., 2020. run_MC_LM_OSL_TUN(): Run Monte-Carlo Simulation for LM-OSL (tunneling transitions). Function version 0.1.0. In: Friedrich, J., Kreutzer, S., Pagonis, V., Schmidt, C., 2020. RLumCarlo: Monte-Carlo Methods for Simulating Luminescence Phenomena. R package version 0.1.0. 
+Friedrich, J., Kreutzer, S., 2020. run_MC_LM_OSL_TUN(): Run Monte-Carlo Simulation for LM-OSL (tunnelling transitions). Function version 0.1.0. In: Friedrich, J., Kreutzer, S., Pagonis, V., Schmidt, C., 2020. RLumCarlo: Monte-Carlo Methods for Simulating Luminescence Phenomena. R package version 0.1.0. 
 }
 
 \references{
@@ -133,7 +133,7 @@ J. Phys.: Condens. Matter 24, 385402. \doi{10.1088/0953-8984/24/38/385402}
 }
 \author{
 Johannes Friedrich, University of Bayreuth (Germany),
-Sebastian Kreutzer, IRAMAT-CRP2A, UMR 5060, CNRS-Université Bordeaux Montaigne (France)
+Sebastian Kreutzer, Geography & Earth Sciences, Aberystwyth University (United Kingdom)
 }
 \keyword{data}
 \keyword{models}

@@ -3,7 +3,7 @@
 \encoding{UTF-8}
 \name{run_MC_CW_IRSL_TUN}
 \alias{run_MC_CW_IRSL_TUN}
-\title{Run Monte-Carlo Simulation for CW-IRSL (tunneling transitions)}
+\title{Run Monte-Carlo Simulation for CW-IRSL (tunnelling transitions)}
 \usage{
 run_MC_CW_IRSL_TUN(
   A,
@@ -19,11 +19,11 @@ run_MC_CW_IRSL_TUN(
 )
 }
 \arguments{
-\item{A}{\link{numeric} (\strong{required}): The effective optical excitation rate for the tunneling process
+\item{A}{\link{numeric} (\strong{required}): The effective optical excitation rate for the tunnelling process
 (s^-1).}
 
-\item{rho}{\link{numeric} (\strong{required}): The density of recombination centers
-(defined as \eqn{\rho}' in Huntley 2006) (unitless).}
+\item{rho}{\link{numeric} (\strong{required}): The density of recombination centres
+(defined as \eqn{\rho}' in Huntley 2006) (dimensionless).}
 
 \item{times}{\link{numeric} (\emph{with default}): The sequence of time steps within the simulation (s).}
 
@@ -33,9 +33,9 @@ run_MC_CW_IRSL_TUN(
 sample has been thermally and/or optically pretreated. This parameter expresses the fact
 that electron-hole pairs within a critical radius \code{r_c} have already recombined.}
 
-\item{delta.r}{\link{numeric} (\emph{with default}): Increments of the unitless distance parameter r'}
+\item{delta.r}{\link{numeric} (\emph{with default}): Increments of the dimensionless distance parameter r'}
 
-\item{N_e}{\link{numeric} (\emph{width default}): The total number of electron traps available (unitless).}
+\item{N_e}{\link{numeric} (\emph{width default}): The total number of electron traps available (dimensionless).}
 
 \item{method}{\link{character} (\emph{with default}): Sequential \code{'seq'} or parallel \code{'par'}processing. In
 the parallel mode the function tries to run the simulation on multiple CPU cores (if available) with
@@ -52,10 +52,10 @@ is a \link{list} consisting of an \link{array} with dimension length(times) x le
 and a \link{numeric} time vector.
 }
 \description{
-Runs a Monte-Carlo (MC) simulation of continuous wave infrared stimulated luminesence
-(CW-IRSL) using the model for tunneling transitions. Tunneling refers to quantum mechanical
-tunneling processes from the excited state of the trap,
-into a recombination center.
+Runs a Monte-Carlo (MC) simulation of continuous wave infrared stimulated luminescence
+(CW-IRSL) using the model for tunnelling transitions. Tunnelling refers to quantum mechanical
+tunnelling processes from the excited state of the trap,
+into a recombination centre.
 }
 \details{
 \strong{The model}
@@ -65,9 +65,9 @@ I_{TUN}(r',t) = -dn/dt = A * exp(-(\rho')^{-1/3} * r')* n (r',t)
 }
 
 Where in the function: \cr
-A := effective optical excitation rate for the tunneling process (s^-1) \cr
-r' := the unitless tunneling radius \cr
-\eqn{\rho}' := \verb{rho'} the unitless density of recombination centres (see Huntley (2006)) \cr
+A := effective optical excitation rate for the tunnelling process (s^-1) \cr
+r' := the dimensionless tunnelling radius \cr
+\eqn{\rho}' := \verb{rho'} the dimensionless density of recombination centres (see Huntley (2006)) \cr
 t := time (s) \cr
 n := the instantaneous number of electrons corresponding to the radius r' at time t
 }
@@ -90,7 +90,7 @@ run_MC_CW_IRSL_TUN(
 } 
 
 \section{How to cite}{
-Friedrich, J., Kreutzer, S., 2020. run_MC_CW_IRSL_TUN(): Run Monte-Carlo Simulation for CW-IRSL (tunneling transitions). Function version 0.2.0. In: Friedrich, J., Kreutzer, S., Pagonis, V., Schmidt, C., 2020. RLumCarlo: Monte-Carlo Methods for Simulating Luminescence Phenomena. R package version 0.1.0. 
+Friedrich, J., Kreutzer, S., 2020. run_MC_CW_IRSL_TUN(): Run Monte-Carlo Simulation for CW-IRSL (tunnelling transitions). Function version 0.2.0. In: Friedrich, J., Kreutzer, S., Pagonis, V., Schmidt, C., 2020. RLumCarlo: Monte-Carlo Methods for Simulating Luminescence Phenomena. R package version 0.1.0. 
 }
 
 \references{
@@ -115,7 +115,7 @@ WORLD SCIENTIFIC. \doi{10.1142/2781}
 }
 \author{
 Johannes Friedrich, University of Bayreuth (Germany),
-Sebastian Kreutzer, IRAMAT-CRP2A, UMR 5060, Université Bordeaux Montaigne (France)
+Sebastian Kreutzer, Geography & Earth Sciences, Aberystwyth University (United Kingdom)
 }
 \keyword{data}
 \keyword{models}

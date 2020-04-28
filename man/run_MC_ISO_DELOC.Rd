@@ -30,12 +30,12 @@ run_MC_ISO_DELOC(
 
 \item{clusters}{\link{numeric} (\emph{with default}): The number of created clusters for the MC runs}
 
-\item{N_e}{\link{integer} (\emph{with default}): The total number of electron traps available (unitless)}
+\item{N_e}{\link{integer} (\emph{with default}): The total number of electron traps available (dimensionless)}
 
 \item{n_filled}{\link{integer} (\emph{with default}): The number of filled electron traps at the
-beginning of the simulation (unitless)}
+beginning of the simulation (dimensionless)}
 
-\item{R}{\link{numeric} (\emph{with default}): The delocalized retrapping ratio (unitless)}
+\item{R}{\link{numeric} (\emph{with default}): The delocalized retrapping ratio (dimensionless)}
 
 \item{method}{\link{character} (\emph{with default}): Sequential \code{'seq'} or parallel \code{'par'}processing. In
 the parallel mode the function tries to run the simulation on multiple CPU cores (if available) with
@@ -52,9 +52,9 @@ is a \link{list} consisting of an \link{array} with dimension length(times) x cl
 and a \link{numeric} time vector.
 }
 \description{
-Runs a Monte-Carlo (MC) simulation of isothermally stimulated luminesence
-(ISO-TL or ITL) using the one trap one recombination center (OTOR) model.
-Delocalized refers to involvement of the conduction band.
+Runs a Monte-Carlo (MC) simulation of isothermally stimulated luminescence
+(ISO-TL or ITL) using the one trap one recombination centre (OTOR) model.
+Delocalised refers to involvement of the conduction band.
 }
 \details{
 \strong{The model}
@@ -70,7 +70,7 @@ t := time \cr
 n := \code{n_filled}, the number of filled electron traps at the beginning of the simulation\cr
 E := the trap depth (eV) \cr
 s := the frequency factor in (s^-1) \cr
-N := \code{N_e}, the total number of electron traps available (unitless) \cr
+N := \code{N_e}, the total number of electron traps available (dimensionless) \cr
 R := the retrapping ratio for delocalized transitions
 }
 \section{Function version}{

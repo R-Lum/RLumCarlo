@@ -27,7 +27,7 @@ Summarize RLumCarlo modelling results for easy plotting
 
 \author{
 Johannes Friedrich, University of Bayreuth (Germany),
-Sebastian Kreutzer, IRAMAT-CRP2A, UMR 5060, CNRS-Université Bordeaux Montaigne (France)
+Sebastian Kreutzer, Geography & Earth Sciences, Aberystwyth University (United Kingdom)
 } 
 
 \section{How to cite}{

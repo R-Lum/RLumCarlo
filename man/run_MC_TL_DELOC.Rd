@@ -28,10 +28,10 @@ The heating rate in this function is assumed to be 1 K/s.}
 
 \item{clusters}{\link{numeric} (\emph{with default}): The number of created clusters for the MC runs}
 
-\item{N_e}{\link{integer} (\emph{with default}): The total number of electron traps available (unitless)}
+\item{N_e}{\link{integer} (\emph{with default}): The total number of electron traps available (dimensionless)}
 
 \item{n_filled}{\link{integer} (\emph{with default}): The number of filled electron traps at the beginning
-of the simulation (unitless)}
+of the simulation (dimensionless)}
 
 \item{R}{\link{numeric} (\emph{with default}): Retrapping ratio for delocalized transitions}
 
@@ -69,7 +69,7 @@ t := time (s) \cr
 \eqn{k_{B}} := Boltzmann constant (8.617 x 10^-5 eV K^-1)\cr
 T := temperature (°C) \cr
 n := \code{n_filled}, the instantaneous number of electrons \cr
-N := \code{N_e}, the total number of electron traps available (unitless) \cr
+N := \code{N_e}, the total number of electron traps available (dimensionless) \cr
 }
 \section{Function version}{
  0.1.0

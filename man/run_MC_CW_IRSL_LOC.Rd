@@ -24,7 +24,7 @@ run_MC_CW_IRSL_LOC(
 \item{clusters}{\link{numeric} (\emph{with default}): The number of created clusters for the MC runs}
 
 \item{n_filled}{\link{integer} (\emph{with default}): The number of filled electron traps at the beginning
-of the simulation (unitless)}
+of the simulation (dimensionless)}
 
 \item{r}{\link{numeric} (\emph{with default}): The retrapping ratio for localized transitions}
 
@@ -43,11 +43,11 @@ is a \link{list} consisting of an \link{array} with dimension \code{length(times
 and a \link{numeric} time vector.
 }
 \description{
-Runs a Monte-Carlo (MC) simulation of continuous wave infrared stimulated luminesence
+Runs a Monte-Carlo (MC) simulation of continuous wave infrared stimulated luminescence
 (CW-IRSL) using the generalized one trap (GOT) model. Localized transitions refer to transitions
 which do not involve the conduction or valence band. These transitions take place between the
 ground state and an excited state of the trapped charge, and also involve an energy state of the
-recombination center.
+recombination centre.
 }
 \details{
 \strong{The model}

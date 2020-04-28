@@ -3,7 +3,7 @@
 \encoding{UTF-8}
 \name{run_MC_TL_TUN}
 \alias{run_MC_TL_TUN}
-\title{Run Monte-Carlo Simulation for TL (tunneling transitions)}
+\title{Run Monte-Carlo Simulation for TL (tunnelling transitions)}
 \usage{
 run_MC_TL_TUN(
   s,
@@ -36,7 +36,7 @@ The heating rate is assumed to be 1 K/s.}
 
 \item{clusters}{\link{numeric} (\emph{with default}): The number of created clusters for the MC runs}
 
-\item{N_e}{\link{numeric} (\emph{with default}): The total number of electron traps available (unitless)}
+\item{N_e}{\link{numeric} (\emph{with default}): The total number of electron traps available (dimensionless)}
 
 \item{delta.r}{\link{numeric} (\emph{with default}): The increments of the dimensionless distance r'}
 
@@ -55,9 +55,9 @@ is a \link{list} consisting of an \link{array} with dimension length(times) x le
 and a \link{numeric} time vector.
 }
 \description{
-Runs a Monte-Carlo (MC) simulation of thermoluminesence (TL) caused by
-tunnelling (TUN) transitions.  Tunneling refers to quantum mechanical
-tunneling processes from the excited state of the trap into a recombination center.
+Runs a Monte-Carlo (MC) simulation of thermoluminescence (TL) caused by
+tunnelling (TUN) transitions. Tunnelling refers to quantum mechanical
+tunnelling processes from the excited state of the trap into a recombination centre.
 The heating rate in this function is assumed to be 1 K/s.
 }
 \details{
@@ -72,8 +72,8 @@ s := frequency for the tunneling process (s^-1) \cr
 E := thermal activation energy (eV) \cr
 \eqn{k_{B}} := Boltzmann constant (8.617 x 10^-5 eV K^-1)\cr
 T := temperature (°C)\cr
-r' := the unitless tunneling radius \cr
-\eqn{\rho}' := \verb{rho'}, the unitless density of recombination centres (see Huntley (2006)) \cr
+r' := the dimensionless tunneling radius \cr
+\eqn{\rho}' := \verb{rho'}, the dimensionless density of recombination centres (see Huntley (2006)) \cr
 t := time (s) \cr
 n := the instantaneous number of electrons at distance r'
 }
@@ -113,7 +113,7 @@ plot_RLumCarlo(results)
 } 
 
 \section{How to cite}{
-Friedrich, J., Kreutzer, S., 2020. run_MC_TL_TUN(): Run Monte-Carlo Simulation for TL (tunneling transitions). Function version 0.1.0. In: Friedrich, J., Kreutzer, S., Pagonis, V., Schmidt, C., 2020. RLumCarlo: Monte-Carlo Methods for Simulating Luminescence Phenomena. R package version 0.1.0. 
+Friedrich, J., Kreutzer, S., 2020. run_MC_TL_TUN(): Run Monte-Carlo Simulation for TL (tunnelling transitions). Function version 0.1.0. In: Friedrich, J., Kreutzer, S., Pagonis, V., Schmidt, C., 2020. RLumCarlo: Monte-Carlo Methods for Simulating Luminescence Phenomena. R package version 0.1.0. 
 }
 
 \references{
@@ -139,7 +139,7 @@ J. Phys.: Condens. Matter 24, 385402. \doi{10.1088/0953-8984/24/38/385402}
 }
 \author{
 Johannes Friedrich, University of Bayreuth (Germany), Sebastian Kreutzer,
-IRAMAT-CRP2A, UMR 5060, Université Bordeaux Montaigne (France)
+Geography & Earth Sciences, Aberystwyth University (United Kingdom)
 }
 \keyword{data}
 \keyword{models}

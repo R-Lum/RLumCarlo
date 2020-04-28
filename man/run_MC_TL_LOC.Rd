@@ -28,9 +28,9 @@ The heating is assumed to be 1 K/s.}
 \item{clusters}{\link{numeric} (\emph{with default}): The number of created clusters for the MC runs}
 
 \item{n_filled}{\link{integer} (\emph{with default}): The number of filled electron traps at
-the beginning of the simulation (unitless)}
+the beginning of the simulation (dimensionless)}
 
-\item{r}{\link{numeric} (\emph{with default}): The localized retrapping ratio (unitless)}
+\item{r}{\link{numeric} (\emph{with default}): The localized retrapping ratio (dimensionless)}
 
 \item{method}{\link{character} (\emph{with default}): Sequential \code{'seq'} or parallel \code{'par'}processing. In
 the parallel mode the function tries to run the simulation on multiple CPU cores (if available) with
@@ -47,11 +47,11 @@ is a \link{list} consisting of an \link{array} with dimension length(times) x cl
 and a \link{numeric} time vector.
 }
 \description{
-Runs a Monte-Carlo (MC) simulation of thermoluminesence (TL) using
+Runs a Monte-Carlo (MC) simulation of thermoluminescence (TL) using
 the generalized one trap (GOT) model. Localized transitions refer to transitions
 which do not involve the conduction or valence band. These transitions take place between the
 ground state and an excited state of the trapped charge, and also involve an energy
-state of the recombination center. The heating rate in this function is assumed to be 1 K/s.
+state of the recombination centre. The heating rate in this function is assumed to be 1 K/s.
 }
 \details{
 \strong{The model}

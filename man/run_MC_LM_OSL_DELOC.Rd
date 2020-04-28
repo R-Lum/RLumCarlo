@@ -24,10 +24,10 @@ run_MC_LM_OSL_DELOC(
 
 \item{clusters}{\link{numeric} (\emph{with default}): The number of created clusters for the MC runs}
 
-\item{N_e}{\link{integer} (\emph{with default}): The total number of electron traps available (unitless)}
+\item{N_e}{\link{integer} (\emph{with default}): The total number of electron traps available (dimensionless)}
 
 \item{n_filled}{\link{integer} (\emph{with default}): The number of filled electron traps at the beginning
-of the simulation (unitless)}
+of the simulation (dimensionless)}
 
 \item{R}{\link{numeric} (\emph{with default}): The retrapping ratio for delocalized transitions}
 
@@ -47,8 +47,8 @@ and a \link{numeric} time vector.
 }
 \description{
 Runs a Monte-Carlo (MC) simulation of linearly modulated optically stimulated
-luminesence (LM-OSL) using the one trap one recombination center (OTOR) model.
-Delocalized refers to involvement of the conduction band.
+luminescence (LM-OSL) using the one trap one recombination centre (OTOR) model.
+Delocalised refers to involvement of the conduction band.
 }
 \details{
 \strong{The model}
@@ -60,9 +60,9 @@ I_{DELOC}(t) = -dn/dt = A * t/P * (n^2 / (N*R + n(1-R)))
 Where in the function: \cr
 t := time (s) \cr
 A := the optical excitation rate from trap to conduction band (1/s)\cr
-n := \code{n_filled}, the tnstantaneous number of electrons \cr
+n := \code{n_filled}, the instantaneous number of electrons \cr
 R :=  the retrapping ratio for delocalized transitions \cr
-N := \code{N_e}, the total number of electron traps available (unitless) \cr
+N := \code{N_e}, the total number of electron traps available (dimensionless) \cr
 P := total stimulation time (s)
 }
 \section{Function version}{
