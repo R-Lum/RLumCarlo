@@ -59,7 +59,7 @@
 #' @section Function version: 0.1.0
 #'
 #' @author Johannes Friedrich, University of Bayreuth (Germany), Sebastian Kreutzer,
-#' IRAMAT-CRP2A, UMR 5060, Université Bordeaux Montaigne (France)
+#' Geography & Earth Sciences, Aberystwyth University (United Kingdom)
 #'
 #' @references
 #' Huntley, D.J., 2006. An explanation of the power-law decay of luminescence.

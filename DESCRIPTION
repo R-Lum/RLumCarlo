@@ -21,7 +21,7 @@ Authors@R: c(
     person("Christian", "Laag", role = c("ctb"), comment = c(ORCID = "0000-0002-6012-1029"))
     )
 Maintainer: Sebastian Kreutzer <sebastian.kreutzer@aber.ac.uk>
-Description: A collection of functions to simulate luminescence production in dosimetric materials using Monte-Carlo methods. 
+Description: A collection of functions to simulate luminescence production in dosimetric materials using Monte Carlo methods. 
     Implemented are models for delocalised, localised and tunnelling transitions. 
     Supported stimulation methods are TL, CW-OSL, LM-OSL, LM-IRSL, and ITL (ISO-TL).
 Contact: Package Developer Team <sebastian.kreutzer@aber.ac.uk>
