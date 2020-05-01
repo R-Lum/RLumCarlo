@@ -29,7 +29,7 @@ Depending on your OS please download and install one of the following:
 
 <https://cran.r-project.org/bin/windows/Rtools/>
 
-**Mac OS X** - ‘Xcode’ (provided by Apple)
+**macOS** - ‘Xcode’ (provided by Apple)
 
 <https://developer.apple.com/xcode/downloads/>
 
@@ -55,6 +55,14 @@ run_MC_CW_IRSL_TUN(A = 0.12, rho = 0.003, times = 0:1000) %>%
 
 <img src="man/figures/README-unnamed-chunk-2-1.png" style="display: block; margin: auto;" />
 
+## Supported models
+
+| TRANSITION               | BASE MODEL       | IRSL  | OSL   | LM-OSL | TL   |
+| ------------------------ | ---------------- | ----- | ----- | ------ | ---- |
+| Delocalised              | OTOR<sup>1</sup> | FALSE | TRUE  | TRUE   | TRUE |
+| Localised                | GOT<sup>2</sup>  | TRUE  | FALSE | TRUE   | TRUE |
+| Excited state tunnelling | LTM<sup>3</sup>  | TRUE  | FALSE | TRUE   | TRUE |
+
 ## License
 
 This program is free software: you can redistribute it and/or modify it
@@ -71,7 +79,7 @@ more details.
 
 ## <span class="glyphicon glyphicon-euro"></span> Funding
 
-The development of RLumCarlo benefitted from the support by various
+The development of RLumCarlo benefited from the support by various
 funding bodies:
 
   - The initial work by Johannes Friedrich, Sebastian Kreutzer and

@@ -60,9 +60,9 @@ run_MC_CW_IRSL_TUN(A = 0.12, rho = 0.003, times = 0:1000) %>%
 
 TRANSITION  | BASE MODEL        |    IRSL      |     OSL         |     LM-OSL      | TL 
 |-----------|-------------------|--------------|-----------------|-----------------|---------------|
-Delocalised | OTOR              | FALSE        | TRUE            | TRUE            |TRUE 
-Localised   | GOT               | TRUE         | FALSE           | TRUE            |TRUE
-Excited state tunnelling | Jain et al. (2012)  | TRUE | FALSE | TRUE | TRUE            
+Delocalised | OTOR    | FALSE        | TRUE            | TRUE            |TRUE 
+Localised   | GOT   | TRUE         | FALSE           | TRUE            |TRUE
+Excited state tunnelling | LTM | TRUE | FALSE | TRUE | TRUE            
 
 
 ## License

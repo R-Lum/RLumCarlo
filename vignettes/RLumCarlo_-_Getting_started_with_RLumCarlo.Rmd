@@ -1,14 +1,17 @@
 ---
-title: "RLumCarlo: Tedious features - fine examples"
+title: "`RLumCarlo': Tedious features - fine examples"
 author: "Sebastian Kreutzer, Johannes Friedrich, Vasilis Pagonis, Christoph Schmidt"
-date: "RLumCarlo: v`r packageVersion('RLumCarlo')` | Last modified: `r Sys.Date()`"
+date: "RLumCarlo: v`r packageVersion('RLumCarlo')` | last modified: `r Sys.Date()`"
 output: 
   pdf_document: 
     number_sections: yes
+header-includes:
+  - \usepackage{doi}
 vignette: |
   %\VignetteIndexEntry{RLumCarlo - Getting started with RLumCarlo}         
   %\VignetteEncoding{UTF-8}{inputenc}
   %\VignetteEngine{knitr::rmarkdown}
+bibliography: RLumCarlo\_-\_Getting\_started\_with\_RLumCarlo.bib
 ---
 
 ```{r setup, include=FALSE}
@@ -37,13 +40,27 @@ electrons <- data.frame(
 
 # Scope
 
-RLumCarlo is a collection of energy-band models to simulate luminescence signals in dosimeteric materials
+\`RLumCarlo' is a collection of energy-band models to simulate luminescence signals in dosimeteric materials
 using Monte-Carlo (MC) methods for various stimulation modes. This document aims at supplementing 
 the package documentation and elaborating the package examples. 
 
-# The models in RLumCarlo
+# The models in \`RLumCarlo'
 
-The following table lists all models implemented in RLumCarlo along with the **R** function call 
+## Overview
+TRANSITION  | BASE MODEL        |    IRSL      |     OSL         |     LM-OSL      | TL 
+|-----------|-------------------|--------------|-----------------|-----------------|---------------|
+Delocalised | OTOR    | -        | X            | X            |X 
+Localised   | GOT   | X         | -           | X            |X
+Excited state tunnelling | LTM | X | - | X | X   
+
+In the table above column headers refer to stimulation modes, which are infrared 
+stimulated luminescence (IRSL), optically stimulated luminescence (OSL), LM-OSL [@Bulur_1996rc], 
+and thermally stimulated luminescence (short: TL). In the column \`BASE MODEL' OTOR refers to \`One Trap-One Recombination Centre', GOT to \`General One Trap', and LTM to \`Localized Transition Model'
+[@Jain:2012ic; @Pagonis:2019hk]. For general overview we refer to the excellent book 
+by @Chen_2011vn.
+
+## Where to find them
+The following table lists models as implemented in \`RLumCarlo' along with the **R** function call 
 and the corresponding R (\*.R) and C++ (\*.cpp) files. The modelling takes place 
 in the C++ functions which are wrapped by the R functions with a similar name. 
 If you, however, want to cross-check the code, you should inspect files with the ending `.cpp`. 
@@ -71,7 +88,7 @@ different model types (TUN: tunnelling, LOC: localised transition, DELOC: deloca
 are implemented for the stimulation types TL, IRSL, LM-OSL, and ISO (isothermal). 
 Please note that each model has different parameters and requirements. 
 
-# RLumCarlo model parameters and variables
+# \`RLumCarlo' model parameters and variables
 
 The following table summarises the parameters used in the implemented MC models along with 
 their physical meaning, units and the range of realistic values. This range represents just a rough 
@@ -92,7 +109,7 @@ knitr::kable(variables, booktabs = TRUE, longtable = TRUE, format = "latex", col
 
 # Examples
 
-The following examples illustrate the capacity of RLumCarlo, by using code-snippets deploying longer 
+The following examples illustrate the capacity of \`RLumCarlo', by using code-snippets deploying longer 
 simulation times than allowed for the standard package examples, which aim at a functionality test. 
 
 ## Example 1: A first example
@@ -100,7 +117,7 @@ simulation times than allowed for the standard package examples, which aim at a 
 The first example is an iso-thermal decay curve using the tunnelling model (other models work 
 similarly). Returned are either the simulated signal or the estimated remaining trapped charge carriers. 
 The Function `plot_RLumCarlo()` provides an easy way to visualise the modelling results and 
-is here called using the tee operator `%T>` from the package `magrittr` (which is imported by RLumCarlo). 
+is here called using the tee operator `%T>` from the package `magrittr` (which is imported by \`RLumCarlo'). 
 Simulation results are stored in the object `results` while, at the same time, piped to the function 
 `plot_RLumCarlo()` for the output visualisation. 
 
@@ -241,3 +258,7 @@ legend(
   col = khroma::colour("bright")(length(r_c))
 )
 ```
+
+# References {-}
+
+
