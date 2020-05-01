@@ -57,11 +57,11 @@ run_MC_CW_IRSL_TUN(A = 0.12, rho = 0.003, times = 0:1000) %>%
 
 ## Supported models
 
-| TRANSITION               | BASE MODEL       | IRSL  | OSL   | LM-OSL | TL   |
-| ------------------------ | ---------------- | ----- | ----- | ------ | ---- |
-| Delocalised              | OTOR<sup>1</sup> | FALSE | TRUE  | TRUE   | TRUE |
-| Localised                | GOT<sup>2</sup>  | TRUE  | FALSE | TRUE   | TRUE |
-| Excited state tunnelling | LTM<sup>3</sup>  | TRUE  | FALSE | TRUE   | TRUE |
+| TRANSITION               | BASE MODEL | IRSL  | OSL   | LM-OSL | TL   |
+| ------------------------ | ---------- | ----- | ----- | ------ | ---- |
+| Delocalised              | OTOR       | FALSE | TRUE  | TRUE   | TRUE |
+| Localised                | GOT        | TRUE  | FALSE | TRUE   | TRUE |
+| Excited state tunnelling | LTM        | TRUE  | FALSE | TRUE   | TRUE |
 
 ## License
 
