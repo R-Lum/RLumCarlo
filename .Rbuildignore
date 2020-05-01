@@ -42,6 +42,7 @@
 ^vignettes/.*\.xsyg$
 ^vignettes/.*\.log$
 ^vignettes/.*\.csv$
+^vignettes/.*\.bib$
 
 # -- Exclude build stuff
 ^Makefile$
@@ -49,5 +50,5 @@
 # -- Exclude meta data stuff --
 ^codemeta\.json$
 
-# -- Package 'RLumCarlo' stuff -- 
+# -- Package 'RLumCarlo' stuff --
 ^RLumCarlo\..*$
