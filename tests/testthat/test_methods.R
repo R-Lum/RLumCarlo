@@ -48,3 +48,45 @@ test_that("basic run", {
 
 })
 
+test_that("check c()", {
+  testthat::skip_on_cran()
+
+  ## create need output objects
+  objectA <- run_MC_TL_LOC(
+    s = 1e14,
+    E = 0.9,
+    times = 0:100,
+    b = 1,
+    method = "seq",
+    clusters = 30,
+    r = 1)
+
+  objectB <- run_MC_TL_TUN(
+    s = 1e12,
+    E = 0.9,
+    rho = 1,
+    r_c = 0.1,
+    times = 0:100,
+    b = 1,
+    clusters = 50,
+    method = 'seq',
+    delta.r = 1e-1)
+
+
+  objectC <- objectB
+  attr(objectC, which = "model") <- "run_MC_LM_OSL_TUN"
+
+  objectD <- objectA
+  objectD$time <- 1:1000
+
+   ## crash function
+   expect_error(c(objectA, objectD), regexp = "You cannot combine objects with different time vectors")
+
+   ## warning
+   expect_warning(c(objectA,objectC), regexp = "Stimulation modes differ")
+
+   ## success
+   expect_s3_class(c(objectA, objectB), class = "RLumCarlo_Model_Output")
+
+})
+

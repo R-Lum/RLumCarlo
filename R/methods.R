@@ -123,13 +123,14 @@ c.RLumCarlo_Model_Output <- function(...){
 
   ## get the one we remove
   if(length(rm_objects <- which(modes[1] != modes)) != 0){
-    warning(paste0("Object(s) ", paste(rm_objects, collapse = ", "), " do not have the same stimulation mode as the first object and were removed from the input!"), call. = FALSE)
+    warning(paste0("Stimulation modes differ. Object(s) ", paste(rm_objects, collapse = ", "), " removed!"),
+            call. = FALSE)
     objects[rm_objects] <- NULL
 
   }
 
   ## make sure that the time vector is identically
-  if(!unique(vapply(objects, function(x) length(x$time), numeric(1))))
+  if(length(unique(vapply(objects, function(x) length(x$time), numeric(1)))) > 1)
     stop("[c.RLumCarlo_Model_Output()] You cannot combine objects with different time vectors!", call. = FALSE)
 
   ## in order to combine, we have to treat values coming from the tunnelling
@@ -143,7 +144,7 @@ c.RLumCarlo_Model_Output <- function(...){
     return(x)
   })
 
-  # finally combine the objects
+  ## finally combine the objects
   .return_ModelOutput(
     signal = comb_array(lapply(objects, function(x) x$signal)),
     time = objects[[1]]$time,
