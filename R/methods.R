@@ -1,6 +1,11 @@
 #' methods_RLumCarlo
 #'
-#' Methods for S3-generics implemented for the package 'RLumCarlo'.
+#' @description  Methods for S3-generics implemented for the package 'RLumCarlo'.
+#'
+#' @param ... input objects or further function arguments
+#'
+#' @author Sebastian Kreutzer, Geography & Earth Sciences, Aberystwyth University (United Kingdom),
+#' Johannes Friedrich, University of Bayreuth (Germany),
 #'
 #' @keywords internal
 #'
@@ -25,27 +30,17 @@
 #' @name methods_RLumCarlo
 NULL
 
-#' @title Summarize RLumCarlo Modelling Results
-#'
-#' @description Summarize RLumCarlo modelling results for easy plotting
-#'
+
+#' @rdname methods_RLumCarlo
 #' @param object [list] of class RLumCarlo_Model_Output: RLumCarlo simulation output object
 #' produced by all `run_` functions
 #'
 #' @param verbose [logical] (*with default*): enable/disable verbose mode
 #'
-#' @param ... further arguments passed to the method
-#'
-#' @return This function returns a [data.frame]
-#'
-#' @section Function version: 0.1.0
-#'
-#' @author Johannes Friedrich, University of Bayreuth (Germany),
-#' Sebastian Kreutzer, Geography & Earth Sciences, Aberystwyth University (United Kingdom)
+#' @return `summary()`: This function returns a [data.frame]
 #'
 #' @md
 #' @method summary RLumCarlo_Model_Output
-#' @rdname methods_RLumCarlo
 #' @export
 summary.RLumCarlo_Model_Output <- function(object, verbose = TRUE, ...){
 
@@ -97,19 +92,13 @@ summary.RLumCarlo_Model_Output <- function(object, verbose = TRUE, ...){
   invisible(output)
 }
 
-#' @title Combine modelling results
+
+#' @rdname methods_RLumCarlo
 #'
-#' @param ... objects to be concatenated
-#'
-#' @return This function returns a the same as the input objects
-#'
-#' @section Function version: 0.1.0
-#'
-#' @author Sebastian Kreutzer, Geography & Earth Sciences, Aberystwyth University (United Kingdom)
+#' @return `c()`: function returns a the same as the input objects
 #'
 #' @md
 #' @method c RLumCarlo_Model_Output
-#' @rdname methods_RLumCarlo
 #' @export
 c.RLumCarlo_Model_Output <- function(...){
   ## remove everything that does not belong into this list

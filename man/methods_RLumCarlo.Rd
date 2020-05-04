@@ -16,24 +16,16 @@ produced by all \code{run_} functions}
 
 \item{verbose}{\link{logical} (\emph{with default}): enable/disable verbose mode}
 
-\item{...}{objects to be concatenated}
+\item{...}{input objects or further function arguments}
 }
 \value{
-This function returns a \link{data.frame}
+\code{summary()}: This function returns a \link{data.frame}
 
-This function returns a the same as the input objects
+\code{c()}: function returns a the same as the input objects
 }
 \description{
 Methods for S3-generics implemented for the package 'RLumCarlo'.
-
-Summarize RLumCarlo modelling results for easy plotting
 }
-\section{Function version}{
- 0.1.0
-
- 0.1.0
-}
-
 \examples{
 
 ##create object
@@ -53,14 +45,12 @@ c(objects,objects)
 
 }
 \author{
+Sebastian Kreutzer, Geography & Earth Sciences, Aberystwyth University (United Kingdom),
 Johannes Friedrich, University of Bayreuth (Germany),
-Sebastian Kreutzer, Geography & Earth Sciences, Aberystwyth University (United Kingdom)
-
-Sebastian Kreutzer, Geography & Earth Sciences, Aberystwyth University (United Kingdom)
 } 
 
 \section{How to cite}{
-Friedrich, J., Kreutzer, S., 2020. methods_RLumCarlo(): methods_RLumCarlo. Function version 0.1.0. In: Friedrich, J., Kreutzer, S., Pagonis, V., Schmidt, C., 2020. RLumCarlo: Monte-Carlo Methods for Simulating Luminescence Phenomena. R package version 0.1.0. 
+Kreutzer, S., Friedrich, J., 2020. methods_RLumCarlo(): methods_RLumCarlo. In: Friedrich, J., Kreutzer, S., Pagonis, V., Schmidt, C., 2020. RLumCarlo: Monte-Carlo Methods for Simulating Luminescence Phenomena. R package version 0.1.0. 
 }
 
 \keyword{internal}
