@@ -147,7 +147,7 @@ plot_RLumCarlo <- function(
  }
 
 
-  ##set times
+  ## set times
   times <- object[["time"]]
 
   if(norm){ # normalization
@@ -203,7 +203,7 @@ plot_RLumCarlo <- function(
   ##add grid
   if(plot_settings$grid) grid()
 
-  ## draw error pologyon
+  ## draw error polygon
   if(!is.null(plot_uncertainty)){
   polygon(x = c(times, rev(times)),
           y = c(y_min, rev(y_max)),
