@@ -29,7 +29,7 @@ List MC_C_ISO_TUN(arma::vec times, int N_e, arma::vec r, double rho, double E, d
 
       std::size_t n_filled = N_e;
 
-      double P = delta_t * ((s * exp(-E/(k_B * (273 + T)))) * exp(-(pow(rho,-1.0/3)) * r[k]));
+      double P = ((s * exp(-E/(k_B * (273 + T)))) * exp(-(pow(rho,-1.0/3)) * r[k]));
 
       for(std::size_t t = 0; t < times.size(); ++t){
         for(std::size_t j = 0; j < n_filled; ++j){
@@ -37,7 +37,7 @@ List MC_C_ISO_TUN(arma::vec times, int N_e, arma::vec r, double rho, double E, d
           //draw random number
           r_num = runif(1);
 
-          if (r_num[0] < P)
+          if (r_num[0] < (P * delta_t))
             n_filled = n_filled - 1;
 
           if (n_filled == 0)

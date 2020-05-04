@@ -27,7 +27,7 @@ List MC_C_CW_IRSL_TUN(arma::vec times, int N_e, arma::vec r, double rho, double 
 
       std::size_t n_filled = N_e;
 
-      double P =  A * delta_t * exp(-(pow(rho,-1.0/3)) * r[k]);
+      double P =  A * exp(-(pow(rho,-1.0/3)) * r[k]);
 
       for(std::size_t t = 0; t < times.size(); ++t){
 
@@ -36,7 +36,7 @@ List MC_C_CW_IRSL_TUN(arma::vec times, int N_e, arma::vec r, double rho, double 
           //draw random number
           r_num = runif(1);
 
-          if (r_num[0] < P)
+          if (r_num[0] < (P * delta_t))
             n_filled = n_filled - 1;
 
           if (n_filled == 0)

@@ -31,7 +31,7 @@ List MC_C_LM_OSL_DELOC(arma::vec times, int N_e, int n_filled, double R, double 
     for(std::size_t t = 0; t < times.size(); ++t){
 
       //this is p(t) ... use A here to keep things consistent ... this is for LM-OSL
-      double P = A * delta_t * (times[t]/max(times));
+      double P = A * (times[t]/max(times));
 
           //n_filled; decide whether and electron will be excitated
           for(int j = 0; j < n_filled; ++j){
@@ -39,7 +39,7 @@ List MC_C_LM_OSL_DELOC(arma::vec times, int N_e, int n_filled, double R, double 
             //draw random number
             r_num = runif(1);
 
-            if (r_num[0] < P * (n_filled / (N_e * R + n_filled * (1 - R))))
+            if (r_num[0] < P * delta_t * (n_filled / (N_e * R + n_filled * (1 - R))))
               n_filled = n_filled - 1;
 
             if (n_filled == 0)
