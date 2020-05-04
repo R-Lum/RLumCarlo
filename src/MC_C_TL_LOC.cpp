@@ -34,7 +34,7 @@ List MC_C_TL_LOC(arma::vec times, int n_filled, double r, double E, double s) {
     for(std::size_t t = 0; t < times.size(); ++t){
 
           //this is out p(t)
-          double P =  delta_t * s * exp(-E/(k_B * (273 + times[t])));
+          double P = s * exp(-E/(k_B * (273 + times[t])));
 
           //n_filled; decide whether and electron will be excitated
           for(int j = 0; j < n_filled; ++j){
@@ -42,7 +42,7 @@ List MC_C_TL_LOC(arma::vec times, int n_filled, double r, double E, double s) {
             //draw random number
             r_num = runif(1);
 
-            if (r_num[0] < P * (n_filled / (r + n_filled)))
+            if (r_num[0] < P * delta_t * (n_filled / (r + n_filled)))
               n_filled = n_filled - 1;
 
             if (n_filled == 0)

@@ -12,13 +12,14 @@
 using namespace Rcpp;
 
 // [[Rcpp::export("MC_C_TL_DELOC")]]
-List MC_C_TL_DELOC(arma::vec times, int N_e, int n_filled, double R, double E, double s) {
+List MC_C_TL_DELOC(arma::vec times, int N_e, int n_filled, double R, double E, double s, double b) {
   //N >> N_e total: concentration of traps [cm^-3]
   //n >> n_filled: concentration of filled traps [cm^-3]
   //t >> times: refers basically to the temperature
   //E: energy of the trap [eV]
   //s: frequency factor [1/s]
   //R: capture coefficient
+  //b: the heating rate [K/s]
 
    // set Boltzmann's constant
   double k_B = 8.617*pow(10.0,-5.0);
@@ -31,11 +32,12 @@ List MC_C_TL_DELOC(arma::vec times, int N_e, int n_filled, double R, double E, d
   NumericMatrix remaining_e (times.size(), 1);
   NumericVector r_num;
 
+
     //t-loop, means run over time/temperature
     for(std::size_t t = 0; t < times.size(); ++t){
 
           //this is out p(t)
-          double P =  delta_t * s * exp(-E/(k_B * (273 + times[t])));
+          double P =  s * exp(-E/(k_B * (273 + times[t] * b)));
 
           //n_filled; decide whether and electron will be excitated
           for(int j = 0; j < n_filled; ++j){
@@ -43,7 +45,7 @@ List MC_C_TL_DELOC(arma::vec times, int N_e, int n_filled, double R, double E, d
             //draw random number
             r_num = runif(1);
 
-            if (r_num[0] < P * (n_filled / (N_e * R + n_filled * (1 - R))))
+            if (r_num[0] < P * delta_t * (n_filled / (N_e * R + n_filled * (1 - R))))
               n_filled = n_filled - 1;
 
             if (n_filled == 0)

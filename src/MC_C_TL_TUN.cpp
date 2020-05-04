@@ -28,13 +28,13 @@ List MC_C_TL_TUN(arma::vec times, int N_e, arma::vec r, double rho, double E, do
 
       for(std::size_t t = 0; t < times.size(); ++t){
 
-        double P =  delta_t * s * exp(-E/(k_B * (273 + times[t]))) * exp(-(pow(rho,-1.0/3)) * r[k]);
+        double P =  s * exp(-E/(k_B * (273 + times[t]))) * exp(-(pow(rho,-1.0/3)) * r[k]);
 
         for(std::size_t j = 0; j < n_filled; ++j){
 
           NumericVector r_num = runif(1);
 
-          if (r_num[0] < P)
+          if (r_num[0] < (P * delta_t))
             n_filled = n_filled - 1;
 
           if (n_filled == 0)
