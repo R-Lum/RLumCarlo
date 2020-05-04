@@ -23,12 +23,22 @@
 #'  n := `n_filled`, the instantaneous number of electrons \cr
 #'  N := `N_e`, the total number of electron traps available (dimensionless) \cr
 #'
+#' **Why `times` and `b` instead of temperature?**
+#'
+#' The parameter to control the temperature is a function of the stimulation
+#' times (the parameter `times`) and the heating rate (`b`). Thus, the final temperature
+#' is `max(times) * b`. For a heating rate (`b = 1`) the final temperature is `max(times)`.
+#' While this might be a little bit confusing, it also allows you to control the
+#' time resolution of the simulation, i.e. you can simulate more points per second.
+#'
 #' @param E [numeric] (**required**): Thermal activation energy of the trap (eV)
 #'
 #' @param s [numeric] (**required**): The frequency factor of the trap (s^-1)
 #'
 #' @param times [numeric] (*with default*): The sequence of temperature steps within the simulation (s).
-#' The heating rate in this function is assumed to be 1 K/s.
+#' The default heating rate is set to 1 K/s. The final temperature is `max(times) * b`
+#'
+#' @param b [numeric] (*with default*): the heating rate in K/s
 #'
 #' @param clusters [numeric] (*with default*): The number of created clusters for the MC runs
 #'
@@ -37,7 +47,7 @@
 #' @param n_filled [integer] (*with default*): The number of filled electron traps at the beginning
 #' of the simulation (dimensionless)
 #'
-#' @param R [numeric] (*with default*): Retrapping ratio for delocalized transitions
+#' @param R [numeric] (*with default*): Re-trapping ratio for delocalized transitions
 #'
 #' @param method [character] (*with default*): Sequential `'seq'` or parallel `'par'`processing. In
 #' the parallel mode the function tries to run the simulation on multiple CPU cores (if available) with
@@ -138,10 +148,11 @@ run_MC_TL_DELOC <- function(
   s,
   E,
   times,
+  b = 1,
   clusters = 10,
   N_e = 200,
   n_filled = N_e,
-  R,
+  R = 1,
   method = "par",
   output = "signal",
   ...){
@@ -162,17 +173,19 @@ on.exit(parallel::stopCluster(cl))
 
     results <- MC_C_TL_DELOC(
       times = times,
-      N_e = N_e,
-      n_filled = n_filled,
-      R = R,
-      E = E,
-      s = s)
+      b = b[1],
+      N_e = N_e[1],
+      n_filled = n_filled[1],
+      R = R[1],
+      E = E[1],
+      s = s[1])
 
     return(results[[output]])
 
   }  # end c-loop
 
 # Return --------------------------------------------------------------------------------------
-.return_ModelOutput(signal = temp, time = times)
+if (output == "signal") temp <- temp / b
+.return_ModelOutput(time = times * b, signal = temp)
 }
 

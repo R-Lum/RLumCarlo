@@ -12,7 +12,7 @@
 using namespace Rcpp;
 
 // [[Rcpp::export("MC_C_TL_TUN")]]
-List MC_C_TL_TUN(arma::vec times, int N_e, arma::vec r, double rho, double E, double s) {
+List MC_C_TL_TUN(arma::vec times, int N_e, arma::vec r, double rho, double E, double s, double b) {
 
   double k_B = 8.617*pow(10.0,-5.0);
 
@@ -28,7 +28,7 @@ List MC_C_TL_TUN(arma::vec times, int N_e, arma::vec r, double rho, double E, do
 
       for(std::size_t t = 0; t < times.size(); ++t){
 
-        double P =  s * exp(-E/(k_B * (273 + times[t]))) * exp(-(pow(rho,-1.0/3)) * r[k]);
+        double P =  s * exp(-E/(k_B * (273 + times[t] * b))) * exp(-(pow(rho,-1.0/3)) * r[k]);
 
         for(std::size_t j = 0; j < n_filled; ++j){
 

@@ -28,7 +28,9 @@
 #' @param s [numeric] (**required**): The frequency factor of the trap (s^-1)
 #'
 #' @param times [numeric] (*with default*): The sequence of temperature steps within the simulation (s).
-#' The heating is assumed to be 1 K/s.
+#' The default heating rate is set to 1 K/s. The final temperature is `max(times) * b`
+#'
+#' @param b [numeric] (*with default*): the heating rate in K/s
 #'
 #' @param clusters [numeric] (*with default*): The number of created clusters for the MC runs
 #'
@@ -66,6 +68,7 @@
 #'  s = 1e14,
 #'  E = 0.9,
 #'  times = 50:100,
+#'  b = 1,
 #'  method = "seq",
 #'  clusters = 30,
 #'  r = 1) %>%
@@ -94,6 +97,7 @@ run_MC_TL_LOC <- function(
   s,
   E,
   times,
+  b = 1,
   clusters = 10,
   n_filled = 100,
   r,
@@ -117,6 +121,7 @@ on.exit(parallel::stopCluster(cl))
 
     results <- MC_C_TL_LOC(
       times = times,
+      b = b[1],
       n_filled = n_filled,
       r = r,
       E = E,
@@ -127,5 +132,6 @@ on.exit(parallel::stopCluster(cl))
   }  # end c-loop
 
 # Return --------------------------------------------------------------------------------------
-  .return_ModelOutput(signal = temp, time = times)
+if (output == "signal") temp <- temp / b
+.return_ModelOutput(time = times * b, signal = temp)
 }
