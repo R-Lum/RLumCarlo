@@ -37,15 +37,15 @@ MC_C_LM_OSL_TUN <- function(times, N_e, r, rho, A) {
     .Call(`_RLumCarlo_MC_C_LM_OSL_TUN`, times, N_e, r, rho, A)
 }
 
-MC_C_TL_DELOC <- function(times, N_e, n_filled, R, E, s) {
-    .Call(`_RLumCarlo_MC_C_TL_DELOC`, times, N_e, n_filled, R, E, s)
+MC_C_TL_DELOC <- function(times, N_e, n_filled, R, E, s, b) {
+    .Call(`_RLumCarlo_MC_C_TL_DELOC`, times, N_e, n_filled, R, E, s, b)
 }
 
-MC_C_TL_LOC <- function(times, n_filled, r, E, s) {
-    .Call(`_RLumCarlo_MC_C_TL_LOC`, times, n_filled, r, E, s)
+MC_C_TL_LOC <- function(times, n_filled, r, E, s, b) {
+    .Call(`_RLumCarlo_MC_C_TL_LOC`, times, n_filled, r, E, s, b)
 }
 
-MC_C_TL_TUN <- function(times, N_e, r, rho, E, s) {
-    .Call(`_RLumCarlo_MC_C_TL_TUN`, times, N_e, r, rho, E, s)
+MC_C_TL_TUN <- function(times, N_e, r, rho, E, s, b) {
+    .Call(`_RLumCarlo_MC_C_TL_TUN`, times, N_e, r, rho, E, s, b)
 }
 

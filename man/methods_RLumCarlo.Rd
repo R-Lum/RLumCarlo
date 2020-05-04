@@ -3,9 +3,12 @@
 \name{methods_RLumCarlo}
 \alias{methods_RLumCarlo}
 \alias{summary.RLumCarlo_Model_Output}
+\alias{c.RLumCarlo_Model_Output}
 \title{methods_RLumCarlo}
 \usage{
 \method{summary}{RLumCarlo_Model_Output}(object, verbose = TRUE, ...)
+
+\method{c}{RLumCarlo_Model_Output}(...)
 }
 \arguments{
 \item{object}{\link{list} of class RLumCarlo_Model_Output: RLumCarlo simulation output object
@@ -13,20 +16,46 @@ produced by all \code{run_} functions}
 
 \item{verbose}{\link{logical} (\emph{with default}): enable/disable verbose mode}
 
-\item{...}{further arguments passed to the method}
+\item{...}{objects to be concatenated}
 }
 \value{
 This function returns a \link{data.frame}
+
+This function returns a the same as the input objects
 }
 \description{
+Methods for S3-generics implemented for the package 'RLumCarlo'.
+
 Summarize RLumCarlo modelling results for easy plotting
 }
 \section{Function version}{
  0.1.0
+
+ 0.1.0
 }
 
+\examples{
+
+##create object
+object <- run_MC_TL_DELOC(
+ s = 3.5e12,
+ E = 1.45,
+ R = 0.1,
+ method = 'seq',
+ clusters = 100,
+ times = 150:350)
+
+##summary
+summary(object)
+
+##combine
+c(objects,objects)
+
+}
 \author{
 Johannes Friedrich, University of Bayreuth (Germany),
+Sebastian Kreutzer, Geography & Earth Sciences, Aberystwyth University (United Kingdom)
+
 Sebastian Kreutzer, Geography & Earth Sciences, Aberystwyth University (United Kingdom)
 } 
 

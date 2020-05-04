@@ -9,10 +9,11 @@ run_MC_TL_DELOC(
   s,
   E,
   times,
+  b = 1,
   clusters = 10,
   N_e = 200,
   n_filled = N_e,
-  R,
+  R = 1,
   method = "par",
   output = "signal",
   ...
@@ -24,7 +25,9 @@ run_MC_TL_DELOC(
 \item{E}{\link{numeric} (\strong{required}): Thermal activation energy of the trap (eV)}
 
 \item{times}{\link{numeric} (\emph{with default}): The sequence of temperature steps within the simulation (s).
-The heating rate in this function is assumed to be 1 K/s.}
+The default heating rate is set to 1 K/s. The final temperature is \code{max(times) * b}}
+
+\item{b}{\link{numeric} (\emph{with default}): the heating rate in K/s}
 
 \item{clusters}{\link{numeric} (\emph{with default}): The number of created clusters for the MC runs}
 
@@ -33,7 +36,7 @@ The heating rate in this function is assumed to be 1 K/s.}
 \item{n_filled}{\link{integer} (\emph{with default}): The number of filled electron traps at the beginning
 of the simulation (dimensionless)}
 
-\item{R}{\link{numeric} (\emph{with default}): Retrapping ratio for delocalized transitions}
+\item{R}{\link{numeric} (\emph{with default}): Re-trapping ratio for delocalized transitions}
 
 \item{method}{\link{character} (\emph{with default}): Sequential \code{'seq'} or parallel \code{'par'}processing. In
 the parallel mode the function tries to run the simulation on multiple CPU cores (if available) with
@@ -71,6 +74,14 @@ T := temperature (°C) \cr
 R := Delocalised retrapping ratio
 n := \code{n_filled}, the instantaneous number of electrons \cr
 N := \code{N_e}, the total number of electron traps available (dimensionless) \cr
+
+\strong{Why \code{times} and \code{b} instead of temperature?}
+
+The parameter to control the temperature is a function of the stimulation
+times (the parameter \code{times}) and the heating rate (\code{b}). Thus, the final temperature
+is \code{max(times) * b}. For a heating rate (\code{b = 1}) the final temperature is \code{max(times)}.
+While this might be a little bit confusing, it also allows you to control the
+time resolution of the simulation, i.e. you can simulate more points per second.
 }
 \section{Function version}{
  0.1.0

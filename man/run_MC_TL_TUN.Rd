@@ -11,6 +11,7 @@ run_MC_TL_TUN(
   rho,
   r_c = 0,
   times,
+  b = 1,
   clusters = 10,
   N_e = 200,
   delta.r = 0.1,
@@ -31,8 +32,10 @@ run_MC_TL_TUN(
 the sample has been thermally and/or optically pretreated. This parameter expresses the fact
 that electron-hole pairs within a critical radius \code{r_c} have already recombined.}
 
-\item{times}{\link{vector} (\emph{wih default}): The sequence of time steps within the simulation (s).
-The heating rate is assumed to be 1 K/s.}
+\item{times}{\link{numeric} (\emph{with default}): The sequence of temperature steps within the simulation (s).
+The default heating rate is set to 1 K/s. The final temperature is \code{max(times) * b}}
+
+\item{b}{\link{numeric} (\emph{with default}): the heating rate in K/s}
 
 \item{clusters}{\link{numeric} (\emph{with default}): The number of created clusters for the MC runs}
 
@@ -89,6 +92,7 @@ run_MC_TL_TUN(
  rho = 1,
  r_c = 0.1,
  times = 80:120,
+ b = 1,
  clusters = 50,
  method = 'seq',
  delta.r = 1e-1) \%>\%

@@ -9,6 +9,7 @@ run_MC_TL_LOC(
   s,
   E,
   times,
+  b = 1,
   clusters = 10,
   n_filled = 100,
   r,
@@ -23,7 +24,9 @@ run_MC_TL_LOC(
 \item{E}{\link{numeric} (\strong{required}): Thermal activation energy of the trap (eV)}
 
 \item{times}{\link{numeric} (\emph{with default}): The sequence of temperature steps within the simulation (s).
-The heating is assumed to be 1 K/s.}
+The default heating rate is set to 1 K/s. The final temperature is \code{max(times) * b}}
+
+\item{b}{\link{numeric} (\emph{with default}): the heating rate in K/s}
 
 \item{clusters}{\link{numeric} (\emph{with default}): The number of created clusters for the MC runs}
 
@@ -79,6 +82,7 @@ run_MC_TL_LOC(
  s = 1e14,
  E = 0.9,
  times = 50:100,
+ b = 1,
  method = "seq",
  clusters = 30,
  r = 1) \%>\%
