@@ -19,7 +19,7 @@
 #'  t := time (s) \cr
 #' \eqn{k_{B}} := Boltzmann constant (8.617 x 10^-5 eV K^-1)\cr
 #'  T := temperature (°C) \cr
-#'  R := Delocalised retrapping ratio
+#'  R := Delocalised retrapping ratio\cr
 #'  n := `n_filled`, the instantaneous number of electrons \cr
 #'  N := `N_e`, the total number of electron traps available (dimensionless) \cr
 #'
