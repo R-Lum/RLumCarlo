@@ -5,7 +5,7 @@
 \alias{create_ClusterSystem}
 \title{Create dosimetric cluster system}
 \usage{
-create_ClusterSystem(n = 100, h = 0.5, plot = FALSE)
+create_ClusterSystem(n = 100, h = 0.5, plot = FALSE, ...)
 }
 \arguments{
 \item{n}{\link{numeric} (\emph{with default}): number of clusters to be created
@@ -15,6 +15,8 @@ in an arbitrary 3-dimensional cube. x, y, z  distances range between 0 and 1.}
 using \link[stats:cutree]{stats::cutree}. The number must range between 0 and 1.}
 
 \item{plot}{\link{logical} (\emph{with default}): enables/disables plot output}
+
+\item{...}{further arguments to be passed to the plot output}
 }
 \value{
 The function returns a \link{list} of class \code{RLumCarlo_clusters} consisting
