@@ -24,6 +24,8 @@
 #'
 #'@param plot [logical] (*with default*): enables/disables plot output
 #'
+#'@param ... further arguments to be passed to the plot output
+#'
 #'@return The function returns a [list] of class `RLumCarlo_clusters` consisting
 #'of [numeric] vector of cluster groups and a [matrix] of the cluster positions
 #'in the arbitrary space. If `plot = TRUE` the system is displayed using
@@ -42,7 +44,11 @@
 #'@encoding UTF-8
 #'@md
 #'@export
-create_ClusterSystem <- function(n = 100, h = 0.5, plot = FALSE){
+create_ClusterSystem <- function(
+  n = 100,
+  h = 0.5,
+  plot = FALSE,
+  ...){
 
   ## assign coordinates
   m <- matrix(data = stats::runif(n[1] * 3), ncol = 3)
@@ -57,19 +63,44 @@ create_ClusterSystem <- function(n = 100, h = 0.5, plot = FALSE){
 
 # Plot output -------------------------------------------------------------
  if(plot){
-    scatterplot3d::scatterplot3d(
-      x = m,
-      color = khroma::color("smooth rainbow")(34)[cl_groups],
-      pch = 16,
+    ## set plot settings
+    plot_settings <- modifyList(
+      x = list(
       xlim = c(0, 1),
       ylim = c(0, 1),
       zlim = c(0, 1),
       xlab = "Distance [a.u.]",
       ylab = "Distance [a.u.]",
       zlab = "Distance [a.u.]",
-      main = paste0("Cluster system (n = ",n,")")
+      main = paste0("Cluster system (n = ",n,")"),
+      color = khroma::color("smooth rainbow")(34)[cl_groups],
+      col.grid="grey",
+      pch = 16,
+      x.ticklabs = NULL,
+      y.ticklabs = NULL,
+      z.ticklabs = NULL,
+      mtext = paste0("h = ",h," | n_groups = ", max(unique(cl_groups)))
+      ),
+    val = list(...))
+
+    ## create plot
+    scatterplot3d::scatterplot3d(
+      x = m,
+      color = plot_settings$color,
+      pch = plot_settings$pch,
+      xlim = plot_settings$xlim,
+      ylim = plot_settings$ylim,
+      zlim = plot_settings$zlim,
+      xlab = plot_settings$xlab,
+      ylab = plot_settings$ylab,
+      zlab = plot_settings$zlab,
+      main = plot_settings$main,
+      x.ticklabs = plot_settings$x.ticklabs,
+      y.ticklabs = plot_settings$y.ticklabs,
+      z.ticklabs = plot_settings$z.ticklabs,
+      col.grid = plot_settings$col.grid
     )
-    mtext(side = 3, text = paste0("h = ",h," | n_groups = ", max(unique(cl_groups))))
+    mtext(side = 3, text = plot_settings$mtext)
  }
 
 # Return ------------------------------------------------------------------
