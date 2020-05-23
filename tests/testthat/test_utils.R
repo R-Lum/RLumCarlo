@@ -7,6 +7,11 @@ test_that("basic run", {
   cl <- expect_type(.registerClusters(method = "par", cores = NULL, verbose = TRUE), "list")
   parallel::stopCluster(cl)
 
+  ## .distribute_electrons
+  expect_is(
+    .distribute_electrons(clusters = create_ClusterSystem(n = 10), N_system = 100),
+    'data.frame'
+  )
 
 })
 

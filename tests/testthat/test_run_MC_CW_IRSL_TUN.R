@@ -31,6 +31,18 @@ test_that("basic run", {
     method = "par"
   ))
 
+  ##check cluster system
+  expect_silent(run_MC_CW_IRSL_TUN(
+    A = 0.8,
+    rho = 1e-4,
+    times = 0:100,
+    clusters = create_ClusterSystem(10),
+    N_e = 20,
+    r_c = 0.05,
+    delta.r = 0.1,
+    method = "seq"
+  ))
+
   ## check output
   expect_s3_class(results_par, class = "RLumCarlo_Model_Output")
   expect_length(results_par, 2)

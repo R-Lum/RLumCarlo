@@ -31,6 +31,18 @@ test_that("basic run", {
     method = "par"
   ))
 
+  ## create cluster system
+  expect_silent(run_MC_LM_OSL_TUN(
+    A = 1,
+    rho = 1e-2,
+    times = 0:1000,
+    clusters = create_ClusterSystem(10),
+    N_e = 20,
+    r_c = 0.01,
+    delta.r = 1e-1,
+    method = "seq"
+  ))
+
   ## check output
   expect_s3_class(results_par, class = "RLumCarlo_Model_Output")
   expect_length(results_par, 2)
