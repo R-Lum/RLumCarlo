@@ -134,11 +134,37 @@ results <- run_MC_ISO_TUN(
   E = 1.2,
   s = 1e10,
   T = 200,
+  N_e = 200,
   rho = 0.007,
+  clusters = 10,
   times = seq(0, 5000)
 ) %T>%
-  plot_RLumCarlo(norm = TRUE, legend = TRUE)
+  plot_RLumCarlo(norm = TRUE,
+                 legend = TRUE,
+                 main = "Iso-thermal decay (TUN)")
 ```
+In the example above `N_e` is a scalar, which means that all clusters start
+with the same number of electrons (here 200). However, \`RLumCarlo' supports
+different starting conditions with regard to the initial number of electrons. 
+For example, one could assume that the number of initial electrons vary randomly 
+between 190 and 210. Such a situation is created in the next example. Generally, 
+\`RLumCarlo' supports such an input for the parameters `N_e` and `n_filled`.
+
+```{r Fig 1b, fig.align='center', cache=TRUE, fig.height=4, fig.width=5}
+results <- run_MC_ISO_TUN(
+  E = 1.2,
+  s = 1e10,
+  T = 200,
+  N_e = sample(190:210,10,TRUE),
+  rho = 0.007,
+  clusters = 10,
+  times = seq(0, 5000)
+) %T>%
+  plot_RLumCarlo(norm = TRUE,
+                 legend = TRUE,
+                 main = "Iso-thermal decay (TUN) for varying N_e")
+```
+
 
 ### Model remaining charges
 

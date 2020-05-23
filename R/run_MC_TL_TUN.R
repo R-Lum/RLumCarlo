@@ -41,7 +41,7 @@
 #'
 #' @param clusters [numeric] (*with default*): The number of created clusters for the MC runs
 #'
-#' @param N_e [numeric] (*with default*): The total number of electron traps available (dimensionless)
+#' @param N_e [numeric] (*with default*): The total number of electron traps available (dimensionless). Can be a vector of `length(clusters)`, shorter values are recycled.
 #'
 #' @param delta.r [numeric] (*with default*): The increments of the dimensionless distance r'
 #'
@@ -141,7 +141,11 @@ cl <- .registerClusters(method, ...)
 on.exit(parallel::stopCluster(cl))
 
 # Setting parameters --------------------------------------------------------------------------
-  r <- seq(abs(r_c), 2, abs(delta.r))
+r <- seq(abs(r_c), 2, abs(delta.r))
+
+# Expand parameters -------------------------------------------------------
+N_e <- rep(N_e, length.out = clusters)
+
 
 # Run model -----------------------------------------------------------------------------------
   temp <- foreach(
@@ -153,11 +157,11 @@ on.exit(parallel::stopCluster(cl))
     results <- MC_C_TL_TUN(
       times = times,
       b = b[1],
-      N_e = N_e,
+      N_e = N_e[c],
       r = r,
-      rho = rho,
-      E = E,
-      s = s
+      rho = rho[1],
+      E = E[1],
+      s = s[1]
     )
    return(results[[output]])
 

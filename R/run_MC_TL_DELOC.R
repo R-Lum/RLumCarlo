@@ -42,10 +42,10 @@
 #'
 #' @param clusters [numeric] (*with default*): The number of created clusters for the MC runs
 #'
-#' @param N_e [integer] (*with default*): The total number of electron traps available (dimensionless)
+#' @param N_e [integer] (*with default*): The total number of electron traps available (dimensionless). Can be a vector of `length(clusters)`, shorter values are recycled.
 #'
 #' @param n_filled [integer] (*with default*): The number of filled electron traps at the beginning
-#' of the simulation (dimensionless)
+#' of the simulation (dimensionless). Can be a vector of `length(clusters)`, shorter values are recycled.
 #'
 #' @param R [numeric] (*with default*): Re-trapping ratio for delocalized transitions
 #'
@@ -165,6 +165,10 @@ run_MC_TL_DELOC <- function(
 cl <- .registerClusters(method, ...)
 on.exit(parallel::stopCluster(cl))
 
+# Expand parameters -------------------------------------------------------
+n_filled <- rep(n_filled, length.out = clusters)
+N_e <- rep(N_e, length.out = clusters)
+
 # Run model -----------------------------------------------------------------------------------
   temp <- foreach(c = 1:clusters,
                   .packages = 'RLumCarlo',
@@ -174,8 +178,8 @@ on.exit(parallel::stopCluster(cl))
     results <- MC_C_TL_DELOC(
       times = times,
       b = b[1],
-      N_e = N_e[1],
-      n_filled = n_filled[1],
+      N_e = N_e[c],
+      n_filled = n_filled[c],
       R = R[1],
       E = E[1],
       s = s[1])

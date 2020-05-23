@@ -31,6 +31,7 @@
 #' @param clusters [numeric] (*with default*): The number of created clusters for the MC runs
 #'
 #' @param N_e [numeric] (*width default*): The total number of electron traps available (dimensionless).
+#' Can be a vector of `length(clusters)`, shorter values are recycled.
 #'
 #' @param r_c [numeric] (*with default*): Critical distance (>0) that must be provided if the
 #' sample has been thermally and/or optically pretreated. This parameter expresses the fact
@@ -116,6 +117,9 @@ on.exit(parallel::stopCluster(cl))
 # Setting parameters --------------------------------------------------------------------------
 r <- seq(abs(r_c[1]), 2, abs(delta.r[1]))
 
+# Expand parameters -------------------------------------------------------
+N_e <- rep(N_e, length.out = clusters)
+
 # Run model -----------------------------------------------------------------------------------
 temp <- foreach(
   c = 1:clusters,
@@ -125,10 +129,10 @@ temp <- foreach(
 ) %dopar% {
   results <- MC_C_CW_IRSL_TUN(
     times = times,
-    N_e = N_e,
+    N_e = N_e[c],
     r = r,
-    rho = rho,
-    A = A
+    rho = rho[1],
+    A = A[1]
   )
 
   return(results[[output]])

@@ -35,7 +35,7 @@
 #' @param clusters [numeric] (*with default*): The number of created clusters for the MC runs
 #'
 #' @param n_filled [integer] (*with default*): The number of filled electron traps at
-#' the beginning of the simulation (dimensionless)
+#' the beginning of the simulation (dimensionless). Can be a vector of `length(clusters)`, shorter values are recycled.
 #'
 #' @param r [numeric] (*with default*): The localized retrapping ratio (dimensionless)
 #'
@@ -113,6 +113,9 @@ run_MC_TL_LOC <- function(
 cl <- .registerClusters(method, ...)
 on.exit(parallel::stopCluster(cl))
 
+# Expand parameters -------------------------------------------------------
+n_filled <- rep(n_filled, length.out = clusters)
+
 # Run model -----------------------------------------------------------------------------------
   temp <- foreach(c = 1:clusters,
                   .packages = 'RLumCarlo',
@@ -122,10 +125,10 @@ on.exit(parallel::stopCluster(cl))
     results <- MC_C_TL_LOC(
       times = times,
       b = b[1],
-      n_filled = n_filled,
-      r = r,
-      E = E,
-      s = s)
+      n_filled = n_filled[c],
+      r = r[1],
+      E = E[1],
+      s = s[1])
 
     return(results[[output]])
 
