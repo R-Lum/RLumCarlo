@@ -71,3 +71,48 @@ comb_array <- function(...) abind::abind(..., along = 3)
   return(cl)
 }
 
+
+#'@title Distribute electrons over cluster (helper function)
+#'
+#'@description Once the cluster system is created, the number of
+#'total electrons needs to be distributed over the cluster, according
+#'the number of cluster groups. This function does the job for it.
+#'
+#'@param clusters [list] (**required**): output from [create_Clusters]
+#'
+#'@param N_system [numeric] (**required**): total number of electrons in the
+#'system created by [create_Clusters]
+#'
+#'@author Sebastian Kreutzer, Geography & Earth Sciences, Aberystwyth University (United Kingdom)
+#'
+#'@md
+#'@noRd
+.distribute_electrons <- function(clusters, N_system){
+  ## get number of elements per group using a lookup table
+  cl_groups <- table(clusters$cl_groups)[clusters$cl_groups]
+
+  ## get number of cluster groups
+  n_group <- max(clusters$cl_groups)
+
+  ## generate data.fame with electrons per cluster
+  df <- data.frame(
+    GROUP = clusters$cl_groups,
+    N_TOTAL = N_system[1],
+    e_in_GROUP = N_system[1] / n_group,
+    cl_in_GROUP = as.numeric(cl_groups),
+    e_in_cluster = round((N_system / n_group) / as.numeric(cl_groups), 0)
+  )
+
+  ## distribute missing or superfluous electrons
+  ## background: the electron number can be only an integer value,
+  ## this is quick an dirty and sometimes the number of electrons
+  ## differ by one
+  if((e_diff <- N_system[1] - sum(df$e_in_cluster)) != 0) {
+    e_count <- e_diff / abs(e_diff)
+    id <- sample(1:nrow(df), size = abs(e_diff), replace = FALSE)
+    df[["e_in_cluster"]][id] <- df[["e_in_cluster"]][id] + e_count
+    df[["e_in_cluster"]][df[["e_in_cluster"]][id] < 0] <- 0
+  }
+
+  return(df)
+}

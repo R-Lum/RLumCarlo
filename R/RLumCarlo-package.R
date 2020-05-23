@@ -50,7 +50,7 @@
 #'
 #' @import methods magrittr foreach parallel doParallel
 #' @importFrom grDevices adjustcolor rainbow
-#' @importFrom graphics plot lines polygon grid par legend
+#' @importFrom graphics plot lines polygon grid par legend mtext
 #' @importFrom Rcpp evalCpp
 #' @importFrom utils modifyList
 #' @useDynLib RLumCarlo, .registration = TRUE
