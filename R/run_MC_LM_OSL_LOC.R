@@ -26,7 +26,7 @@
 #'
 #' @param times [numeric] (*with default*): The sequence of time steps within the simulation (s)
 #'
-#' @param clusters [numeric] (*with default*): The number of created clusters for the MC runs
+#' @param clusters [numeric] (*with default*): The number of created clusters for the MC runs. The input can be the output of [create_ClusterSystem]. In that case `n_filled` indicate absolute numbers of a system.
 #'
 #' @param n_filled [integer] (*with default*): The number of filled electron traps at the
 #' beginning of the simulation (dimensionless). Can be a vector of `length(clusters)`, shorter values are recycled.
@@ -105,11 +105,20 @@ run_MC_LM_OSL_LOC <- function(
 cl <- .registerClusters(method, ...)
 on.exit(parallel::stopCluster(cl))
 
+# Enable dosimetric cluster system -----------------------------------------
+if(class(clusters)[1] == "RLumCarlo_ClusterSystem"){
+  n_filled <- .distribute_electrons(
+    clusters = clusters,
+    N_system = n_filled[1])[["e_in_cluster"]]
+  clusters <- clusters$cl_groups
+
+}
+
 # Expand parameters -------------------------------------------------------
-n_filled <- rep(n_filled, length.out = clusters)
+n_filled <- rep(n_filled, length.out = max(clusters))
 
 # Run model -----------------------------------------------------------------------------------
-  temp <- foreach(c = 1:clusters,
+  temp <- foreach(c = 1:max(clusters),
                   .packages = 'RLumCarlo',
                   .combine = 'comb_array',
                   .multicombine = TRUE) %dopar% {

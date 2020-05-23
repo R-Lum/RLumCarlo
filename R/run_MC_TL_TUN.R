@@ -39,7 +39,7 @@
 #'
 #' @param b [numeric] (*with default*): the heating rate in K/s
 #'
-#' @param clusters [numeric] (*with default*): The number of created clusters for the MC runs
+#' @param clusters [numeric] (*with default*): The number of created clusters for the MC runs. The input can be the output of [create_ClusterSystem]. In that case `n_filled` indicate absolute numbers of a system.
 #'
 #' @param N_e [numeric] (*with default*): The total number of electron traps available (dimensionless). Can be a vector of `length(clusters)`, shorter values are recycled.
 #'
@@ -143,13 +143,21 @@ on.exit(parallel::stopCluster(cl))
 # Setting parameters --------------------------------------------------------------------------
 r <- seq(abs(r_c), 2, abs(delta.r))
 
-# Expand parameters -------------------------------------------------------
-N_e <- rep(N_e, length.out = clusters)
+# Enable dosimetric cluster system -----------------------------------------
+if(class(clusters)[1] == "RLumCarlo_ClusterSystem"){
+  N_e <- .distribute_electrons(
+    clusters = clusters,
+    N_system = N_e[1])[["e_in_cluster"]]
+  clusters <- clusters$cl_groups
 
+}
+
+# Expand parameters -------------------------------------------------------
+N_e <- rep(N_e, length.out = max(clusters))
 
 # Run model -----------------------------------------------------------------------------------
   temp <- foreach(
-    c = 1:clusters,
+    c = 1:max(clusters),
     .packages = 'RLumCarlo',
     .combine = 'comb_array',
     .multicombine = TRUE

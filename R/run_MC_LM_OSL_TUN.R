@@ -133,13 +133,22 @@ on.exit(parallel::stopCluster(cl))
 # Setting parameters --------------------------------------------------------------------------
 r <- seq(abs(r_c), 2, abs(delta.r))
 
-# Expand parameters -------------------------------------------------------
-N_e <- rep(N_e, length.out = clusters)
 
+# Enable dosimetric cluster system -----------------------------------------
+if(class(clusters)[1] == "RLumCarlo_ClusterSystem"){
+  N_e <- .distribute_electrons(
+    clusters = clusters,
+    N_system = N_e[1])[["e_in_cluster"]]
+  clusters <- clusters$cl_groups
+
+}
+
+# Expand parameters -------------------------------------------------------
+N_e <- rep(N_e, length.out = max(clusters))
 
 # Run model -----------------------------------------------------------------------------------
   temp <- foreach(
-    c = 1:clusters,
+    c = 1:max(clusters),
     .packages = 'RLumCarlo',
     .combine = 'comb_array',
     .multicombine = TRUE
