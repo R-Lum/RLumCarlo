@@ -42,7 +42,8 @@ that electron-hole pairs within a critical radius \code{r_c} have already recomb
 \item{delta.r}{\link{numeric} (\emph{with default}): Fractional change of the dimensionless distance
 of nearest recombination centres (r')}
 
-\item{N_e}{\link{numeric} (\emph{width default}): The total number of electron traps available (dimensionless).}
+\item{N_e}{\link{numeric} (\emph{width default}): The total number of electron traps available (dimensionless).
+Can be a vector of \code{length(clusters)}, shorter values are recycled.}
 
 \item{method}{\link{character} (\emph{with default}): Sequential \code{'seq'} or parallel \code{'par'}processing. In
 the parallel mode the function tries to run the simulation on multiple CPU cores (if available) with

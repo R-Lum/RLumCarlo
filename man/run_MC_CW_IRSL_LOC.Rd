@@ -24,7 +24,7 @@ run_MC_CW_IRSL_LOC(
 \item{clusters}{\link{numeric} (\emph{with default}): The number of created clusters for the MC runs}
 
 \item{n_filled}{\link{integer} (\emph{with default}): The number of filled electron traps at the beginning
-of the simulation (dimensionless)}
+of the simulation (dimensionless). Can be a vector of \code{length(clusters)}, shorter values are recycled.}
 
 \item{r}{\link{numeric} (\emph{with default}): The retrapping ratio for localized transitions}
 

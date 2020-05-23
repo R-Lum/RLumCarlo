@@ -31,10 +31,10 @@ The default heating rate is set to 1 K/s. The final temperature is \code{max(tim
 
 \item{clusters}{\link{numeric} (\emph{with default}): The number of created clusters for the MC runs}
 
-\item{N_e}{\link{integer} (\emph{with default}): The total number of electron traps available (dimensionless)}
+\item{N_e}{\link{integer} (\emph{with default}): The total number of electron traps available (dimensionless). Can be a vector of \code{length(clusters)}, shorter values are recycled.}
 
 \item{n_filled}{\link{integer} (\emph{with default}): The number of filled electron traps at the beginning
-of the simulation (dimensionless)}
+of the simulation (dimensionless). Can be a vector of \code{length(clusters)}, shorter values are recycled.}
 
 \item{R}{\link{numeric} (\emph{with default}): Re-trapping ratio for delocalized transitions}
 
@@ -71,7 +71,7 @@ s := the frequency factor in (s^-1) \cr
 t := time (s) \cr
 \eqn{k_{B}} := Boltzmann constant (8.617 x 10^-5 eV K^-1)\cr
 T := temperature (°C) \cr
-R := Delocalised retrapping ratio
+R := Delocalised retrapping ratio\cr
 n := \code{n_filled}, the instantaneous number of electrons \cr
 N := \code{N_e}, the total number of electron traps available (dimensionless) \cr
 

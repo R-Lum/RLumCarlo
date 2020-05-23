@@ -25,7 +25,7 @@ state of the trap (s^-1)}
 \item{clusters}{\link{numeric} (\emph{with default}): The number of created clusters for the MC runs}
 
 \item{n_filled}{\link{integer} (\emph{with default}): The number of filled electron traps at the
-beginning of the simulation (dimensionless)}
+beginning of the simulation (dimensionless). Can be a vector of \code{length(clusters)}, shorter values are recycled.}
 
 \item{r}{\link{numeric} (\emph{with default}): The retrapping ratio for localized transitions}
 

@@ -24,10 +24,10 @@ run_MC_LM_OSL_DELOC(
 
 \item{clusters}{\link{numeric} (\emph{with default}): The number of created clusters for the MC runs}
 
-\item{N_e}{\link{integer} (\emph{with default}): The total number of electron traps available (dimensionless)}
+\item{N_e}{\link{integer} (\emph{with default}): The total number of electron traps available (dimensionless). Can be a vector of \code{length(clusters)}, shorter values are recycled.}
 
 \item{n_filled}{\link{integer} (\emph{with default}): The number of filled electron traps at the beginning
-of the simulation (dimensionless)}
+of the simulation (dimensionless). Can be a vector of \code{length(clusters)}, shorter values are recycled.}
 
 \item{R}{\link{numeric} (\emph{with default}): The retrapping ratio for delocalized transitions}
 
