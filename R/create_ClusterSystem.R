@@ -69,7 +69,7 @@ create_ClusterSystem <- function(n = 100, h = 0.5, plot = FALSE){
       zlab = "Distance [a.u.]",
       main = paste0("Cluster system (n = ",n,")")
     )
-    mtext(side = 3, text = paste0("h = ",h," | n_clusters = ", max(unique(cl_groups))))
+    mtext(side = 3, text = paste0("h = ",h," | n_groups = ", max(unique(cl_groups))))
  }
 
 # Return ------------------------------------------------------------------

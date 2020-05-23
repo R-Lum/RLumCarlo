@@ -1,4 +1,7 @@
 "Name","Title","Description","Version","m.Date","m.Time","Author","Citation"
+"create_ClusterSystem","Create dosimetric cluster system","In order to allow interaction of an spatial a correlation clusters in RLumCarlo, first a dosimetric system needs to be created in a three-dimensional space, which is the purpose of this function.","0.1.0
+",NA,NA,"Sebastian Kreutzer, Geography & Earth Sciences, Aberystwyth University (United Kingdom)<br />","Kreutzer, S., 2020. create_ClusterSystem(): Create dosimetric cluster system. Function version 0.1.0. In: Friedrich, J., Kreutzer, S., Pagonis, V., Schmidt, C., 2020. RLumCarlo: Monte-Carlo Methods for Simulating Luminescence Phenomena. R package version 0.1.0. 
+"
 "methods_RLumCarlo","methods_RLumCarlo","Methods for S3-generics implemented for the package 'RLumCarlo'.",NA,NA,NA,"Sebastian Kreutzer, Geography & Earth Sciences, Aberystwyth University (United Kingdom),<br /> Johannes Friedrich, University of Bayreuth (Germany),<br />","Kreutzer, S., Friedrich, J., 2020. methods_RLumCarlo(): methods_RLumCarlo. In: Friedrich, J., Kreutzer, S., Pagonis, V., Schmidt, C., 2020. RLumCarlo: Monte-Carlo Methods for Simulating Luminescence Phenomena. R package version 0.1.0. 
 "
 "plot_RLumCarlo","Plot RLumCarlo Monte-Carlo Simulation Results","Visualise 'RLumCarlo' modelling results without extracting the values manually. Typically visualised are the averaged signal or the number of remaining electrons, with a polygon indicating modelling uncertainties.","0.1.0

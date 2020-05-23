@@ -27,7 +27,7 @@ run_MC_CW_IRSL_TUN(
 
 \item{times}{\link{numeric} (\emph{with default}): The sequence of time steps within the simulation (s).}
 
-\item{clusters}{\link{numeric} (\emph{with default}): The number of created clusters for the MC runs}
+\item{clusters}{\link{numeric} (\emph{with default}): The number of created clusters for the MC runs. The input can be the output of \link{create_ClusterSystem}. In that case \code{n_filled} indicate absolute numbers of a system.}
 
 \item{r_c}{\link{numeric} (\emph{with default}): Critical distance (>0) that must be provided if the
 sample has been thermally and/or optically pretreated. This parameter expresses the fact

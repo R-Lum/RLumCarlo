@@ -285,6 +285,30 @@ legend(
 )
 ```
 
-# References {-}
+## Example 4: Dosimetric cluster systems
+\`RLumCarlo' supports the simulation of a cheap dosimetric cluster system with 
+spatial correlation. Such a dosimetric cluster system can be created with the 
+function `create_ClusterSystem()`:
 
+```{r, fig.height=4.5, fig.width=4.5, fig.align='center'}
+clusters <- create_ClusterSystem(n = 100, plot = TRUE)
+```
+The result is an arbitrary dosimetric system with randomly distributed clusters. The Euclidean distance is used to group the clusters (colour code). To use the system in the simulation, instead of providing a scalar as input to `clusters`, the output of `create_ClusterSystem()` can be injected in every `run_MC` function.
+
+```{r, echo = TRUE, fig.align='center', cache = TRUE, fig.height=4, fig.width=5}
+run_MC_TL_LOC(
+ s = 1e14,
+ E = 0.9,
+ times = 0:100,
+ b = 1,
+ n_filled = 1000,
+ method = "seq",
+ clusters = clusters,
+ r = 1) %>%
+plot_RLumCarlo()
+```
+
+Please note: For the simulation of a dosimetric cluster system, the meaning of `n_filled` changes. Instead of defining the number of electrons per cluster, it becomes the total number of electrons in the system. Electrons are distributed according to the grouping of the single clusters (the colours in the three-dimensional scatter plot). Within one group, electrons are distributed evenly. 
+
+# References {-}
 

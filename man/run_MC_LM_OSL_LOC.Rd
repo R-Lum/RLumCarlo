@@ -22,7 +22,7 @@ state of the trap (s^-1)}
 
 \item{times}{\link{numeric} (\emph{with default}): The sequence of time steps within the simulation (s)}
 
-\item{clusters}{\link{numeric} (\emph{with default}): The number of created clusters for the MC runs}
+\item{clusters}{\link{numeric} (\emph{with default}): The number of created clusters for the MC runs. The input can be the output of \link{create_ClusterSystem}. In that case \code{n_filled} indicate absolute numbers of a system.}
 
 \item{n_filled}{\link{integer} (\emph{with default}): The number of filled electron traps at the
 beginning of the simulation (dimensionless). Can be a vector of \code{length(clusters)}, shorter values are recycled.}
