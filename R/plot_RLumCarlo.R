@@ -20,6 +20,9 @@
 #' values are `range`, `sd` (standard deviation) and `var` (variance). `NULL` disables the uncertainty
 #' visualisation.
 #'
+#' @param FUN [function] (*optional*): own function that can be applied to the
+#' y-values before normalisation and plotting
+#'
 #' @param norm [logical] (*with default*): normalise curve to the highest intensity value
 #'
 #' @param add [logical] (*with default*): allows overplotting of results by adding curves to
@@ -35,8 +38,26 @@
 #'
 #' @section Function version: 0.1.0
 #'
-#' @author Johannes Friedrich, University of Bayreuth (Germany),
-#' Sebastian Kreutzer, Geography & Earth Sciences, Aberystwyth University (United Kingdom)
+#' @author Sebastian Kreutzer, Geography & Earth Sciences, Aberystwyth University (United Kingdom)\cr
+#' Johannes Friedrich, University of Bayreuth (Germany)
+#'
+#' @examples
+#' ## plain plot
+#' DELOC <- run_MC_TL_DELOC(
+#'   s = 3.5e12,
+#'   E = 1.45,
+#'   R = 0.1,
+#'   method = 'seq',
+#'   clusters = 100,
+#'   times = 150:350) %T>%
+#' plot_RLumCarlo(legend = TRUE)
+#'
+#' ## TL with FUN to correct for thermal
+#' ## quenching
+#' f <- function(x) x * 1/(1 + (2e+6 * exp(-0.55/(8.617e-5 * (DELOC$time + 273)))))
+#' plot_RLumCarlo(
+#'  object = DELOC,
+#'  FUN = f)
 #'
 #' @keywords hplot
 #' @md
@@ -45,6 +66,7 @@ plot_RLumCarlo <- function(
   object,
   plot_value = "mean",
   plot_uncertainty = "range",
+  FUN = NULL,
   norm = FALSE,
   add = FALSE,
   ...){
@@ -101,6 +123,7 @@ plot_RLumCarlo <- function(
         object[[i]],
         plot_value = plot_value,
         plot_uncertainty = plot_uncertainty,
+        FUN = FUN,
         norm = norm,
         add = add[i],
         ylim = if(norm) c(0,1) else range(plot_settings$ylim),
@@ -158,6 +181,20 @@ plot_RLumCarlo <- function(
 
   ## set times
   times <- object[["time"]]
+
+  ## apply FUN
+  if(!is.null(FUN) && is.function(FUN)){
+    if(is.null(formals(FUN)))
+      stop("[plot_RLumCarlo()] FUN has no argument!", call. = FALSE)
+
+    ## apply function
+    avg <- FUN(avg)
+
+    if(!is.null(y_min) && !is.null(y_max)){
+      y_min <- FUN(y_min)
+      y_max <- FUN(y_max)
+    }
+  }
 
   if(norm){ # normalization
     avg <- avg / max(avg)
