@@ -55,7 +55,7 @@ summary.RLumCarlo_Model_Output <- function(object, verbose = TRUE, ...){
         sum(signal[x,])
       }, FUN.VALUE = 1)
 
-      mean <- y_min <- y_max <- sd <- var <- sum_signal
+      mean <- total_sum <- y_min <- y_max <- sd <- var <- sum_signal
 
     } else {
       ## extract number of clusters
@@ -71,7 +71,7 @@ summary.RLumCarlo_Model_Output <- function(object, verbose = TRUE, ...){
       }, numeric(length(times)))
 
       ##calculate parameters
-      sum <- rowSums(sum_signal)
+      total_sum <- rowSums(sum_signal)
       mean <- rowMeans(sum_signal)
       sd <- apply(sum_signal, 1, sd)
       var <- apply(sum_signal, 1, var)
@@ -88,7 +88,7 @@ summary.RLumCarlo_Model_Output <- function(object, verbose = TRUE, ...){
     y_max = y_max,
     sd = sd,
     var = var,
-    sum = sum
+    sum = total_sum
   )
   attr(output, "model") <- attributes(object)$model
 
@@ -149,3 +149,6 @@ c.RLumCarlo_Model_Output <- function(...){
     time = objects[[1]]$time,
     model = attr(objects[[1]], which = "model"))
 }
+
+
+summary(ojbect)
