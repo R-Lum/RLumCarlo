@@ -150,5 +150,3 @@ c.RLumCarlo_Model_Output <- function(...){
     model = attr(objects[[1]], which = "model"))
 }
 
-
-summary(ojbect)
