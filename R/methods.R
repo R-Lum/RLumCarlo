@@ -61,7 +61,8 @@ summary.RLumCarlo_Model_Output <- function(object, verbose = TRUE, ...){
       ## extract number of clusters
       clusters <- dim(signal)[3]
 
-      ##get sum signal
+      ##get sum signal (this is used for the tunnelling case)
+      ##otherwise we do not really sum
       sum_signal <- vapply(1:clusters, function(y){
         vapply(1:length(times), function(x){
           sum(signal[x,,y])
@@ -69,6 +70,8 @@ summary.RLumCarlo_Model_Output <- function(object, verbose = TRUE, ...){
 
       }, numeric(length(times)))
 
+      ##calculate parameters
+      sum <- rowSums(sum_signal)
       mean <- rowMeans(sum_signal)
       sd <- apply(sum_signal, 1, sd)
       var <- apply(sum_signal, 1, var)
@@ -77,9 +80,16 @@ summary.RLumCarlo_Model_Output <- function(object, verbose = TRUE, ...){
 
     }
 
-
   ## set output data.frame
-  output <- data.frame(time = times, mean = mean, y_min = y_min, y_max = y_max, sd = sd, var = var)
+  output <- data.frame(
+    time = times,
+    mean = mean,
+    y_min = y_min,
+    y_max = y_max,
+    sd = sd,
+    var = var,
+    sum = sum
+  )
   attr(output, "model") <- attributes(object)$model
 
   ## return the summary as terminal output from the data.frame
