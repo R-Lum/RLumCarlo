@@ -8,6 +8,7 @@ plot_RLumCarlo(
   object,
   plot_value = "mean",
   plot_uncertainty = "range",
+  FUN = NULL,
   norm = FALSE,
   add = FALSE,
   ...
@@ -25,6 +26,9 @@ Allowed are \code{mean} (the default) and \code{sum} (meaningful if different sy
 \item{plot_uncertainty}{\link{character} (\emph{with default}): type of the displayed uncertainty. Allowed
 values are \code{range}, \code{sd} (standard deviation) and \code{var} (variance). \code{NULL} disables the uncertainty
 visualisation.}
+
+\item{FUN}{\link{function} (\emph{optional}): own function that can be applied to the
+y-values before normalisation and plotting}
 
 \item{norm}{\link{logical} (\emph{with default}): normalise curve to the highest intensity value}
 
@@ -54,13 +58,32 @@ that can be best distinguished, in particular by colour-blind users.
  0.1.0
 }
 
+\examples{
+## plain plot
+DELOC <- run_MC_TL_DELOC(
+  s = 3.5e12,
+  E = 1.45,
+  R = 0.1,
+  method = 'seq',
+  clusters = 100,
+  times = 150:350) \%T>\%
+plot_RLumCarlo(legend = TRUE)
+
+## TL with FUN to correct for thermal
+## quenching
+f <- function(x) x * 1/(1 + (2e+6 * exp(-0.55/(8.617e-5 * (DELOC$time + 273)))))
+plot_RLumCarlo(
+ object = DELOC,
+ FUN = f)
+
+}
 \author{
-Johannes Friedrich, University of Bayreuth (Germany),
-Sebastian Kreutzer, Geography & Earth Sciences, Aberystwyth University (United Kingdom)
+Sebastian Kreutzer, Geography & Earth Sciences, Aberystwyth University (United Kingdom)\cr
+Johannes Friedrich, University of Bayreuth (Germany)
 } 
 
 \section{How to cite}{
-Friedrich, J., Kreutzer, S., 2020. plot_RLumCarlo(): Plot RLumCarlo Monte-Carlo Simulation Results. Function version 0.1.0. In: Friedrich, J., Kreutzer, S., Pagonis, V., Schmidt, C., 2020. RLumCarlo: Monte-Carlo Methods for Simulating Luminescence Phenomena. R package version 0.1.0. 
+Kreutzer, S., Friedrich, J., 2020. plot_RLumCarlo(): Plot RLumCarlo Monte-Carlo Simulation Results. Function version 0.1.0. In: Friedrich, J., Kreutzer, S., Pagonis, V., Schmidt, C., 2020. RLumCarlo: Monte-Carlo Methods for Simulating Luminescence Phenomena. R package version 0.1.0. 
 }
 
 \keyword{hplot}
