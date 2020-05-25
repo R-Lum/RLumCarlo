@@ -30,6 +30,8 @@ test_that("basic run", {
   expect_silent(plot_RLumCarlo(object = results_par[[1]]))
   expect_silent(plot_RLumCarlo(object = results_par[[1]], norm = TRUE))
   expect_silent(plot_RLumCarlo(object = results_par[[1]], plot_uncertainty = NULL))
+  expect_silent(plot_RLumCarlo(object = results_par[[1]], plot_value = "sum"))
+  expect_silent(plot_RLumCarlo(object = results_par[[1]], plot_value = NULL))
   expect_silent(plot_RLumCarlo(object = results_par[[1]], plot_uncertainty = "sd"))
   expect_silent(plot_RLumCarlo(object = results_par[[1]], plot_uncertainty = "var"))
   expect_silent(plot_RLumCarlo(object = results_par[[1]], plot_uncertainty = "range"))
