@@ -25,6 +25,7 @@ test_that("basic run", {
   ## break plot function
   expect_error(plot_RLumCarlo(object = "error"), "'object' needs to be of class RLumCarlo_Model_Output!")
   expect_error(plot_RLumCarlo(object = list("error")), "At least one element in the list is not of class RLumCarlo_Model_Output!")
+  expect_error(plot_RLumCarlo(object = results_par[[1]], FUN = function(){2}), regexp = "FUN has no argument!")
 
   ## simple run, one dataset
   expect_silent(plot_RLumCarlo(object = results_par[[1]]))
@@ -35,6 +36,9 @@ test_that("basic run", {
   expect_silent(plot_RLumCarlo(object = results_par[[1]], plot_uncertainty = "sd"))
   expect_silent(plot_RLumCarlo(object = results_par[[1]], plot_uncertainty = "var"))
   expect_silent(plot_RLumCarlo(object = results_par[[1]], plot_uncertainty = "range"))
+
+  ## test FUN
+  expect_silent(plot_RLumCarlo(object = results_par[[1]], FUN = function(x) x^2))
 
   ## plot the list
   expect_silent(plot_RLumCarlo(object = results_par, main = "Test 2"))
