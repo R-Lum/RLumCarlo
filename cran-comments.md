@@ -20,7 +20,15 @@ Sebastian Kreutzer
 
 ## R CMD check --as-cran results
 
-0 errors | 0 warnings | 0 note
+0 errors | 0 warnings | 1 note
+
+The check complains about two (possibly) invalid URLSs 
+( Status: 403, Message: Forbidden)
+
+https://doi.org/10.1088/0953-8984/18/4/020
+https://doi.org/10.1088/0953-8984/24/38/385402
+
+Both URLs work find, I cannot see the problem. 
 
 ## Other notes or warnings
 
@@ -31,7 +39,7 @@ wrong with the spelling in the DESCRIPTION. It also claims that
 the url https://doi.org/10.1088/0953-8984/24/38/385402 is wrong. This url 
 works fine. 
 
-* R-3.6.3 shows the same notes
+* R-3.6.3 shows the same notes and R-4.0.0 did not send a report. 
 
 ## Test environments
 * local macOS Catalina 10.15.5, Xcode 11.5, R-devel

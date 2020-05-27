@@ -11,7 +11,7 @@ vignette: |
   %\VignetteIndexEntry{RLumCarlo - Getting started with RLumCarlo}         
   %\VignetteEncoding{UTF-8}{inputenc}
   %\VignetteEngine{knitr::rmarkdown}
-bibliography: RLumCarlo\_-\_Getting\_started\_with\_RLumCarlo.bib
+bibliography: bibliography.bib
 ---
 
 ```{r setup, include=FALSE}
