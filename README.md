@@ -13,8 +13,8 @@ various stimulation modes using Monte Carlo methods.
 
 [![Project Status:
 Concept](http://www.repostatus.org/badges/latest/active.svg)](https://www.repostatus.org/#active)
-[![CRAN](http://www.r-pkg.org/badges/version/RLumCarlo)](https://cran.r-project.org/package=RLumCarlo)
-[![Downloads](http://cranlogs.r-pkg.org/badges/grand-total/RLumCarlo)](http://www.r-pkg.org/pkg/RLumCarlo)
+[![CRAN](https://www.r-pkg.org/badges/version/RLumCarlo)](https://cran.r-project.org/package=RLumCarlo)
+[![Downloads](https://cranlogs.r-pkg.org/badges/grand-total/RLumCarlo)](https://www.r-pkg.org/pkg/RLumCarlo)
 [![Build
 Status](https://travis-ci.org/R-Lum/RLumCarlo.svg?branch=master)](https://travis-ci.org/R-Lum/RLumCarlo)
 [![Build

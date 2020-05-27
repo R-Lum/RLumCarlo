@@ -24,17 +24,24 @@ Sebastian Kreutzer
 
 ## Other notes or warnings
 
-* *winbuilder* 
+### *winbuilder* 
+
+* R-devel complains about mis-spelled words in the DESCRIPTION: There is nothing 
+wrong with the spelling in the DESCRIPTION. It also claims that 
+the url https://doi.org/10.1088/0953-8984/24/38/385402 is wrong. This url 
+works fine. 
+
+* R-3.6.3 shows the same notes
 
 ## Test environments
-* local macOS High Sierra 10.14.6, Xcode 10.3, R-devel
+* local macOS Catalina 10.15.5, Xcode 11.5, R-devel
 * on AppVeyor CI
     * i386-w64-mingw32/i386 (32-bit), R-devel
     * x86_64_w64-mingw32/64 (64-bit), R-devel
-    * x86_64_w64-mingw32/64 (64-bit), R 3.6.1 (2019-07-20)
-    * i386-w64-mingw32/i386 (32-bit), R 3.6.1 (2019-07-20)
+    * x86_64_w64-mingw32/64 (64-bit), R 4.0.0 (2020-04-24)
+    * i386-w64-mingw32/i386 (32-bit), R 4.0.0 (2020-04-24)
 * on Travis CI
     * Ubuntu 16.04.6 LTS, oldrel
     * Ubuntu 16.04.6 LTS, release
     * Ubuntu 16.04.6 LTS, devel
-    * macOS Sierra 10.13.3, Xcode 9.4.1, release
+    * macOS Sierra 10.13.6, Xcode 9.4.1, release
