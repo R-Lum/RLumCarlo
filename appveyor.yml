@@ -15,11 +15,11 @@ init:
   # Adapt as necessary starting from here
   environment:
     global:
-    WARNINGS_ARE_ERRORS: 1
+      WARNINGS_ARE_ERRORS: 1
 
   matrix:
-    - R_VERSION: devel
-      GCC_PATH: mingw_32
+  - R_VERSION: devel
+    GCC_PATH: mingw_32
 
   - R_VERSION: devel
     R_ARCH: x64
@@ -30,20 +30,20 @@ init:
 
   - R_VERSION: stable
 
-  build_script:
-    - travis-tool.sh install_deps
-    - travis-tool.sh install_r devtools
+build_script:
+  - travis-tool.sh install_deps
+  - travis-tool.sh install_r devtools
 
-  test_script:
-    - travis-tool.sh run_tests
+test_script:
+  - travis-tool.sh run_tests
 
-  on_failure:
-    - 7z a failure.zip *.Rcheck\*
-    - appveyor PushArtifact failure.zip
+on_failure:
+  - 7z a failure.zip *.Rcheck\*
+  - appveyor PushArtifact failure.zip
 
-  artifacts:
-    - path: '*.Rcheck\**\*.log'
-  name: Logs
+artifacts:
+  - path: '*.Rcheck\**\*.log'
+name: Logs
 
   - path: '*.Rcheck\**\*.out'
   name: Logs
