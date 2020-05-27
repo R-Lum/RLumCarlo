@@ -16,7 +16,9 @@ Concept](http://www.repostatus.org/badges/latest/concept.svg)](https://www.repos
 [![CRAN](http://www.r-pkg.org/badges/version/RLumCarlo)](https://cran.r-project.org/package=RLumCarlo)
 [![Downloads](http://cranlogs.r-pkg.org/badges/grand-total/RLumCarlo)](http://www.r-pkg.org/pkg/RLumCarlo)
 [![Build
-Status](https://travis-ci.com/R-Lum/RLumCarlo.svg?token=ymRxA7NeJn6EE7PixZr8&branch=master)](https://travis-ci.com/R-Lum/RLumCarlo)
+Status](https://travis-ci.org/R-Lum/RLumCarlo.svg?branch=master)](https://travis-ci.org/R-Lum/RLumCarlo)
+[![Build
+status](https://ci.appveyor.com/api/projects/status/yxsmwa86jajhtesn?svg=true)](https://ci.appveyor.com/project/RLumSK/rlumcarlo)
 [![codecov](https://codecov.io/gh/R-Lum/RLumCarlo/branch/master/graph/badge.svg?token=W0q5JUInf7)](https://codecov.io/gh/R-Lum/RLumCarlo)
 
 ## Installation
@@ -100,7 +102,7 @@ funding bodies:
 
   - From 2020, Sebastian Kreutzer received funding from the European
     Union’s Horizon 2020 research and innovation programme under the
-    Marie Skłodowska-Curie grant agreement No 844457
+    Marie Skłodowska-Curie grant agreement No 844457.
 
 ## Related projects
 
