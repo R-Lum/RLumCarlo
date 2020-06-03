@@ -116,6 +116,8 @@ plot_RLumCarlo <- function(
 
     ## here we always start with a fresh graph, otherwise we add
     ## the plots on the top
+    opar <- par(no.readonly =TRUE)
+    on.exit(par(opar))
     par(new = FALSE)
 
     for(i in 1:length(object)){

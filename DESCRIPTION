@@ -1,8 +1,8 @@
 Package: RLumCarlo
 Type: Package
 Title: Monte-Carlo Methods for Simulating Luminescence Phenomena
-Version: 0.1.0
-Date: 2020-05-27
+Version: 0.1.1
+Date: 2020-06-03
 Author: Johannes Friedrich [aut, trl] (<https://orcid.org/0000-0002-0805-9547>),
     Sebastian Kreutzer [aut, trl, cre] (<https://orcid.org/0000-0002-0734-2199>),
     Vasilis Pagonis [aut] (<https://orcid.org/0000-0002-4852-9312>),
@@ -21,9 +21,17 @@ Authors@R: c(
     person("Christian", "Laag", role = c("ctb"), comment = c(ORCID = "0000-0002-6012-1029"))
     )
 Maintainer: Sebastian Kreutzer <sebastian.kreutzer@aber.ac.uk>
-Description: A collection of functions to simulate luminescence production in dosimetric materials using Monte Carlo methods. 
-    Implemented are models for delocalised, localised and tunnelling transitions. 
-    Supported stimulation methods are TL, CW-OSL, LM-OSL, LM-IRSL, and ITL (ISO-TL).
+Description: A collection of functions to simulate luminescence production in 
+    dosimetric materials using Monte Carlo methods. Implemented are models for 
+    delocalised transitions (e.g., Chen and McKeever (1997) <doi:10.1142/2781>), 
+    localised transitions (e.g., Pagonis et al. (2019) <doi:10.1016/j.jlumin.2018.11.024>) 
+    and tunnelling transitions (Jain et al. (2012) <doi:10.1088/0953-8984/24/38/385402> 
+    and Pagonis et al. (2019) <doi:10.1016/j.jlumin.2018.11.024)>). 
+    Supported stimulation methods are thermal luminescence (TL), 
+    continuous-wave optically stimulated luminescence (CW-OSL), 
+    linerarly-modulated optically stimulated luminescence (LM-OSL), 
+    linearly-modulated infrared stimulated luminescence (LM-IRSL),
+    and isothermal luminescence (ITL or ISO-TL).
 Contact: Package Developer Team <sebastian.kreutzer@aber.ac.uk>
 License: GPL-3
 BugReports: https://github.com/R-Lum/RLumCarlo/issues

@@ -1,20 +1,45 @@
 Dear CRAN-Team, 
+Dear XXX
 
-This contribution is a new R package submission. Our package deals with the simulation of 
-luminescence production in isolators and semiconductors (e.g., natural minerals such as quartz 
-or feldspar) using different stimulation modes. In contrast to other work, which uses coupled 
-differential equations, the simulation bases on Monte-Carlo runs allowing us to estimate 
-(for the first time) the stochastic uncertainties of luminescence production. 
+This contribution is a new R package submission. The previous 
+submission was rejected with the following comments we herewith 
+address: 
 
-Each function comes with a short example, and a vignette provides further elaborated examples. 
+> Thanks, please explain all acronyms (e.g. TL, CW-OSL, LM-OSL, LM-IRSL, and ITL) in your Description text to avoid misunderstandings.
 
-Our package has no reverse dependencies and was developed and carefully tested in compliance 
-with the CRAN policy. We summarise further information on the test environment below. 
-The package is licenced under GPL-3. 
+Done. 
 
-Thank you for considering our package for publication on CRAN. 
+> If there are references describing the (theoretical background of) methods in your package, please add these in the Description field of your DESCRIPTION file in the form
+> authors (year) <doi:...>
+> authors (year) <arXiv:...>
+> authors (year, ISBN:...)
+> with no space after 'doi:', 'arXiv:' and angle brackets for auto-linking.
 
-On behalf of the package developer team, 
+Done.
+
+> Please replace \dontrun{} by \donttest{} or unwap the examples if they can be 
+executed in less than 5 sec per Rd-file.
+
+Nothing done. We have at least one running example per function (not wrapped
+in `\dontrun{}`) If we wrapped something in `\dontrun{}` it was because
+it exceeded this 5 s but we wanted to provide some longer examples 
+(obviously it depends a little bit on the computer, 
+but we did not want to push it too far and overcharge CRAN resources). 
+More examples can be found in the vignette. 
+
+>You are changing the user's par() settings in your functions. Please ensure with an immediate call of on.exit() that the settings are reset. E.g.
+>   opar <- par(no.readonly =TRUE)       # code line i
+>   on.exit(par(opar))                   # code line i+1
+
+Added as requested in code-lines 120-121 in `plot_RLumCarlo()` (the only 
+function that produces a plot output).
+
+Thank you very much for your support and the invaluable service provided
+to the R community. 
+
+On behalf of the package authors. 
+
+Best wishes, 
 
 Sebastian Kreutzer
 
@@ -38,8 +63,6 @@ Both URLs work find, I cannot see the problem.
 wrong with the spelling in the DESCRIPTION. It also claims that 
 the url https://doi.org/10.1088/0953-8984/24/38/385402 is wrong. This url 
 works fine. 
-
-* R-3.6.3 shows the same notes and R-4.0.0 did not send a report. 
 
 ## Test environments
 * local macOS Catalina 10.15.5, Xcode 11.5, R-devel
