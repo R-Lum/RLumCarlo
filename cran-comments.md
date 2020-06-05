@@ -1,13 +1,36 @@
 Dear CRAN-Team, 
-Dear XXX
+Dear XX
 
-This contribution is a new R package submission. The previous 
-submission was rejected with the following comments we herewith 
-address: 
+This contribution is a new R package submission. The previous two 
+submissions were reject (responses below). 
 
-> Thanks, please explain all acronyms (e.g. TL, CW-OSL, LM-OSL, LM-IRSL, and ITL) in your Description text to avoid misunderstandings.
+Thank you very much for your support and the invaluable service provided
+to the R community. 
 
-Done. 
+On behalf of the package authors. 
+
+Best wishes, 
+
+Sebastian Kreutzer
+
+
+## Responses to 2nd rejection
+
+> Please always use the canonical link for R packages.
+> Please fix and resubmit, and document what was changed in the submission comments.
+
+The flagged link was: `https://www.r-pkg.org/pkg/RLumCarlo`. 
+
+This is **not** a link, this is the URL to retrive the badge: 
+
+`[![CRAN](https://www.r-pkg.org/badges/version/RLumCarlo)](https://cran.r-project.org/package=RLumCarlo)`
+
+If you click on the badge the site link is: https://cran.r-project.org/package=RLumCarlo
+To be sure, I changed it now to `https://CRAN.R-project.org/package=RLumCarlo`. 
+Obviosuly it does not change the URL, but maybe this is what was meant. 
+
+
+## Responses to 1st rejection
 
 > If there are references describing the (theoretical background of) methods in your package, please add these in the Description field of your DESCRIPTION file in the form
 > authors (year) <doi:...>
@@ -33,15 +56,6 @@ More examples can be found in the vignette.
 
 Added as requested in code-lines 120-121 in `plot_RLumCarlo()` (the only 
 function that produces a plot output).
-
-Thank you very much for your support and the invaluable service provided
-to the R community. 
-
-On behalf of the package authors. 
-
-Best wishes, 
-
-Sebastian Kreutzer
 
 ## R CMD check --as-cran results
 
