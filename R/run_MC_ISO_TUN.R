@@ -13,15 +13,15 @@
 #' I_{TUN}(r',t) = -dn/dt = (s * exp(-E/(k_{B}*T_{ISO}))) * exp(-(\rho')^{-1/3} * r') * n (r',t)
 #' }
 #'
-#' Where in the function: \cr
-#' E := thermal activation energy (eV) \cr
-#' s := the effective frequency factor for the tunnelling process (s^-1) \cr
-#' \eqn{T_{ISO}} := the temperature of the isothermal experiment (°C)\cr
-#' \eqn{k_{B}} := Boltzmann constant (8.617 x 10^-5 eV K^-1)\cr
-#' r' := the dimensionless tunnelling radius \cr
-#' \eqn{\rho} := `rho` the dimensionless density of recombination centres see Huntley (2006) \cr
-#'  t := time (s) \cr
-#'  n := the instantaneous number of electrons corresponding to the radius r' \cr
+#'Where in the function: \cr
+#'E := thermal activation energy (eV) \cr
+#'s := the effective frequency factor for the tunnelling process (s^-1) \cr
+#'\eqn{T_{ISO}} := the temperature of the isothermal experiment (°C)\cr
+#'\eqn{k_{B}} := Boltzmann constant (8.617 x 10^-5 eV K^-1)\cr
+#'r' := the dimensionless tunnelling radius \cr
+#'\eqn{\rho}' := `rho` the dimensionless density of recombination centres see Huntley (2006) \cr
+#'t := time (s) \cr
+#'n := the instantaneous number of electrons corresponding to the radius r' \cr
 #'
 #' @param E [numeric] (**required**): Thermal activation energy of the trap (eV).
 #'

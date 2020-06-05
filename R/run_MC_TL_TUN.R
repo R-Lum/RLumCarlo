@@ -14,11 +14,11 @@
 #' }
 #'
 #' Where in the function: \cr
-#' s := frequency for the tunneling process (s^-1) \cr
+#' s := frequency for the tunnelling process (s^-1) \cr
 #' E := thermal activation energy (eV) \cr
 #' \eqn{k_{B}} := Boltzmann constant (8.617 x 10^-5 eV K^-1)\cr
 #' T := temperature (°C)\cr
-#' r' := the dimensionless tunneling radius \cr
+#' r' := the dimensionless tunnelling radius \cr
 #' \eqn{\rho}' := `rho'`, the dimensionless density of recombination centres (see Huntley (2006)) \cr
 #' t := time (s) \cr
 #' n := the instantaneous number of electrons at distance r'
