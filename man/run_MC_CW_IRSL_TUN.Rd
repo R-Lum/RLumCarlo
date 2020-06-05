@@ -91,7 +91,7 @@ run_MC_CW_IRSL_TUN(
 } 
 
 \section{How to cite}{
-Friedrich, J., Kreutzer, S., 2020. run_MC_CW_IRSL_TUN(): Run Monte-Carlo Simulation for CW-IRSL (tunnelling transitions). Function version 0.2.0. In: Friedrich, J., Kreutzer, S., Pagonis, V., Schmidt, C., 2020. RLumCarlo: Monte-Carlo Methods for Simulating Luminescence Phenomena. R package version 0.1.2. 
+Friedrich, J., Kreutzer, S., 2020. run_MC_CW_IRSL_TUN(): Run Monte-Carlo Simulation for CW-IRSL (tunnelling transitions). Function version 0.2.0. In: Friedrich, J., Kreutzer, S., Pagonis, V., Schmidt, C., 2020. RLumCarlo: Monte-Carlo Methods for Simulating Luminescence Phenomena. R package version 0.1.3. 
 }
 
 \references{
