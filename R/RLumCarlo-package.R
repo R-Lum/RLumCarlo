@@ -26,7 +26,7 @@
 #'  by LabEx LaScArBx (ANR - n. ANR-10-LABX-52) between 2017 and 2019.
 #'
 #'  * From 2020, Sebastian Kreutzer received funding from the European Union’s Horizon 2020
-#'  research and innovation programme under the Marie Skłodowska-Curie grant agreement No 844457
+#'  research and innovation programme under the Marie Skłodowska-Curie grant agreement No 844457.
 #'
 #' @name RLumCarlo-package
 #' @aliases RLumCarlo
