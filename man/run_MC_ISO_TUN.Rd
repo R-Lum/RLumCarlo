@@ -78,7 +78,7 @@ s := the effective frequency factor for the tunnelling process (s^-1) \cr
 \eqn{T_{ISO}} := the temperature of the isothermal experiment (°C)\cr
 \eqn{k_{B}} := Boltzmann constant (8.617 x 10^-5 eV K^-1)\cr
 r' := the dimensionless tunnelling radius \cr
-\eqn{\rho} := \code{rho} the dimensionless density of recombination centres see Huntley (2006) \cr
+\eqn{\rho}' := \code{rho} the dimensionless density of recombination centres see Huntley (2006) \cr
 t := time (s) \cr
 n := the instantaneous number of electrons corresponding to the radius r' \cr
 }
@@ -121,7 +121,7 @@ plot_RLumCarlo(results, legend = TRUE)
 } 
 
 \section{How to cite}{
-Friedrich, J., Kreutzer, S., 2020. run_MC_ISO_TUN(): Monte-Carlo Simulation for ISO-TL (tunnelling transitions). Function version 0.1.0. In: Friedrich, J., Kreutzer, S., Pagonis, V., Schmidt, C., 2020. RLumCarlo: Monte-Carlo Methods for Simulating Luminescence Phenomena. R package version 0.1.1. 
+Friedrich, J., Kreutzer, S., 2020. run_MC_ISO_TUN(): Monte-Carlo Simulation for ISO-TL (tunnelling transitions). Function version 0.1.0. In: Friedrich, J., Kreutzer, S., Pagonis, V., Schmidt, C., 2020. RLumCarlo: Monte-Carlo Methods for Simulating Luminescence Phenomena. R package version 0.1.2. 
 }
 
 \references{

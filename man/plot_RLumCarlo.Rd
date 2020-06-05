@@ -83,7 +83,7 @@ Johannes Friedrich, University of Bayreuth (Germany)
 } 
 
 \section{How to cite}{
-Kreutzer, S., Friedrich, J., 2020. plot_RLumCarlo(): Plot RLumCarlo Monte-Carlo Simulation Results. Function version 0.1.0. In: Friedrich, J., Kreutzer, S., Pagonis, V., Schmidt, C., 2020. RLumCarlo: Monte-Carlo Methods for Simulating Luminescence Phenomena. R package version 0.1.1. 
+Kreutzer, S., Friedrich, J., 2020. plot_RLumCarlo(): Plot RLumCarlo Monte-Carlo Simulation Results. Function version 0.1.0. In: Friedrich, J., Kreutzer, S., Pagonis, V., Schmidt, C., 2020. RLumCarlo: Monte-Carlo Methods for Simulating Luminescence Phenomena. R package version 0.1.2. 
 }
 
 \keyword{hplot}

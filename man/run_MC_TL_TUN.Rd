@@ -71,11 +71,11 @@ I_{TUN}(r',t) = -dn/dt = (s * exp(-E/(k_{B} * T))) * exp(-(\rho')^{-1/3} * r') *
 }
 
 Where in the function: \cr
-s := frequency for the tunneling process (s^-1) \cr
+s := frequency for the tunnelling process (s^-1) \cr
 E := thermal activation energy (eV) \cr
 \eqn{k_{B}} := Boltzmann constant (8.617 x 10^-5 eV K^-1)\cr
 T := temperature (°C)\cr
-r' := the dimensionless tunneling radius \cr
+r' := the dimensionless tunnelling radius \cr
 \eqn{\rho}' := \verb{rho'}, the dimensionless density of recombination centres (see Huntley (2006)) \cr
 t := time (s) \cr
 n := the instantaneous number of electrons at distance r'
@@ -117,7 +117,7 @@ plot_RLumCarlo(results)
 } 
 
 \section{How to cite}{
-Friedrich, J., Kreutzer, S., 2020. run_MC_TL_TUN(): Run Monte-Carlo Simulation for TL (tunnelling transitions). Function version 0.1.0. In: Friedrich, J., Kreutzer, S., Pagonis, V., Schmidt, C., 2020. RLumCarlo: Monte-Carlo Methods for Simulating Luminescence Phenomena. R package version 0.1.1. 
+Friedrich, J., Kreutzer, S., 2020. run_MC_TL_TUN(): Run Monte-Carlo Simulation for TL (tunnelling transitions). Function version 0.1.0. In: Friedrich, J., Kreutzer, S., Pagonis, V., Schmidt, C., 2020. RLumCarlo: Monte-Carlo Methods for Simulating Luminescence Phenomena. R package version 0.1.2. 
 }
 
 \references{

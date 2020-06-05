@@ -12,8 +12,8 @@ modelling luminescence production in isolators and semiconductors for
 various stimulation modes using Monte Carlo methods.
 
 [![Project Status:
-Concept](http://www.repostatus.org/badges/latest/active.svg)](https://www.repostatus.org/#active)
-[![CRAN](https://www.r-pkg.org/badges/version/RLumCarlo)](https://cran.r-project.org/package=RLumCarlo)
+Concept](https://www.repostatus.org/badges/latest/active.svg)](https://www.repostatus.org/#active)
+[![CRAN](https://www.r-pkg.org/badges/version/RLumCarlo)](https://CRAN.R-project.org/package=RLumCarlo)
 [![Downloads](https://cranlogs.r-pkg.org/badges/grand-total/RLumCarlo)](https://www.r-pkg.org/pkg/RLumCarlo)
 [![Build
 Status](https://travis-ci.org/R-Lum/RLumCarlo.svg?branch=master)](https://travis-ci.org/R-Lum/RLumCarlo)
