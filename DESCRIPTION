@@ -9,7 +9,7 @@ Author: Johannes Friedrich [aut, trl] (<https://orcid.org/0000-0002-0805-9547>),
     Christoph Schmidt [aut] (<https://orcid.org/0000-0002-2309-3209>),
     Christian Laag [ctb] (<https://orcid.org/0000-0002-6012-1029>),
     Ena Rajovic [ctb],
-    Alex Roy Duncan [ctb],
+    Alex Roy Duncan [ctb]
 Authors@R: c(
     person("Johannes", "Friedrich", role = c("aut","trl"), comment = c(ORCID = "0000-0002-0805-9547")),
     person("Sebastian", "Kreutzer", role = c("aut","trl","cre"), comment = c(ORCID = "0000-0002-0734-2199"),
