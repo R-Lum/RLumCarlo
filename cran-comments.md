@@ -1,18 +1,24 @@
 Dear CRAN-Team, 
 Dear XX
 
-This contribution is a new R package submission. The previous two 
-submissions were reject (responses below). 
+This contribution is a new R package submission. The previous three
+submissions were rejected (responses below). 
 
-Thank you very much for your support and the invaluable service provided
-to the R community. 
+Thank you very much for your support and the invaluable service 
+provided to the R community. 
 
-On behalf of the package authors. 
+On behalf of the package authors, best wishes, 
 
 Best wishes, 
 
 Sebastian Kreutzer
 
+## Responses to 3rd rejection
+
+>  Possibly mis-spelled words in DESCRIPTION:
+>  linerarly (32:5)
+
+Done and I am very sorry for the extra round and the trouble.
 
 ## Responses to 2nd rejection
 
