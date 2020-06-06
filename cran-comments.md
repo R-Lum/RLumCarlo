@@ -1,21 +1,18 @@
 Dear CRAN-Team, 
 
-This replaces RLumCarlo 0.1.3 currently under inspection by the CRAN Team. 
+This replaces RLumCarlo v0.1.3 currently under inspection by the CRAN Team. 
 
-After my submission yesterday I realised a couple of other, new, problems
-with links and possibliy misspelled words. To avoid wasting the time of the 
-CRAN Team the following measures were implemented: 
+After my submission yesterday, I realised a couple of other problems with links and possibly misspelt words. This will likely lead to another rejection of my submission. 
+The following measures are now implemented, to avoid wasting more time of the CRAN Team: 
 
 * The package now uses a WORDLIST and unit test with the package 'spelling'
-* Misspelled words were corrected
-* I removed all 'bad' DOIs from the manual, except for the DESCRIPTION file 
-(where it was requested by the CRAN Team). 
+* All flagged misspelt words were corrected
+* I removed all 'bad' DOIs from the manual, except for the DESCRIPTION file (where it was requested by the CRAN Team). 
+* The corresponding references are still correctly mentioned in the manual, but not anymore linked through a DOI. However, I notified the publisher, and I will add these DOIs again as soon as the underlying problem got solved.
 
-* The correspoding references are still correctly mentioned, but not anymore linked 
-through an DOI. However, I notified the publisher about the problem 
-and I will add these DOIs again as soon as the underlying problem got solved.
+Thank you very much for your patience and support!
 
-Best wishes, 
+On behalf of the RLumCarlo package developer team, best wishes, 
 
 Sebastian Kreutzer
 
@@ -73,22 +70,20 @@ function that produces a plot output).
 
 0 errors | 0 warnings | 1 note
 
-The check complains about two (possibly) invalid URLSs 
-( Status: 403, Message: Forbidden)
+> Found the following (possibly) invalid DOIs:
+>  DOI: 10.1088/0953-8984/24/38/385402
+>      From: DESCRIPTION
+>      Status: Bad Request
+>      Message: 400
 
-https://doi.org/10.1088/0953-8984/18/4/020
-https://doi.org/10.1088/0953-8984/24/38/385402
-
-Both URLs work find, I cannot see the problem. 
+This URL works.
 
 ## Other notes or warnings
 
 ### *winbuilder* 
 
-* R-devel complains about mis-spelled words in the DESCRIPTION: There is nothing 
-wrong with the spelling in the DESCRIPTION. It also claims that 
-the url https://doi.org/10.1088/0953-8984/24/38/385402 is wrong. This url 
-works fine. 
+* R-devel complains about misspelt words in the DESCRIPTION: There is,
+not to our knowledge wrong with the spelling in the DESCRIPTION.
 
 ## Test environments
 * local macOS Catalina 10.15.5, Xcode 11.5, R-devel

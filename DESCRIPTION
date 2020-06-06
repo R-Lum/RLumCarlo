@@ -58,6 +58,6 @@ Suggests:
   R.rsp (>= 0.43.2),
   testthat (>= 2.3.2)
 Encoding: UTF-8
-Language: en-US
+Language: en-GB
 VignetteBuilder: R.rsp
 RoxygenNote: 7.1.0
