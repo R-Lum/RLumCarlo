@@ -25,9 +25,9 @@
 #'
 #' @param E [numeric] (**required**): Thermal activation energy of the trap (eV)
 #'
-#' @param s [list] (**required**): The effective frequency factor for the tunneling process (s^-1)
+#' @param s [list] (**required**): The effective frequency factor for the tunnelling process (s^-1)
 #'
-#' @param rho [numeric] (**required**): The dimensionless density of recombination centers
+#' @param rho [numeric] (**required**): The dimensionless density of recombination centres
 #' (defined as \eqn{\rho}' in Huntley 2006)
 #'
 #' @param r_c [numeric] (*with default*): Critical distance (>0) that is to be used if
@@ -65,7 +65,7 @@
 #'
 #' @references
 #' Huntley, D.J., 2006. An explanation of the power-law decay of luminescence.
-#' Journal of Physics: Condensed Matter, 18(4), 1359. \doi{10.1088/0953-8984/18/4/020}
+#' Journal of Physics: Condensed Matter, 18(4), 1359.
 #'
 #' Pagonis, V. and Kulp, C., 2017. Monte Carlo simulations of tunneling
 #' phenomena and nearest neighbor hopping mechanism in feldspars.
@@ -82,7 +82,7 @@
 #'
 #' Jain, M., Guralnik, B., Andersen, M.T., 2012. Stimulated luminescence emission from
 #' localized recombination in randomly distributed defects.
-#' J. Phys.: Condens. Matter 24, 385402. \doi{10.1088/0953-8984/24/38/385402}
+#' Journal of Physics: Condensed Matter 24, 385402.
 #'
 #' @examples
 #' ## the short example
