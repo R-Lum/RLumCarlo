@@ -2,7 +2,7 @@ Package: RLumCarlo
 Type: Package
 Title: Monte-Carlo Methods for Simulating Luminescence Phenomena
 Version: 0.1.3
-Date: 2020-06-05
+Date: 2020-06-06
 Author: Johannes Friedrich [aut, trl] (<https://orcid.org/0000-0002-0805-9547>),
     Sebastian Kreutzer [aut, trl, cre] (<https://orcid.org/0000-0002-0734-2199>),
     Vasilis Pagonis [aut] (<https://orcid.org/0000-0002-4852-9312>),
@@ -53,9 +53,11 @@ Imports:
   Rcpp (>= 1.0.4),
   scatterplot3d (>= 0.3),
   stats
-Suggests: 
+Suggests:
+  spelling (>= 2.1), 
   R.rsp (>= 0.43.2),
   testthat (>= 2.3.2)
 Encoding: UTF-8
+Language: en-US
 VignetteBuilder: R.rsp
 RoxygenNote: 7.1.0
