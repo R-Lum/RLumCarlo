@@ -1,13 +1,19 @@
 Dear CRAN-Team, 
-Dear XX
 
-This contribution is a new R package submission. The previous three
-submissions were rejected (responses below). 
+This replaces RLumCarlo 0.1.3 currently under inspection by the CRAN Team. 
 
-Thank you very much for your support and the invaluable service 
-provided to the R community. 
+After my submission yesterday I realised a couple of other, new, problems
+with links and possibliy misspelled words. To avoid wasting the time of the 
+CRAN Team the following measures were implemented: 
 
-On behalf of the package authors, best wishes, 
+* The package now uses a WORDLIST and unit test with the package 'spelling'
+* Misspelled words were corrected
+* I removed all 'bad' DOIs from the manual, except for the DESCRIPTION file 
+(where it was requested by the CRAN Team). 
+
+* The correspoding references are still correctly mentioned, but not anymore linked 
+through an DOI. However, I notified the publisher about the problem 
+and I will add these DOIs again as soon as the underlying problem got solved.
 
 Best wishes, 
 
