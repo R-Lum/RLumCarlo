@@ -8,11 +8,11 @@ header-includes:
 
 ## RLumCarlo `r RLumBuild::.get_pkg_version()` (`r Sys.Date()`)
 
-* CRAN request correction: Misspelled word in DESCRIPTION corrected
+* CRAN request correction: Misspelled word in `DESCRIPTION` corrected
 
 ## RLumCarlo 0.1.2 (2020-06-03)
 
-* CRAN request corrections, the package URL in the README.md became a little bit more canonical 
+* CRAN request corrections, the package URL in the `README.md` became a little bit more canonical 
 using capital letters for `CRAN` and `R`.
 
 ## RLumCarlo 0.1.1 (2020-06-03)

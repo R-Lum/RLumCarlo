@@ -40,9 +40,8 @@ electrons <- data.frame(
 
 # Scope
 
-\`RLumCarlo' is a collection of energy-band models to simulate luminescence signals in dosimeteric materials
-using Monte-Carlo (MC) methods for various stimulation modes. This document aims at supplementing 
-the package documentation and elaborating the package examples. 
+\`RLumCarlo' is a collection of energy-band models to simulate luminescence signals in dosimetric materials
+using Monte-Carlo (MC) methods for various stimulation modes. This document aims at supplementing the package documentation and elaborating the package examples. 
 
 # The models in \`RLumCarlo'
 
@@ -124,7 +123,7 @@ Simulation results are stored in the object `results` while, at the same time, p
 ### Model the signal  
  
 The most obvious modelling output is the luminescence signal itself, our example below simulates an 
-iso-thermal (ITL) signal for a temperature (`T`) of 200 $^{\circ}$C over 
+iso-thermal (ITL) signal for a temperature (`T`) of 200 °C over 
 5,000 s using a tunnelling transition model. Trap parameters are $E = 1.2$ eV for the trap 
 depth and a frequency factor of $1\times10^{10}$ (1/s). The parameter `rho` ($\rho'$) defines the 
 recombination centre density. 

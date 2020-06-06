@@ -113,7 +113,7 @@ Friedrich, J., Kreutzer, S., 2020. run_MC_LM_OSL_TUN(): Run Monte-Carlo Simulati
 
 \references{
 Huntley, D.J., 2006. An explanation of the power-law decay of luminescence.
-Journal of Physics: Condensed Matter, 18(4), 1359.\doi{10.1088/0953-8984/18/4/020}
+Journal of Physics: Condensed Matter, 18(4), 1359.
 
 Pagonis, V. and Kulp, C., 2017. Monte Carlo simulations of tunneling phenomena
 and nearest neighbor hopping mechanism in feldspars. Journal of Luminescence 181, 114–120.
@@ -129,7 +129,7 @@ Aitken, M.J., 1985. Thermoluminescence dating. Academic Press.
 
 Jain, M., Guralnik, B., Andersen, M.T., 2012. Stimulated luminescence emission from
 localized recombination in randomly distributed defects.
-J. Phys.: Condens. Matter 24, 385402. \doi{10.1088/0953-8984/24/38/385402}
+Journal of Physics: Condensed Matter 24, 385402.
 }
 \author{
 Johannes Friedrich, University of Bayreuth (Germany),

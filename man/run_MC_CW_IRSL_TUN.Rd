@@ -96,7 +96,7 @@ Friedrich, J., Kreutzer, S., 2020. run_MC_CW_IRSL_TUN(): Run Monte-Carlo Simulat
 
 \references{
 Huntley, D.J., 2006. An explanation of the power-law decay of luminescence.
-Journal of Physics: Condensed Matter, 18(4), 1359. \doi{10.1088/0953-8984/18/4/020}
+Journal of Physics: Condensed Matter, 18(4), 1359.
 
 Pagonis, V., Friedrich, J., Discher, M., Müller-Kirschbaum, A., Schlosser, V., Kreutzer, S.,
 Chen, R. and Schmidt, C., 2019. Excited state luminescence signals from a random distribution of defects:
@@ -109,7 +109,7 @@ Aitken, M.J., 1985. Thermoluminescence dating. Academic Press.
 
 Jain, M., Guralnik, B., Andersen, M.T., 2012. Stimulated luminescence emission from
 localized recombination in randomly distributed defects.
-J. Phys.: Condens. Matter 24, 385402. \doi{10.1088/0953-8984/24/38/385402}
+Journal of Physics: Condensed Matter 24, 385402.
 
 Chen, R., McKeever, S.W.S., 1997. Theory of Thermoluminescence and Related Phenomena.
 WORLD SCIENTIFIC. \doi{10.1142/2781}

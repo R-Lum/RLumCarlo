@@ -1,42 +1,79 @@
 {
-  "@context": ["https://doi.org/10.5063/schema/codemeta-2.0", "http://schema.org"],
+  "@context": [
+    "https://doi.org/10.5063/schema/codemeta-2.0",
+    "http://schema.org"
+  ],
   "@type": "SoftwareSourceCode",
   "identifier": "RLumCarlo",
-  "description": "A collection of functions to simulate luminescence signals with Monte-Carlo methods in the\n    mineral feldspar based on published models.",
+  "description": "A collection of functions to simulate luminescence production in \n    dosimetric materials using Monte Carlo methods. Implemented are models for \n    delocalised transitions (e.g., Chen and McKeever (1997) <doi:10.1142/2781>), \n    localised transitions (e.g., Pagonis et al. (2019) <doi:10.1016/j.jlumin.2018.11.024>) \n    and tunnelling transitions (Jain et al. (2012) <doi:10.1088/0953-8984/24/38/385402> \n    and Pagonis et al. (2019) <doi:10.1016/j.jlumin.2018.11.024>). \n    Supported stimulation methods are thermal luminescence (TL), \n    continuous-wave optically stimulated luminescence (CW-OSL), \n    linearly-modulated optically stimulated luminescence (LM-OSL), \n    linearly-modulated infrared stimulated luminescence (LM-IRSL),\n    and isothermal luminescence (ITL or ISO-TL).",
   "name": "RLumCarlo: Monte-Carlo Methods for Simulating Luminescence Phenomena",
-  "codeRepository": "https://CRAN.R-project.org/package=RLumModel",
+  "codeRepository": "https://CRAN.R-project.org/package=RLumCarlo",
   "issueTracker": "https://github.com/R-Lum/RLumCarlo/issues",
   "license": "https://spdx.org/licenses/GPL-3.0",
-  "version": "0.1.0.9000.13",
+  "version": "0.1.3",
   "programmingLanguage": {
     "@type": "ComputerLanguage",
     "name": "R",
-    "version": "3.7.0",
+    "version": "4.1.0",
     "url": "https://r-project.org"
   },
-  "runtimePlatform": "R Under development (unstable) (2019-09-15 r77192)",
+  "runtimePlatform": "R Under development (unstable) (2020-06-01 r78624)",
   "author": [
     {
       "@type": "Person",
       "givenName": "Johannes",
       "familyName": "Friedrich",
-      "email": "johannes.friedrich@uni-bayreuth.de",
       "@id": "https://orcid.org/0000-0002-0805-9547"
     },
     {
       "@type": "Person",
       "givenName": "Sebastian",
       "familyName": "Kreutzer",
+      "email": "sebastian.kreutzer@aber.ac.uk",
       "@id": "https://orcid.org/0000-0002-0734-2199"
+    },
+    {
+      "@type": "Person",
+      "givenName": "Vasilis",
+      "familyName": "Pagonis",
+      "@id": "https://orcid.org/0000-0002-4852-9312"
+    },
+    {
+      "@type": "Person",
+      "givenName": "Christoph",
+      "familyName": "Schmidt",
+      "@id": "https://orcid.org/0000-0002-2309-3209"
     }
   ],
   "contributor": [
     {
       "@type": "Person",
+      "givenName": "Christian",
+      "familyName": "Laag",
+      "@id": "https://orcid.org/0000-0002-6012-1029"
+    },
+    {
+      "@type": "Person",
+      "givenName": "Ena",
+      "familyName": "Rajovic"
+    },
+    {
+      "@type": "Person",
+      "givenName": "Alex Roy",
+      "familyName": "Duncan"
+    },
+    {
+      "@type": "Person",
       "givenName": "Johannes",
       "familyName": "Friedrich",
-      "email": "johannes.friedrich@uni-bayreuth.de",
       "@id": "https://orcid.org/0000-0002-0805-9547"
+    },
+    {
+      "@type": "Person",
+      "givenName": "Sebastian",
+      "familyName": "Kreutzer",
+      "email": "sebastian.kreutzer@aber.ac.uk",
+      "@id": "https://orcid.org/0000-0002-0734-2199"
     }
   ],
   "copyrightHolder": {},
@@ -44,17 +81,31 @@
   "maintainer": [
     {
       "@type": "Person",
-      "givenName": "Johannes",
-      "familyName": "Friedrich",
-      "email": "johannes.friedrich@uni-bayreuth.de",
-      "@id": "https://orcid.org/0000-0002-0805-9547"
+      "givenName": "Sebastian",
+      "familyName": "Kreutzer",
+      "email": "sebastian.kreutzer@aber.ac.uk",
+      "@id": "https://orcid.org/0000-0002-0734-2199"
     }
   ],
   "softwareSuggestions": [
     {
       "@type": "SoftwareApplication",
+      "identifier": "spelling",
+      "name": "spelling",
+      "version": ">= 2.1",
+      "provider": {
+        "@id": "https://cran.r-project.org",
+        "@type": "Organization",
+        "name": "Comprehensive R Archive Network (CRAN)",
+        "url": "https://cran.r-project.org"
+      },
+      "sameAs": "https://CRAN.R-project.org/package=spelling"
+    },
+    {
+      "@type": "SoftwareApplication",
       "identifier": "R.rsp",
       "name": "R.rsp",
+      "version": ">= 0.43.2",
       "provider": {
         "@id": "https://cran.r-project.org",
         "@type": "Organization",
@@ -62,6 +113,19 @@
         "url": "https://cran.r-project.org"
       },
       "sameAs": "https://CRAN.R-project.org/package=R.rsp"
+    },
+    {
+      "@type": "SoftwareApplication",
+      "identifier": "testthat",
+      "name": "testthat",
+      "version": ">= 2.3.2",
+      "provider": {
+        "@id": "https://cran.r-project.org",
+        "@type": "Organization",
+        "name": "Comprehensive R Archive Network (CRAN)",
+        "url": "https://cran.r-project.org"
+      },
+      "sameAs": "https://CRAN.R-project.org/package=testthat"
     }
   ],
   "softwareRequirements": [
@@ -69,7 +133,7 @@
       "@type": "SoftwareApplication",
       "identifier": "R",
       "name": "R",
-      "version": ">= 3.3.0"
+      "version": ">= 3.4.0"
     },
     {
       "@type": "SoftwareApplication",
@@ -92,6 +156,7 @@
       "@type": "SoftwareApplication",
       "identifier": "abind",
       "name": "abind",
+      "version": ">= 1.4-5",
       "provider": {
         "@id": "https://cran.r-project.org",
         "@type": "Organization",
@@ -104,6 +169,7 @@
       "@type": "SoftwareApplication",
       "identifier": "doParallel",
       "name": "doParallel",
+      "version": ">= 1.0.15",
       "provider": {
         "@id": "https://cran.r-project.org",
         "@type": "Organization",
@@ -116,6 +182,7 @@
       "@type": "SoftwareApplication",
       "identifier": "foreach",
       "name": "foreach",
+      "version": ">= 1.5.0",
       "provider": {
         "@id": "https://cran.r-project.org",
         "@type": "Organization",
@@ -126,8 +193,16 @@
     },
     {
       "@type": "SoftwareApplication",
-      "identifier": "parallel",
-      "name": "parallel"
+      "identifier": "khroma",
+      "name": "khroma",
+      "version": ">= 1.3.0",
+      "provider": {
+        "@id": "https://cran.r-project.org",
+        "@type": "Organization",
+        "name": "Comprehensive R Archive Network (CRAN)",
+        "url": "https://cran.r-project.org"
+      },
+      "sameAs": "https://CRAN.R-project.org/package=khroma"
     },
     {
       "@type": "SoftwareApplication",
@@ -136,8 +211,14 @@
     },
     {
       "@type": "SoftwareApplication",
+      "identifier": "parallel",
+      "name": "parallel"
+    },
+    {
+      "@type": "SoftwareApplication",
       "identifier": "Rcpp",
       "name": "Rcpp",
+      "version": ">= 1.0.4",
       "provider": {
         "@id": "https://cran.r-project.org",
         "@type": "Organization",
@@ -145,8 +226,32 @@
         "url": "https://cran.r-project.org"
       },
       "sameAs": "https://CRAN.R-project.org/package=Rcpp"
+    },
+    {
+      "@type": "SoftwareApplication",
+      "identifier": "scatterplot3d",
+      "name": "scatterplot3d",
+      "version": ">= 0.3",
+      "provider": {
+        "@id": "https://cran.r-project.org",
+        "@type": "Organization",
+        "name": "Comprehensive R Archive Network (CRAN)",
+        "url": "https://cran.r-project.org"
+      },
+      "sameAs": "https://CRAN.R-project.org/package=scatterplot3d"
+    },
+    {
+      "@type": "SoftwareApplication",
+      "identifier": "stats",
+      "name": "stats"
     }
   ],
   "releaseNotes": "https://github.com/R-Lum/RLumCarlo/blob/master/NEWS.md",
-  "developmentStatus": "https://www.repostatus.org/#concept"
+  "developmentStatus": "https://www.repostatus.org/#concept",
+  "readme": "https://github.com/R-Lum/RLumCarlo/blob/master/README.md",
+  "contIntegration": [
+    "https://travis-ci.org/R-Lum/RLumCarlo",
+    "https://ci.appveyor.com/project/RLumSK/rlumcarlo",
+    "https://codecov.io/gh/R-Lum/RLumCarlo"
+  ]
 }

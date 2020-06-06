@@ -111,7 +111,7 @@ Kreutzer, S., 2020. run_MC_TL_LOC(): Run Monte-Carlo Simulation for TL (localize
 
 \references{
 Pagonis, V., Friedrich, J., Discher, M., Müller-Kirschbaum, A., Schlosser, V.,
-reutzer, S., Chen, R. and Schmidt, C., 2019. Excited state luminescence signals
+Kreutzer, S., Chen, R. and Schmidt, C., 2019. Excited state luminescence signals
 from a random distribution of defects: A new Monte Carlo simulation approach for feldspar.
 Journal of Luminescence 207, 266–272. \doi{10.1016/j.jlumin.2018.11.024}
 }

@@ -7,14 +7,12 @@
 
 # RLumCarlo <img width=120px src="man/figures/Logo_RLumCarlo.png" align="right" />
 
-The **R** package ‘RLumCarlo’ provides a collection of R functions
+The **R** package RLumCarlo provides a collection of R functions
 modelling luminescence production in isolators and semiconductors for
 various stimulation modes using Monte Carlo methods.
 
 [![Project Status:
 Concept](https://www.repostatus.org/badges/latest/active.svg)](https://www.repostatus.org/#active)
-[![CRAN](https://www.r-pkg.org/badges/version/RLumCarlo)](https://CRAN.R-project.org/package=RLumCarlo)
-[![Downloads](https://cranlogs.r-pkg.org/badges/grand-total/RLumCarlo)](https://www.r-pkg.org/pkg/RLumCarlo)
 [![Build
 Status](https://travis-ci.org/R-Lum/RLumCarlo.svg?branch=master)](https://travis-ci.org/R-Lum/RLumCarlo)
 [![Build
@@ -27,18 +25,14 @@ status](https://ci.appveyor.com/api/projects/status/yxsmwa86jajhtesn?svg=true)](
 
 Depending on your OS please download and install one of the following:
 
-**Windows (32/64bit)** - ‘Rtools’ (provided by CRAN)
-
-<https://cran.r-project.org/bin/windows/Rtools/>
-
-**macOS** - ‘Xcode’ (provided by Apple)
-
-<https://developer.apple.com/xcode/downloads/>
-
-For **Linux** users *gcc* often comes pre-installed in most
-distributions. Should *gcc* be not available, however, we kindly refer
-to the exhaustive collection of installation guides depending on the
-linux distribution.
+  - *Windows*: [Rtools](https://cran.r-project.org/bin/windows/Rtools/)
+    (provided by CRAN)
+  - *macOS*: [Xcode](https://developer.apple.com/xcode/downloads/)
+    (provided by Apple)
+  - *Linux*: [gcc](https://gcc.gnu.org) often comes pre-installed in
+    most distributions. Should [gcc](https://gcc.gnu.org) be not
+    available, however, we kindly refer to the exhaustive collection of
+    installation guides depending on the Linux distribution.
 
 #### ii. Install the package from GitHub
 
@@ -81,8 +75,8 @@ more details.
 
 ## <span class="glyphicon glyphicon-euro"></span> Funding
 
-The development of RLumCarlo benefited from the support by various
-funding bodies:
+The [development of RLumCarlo](https://github.com/R-Lum/RLumCarlo)
+benefited from the support by various funding bodies:
 
   - The initial work by Johannes Friedrich, Sebastian Kreutzer and
     Christoph Schmidt was supported by the [DFG (2015–2018,
@@ -90,10 +84,10 @@ funding bodies:
     relevant for dating and dosimetry”, SCHM
     3051/4-1)](https://gepris.dfg.de/gepris/projekt/279969851).
 
-  - Later financial support was secured through the project *ULTIMO:
+  - Later financial support was secured through the project *‘ULTIMO:
     Unifying Luminescence Models of quartz and feldspar (German Academic
     Exchange Service) DAAD: Deutscher Akademischer Austauschdienst DAAD
-    PPP USA 2018, ID: 57387041)*.
+    PPP USA 2018, ID: 57387041)’*.
 
   - The work of Sebastian Kreutzer as maintainer of the package was
     supported by [LabEx LaScArBx (ANR -
@@ -102,7 +96,7 @@ funding bodies:
 
   - From 2020, Sebastian Kreutzer received funding from the European
     Union’s Horizon 2020 research and innovation programme under the
-    Marie Skłodowska-Curie grant agreement No 844457.
+    Marie Skłodowska-Curie grant agreement No 844457 (project: CREDit).
 
 ## Related projects
 
