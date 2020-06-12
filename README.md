@@ -14,6 +14,7 @@ various stimulation modes using Monte Carlo methods.
 [![Project Status:
 Concept](https://www.repostatus.org/badges/latest/active.svg)](https://www.repostatus.org/#active)
 [![CRAN](https://www.r-pkg.org/badges/version/RLumCarlo)](https://CRAN.R-project.org/package=RLumCarlo)
+[![DOI](https://zenodo.org/badge/82188344.svg)](https://zenodo.org/badge/latestdoi/82188344)
 [![Downloads](https://cranlogs.r-pkg.org/badges/grand-total/RLumCarlo)](https://www.r-pkg.org/pkg/RLumCarlo)
 [![Build
 Status](https://travis-ci.org/R-Lum/RLumCarlo.svg?branch=master)](https://travis-ci.org/R-Lum/RLumCarlo)
