@@ -12,7 +12,7 @@
 using namespace Rcpp;
 
 // [[Rcpp::export("MC_C_TL_TUN")]]
-List MC_C_TL_TUN(arma::vec times, int N_e, arma::vec r, double rho, double E, double s, double b) {
+List MC_C_TL_TUN(arma::vec times, double N_e, arma::vec r, double rho, double E, double s, double b) {
 
   double k_B = 8.617*pow(10.0,-5.0);
 
@@ -28,7 +28,7 @@ List MC_C_TL_TUN(arma::vec times, int N_e, arma::vec r, double rho, double E, do
 
       for(std::size_t t = 0; t < times.size(); ++t){
 
-        double P =  s * exp(-E/(k_B * (273 + times[t] * b))) * exp(-(pow(rho,-1.0/3)) * r[k]);
+        double P =  s * exp(-E/(k_B * (273 + times[t] * b))) * exp(-(pow(rho,-1.0/3.0)) * r[k]);
 
         for(std::size_t j = 0; j < n_filled; ++j){
 
@@ -41,7 +41,7 @@ List MC_C_TL_TUN(arma::vec times, int N_e, arma::vec r, double rho, double E, do
             break;
 
         } // end n_filled
-        signal(t,k) = n_filled * P * 3 * pow((double)r[k],2) * exp(-(pow(r[k],3)));
+        signal(t,k) = n_filled * P * 3 * pow((double)r[k],2.0) * exp(-(pow(r[k],3.0)));
         remaining_e(t,k) = n_filled;
 
         if (n_filled == 0)

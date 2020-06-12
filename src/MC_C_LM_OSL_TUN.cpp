@@ -13,7 +13,7 @@
 using namespace Rcpp;
 
 // [[Rcpp::export("MC_C_LM_OSL_TUN")]]
-List MC_C_LM_OSL_TUN(arma::vec times, int N_e, arma::vec r, double rho, double A) {
+List MC_C_LM_OSL_TUN(arma::vec times, double N_e, arma::vec r, double rho, double A) {
 
   //determine delta_t which allows to have delta t != 1
   double delta_t = calc_deltat(times);
@@ -29,7 +29,7 @@ List MC_C_LM_OSL_TUN(arma::vec times, int N_e, arma::vec r, double rho, double A
 
       for(std::size_t t = 0; t < times.size(); ++t){
 
-        double P = A * (times[t]/max(times)) * exp(-(pow(rho,-1.0/3)) * r[k]);
+        double P = A * (times[t]/max(times)) * exp(-(pow(rho,-1.0/3.0)) * r[k]);
 
         for(std::size_t j = 0; j < n_filled; ++j){
 
@@ -43,7 +43,7 @@ List MC_C_LM_OSL_TUN(arma::vec times, int N_e, arma::vec r, double rho, double A
             break;
 
         } // end n_filled
-        signal(t,k) = n_filled * P * 3 * pow((double)r[k],2) * exp(-(pow(r[k],3)));
+        signal(t,k) = n_filled * P * 3 * pow((double)r[k],2.0) * exp(-(pow(r[k],3.0)));
         remaining_e(t,k) = n_filled;
 
         if (n_filled == 0)

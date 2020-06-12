@@ -12,7 +12,7 @@
 using namespace Rcpp;
 
 // [[Rcpp::export("MC_C_TL_DELOC")]]
-List MC_C_TL_DELOC(arma::vec times, int N_e, int n_filled, double R, double E, double s, double b) {
+List MC_C_TL_DELOC(arma::vec times, double N_e, double n_filled, double R, double E, double s, double b) {
   //N >> N_e total: concentration of traps [cm^-3]
   //n >> n_filled: concentration of filled traps [cm^-3]
   //t >> times: refers basically to the temperature
@@ -54,7 +54,7 @@ List MC_C_TL_DELOC(arma::vec times, int N_e, int n_filled, double R, double E, d
           } // end n_filled
 
           //calculate signal and remaining filled
-          signal(t,0) = P * (pow(n_filled,2) / (N_e * R + n_filled * (1 - R)));
+          signal(t,0) = P * (pow(n_filled,2.0) / (N_e * R + n_filled * (1 - R)));
           remaining_e(t,0) = n_filled;
 
           if (n_filled == 0)

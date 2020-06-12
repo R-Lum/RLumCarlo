@@ -12,7 +12,7 @@
 using namespace Rcpp;
 
 // [[Rcpp::export("MC_C_TL_LOC")]]
-List MC_C_TL_LOC(arma::vec times, int n_filled, double r, double E, double s, double b) {
+List MC_C_TL_LOC(arma::vec times, double n_filled, double r, double E, double s, double b) {
   //n >> n_filled: concentration of filled traps [cm^-3]
   //t >> times: refers basically to the temperature
   //E: energy of the trap [eV]
@@ -52,7 +52,7 @@ List MC_C_TL_LOC(arma::vec times, int n_filled, double r, double E, double s, do
           } // end n_filled
 
           //calculate signal and remaining filled
-          signal(t,0) = P * (pow(n_filled, 2) / (r + n_filled));
+          signal(t,0) = P * (pow(n_filled, 2.0) / (r + n_filled));
           remaining_e(t,0) = n_filled;
 
           if (n_filled == 0)
