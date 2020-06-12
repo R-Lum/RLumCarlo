@@ -128,7 +128,7 @@ iso-thermal (ITL) signal for a temperature (`T`) of 200 °C over
 depth and a frequency factor of $1\times10^{10}$ (1/s). The parameter `rho` ($\rho'$) defines the 
 recombination centre density. 
 
-```{r Fig 1, fig.align='center', cache=TRUE, fig.height=4, fig.width=5}
+```{r Fig 1, fig.align='center', cache=FALSE, fig.height=4, fig.width=5}
 results <- run_MC_ISO_TUN(
   E = 1.2,
   s = 1e10,
@@ -149,7 +149,7 @@ For example, one could assume that the number of initial electrons vary randomly
 between 190 and 210. Such a situation is created in the next example. Generally, 
 \`RLumCarlo' supports such an input for the parameters `N_e` and `n_filled`.
 
-```{r Fig 1b, fig.align='center', cache=TRUE, fig.height=4, fig.width=5}
+```{r Fig 1b, fig.align='center', cache=FALSE, fig.height=4, fig.width=5}
 results <- run_MC_ISO_TUN(
   E = 1.2,
   s = 1e10,
@@ -241,7 +241,7 @@ Contrary to the example above, here the results are stored in a `list` and `plot
 is called only one time and it will then iterate automatically over the results to 
 create a combined plot.
 
-```{r Fig 5, fig.align='center', cache = TRUE}
+```{r Fig 5, fig.align='center', cache = FALSE}
 s <- 3.5e12
 rho <- 0.015
 E <- 1.45
@@ -262,7 +262,7 @@ results <- lapply(r_c, function(x) {
 The plot output can be highly customised to provide a better visual experience, e.g., 
 the manual setting of the colours and the legend.
 
-```{r Fig 6,Plot average signal, fig.align='center', echo = TRUE, cache = TRUE, fig.height=4, fig.width=5}
+```{r Fig 6,Plot average signal, fig.align='center', echo = TRUE, cache = FALSE, fig.height=4, fig.width=5}
 ## plot curves, but without legend
 plot_RLumCarlo(
   object = results, 
@@ -294,7 +294,7 @@ clusters <- create_ClusterSystem(n = 100, plot = TRUE)
 ```
 The result is an arbitrary dosimetric system with randomly distributed clusters. The Euclidean distance is used to group the clusters (colour code). To use the system in the simulation, instead of providing a scalar as input to `clusters`, the output of `create_ClusterSystem()` can be injected in every `run_MC` function.
 
-```{r, echo = TRUE, fig.align='center', cache = TRUE, fig.height=4, fig.width=5}
+```{r, echo = TRUE, fig.align='center', cache = FALSE, fig.height=4, fig.width=5}
 run_MC_TL_LOC(
  s = 1e14,
  E = 0.9,

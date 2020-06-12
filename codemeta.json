@@ -10,7 +10,7 @@
   "codeRepository": "https://CRAN.R-project.org/package=RLumCarlo",
   "issueTracker": "https://github.com/R-Lum/RLumCarlo/issues",
   "license": "https://spdx.org/licenses/GPL-3.0",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "programmingLanguage": {
     "@type": "ComputerLanguage",
     "name": "R",
@@ -253,5 +253,12 @@
     "https://travis-ci.org/R-Lum/RLumCarlo",
     "https://ci.appveyor.com/project/RLumSK/rlumcarlo",
     "https://codecov.io/gh/R-Lum/RLumCarlo"
-  ]
+  ],
+  "provider": {
+    "@id": "https://cran.r-project.org",
+    "@type": "Organization",
+    "name": "Comprehensive R Archive Network (CRAN)",
+    "url": "https://cran.r-project.org"
+  },
+  "relatedLink": "https://CRAN.R-project.org/package=RLumCarlo"
 }
