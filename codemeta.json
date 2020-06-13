@@ -10,7 +10,7 @@
   "codeRepository": "https://CRAN.R-project.org/package=RLumCarlo",
   "issueTracker": "https://github.com/R-Lum/RLumCarlo/issues",
   "license": "https://spdx.org/licenses/GPL-3.0",
-  "version": "0.1.5",
+  "version": "0.1.6.9000.1",
   "programmingLanguage": {
     "@type": "ComputerLanguage",
     "name": "R",
