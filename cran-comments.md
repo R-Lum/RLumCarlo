@@ -16,7 +16,18 @@ On behalf of the package authors, best regards,
 
 0 errors | 0 warnings | 1 note
 
-## Other notes or warnings
+> Found the following (possibly) invalid DOIs:
+>  DOI: 10.1088/0953-8984/24/38/385402
+>    From: DESCRIPTION
+>    Status: Bad Request
+>    Message: 400
 
-### *winbuilder* 
+This was reported to the publisher, the URL works and the DOI is correct.
+
+## Winbuilder
+
+* R version 3.6.3: OK
+* R version 4.0.2: OK
+* R Under development (unstable): OK
+
 
