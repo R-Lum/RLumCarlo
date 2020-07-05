@@ -7,12 +7,11 @@
 // +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 // [[Rcpp::depends(RcppArmadillo)]]
-#include <RcppArmadillo.h>
-#include "util.h"
+#include "RLumCarlo.h"
 using namespace Rcpp;
 
 // [[Rcpp::export("MC_C_TL_DELOC")]]
-List MC_C_TL_DELOC(arma::vec times, double N_e, double n_filled, double R, double E, double s, double b) {
+List MC_C_TL_DELOC(arma::vec times, int N_e, int n_filled, double R, double E, double s, double b) {
   //N >> N_e total: concentration of traps [cm^-3]
   //n >> n_filled: concentration of filled traps [cm^-3]
   //t >> times: refers basically to the temperature
@@ -21,9 +20,6 @@ List MC_C_TL_DELOC(arma::vec times, double N_e, double n_filled, double R, doubl
   //R: capture coefficient
   //b: the heating rate [K/s]
 
-   // set Boltzmann's constant
-  double k_B = 8.617*pow(10.0,-5.0);
-
   //determine delta_t which allows to have delta t != 1
   double delta_t = calc_deltat(times);
 
@@ -31,7 +27,6 @@ List MC_C_TL_DELOC(arma::vec times, double N_e, double n_filled, double R, doubl
   NumericMatrix signal (times.size(), 1);
   NumericMatrix remaining_e (times.size(), 1);
   NumericVector r_num;
-
 
     //t-loop, means run over time/temperature
     for(std::size_t t = 0; t < times.size(); ++t){
@@ -54,7 +49,7 @@ List MC_C_TL_DELOC(arma::vec times, double N_e, double n_filled, double R, doubl
           } // end n_filled
 
           //calculate signal and remaining filled
-          signal(t,0) = P * (pow(n_filled,2.0) / (N_e * R + n_filled * (1 - R)));
+          signal(t,0) = P * (pow(static_cast<double>(n_filled),2.0) / (N_e * R + n_filled * (1 - R)));
           remaining_e(t,0) = n_filled;
 
           if (n_filled == 0)
