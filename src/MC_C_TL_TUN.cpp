@@ -7,14 +7,11 @@
 // +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 // [[Rcpp::depends(RcppArmadillo)]]
-#include <RcppArmadillo.h>
-#include "util.h"
+#include "RLumCarlo.h"
 using namespace Rcpp;
 
 // [[Rcpp::export("MC_C_TL_TUN")]]
-List MC_C_TL_TUN(arma::vec times, double N_e, arma::vec r, double rho, double E, double s, double b) {
-
-  double k_B = 8.617*pow(10.0,-5.0);
+List MC_C_TL_TUN(arma::vec times, int N_e, arma::vec r, double rho, double E, double s, double b) {
 
   //determine delta_t which allows to have delta t != 1
   double delta_t = calc_deltat(times);

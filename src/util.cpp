@@ -4,7 +4,7 @@
 // Author:  Sebastian Kreutzer, Geography & Earth Sciences, Aberystwyth University (United Kingdom)
 // Contact: sebastian.kreutzer@aber.ac.uk
 // +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-#include <RcppArmadillo.h>
+#include "RLumCarlo.h"
 
 // calculate delta t including error treatment
 double calc_deltat(arma::vec times){

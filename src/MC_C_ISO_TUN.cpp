@@ -7,12 +7,11 @@
 // +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 // [[Rcpp::depends(RcppArmadillo)]]
-#include <RcppArmadillo.h>
-#include "util.h"
+#include "RLumCarlo.h"
 using namespace Rcpp;
 
 // [[Rcpp::export("MC_C_ISO_TUN")]]
-List MC_C_ISO_TUN(arma::vec times, double N_e, arma::vec r, double rho, double E, double s, double T) {
+List MC_C_ISO_TUN(arma::vec times, int N_e, arma::vec r, double rho, double E, double s, double T) {
 
   //determine delta_t which allows to have delta t != 1
   double delta_t = calc_deltat(times);
@@ -21,9 +20,6 @@ List MC_C_ISO_TUN(arma::vec times, double N_e, arma::vec r, double rho, double E
   NumericMatrix signal (times.size(), r.size());
   NumericMatrix remaining_e (times.size(), r.size());
   NumericVector r_num;
-
-  // set Boltzmann's constant
-  double k_B = 8.617*pow(10.0,-5.0);
 
     for(std::size_t k = 0; k < r.size(); ++k){
 

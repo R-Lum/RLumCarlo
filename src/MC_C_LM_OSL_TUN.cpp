@@ -8,12 +8,11 @@
 
 
 // [[Rcpp::depends(RcppArmadillo)]]
-#include <RcppArmadillo.h>
-#include "util.h"
+#include "RLumCarlo.h"
 using namespace Rcpp;
 
 // [[Rcpp::export("MC_C_LM_OSL_TUN")]]
-List MC_C_LM_OSL_TUN(arma::vec times, double N_e, arma::vec r, double rho, double A) {
+List MC_C_LM_OSL_TUN(arma::vec times, int N_e, arma::vec r, double rho, double A) {
 
   //determine delta_t which allows to have delta t != 1
   double delta_t = calc_deltat(times);

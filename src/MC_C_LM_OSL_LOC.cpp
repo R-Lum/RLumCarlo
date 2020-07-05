@@ -7,12 +7,11 @@
 // +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 // [[Rcpp::depends(RcppArmadillo)]]
-#include <RcppArmadillo.h>
-#include "util.h"
+#include "RLumCarlo.h"
 using namespace Rcpp;
 
 // [[Rcpp::export("MC_C_LM_OSL_LOC")]]
-List MC_C_LM_OSL_LOC(arma::vec times, double n_filled, double r, double A) {
+List MC_C_LM_OSL_LOC(arma::vec times, int n_filled, double r, double A) {
   //n >> n_filled: concentration of filled traps [cm^-3]
   //t >> times: refers basically to the temperature
   //r: detrapping ratio [cm^-3]
@@ -47,7 +46,7 @@ List MC_C_LM_OSL_LOC(arma::vec times, double n_filled, double r, double A) {
           } // end n_filled
 
           //calculate signal and remaining filled
-          signal(t,0) = P * (pow(n_filled, 2.0) / (r + n_filled));
+          signal(t,0) = P * (pow(static_cast<double>(n_filled), 2.0) / (r + n_filled));
           remaining_e(t,0) = n_filled;
 
           if (n_filled == 0)

@@ -7,21 +7,17 @@
 // +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 // [[Rcpp::depends(RcppArmadillo)]]
-#include <RcppArmadillo.h>
-#include "util.h"
+#include "RLumCarlo.h"
 using namespace Rcpp;
 
 // [[Rcpp::export("MC_C_ISO_LOC")]]
-List MC_C_ISO_LOC(arma::vec times, double n_filled, double r, double E, double s, double T) {
+List MC_C_ISO_LOC(arma::vec times, int n_filled, double r, double E, double s, double T) {
   //n >> n_filled: concentration of filled traps [cm^-3]
   //t >> times: refers basically to the temperature
   //E: energy of the trap [eV]
   //s: frequency factor [1/s]
   //r: detrapping ratio [cm^-3]
   //T: temperature [deg. C]
-
-   // set Boltzmann's constant
-  double k_B = 8.617*pow(10.0,-5.0);
 
   //determine delta_t which allows to have delta t != 1
   double delta_t = calc_deltat(times);
@@ -52,7 +48,7 @@ List MC_C_ISO_LOC(arma::vec times, double n_filled, double r, double E, double s
           } // end n_filled
 
           //calculate signal and remaining filled
-          signal(t,0) = P * (pow(n_filled, 2.0) / (r + n_filled));
+          signal(t,0) = P * (pow(static_cast<double>(n_filled), 2.0) / (r + n_filled));
           remaining_e(t,0) = n_filled;
 
           if (n_filled == 0)

@@ -8,13 +8,13 @@
 using namespace Rcpp;
 
 // MC_C_CW_IRSL_LOC
-List MC_C_CW_IRSL_LOC(arma::vec times, double n_filled, double r, double A);
+List MC_C_CW_IRSL_LOC(arma::vec times, int n_filled, double r, double A);
 RcppExport SEXP _RLumCarlo_MC_C_CW_IRSL_LOC(SEXP timesSEXP, SEXP n_filledSEXP, SEXP rSEXP, SEXP ASEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
     Rcpp::traits::input_parameter< arma::vec >::type times(timesSEXP);
-    Rcpp::traits::input_parameter< double >::type n_filled(n_filledSEXP);
+    Rcpp::traits::input_parameter< int >::type n_filled(n_filledSEXP);
     Rcpp::traits::input_parameter< double >::type r(rSEXP);
     Rcpp::traits::input_parameter< double >::type A(ASEXP);
     rcpp_result_gen = Rcpp::wrap(MC_C_CW_IRSL_LOC(times, n_filled, r, A));
@@ -22,13 +22,13 @@ BEGIN_RCPP
 END_RCPP
 }
 // MC_C_CW_IRSL_TUN
-List MC_C_CW_IRSL_TUN(arma::vec times, double N_e, arma::vec r, double rho, double A);
+List MC_C_CW_IRSL_TUN(arma::vec times, int N_e, arma::vec r, double rho, double A);
 RcppExport SEXP _RLumCarlo_MC_C_CW_IRSL_TUN(SEXP timesSEXP, SEXP N_eSEXP, SEXP rSEXP, SEXP rhoSEXP, SEXP ASEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
     Rcpp::traits::input_parameter< arma::vec >::type times(timesSEXP);
-    Rcpp::traits::input_parameter< double >::type N_e(N_eSEXP);
+    Rcpp::traits::input_parameter< int >::type N_e(N_eSEXP);
     Rcpp::traits::input_parameter< arma::vec >::type r(rSEXP);
     Rcpp::traits::input_parameter< double >::type rho(rhoSEXP);
     Rcpp::traits::input_parameter< double >::type A(ASEXP);
@@ -37,14 +37,14 @@ BEGIN_RCPP
 END_RCPP
 }
 // MC_C_CW_OSL_DELOC
-List MC_C_CW_OSL_DELOC(arma::vec times, double N_e, double n_filled, double R, double A);
+List MC_C_CW_OSL_DELOC(arma::vec times, int N_e, int n_filled, double R, double A);
 RcppExport SEXP _RLumCarlo_MC_C_CW_OSL_DELOC(SEXP timesSEXP, SEXP N_eSEXP, SEXP n_filledSEXP, SEXP RSEXP, SEXP ASEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
     Rcpp::traits::input_parameter< arma::vec >::type times(timesSEXP);
-    Rcpp::traits::input_parameter< double >::type N_e(N_eSEXP);
-    Rcpp::traits::input_parameter< double >::type n_filled(n_filledSEXP);
+    Rcpp::traits::input_parameter< int >::type N_e(N_eSEXP);
+    Rcpp::traits::input_parameter< int >::type n_filled(n_filledSEXP);
     Rcpp::traits::input_parameter< double >::type R(RSEXP);
     Rcpp::traits::input_parameter< double >::type A(ASEXP);
     rcpp_result_gen = Rcpp::wrap(MC_C_CW_OSL_DELOC(times, N_e, n_filled, R, A));
@@ -52,14 +52,14 @@ BEGIN_RCPP
 END_RCPP
 }
 // MC_C_ISO_DELOC
-List MC_C_ISO_DELOC(arma::vec times, double N_e, double n_filled, double R, double E, double s, double T);
+List MC_C_ISO_DELOC(arma::vec times, int N_e, int n_filled, double R, double E, double s, double T);
 RcppExport SEXP _RLumCarlo_MC_C_ISO_DELOC(SEXP timesSEXP, SEXP N_eSEXP, SEXP n_filledSEXP, SEXP RSEXP, SEXP ESEXP, SEXP sSEXP, SEXP TSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
     Rcpp::traits::input_parameter< arma::vec >::type times(timesSEXP);
-    Rcpp::traits::input_parameter< double >::type N_e(N_eSEXP);
-    Rcpp::traits::input_parameter< double >::type n_filled(n_filledSEXP);
+    Rcpp::traits::input_parameter< int >::type N_e(N_eSEXP);
+    Rcpp::traits::input_parameter< int >::type n_filled(n_filledSEXP);
     Rcpp::traits::input_parameter< double >::type R(RSEXP);
     Rcpp::traits::input_parameter< double >::type E(ESEXP);
     Rcpp::traits::input_parameter< double >::type s(sSEXP);
@@ -69,13 +69,13 @@ BEGIN_RCPP
 END_RCPP
 }
 // MC_C_ISO_LOC
-List MC_C_ISO_LOC(arma::vec times, double n_filled, double r, double E, double s, double T);
+List MC_C_ISO_LOC(arma::vec times, int n_filled, double r, double E, double s, double T);
 RcppExport SEXP _RLumCarlo_MC_C_ISO_LOC(SEXP timesSEXP, SEXP n_filledSEXP, SEXP rSEXP, SEXP ESEXP, SEXP sSEXP, SEXP TSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
     Rcpp::traits::input_parameter< arma::vec >::type times(timesSEXP);
-    Rcpp::traits::input_parameter< double >::type n_filled(n_filledSEXP);
+    Rcpp::traits::input_parameter< int >::type n_filled(n_filledSEXP);
     Rcpp::traits::input_parameter< double >::type r(rSEXP);
     Rcpp::traits::input_parameter< double >::type E(ESEXP);
     Rcpp::traits::input_parameter< double >::type s(sSEXP);
@@ -85,13 +85,13 @@ BEGIN_RCPP
 END_RCPP
 }
 // MC_C_ISO_TUN
-List MC_C_ISO_TUN(arma::vec times, double N_e, arma::vec r, double rho, double E, double s, double T);
+List MC_C_ISO_TUN(arma::vec times, int N_e, arma::vec r, double rho, double E, double s, double T);
 RcppExport SEXP _RLumCarlo_MC_C_ISO_TUN(SEXP timesSEXP, SEXP N_eSEXP, SEXP rSEXP, SEXP rhoSEXP, SEXP ESEXP, SEXP sSEXP, SEXP TSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
     Rcpp::traits::input_parameter< arma::vec >::type times(timesSEXP);
-    Rcpp::traits::input_parameter< double >::type N_e(N_eSEXP);
+    Rcpp::traits::input_parameter< int >::type N_e(N_eSEXP);
     Rcpp::traits::input_parameter< arma::vec >::type r(rSEXP);
     Rcpp::traits::input_parameter< double >::type rho(rhoSEXP);
     Rcpp::traits::input_parameter< double >::type E(ESEXP);
@@ -102,14 +102,14 @@ BEGIN_RCPP
 END_RCPP
 }
 // MC_C_LM_OSL_DELOC
-List MC_C_LM_OSL_DELOC(arma::vec times, double N_e, double n_filled, double R, double A);
+List MC_C_LM_OSL_DELOC(arma::vec times, int N_e, int n_filled, double R, double A);
 RcppExport SEXP _RLumCarlo_MC_C_LM_OSL_DELOC(SEXP timesSEXP, SEXP N_eSEXP, SEXP n_filledSEXP, SEXP RSEXP, SEXP ASEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
     Rcpp::traits::input_parameter< arma::vec >::type times(timesSEXP);
-    Rcpp::traits::input_parameter< double >::type N_e(N_eSEXP);
-    Rcpp::traits::input_parameter< double >::type n_filled(n_filledSEXP);
+    Rcpp::traits::input_parameter< int >::type N_e(N_eSEXP);
+    Rcpp::traits::input_parameter< int >::type n_filled(n_filledSEXP);
     Rcpp::traits::input_parameter< double >::type R(RSEXP);
     Rcpp::traits::input_parameter< double >::type A(ASEXP);
     rcpp_result_gen = Rcpp::wrap(MC_C_LM_OSL_DELOC(times, N_e, n_filled, R, A));
@@ -117,13 +117,13 @@ BEGIN_RCPP
 END_RCPP
 }
 // MC_C_LM_OSL_LOC
-List MC_C_LM_OSL_LOC(arma::vec times, double n_filled, double r, double A);
+List MC_C_LM_OSL_LOC(arma::vec times, int n_filled, double r, double A);
 RcppExport SEXP _RLumCarlo_MC_C_LM_OSL_LOC(SEXP timesSEXP, SEXP n_filledSEXP, SEXP rSEXP, SEXP ASEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
     Rcpp::traits::input_parameter< arma::vec >::type times(timesSEXP);
-    Rcpp::traits::input_parameter< double >::type n_filled(n_filledSEXP);
+    Rcpp::traits::input_parameter< int >::type n_filled(n_filledSEXP);
     Rcpp::traits::input_parameter< double >::type r(rSEXP);
     Rcpp::traits::input_parameter< double >::type A(ASEXP);
     rcpp_result_gen = Rcpp::wrap(MC_C_LM_OSL_LOC(times, n_filled, r, A));
@@ -131,13 +131,13 @@ BEGIN_RCPP
 END_RCPP
 }
 // MC_C_LM_OSL_TUN
-List MC_C_LM_OSL_TUN(arma::vec times, double N_e, arma::vec r, double rho, double A);
+List MC_C_LM_OSL_TUN(arma::vec times, int N_e, arma::vec r, double rho, double A);
 RcppExport SEXP _RLumCarlo_MC_C_LM_OSL_TUN(SEXP timesSEXP, SEXP N_eSEXP, SEXP rSEXP, SEXP rhoSEXP, SEXP ASEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
     Rcpp::traits::input_parameter< arma::vec >::type times(timesSEXP);
-    Rcpp::traits::input_parameter< double >::type N_e(N_eSEXP);
+    Rcpp::traits::input_parameter< int >::type N_e(N_eSEXP);
     Rcpp::traits::input_parameter< arma::vec >::type r(rSEXP);
     Rcpp::traits::input_parameter< double >::type rho(rhoSEXP);
     Rcpp::traits::input_parameter< double >::type A(ASEXP);
@@ -146,14 +146,14 @@ BEGIN_RCPP
 END_RCPP
 }
 // MC_C_TL_DELOC
-List MC_C_TL_DELOC(arma::vec times, double N_e, double n_filled, double R, double E, double s, double b);
+List MC_C_TL_DELOC(arma::vec times, int N_e, int n_filled, double R, double E, double s, double b);
 RcppExport SEXP _RLumCarlo_MC_C_TL_DELOC(SEXP timesSEXP, SEXP N_eSEXP, SEXP n_filledSEXP, SEXP RSEXP, SEXP ESEXP, SEXP sSEXP, SEXP bSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
     Rcpp::traits::input_parameter< arma::vec >::type times(timesSEXP);
-    Rcpp::traits::input_parameter< double >::type N_e(N_eSEXP);
-    Rcpp::traits::input_parameter< double >::type n_filled(n_filledSEXP);
+    Rcpp::traits::input_parameter< int >::type N_e(N_eSEXP);
+    Rcpp::traits::input_parameter< int >::type n_filled(n_filledSEXP);
     Rcpp::traits::input_parameter< double >::type R(RSEXP);
     Rcpp::traits::input_parameter< double >::type E(ESEXP);
     Rcpp::traits::input_parameter< double >::type s(sSEXP);
@@ -163,13 +163,13 @@ BEGIN_RCPP
 END_RCPP
 }
 // MC_C_TL_LOC
-List MC_C_TL_LOC(arma::vec times, double n_filled, double r, double E, double s, double b);
+List MC_C_TL_LOC(arma::vec times, int n_filled, double r, double E, double s, double b);
 RcppExport SEXP _RLumCarlo_MC_C_TL_LOC(SEXP timesSEXP, SEXP n_filledSEXP, SEXP rSEXP, SEXP ESEXP, SEXP sSEXP, SEXP bSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
     Rcpp::traits::input_parameter< arma::vec >::type times(timesSEXP);
-    Rcpp::traits::input_parameter< double >::type n_filled(n_filledSEXP);
+    Rcpp::traits::input_parameter< int >::type n_filled(n_filledSEXP);
     Rcpp::traits::input_parameter< double >::type r(rSEXP);
     Rcpp::traits::input_parameter< double >::type E(ESEXP);
     Rcpp::traits::input_parameter< double >::type s(sSEXP);
@@ -179,13 +179,13 @@ BEGIN_RCPP
 END_RCPP
 }
 // MC_C_TL_TUN
-List MC_C_TL_TUN(arma::vec times, double N_e, arma::vec r, double rho, double E, double s, double b);
+List MC_C_TL_TUN(arma::vec times, int N_e, arma::vec r, double rho, double E, double s, double b);
 RcppExport SEXP _RLumCarlo_MC_C_TL_TUN(SEXP timesSEXP, SEXP N_eSEXP, SEXP rSEXP, SEXP rhoSEXP, SEXP ESEXP, SEXP sSEXP, SEXP bSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
     Rcpp::traits::input_parameter< arma::vec >::type times(timesSEXP);
-    Rcpp::traits::input_parameter< double >::type N_e(N_eSEXP);
+    Rcpp::traits::input_parameter< int >::type N_e(N_eSEXP);
     Rcpp::traits::input_parameter< arma::vec >::type r(rSEXP);
     Rcpp::traits::input_parameter< double >::type rho(rhoSEXP);
     Rcpp::traits::input_parameter< double >::type E(ESEXP);
