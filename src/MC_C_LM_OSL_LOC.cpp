@@ -1,5 +1,5 @@
 // +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-// Title:   MC_C_LM_OSL_LOC.cpp (IRSL localised transiation)
+// Title:   MC_C_LM_OSL_LOC.cpp (IRSL localised transition)
 // Author:  Sebastian Kreutzer, Geography & Earth Sciences, Aberystwyth University (United Kingdom), based on
 // code by Johannes Friedrich and equations provided by Vasilis Pagonis
 // Contact: sebastian.kreutzer@aber.ac.uk
