@@ -90,7 +90,7 @@ plot_RLumCarlo(legend = TRUE)
 } 
 
 \section{How to cite}{
-Kreutzer, S., 2020. run_MC_ISO_DELOC(): Run Monte-Carlo Simulation for ISO-TL (delocalized transitions). Function version 0.1.0. In: Friedrich, J., Kreutzer, S., Pagonis, V., Schmidt, C., 2020. RLumCarlo: Monte-Carlo Methods for Simulating Luminescence Phenomena. R package version 0.1.7.9000-1. https://CRAN.R-project.org/package=RLumCarlo
+Kreutzer, S., 2020. run_MC_ISO_DELOC(): Run Monte-Carlo Simulation for ISO-TL (delocalized transitions). Function version 0.1.0. In: Friedrich, J., Kreutzer, S., Pagonis, V., Schmidt, C., 2020. RLumCarlo: Monte-Carlo Methods for Simulating Luminescence Phenomena. R package version 0.1.7.9000-2. https://CRAN.R-project.org/package=RLumCarlo
 }
 
 \references{
