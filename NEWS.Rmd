@@ -8,6 +8,10 @@ header-includes:
 
 ## RLumCarlo `r RLumBuild::.get_pkg_version()` (`r Sys.Date()`)
 
+* Dummy
+
+# RLumCarlo 0.1.6 (2020-07-05)
+
 * The last update to prevent the failed checks for the Solaris platform 
 on CRAN came with unwanted side effects. After the compiler complained about `pow(<int>,<int>)`, 
 we used `<double>` for all objects. Unfortunately, this led to complete wrong 
