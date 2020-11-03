@@ -1,0 +1,7 @@
+pandoc: 2.11.0.2
+pkgdown: 1.6.1
+pkgdown_sha: ~
+articles:
+  RLumCarlo_-_Getting_started_with_RLumCarlo: RLumCarlo_-_Getting_started_with_RLumCarlo.html
+last_built: 2020-11-03T12:18Z
+
