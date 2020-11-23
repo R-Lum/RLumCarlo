@@ -8,7 +8,7 @@ header-includes:
 
 ## RLumCarlo `r RLumBuild::.get_pkg_version()` (`r Sys.Date()`)
 
-*This package version needw at least R >= 3.5.0.*
+*This package version needs at least R >= 3.5.0.*
 
 * Update internal tests to function properly with `testthat >= 3.0.0` 
 

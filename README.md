@@ -28,11 +28,11 @@ status](https://ci.appveyor.com/api/projects/status/yxsmwa86jajhtesn?svg=true)](
 
 Depending on your OS please download and install one of the following:
 
-  - *Windows*: [Rtools](https://cran.r-project.org/bin/windows/Rtools/)
+-   *Windows*: [Rtools](https://cran.r-project.org/bin/windows/Rtools/)
     (provided by CRAN)
-  - *macOS*: [Xcode](https://developer.apple.com/xcode/downloads/)
+-   *macOS*: [Xcode](https://developer.apple.com/xcode/downloads/)
     (provided by Apple)
-  - *Linux*: [gcc](https://gcc.gnu.org) often comes pre-installed in
+-   *Linux*: [gcc](https://gcc.gnu.org) often comes pre-installed in
     most distributions. Should [gcc](https://gcc.gnu.org) be not
     available, however, we kindly refer to the exhaustive collection of
     installation guides depending on the Linux distribution.
@@ -57,7 +57,7 @@ run_MC_CW_IRSL_TUN(A = 0.12, rho = 0.003, times = 0:1000) %>%
 ## Supported models
 
 | TRANSITION               | BASE MODEL | IRSL  | OSL   | LM-OSL | TL   |
-| ------------------------ | ---------- | ----- | ----- | ------ | ---- |
+|--------------------------|------------|-------|-------|--------|------|
 | Delocalised              | OTOR       | FALSE | TRUE  | TRUE   | TRUE |
 | Localised                | GOT        | TRUE  | FALSE | TRUE   | TRUE |
 | Excited state tunnelling | LTM        | TRUE  | FALSE | TRUE   | TRUE |
@@ -81,27 +81,27 @@ more details.
 The [development of RLumCarlo](https://github.com/R-Lum/RLumCarlo)
 benefited from the support by various funding bodies:
 
-  - The initial work by Johannes Friedrich, Sebastian Kreutzer and
-    Christoph Schmidt was supported by the [DFG (2015–2018,
-    SCHM 3051/4-1, “Modelling quartz luminescence signal dynamics
-    relevant for dating and dosimetry”, SCHM
+-   The initial work by Johannes Friedrich, Sebastian Kreutzer and
+    Christoph Schmidt was supported by the [DFG (2015–2018, SCHM
+    3051/4-1, “Modelling quartz luminescence signal dynamics relevant
+    for dating and dosimetry”, SCHM
     3051/4-1)](https://gepris.dfg.de/gepris/projekt/279969851).
 
-  - Later financial support was secured through the project *‘ULTIMO:
+-   Later financial support was secured through the project *‘ULTIMO:
     Unifying Luminescence Models of quartz and feldspar (German Academic
     Exchange Service) DAAD: Deutscher Akademischer Austauschdienst DAAD
     PPP USA 2018, ID: 57387041)’*.
 
-  - The work of Sebastian Kreutzer as maintainer of the package was
+-   The work of Sebastian Kreutzer as maintainer of the package was
     supported by [LabEx LaScArBx (ANR -
     n. ANR-10-LABX-52)](https://lascarbx.labex.u-bordeaux.fr) between
     2017 and 2019.
 
-  - From 2020, Sebastian Kreutzer received funding from the European
+-   From 2020, Sebastian Kreutzer received funding from the European
     Union’s Horizon 2020 research and innovation programme under the
     Marie Skłodowska-Curie grant agreement No 844457 (project: CREDit).
 
 ## Related projects
 
-  - [Luminescence](https://github.com/R-Lum/Luminescence)
-  - [RLumModel](https://github.com/R-Lum/RLumModel)
+-   [Luminescence](https://github.com/R-Lum/Luminescence)
+-   [RLumModel](https://github.com/R-Lum/RLumModel)
