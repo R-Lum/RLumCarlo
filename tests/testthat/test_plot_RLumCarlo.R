@@ -1,7 +1,6 @@
-context("plot_RLumCarlo")
-
-test_that("basic run", {
+test_that("plot_RLumCarlo(): basic run", {
   testthat::skip_on_cran()
+  local_edition(3)
 
   ## create data to plot
   results_par <- lapply(c(1.2, 1.4), function(r){
