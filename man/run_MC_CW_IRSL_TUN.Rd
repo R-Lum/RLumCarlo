@@ -20,12 +20,12 @@ run_MC_CW_IRSL_TUN(
 }
 \arguments{
 \item{A}{\link{numeric} (\strong{required}): The effective optical excitation rate for the tunnelling process
-(s^-1).}
+(\code{s^-1}).}
 
 \item{rho}{\link{numeric} (\strong{required}): The density of recombination centres
 (defined as \eqn{\rho}' in Huntley 2006) (dimensionless).}
 
-\item{times}{\link{numeric} (\emph{with default}): The sequence of time steps within the simulation (s).}
+\item{times}{\link{numeric} (\strong{required}): The sequence of time steps within the simulation (s).}
 
 \item{clusters}{\link{numeric} (\emph{with default}): The number of created clusters for the MC runs. The input can be the output of \link{create_ClusterSystem}. In that case \code{n_filled} indicate absolute numbers of a system.}
 
@@ -91,7 +91,7 @@ run_MC_CW_IRSL_TUN(
 } 
 
 \section{How to cite}{
-Friedrich, J., Kreutzer, S., 2020. run_MC_CW_IRSL_TUN(): Run Monte-Carlo Simulation for CW-IRSL (tunnelling transitions). Function version 0.2.0. In: Friedrich, J., Kreutzer, S., Pagonis, V., Schmidt, C., 2020. RLumCarlo: Monte-Carlo Methods for Simulating Luminescence Phenomena. R package version 0.1.7.9000-9. https://CRAN.R-project.org/package=RLumCarlo
+Friedrich, J., Kreutzer, S., 2020. run_MC_CW_IRSL_TUN(): Run Monte-Carlo Simulation for CW-IRSL (tunnelling transitions). Function version 0.2.0. In: Friedrich, J., Kreutzer, S., Pagonis, V., Schmidt, C., 2020. RLumCarlo: Monte-Carlo Methods for Simulating Luminescence Phenomena. R package version 0.1.7.9000-10. https://CRAN.R-project.org/package=RLumCarlo
 }
 
 \references{

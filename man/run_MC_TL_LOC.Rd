@@ -23,7 +23,7 @@ run_MC_TL_LOC(
 
 \item{E}{\link{numeric} (\strong{required}): Thermal activation energy of the trap (eV)}
 
-\item{times}{\link{numeric} (\emph{with default}): The sequence of temperature steps within the simulation (s).
+\item{times}{\link{numeric} (\strong{required}): The sequence of temperature steps within the simulation (s).
 The default heating rate is set to 1 K/s. The final temperature is \code{max(times) * b}}
 
 \item{b}{\link{numeric} (\emph{with default}): the heating rate in K/s}
@@ -33,7 +33,7 @@ The default heating rate is set to 1 K/s. The final temperature is \code{max(tim
 \item{n_filled}{\link{integer} (\emph{with default}): The number of filled electron traps at
 the beginning of the simulation (dimensionless). Can be a vector of \code{length(clusters)}, shorter values are recycled.}
 
-\item{r}{\link{numeric} (\emph{with default}): The localized retrapping ratio (dimensionless)}
+\item{r}{\link{numeric} (\strong{required}): The localized retrapping ratio (dimensionless)}
 
 \item{method}{\link{character} (\emph{with default}): Sequential \code{'seq'} or parallel \code{'par'}processing. In
 the parallel mode the function tries to run the simulation on multiple CPU cores (if available) with
@@ -106,7 +106,7 @@ plot_RLumCarlo(results)
 } 
 
 \section{How to cite}{
-Kreutzer, S., 2020. run_MC_TL_LOC(): Run Monte-Carlo Simulation for TL (localized transitions). Function version 0.1.0. In: Friedrich, J., Kreutzer, S., Pagonis, V., Schmidt, C., 2020. RLumCarlo: Monte-Carlo Methods for Simulating Luminescence Phenomena. R package version 0.1.7.9000-9. https://CRAN.R-project.org/package=RLumCarlo
+Kreutzer, S., 2020. run_MC_TL_LOC(): Run Monte-Carlo Simulation for TL (localized transitions). Function version 0.1.0. In: Friedrich, J., Kreutzer, S., Pagonis, V., Schmidt, C., 2020. RLumCarlo: Monte-Carlo Methods for Simulating Luminescence Phenomena. R package version 0.1.7.9000-10. https://CRAN.R-project.org/package=RLumCarlo
 }
 
 \references{
