@@ -26,7 +26,7 @@
 #' @param rho [numeric] (**required**): The dimensionless density of recombination centres
 #' (defined as \eqn{\rho}' in Huntley 2006) (dimensionless)
 #'
-#' @param times [numeric] (*with default*): The sequence of time steps within the simulation (s)
+#' @param times [numeric] (**required**): The sequence of time steps within the simulation (s)
 #'
 #' @param clusters [numeric] (*with default*): The number of MC runs
 #'

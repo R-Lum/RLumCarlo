@@ -37,7 +37,7 @@
 #' @param n_filled [integer] (*with default*): The number of filled electron traps at the
 #' beginning of the simulation (dimensionless). Can be a vector of `length(clusters)`, shorter values are recycled.
 #'
-#' @param r [numeric] (*with default*): The retrapping ratio for localized transitions.
+#' @param r [numeric] (**required**): The retrapping ratio for localized transitions.
 #'
 #' @param method [character] (*with default*): Sequential `'seq'` or parallel `'par'`processing. In
 #' the parallel mode the function tries to run the simulation on multiple CPU cores (if available) with

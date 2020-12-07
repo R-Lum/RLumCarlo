@@ -26,14 +26,14 @@
 #' @param E [numeric] (**required**): Thermal activation energy of the trap (eV).
 #'
 #' @param s [numeric] (**required**): The effective frequency factor for the
-#' tunnelling process (s^-1).
+#' tunnelling process (`s^-1`).
 #'
 #' @param T [numeric] (*with default*): Constant stimulation temperature (°C).
 #'
 #' @param rho [numeric] (**required**): The dimensionless density of recombination centres
 #' (defined as \eqn{\rho}' in Huntley 2006) (dimensionless).
 #'
-#' @param times [numeric] (*with default*): The sequence of time steps within the simulation (s).
+#' @param times [numeric] (**required**): The sequence of time steps within the simulation (s).
 #'
 #' @param clusters [numeric] (*with default*): The number of created clusters for the MC runs. The input can be the output of [create_ClusterSystem]. In that case `n_filled` indicate absolute numbers of a system.
 #'
