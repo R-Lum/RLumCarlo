@@ -15,6 +15,10 @@
 #'Clusters are grouped according their euclidean distance calculated with [stats::dist].
 #'The grouping is done by [stats::hclust] and the clusters are further cut
 #'using [stats::cutree]. `plot = TRUE` displays the created system.
+#'The cluster creation is somewhat arbitrary and it may change in future.
+#'To that end, for the moment, there is no deeper scientific connection between
+#'the parameters used to cut the cluster tree and the physics attempted to
+#'be simulated.
 #'
 #'@param n [numeric] (*with default*): number of clusters to be created
 #'in an arbitrary 3-dimensional cube. x, y, z  distances range between 0 and 1.
