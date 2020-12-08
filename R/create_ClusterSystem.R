@@ -8,7 +8,7 @@
 #'
 #'**The creation of the dosimetric space**
 #'To date, this function supports only a random distribution of clusters within
-#'an arbitrary cube with dimensions running from 0-1 for x,y, and z. Positions
+#'an arbitrary cube with dimensions running from 0-1 for `x`,`y`, and `z`. Positions
 #'of clusters are assigned by sampling from a uniform distribution ([stats:runif]).
 #'
 #'**The grouping of clusters**
