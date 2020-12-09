@@ -24,14 +24,14 @@ run_MC_ISO_TUN(
 \item{E}{\link{numeric} (\strong{required}): Thermal activation energy of the trap (eV).}
 
 \item{s}{\link{numeric} (\strong{required}): The effective frequency factor for the
-tunnelling process (s^-1).}
+tunnelling process (\code{s^-1}).}
 
 \item{T}{\link{numeric} (\emph{with default}): Constant stimulation temperature (°C).}
 
 \item{rho}{\link{numeric} (\strong{required}): The dimensionless density of recombination centres
 (defined as \eqn{\rho}' in Huntley 2006) (dimensionless).}
 
-\item{times}{\link{numeric} (\emph{with default}): The sequence of time steps within the simulation (s).}
+\item{times}{\link{numeric} (\strong{required}): The sequence of time steps within the simulation (s).}
 
 \item{clusters}{\link{numeric} (\emph{with default}): The number of created clusters for the MC runs. The input can be the output of \link{create_ClusterSystem}. In that case \code{n_filled} indicate absolute numbers of a system.}
 
@@ -121,7 +121,7 @@ plot_RLumCarlo(results, legend = TRUE)
 } 
 
 \section{How to cite}{
-Friedrich, J., Kreutzer, S., 2020. run_MC_ISO_TUN(): Monte-Carlo Simulation for ISO-TL (tunnelling transitions). Function version 0.1.0. In: Friedrich, J., Kreutzer, S., Pagonis, V., Schmidt, C., 2020. RLumCarlo: Monte-Carlo Methods for Simulating Luminescence Phenomena. R package version 0.1.6. https://CRAN.R-project.org/package=RLumCarlo
+Friedrich, J., Kreutzer, S., 2020. run_MC_ISO_TUN(): Monte-Carlo Simulation for ISO-TL (tunnelling transitions). Function version 0.1.0. In: Friedrich, J., Kreutzer, S., Pagonis, V., Schmidt, C., 2020. RLumCarlo: Monte-Carlo Methods for Simulating Luminescence Phenomena. R package version 0.1.7.9000-13. https://CRAN.R-project.org/package=RLumCarlo
 }
 
 \references{

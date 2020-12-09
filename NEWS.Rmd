@@ -8,6 +8,14 @@ header-includes:
 
 ## RLumCarlo `r RLumBuild::.get_pkg_version()` (`r Sys.Date()`)
 
+*This package version needs at least R >= 3.5.0.*
+
+* Update internal tests to function properly with `testthat >= 3.0.0` 
+* Correct several code-documentation mismatches (thanks to an anonymous 
+R Journal reviewer)
+
+# RLumCarlo 0.1.6 (2020-07-05)
+
 * The last update to prevent the failed checks for the Solaris platform 
 on CRAN came with unwanted side effects. After the compiler complained about `pow(<int>,<int>)`, 
 we used `<double>` for all objects. Unfortunately, this led to complete wrong 

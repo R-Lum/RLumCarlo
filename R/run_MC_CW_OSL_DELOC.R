@@ -21,7 +21,7 @@
 #'
 #' @param A [numeric] (**required**): The optical excitation rate from trap to conduction band (s^-1)
 #'
-#' @param times [numeric] (*with default*): The sequence of temperature steps within the simulation (s)
+#' @param times [numeric] (**required**): The sequence of temperature steps within the simulation (s)
 #'
 #' @param clusters [numeric] (*with default*): The number of created clusters for the MC runs. The input can be the output of [create_ClusterSystem]. In that case `n_filled` indicate absolute numbers of a system.
 #'
@@ -30,7 +30,7 @@
 #' @param n_filled [integer] (*with default*): The number of filled electron traps at the beginning
 #' of the simulation (dimensionless). Can be a vector of `length(clusters)`, shorter values are recycled.
 #'
-#' @param R [numeric] (*with default*): The retrapping ratio for delocalized transitions (dimensionless)
+#' @param R [numeric] (**required**): The retrapping ratio for delocalized transitions (dimensionless)
 #'
 #' @param method [character] (*with default*): Sequential `'seq'` or parallel `'par'`processing. In
 #' the parallel mode the function tries to run the simulation on multiple CPU cores (if available) with

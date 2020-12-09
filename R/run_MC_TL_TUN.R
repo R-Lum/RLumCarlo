@@ -34,7 +34,7 @@
 #' the sample has been thermally and/or optically pretreated. This parameter expresses the fact
 #' that electron-hole pairs within a critical radius `r_c` have already recombined.
 #'
-#' @param times [numeric] (*with default*): The sequence of temperature steps within the simulation (s).
+#' @param times [numeric] (**required**): The sequence of temperature steps within the simulation (s).
 #' The default heating rate is set to 1 K/s. The final temperature is `max(times) * b`
 #'
 #' @param b [numeric] (*with default*): the heating rate in K/s

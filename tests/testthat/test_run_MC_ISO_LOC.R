@@ -1,7 +1,6 @@
-context("run_MC_ISOL_LOC")
-
 test_that("basic run", {
   testthat::skip_on_cran()
+  local_edition(3)
 
   ##break the function on purpose
   expect_error(run_MC_ISO_LOC(method = "error"), "Allowed keywords for 'method' are either 'par' or 'seq'!")

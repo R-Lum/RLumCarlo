@@ -24,7 +24,7 @@ run_MC_TL_DELOC(
 
 \item{E}{\link{numeric} (\strong{required}): Thermal activation energy of the trap (eV)}
 
-\item{times}{\link{numeric} (\emph{with default}): The sequence of temperature steps within the simulation (s).
+\item{times}{\link{numeric} (\strong{required}): The sequence of temperature steps within the simulation (s).
 The default heating rate is set to 1 K/s. The final temperature is \code{max(times) * b}}
 
 \item{b}{\link{numeric} (\emph{with default}): the heating rate in K/s}
@@ -152,7 +152,7 @@ legend("topright",
 } 
 
 \section{How to cite}{
-Kreutzer, S., 2020. run_MC_TL_DELOC(): Run Monte-Carlo Simulation for TL (delocalized transitions). Function version 0.1.0. In: Friedrich, J., Kreutzer, S., Pagonis, V., Schmidt, C., 2020. RLumCarlo: Monte-Carlo Methods for Simulating Luminescence Phenomena. R package version 0.1.6. https://CRAN.R-project.org/package=RLumCarlo
+Kreutzer, S., 2020. run_MC_TL_DELOC(): Run Monte-Carlo Simulation for TL (delocalized transitions). Function version 0.1.0. In: Friedrich, J., Kreutzer, S., Pagonis, V., Schmidt, C., 2020. RLumCarlo: Monte-Carlo Methods for Simulating Luminescence Phenomena. R package version 0.1.7.9000-13. https://CRAN.R-project.org/package=RLumCarlo
 }
 
 \references{

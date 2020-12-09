@@ -1,7 +1,6 @@
-context("run_MC_ISO_TUN")
-
 test_that("basic run", {
   testthat::skip_on_cran()
+  local_edition(3)
 
   ##break the function on purpose
   expect_error(run_MC_ISO_TUN(method = "error"), "Allowed keywords for 'method' are either 'par' or 'seq'!")
@@ -21,6 +20,16 @@ test_that("basic run", {
     delta.r = 0.5,
     method = "seq"
   ))
+
+  expect_s3_class(run_MC_ISO_TUN(
+     E = 1.2,
+     s = 1e10,
+     T = 200,
+     N_e = 200,
+     rho = 0.007,
+     clusters = 10,
+     times = seq(0, 5000)),
+     "RLumCarlo_Model_Output")
 
   results_par <- expect_silent(run_MC_ISO_TUN(
     E = 0.5,

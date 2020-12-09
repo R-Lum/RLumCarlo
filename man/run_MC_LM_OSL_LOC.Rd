@@ -20,14 +20,14 @@ run_MC_LM_OSL_LOC(
 \item{A}{\link{numeric} (\strong{required}): The optical excitation rate from the ground state into the excited
 state of the trap (s^-1)}
 
-\item{times}{\link{numeric} (\emph{with default}): The sequence of time steps within the simulation (s)}
+\item{times}{\link{numeric} (\strong{required}): The sequence of time steps within the simulation (s)}
 
 \item{clusters}{\link{numeric} (\emph{with default}): The number of created clusters for the MC runs. The input can be the output of \link{create_ClusterSystem}. In that case \code{n_filled} indicate absolute numbers of a system.}
 
 \item{n_filled}{\link{integer} (\emph{with default}): The number of filled electron traps at the
 beginning of the simulation (dimensionless). Can be a vector of \code{length(clusters)}, shorter values are recycled.}
 
-\item{r}{\link{numeric} (\emph{with default}): The retrapping ratio for localized transitions}
+\item{r}{\link{numeric} (\strong{required}): The retrapping ratio for localized transitions}
 
 \item{method}{\link{character} (\emph{with default}): Sequential \code{'seq'} or parallel \code{'par'}processing. In
 the parallel mode the function tries to run the simulation on multiple CPU cores (if available) with
@@ -98,7 +98,7 @@ plot_RLumCarlo(results, legend = TRUE)
 } 
 
 \section{How to cite}{
-Kreutzer, S., 2020. run_MC_LM_OSL_LOC(): Run Monte-Carlo Simulation for LM-OSL (localized transitions). Function version 0.1.0. In: Friedrich, J., Kreutzer, S., Pagonis, V., Schmidt, C., 2020. RLumCarlo: Monte-Carlo Methods for Simulating Luminescence Phenomena. R package version 0.1.6. https://CRAN.R-project.org/package=RLumCarlo
+Kreutzer, S., 2020. run_MC_LM_OSL_LOC(): Run Monte-Carlo Simulation for LM-OSL (localized transitions). Function version 0.1.0. In: Friedrich, J., Kreutzer, S., Pagonis, V., Schmidt, C., 2020. RLumCarlo: Monte-Carlo Methods for Simulating Luminescence Phenomena. R package version 0.1.7.9000-13. https://CRAN.R-project.org/package=RLumCarlo
 }
 
 \references{

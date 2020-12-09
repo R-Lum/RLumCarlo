@@ -36,6 +36,7 @@ jobs:
     env: CACHE_NAME=JOB3
   - os: osx
     r: release
+    osx_image: xcode11.4
     before_install:
       - |
         ## Test whether gcc is already installed

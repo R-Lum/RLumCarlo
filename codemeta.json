@@ -10,14 +10,13 @@
   "codeRepository": "https://CRAN.R-project.org/package=RLumCarlo",
   "issueTracker": "https://github.com/R-Lum/RLumCarlo/issues",
   "license": "https://spdx.org/licenses/GPL-3.0",
-  "version": "0.1.6",
+  "version": "0.1.7.9000.13",
   "programmingLanguage": {
     "@type": "ComputerLanguage",
     "name": "R",
-    "version": "4.1.0",
     "url": "https://r-project.org"
   },
-  "runtimePlatform": "R Under development (unstable) (2020-07-01 r78761)",
+  "runtimePlatform": "R Under development (unstable) (2020-12-04 r79554)",
   "author": [
     {
       "@type": "Person",
@@ -118,7 +117,7 @@
       "@type": "SoftwareApplication",
       "identifier": "testthat",
       "name": "testthat",
-      "version": ">= 2.3.2",
+      "version": ">= 3.0.0",
       "provider": {
         "@id": "https://cran.r-project.org",
         "@type": "Organization",
@@ -133,7 +132,7 @@
       "@type": "SoftwareApplication",
       "identifier": "R",
       "name": "R",
-      "version": ">= 3.4.0"
+      "version": ">= 3.5.0"
     },
     {
       "@type": "SoftwareApplication",
@@ -218,7 +217,7 @@
       "@type": "SoftwareApplication",
       "identifier": "Rcpp",
       "name": "Rcpp",
-      "version": ">= 1.0.4",
+      "version": ">= 1.0.5",
       "provider": {
         "@id": "https://cran.r-project.org",
         "@type": "Organization",
@@ -246,19 +245,19 @@
       "name": "stats"
     }
   ],
-  "releaseNotes": "https://github.com/R-Lum/RLumCarlo/blob/master/NEWS.md",
-  "developmentStatus": "https://www.repostatus.org/#concept",
-  "readme": "https://github.com/R-Lum/RLumCarlo/blob/master/README.md",
-  "contIntegration": [
-    "https://travis-ci.org/R-Lum/RLumCarlo",
-    "https://ci.appveyor.com/project/RLumSK/rlumcarlo",
-    "https://codecov.io/gh/R-Lum/RLumCarlo"
-  ],
+  "developmentStatus": "https://www.repostatus.org/#active",
+  "contIntegration": ["https://travis-ci.org/R-Lum/RLumCarlo", "https://ci.appveyor.com/project/RLumSK/rlumcarlo", "https://codecov.io/gh/R-Lum/RLumCarlo"],
   "provider": {
     "@id": "https://cran.r-project.org",
     "@type": "Organization",
     "name": "Comprehensive R Archive Network (CRAN)",
     "url": "https://cran.r-project.org"
   },
-  "relatedLink": "https://CRAN.R-project.org/package=RLumCarlo"
+  "relatedLink": "https://CRAN.R-project.org/package=RLumCarlo",
+  "keywords": [
+    "monte-carlo-simulations",
+    "feldspar",
+    "luminescence",
+    "simulation"
+  ]
 }

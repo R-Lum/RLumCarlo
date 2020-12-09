@@ -1,7 +1,6 @@
-context("internals")
-
 test_that("test internal functions", {
   testthat::skip_on_cran()
+  local_edition(3)
 
   ## crash the function
   ## times not long enough

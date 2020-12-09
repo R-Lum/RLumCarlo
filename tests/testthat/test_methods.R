@@ -1,10 +1,9 @@
-context("methods")
-
 test_that("basic run", {
   testthat::skip_on_cran()
+  local_edition(3)
 
   ## summary
-  expect_is(summary(run_MC_TL_TUN(
+  expect_s3_class(summary(run_MC_TL_TUN(
     s = 3.5e12,
     E = 1.45,
     rho = 0.015,
@@ -13,7 +12,7 @@ test_that("basic run", {
     method = "seq"
   )), "data.frame")
 
-  expect_is(summary(run_MC_TL_TUN(
+  expect_s3_class(summary(run_MC_TL_TUN(
     s = 3.5e12,
     E = 1.45,
     rho = 0.015,
@@ -25,7 +24,7 @@ test_that("basic run", {
 
 
   ## check object dimension 2 (one cluster)
-  expect_is(summary(run_MC_TL_TUN(
+  expect_s3_class(summary(run_MC_TL_TUN(
     s = 3.5e12,
     E = 1.45,
     rho = 0.015,
@@ -50,6 +49,7 @@ test_that("basic run", {
 
 test_that("check c()", {
   testthat::skip_on_cran()
+  local_edition(3)
 
   ## create need output objects
   objectA <- run_MC_TL_LOC(

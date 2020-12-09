@@ -27,7 +27,7 @@
 #'
 #' @param s [numeric] (**required**): The frequency factor of the trap (s^-1)
 #'
-#' @param times [numeric] (*with default*): The sequence of temperature steps within the simulation (s).
+#' @param times [numeric] (**required**): The sequence of temperature steps within the simulation (s).
 #' The default heating rate is set to 1 K/s. The final temperature is `max(times) * b`
 #'
 #' @param b [numeric] (*with default*): the heating rate in K/s
@@ -37,7 +37,7 @@
 #' @param n_filled [integer] (*with default*): The number of filled electron traps at
 #' the beginning of the simulation (dimensionless). Can be a vector of `length(clusters)`, shorter values are recycled.
 #'
-#' @param r [numeric] (*with default*): The localized retrapping ratio (dimensionless)
+#' @param r [numeric] (**required**): The localized retrapping ratio (dimensionless)
 #'
 #' @param method [character] (*with default*): Sequential `'seq'` or parallel `'par'`processing. In
 #' the parallel mode the function tries to run the simulation on multiple CPU cores (if available) with

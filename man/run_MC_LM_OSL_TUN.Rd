@@ -24,7 +24,7 @@ run_MC_LM_OSL_TUN(
 \item{rho}{\link{numeric} (\strong{required}): The dimensionless density of recombination centres
 (defined as \eqn{\rho}' in Huntley 2006) (dimensionless)}
 
-\item{times}{\link{numeric} (\emph{with default}): The sequence of time steps within the simulation (s)}
+\item{times}{\link{numeric} (\strong{required}): The sequence of time steps within the simulation (s)}
 
 \item{clusters}{\link{numeric} (\emph{with default}): The number of MC runs}
 
@@ -108,7 +108,7 @@ plot_RLumCarlo(results, norm = TRUE)
 } 
 
 \section{How to cite}{
-Friedrich, J., Kreutzer, S., 2020. run_MC_LM_OSL_TUN(): Run Monte-Carlo Simulation for LM-OSL (tunnelling transitions). Function version 0.1.0. In: Friedrich, J., Kreutzer, S., Pagonis, V., Schmidt, C., 2020. RLumCarlo: Monte-Carlo Methods for Simulating Luminescence Phenomena. R package version 0.1.6. https://CRAN.R-project.org/package=RLumCarlo
+Friedrich, J., Kreutzer, S., 2020. run_MC_LM_OSL_TUN(): Run Monte-Carlo Simulation for LM-OSL (tunnelling transitions). Function version 0.1.0. In: Friedrich, J., Kreutzer, S., Pagonis, V., Schmidt, C., 2020. RLumCarlo: Monte-Carlo Methods for Simulating Luminescence Phenomena. R package version 0.1.7.9000-13. https://CRAN.R-project.org/package=RLumCarlo
 }
 
 \references{

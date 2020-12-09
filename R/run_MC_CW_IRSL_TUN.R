@@ -21,12 +21,12 @@
 #' n := the instantaneous number of electrons corresponding to the radius r' at time t
 #'
 #' @param A [numeric] (**required**): The effective optical excitation rate for the tunnelling process
-#' (s^-1).
+#' (`s^-1`).
 #'
 #' @param rho [numeric] (**required**): The density of recombination centres
 #' (defined as \eqn{\rho}' in Huntley 2006) (dimensionless).
 #'
-#' @param times [numeric] (*with default*): The sequence of time steps within the simulation (s).
+#' @param times [numeric] (**required**): The sequence of time steps within the simulation (s).
 #'
 #' @param clusters [numeric] (*with default*): The number of created clusters for the MC runs. The input can be the output of [create_ClusterSystem]. In that case `n_filled` indicate absolute numbers of a system.
 #'
