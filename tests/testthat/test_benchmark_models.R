@@ -7,30 +7,19 @@ test_that("basic run", {
   ## RLumCarlo
   TL110 <- expect_s3_class(RLumCarlo::run_MC_TL_DELOC(
     s = 5e12, E = 0.97, R = 5e-10, times = seq(20,400,2),
-<<<<<<< HEAD
-    N_e = 78, method = "seq")
-=======
     N_e = 78, method = "seq"),
     "RLumCarlo_Model_Output")
->>>>>>> origin/dev_0.1.X
+
 
   TL230 <- expect_s3_class(RLumCarlo::run_MC_TL_DELOC(
     s = 5e14, E = 1.55, R = 5e-10, times = seq(20,400,2),
-<<<<<<< HEAD
-    N_e = 52, method = "seq")
-=======
     N_e = 52, method = "seq"),
     "RLumCarlo_Model_Output")
->>>>>>> origin/dev_0.1.X
 
   TL325 <- expect_s3_class(RLumCarlo::run_MC_TL_DELOC(
     s = 5e13, E = 1.7, R = 5e-10, times = seq(20,400,2),
-<<<<<<< HEAD
-    N_e = 1909, method = "seq")
-=======
     N_e = 1909, method = "seq"),
     "RLumCarlo_Model_Output")
->>>>>>> origin/dev_0.1.X
 
   ## combine
   object <- expect_s3_class(c(TL110, TL230, TL325), "RLumCarlo_Model_Output")
