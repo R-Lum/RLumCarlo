@@ -1,13 +1,21 @@
 {
   "license": [
     [
-      ["GPL-2.0-or-later"]
+      [
+        [
+          ["GPL-2.0-or-later"]
+        ]
+      ]
     ]
   ],
   "description": ["<p>A collection of functions to simulate luminescence production in <\/p>"],
   "language": [
     [
-      ["eng"]
+      [
+        [
+          ["eng"]
+        ]
+      ]
     ]
   ],
   "title": ["RLumCarlo: Monte-Carlo Methods for Simulating Luminescence Phenomena"],
@@ -15,199 +23,335 @@
     {
       "id": [
         [
-          ["10.13039/501100000780::844457"]
+          [
+            [
+              ["10.13039/501100000780::844457"]
+            ]
+          ]
         ]
       ]
     }
   ],
   "upload_type": [
     [
-      ["software"]
+      [
+        [
+          ["software"]
+        ]
+      ]
     ]
   ],
   "version": ["0.1.7"],
   "keywords": [
     [
       [
-        ["Modelling"]
+        [
+          [
+            ["Modelling"]
+          ]
+        ]
       ]
     ],
     [
       [
-        ["Monte-Carlo Simulations"]
+        [
+          [
+            ["Monte-Carlo Simulations"]
+          ]
+        ]
       ]
     ],
     [
       [
-        ["Luminescence"]
+        [
+          [
+            ["Luminescence"]
+          ]
+        ]
       ]
     ]
   ],
   "publication_date": [
     [
-      ["2020-07-05"]
+      [
+        [
+          ["2020-07-05"]
+        ]
+      ]
     ]
   ],
   "creators": [
     {
       "orcid": [
         [
-          ["0000-0002-0805-9547"]
+          [
+            [
+              ["0000-0002-0805-9547"]
+            ]
+          ]
         ]
       ],
       "affiliation": [
         [
-          ["Chair of Geomorphology, University of Bayreuth, University of Bayreuth, Germany"]
+          [
+            [
+              ["Chair of Geomorphology, University of Bayreuth, University of Bayreuth, Germany"]
+            ]
+          ]
         ]
       ],
       "name": [
         [
-          ["Friedrich, Johannes"]
+          [
+            [
+              ["Friedrich, Johannes"]
+            ]
+          ]
         ]
       ]
     },
     {
       "orcid": [
         [
-          ["0000-0002-0734-2199"]
+          [
+            [
+              ["0000-0002-0734-2199"]
+            ]
+          ]
         ]
       ],
       "affiliation": [
         [
-          ["Department of Geography and Earth Sciences, Aberystwyth University"]
+          [
+            [
+              ["Department of Geography and Earth Sciences, Aberystwyth University"]
+            ]
+          ]
         ]
       ],
       "name": [
         [
-          ["Kreutzer, Sebastian"]
+          [
+            [
+              ["Kreutzer, Sebastian"]
+            ]
+          ]
         ]
       ]
     },
     {
       "orcid": [
         [
-          ["0000-0002-4852-9312"]
+          [
+            [
+              ["0000-0002-4852-9312"]
+            ]
+          ]
         ]
       ],
       "affiliation": [
         [
-          ["Physics Department, McDaniel College, Westminster, MD 21157, USA"]
+          [
+            [
+              ["Physics Department, McDaniel College, Westminster, MD 21157, USA"]
+            ]
+          ]
         ]
       ],
       "name": [
         [
-          ["Pagonis, Vasilis"]
+          [
+            [
+              ["Pagonis, Vasilis"]
+            ]
+          ]
         ]
       ]
     },
     {
       "orcid": [
         [
-          ["0000-0002-2309-3209"]
+          [
+            [
+              ["0000-0002-2309-3209"]
+            ]
+          ]
         ]
       ],
       "affiliation": [
         [
-          ["Institute of Earth Surface Dynamics, University of Lausanne, Institute of Earth Surface Dynamics, University of Lausanne 1015 Lausanne, Switzerland"]
+          [
+            [
+              ["Institute of Earth Surface Dynamics, University of Lausanne, Institute of Earth Surface Dynamics, University of Lausanne 1015 Lausanne, Switzerland"]
+            ]
+          ]
         ]
       ],
       "name": [
         [
-          ["Schmidt, Christoph"]
+          [
+            [
+              ["Schmidt, Christoph"]
+            ]
+          ]
         ]
       ]
     },
     {
       "orcid": [
         [
-          ["0000-0002-6012-1029"]
+          [
+            [
+              ["0000-0002-6012-1029"]
+            ]
+          ]
         ]
       ],
       "affiliation": [
         [
-          ["Université de Paris, Institut de Physique du Globe de Paris, CNRS, 75005 Paris, France"]
+          [
+            [
+              ["Université de Paris, Institut de Physique du Globe de Paris, CNRS, 75005 Paris, France"]
+            ]
+          ]
         ]
       ],
       "name": [
         [
-          ["Laag, Christian"]
+          [
+            [
+              ["Laag, Christian"]
+            ]
+          ]
         ]
       ]
     },
     {
       "affiliation": [
         [
-          ["Chair of Geomorphology, University of Bayreuth, University of Bayreuth, Germany"]
+          [
+            [
+              ["Chair of Geomorphology, University of Bayreuth, University of Bayreuth, Germany"]
+            ]
+          ]
         ]
       ],
       "name": [
         [
-          ["Rajovic, Ena"]
+          [
+            [
+              ["Rajovic, Ena"]
+            ]
+          ]
         ]
       ]
     },
     {
       "name": [
         [
-          ["Duncan, Alex Roy"]
+          [
+            [
+              ["Duncan, Alex Roy"]
+            ]
+          ]
         ]
       ]
     }
   ],
   "access_right": [
     [
-      ["open"]
+      [
+        [
+          ["open"]
+        ]
+      ]
     ]
   ],
   "related_identifiers": [
     {
       "scheme": [
         [
-          ["url"]
+          [
+            [
+              ["url"]
+            ]
+          ]
         ]
       ],
       "identifier": [
         [
-          ["https://CRAN.R-project.org/package=RLumCarlo"]
+          [
+            [
+              ["https://CRAN.R-project.org/package=RLumCarlo"]
+            ]
+          ]
         ]
       ],
       "relation": [
         [
-          ["isSupplementedBy"]
+          [
+            [
+              ["isSupplementedBy"]
+            ]
+          ]
         ]
       ]
     },
     {
       "scheme": [
         [
-          ["url"]
+          [
+            [
+              ["url"]
+            ]
+          ]
         ]
       ],
       "identifier": [
         [
-          ["https://github.com/R-Lum/RLumCarlo/tree/master"]
+          [
+            [
+              ["https://github.com/R-Lum/RLumCarlo/tree/master"]
+            ]
+          ]
         ]
       ],
       "relation": [
         [
-          ["isPreviousVersionOf"]
+          [
+            [
+              ["isPreviousVersionOf"]
+            ]
+          ]
         ]
       ]
     },
     {
       "scheme": [
         [
-          ["doi"]
+          [
+            [
+              ["doi"]
+            ]
+          ]
         ]
       ],
       "identifier": [
         [
-          ["10.5281/zenodo.3891588"]
+          [
+            [
+              ["10.5281/zenodo.3891588"]
+            ]
+          ]
         ]
       ],
       "relation": [
         [
-          ["isVersionOf"]
+          [
+            [
+              ["isVersionOf"]
+            ]
+          ]
         ]
       ]
     }
