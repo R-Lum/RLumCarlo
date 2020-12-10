@@ -31,7 +31,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">RLumCarlo</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.1.6</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.1.7</span>
       </span>
     </div>
 
@@ -87,7 +87,7 @@
       <h1 data-toc-skip>`RLumCarlo’: Tedious features - fine examples</h1>
                         <h4 class="author">Sebastian Kreutzer, Johannes Friedrich, Vasilis Pagonis, Christoph Schmidt</h4>
             
-            <h4 class="date">RLumCarlo: v0.1.7.9000.5 | last modified: 2020-11-03</h4>
+            <h4 class="date">RLumCarlo: v0.1.7 | last modified: 2020-12-10</h4>
       
       <small class="dont-index">Source: <a href="https://github.com/R-Lum/RLumCarlo/blob/master/vignettes/RLumCarlo_-_Getting_started_with_RLumCarlo.Rmd"><code>vignettes/RLumCarlo_-_Getting_started_with_RLumCarlo.Rmd</code></a></small>
       <div class="hidden name"><code>RLumCarlo_-_Getting_started_with_RLumCarlo.Rmd</code></div>
@@ -317,8 +317,8 @@ R/run_MC_TL_TUN.R src/MC_C_MC_TL_TUN.cpp
 <h3 class="hasAnchor">
 <a href="#model-the-signal" class="anchor"></a>Model the signal</h3>
 <p>The most obvious modelling output is the luminescence signal itself, our example below simulates an iso-thermal (ITL) signal for a temperature (<code>T</code>) of 200 °C over 5,000 s using a tunnelling transition model. Trap parameters are <span class="math inline">\(E = 1.2\)</span> eV for the trap depth and a frequency factor of <span class="math inline">\(1\times10^{10}\)</span> (1/s). The parameter <code>rho</code> (<span class="math inline">\(\rho'\)</span>) defines the recombination centre density.</p>
-<div class="sourceCode" id="cb1"><pre class="downlit">
-<span class="va">results</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/run_MC_ISO_TUN.html">run_MC_ISO_TUN</a></span><span class="op">(</span>
+<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">results</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/run_MC_ISO_TUN.html">run_MC_ISO_TUN</a></span><span class="op">(</span>
   E <span class="op">=</span> <span class="fl">1.2</span>,
   s <span class="op">=</span> <span class="fl">1e10</span>,
   T <span class="op">=</span> <span class="fl">200</span>,
@@ -329,10 +329,10 @@ R/run_MC_TL_TUN.R src/MC_C_MC_TL_TUN.cpp
 <span class="op">)</span> <span class="op">%T&gt;%</span>
   <span class="fu"><a href="../reference/plot_RLumCarlo.html">plot_RLumCarlo</a></span><span class="op">(</span>norm <span class="op">=</span> <span class="cn">TRUE</span>,
                  legend <span class="op">=</span> <span class="cn">TRUE</span>,
-                 main <span class="op">=</span> <span class="st">"Iso-thermal decay (TUN)"</span><span class="op">)</span></pre></div>
+                 main <span class="op">=</span> <span class="st">"Iso-thermal decay (TUN)"</span><span class="op">)</span></code></pre></div>
 <p><img src="RLumCarlo_-_Getting_started_with_RLumCarlo_files/figure-html/Fig%201-1.png" width="480" style="display: block; margin: auto;"> In the example above <code>N_e</code> is a scalar, which means that all clusters start with the same number of electrons (here 200). However, `RLumCarlo’ supports different starting conditions with regard to the initial number of electrons. For example, one could assume that the number of initial electrons vary randomly between 190 and 210. Such a situation is created in the next example. Generally, `RLumCarlo’ supports such an input for the parameters <code>N_e</code> and <code>n_filled</code>.</p>
-<div class="sourceCode" id="cb2"><pre class="downlit">
-<span class="va">results</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/run_MC_ISO_TUN.html">run_MC_ISO_TUN</a></span><span class="op">(</span>
+<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">results</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/run_MC_ISO_TUN.html">run_MC_ISO_TUN</a></span><span class="op">(</span>
   E <span class="op">=</span> <span class="fl">1.2</span>,
   s <span class="op">=</span> <span class="fl">1e10</span>,
   T <span class="op">=</span> <span class="fl">200</span>,
@@ -343,15 +343,15 @@ R/run_MC_TL_TUN.R src/MC_C_MC_TL_TUN.cpp
 <span class="op">)</span> <span class="op">%T&gt;%</span>
   <span class="fu"><a href="../reference/plot_RLumCarlo.html">plot_RLumCarlo</a></span><span class="op">(</span>norm <span class="op">=</span> <span class="cn">TRUE</span>,
                  legend <span class="op">=</span> <span class="cn">TRUE</span>,
-                 main <span class="op">=</span> <span class="st">"Iso-thermal decay (TUN) for varying N_e"</span><span class="op">)</span></pre></div>
+                 main <span class="op">=</span> <span class="st">"Iso-thermal decay (TUN) for varying N_e"</span><span class="op">)</span></code></pre></div>
 <p><img src="RLumCarlo_-_Getting_started_with_RLumCarlo_files/figure-html/Fig%201b-1.png" width="480" style="display: block; margin: auto;"></p>
 </div>
 <div id="model-remaining-charges" class="section level3">
 <h3 class="hasAnchor">
 <a href="#model-remaining-charges" class="anchor"></a>Model remaining charges</h3>
 <p>The first example can be slightly altered to provide alternative insight. Instead of the luminescence signal, the variant below returns the number of remaining electrons in the trap.</p>
-<div class="sourceCode" id="cb3"><pre class="downlit">
-<span class="va">results</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/run_MC_ISO_TUN.html">run_MC_ISO_TUN</a></span><span class="op">(</span>
+<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">results</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/run_MC_ISO_TUN.html">run_MC_ISO_TUN</a></span><span class="op">(</span>
   E <span class="op">=</span> <span class="fl">1.2</span>,
   s <span class="op">=</span> <span class="fl">1e10</span>,
   T <span class="op">=</span> <span class="fl">200</span>,
@@ -362,17 +362,17 @@ R/run_MC_TL_TUN.R src/MC_C_MC_TL_TUN.cpp
   <span class="fu"><a href="../reference/plot_RLumCarlo.html">plot_RLumCarlo</a></span><span class="op">(</span>
     legend <span class="op">=</span> <span class="cn">TRUE</span>,
     ylab <span class="op">=</span> <span class="st">"Remaining electrons"</span>
-    <span class="op">)</span></pre></div>
+    <span class="op">)</span></code></pre></div>
 <p><img src="RLumCarlo_-_Getting_started_with_RLumCarlo_files/figure-html/Fig%202-1.png" width="480" style="display: block; margin: auto;"></p>
 </div>
 <div id="understanding-the-numerical-output" class="section level3">
 <h3 class="hasAnchor">
 <a href="#understanding-the-numerical-output" class="anchor"></a>Understanding the numerical output</h3>
 <p>In both cases the modelling output is an object of class <code>RLumCarlo_Model_Output</code>, which is basically a list consisting of an <code>array</code> and a <code>numeric</code> (vector).</p>
-<div class="sourceCode" id="cb4"><pre class="downlit">
-<span class="fu"><a href="https://rdrr.io/r/utils/str.html">str</a></span><span class="op">(</span><span class="va">results</span><span class="op">)</span></pre></div>
+<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/utils/str.html">str</a></span><span class="op">(</span><span class="va">results</span><span class="op">)</span></code></pre></div>
 <pre><code>## List of 2
-##  $ signal: num [1:5001, 1:21, 1:10] 200 200 200 200 200 200 200 200 200 200 ...
+##  $ signal: num [1:5001, 1:21, 1:10] 200 200 200 200 199 199 199 199 199 199 ...
 ##   ..- attr(*, "dimnames")=List of 3
 ##   .. ..$ : NULL
 ##   .. ..$ : NULL
@@ -381,41 +381,41 @@ R/run_MC_TL_TUN.R src/MC_C_MC_TL_TUN.cpp
 ##  - attr(*, "class")= chr "RLumCarlo_Model_Output"
 ##  - attr(*, "model")= chr "run_MC_ISO_TUN"</code></pre>
 <p>While this represents the full modelling output results, its interpretation might be less straight forward, and the user may want to condense the information via <code><a href="https://rdrr.io/r/base/summary.html">summary()</a></code>. The function <code><a href="https://rdrr.io/r/base/summary.html">summary()</a></code> is also used internally by the function <code><a href="../reference/plot_RLumCarlo.html">plot_RLumCarlo()</a></code> to simplify the data before there are plotted.</p>
-<div class="sourceCode" id="cb6"><pre class="downlit">
-<span class="va">df</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/summary.html">summary</a></span><span class="op">(</span><span class="va">results</span><span class="op">)</span></pre></div>
+<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">df</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/summary.html">summary</a></span><span class="op">(</span><span class="va">results</span><span class="op">)</span></code></pre></div>
 <pre><code>##       time           mean          y_min          y_max            sd        
-##  Min.   :   0   Min.   :3074   Min.   :3056   Min.   :3094   Min.   : 1.059  
-##  1st Qu.:1250   1st Qu.:3181   1st Qu.:3150   1st Qu.:3202   1st Qu.:12.237  
-##  Median :2500   Median :3342   Median :3326   Median :3372   Median :13.343  
-##  Mean   :2500   Mean   :3422   Mean   :3400   Mean   :3445   Mean   :13.142  
-##  3rd Qu.:3750   3rd Qu.:3598   3rd Qu.:3582   3rd Qu.:3623   3rd Qu.:14.283  
-##  Max.   :5000   Max.   :4199   Max.   :4197   Max.   :4200   Max.   :17.128  
+##  Min.   :   0   Min.   :3071   Min.   :3048   Min.   :3095   Min.   : 1.054  
+##  1st Qu.:1250   1st Qu.:3182   1st Qu.:3157   1st Qu.:3200   1st Qu.:11.371  
+##  Median :2500   Median :3334   Median :3313   Median :3360   Median :13.298  
+##  Mean   :2500   Mean   :3416   Mean   :3397   Mean   :3437   Mean   :13.033  
+##  3rd Qu.:3750   3rd Qu.:3589   3rd Qu.:3567   3rd Qu.:3617   3rd Qu.:14.423  
+##  Max.   :5000   Max.   :4199   Max.   :4197   Max.   :4200   Max.   :19.207  
 ##       var               sum       
-##  Min.   :  1.122   Min.   :30740  
-##  1st Qu.:149.733   1st Qu.:31813  
-##  Median :178.044   Median :33421  
-##  Mean   :176.180   Mean   :34216  
-##  3rd Qu.:204.011   3rd Qu.:35984  
-##  Max.   :293.378   Max.   :41993</code></pre>
-<div class="sourceCode" id="cb8"><pre class="downlit">
-<span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="va">df</span><span class="op">)</span></pre></div>
-<pre><code>##   time   mean y_min y_max       sd       var   sum
-## 1    0 4199.3  4197  4200 1.059350  1.122222 41993
-## 2    1 4198.6  4195  4200 1.429841  2.044444 41986
-## 3    2 4198.1  4194  4200 1.852926  3.433333 41981
-## 4    3 4197.1  4193  4199 1.969207  3.877778 41971
-## 5    4 4196.4  4191  4199 2.796824  7.822222 41964
-## 6    5 4195.7  4190  4199 3.198958 10.233333 41957</code></pre>
+##  Min.   :  1.111   Min.   :30714  
+##  1st Qu.:129.289   1st Qu.:31823  
+##  Median :176.844   Median :33336  
+##  Mean   :176.705   Mean   :34163  
+##  3rd Qu.:208.011   3rd Qu.:35890  
+##  Max.   :368.900   Max.   :41990</code></pre>
+<div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="va">df</span><span class="op">)</span></code></pre></div>
+<pre><code>##   time   mean y_min y_max       sd      var   sum
+## 1    0 4199.0  4197  4200 1.054093 1.111111 41990
+## 2    1 4198.3  4196  4200 1.337494 1.788889 41983
+## 3    2 4197.7  4195  4200 1.494434 2.233333 41977
+## 4    3 4196.7  4191  4199 2.359378 5.566667 41967
+## 5    4 4195.8  4191  4199 2.440401 5.955556 41958
+## 6    5 4195.4  4191  4199 2.366432 5.600000 41954</code></pre>
 <p>The call summarises the modelling results and returns a terminal output and a <code>data.frame</code> with, e.g., the mean or the standard deviation, which can be used to create plots for further insight. For instance, the stimulation time against coefficient of variation (CV in %):</p>
-<div class="sourceCode" id="cb10"><pre class="downlit">
-<span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html">plot</a></span><span class="op">(</span>
+<div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html">plot</a></span><span class="op">(</span>
   x <span class="op">=</span> <span class="va">df</span><span class="op">$</span><span class="va">time</span>,
   y <span class="op">=</span> <span class="op">(</span><span class="va">df</span><span class="op">$</span><span class="va">sd</span> <span class="op">/</span> <span class="va">df</span><span class="op">$</span><span class="va">mean</span><span class="op">)</span> <span class="op">*</span> <span class="fl">100</span>,
   pch <span class="op">=</span> <span class="fl">20</span>, 
   col <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/grDevices/rgb.html">rgb</a></span><span class="op">(</span><span class="fl">0</span>,<span class="fl">0</span>,<span class="fl">0</span>,<span class="fl">.1</span><span class="op">)</span>,
   xlab <span class="op">=</span> <span class="st">"Stimulation time [s]"</span>,
   ylab <span class="op">=</span> <span class="st">"CV [%]"</span>
-<span class="op">)</span></pre></div>
+<span class="op">)</span></code></pre></div>
 <p><img src="RLumCarlo_-_Getting_started_with_RLumCarlo_files/figure-html/Fig%203-1.png" width="480" style="display: block; margin: auto;"></p>
 </div>
 </div>
@@ -423,8 +423,8 @@ R/run_MC_TL_TUN.R src/MC_C_MC_TL_TUN.cpp
 <h2 class="hasAnchor">
 <a href="#example-2-combining-two-plots" class="anchor"></a>Example 2: Combining two plots</h2>
 <p>The following examples use again the tunnelling model but for continuous wave (CW) infrared light stimulation (IRSL), and they combine two plots in one single plot window.</p>
-<div class="sourceCode" id="cb11"><pre class="downlit">
-<span class="co">## set time vector </span>
+<div class="sourceCode" id="cb11"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="co">## set time vector </span>
 <span class="va">times</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/seq.html">seq</a></span><span class="op">(</span><span class="fl">0</span>, <span class="fl">1000</span><span class="op">)</span>
 
 <span class="co">## Run MC simulation</span>
@@ -432,15 +432,15 @@ R/run_MC_TL_TUN.R src/MC_C_MC_TL_TUN.cpp
   <span class="fu"><a href="../reference/plot_RLumCarlo.html">plot_RLumCarlo</a></span><span class="op">(</span>norm <span class="op">=</span> <span class="cn">TRUE</span>, legend <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span>
 
 <span class="fu"><a href="../reference/run_MC_CW_IRSL_TUN.html">run_MC_CW_IRSL_TUN</a></span><span class="op">(</span>A <span class="op">=</span> <span class="fl">0.21</span>, rho <span class="op">=</span> <span class="fl">0.003</span>, times <span class="op">=</span> <span class="va">times</span><span class="op">)</span> <span class="op">%&gt;%</span>
-  <span class="fu"><a href="../reference/plot_RLumCarlo.html">plot_RLumCarlo</a></span><span class="op">(</span>norm <span class="op">=</span> <span class="cn">TRUE</span>, add <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></pre></div>
+  <span class="fu"><a href="../reference/plot_RLumCarlo.html">plot_RLumCarlo</a></span><span class="op">(</span>norm <span class="op">=</span> <span class="cn">TRUE</span>, add <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></code></pre></div>
 <p><img src="RLumCarlo_-_Getting_started_with_RLumCarlo_files/figure-html/Fig%204-1.png" width="480" style="display: block; margin: auto;"></p>
 </div>
 <div id="example-3-testing-different-parameters" class="section level2">
 <h2 class="hasAnchor">
 <a href="#example-3-testing-different-parameters" class="anchor"></a>Example 3: Testing different parameters</h2>
 <p>The example above can be further extended to test the effect of different parameters. Contrary to the example above, here the results are stored in a <code>list</code> and <code><a href="../reference/plot_RLumCarlo.html">plot_RLumCarlo()</a></code> is called only one time and it will then iterate automatically over the results to create a combined plot.</p>
-<div class="sourceCode" id="cb12"><pre class="downlit">
-<span class="va">s</span> <span class="op">&lt;-</span> <span class="fl">3.5e12</span>
+<div class="sourceCode" id="cb12"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">s</span> <span class="op">&lt;-</span> <span class="fl">3.5e12</span>
 <span class="va">rho</span> <span class="op">&lt;-</span> <span class="fl">0.015</span>
 <span class="va">E</span> <span class="op">&lt;-</span> <span class="fl">1.45</span>
 <span class="va">r_c</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">0</span>,<span class="fl">0.7</span>,<span class="fl">0.77</span>,<span class="fl">0.86</span>, <span class="fl">0.97</span><span class="op">)</span>
@@ -454,10 +454,10 @@ R/run_MC_TL_TUN.R src/MC_C_MC_TL_TUN.cpp
     times <span class="op">=</span> <span class="va">times</span>
   <span class="op">)</span>
   
-<span class="op">}</span><span class="op">)</span></pre></div>
+<span class="op">}</span><span class="op">)</span></code></pre></div>
 <p>The plot output can be highly customised to provide a better visual experience, e.g., the manual setting of the colours and the legend.</p>
-<div class="sourceCode" id="cb13"><pre class="downlit">
-<span class="co">## plot curves, but without legend</span>
+<div class="sourceCode" id="cb13"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="co">## plot curves, but without legend</span>
 <span class="fu"><a href="../reference/plot_RLumCarlo.html">plot_RLumCarlo</a></span><span class="op">(</span>
   object <span class="op">=</span> <span class="va">results</span>, 
   ylab <span class="op">=</span> <span class="st">"normalised TL signal"</span>,
@@ -475,18 +475,18 @@ R/run_MC_TL_TUN.R src/MC_C_MC_TL_TUN.cpp
   legend <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/paste.html">paste0</a></span><span class="op">(</span><span class="st">"r_c: "</span>, <span class="va">r_c</span><span class="op">)</span>,
   lty <span class="op">=</span> <span class="fl">1</span>,
   col <span class="op">=</span> <span class="fu">khroma</span><span class="fu">::</span><span class="fu"><a href="http://khroma.archaeo.science/reference/colour.html">colour</a></span><span class="op">(</span><span class="st">"bright"</span><span class="op">)</span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/length.html">length</a></span><span class="op">(</span><span class="va">r_c</span><span class="op">)</span><span class="op">)</span>
-<span class="op">)</span></pre></div>
+<span class="op">)</span></code></pre></div>
 <p><img src="RLumCarlo_-_Getting_started_with_RLumCarlo_files/figure-html/Fig%206,Plot%20average%20signal-1.png" width="480" style="display: block; margin: auto;"></p>
 </div>
 <div id="example-4-dosimetric-cluster-systems" class="section level2">
 <h2 class="hasAnchor">
 <a href="#example-4-dosimetric-cluster-systems" class="anchor"></a>Example 4: Dosimetric cluster systems</h2>
 <p>`RLumCarlo’ supports the simulation of a cheap dosimetric cluster system with spatial correlation. Such a dosimetric cluster system can be created with the function <code><a href="../reference/create_ClusterSystem.html">create_ClusterSystem()</a></code>:</p>
-<div class="sourceCode" id="cb14"><pre class="downlit">
-<span class="va">clusters</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/create_ClusterSystem.html">create_ClusterSystem</a></span><span class="op">(</span>n <span class="op">=</span> <span class="fl">100</span>, plot <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></pre></div>
+<div class="sourceCode" id="cb14"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">clusters</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/create_ClusterSystem.html">create_ClusterSystem</a></span><span class="op">(</span>n <span class="op">=</span> <span class="fl">100</span>, plot <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></code></pre></div>
 <p><img src="RLumCarlo_-_Getting_started_with_RLumCarlo_files/figure-html/unnamed-chunk-6-1.png" width="432" style="display: block; margin: auto;"> The result is an arbitrary dosimetric system with randomly distributed clusters. The Euclidean distance is used to group the clusters (colour code). To use the system in the simulation, instead of providing a scalar as input to <code>clusters</code>, the output of <code><a href="../reference/create_ClusterSystem.html">create_ClusterSystem()</a></code> can be injected in every <code>run_MC</code> function.</p>
-<div class="sourceCode" id="cb15"><pre class="downlit">
-<span class="fu"><a href="../reference/run_MC_TL_LOC.html">run_MC_TL_LOC</a></span><span class="op">(</span>
+<div class="sourceCode" id="cb15"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="../reference/run_MC_TL_LOC.html">run_MC_TL_LOC</a></span><span class="op">(</span>
  s <span class="op">=</span> <span class="fl">1e14</span>,
  E <span class="op">=</span> <span class="fl">0.9</span>,
  times <span class="op">=</span> <span class="fl">0</span><span class="op">:</span><span class="fl">100</span>,
@@ -495,7 +495,7 @@ R/run_MC_TL_TUN.R src/MC_C_MC_TL_TUN.cpp
  method <span class="op">=</span> <span class="st">"seq"</span>,
  clusters <span class="op">=</span> <span class="va">clusters</span>,
  r <span class="op">=</span> <span class="fl">1</span><span class="op">)</span> <span class="op">%&gt;%</span>
-<span class="fu"><a href="../reference/plot_RLumCarlo.html">plot_RLumCarlo</a></span><span class="op">(</span><span class="op">)</span></pre></div>
+<span class="fu"><a href="../reference/plot_RLumCarlo.html">plot_RLumCarlo</a></span><span class="op">(</span><span class="op">)</span></code></pre></div>
 <p><img src="RLumCarlo_-_Getting_started_with_RLumCarlo_files/figure-html/unnamed-chunk-7-1.png" width="480" style="display: block; margin: auto;"></p>
 <p>Please note: For the simulation of a dosimetric cluster system, the meaning of <code>n_filled</code> changes. Instead of defining the number of electrons per cluster, it becomes the total number of electrons in the system. Electrons are distributed according to the grouping of the single clusters (the colours in the three-dimensional scatter plot). Within one group, electrons are distributed evenly.</p>
 </div>

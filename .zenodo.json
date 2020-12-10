@@ -3,7 +3,11 @@
     [
       [
         [
-          ["GPL-2.0-or-later"]
+          [
+            [
+              ["GPL-2.0-or-later"]
+            ]
+          ]
         ]
       ]
     ]
@@ -13,7 +17,11 @@
     [
       [
         [
-          ["eng"]
+          [
+            [
+              ["eng"]
+            ]
+          ]
         ]
       ]
     ]
@@ -25,7 +33,11 @@
         [
           [
             [
-              ["10.13039/501100000780::844457"]
+              [
+                [
+                  ["10.13039/501100000780::844457"]
+                ]
+              ]
             ]
           ]
         ]
@@ -36,7 +48,11 @@
     [
       [
         [
-          ["software"]
+          [
+            [
+              ["software"]
+            ]
+          ]
         ]
       ]
     ]
@@ -47,7 +63,11 @@
       [
         [
           [
-            ["Modelling"]
+            [
+              [
+                ["Modelling"]
+              ]
+            ]
           ]
         ]
       ]
@@ -56,7 +76,11 @@
       [
         [
           [
-            ["Monte-Carlo Simulations"]
+            [
+              [
+                ["Monte-Carlo Simulations"]
+              ]
+            ]
           ]
         ]
       ]
@@ -65,7 +89,11 @@
       [
         [
           [
-            ["Luminescence"]
+            [
+              [
+                ["Luminescence"]
+              ]
+            ]
           ]
         ]
       ]
@@ -75,7 +103,11 @@
     [
       [
         [
-          ["2020-07-05"]
+          [
+            [
+              ["2020-07-05"]
+            ]
+          ]
         ]
       ]
     ]
@@ -86,7 +118,11 @@
         [
           [
             [
-              ["0000-0002-0805-9547"]
+              [
+                [
+                  ["0000-0002-0805-9547"]
+                ]
+              ]
             ]
           ]
         ]
@@ -95,7 +131,11 @@
         [
           [
             [
-              ["Chair of Geomorphology, University of Bayreuth, University of Bayreuth, Germany"]
+              [
+                [
+                  ["Chair of Geomorphology, University of Bayreuth, University of Bayreuth, Germany"]
+                ]
+              ]
             ]
           ]
         ]
@@ -104,7 +144,11 @@
         [
           [
             [
-              ["Friedrich, Johannes"]
+              [
+                [
+                  ["Friedrich, Johannes"]
+                ]
+              ]
             ]
           ]
         ]
@@ -115,7 +159,11 @@
         [
           [
             [
-              ["0000-0002-0734-2199"]
+              [
+                [
+                  ["0000-0002-0734-2199"]
+                ]
+              ]
             ]
           ]
         ]
@@ -124,7 +172,11 @@
         [
           [
             [
-              ["Department of Geography and Earth Sciences, Aberystwyth University"]
+              [
+                [
+                  ["Department of Geography and Earth Sciences, Aberystwyth University"]
+                ]
+              ]
             ]
           ]
         ]
@@ -133,7 +185,11 @@
         [
           [
             [
-              ["Kreutzer, Sebastian"]
+              [
+                [
+                  ["Kreutzer, Sebastian"]
+                ]
+              ]
             ]
           ]
         ]
@@ -144,7 +200,11 @@
         [
           [
             [
-              ["0000-0002-4852-9312"]
+              [
+                [
+                  ["0000-0002-4852-9312"]
+                ]
+              ]
             ]
           ]
         ]
@@ -153,7 +213,11 @@
         [
           [
             [
-              ["Physics Department, McDaniel College, Westminster, MD 21157, USA"]
+              [
+                [
+                  ["Physics Department, McDaniel College, Westminster, MD 21157, USA"]
+                ]
+              ]
             ]
           ]
         ]
@@ -162,7 +226,11 @@
         [
           [
             [
-              ["Pagonis, Vasilis"]
+              [
+                [
+                  ["Pagonis, Vasilis"]
+                ]
+              ]
             ]
           ]
         ]
@@ -173,7 +241,11 @@
         [
           [
             [
-              ["0000-0002-2309-3209"]
+              [
+                [
+                  ["0000-0002-2309-3209"]
+                ]
+              ]
             ]
           ]
         ]
@@ -182,7 +254,11 @@
         [
           [
             [
-              ["Institute of Earth Surface Dynamics, University of Lausanne, Institute of Earth Surface Dynamics, University of Lausanne 1015 Lausanne, Switzerland"]
+              [
+                [
+                  ["Institute of Earth Surface Dynamics, University of Lausanne, Institute of Earth Surface Dynamics, University of Lausanne 1015 Lausanne, Switzerland"]
+                ]
+              ]
             ]
           ]
         ]
@@ -191,7 +267,11 @@
         [
           [
             [
-              ["Schmidt, Christoph"]
+              [
+                [
+                  ["Schmidt, Christoph"]
+                ]
+              ]
             ]
           ]
         ]
@@ -202,7 +282,11 @@
         [
           [
             [
-              ["0000-0002-6012-1029"]
+              [
+                [
+                  ["0000-0002-6012-1029"]
+                ]
+              ]
             ]
           ]
         ]
@@ -211,7 +295,11 @@
         [
           [
             [
-              ["Université de Paris, Institut de Physique du Globe de Paris, CNRS, 75005 Paris, France"]
+              [
+                [
+                  ["Université de Paris, Institut de Physique du Globe de Paris, CNRS, 75005 Paris, France"]
+                ]
+              ]
             ]
           ]
         ]
@@ -220,7 +308,11 @@
         [
           [
             [
-              ["Laag, Christian"]
+              [
+                [
+                  ["Laag, Christian"]
+                ]
+              ]
             ]
           ]
         ]
@@ -231,7 +323,11 @@
         [
           [
             [
-              ["Chair of Geomorphology, University of Bayreuth, University of Bayreuth, Germany"]
+              [
+                [
+                  ["Chair of Geomorphology, University of Bayreuth, University of Bayreuth, Germany"]
+                ]
+              ]
             ]
           ]
         ]
@@ -240,7 +336,11 @@
         [
           [
             [
-              ["Rajovic, Ena"]
+              [
+                [
+                  ["Rajovic, Ena"]
+                ]
+              ]
             ]
           ]
         ]
@@ -251,7 +351,11 @@
         [
           [
             [
-              ["Duncan, Alex Roy"]
+              [
+                [
+                  ["Duncan, Alex Roy"]
+                ]
+              ]
             ]
           ]
         ]
@@ -262,7 +366,11 @@
     [
       [
         [
-          ["open"]
+          [
+            [
+              ["open"]
+            ]
+          ]
         ]
       ]
     ]
@@ -273,7 +381,11 @@
         [
           [
             [
-              ["url"]
+              [
+                [
+                  ["url"]
+                ]
+              ]
             ]
           ]
         ]
@@ -282,7 +394,11 @@
         [
           [
             [
-              ["https://CRAN.R-project.org/package=RLumCarlo"]
+              [
+                [
+                  ["https://CRAN.R-project.org/package=RLumCarlo"]
+                ]
+              ]
             ]
           ]
         ]
@@ -291,7 +407,11 @@
         [
           [
             [
-              ["isSupplementedBy"]
+              [
+                [
+                  ["isSupplementedBy"]
+                ]
+              ]
             ]
           ]
         ]
@@ -302,7 +422,11 @@
         [
           [
             [
-              ["url"]
+              [
+                [
+                  ["url"]
+                ]
+              ]
             ]
           ]
         ]
@@ -311,7 +435,11 @@
         [
           [
             [
-              ["https://github.com/R-Lum/RLumCarlo/tree/master"]
+              [
+                [
+                  ["https://github.com/R-Lum/RLumCarlo/tree/master"]
+                ]
+              ]
             ]
           ]
         ]
@@ -320,7 +448,11 @@
         [
           [
             [
-              ["isPreviousVersionOf"]
+              [
+                [
+                  ["isPreviousVersionOf"]
+                ]
+              ]
             ]
           ]
         ]
@@ -331,7 +463,11 @@
         [
           [
             [
-              ["doi"]
+              [
+                [
+                  ["doi"]
+                ]
+              ]
             ]
           ]
         ]
@@ -340,7 +476,11 @@
         [
           [
             [
-              ["10.5281/zenodo.3891588"]
+              [
+                [
+                  ["10.5281/zenodo.3891588"]
+                ]
+              ]
             ]
           ]
         ]
@@ -349,7 +489,11 @@
         [
           [
             [
-              ["isVersionOf"]
+              [
+                [
+                  ["isVersionOf"]
+                ]
+              ]
             ]
           ]
         ]

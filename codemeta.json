@@ -7,7 +7,7 @@
   "identifier": "RLumCarlo",
   "description": "A collection of functions to simulate luminescence production in \n    dosimetric materials using Monte Carlo methods. Implemented are models for \n    delocalised transitions (e.g., Chen and McKeever (1997) <doi:10.1142/2781>), \n    localised transitions (e.g., Pagonis et al. (2019) <doi:10.1016/j.jlumin.2018.11.024>) \n    and tunnelling transitions (Jain et al. (2012) <doi:10.1088/0953-8984/24/38/385402> \n    and Pagonis et al. (2019) <doi:10.1016/j.jlumin.2018.11.024>). \n    Supported stimulation methods are thermal luminescence (TL), \n    continuous-wave optically stimulated luminescence (CW-OSL), \n    linearly-modulated optically stimulated luminescence (LM-OSL), \n    linearly-modulated infrared stimulated luminescence (LM-IRSL),\n    and isothermal luminescence (ITL or ISO-TL).",
   "name": "RLumCarlo: Monte-Carlo Methods for Simulating Luminescence Phenomena",
-  "codeRepository": "https://CRAN.R-project.org/package=RLumCarlo",
+  "codeRepository": "https://github.com/R-Lum/RLumCarlo",
   "issueTracker": "https://github.com/R-Lum/RLumCarlo/issues",
   "license": "https://spdx.org/licenses/GPL-3.0",
   "version": "0.1.7",
@@ -16,7 +16,7 @@
     "name": "R",
     "url": "https://r-project.org"
   },
-  "runtimePlatform": "R Under development (unstable) (2020-12-09 r79601)",
+  "runtimePlatform": "R version 4.0.3 (2020-10-10)",
   "author": [
     {
       "@type": "Person",
@@ -259,5 +259,6 @@
     "feldspar",
     "luminescence",
     "simulation"
-  ]
+  ],
+  "releaseNotes": "https://github.com/R-Lum/RLumCarlo/blob/master/NEWS.md"
 }

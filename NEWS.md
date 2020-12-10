@@ -13,7 +13,7 @@
 -   Correct several code-documentation mismatches (thanks to an
     anonymous R Journal reviewer)
 
-# RLumCarlo 0.1.6 (2020-07-05)
+## RLumCarlo 0.1.6 (2020-07-05)
 
 -   The last update to prevent the failed checks for the Solaris
     platform on CRAN came with unwanted side effects. After the compiler
@@ -26,11 +26,11 @@
     constants used in the other files. This change has no user-visible
     effect.
 
-# RLumCarlo 0.1.5 (2020-06-12)
+## RLumCarlo 0.1.5 (2020-06-12)
 
 -   Fix problem on CRAN Solaris
 
-# RLumCarlo 0.1.4 (2020-06-12)
+## RLumCarlo 0.1.4 (2020-06-12)
 
 -   Fix CRAN requests
 
