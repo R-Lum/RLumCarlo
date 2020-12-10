@@ -10,13 +10,13 @@
   "codeRepository": "https://CRAN.R-project.org/package=RLumCarlo",
   "issueTracker": "https://github.com/R-Lum/RLumCarlo/issues",
   "license": "https://spdx.org/licenses/GPL-3.0",
-  "version": "0.1.7.9000.13",
+  "version": "0.1.8.9000.1",
   "programmingLanguage": {
     "@type": "ComputerLanguage",
     "name": "R",
     "url": "https://r-project.org"
   },
-  "runtimePlatform": "R Under development (unstable) (2020-12-04 r79554)",
+  "runtimePlatform": "R Under development (unstable) (2020-12-09 r79601)",
   "author": [
     {
       "@type": "Person",
