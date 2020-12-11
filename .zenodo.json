@@ -1,17 +1,17 @@
 {
-  "license": ["GPL-2.0-or-later"],
-  "description": ["<p>A collection of functions to simulate luminescence production in <\/p>"],
-  "language": ["eng"],
-  "title": ["RLumCarlo: Monte-Carlo Methods for Simulating Luminescence Phenomena"],
+  "license": "GPL-2.0-or-later",
+  "description": "<p>A collection of functions to simulate luminescence production in <\/p>",
+  "language": "eng",
+  "title": "RLumCarlo: Monte-Carlo Methods for Simulating Luminescence Phenomena",
   "grants": [
     {
       "id": "10.13039/501100000780::844457"
     }
   ],
-  "upload_type": ["software"],
-  "version": ["0.1.8.9000-2"],
+  "upload_type": "software",
+  "version": "0.1.8.9000-3",
   "keywords": ["Modelling", "Monte-Carlo Simulations", "Luminescence"],
-  "publication_date": ["2020-12-10"],
+  "publication_date": "2020-12-11",
   "creators": [
     {
       "orcid": "0000-0002-0805-9547",
@@ -46,7 +46,7 @@
       "name": "Duncan, Alex Roy"
     }
   ],
-  "access_right": ["open"],
+  "access_right": "open",
   "related_identifiers": [
     {
       "scheme": "url",
