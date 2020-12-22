@@ -61,7 +61,7 @@
     {
       "scheme": "doi",
       "identifier": "10.5281/zenodo.3891588",
-      "relation": "isVersionOf"
+      "relation": "isReferencedBy"
     }
   ]
 }
