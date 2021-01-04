@@ -6,7 +6,8 @@ test_that("test internal functions", {
   ## times not long enough
   ## we skip this test on macOS, R 3.6 though, there is somewhat a problem
   ## related to C++ and testthat
-  if(grepl("darwin", i$platform) & as.numeric(i$R.version$major) >= 4){
+  i <- utils::sessionInfo()
+  if (!(grepl("darwin", i$platform) & as.numeric(i$R.version$major) < 3)) {
     expect_error(run_MC_CW_OSL_DELOC(
       A = 0.12,
       R = 0.1,
