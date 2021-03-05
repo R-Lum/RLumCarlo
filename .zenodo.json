@@ -9,18 +9,18 @@
     }
   ],
   "upload_type": "software",
-  "version": "0.1.8.9000-3",
+  "version": "0.1.8.9000-4",
   "keywords": ["Modelling", "Monte-Carlo Simulations", "Luminescence"],
-  "publication_date": "2020-12-11",
+  "publication_date": "2021-02-22",
   "creators": [
     {
       "orcid": "0000-0002-0805-9547",
-      "affiliation": "Chair of Geomorphology, University of Bayreuth, University of Bayreuth, Germany",
+      "affiliation": "Chair of Geomorphology, University of Bayreuth, Germany",
       "name": "Friedrich, Johannes"
     },
     {
       "orcid": "0000-0002-0734-2199",
-      "affiliation": "Department of Geography and Earth Sciences, Aberystwyth University",
+      "affiliation": "Department of Geography and Earth Sciences, Aberystwyth University, United Kingdom",
       "name": "Kreutzer, Sebastian"
     },
     {
@@ -30,7 +30,7 @@
     },
     {
       "orcid": "0000-0002-2309-3209",
-      "affiliation": "Institute of Earth Surface Dynamics, University of Lausanne, Institute of Earth Surface Dynamics, University of Lausanne 1015 Lausanne, Switzerland",
+      "affiliation": "Institute of Earth Surface Dynamics, University of Lausanne, Switzerland",
       "name": "Schmidt, Christoph"
     },
     {
@@ -61,7 +61,7 @@
     {
       "scheme": "doi",
       "identifier": "10.5281/zenodo.3891588",
-      "relation": "isVersionOf"
+      "relation": "isReferencedBy"
     }
   ]
 }
