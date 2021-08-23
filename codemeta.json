@@ -7,16 +7,16 @@
   "identifier": "RLumCarlo",
   "description": "A collection of functions to simulate luminescence production in \n    dosimetric materials using Monte Carlo methods. Implemented are models for \n    delocalised transitions (e.g., Chen and McKeever (1997) <doi:10.1142/2781>), \n    localised transitions (e.g., Pagonis et al. (2019) <doi:10.1016/j.jlumin.2018.11.024>) \n    and tunnelling transitions (Jain et al. (2012) <doi:10.1088/0953-8984/24/38/385402> \n    and Pagonis et al. (2019) <doi:10.1016/j.jlumin.2018.11.024>). \n    Supported stimulation methods are thermal luminescence (TL), \n    continuous-wave optically stimulated luminescence (CW-OSL), \n    linearly-modulated optically stimulated luminescence (LM-OSL), \n    linearly-modulated infrared stimulated luminescence (LM-IRSL),\n    and isothermal luminescence (ITL or ISO-TL).",
   "name": "RLumCarlo: Monte-Carlo Methods for Simulating Luminescence Phenomena",
-  "codeRepository": "https://CRAN.R-project.org/package=RLumCarlo",
+  "codeRepository": "https://github.com/R-Lum/RLumCarlo",
   "issueTracker": "https://github.com/R-Lum/RLumCarlo/issues",
   "license": "https://spdx.org/licenses/GPL-3.0",
-  "version": "0.1.8.9000.3",
+  "version": "0.1.8.9000.5",
   "programmingLanguage": {
     "@type": "ComputerLanguage",
     "name": "R",
     "url": "https://r-project.org"
   },
-  "runtimePlatform": "R Under development (unstable) (2020-12-09 r79601)",
+  "runtimePlatform": "R Under development (unstable) (2021-08-22 r80810)",
   "author": [
     {
       "@type": "Person",
@@ -246,7 +246,7 @@
     }
   ],
   "developmentStatus": "https://www.repostatus.org/#active",
-  "contIntegration": ["https://travis-ci.org/R-Lum/RLumCarlo", "https://ci.appveyor.com/project/RLumSK/rlumcarlo", "https://codecov.io/gh/R-Lum/RLumCarlo"],
+  "contIntegration": ["https://ci.appveyor.com/project/RLumSK/rlumcarlo", "https://codecov.io/gh/R-Lum/RLumCarlo"],
   "provider": {
     "@id": "https://cran.r-project.org",
     "@type": "Organization",
@@ -259,5 +259,58 @@
     "feldspar",
     "luminescence",
     "simulation"
+  ],
+  "releaseNotes": "https://github.com/R-Lum/RLumCarlo/blob/master/NEWS.md",
+  "citation": [
+    {
+      "@type": "ScholarlyArticle",
+      "datePublished": "2021",
+      "author": [
+        {
+          "@type": "Person",
+          "givenName": "Sebastian",
+          "familyName": "Kreutzer"
+        },
+        {
+          "@type": "Person",
+          "givenName": "Johannes",
+          "familyName": "Friedrich"
+        },
+        {
+          "@type": "Person",
+          "givenName": "Vasilis",
+          "familyName": "Pagonis"
+        },
+        {
+          "@type": "Person",
+          "givenName": "Christian",
+          "familyName": "Laag"
+        },
+        {
+          "@type": "Person",
+          "givenName": "Ena",
+          "familyName": "Rajovic"
+        },
+        {
+          "@type": "Person",
+          "givenName": "Christoph",
+          "familyName": "Schmidt"
+        }
+      ],
+      "name": "RLumCarlo: Simulating Cold Light using Monte Carlo Methods",
+      "identifier": "10.32614/RJ-2021-043",
+      "pagination": "351–365",
+      "@id": "https://doi.org/10.32614/RJ-2021-043",
+      "sameAs": "https://doi.org/10.32614/RJ-2021-043",
+      "isPartOf": {
+        "@type": "PublicationIssue",
+        "datePublished": "2021",
+        "isPartOf": {
+          "@type": ["PublicationVolume", "Periodical"],
+          "volumeNumber": "13",
+          "name": "The R Journal"
+        }
+      }
+    }
   ]
 }

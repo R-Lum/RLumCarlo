@@ -16,8 +16,7 @@ Concept](https://www.repostatus.org/badges/latest/active.svg)](https://www.repos
 [![CRAN](https://www.r-pkg.org/badges/version/RLumCarlo)](https://CRAN.R-project.org/package=RLumCarlo)
 [![DOI](https://zenodo.org/badge/82188344.svg)](https://zenodo.org/badge/latestdoi/82188344)
 [![Downloads](https://cranlogs.r-pkg.org/badges/grand-total/RLumCarlo)](https://www.r-pkg.org/pkg/RLumCarlo)
-[![Build
-Status](https://travis-ci.org/R-Lum/RLumCarlo.svg?branch=master)](https://travis-ci.org/R-Lum/RLumCarlo)
+[![R-CMD-check](https://github.com/R-Lum/RLumCarlo/workflows/GitHub%20Actions%20CI/badge.svg)](https://github.com/R-Lum/RLumCarlo/actions)
 [![Build
 status](https://ci.appveyor.com/api/projects/status/yxsmwa86jajhtesn?svg=true)](https://ci.appveyor.com/project/RLumSK/rlumcarlo)
 [![codecov](https://codecov.io/gh/R-Lum/RLumCarlo/branch/master/graph/badge.svg?token=W0q5JUInf7)](https://codecov.io/gh/R-Lum/RLumCarlo)
