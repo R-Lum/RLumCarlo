@@ -19,7 +19,7 @@ Concept](https://www.repostatus.org/badges/latest/active.svg)](https://www.repos
 [![R-CMD-check](https://github.com/R-Lum/RLumCarlo/workflows/GitHub%20Actions%20CI/badge.svg)](https://github.com/R-Lum/RLumCarlo/actions)
 [![Build
 status](https://ci.appveyor.com/api/projects/status/yxsmwa86jajhtesn?svg=true)](https://ci.appveyor.com/project/RLumSK/rlumcarlo)
-[![codecov](https://codecov.io/gh/R-Lum/RLumCarlo/branch/master/graph/badge.svg?token=W0q5JUInf7)](https://codecov.io/gh/R-Lum/RLumCarlo)
+[![codecov](https://app.codecov.io/gh/R-Lum/RLumCarlo/branch/master/graph/badge.svg?token=W0q5JUInf7)](https://app.codecov.io/gh/R-Lum/RLumCarlo)
 
 ## Installation
 
@@ -81,10 +81,9 @@ The [development of RLumCarlo](https://github.com/R-Lum/RLumCarlo)
 benefited from the support by various funding bodies:
 
 -   The initial work by Johannes Friedrich, Sebastian Kreutzer and
-    Christoph Schmidt was supported by the [DFG (2015–2018, SCHM
+    Christoph Schmidt was supported by the DFG (2015–2018, SCHM
     3051/4-1, “Modelling quartz luminescence signal dynamics relevant
-    for dating and dosimetry”, SCHM
-    3051/4-1)](https://gepris.dfg.de/gepris/projekt/279969851).
+    for dating and dosimetry”, SCHM 3051/4-1).
 
 -   Later financial support was secured through the project *‘ULTIMO:
     Unifying Luminescence Models of quartz and feldspar (German Academic

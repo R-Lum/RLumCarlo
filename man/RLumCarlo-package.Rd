@@ -7,7 +7,7 @@
 \title{Monte-Carlo Methods for Simulating Luminescence Phenomena.
 \cr
 \if{html}{
-\figure{Logo_RLumCarlo.png}{options: width="50px" alt="https://github.com/R-Lum/RLumCarlo"}\cr
+\figure{Logo_RLumCarlo.png}{options: width="50" alt="https://github.com/R-Lum/RLumCarlo"}\cr
 }}
 \description{
 A collection of functions to simulate luminescence production in dosimetric materials
