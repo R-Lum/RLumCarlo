@@ -7,7 +7,7 @@
 \title{Monte-Carlo Methods for Simulating Luminescence Phenomena.
 \cr
 \if{html}{
-\figure{Logo_RLumCarlo.png}{options: width="50px" alt="https://github.com/R-Lum/RLumCarlo"}\cr
+\figure{Logo_RLumCarlo.png}{options: width="50" alt="https://github.com/R-Lum/RLumCarlo"}\cr
 }}
 \description{
 A collection of functions to simulate luminescence production in dosimetric materials
@@ -32,6 +32,10 @@ research and innovation programme under the Marie Skłodowska-Curie grant agreem
 }
 }
 \references{
+Kreutzer, S., Friedrich, J., Pagonis, V., Laag, C., Rajovic, E., Schmidt, C., 2021.
+RLumCarlo: Simulating Cold Light using Monte Carlo Methods. The R Journal 13, 351–365.
+\doi{10.32614/RJ-2021-043}
+
 Pagonis, V., Friedrich, J., Discher, M., Müller-Kirschbaum, A., Schlosser, V., Kreutzer, S.,
 Chen, R., Schmidt, C., 2019. Excited state luminescence signals from a random distribution of
 defects - A new Monte Carlo simulation approach for feldspar.

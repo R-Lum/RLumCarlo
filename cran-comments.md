@@ -1,22 +1,11 @@
-Dear CRAN-Team, 
+## Addressed CRAN issues
 
-This is a bugfix release to replace RLumCarlo v0.1.6 on CRAN. 
+Fixes an issues flagged by Kurt Hornik via email: 2022-02-17: 
 
-Thank you very much for support and all you efforts
-keeping the CRAN alive. 
-
-On behalf of the package authors, best regards, 
-
-## CRAN status
-
-0 errors | 0 warnings | 0 note
+> RLumCarlo::RLumCarlo-package.Rd: Warning: <img> attribute "width" has invalid value "50px"
 
 ## R CMD check --as-cran results
 
-0 errors | 0 warnings | 0 note
+0 errors | 0 warnings | 1 note
 
-## Winbuilder
-
-All ok.
-
-
+## Other notes or warnings

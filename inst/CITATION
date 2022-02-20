@@ -1,0 +1,11 @@
+citHeader("To cite the R package 'RLumCarlo' please use the following sources:")
+citation(auto = meta)
+
+bibentry(bibtype = "Article",
+         title = "RLumCarlo: Simulating Cold Light using Monte Carlo Methods",
+         author = "Sebastian Kreutzer, Johannes Friedrich, Vasilis Pagonis, Christian Laag, Ena Rajovic, Christoph Schmidt",
+         year = "2021",
+         journal = "The R Journal",
+         volume = "13",
+         pages = "351–365",
+         doi = "10.32614/RJ-2021-043")

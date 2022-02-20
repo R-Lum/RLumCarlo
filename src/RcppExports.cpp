@@ -7,6 +7,11 @@
 
 using namespace Rcpp;
 
+#ifdef RCPP_USE_GLOBAL_ROSTREAM
+Rcpp::Rostream<true>&  Rcpp::Rcout = Rcpp::Rcpp_cout_get();
+Rcpp::Rostream<false>& Rcpp::Rcerr = Rcpp::Rcpp_cerr_get();
+#endif
+
 // MC_C_CW_IRSL_LOC
 List MC_C_CW_IRSL_LOC(arma::vec times, int n_filled, double r, double A);
 RcppExport SEXP _RLumCarlo_MC_C_CW_IRSL_LOC(SEXP timesSEXP, SEXP n_filledSEXP, SEXP rSEXP, SEXP ASEXP) {
