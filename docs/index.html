@@ -29,6 +29,8 @@
 <![endif]-->
 </head>
 <body data-spy="scroll" data-target="#toc">
+    
+
     <div class="container template-home">
       <header><div class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container">
@@ -41,18 +43,12 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="index.html">RLumCarlo</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.1.7</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.1.8</span>
       </span>
     </div>
 
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
-<li>
-  <a href="index.html">
-    <span class="fas fa fas fa-home fa-lg"></span>
-     
-  </a>
-</li>
 <li>
   <a href="reference/index.html">Reference</a>
 </li>
@@ -74,8 +70,8 @@
       </ul>
 <ul class="nav navbar-nav navbar-right">
 <li>
-  <a href="https://github.com/R-Lum/RLumCarlo/">
-    <span class="fab fa fab fa-github fa-lg"></span>
+  <a href="https://github.com/R-Lum/RLumCarlo/" class="external-link">
+    <span class="fab fa-github fa-lg"></span>
      
   </a>
 </li>
@@ -91,49 +87,67 @@
 
       </header><div class="row">
   <div class="contents col-md-9">
-<div id="rlumcarlo-" class="section level1">
-<div class="page-header"><h1 class="hasAnchor">
-<a href="#rlumcarlo-" class="anchor"></a>RLumCarlo <img width="120px" src="reference/figures/Logo_RLumCarlo.png" align="right">
+<div class="section level1">
+<div class="page-header"><h1 id="rlumcarlo-">RLumCarlo
+<img width="120px" src="reference/figures/Logo_RLumCarlo.png" align="right"><a class="anchor" aria-label="anchor" href="#rlumcarlo-"></a>
 </h1></div>
-<p>The <strong>R</strong> package RLumCarlo provides a collection of R functions modelling luminescence production in isolators and semiconductors for various stimulation modes using Monte Carlo methods.</p>
-<p><a href="https://www.repostatus.org/#active"><img src="https://www.repostatus.org/badges/latest/active.svg" alt="Project Status: Concept"></a> <a href="https://CRAN.R-project.org/package=RLumCarlo"><img src="https://www.r-pkg.org/badges/version/RLumCarlo" alt="CRAN"></a> <a href="https://zenodo.org/badge/latestdoi/82188344"><img src="https://zenodo.org/badge/82188344.svg" alt="DOI"></a> <a href="https://www.r-pkg.org/pkg/RLumCarlo"><img src="https://cranlogs.r-pkg.org/badges/grand-total/RLumCarlo" alt="Downloads"></a> <a href="https://travis-ci.org/R-Lum/RLumCarlo"><img src="https://travis-ci.org/R-Lum/RLumCarlo.svg?branch=master" alt="Build Status"></a> <a href="https://ci.appveyor.com/project/RLumSK/rlumcarlo"><img src="https://ci.appveyor.com/api/projects/status/yxsmwa86jajhtesn?svg=true" alt="Build status"></a> <a href="https://codecov.io/gh/R-Lum/RLumCarlo"><img src="https://codecov.io/gh/R-Lum/RLumCarlo/branch/master/graph/badge.svg?token=W0q5JUInf7" alt="codecov"></a></p>
-<div id="installation" class="section level2">
-<h2 class="hasAnchor">
-<a href="#installation" class="anchor"></a>Installation</h2>
-<div id="i-requirements" class="section level4">
-<h4 class="hasAnchor">
-<a href="#i-requirements" class="anchor"></a>i. Requirements</h4>
-<p>Depending on your OS please download and install one of the following:</p>
+<p>The <strong>R</strong> package RLumCarlo provides a collection of R
+functions modelling luminescence production in isolators and
+semiconductors for various stimulation modes using Monte Carlo
+methods.</p>
+<p><a href="https://www.repostatus.org/#active" class="external-link"><img src="https://www.repostatus.org/badges/latest/active.svg" alt="Project Status: Concept"></a> <a href="https://CRAN.R-project.org/package=RLumCarlo" class="external-link"><img src="https://www.r-pkg.org/badges/version/RLumCarlo" alt="CRAN"></a>
+<a href="https://zenodo.org/badge/latestdoi/82188344" class="external-link"><img src="https://zenodo.org/badge/82188344.svg" alt="DOI"></a> <a href="https://www.r-pkg.org/pkg/RLumCarlo" class="external-link"><img src="https://cranlogs.r-pkg.org/badges/grand-total/RLumCarlo" alt="Downloads"></a> <a href="https://github.com/R-Lum/RLumCarlo/actions" class="external-link"><img src="https://github.com/R-Lum/RLumCarlo/workflows/GitHub%20Actions%20CI/badge.svg" alt="R-CMD-check"></a> <a href="https://ci.appveyor.com/project/RLumSK/rlumcarlo" class="external-link"><img src="https://ci.appveyor.com/api/projects/status/yxsmwa86jajhtesn?svg=true" alt="Build status"></a> <a href="https://app.codecov.io/gh/R-Lum/RLumCarlo" class="external-link"><img src="https://app.codecov.io/gh/R-Lum/RLumCarlo/branch/master/graph/badge.svg?token=W0q5JUInf7" alt="codecov"></a></p>
+<div class="section level2">
+<h2 id="installation">Installation<a class="anchor" aria-label="anchor" href="#installation"></a>
+</h2>
+<div class="section level4">
+<h4 id="i-requirements">i. Requirements<a class="anchor" aria-label="anchor" href="#i-requirements"></a>
+</h4>
+<p>Depending on your OS please download and install one of the
+following:</p>
 <ul>
 <li>
-<em>Windows</em>: <a href="https://cran.r-project.org/bin/windows/Rtools/">Rtools</a> (provided by CRAN)</li>
+<em>Windows</em>: <a href="https://cran.r-project.org/bin/windows/Rtools/" class="external-link">Rtools</a>
+(provided by CRAN)</li>
 <li>
-<em>macOS</em>: <a href="https://developer.apple.com">Xcode</a> (provided by Apple)</li>
+<em>macOS</em>: <a href="https://developer.apple.com" class="external-link">Xcode</a>
+(provided by Apple)</li>
 <li>
-<em>Linux</em>: <a href="https://gcc.gnu.org">gcc</a> often comes pre-installed in most distributions. Should <a href="https://gcc.gnu.org">gcc</a> be not available, however, we kindly refer to the exhaustive collection of installation guides depending on the Linux distribution.</li>
+<em>Linux</em>: <a href="https://gcc.gnu.org" class="external-link">gcc</a> often comes
+pre-installed in most distributions. Should <a href="https://gcc.gnu.org" class="external-link">gcc</a> be not available, however, we kindly
+refer to the exhaustive collection of installation guides depending on
+the Linux distribution.</li>
 </ul>
 </div>
-<div id="ii-install-the-package-from-github" class="section level4">
-<h4 class="hasAnchor">
-<a href="#ii-install-the-package-from-github" class="anchor"></a>ii. Install the package from GitHub</h4>
+<div class="section level4">
+<h4 id="ii-install-the-package-from-github">ii. Install the package from GitHub<a class="anchor" aria-label="anchor" href="#ii-install-the-package-from-github"></a>
+</h4>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="kw">if</span><span class="op">(</span><span class="op">!</span><span class="kw"><a href="https://rdrr.io/r/base/library.html">require</a></span><span class="op">(</span><span class="st"><a href="https://devtools.r-lib.org/">"devtools"</a></span><span class="op">)</span><span class="op">)</span>
-  <span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html">install.packages</a></span><span class="op">(</span><span class="st">"devtools"</span><span class="op">)</span>
-<span class="fu">devtools</span><span class="fu">::</span><span class="fu"><a href="https://devtools.r-lib.org//reference/remote-reexports.html">install_github</a></span><span class="op">(</span><span class="st">"R-Lum/RLumCarlo@master"</span><span class="op">)</span></code></pre></div>
+<code class="sourceCode R"><span class="kw">if</span><span class="op">(</span><span class="op">!</span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">require</a></span><span class="op">(</span><span class="st"><a href="https://devtools.r-lib.org/" class="external-link">"devtools"</a></span><span class="op">)</span><span class="op">)</span>
+  <span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html" class="external-link">install.packages</a></span><span class="op">(</span><span class="st">"devtools"</span><span class="op">)</span>
+<span class="fu">devtools</span><span class="fu">::</span><span class="fu"><a href="https://devtools.r-lib.org/reference/remote-reexports.html" class="external-link">install_github</a></span><span class="op">(</span><span class="st">"R-Lum/RLumCarlo@master"</span><span class="op">)</span></code></pre></div>
 </div>
 </div>
-<div id="examples" class="section level2">
-<h2 class="hasAnchor">
-<a href="#examples" class="anchor"></a>Examples</h2>
+<div class="section level2">
+<h2 id="examples">Examples<a class="anchor" aria-label="anchor" href="#examples"></a>
+</h2>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="reference/run_MC_CW_IRSL_TUN.html">run_MC_CW_IRSL_TUN</a></span><span class="op">(</span>A <span class="op">=</span> <span class="fl">0.12</span>, rho <span class="op">=</span> <span class="fl">0.003</span>, times <span class="op">=</span> <span class="fl">0</span><span class="op">:</span><span class="fl">1000</span><span class="op">)</span> <span class="op">%&gt;%</span>
      <span class="fu"><a href="reference/plot_RLumCarlo.html">plot_RLumCarlo</a></span><span class="op">(</span>norm <span class="op">=</span> <span class="cn">TRUE</span>, legend <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></code></pre></div>
 <p><img src="reference/figures/README-unnamed-chunk-2-1.png" style="display: block; margin: auto;"></p>
 </div>
-<div id="supported-models" class="section level2">
-<h2 class="hasAnchor">
-<a href="#supported-models" class="anchor"></a>Supported models</h2>
+<div class="section level2">
+<h2 id="supported-models">Supported models<a class="anchor" aria-label="anchor" href="#supported-models"></a>
+</h2>
 <table class="table">
+<colgroup>
+<col width="39%">
+<col width="18%">
+<col width="10%">
+<col width="10%">
+<col width="12%">
+<col width="9%">
+</colgroup>
 <thead><tr class="header">
 <th>TRANSITION</th>
 <th>BASE MODEL</th>
@@ -170,29 +184,47 @@
 </tbody>
 </table>
 </div>
-<div id="license" class="section level2">
-<h2 class="hasAnchor">
-<a href="#license" class="anchor"></a>License</h2>
-<p>This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or any later version.</p>
-<p>This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the <a href="https://github.com/R-Lum/RLumCarlo/blob/master/LICENSE">GNU General Public License</a> for more details.</p>
+<div class="section level2">
+<h2 id="license">License<a class="anchor" aria-label="anchor" href="#license"></a>
+</h2>
+<p>This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by the
+Free Software Foundation, either version 3 of the License, or any later
+version.</p>
+<p>This program is distributed in the hope that it will be useful, but
+WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the <a href="https://github.com/R-Lum/RLumCarlo/blob/master/LICENSE" class="external-link">GNU
+General Public License</a> for more details.</p>
 </div>
-<div id="-funding" class="section level2">
-<h2 class="hasAnchor">
-<a href="#-funding" class="anchor"></a><span class="glyphicon glyphicon-euro"></span> Funding</h2>
-<p>The <a href="https://github.com/R-Lum/RLumCarlo">development of RLumCarlo</a> benefited from the support by various funding bodies:</p>
+<div class="section level2">
+<h2 id="-funding">
+<span class="glyphicon glyphicon-euro"></span> Funding<a class="anchor" aria-label="anchor" href="#-funding"></a>
+</h2>
+<p>The <a href="https://github.com/R-Lum/RLumCarlo" class="external-link">development of
+RLumCarlo</a> benefited from the support by various funding bodies:</p>
 <ul>
-<li><p>The initial work by Johannes Friedrich, Sebastian Kreutzer and Christoph Schmidt was supported by the <a href="https://gepris.dfg.de/gepris/projekt/279969851">DFG (2015–2018, SCHM 3051/4-1, “Modelling quartz luminescence signal dynamics relevant for dating and dosimetry”, SCHM 3051/4-1)</a>.</p></li>
-<li><p>Later financial support was secured through the project <em>‘ULTIMO: Unifying Luminescence Models of quartz and feldspar (German Academic Exchange Service) DAAD: Deutscher Akademischer Austauschdienst DAAD PPP USA 2018, ID: 57387041)’</em>.</p></li>
-<li><p>The work of Sebastian Kreutzer as maintainer of the package was supported by <a href="https://lascarbx.labex.u-bordeaux.fr">LabEx LaScArBx (ANR - n. ANR-10-LABX-52)</a> between 2017 and 2019.</p></li>
-<li><p>From 2020, Sebastian Kreutzer received funding from the European Union’s Horizon 2020 research and innovation programme under the Marie Skłodowska-Curie grant agreement No 844457 (project: CREDit).</p></li>
+<li><p>The initial work by Johannes Friedrich, Sebastian Kreutzer and
+Christoph Schmidt was supported by the DFG (2015–2018, SCHM 3051/4-1,
+“Modelling quartz luminescence signal dynamics relevant for dating and
+dosimetry”, SCHM 3051/4-1).</p></li>
+<li><p>Later financial support was secured through the project
+<em>‘ULTIMO: Unifying Luminescence Models of quartz and feldspar (German
+Academic Exchange Service) DAAD: Deutscher Akademischer Austauschdienst
+DAAD PPP USA 2018, ID: 57387041)’</em>.</p></li>
+<li><p>The work of Sebastian Kreutzer as maintainer of the package was
+supported by <a href="https://lascarbx.labex.u-bordeaux.fr" class="external-link">LabEx
+LaScArBx (ANR - n. ANR-10-LABX-52)</a> between 2017 and 2019.</p></li>
+<li><p>From 2020, Sebastian Kreutzer received funding from the European
+Union’s Horizon 2020 research and innovation programme under the Marie
+Skłodowska-Curie grant agreement No 844457 (project: CREDit).</p></li>
 </ul>
 </div>
-<div id="related-projects" class="section level2">
-<h2 class="hasAnchor">
-<a href="#related-projects" class="anchor"></a>Related projects</h2>
+<div class="section level2">
+<h2 id="related-projects">Related projects<a class="anchor" aria-label="anchor" href="#related-projects"></a>
+</h2>
 <ul>
-<li><a href="https://github.com/R-Lum/Luminescence">Luminescence</a></li>
-<li><a href="https://github.com/R-Lum/RLumModel">RLumModel</a></li>
+<li><a href="https://github.com/R-Lum/Luminescence" class="external-link">Luminescence</a></li>
+<li><a href="https://github.com/R-Lum/RLumModel" class="external-link">RLumModel</a></li>
 </ul>
 </div>
 </div>
@@ -200,43 +232,56 @@
 
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <div class="links">
-<h2>Links</h2>
+<h2 data-toc-skip>Links</h2>
 <ul class="list-unstyled">
-<li>Download from CRAN at <br><a href="https://cloud.r-project.org/package=RLumCarlo">https://​cloud.r-project.org/​package=RLumCarlo</a>
-</li>
-<li>Browse source code at <br><a href="https://github.com/R-Lum/RLumCarlo/">https://​github.com/​R-Lum/​RLumCarlo/​</a>
-</li>
-<li>Report a bug at <br><a href="https://github.com/R-Lum/RLumCarlo/issues">https://​github.com/​R-Lum/​RLumCarlo/​issues</a>
-</li>
+<li><a href="https://cloud.r-project.org/package=RLumCarlo" class="external-link">View on CRAN</a></li>
+<li><a href="https://github.com/R-Lum/RLumCarlo/" class="external-link">Browse source code</a></li>
+<li><a href="https://github.com/R-Lum/RLumCarlo/issues" class="external-link">Report a bug</a></li>
 </ul>
 </div>
+
 <div class="license">
-<h2>License</h2>
+<h2 data-toc-skip>License</h2>
 <ul class="list-unstyled">
-<li><a href="https://www.r-project.org/Licenses/GPL-3">GPL-3</a></li>
+<li><a href="https://www.r-project.org/Licenses/GPL-3" class="external-link">GPL-3</a></li>
 </ul>
 </div>
+
+
+<div class="citation">
+<h2 data-toc-skip>Citation</h2>
+<ul class="list-unstyled">
+<li><a href="authors.html#citation">Citing RLumCarlo</a></li>
+</ul>
+</div>
+
 <div class="developers">
-<h2>Developers</h2>
+<h2 data-toc-skip>Developers</h2>
 <ul class="list-unstyled">
-<li>Johannes Friedrich <br><small class="roles"> Author, translator </small> <a href="https://orcid.org/0000-0002-0805-9547" target="orcid.widget" aria-label="ORCID"><span class="fab fa-orcid orcid" aria-hidden="true"></span></a> </li>
-<li>Sebastian Kreutzer <br><small class="roles"> Author, translator, maintainer </small> <a href="https://orcid.org/0000-0002-0734-2199" target="orcid.widget" aria-label="ORCID"><span class="fab fa-orcid orcid" aria-hidden="true"></span></a> </li>
-<li>Vasilis Pagonis <br><small class="roles"> Author </small> <a href="https://orcid.org/0000-0002-4852-9312" target="orcid.widget" aria-label="ORCID"><span class="fab fa-orcid orcid" aria-hidden="true"></span></a> </li>
-<li>Christoph Schmidt <br><small class="roles"> Author </small> <a href="https://orcid.org/0000-0002-2309-3209" target="orcid.widget" aria-label="ORCID"><span class="fab fa-orcid orcid" aria-hidden="true"></span></a> </li>
-<li><a href="authors.html">All authors...</a></li>
+<li>Johannes Friedrich <br><small class="roles"> Author, translator </small> <a href="https://orcid.org/0000-0002-0805-9547" target="orcid.widget" aria-label="ORCID" class="external-link"><span class="fab fa-orcid orcid" aria-hidden="true"></span></a> </li>
+<li>Sebastian Kreutzer <br><small class="roles"> Author, translator, maintainer </small> <a href="https://orcid.org/0000-0002-0734-2199" target="orcid.widget" aria-label="ORCID" class="external-link"><span class="fab fa-orcid orcid" aria-hidden="true"></span></a> </li>
+<li>Vasilis Pagonis <br><small class="roles"> Author </small> <a href="https://orcid.org/0000-0002-4852-9312" target="orcid.widget" aria-label="ORCID" class="external-link"><span class="fab fa-orcid orcid" aria-hidden="true"></span></a> </li>
+<li>Christoph Schmidt <br><small class="roles"> Author </small> <a href="https://orcid.org/0000-0002-2309-3209" target="orcid.widget" aria-label="ORCID" class="external-link"><span class="fab fa-orcid orcid" aria-hidden="true"></span></a> </li>
+<li><a href="authors.html">More about authors...</a></li>
 </ul>
 </div>
+
+
 
   </div>
 </div>
 
 
       <footer><div class="copyright">
-  <p>Developed by Johannes Friedrich, Sebastian Kreutzer, Vasilis Pagonis, Christoph Schmidt.</p>
+  <p></p>
+<p>Developed by Johannes Friedrich, Sebastian Kreutzer, Vasilis Pagonis,
+Christoph Schmidt.</p>
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.</p>
+  <p></p>
+<p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a>
+2.0.2.</p>
 </div>
 
       </footer>
@@ -244,6 +289,8 @@
 
   
 
+
+  
 
   </body>
 </html>
