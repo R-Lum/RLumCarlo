@@ -39,15 +39,6 @@ jobs:
 
       - uses: r-lib/actions/setup-pandoc@v1
 
-<<<<<<< HEAD
-=======
-      - name: Install pak and query dependencies
-        run: |
-          install.packages("pak", repos = "https://r-lib.github.io/p/pak/dev/")
-          saveRDS(pak::pkg_deps("local::.", dependencies = TRUE), ".github/r-depends.rds")
-        shell: Rscript {0}
-
->>>>>>> dev_0.1.X
       - name: Query dependencies
         run: |
           install.packages('remotes')
@@ -66,27 +57,15 @@ jobs:
       - name: Install system dependencies
         if: runner.os == 'Linux'
         run: |
-<<<<<<< HEAD
           while read -r cmd
           do
             eval sudo $cmd
-          done < <(Rscript -e 'writeLines(remotes::system_requirements("ubuntu", "16.04"))')
+          done < <(Rscript -e 'writeLines(remotes::system_requirements("ubuntu", "20.04"))')
 
       - name: Install dependencies
         run: |
           remotes::install_deps(dependencies = TRUE)
           remotes::install_cran("rcmdcheck")
-=======
-          pak::local_system_requirements(execute = TRUE)
-          pak::pkg_system_requirements("rcmdcheck", execute = TRUE)
-        shell: Rscript {0}
-
-      - name: Install dependencies
-        run: |
-          pak::local_install_dev_deps(upgrade = TRUE)
-          pak::pkg_install("rcmdcheck")
-          pak::pkg_install("rlang")
->>>>>>> dev_0.1.X
           remotes::install_cran("covr")
         shell: Rscript {0}
 
