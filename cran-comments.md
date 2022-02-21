@@ -6,6 +6,12 @@ Fixes an issues flagged by Kurt Hornik via email: 2022-02-17:
 
 ## R CMD check --as-cran results
 
-0 errors | 0 warnings | 1 note
+0 errors | 0 warnings | 0 note
 
-## Other notes or warnings
+## Winbuilder
+
+Win-builder flagged a potentially invalid DOI mentioned in the DESCRIPTION: 
+
+> "(Jain et al. (2012) <doi:10.1088/0953-8984/24/38/385402>"
+
+This DOI is correct. 
