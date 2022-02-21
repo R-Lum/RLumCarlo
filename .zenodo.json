@@ -9,9 +9,9 @@
     }
   ],
   "upload_type": "software",
-  "version": "0.1.8",
+  "version": "0.1.9.9000-1",
   "keywords": ["Modelling", "Monte-Carlo Simulations", "Luminescence"],
-  "publication_date": "2022-02-20",
+  "publication_date": "2022-02-21",
   "creators": [
     {
       "orcid": "0000-0002-0805-9547",
