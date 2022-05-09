@@ -98,7 +98,7 @@ plot_RLumCarlo(results, legend = TRUE)
 } 
 
 \section{How to cite}{
-Kreutzer, S., 2022. run_MC_LM_OSL_LOC(): Run Monte-Carlo Simulation for LM-OSL (localized transitions). Function version 0.1.0. In: Friedrich, J., Kreutzer, S., Pagonis, V., Schmidt, C., 2022. RLumCarlo: Monte-Carlo Methods for Simulating Luminescence Phenomena. R package version 0.1.9.9000-1. https://CRAN.R-project.org/package=RLumCarlo
+Kreutzer, S., 2022. run_MC_LM_OSL_LOC(): Run Monte-Carlo Simulation for LM-OSL (localized transitions). Function version 0.1.0. In: Friedrich, J., Kreutzer, S., Pagonis, V., Schmidt, C., 2022. RLumCarlo: Monte-Carlo Methods for Simulating Luminescence Phenomena. R package version 0.1.9.9000-2. https://CRAN.R-project.org/package=RLumCarlo
 }
 
 \references{
@@ -108,7 +108,7 @@ from a random distribution of defects: A new Monte Carlo simulation approach for
 Journal of Luminescence 207, 266–272. \doi{10.1016/j.jlumin.2018.11.024}
 }
 \author{
-Sebastian Kreutzer, Geography & Earth Sciences, Aberystwyth University (United Kingdom)
+Sebastian Kreutzer, Institute of Geography, Heidelberg University (Germany)
 }
 \keyword{data}
 \keyword{models}

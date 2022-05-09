@@ -78,12 +78,12 @@ plot_RLumCarlo(
 
 }
 \author{
-Sebastian Kreutzer, Geography & Earth Sciences, Aberystwyth University (United Kingdom)\cr
+Sebastian Kreutzer, Institute of Geography, Heidelberg University (Germany)\cr
 Johannes Friedrich, University of Bayreuth (Germany)
 } 
 
 \section{How to cite}{
-Kreutzer, S., Friedrich, J., 2022. plot_RLumCarlo(): Plot RLumCarlo Monte-Carlo Simulation Results. Function version 0.1.0. In: Friedrich, J., Kreutzer, S., Pagonis, V., Schmidt, C., 2022. RLumCarlo: Monte-Carlo Methods for Simulating Luminescence Phenomena. R package version 0.1.9.9000-1. https://CRAN.R-project.org/package=RLumCarlo
+Kreutzer, S., Friedrich, J., 2022. plot_RLumCarlo(): Plot RLumCarlo Monte-Carlo Simulation Results. Function version 0.1.0. In: Friedrich, J., Kreutzer, S., Pagonis, V., Schmidt, C., 2022. RLumCarlo: Monte-Carlo Methods for Simulating Luminescence Phenomena. R package version 0.1.9.9000-2. https://CRAN.R-project.org/package=RLumCarlo
 }
 
 \keyword{hplot}

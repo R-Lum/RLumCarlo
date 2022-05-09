@@ -7,13 +7,13 @@
   "codeRepository": "https://github.com/R-Lum/RLumCarlo",
   "issueTracker": "https://github.com/R-Lum/RLumCarlo/issues",
   "license": "https://spdx.org/licenses/GPL-3.0",
-  "version": "0.1.9.9000.1",
+  "version": "0.1.9.9000.2",
   "programmingLanguage": {
     "@type": "ComputerLanguage",
     "name": "R",
     "url": "https://r-project.org"
   },
-  "runtimePlatform": "R Under development (unstable) (2022-02-15 r81747)",
+  "runtimePlatform": "R Under development (unstable) (2022-04-01 r82059)",
   "provider": {
     "@id": "https://cran.r-project.org",
     "@type": "Organization",
@@ -31,7 +31,7 @@
       "@type": "Person",
       "givenName": "Sebastian",
       "familyName": "Kreutzer",
-      "email": "sebastian.kreutzer@aber.ac.uk",
+      "email": "sebastian.kreutzer@uni-heidelberg.de",
       "@id": "https://orcid.org/0000-0002-0734-2199"
     },
     {
@@ -74,7 +74,7 @@
       "@type": "Person",
       "givenName": "Sebastian",
       "familyName": "Kreutzer",
-      "email": "sebastian.kreutzer@aber.ac.uk",
+      "email": "sebastian.kreutzer@uni-heidelberg.de",
       "@id": "https://orcid.org/0000-0002-0734-2199"
     }
   ],
@@ -83,7 +83,7 @@
       "@type": "Person",
       "givenName": "Sebastian",
       "familyName": "Kreutzer",
-      "email": "sebastian.kreutzer@aber.ac.uk",
+      "email": "sebastian.kreutzer@uni-heidelberg.de",
       "@id": "https://orcid.org/0000-0002-0734-2199"
     }
   ],
@@ -247,7 +247,7 @@
     },
     "SystemRequirements": null
   },
-  "fileSize": "1129.294KB",
+  "fileSize": "1135.26KB",
   "citation": [
     {
       "@type": "SoftwareSourceCode",
@@ -263,7 +263,7 @@
           "@type": "Person",
           "givenName": "Sebastian",
           "familyName": "Kreutzer",
-          "email": "sebastian.kreutzer@aber.ac.uk",
+          "email": "sebastian.kreutzer@uni-heidelberg.de",
           "@id": "https://orcid.org/0000-0002-0734-2199"
         },
         {
@@ -281,7 +281,7 @@
       ],
       "name": "RLumCarlo: Monte-Carlo Methods for Simulating Luminescence Phenomena",
       "url": "https://CRAN.R-project.org/package=RLumCarlo",
-      "description": "R package version 0.1.9.9000-1"
+      "description": "R package version 0.1.9.9000-2"
     },
     {
       "@type": "ScholarlyArticle",

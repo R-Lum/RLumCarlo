@@ -121,7 +121,7 @@ plot_RLumCarlo(results, legend = TRUE)
 } 
 
 \section{How to cite}{
-Friedrich, J., Kreutzer, S., 2022. run_MC_ISO_TUN(): Monte-Carlo Simulation for ISO-TL (tunnelling transitions). Function version 0.1.0. In: Friedrich, J., Kreutzer, S., Pagonis, V., Schmidt, C., 2022. RLumCarlo: Monte-Carlo Methods for Simulating Luminescence Phenomena. R package version 0.1.9.9000-1. https://CRAN.R-project.org/package=RLumCarlo
+Friedrich, J., Kreutzer, S., 2022. run_MC_ISO_TUN(): Monte-Carlo Simulation for ISO-TL (tunnelling transitions). Function version 0.1.0. In: Friedrich, J., Kreutzer, S., Pagonis, V., Schmidt, C., 2022. RLumCarlo: Monte-Carlo Methods for Simulating Luminescence Phenomena. R package version 0.1.9.9000-2. https://CRAN.R-project.org/package=RLumCarlo
 }
 
 \references{
@@ -146,7 +146,7 @@ Journal of Luminescence 207, 266–272. \doi{10.1016/j.jlumin.2018.11.024}
 }
 \author{
 Johannes Friedrich, University of Bayreuth (Germany),
-Sebastian Kreutzer, Geography & Earth Sciences, Aberystwyth University (United Kingdom)
+Sebastian Kreutzer, Institute of Geography, Heidelberg University (Germany)
 }
 \keyword{data}
 \keyword{models}
