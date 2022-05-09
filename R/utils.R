@@ -19,7 +19,7 @@ comb_array <- function(...) abind::abind(..., along = 3)
 #' @param model [character] (*with default*): the name of the model, the functions tries
 #' to set this automatically.
 #'
-#' @author Sebastian Kreutzer, Geography & Earth Sciences, Aberystwyth University (United Kingdom)
+#' @author Sebastian Kreutzer, Institute of Geography, Heidelberg University (Germany)
 #'
 #' @md
 #' @noRd
@@ -83,7 +83,7 @@ comb_array <- function(...) abind::abind(..., along = 3)
 #'@param N_system [numeric] (**required**): total number of electrons in the
 #'system created by [create_Clusters]
 #'
-#'@author Sebastian Kreutzer, Geography & Earth Sciences, Aberystwyth University (United Kingdom)
+#'@author Sebastian Kreutzer, Institute of Geography, Heidelberg University (Germany)
 #'
 #'@md
 #'@noRd

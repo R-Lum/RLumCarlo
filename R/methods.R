@@ -4,7 +4,7 @@
 #'
 #' @param ... input objects or further function arguments
 #'
-#' @author Sebastian Kreutzer, Geography & Earth Sciences, Aberystwyth University (United Kingdom),
+#' @author Sebastian Kreutzer, Institute of Geography, Heidelberg University (Germany),
 #' Johannes Friedrich, University of Bayreuth (Germany),
 #'
 #' @keywords internal

@@ -54,7 +54,7 @@
 #' @section Function version: 0.1.0
 #'
 #' @author Johannes Friedrich, University of Bayreuth (Germany),
-#' Sebastian Kreutzer, Geography & Earth Sciences, Aberystwyth University (United Kingdom)
+#' Sebastian Kreutzer, Institute of Geography, Heidelberg University (Germany)
 #'
 #' @references
 #' Huntley, D.J., 2006. An explanation of the power-law decay of luminescence.

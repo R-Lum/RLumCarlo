@@ -13,14 +13,14 @@ Author: Johannes Friedrich [aut, trl] (<https://orcid.org/0000-0002-0805-9547>),
 Authors@R: c(
     person("Johannes", "Friedrich", role = c("aut","trl"), comment = c(ORCID = "0000-0002-0805-9547")),
     person("Sebastian", "Kreutzer", role = c("aut","trl","cre"), comment = c(ORCID = "0000-0002-0734-2199"),
-            email = "sebastian.kreutzer@aber.ac.uk"),
+            email = "sebastian.kreutzer@uni-heidelberg.de"),
     person("Vasilis", "Pagonis", role = c("aut"), comment = c(ORCID = "0000-0002-4852-9312")),
     person("Christoph", "Schmidt", role = c("aut"), comment = c(ORCID = "0000-0002-2309-3209")),
     person("Christian", "Laag", role = c("ctb"), comment = c(ORCID = "0000-0002-6012-1029")),
     person("Ena", "Rajovic", role = c("ctb")), 
     person("Alex Roy", "Duncan", role = c("ctb"))
     )
-Maintainer: Sebastian Kreutzer <sebastian.kreutzer@aber.ac.uk>
+Maintainer: Sebastian Kreutzer <sebastian.kreutzer@uni-heidelberg.de>
 Description: A collection of functions to simulate luminescence production in 
     dosimetric materials using Monte Carlo methods. Implemented are models for 
     delocalised transitions (e.g., Chen and McKeever (1997) <doi:10.1142/2781>), 
@@ -32,7 +32,7 @@ Description: A collection of functions to simulate luminescence production in
     linearly-modulated optically stimulated luminescence (LM-OSL), 
     linearly-modulated infrared stimulated luminescence (LM-IRSL),
     and isothermal luminescence (ITL or ISO-TL).
-Contact: Package Developer Team <sebastian.kreutzer@aber.ac.uk>
+Contact: Package Developer Team <sebastian.kreutzer@uni-heidelberg.de>
 License: GPL-3
 BugReports: https://github.com/R-Lum/RLumCarlo/issues
 Depends: 
