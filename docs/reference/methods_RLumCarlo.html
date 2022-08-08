@@ -17,7 +17,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">RLumCarlo</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.1.8</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.1.9</span>
       </span>
     </div>
 
@@ -26,7 +26,7 @@
   <a href="../reference/index.html">Reference</a>
 </li>
 <li class="dropdown">
-  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     Articles
      
     <span class="caret"></span>
@@ -63,11 +63,11 @@
     </div>
 
     <div id="ref-usage">
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="co"># S3 method for RLumCarlo_Model_Output</span>
-<span class="fu"><a href="https://rdrr.io/r/base/summary.html" class="external-link">summary</a></span><span class="op">(</span><span class="va">object</span>, verbose <span class="op">=</span> <span class="cn">TRUE</span>, <span class="va">...</span><span class="op">)</span>
-
-<span class="co"># S3 method for RLumCarlo_Model_Output</span>
-<span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="va">...</span><span class="op">)</span></code></pre></div>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="co"># S3 method for RLumCarlo_Model_Output</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/summary.html" class="external-link">summary</a></span><span class="op">(</span><span class="va">object</span>, verbose <span class="op">=</span> <span class="cn">TRUE</span>, <span class="va">...</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># S3 method for RLumCarlo_Model_Output</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="va">...</span><span class="op">)</span></span></code></pre></div>
     </div>
 
     <div id="arguments">
@@ -75,56 +75,67 @@
     <dl><dt>object</dt>
 <dd><p><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a> of class RLumCarlo_Model_Output: RLumCarlo simulation output object
 produced by all <code>run_</code> functions</p></dd>
+
+
 <dt>verbose</dt>
 <dd><p><a href="https://rdrr.io/r/base/logical.html" class="external-link">logical</a> (<em>with default</em>): enable/disable verbose mode</p></dd>
+
+
 <dt>...</dt>
 <dd><p>input objects or further function arguments</p></dd>
+
 </dl></div>
     <div id="value">
     <h2>Value</h2>
-    <p><code><a href="https://rdrr.io/r/base/summary.html" class="external-link">summary()</a></code>: This function returns a <a href="https://rdrr.io/r/base/data.frame.html" class="external-link">data.frame</a><code><a href="https://rdrr.io/r/base/c.html" class="external-link">c()</a></code>: function returns a the same as the input objects</p>
+    
+
+<p><code><a href="https://rdrr.io/r/base/summary.html" class="external-link">summary()</a></code>: This function returns a <a href="https://rdrr.io/r/base/data.frame.html" class="external-link">data.frame</a></p>
+
+
+
+<p><code><a href="https://rdrr.io/r/base/c.html" class="external-link">c()</a></code>: function returns a the same as the input objects</p>
     </div>
     <div id="author">
     <h2>Author</h2>
-    <p>Sebastian Kreutzer, Geography &amp; Earth Sciences, Aberystwyth University (United Kingdom),
+    <p>Sebastian Kreutzer, Institute of Geography, Heidelberg University (Germany),
 Johannes Friedrich, University of Bayreuth (Germany),</p>
     </div>
     <div id="how-to-cite">
     <h2>How to cite</h2>
-    <p>Kreutzer, S., Friedrich, J., 2022. methods_RLumCarlo(): methods_RLumCarlo. In: Friedrich, J., Kreutzer, S., Pagonis, V., Schmidt, C., 2022. RLumCarlo: Monte-Carlo Methods for Simulating Luminescence Phenomena. R package version 0.1.8. https://CRAN.R-project.org/package=RLumCarlo</p>
+    <p>Kreutzer, S., Friedrich, J., 2022. methods_RLumCarlo(): methods_RLumCarlo. In: Friedrich, J., Kreutzer, S., Pagonis, V., Schmidt, C., 2022. RLumCarlo: Monte-Carlo Methods for Simulating Luminescence Phenomena. R package version 0.1.9. https://CRAN.R-project.org/package=RLumCarlo</p>
     </div>
 
     <div id="ref-examples">
     <h2>Examples</h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"></span>
-<span class="r-in"><span class="co">##create object</span></span>
-<span class="r-in"><span class="va">object</span> <span class="op">&lt;-</span> <span class="fu"><a href="run_MC_TL_DELOC.html">run_MC_TL_DELOC</a></span><span class="op">(</span></span>
-<span class="r-in"> s <span class="op">=</span> <span class="fl">3.5e12</span>,</span>
-<span class="r-in"> E <span class="op">=</span> <span class="fl">1.45</span>,</span>
-<span class="r-in"> R <span class="op">=</span> <span class="fl">0.1</span>,</span>
-<span class="r-in"> method <span class="op">=</span> <span class="st">'seq'</span>,</span>
-<span class="r-in"> clusters <span class="op">=</span> <span class="fl">100</span>,</span>
-<span class="r-in"> times <span class="op">=</span> <span class="fl">150</span><span class="op">:</span><span class="fl">350</span><span class="op">)</span></span>
-<span class="r-in"></span>
-<span class="r-in"><span class="co">##summary</span></span>
-<span class="r-in"><span class="fu"><a href="https://rdrr.io/r/base/summary.html" class="external-link">summary</a></span><span class="op">(</span><span class="va">object</span><span class="op">)</span></span>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="co">##create object</span></span></span>
+<span class="r-in"><span><span class="va">object</span> <span class="op">&lt;-</span> <span class="fu"><a href="run_MC_TL_DELOC.html">run_MC_TL_DELOC</a></span><span class="op">(</span></span></span>
+<span class="r-in"><span> s <span class="op">=</span> <span class="fl">3.5e12</span>,</span></span>
+<span class="r-in"><span> E <span class="op">=</span> <span class="fl">1.45</span>,</span></span>
+<span class="r-in"><span> R <span class="op">=</span> <span class="fl">0.1</span>,</span></span>
+<span class="r-in"><span> method <span class="op">=</span> <span class="st">'seq'</span>,</span></span>
+<span class="r-in"><span> clusters <span class="op">=</span> <span class="fl">100</span>,</span></span>
+<span class="r-in"><span> times <span class="op">=</span> <span class="fl">150</span><span class="op">:</span><span class="fl">350</span><span class="op">)</span></span></span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="co">##summary</span></span></span>
+<span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/base/summary.html" class="external-link">summary</a></span><span class="op">(</span><span class="va">object</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>       time          mean             y_min            y_max       </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  Min.   :150   Min.   :0.00000   Min.   :0.0000   Min.   :0.0000  </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  1st Qu.:200   1st Qu.:0.03594   1st Qu.:0.0000   1st Qu.:0.1009  </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  Median :250   Median :0.22692   Median :0.1121   Median :0.4257  </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  Mean   :250   Mean   :0.98310   Mean   :0.7498   Mean   :1.3542  </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  3rd Qu.:300   3rd Qu.:1.56591   3rd Qu.:1.1490   3rd Qu.:2.1751  </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  Max.   :350   Max.   :4.22162   Max.   :3.4855   Max.   :5.7024  </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>        sd                 var                sum         </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  Min.   :0.0000000   Min.   :0.000000   Min.   :  0.000  </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  1st Qu.:0.0009895   1st Qu.:0.000001   1st Qu.:  3.594  </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  Median :0.0457846   Median :0.002096   Median : 22.692  </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  Mean   :0.1208365   Mean   :0.040696   Mean   : 98.310  </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  3rd Qu.:0.1856787   3rd Qu.:0.034477   3rd Qu.:156.591  </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  Max.   :0.5664886   Max.   :0.320909   Max.   :422.162  </span>
-<span class="r-in"></span>
-<span class="r-in"><span class="co">##combine</span></span>
-<span class="r-in"><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="va">objects</span>,<span class="va">objects</span><span class="op">)</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  1st Qu.:200   1st Qu.:0.03194   1st Qu.:0.0000   1st Qu.:0.1348  </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  Median :250   Median :0.21061   Median :0.1042   Median :0.4257  </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  Mean   :250   Mean   :0.97476   Mean   :0.7522   Mean   :1.3247  </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  3rd Qu.:300   3rd Qu.:1.56919   3rd Qu.:1.1342   3rd Qu.:2.1211  </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  Max.   :350   Max.   :4.23978   Max.   :3.6048   Max.   :5.1078  </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>        sd                var                 sum         </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  Min.   :0.000000   Min.   :0.000e+00   Min.   :  0.000  </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  1st Qu.:0.001638   1st Qu.:2.680e-06   1st Qu.:  3.194  </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  Median :0.046662   Median :2.177e-03   Median : 21.061  </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  Mean   :0.114916   Mean   :3.469e-02   Mean   : 97.476  </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  3rd Qu.:0.190812   3rd Qu.:3.641e-02   3rd Qu.:156.919  </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  Max.   :0.500430   Max.   :2.504e-01   Max.   :423.978  </span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="co">##combine</span></span></span>
+<span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="va">objects</span>,<span class="va">objects</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [[1]]</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> function (name, pos = -1L, envir = as.environment(pos), all.names = FALSE, </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>     pattern, sorted = TRUE) </span>
@@ -157,7 +168,7 @@ Johannes Friedrich, University of Bayreuth (Germany),</p>
 <span class="r-out co"><span class="r-pr">#&gt;</span>     }</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>     else all.names</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> }</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> &lt;bytecode: 0x7fea871531c8&gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> &lt;bytecode: 0x7fdb9b8e9fa0&gt;</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> &lt;environment: namespace:base&gt;</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [[2]]</span>
@@ -192,10 +203,10 @@ Johannes Friedrich, University of Bayreuth (Germany),</p>
 <span class="r-out co"><span class="r-pr">#&gt;</span>     }</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>     else all.names</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> }</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> &lt;bytecode: 0x7fea871531c8&gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> &lt;bytecode: 0x7fdb9b8e9fa0&gt;</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> &lt;environment: namespace:base&gt;</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-in"></span>
+<span class="r-in"><span></span></span>
 </code></pre></div>
     </div>
   </div>
@@ -206,13 +217,11 @@ Johannes Friedrich, University of Bayreuth (Germany),</p>
 
 
       <footer><div class="copyright">
-  <p></p><p>Developed by Johannes Friedrich, Sebastian Kreutzer, Vasilis Pagonis,
-Christoph Schmidt.</p>
+  <p></p><p>Developed by Johannes Friedrich, Sebastian Kreutzer, Vasilis Pagonis, Christoph Schmidt.</p>
 </div>
 
 <div class="pkgdown">
-  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a>
-2.0.2.</p>
+  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.6.</p>
 </div>
 
       </footer></div>

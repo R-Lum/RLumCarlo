@@ -17,7 +17,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">RLumCarlo</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.1.8</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.1.9</span>
       </span>
     </div>
 
@@ -26,7 +26,7 @@
   <a href="../reference/index.html">Reference</a>
 </li>
 <li class="dropdown">
-  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     Articles
      
     <span class="caret"></span>
@@ -58,60 +58,11 @@
     </div>
 
     <div class="section level2">
-<h2 class="page-header" data-toc-text="0.1.8" id="rlumcarlo-018-2022-02-20">RLumCarlo 0.1.8 (2022-02-20)<a class="anchor" aria-label="anchor" href="#rlumcarlo-018-2022-02-20"></a></h2>
-<p><em>This package version needs at least R &gt;= 4.0.</em></p>
-<ul><li>Add reference to manuscript where <code>RLumCarlo</code> is
-described</li>
-<li>Fixes an internal CRAN issues related to the logo.</li>
-</ul></div>
-    <div class="section level2">
-<h2 class="page-header" data-toc-text="0.1.7" id="rlumcarlo-017-2020-12-10">RLumCarlo 0.1.7 (2020-12-10)<small>2020-12-10</small><a class="anchor" aria-label="anchor" href="#rlumcarlo-017-2020-12-10"></a></h2>
-<p><em>This package version needs at least R &gt;= 3.5.0.</em></p>
-<ul><li>Update internal tests to function properly with
-<code>testthat &gt;= 3.0.0</code>
+<h2 class="page-header" data-toc-text="0.1.9" id="rlumcarlo-019-2022-08-08">RLumCarlo 0.1.9 (2022-08-08)<a class="anchor" aria-label="anchor" href="#rlumcarlo-019-2022-08-08"></a></h2>
+<ul><li>Update maintainer’s e-mail address</li>
+<li>Fix some wrong calls in <code>if()</code> using <code><a href="https://rdrr.io/r/base/class.html" class="external-link">class()</a></code>
 </li>
-<li>Correct several code-documentation mismatches (thanks to an
-anonymous R Journal reviewer)</li>
-</ul><div class="section level3">
-<h3 id="rlumcarlo-0-1-7">RLumCarlo 0.1.6 (2020-07-05)<a class="anchor" aria-label="anchor" href="#rlumcarlo-0-1-7"></a></h3>
-<ul><li><p>The last update to prevent the failed checks for the Solaris
-platform on CRAN came with unwanted side effects. After the compiler
-complained about <code>pow(&lt;int&gt;,&lt;int&gt;)</code>, we used
-<code>&lt;double&gt;</code> for all objects. Unfortunately, this led to
-complete wrong simulation results we did not detect during the tests
-before the submission. This issue was solved.</p></li>
-<li><p>The package now has a central C++ header file defining functions
-and constants used in the other files. This change has no user-visible
-effect.</p></li>
 </ul></div>
-<div class="section level3">
-<h3 id="rlumcarlo-0-1-7-1">RLumCarlo 0.1.5 (2020-06-12)<a class="anchor" aria-label="anchor" href="#rlumcarlo-0-1-7-1"></a></h3>
-<ul><li>Fix problem on CRAN Solaris</li>
-</ul></div>
-<div class="section level3">
-<h3 id="rlumcarlo-0-1-7-2">RLumCarlo 0.1.4 (2020-06-12)<a class="anchor" aria-label="anchor" href="#rlumcarlo-0-1-7-2"></a></h3>
-<ul><li>Fix CRAN requests</li>
-</ul></div>
-<div class="section level3">
-<h3 id="rlumcarlo-never-published-on-cran-0-1-7">RLumCarlo 0.1.3 (2020-06-05) (never published on CRAN)<a class="anchor" aria-label="anchor" href="#rlumcarlo-never-published-on-cran-0-1-7"></a></h3>
-<ul><li>CRAN request correction: Misspelled word in <code>DESCRIPTION</code>
-corrected</li>
-</ul></div>
-<div class="section level3">
-<h3 id="rlumcarlo-never-published-on-cran-0-1-7-1">RLumCarlo 0.1.2 (2020-06-03) (never published on CRAN)<a class="anchor" aria-label="anchor" href="#rlumcarlo-never-published-on-cran-0-1-7-1"></a></h3>
-<ul><li>CRAN request corrections, the package URL in the
-<code>README.md</code> became a little bit more canonical using capital
-letters for <code>CRAN</code> and <code>R</code>.</li>
-</ul></div>
-<div class="section level3">
-<h3 id="rlumcarlo-never-published-on-cran-0-1-7-2">RLumCarlo 0.1.1 (2020-06-03) (never published on CRAN)<a class="anchor" aria-label="anchor" href="#rlumcarlo-never-published-on-cran-0-1-7-2"></a></h3>
-<ul><li>CRAN request corrections</li>
-</ul></div>
-<div class="section level3">
-<h3 id="rlumcarlo-never-published-on-cran-0-1-7-3">RLumCarlo 0.1.0 (2020-05-27) (never published on CRAN)<a class="anchor" aria-label="anchor" href="#rlumcarlo-never-published-on-cran-0-1-7-3"></a></h3>
-<ul><li>Initial version</li>
-</ul></div>
-</div>
   </div>
 
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
@@ -122,13 +73,11 @@ letters for <code>CRAN</code> and <code>R</code>.</li>
 
 
       <footer><div class="copyright">
-  <p></p><p>Developed by Johannes Friedrich, Sebastian Kreutzer, Vasilis Pagonis,
-Christoph Schmidt.</p>
+  <p></p><p>Developed by Johannes Friedrich, Sebastian Kreutzer, Vasilis Pagonis, Christoph Schmidt.</p>
 </div>
 
 <div class="pkgdown">
-  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a>
-2.0.2.</p>
+  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.6.</p>
 </div>
 
       </footer></div>

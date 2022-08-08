@@ -19,7 +19,7 @@ The term delocalized here refers to the involvement of the conduction band."><!-
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">RLumCarlo</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.1.8</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.1.9</span>
       </span>
     </div>
 
@@ -28,7 +28,7 @@ The term delocalized here refers to the involvement of the conduction band."><!-
   <a href="../reference/index.html">Reference</a>
 </li>
 <li class="dropdown">
-  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     Articles
      
     <span class="caret"></span>
@@ -67,47 +67,66 @@ The term delocalized here refers to the involvement of the conduction band.</p>
     </div>
 
     <div id="ref-usage">
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="fu">run_MC_CW_OSL_DELOC</span><span class="op">(</span>
-  <span class="va">A</span>,
-  <span class="va">times</span>,
-  clusters <span class="op">=</span> <span class="fl">10</span>,
-  N_e <span class="op">=</span> <span class="fl">200</span>,
-  n_filled <span class="op">=</span> <span class="va">N_e</span>,
-  <span class="va">R</span>,
-  method <span class="op">=</span> <span class="st">"par"</span>,
-  output <span class="op">=</span> <span class="st">"signal"</span>,
-  <span class="va">...</span>
-<span class="op">)</span></code></pre></div>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">run_MC_CW_OSL_DELOC</span><span class="op">(</span></span>
+<span>  <span class="va">A</span>,</span>
+<span>  <span class="va">times</span>,</span>
+<span>  clusters <span class="op">=</span> <span class="fl">10</span>,</span>
+<span>  N_e <span class="op">=</span> <span class="fl">200</span>,</span>
+<span>  n_filled <span class="op">=</span> <span class="va">N_e</span>,</span>
+<span>  <span class="va">R</span>,</span>
+<span>  method <span class="op">=</span> <span class="st">"par"</span>,</span>
+<span>  output <span class="op">=</span> <span class="st">"signal"</span>,</span>
+<span>  <span class="va">...</span></span>
+<span><span class="op">)</span></span></code></pre></div>
     </div>
 
     <div id="arguments">
     <h2>Arguments</h2>
     <dl><dt>A</dt>
 <dd><p><a href="https://rdrr.io/r/base/numeric.html" class="external-link">numeric</a> (<strong>required</strong>): The optical excitation rate from trap to conduction band (s^-1)</p></dd>
+
+
 <dt>times</dt>
 <dd><p><a href="https://rdrr.io/r/base/numeric.html" class="external-link">numeric</a> (<strong>required</strong>): The sequence of temperature steps within the simulation (s)</p></dd>
+
+
 <dt>clusters</dt>
 <dd><p><a href="https://rdrr.io/r/base/numeric.html" class="external-link">numeric</a> (<em>with default</em>): The number of created clusters for the MC runs. The input can be the output of <a href="create_ClusterSystem.html">create_ClusterSystem</a>. In that case <code>n_filled</code> indicate absolute numbers of a system.</p></dd>
+
+
 <dt>N_e</dt>
 <dd><p><a href="https://rdrr.io/r/base/integer.html" class="external-link">integer</a> (<em>with default</em>): The total number of electron traps available (dimensionless). Can be a vector of <code>length(clusters)</code>, shorter values are recycled.</p></dd>
+
+
 <dt>n_filled</dt>
 <dd><p><a href="https://rdrr.io/r/base/integer.html" class="external-link">integer</a> (<em>with default</em>): The number of filled electron traps at the beginning
 of the simulation (dimensionless). Can be a vector of <code>length(clusters)</code>, shorter values are recycled.</p></dd>
+
+
 <dt>R</dt>
 <dd><p><a href="https://rdrr.io/r/base/numeric.html" class="external-link">numeric</a> (<strong>required</strong>): The retrapping ratio for delocalized transitions (dimensionless)</p></dd>
+
+
 <dt>method</dt>
 <dd><p><a href="https://rdrr.io/r/base/character.html" class="external-link">character</a> (<em>with default</em>): Sequential <code>'seq'</code> or parallel <code>'par'</code>processing. In
 the parallel mode the function tries to run the simulation on multiple CPU cores (if available) with
 a positive effect on the computation time.</p></dd>
+
+
 <dt>output</dt>
 <dd><p><a href="https://rdrr.io/r/base/character.html" class="external-link">character</a> (<em>with default</em>): Output is either the <code>'signal'</code> (the default) or
 <code>'remaining_e'</code> (the remaining charges, electrons, in the trap)</p></dd>
+
+
 <dt>...</dt>
 <dd><p>further arguments, such as <code>cores</code> to control the number of used CPU cores or <code>verbose</code> to silence the terminal</p></dd>
+
 </dl></div>
     <div id="value">
     <h2>Value</h2>
-    <p>This function returns an object of class <code>RLumCarlo_Model_Output</code> which
+    
+
+<p>This function returns an object of class <code>RLumCarlo_Model_Output</code> which
 is a <a href="https://rdrr.io/r/base/list.html" class="external-link">list</a> consisting of an <a href="https://rdrr.io/r/base/array.html" class="external-link">array</a> with dimension length(times) x clusters
 and a <a href="https://rdrr.io/r/base/numeric.html" class="external-link">numeric</a> time vector.</p>
     </div>
@@ -130,84 +149,84 @@ R := retrapping ratio for delocalized transitions</p>
     </div>
     <div id="how-to-cite">
     <h2>How to cite</h2>
-    <p>Kreutzer, S., 2022. run_MC_CW_OSL_DELOC(): Run Monte-Carlo Simulation for CW-OSL (delocalized transitions). Function version 0.1.0. In: Friedrich, J., Kreutzer, S., Pagonis, V., Schmidt, C., 2022. RLumCarlo: Monte-Carlo Methods for Simulating Luminescence Phenomena. R package version 0.1.8. https://CRAN.R-project.org/package=RLumCarlo</p>
+    <p>Kreutzer, S., 2022. run_MC_CW_OSL_DELOC(): Run Monte-Carlo Simulation for CW-OSL (delocalized transitions). Function version 0.1.0. In: Friedrich, J., Kreutzer, S., Pagonis, V., Schmidt, C., 2022. RLumCarlo: Monte-Carlo Methods for Simulating Luminescence Phenomena. R package version 0.1.9. https://CRAN.R-project.org/package=RLumCarlo</p>
     </div>
     <div id="references">
     <h2>References</h2>
     <p>Pagonis, V., Friedrich, J., Discher, M., Müller-Kirschbaum, A., Schlosser, V., Kreutzer, S.,
 Chen, R. and Schmidt, C., 2019. Excited state luminescence signals from a random
 distribution of defects: A new Monte Carlo simulation approach for feldspar.
-Journal of Luminescence 207, 266–272. doi: <a href="https://doi.org/10.1016/j.jlumin.2018.11.024" class="external-link">10.1016/j.jlumin.2018.11.024</a></p>
+Journal of Luminescence 207, 266–272. <a href="https://doi.org/10.1016/j.jlumin.2018.11.024" class="external-link">doi:10.1016/j.jlumin.2018.11.024</a></p>
 <p><strong>Further reading</strong></p>
 <p>Chen, R., McKeever, S.W.S., 1997. Theory of Thermoluminescence and Related Phenomena.
-WORLD SCIENTIFIC. doi: <a href="https://doi.org/10.1142/2781" class="external-link">10.1142/2781</a></p>
+WORLD SCIENTIFIC. <a href="https://doi.org/10.1142/2781" class="external-link">doi:10.1142/2781</a></p>
     </div>
     <div id="author">
     <h2>Author</h2>
-    <p>Sebastian Kreutzer, Geography &amp; Earth Sciences, Aberystwyth University (United Kingdom)</p>
+    <p>Sebastian Kreutzer, Institute of Geography, Heidelberg University (Germany)</p>
     </div>
 
     <div id="ref-examples">
     <h2>Examples</h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span class="co">## brief example</span></span>
-<span class="r-in"><span class="fu">run_MC_CW_OSL_DELOC</span><span class="op">(</span></span>
-<span class="r-in"> A <span class="op">=</span> <span class="fl">0.12</span>,</span>
-<span class="r-in"> R <span class="op">=</span> <span class="fl">0.1</span>,</span>
-<span class="r-in"> times <span class="op">=</span> <span class="fl">0</span><span class="op">:</span><span class="fl">10</span>,</span>
-<span class="r-in"> clusters <span class="op">=</span> <span class="fl">10</span>,</span>
-<span class="r-in"> method <span class="op">=</span> <span class="st">"seq"</span><span class="op">)</span> <span class="op">%&gt;%</span></span>
-<span class="r-in"><span class="fu"><a href="plot_RLumCarlo.html">plot_RLumCarlo</a></span><span class="op">(</span>legend <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="co">## brief example</span></span></span>
+<span class="r-in"><span><span class="fu">run_MC_CW_OSL_DELOC</span><span class="op">(</span></span></span>
+<span class="r-in"><span> A <span class="op">=</span> <span class="fl">0.12</span>,</span></span>
+<span class="r-in"><span> R <span class="op">=</span> <span class="fl">0.1</span>,</span></span>
+<span class="r-in"><span> times <span class="op">=</span> <span class="fl">0</span><span class="op">:</span><span class="fl">10</span>,</span></span>
+<span class="r-in"><span> clusters <span class="op">=</span> <span class="fl">10</span>,</span></span>
+<span class="r-in"><span> method <span class="op">=</span> <span class="st">"seq"</span><span class="op">)</span> <span class="op">%&gt;%</span></span></span>
+<span class="r-in"><span><span class="fu"><a href="plot_RLumCarlo.html">plot_RLumCarlo</a></span><span class="op">(</span>legend <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span></span>
 <span class="r-plt img"><img src="run_MC_CW_OSL_DELOC-1.png" alt="" width="700" height="433"></span>
-<span class="r-in"></span>
-<span class="r-in"><span class="co">## A long example</span></span>
-<span class="r-in"><span class="kw">if</span> <span class="op">(</span><span class="cn">FALSE</span><span class="op">)</span> <span class="op">{</span></span>
-<span class="r-in"><span class="va">A</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">0.1</span>,<span class="fl">0.3</span>,<span class="fl">0.5</span>,<span class="fl">1</span><span class="op">)</span></span>
-<span class="r-in"><span class="va">times</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/seq.html" class="external-link">seq</a></span><span class="op">(</span><span class="fl">0</span>, <span class="fl">60</span>, <span class="fl">1</span><span class="op">)</span></span>
-<span class="r-in"><span class="va">s</span> <span class="op">&lt;-</span> <span class="fl">1e12</span></span>
-<span class="r-in"><span class="va">E</span> <span class="op">&lt;-</span> <span class="fl">1</span></span>
-<span class="r-in"><span class="va">R</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">1e-7</span>, <span class="fl">1e-6</span>, <span class="fl">0.01</span>, <span class="fl">0.1</span><span class="op">)</span> <span class="co"># sequence of different R values</span></span>
-<span class="r-in"><span class="va">clusters</span> <span class="op">&lt;-</span> <span class="fl">1000</span> <span class="co"># number of Monte Carlo simulations</span></span>
-<span class="r-in"><span class="va">N_e</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">200</span>, <span class="fl">500</span>, <span class="fl">700</span>, <span class="fl">400</span><span class="op">)</span> <span class="co"># number of free electrons</span></span>
-<span class="r-in"><span class="va">n_filled</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">200</span>, <span class="fl">500</span>, <span class="fl">100</span>, <span class="fl">70</span><span class="op">)</span> <span class="co"># number of filled traps</span></span>
-<span class="r-in"><span class="va">method</span> <span class="op">&lt;-</span><span class="st">"par"</span></span>
-<span class="r-in"><span class="va">output</span> <span class="op">&lt;-</span> <span class="st">"signal"</span></span>
-<span class="r-in"><span class="va">col</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">1</span>,<span class="fl">2</span>,<span class="fl">3</span>,<span class="fl">4</span><span class="op">)</span> <span class="co"># ifferent colours for the individual curves</span></span>
-<span class="r-in"><span class="va">plot_uncertainty</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="cn">TRUE</span>,<span class="cn">FALSE</span>,<span class="cn">TRUE</span>,<span class="cn">FALSE</span><span class="op">)</span>  <span class="co"># do you want to see the uncertainty?</span></span>
-<span class="r-in"><span class="va">add_TF</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="cn">FALSE</span>,<span class="fu"><a href="https://rdrr.io/r/base/rep.html" class="external-link">rep</a></span><span class="op">(</span><span class="cn">TRUE</span>, <span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/length.html" class="external-link">length</a></span><span class="op">(</span><span class="va">R</span><span class="op">)</span><span class="op">-</span><span class="fl">1</span><span class="op">)</span><span class="op">)</span><span class="op">)</span></span>
-<span class="r-in"></span>
-<span class="r-in"><span class="co">## loop to plot different curves into one plot</span></span>
-<span class="r-in"><span class="kw">for</span> <span class="op">(</span><span class="va">u</span> <span class="kw">in</span> <span class="fl">1</span><span class="op">:</span><span class="fu"><a href="https://rdrr.io/r/base/length.html" class="external-link">length</a></span><span class="op">(</span><span class="va">R</span><span class="op">)</span><span class="op">)</span><span class="op">{</span></span>
-<span class="r-in"> <span class="va">results</span> <span class="op">&lt;-</span> <span class="fu">run_MC_CW_OSL_DELOC</span><span class="op">(</span></span>
-<span class="r-in">  A <span class="op">=</span> <span class="va">A</span><span class="op">[</span><span class="va">u</span><span class="op">]</span>,</span>
-<span class="r-in">  <span class="va">times</span>,</span>
-<span class="r-in">  clusters <span class="op">=</span> <span class="va">clusters</span>,</span>
-<span class="r-in">  N_e <span class="op">=</span> <span class="va">N_e</span><span class="op">[</span><span class="va">u</span><span class="op">]</span>,</span>
-<span class="r-in">  n_filled <span class="op">=</span> <span class="va">n_filled</span><span class="op">[</span><span class="va">u</span><span class="op">]</span>,</span>
-<span class="r-in">  R <span class="op">=</span> <span class="va">R</span><span class="op">[</span><span class="va">u</span><span class="op">]</span>,</span>
-<span class="r-in">  method <span class="op">=</span> <span class="va">method</span>,</span>
-<span class="r-in">  output <span class="op">=</span> <span class="va">output</span><span class="op">)</span></span>
-<span class="r-in"></span>
-<span class="r-in"><span class="fu"><a href="plot_RLumCarlo.html">plot_RLumCarlo</a></span><span class="op">(</span></span>
-<span class="r-in"><span class="va">results</span>,</span>
-<span class="r-in"> add <span class="op">=</span> <span class="va">add_TF</span><span class="op">[</span><span class="va">u</span><span class="op">]</span>,</span>
-<span class="r-in"> legend <span class="op">=</span> <span class="cn">FALSE</span>,</span>
-<span class="r-in"> col <span class="op">=</span> <span class="va">col</span><span class="op">[</span><span class="va">u</span><span class="op">]</span>,</span>
-<span class="r-in"> main <span class="op">=</span> <span class="st">"Delocalised Transition"</span><span class="op">)</span></span>
-<span class="r-in"><span class="op">}</span></span>
-<span class="r-in"><span class="co"># add your legend with your parameters</span></span>
-<span class="r-in"><span class="fu"><a href="https://rdrr.io/r/graphics/legend.html" class="external-link">legend</a></span><span class="op">(</span><span class="st">"topright"</span>,</span>
-<span class="r-in">  ncol <span class="op">=</span> <span class="fl">4</span>,</span>
-<span class="r-in">  cex <span class="op">=</span> <span class="fl">0.55</span>,</span>
-<span class="r-in">  title <span class="op">=</span> <span class="st">"parameters"</span>,</span>
-<span class="r-in">  legend<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span></span>
-<span class="r-in">   <span class="fu"><a href="https://rdrr.io/r/base/paste.html" class="external-link">paste0</a></span><span class="op">(</span><span class="st">"A = "</span>, <span class="va">A</span><span class="op">)</span>,</span>
-<span class="r-in">   <span class="fu"><a href="https://rdrr.io/r/base/paste.html" class="external-link">paste0</a></span><span class="op">(</span><span class="st">"n_filled = "</span>, <span class="va">n_filled</span><span class="op">)</span>,</span>
-<span class="r-in">   <span class="fu"><a href="https://rdrr.io/r/base/paste.html" class="external-link">paste0</a></span><span class="op">(</span><span class="st">"N_e = "</span>, <span class="va">N_e</span><span class="op">)</span>,</span>
-<span class="r-in">   <span class="fu"><a href="https://rdrr.io/r/base/paste.html" class="external-link">paste0</a></span><span class="op">(</span><span class="st">"R = "</span>, <span class="va">R</span><span class="op">)</span><span class="op">)</span>,</span>
-<span class="r-in">   bty <span class="op">=</span> <span class="st">"n"</span>,</span>
-<span class="r-in">   text.col <span class="op">=</span> <span class="va">col</span><span class="op">)</span></span>
-<span class="r-in"><span class="op">}</span></span>
-<span class="r-in"></span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="co">## A long example</span></span></span>
+<span class="r-in"><span><span class="kw">if</span> <span class="op">(</span><span class="cn">FALSE</span><span class="op">)</span> <span class="op">{</span></span></span>
+<span class="r-in"><span><span class="va">A</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">0.1</span>,<span class="fl">0.3</span>,<span class="fl">0.5</span>,<span class="fl">1</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="va">times</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/seq.html" class="external-link">seq</a></span><span class="op">(</span><span class="fl">0</span>, <span class="fl">60</span>, <span class="fl">1</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="va">s</span> <span class="op">&lt;-</span> <span class="fl">1e12</span></span></span>
+<span class="r-in"><span><span class="va">E</span> <span class="op">&lt;-</span> <span class="fl">1</span></span></span>
+<span class="r-in"><span><span class="va">R</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">1e-7</span>, <span class="fl">1e-6</span>, <span class="fl">0.01</span>, <span class="fl">0.1</span><span class="op">)</span> <span class="co"># sequence of different R values</span></span></span>
+<span class="r-in"><span><span class="va">clusters</span> <span class="op">&lt;-</span> <span class="fl">1000</span> <span class="co"># number of Monte Carlo simulations</span></span></span>
+<span class="r-in"><span><span class="va">N_e</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">200</span>, <span class="fl">500</span>, <span class="fl">700</span>, <span class="fl">400</span><span class="op">)</span> <span class="co"># number of free electrons</span></span></span>
+<span class="r-in"><span><span class="va">n_filled</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">200</span>, <span class="fl">500</span>, <span class="fl">100</span>, <span class="fl">70</span><span class="op">)</span> <span class="co"># number of filled traps</span></span></span>
+<span class="r-in"><span><span class="va">method</span> <span class="op">&lt;-</span><span class="st">"par"</span></span></span>
+<span class="r-in"><span><span class="va">output</span> <span class="op">&lt;-</span> <span class="st">"signal"</span></span></span>
+<span class="r-in"><span><span class="va">col</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">1</span>,<span class="fl">2</span>,<span class="fl">3</span>,<span class="fl">4</span><span class="op">)</span> <span class="co"># ifferent colours for the individual curves</span></span></span>
+<span class="r-in"><span><span class="va">plot_uncertainty</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="cn">TRUE</span>,<span class="cn">FALSE</span>,<span class="cn">TRUE</span>,<span class="cn">FALSE</span><span class="op">)</span>  <span class="co"># do you want to see the uncertainty?</span></span></span>
+<span class="r-in"><span><span class="va">add_TF</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="cn">FALSE</span>,<span class="fu"><a href="https://rdrr.io/r/base/rep.html" class="external-link">rep</a></span><span class="op">(</span><span class="cn">TRUE</span>, <span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/length.html" class="external-link">length</a></span><span class="op">(</span><span class="va">R</span><span class="op">)</span><span class="op">-</span><span class="fl">1</span><span class="op">)</span><span class="op">)</span><span class="op">)</span></span></span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="co">## loop to plot different curves into one plot</span></span></span>
+<span class="r-in"><span><span class="kw">for</span> <span class="op">(</span><span class="va">u</span> <span class="kw">in</span> <span class="fl">1</span><span class="op">:</span><span class="fu"><a href="https://rdrr.io/r/base/length.html" class="external-link">length</a></span><span class="op">(</span><span class="va">R</span><span class="op">)</span><span class="op">)</span><span class="op">{</span></span></span>
+<span class="r-in"><span> <span class="va">results</span> <span class="op">&lt;-</span> <span class="fu">run_MC_CW_OSL_DELOC</span><span class="op">(</span></span></span>
+<span class="r-in"><span>  A <span class="op">=</span> <span class="va">A</span><span class="op">[</span><span class="va">u</span><span class="op">]</span>,</span></span>
+<span class="r-in"><span>  <span class="va">times</span>,</span></span>
+<span class="r-in"><span>  clusters <span class="op">=</span> <span class="va">clusters</span>,</span></span>
+<span class="r-in"><span>  N_e <span class="op">=</span> <span class="va">N_e</span><span class="op">[</span><span class="va">u</span><span class="op">]</span>,</span></span>
+<span class="r-in"><span>  n_filled <span class="op">=</span> <span class="va">n_filled</span><span class="op">[</span><span class="va">u</span><span class="op">]</span>,</span></span>
+<span class="r-in"><span>  R <span class="op">=</span> <span class="va">R</span><span class="op">[</span><span class="va">u</span><span class="op">]</span>,</span></span>
+<span class="r-in"><span>  method <span class="op">=</span> <span class="va">method</span>,</span></span>
+<span class="r-in"><span>  output <span class="op">=</span> <span class="va">output</span><span class="op">)</span></span></span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="fu"><a href="plot_RLumCarlo.html">plot_RLumCarlo</a></span><span class="op">(</span></span></span>
+<span class="r-in"><span><span class="va">results</span>,</span></span>
+<span class="r-in"><span> add <span class="op">=</span> <span class="va">add_TF</span><span class="op">[</span><span class="va">u</span><span class="op">]</span>,</span></span>
+<span class="r-in"><span> legend <span class="op">=</span> <span class="cn">FALSE</span>,</span></span>
+<span class="r-in"><span> col <span class="op">=</span> <span class="va">col</span><span class="op">[</span><span class="va">u</span><span class="op">]</span>,</span></span>
+<span class="r-in"><span> main <span class="op">=</span> <span class="st">"Delocalised Transition"</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="op">}</span></span></span>
+<span class="r-in"><span><span class="co"># add your legend with your parameters</span></span></span>
+<span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/graphics/legend.html" class="external-link">legend</a></span><span class="op">(</span><span class="st">"topright"</span>,</span></span>
+<span class="r-in"><span>  ncol <span class="op">=</span> <span class="fl">4</span>,</span></span>
+<span class="r-in"><span>  cex <span class="op">=</span> <span class="fl">0.55</span>,</span></span>
+<span class="r-in"><span>  title <span class="op">=</span> <span class="st">"parameters"</span>,</span></span>
+<span class="r-in"><span>  legend<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span></span></span>
+<span class="r-in"><span>   <span class="fu"><a href="https://rdrr.io/r/base/paste.html" class="external-link">paste0</a></span><span class="op">(</span><span class="st">"A = "</span>, <span class="va">A</span><span class="op">)</span>,</span></span>
+<span class="r-in"><span>   <span class="fu"><a href="https://rdrr.io/r/base/paste.html" class="external-link">paste0</a></span><span class="op">(</span><span class="st">"n_filled = "</span>, <span class="va">n_filled</span><span class="op">)</span>,</span></span>
+<span class="r-in"><span>   <span class="fu"><a href="https://rdrr.io/r/base/paste.html" class="external-link">paste0</a></span><span class="op">(</span><span class="st">"N_e = "</span>, <span class="va">N_e</span><span class="op">)</span>,</span></span>
+<span class="r-in"><span>   <span class="fu"><a href="https://rdrr.io/r/base/paste.html" class="external-link">paste0</a></span><span class="op">(</span><span class="st">"R = "</span>, <span class="va">R</span><span class="op">)</span><span class="op">)</span>,</span></span>
+<span class="r-in"><span>   bty <span class="op">=</span> <span class="st">"n"</span>,</span></span>
+<span class="r-in"><span>   text.col <span class="op">=</span> <span class="va">col</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="op">}</span></span></span>
+<span class="r-in"><span></span></span>
 </code></pre></div>
     </div>
   </div>
@@ -218,13 +237,11 @@ WORLD SCIENTIFIC. doi: <a href="https://doi.org/10.1142/2781" class="external-li
 
 
       <footer><div class="copyright">
-  <p></p><p>Developed by Johannes Friedrich, Sebastian Kreutzer, Vasilis Pagonis,
-Christoph Schmidt.</p>
+  <p></p><p>Developed by Johannes Friedrich, Sebastian Kreutzer, Vasilis Pagonis, Christoph Schmidt.</p>
 </div>
 
 <div class="pkgdown">
-  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a>
-2.0.2.</p>
+  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.6.</p>
 </div>
 
       </footer></div>

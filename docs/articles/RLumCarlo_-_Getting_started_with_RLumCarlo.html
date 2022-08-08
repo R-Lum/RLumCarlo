@@ -33,7 +33,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">RLumCarlo</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.1.8</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.1.9</span>
       </span>
     </div>
 
@@ -43,7 +43,7 @@
   <a href="../reference/index.html">Reference</a>
 </li>
 <li class="dropdown">
-  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     Articles
      
     <span class="caret"></span>
@@ -84,8 +84,8 @@ examples</h1>
                         <h4 data-toc-skip class="author">Sebastian
 Kreutzer, Johannes Friedrich, Vasilis Pagonis, Christoph Schmidt</h4>
             
-            <h4 data-toc-skip class="date">RLumCarlo: v0.1.8 | last
-modified: 2022-02-21</h4>
+            <h4 data-toc-skip class="date">RLumCarlo: v0.1.9 | last
+modified: 2022-08-08</h4>
       
       <small class="dont-index">Source: <a href="https://github.com/R-Lum/RLumCarlo/blob/HEAD/vignettes/RLumCarlo_-_Getting_started_with_RLumCarlo.Rmd" class="external-link"><code>vignettes/RLumCarlo_-_Getting_started_with_RLumCarlo.Rmd</code></a></small>
       <div class="hidden name"><code>RLumCarlo_-_Getting_started_with_RLumCarlo.Rmd</code></div>
@@ -364,18 +364,18 @@ transition model. Trap parameters are <span class="math inline">\(E =
 <code>rho</code> (<span class="math inline">\(\rho'\)</span>)
 defines the recombination centre density.</p>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="va">results</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/run_MC_ISO_TUN.html">run_MC_ISO_TUN</a></span><span class="op">(</span>
-  E <span class="op">=</span> <span class="fl">1.2</span>,
-  s <span class="op">=</span> <span class="fl">1e10</span>,
-  T <span class="op">=</span> <span class="fl">200</span>,
-  N_e <span class="op">=</span> <span class="fl">200</span>,
-  rho <span class="op">=</span> <span class="fl">0.007</span>,
-  clusters <span class="op">=</span> <span class="fl">10</span>,
-  times <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/seq.html" class="external-link">seq</a></span><span class="op">(</span><span class="fl">0</span>, <span class="fl">5000</span><span class="op">)</span>
-<span class="op">)</span> <span class="op">%T&gt;%</span>
-  <span class="fu"><a href="../reference/plot_RLumCarlo.html">plot_RLumCarlo</a></span><span class="op">(</span>norm <span class="op">=</span> <span class="cn">TRUE</span>,
-                 legend <span class="op">=</span> <span class="cn">TRUE</span>,
-                 main <span class="op">=</span> <span class="st">"Iso-thermal decay (TUN)"</span><span class="op">)</span></code></pre></div>
+<code class="sourceCode R"><span><span class="va">results</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/run_MC_ISO_TUN.html">run_MC_ISO_TUN</a></span><span class="op">(</span></span>
+<span>  E <span class="op">=</span> <span class="fl">1.2</span>,</span>
+<span>  s <span class="op">=</span> <span class="fl">1e10</span>,</span>
+<span>  T <span class="op">=</span> <span class="fl">200</span>,</span>
+<span>  N_e <span class="op">=</span> <span class="fl">200</span>,</span>
+<span>  rho <span class="op">=</span> <span class="fl">0.007</span>,</span>
+<span>  clusters <span class="op">=</span> <span class="fl">10</span>,</span>
+<span>  times <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/seq.html" class="external-link">seq</a></span><span class="op">(</span><span class="fl">0</span>, <span class="fl">5000</span><span class="op">)</span></span>
+<span><span class="op">)</span> <span class="op">%T&gt;%</span></span>
+<span>  <span class="fu"><a href="../reference/plot_RLumCarlo.html">plot_RLumCarlo</a></span><span class="op">(</span>norm <span class="op">=</span> <span class="cn">TRUE</span>,</span>
+<span>                 legend <span class="op">=</span> <span class="cn">TRUE</span>,</span>
+<span>                 main <span class="op">=</span> <span class="st">"Iso-thermal decay (TUN)"</span><span class="op">)</span></span></code></pre></div>
 <p><img src="RLumCarlo_-_Getting_started_with_RLumCarlo_files/figure-html/Fig%201-1.png" width="480" style="display: block; margin: auto;">
 In the example above <code>N_e</code> is a scalar, which means that all
 clusters start with the same number of electrons (here 200). However,
@@ -386,18 +386,18 @@ situation is created in the next example. Generally, `RLumCarlo’
 supports such an input for the parameters <code>N_e</code> and
 <code>n_filled</code>.</p>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="va">results</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/run_MC_ISO_TUN.html">run_MC_ISO_TUN</a></span><span class="op">(</span>
-  E <span class="op">=</span> <span class="fl">1.2</span>,
-  s <span class="op">=</span> <span class="fl">1e10</span>,
-  T <span class="op">=</span> <span class="fl">200</span>,
-  N_e <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/sample.html" class="external-link">sample</a></span><span class="op">(</span><span class="fl">190</span><span class="op">:</span><span class="fl">210</span>,<span class="fl">10</span>,<span class="cn">TRUE</span><span class="op">)</span>,
-  rho <span class="op">=</span> <span class="fl">0.007</span>,
-  clusters <span class="op">=</span> <span class="fl">10</span>,
-  times <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/seq.html" class="external-link">seq</a></span><span class="op">(</span><span class="fl">0</span>, <span class="fl">5000</span><span class="op">)</span>
-<span class="op">)</span> <span class="op">%T&gt;%</span>
-  <span class="fu"><a href="../reference/plot_RLumCarlo.html">plot_RLumCarlo</a></span><span class="op">(</span>norm <span class="op">=</span> <span class="cn">TRUE</span>,
-                 legend <span class="op">=</span> <span class="cn">TRUE</span>,
-                 main <span class="op">=</span> <span class="st">"Iso-thermal decay (TUN) for varying N_e"</span><span class="op">)</span></code></pre></div>
+<code class="sourceCode R"><span><span class="va">results</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/run_MC_ISO_TUN.html">run_MC_ISO_TUN</a></span><span class="op">(</span></span>
+<span>  E <span class="op">=</span> <span class="fl">1.2</span>,</span>
+<span>  s <span class="op">=</span> <span class="fl">1e10</span>,</span>
+<span>  T <span class="op">=</span> <span class="fl">200</span>,</span>
+<span>  N_e <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/sample.html" class="external-link">sample</a></span><span class="op">(</span><span class="fl">190</span><span class="op">:</span><span class="fl">210</span>,<span class="fl">10</span>,<span class="cn">TRUE</span><span class="op">)</span>,</span>
+<span>  rho <span class="op">=</span> <span class="fl">0.007</span>,</span>
+<span>  clusters <span class="op">=</span> <span class="fl">10</span>,</span>
+<span>  times <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/seq.html" class="external-link">seq</a></span><span class="op">(</span><span class="fl">0</span>, <span class="fl">5000</span><span class="op">)</span></span>
+<span><span class="op">)</span> <span class="op">%T&gt;%</span></span>
+<span>  <span class="fu"><a href="../reference/plot_RLumCarlo.html">plot_RLumCarlo</a></span><span class="op">(</span>norm <span class="op">=</span> <span class="cn">TRUE</span>,</span>
+<span>                 legend <span class="op">=</span> <span class="cn">TRUE</span>,</span>
+<span>                 main <span class="op">=</span> <span class="st">"Iso-thermal decay (TUN) for varying N_e"</span><span class="op">)</span></span></code></pre></div>
 <p><img src="RLumCarlo_-_Getting_started_with_RLumCarlo_files/figure-html/Fig%201b-1.png" width="480" style="display: block; margin: auto;"></p>
 </div>
 <div class="section level4">
@@ -407,18 +407,18 @@ supports such an input for the parameters <code>N_e</code> and
 insight. Instead of the luminescence signal, the variant below returns
 the number of remaining electrons in the trap.</p>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="va">results</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/run_MC_ISO_TUN.html">run_MC_ISO_TUN</a></span><span class="op">(</span>
-  E <span class="op">=</span> <span class="fl">1.2</span>,
-  s <span class="op">=</span> <span class="fl">1e10</span>,
-  T <span class="op">=</span> <span class="fl">200</span>,
-  rho <span class="op">=</span> <span class="fl">0.007</span>,
-  times <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/seq.html" class="external-link">seq</a></span><span class="op">(</span><span class="fl">0</span>, <span class="fl">5000</span><span class="op">)</span>, 
-  output <span class="op">=</span> <span class="st">"remaining_e"</span>
-<span class="op">)</span> <span class="op">%T&gt;%</span>
-  <span class="fu"><a href="../reference/plot_RLumCarlo.html">plot_RLumCarlo</a></span><span class="op">(</span>
-    legend <span class="op">=</span> <span class="cn">TRUE</span>,
-    ylab <span class="op">=</span> <span class="st">"Remaining electrons"</span>
-    <span class="op">)</span></code></pre></div>
+<code class="sourceCode R"><span><span class="va">results</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/run_MC_ISO_TUN.html">run_MC_ISO_TUN</a></span><span class="op">(</span></span>
+<span>  E <span class="op">=</span> <span class="fl">1.2</span>,</span>
+<span>  s <span class="op">=</span> <span class="fl">1e10</span>,</span>
+<span>  T <span class="op">=</span> <span class="fl">200</span>,</span>
+<span>  rho <span class="op">=</span> <span class="fl">0.007</span>,</span>
+<span>  times <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/seq.html" class="external-link">seq</a></span><span class="op">(</span><span class="fl">0</span>, <span class="fl">5000</span><span class="op">)</span>, </span>
+<span>  output <span class="op">=</span> <span class="st">"remaining_e"</span></span>
+<span><span class="op">)</span> <span class="op">%T&gt;%</span></span>
+<span>  <span class="fu"><a href="../reference/plot_RLumCarlo.html">plot_RLumCarlo</a></span><span class="op">(</span></span>
+<span>    legend <span class="op">=</span> <span class="cn">TRUE</span>,</span>
+<span>    ylab <span class="op">=</span> <span class="st">"Remaining electrons"</span></span>
+<span>    <span class="op">)</span></span></code></pre></div>
 <p><img src="RLumCarlo_-_Getting_started_with_RLumCarlo_files/figure-html/Fig%202-1.png" width="480" style="display: block; margin: auto;"></p>
 </div>
 <div class="section level4">
@@ -429,16 +429,16 @@ the number of remaining electrons in the trap.</p>
 consisting of an <code>array</code> and a <code>numeric</code>
 (vector).</p>
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/utils/str.html" class="external-link">str</a></span><span class="op">(</span><span class="va">results</span><span class="op">)</span></code></pre></div>
-<pre><code><span class="co">## List of 2</span>
-<span class="co">##  $ signal: num [1:5001, 1:21, 1:10] 199 199 199 199 198 198 198 198 198 198 ...</span>
-<span class="co">##   ..- attr(*, "dimnames")=List of 3</span>
-<span class="co">##   .. ..$ : NULL</span>
-<span class="co">##   .. ..$ : NULL</span>
-<span class="co">##   .. ..$ : NULL</span>
-<span class="co">##  $ time  : int [1:5001] 0 1 2 3 4 5 6 7 8 9 ...</span>
-<span class="co">##  - attr(*, "class")= chr "RLumCarlo_Model_Output"</span>
-<span class="co">##  - attr(*, "model")= chr "run_MC_ISO_TUN"</span></code></pre>
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/str.html" class="external-link">str</a></span><span class="op">(</span><span class="va">results</span><span class="op">)</span></span></code></pre></div>
+<pre><code><span><span class="co">## List of 2</span></span>
+<span><span class="co">##  $ signal: num [1:5001, 1:21, 1:10] 199 199 198 197 196 196 195 195 194 192 ...</span></span>
+<span><span class="co">##   ..- attr(*, "dimnames")=List of 3</span></span>
+<span><span class="co">##   .. ..$ : NULL</span></span>
+<span><span class="co">##   .. ..$ : NULL</span></span>
+<span><span class="co">##   .. ..$ : NULL</span></span>
+<span><span class="co">##  $ time  : int [1:5001] 0 1 2 3 4 5 6 7 8 9 ...</span></span>
+<span><span class="co">##  - attr(*, "class")= chr "RLumCarlo_Model_Output"</span></span>
+<span><span class="co">##  - attr(*, "model")= chr "run_MC_ISO_TUN"</span></span></code></pre>
 <p>While this represents the full modelling output results, its
 interpretation might be less straight forward, and the user may want to
 condense the information via <code><a href="https://rdrr.io/r/base/summary.html" class="external-link">summary()</a></code>. The function
@@ -446,44 +446,44 @@ condense the information via <code><a href="https://rdrr.io/r/base/summary.html"
 <code><a href="../reference/plot_RLumCarlo.html">plot_RLumCarlo()</a></code> to simplify the data before there are
 plotted.</p>
 <div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="va">df</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/summary.html" class="external-link">summary</a></span><span class="op">(</span><span class="va">results</span><span class="op">)</span></code></pre></div>
-<pre><code><span class="co">##       time           mean          y_min          y_max            sd         </span>
-<span class="co">##  Min.   :   0   Min.   :3072   Min.   :3050   Min.   :3081   Min.   : 0.7379  </span>
-<span class="co">##  1st Qu.:1250   1st Qu.:3184   1st Qu.:3155   1st Qu.:3199   1st Qu.:11.9671  </span>
-<span class="co">##  Median :2500   Median :3340   Median :3319   Median :3356   Median :13.4907  </span>
-<span class="co">##  Mean   :2500   Mean   :3420   Mean   :3396   Mean   :3441   Mean   :13.9387  </span>
-<span class="co">##  3rd Qu.:3750   3rd Qu.:3593   3rd Qu.:3558   3rd Qu.:3618   3rd Qu.:15.5149  </span>
-<span class="co">##  Max.   :5000   Max.   :4199   Max.   :4198   Max.   :4200   Max.   :21.8113  </span>
-<span class="co">##       var                sum       </span>
-<span class="co">##  Min.   :  0.5444   Min.   :30716  </span>
-<span class="co">##  1st Qu.:143.2111   1st Qu.:31844  </span>
-<span class="co">##  Median :182.0000   Median :33398  </span>
-<span class="co">##  Mean   :202.5535   Mean   :34203  </span>
-<span class="co">##  3rd Qu.:240.7111   3rd Qu.:35927  </span>
-<span class="co">##  Max.   :475.7333   Max.   :41989</span></code></pre>
+<code class="sourceCode R"><span><span class="va">df</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/summary.html" class="external-link">summary</a></span><span class="op">(</span><span class="va">results</span><span class="op">)</span></span></code></pre></div>
+<pre><code><span><span class="co">##       time           mean          y_min          y_max            sd        </span></span>
+<span><span class="co">##  Min.   :   0   Min.   :3079   Min.   :3054   Min.   :3117   Min.   : 1.101  </span></span>
+<span><span class="co">##  1st Qu.:1250   1st Qu.:3185   1st Qu.:3148   1st Qu.:3217   1st Qu.:11.855  </span></span>
+<span><span class="co">##  Median :2500   Median :3337   Median :3321   Median :3357   Median :16.721  </span></span>
+<span><span class="co">##  Mean   :2500   Mean   :3421   Mean   :3397   Mean   :3447   Mean   :16.589  </span></span>
+<span><span class="co">##  3rd Qu.:3750   3rd Qu.:3599   3rd Qu.:3582   3rd Qu.:3619   3rd Qu.:21.433  </span></span>
+<span><span class="co">##  Max.   :5000   Max.   :4199   Max.   :4197   Max.   :4200   Max.   :25.042  </span></span>
+<span><span class="co">##       var               sum       </span></span>
+<span><span class="co">##  Min.   :  1.211   Min.   :30788  </span></span>
+<span><span class="co">##  1st Qu.:140.544   1st Qu.:31853  </span></span>
+<span><span class="co">##  Median :279.600   Median :33369  </span></span>
+<span><span class="co">##  Mean   :300.808   Mean   :34214  </span></span>
+<span><span class="co">##  3rd Qu.:459.389   3rd Qu.:35994  </span></span>
+<span><span class="co">##  Max.   :627.122   Max.   :41991</span></span></code></pre>
 <div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="va">df</span><span class="op">)</span></code></pre></div>
-<pre><code><span class="co">##   time   mean y_min y_max        sd       var   sum</span>
-<span class="co">## 1    0 4198.9  4198  4200 0.7378648 0.5444444 41989</span>
-<span class="co">## 2    1 4198.1  4195  4199 1.4491377 2.1000000 41981</span>
-<span class="co">## 3    2 4197.1  4194  4199 1.6633300 2.7666667 41971</span>
-<span class="co">## 4    3 4196.8  4194  4199 1.6193277 2.6222222 41968</span>
-<span class="co">## 5    4 4196.1  4193  4199 1.7919573 3.2111111 41961</span>
-<span class="co">## 6    5 4195.3  4193  4198 1.8287822 3.3444444 41953</span></code></pre>
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="va">df</span><span class="op">)</span></span></code></pre></div>
+<pre><code><span><span class="co">##   time   mean y_min y_max       sd      var   sum</span></span>
+<span><span class="co">## 1    0 4199.1  4197  4200 1.100505 1.211111 41991</span></span>
+<span><span class="co">## 2    1 4197.9  4195  4200 1.595131 2.544444 41979</span></span>
+<span><span class="co">## 3    2 4197.2  4194  4200 1.932184 3.733333 41972</span></span>
+<span><span class="co">## 4    3 4196.0  4192  4199 2.357023 5.555556 41960</span></span>
+<span><span class="co">## 5    4 4195.2  4191  4198 2.529822 6.400000 41952</span></span>
+<span><span class="co">## 6    5 4194.3  4190  4198 2.406011 5.788889 41943</span></span></code></pre>
 <p>The call summarises the modelling results and returns a terminal
 output and a <code>data.frame</code> with, e.g., the mean or the
 standard deviation, which can be used to create plots for further
 insight. For instance, the stimulation time against coefficient of
 variation (CV in %):</p>
 <div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html" class="external-link">plot</a></span><span class="op">(</span>
-  x <span class="op">=</span> <span class="va">df</span><span class="op">$</span><span class="va">time</span>,
-  y <span class="op">=</span> <span class="op">(</span><span class="va">df</span><span class="op">$</span><span class="va">sd</span> <span class="op">/</span> <span class="va">df</span><span class="op">$</span><span class="va">mean</span><span class="op">)</span> <span class="op">*</span> <span class="fl">100</span>,
-  pch <span class="op">=</span> <span class="fl">20</span>, 
-  col <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/grDevices/rgb.html" class="external-link">rgb</a></span><span class="op">(</span><span class="fl">0</span>,<span class="fl">0</span>,<span class="fl">0</span>,<span class="fl">.1</span><span class="op">)</span>,
-  xlab <span class="op">=</span> <span class="st">"Stimulation time [s]"</span>,
-  ylab <span class="op">=</span> <span class="st">"CV [%]"</span>
-<span class="op">)</span></code></pre></div>
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html" class="external-link">plot</a></span><span class="op">(</span></span>
+<span>  x <span class="op">=</span> <span class="va">df</span><span class="op">$</span><span class="va">time</span>,</span>
+<span>  y <span class="op">=</span> <span class="op">(</span><span class="va">df</span><span class="op">$</span><span class="va">sd</span> <span class="op">/</span> <span class="va">df</span><span class="op">$</span><span class="va">mean</span><span class="op">)</span> <span class="op">*</span> <span class="fl">100</span>,</span>
+<span>  pch <span class="op">=</span> <span class="fl">20</span>, </span>
+<span>  col <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/grDevices/rgb.html" class="external-link">rgb</a></span><span class="op">(</span><span class="fl">0</span>,<span class="fl">0</span>,<span class="fl">0</span>,<span class="fl">.1</span><span class="op">)</span>,</span>
+<span>  xlab <span class="op">=</span> <span class="st">"Stimulation time [s]"</span>,</span>
+<span>  ylab <span class="op">=</span> <span class="st">"CV [%]"</span></span>
+<span><span class="op">)</span></span></code></pre></div>
 <p><img src="RLumCarlo_-_Getting_started_with_RLumCarlo_files/figure-html/Fig%203-1.png" width="480" style="display: block; margin: auto;"></p>
 </div>
 </div>
@@ -494,15 +494,15 @@ variation (CV in %):</p>
 continuous wave (CW) infrared light stimulation (IRSL), and they combine
 two plots in one single plot window.</p>
 <div class="sourceCode" id="cb11"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="co">## set time vector </span>
-<span class="va">times</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/seq.html" class="external-link">seq</a></span><span class="op">(</span><span class="fl">0</span>, <span class="fl">1000</span><span class="op">)</span>
-
-<span class="co">## Run MC simulation</span>
-<span class="fu"><a href="../reference/run_MC_CW_IRSL_TUN.html">run_MC_CW_IRSL_TUN</a></span><span class="op">(</span>A <span class="op">=</span> <span class="fl">0.12</span>, rho <span class="op">=</span> <span class="fl">0.003</span>, times <span class="op">=</span> <span class="va">times</span><span class="op">)</span> <span class="op">%&gt;%</span>
-  <span class="fu"><a href="../reference/plot_RLumCarlo.html">plot_RLumCarlo</a></span><span class="op">(</span>norm <span class="op">=</span> <span class="cn">TRUE</span>, legend <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span>
-
-<span class="fu"><a href="../reference/run_MC_CW_IRSL_TUN.html">run_MC_CW_IRSL_TUN</a></span><span class="op">(</span>A <span class="op">=</span> <span class="fl">0.21</span>, rho <span class="op">=</span> <span class="fl">0.003</span>, times <span class="op">=</span> <span class="va">times</span><span class="op">)</span> <span class="op">%&gt;%</span>
-  <span class="fu"><a href="../reference/plot_RLumCarlo.html">plot_RLumCarlo</a></span><span class="op">(</span>norm <span class="op">=</span> <span class="cn">TRUE</span>, add <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></code></pre></div>
+<code class="sourceCode R"><span><span class="co">## set time vector </span></span>
+<span><span class="va">times</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/seq.html" class="external-link">seq</a></span><span class="op">(</span><span class="fl">0</span>, <span class="fl">1000</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co">## Run MC simulation</span></span>
+<span><span class="fu"><a href="../reference/run_MC_CW_IRSL_TUN.html">run_MC_CW_IRSL_TUN</a></span><span class="op">(</span>A <span class="op">=</span> <span class="fl">0.12</span>, rho <span class="op">=</span> <span class="fl">0.003</span>, times <span class="op">=</span> <span class="va">times</span><span class="op">)</span> <span class="op">%&gt;%</span></span>
+<span>  <span class="fu"><a href="../reference/plot_RLumCarlo.html">plot_RLumCarlo</a></span><span class="op">(</span>norm <span class="op">=</span> <span class="cn">TRUE</span>, legend <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span>
+<span></span>
+<span><span class="fu"><a href="../reference/run_MC_CW_IRSL_TUN.html">run_MC_CW_IRSL_TUN</a></span><span class="op">(</span>A <span class="op">=</span> <span class="fl">0.21</span>, rho <span class="op">=</span> <span class="fl">0.003</span>, times <span class="op">=</span> <span class="va">times</span><span class="op">)</span> <span class="op">%&gt;%</span></span>
+<span>  <span class="fu"><a href="../reference/plot_RLumCarlo.html">plot_RLumCarlo</a></span><span class="op">(</span>norm <span class="op">=</span> <span class="cn">TRUE</span>, add <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span></code></pre></div>
 <p><img src="RLumCarlo_-_Getting_started_with_RLumCarlo_files/figure-html/Fig%204-1.png" width="480" style="display: block; margin: auto;"></p>
 </div>
 <div class="section level3">
@@ -514,43 +514,43 @@ are stored in a <code>list</code> and <code><a href="../reference/plot_RLumCarlo
 called only one time and it will then iterate automatically over the
 results to create a combined plot.</p>
 <div class="sourceCode" id="cb12"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="va">s</span> <span class="op">&lt;-</span> <span class="fl">3.5e12</span>
-<span class="va">rho</span> <span class="op">&lt;-</span> <span class="fl">0.015</span>
-<span class="va">E</span> <span class="op">&lt;-</span> <span class="fl">1.45</span>
-<span class="va">r_c</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">0</span>,<span class="fl">0.7</span>,<span class="fl">0.77</span>,<span class="fl">0.86</span>, <span class="fl">0.97</span><span class="op">)</span>
-<span class="va">times</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/seq.html" class="external-link">seq</a></span><span class="op">(</span><span class="fl">100</span>, <span class="fl">450</span><span class="op">)</span> <span class="co"># here time = temperature</span>
-<span class="va">results</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/lapply.html" class="external-link">lapply</a></span><span class="op">(</span><span class="va">r_c</span>, <span class="kw">function</span><span class="op">(</span><span class="va">x</span><span class="op">)</span> <span class="op">{</span>
-  <span class="fu"><a href="../reference/run_MC_TL_TUN.html">run_MC_TL_TUN</a></span><span class="op">(</span>
-    s <span class="op">=</span> <span class="va">s</span>,
-    E <span class="op">=</span> <span class="va">E</span>,
-    rho <span class="op">=</span> <span class="va">rho</span>,
-    r_c <span class="op">=</span> <span class="va">x</span>,
-    times <span class="op">=</span> <span class="va">times</span>
-  <span class="op">)</span>
-  
-<span class="op">}</span><span class="op">)</span></code></pre></div>
+<code class="sourceCode R"><span><span class="va">s</span> <span class="op">&lt;-</span> <span class="fl">3.5e12</span></span>
+<span><span class="va">rho</span> <span class="op">&lt;-</span> <span class="fl">0.015</span></span>
+<span><span class="va">E</span> <span class="op">&lt;-</span> <span class="fl">1.45</span></span>
+<span><span class="va">r_c</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">0</span>,<span class="fl">0.7</span>,<span class="fl">0.77</span>,<span class="fl">0.86</span>, <span class="fl">0.97</span><span class="op">)</span></span>
+<span><span class="va">times</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/seq.html" class="external-link">seq</a></span><span class="op">(</span><span class="fl">100</span>, <span class="fl">450</span><span class="op">)</span> <span class="co"># here time = temperature</span></span>
+<span><span class="va">results</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/lapply.html" class="external-link">lapply</a></span><span class="op">(</span><span class="va">r_c</span>, <span class="kw">function</span><span class="op">(</span><span class="va">x</span><span class="op">)</span> <span class="op">{</span></span>
+<span>  <span class="fu"><a href="../reference/run_MC_TL_TUN.html">run_MC_TL_TUN</a></span><span class="op">(</span></span>
+<span>    s <span class="op">=</span> <span class="va">s</span>,</span>
+<span>    E <span class="op">=</span> <span class="va">E</span>,</span>
+<span>    rho <span class="op">=</span> <span class="va">rho</span>,</span>
+<span>    r_c <span class="op">=</span> <span class="va">x</span>,</span>
+<span>    times <span class="op">=</span> <span class="va">times</span></span>
+<span>  <span class="op">)</span></span>
+<span>  </span>
+<span><span class="op">}</span><span class="op">)</span></span></code></pre></div>
 <p>The plot output can be highly customised to provide a better visual
 experience, e.g., the manual setting of the colours and the legend.</p>
 <div class="sourceCode" id="cb13"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="co">## plot curves, but without legend</span>
-<span class="fu"><a href="../reference/plot_RLumCarlo.html">plot_RLumCarlo</a></span><span class="op">(</span>
-  object <span class="op">=</span> <span class="va">results</span>, 
-  ylab <span class="op">=</span> <span class="st">"normalised TL signal"</span>,
-  xlab <span class="op">=</span> <span class="st">"Temperature [\u00b0C]"</span>, 
-  plot_uncertainty <span class="op">=</span> <span class="st">"range"</span>,
-  col <span class="op">=</span> <span class="fu">khroma</span><span class="fu">::</span><span class="fu"><a href="https://packages.tesselle.org/khroma/reference/colour.html" class="external-link">colour</a></span><span class="op">(</span><span class="st">"bright"</span><span class="op">)</span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/length.html" class="external-link">length</a></span><span class="op">(</span><span class="va">r_c</span><span class="op">)</span><span class="op">)</span>,
-  legend <span class="op">=</span> <span class="cn">FALSE</span>,
-  norm <span class="op">=</span> <span class="cn">TRUE</span>
-<span class="op">)</span>
-
-<span class="co">## add legend manually</span>
-<span class="fu"><a href="https://rdrr.io/r/graphics/legend.html" class="external-link">legend</a></span><span class="op">(</span>
-  <span class="st">"topleft"</span>,
-  bty <span class="op">=</span> <span class="st">"n"</span>,
-  legend <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/paste.html" class="external-link">paste0</a></span><span class="op">(</span><span class="st">"r_c: "</span>, <span class="va">r_c</span><span class="op">)</span>,
-  lty <span class="op">=</span> <span class="fl">1</span>,
-  col <span class="op">=</span> <span class="fu">khroma</span><span class="fu">::</span><span class="fu"><a href="https://packages.tesselle.org/khroma/reference/colour.html" class="external-link">colour</a></span><span class="op">(</span><span class="st">"bright"</span><span class="op">)</span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/length.html" class="external-link">length</a></span><span class="op">(</span><span class="va">r_c</span><span class="op">)</span><span class="op">)</span>
-<span class="op">)</span></code></pre></div>
+<code class="sourceCode R"><span><span class="co">## plot curves, but without legend</span></span>
+<span><span class="fu"><a href="../reference/plot_RLumCarlo.html">plot_RLumCarlo</a></span><span class="op">(</span></span>
+<span>  object <span class="op">=</span> <span class="va">results</span>, </span>
+<span>  ylab <span class="op">=</span> <span class="st">"normalised TL signal"</span>,</span>
+<span>  xlab <span class="op">=</span> <span class="st">"Temperature [\u00b0C]"</span>, </span>
+<span>  plot_uncertainty <span class="op">=</span> <span class="st">"range"</span>,</span>
+<span>  col <span class="op">=</span> <span class="fu">khroma</span><span class="fu">::</span><span class="fu"><a href="https://packages.tesselle.org/khroma/reference/colour.html" class="external-link">colour</a></span><span class="op">(</span><span class="st">"bright"</span><span class="op">)</span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/length.html" class="external-link">length</a></span><span class="op">(</span><span class="va">r_c</span><span class="op">)</span><span class="op">)</span>,</span>
+<span>  legend <span class="op">=</span> <span class="cn">FALSE</span>,</span>
+<span>  norm <span class="op">=</span> <span class="cn">TRUE</span></span>
+<span><span class="op">)</span></span>
+<span></span>
+<span><span class="co">## add legend manually</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/graphics/legend.html" class="external-link">legend</a></span><span class="op">(</span></span>
+<span>  <span class="st">"topleft"</span>,</span>
+<span>  bty <span class="op">=</span> <span class="st">"n"</span>,</span>
+<span>  legend <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/paste.html" class="external-link">paste0</a></span><span class="op">(</span><span class="st">"r_c: "</span>, <span class="va">r_c</span><span class="op">)</span>,</span>
+<span>  lty <span class="op">=</span> <span class="fl">1</span>,</span>
+<span>  col <span class="op">=</span> <span class="fu">khroma</span><span class="fu">::</span><span class="fu"><a href="https://packages.tesselle.org/khroma/reference/colour.html" class="external-link">colour</a></span><span class="op">(</span><span class="st">"bright"</span><span class="op">)</span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/length.html" class="external-link">length</a></span><span class="op">(</span><span class="va">r_c</span><span class="op">)</span><span class="op">)</span></span>
+<span><span class="op">)</span></span></code></pre></div>
 <p><img src="RLumCarlo_-_Getting_started_with_RLumCarlo_files/figure-html/Fig%206,Plot%20average%20signal-1.png" width="480" style="display: block; margin: auto;"></p>
 </div>
 <div class="section level3">
@@ -560,7 +560,7 @@ experience, e.g., the manual setting of the colours and the legend.</p>
 system with spatial correlation. Such a dosimetric cluster system can be
 created with the function <code><a href="../reference/create_ClusterSystem.html">create_ClusterSystem()</a></code>:</p>
 <div class="sourceCode" id="cb14"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="va">clusters</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/create_ClusterSystem.html">create_ClusterSystem</a></span><span class="op">(</span>n <span class="op">=</span> <span class="fl">100</span>, plot <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></code></pre></div>
+<code class="sourceCode R"><span><span class="va">clusters</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/create_ClusterSystem.html">create_ClusterSystem</a></span><span class="op">(</span>n <span class="op">=</span> <span class="fl">100</span>, plot <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span></code></pre></div>
 <p><img src="RLumCarlo_-_Getting_started_with_RLumCarlo_files/figure-html/unnamed-chunk-6-1.png" width="432" style="display: block; margin: auto;">
 The result is an arbitrary dosimetric system with randomly distributed
 clusters. The Euclidean distance is used to group the clusters (colour
@@ -569,16 +569,16 @@ scalar as input to <code>clusters</code>, the output of
 <code><a href="../reference/create_ClusterSystem.html">create_ClusterSystem()</a></code> can be injected in every
 <code>run_MC</code> function.</p>
 <div class="sourceCode" id="cb15"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="../reference/run_MC_TL_LOC.html">run_MC_TL_LOC</a></span><span class="op">(</span>
- s <span class="op">=</span> <span class="fl">1e14</span>,
- E <span class="op">=</span> <span class="fl">0.9</span>,
- times <span class="op">=</span> <span class="fl">0</span><span class="op">:</span><span class="fl">100</span>,
- b <span class="op">=</span> <span class="fl">1</span>,
- n_filled <span class="op">=</span> <span class="fl">1000</span>,
- method <span class="op">=</span> <span class="st">"seq"</span>,
- clusters <span class="op">=</span> <span class="va">clusters</span>,
- r <span class="op">=</span> <span class="fl">1</span><span class="op">)</span> <span class="op">%&gt;%</span>
-<span class="fu"><a href="../reference/plot_RLumCarlo.html">plot_RLumCarlo</a></span><span class="op">(</span><span class="op">)</span></code></pre></div>
+<code class="sourceCode R"><span><span class="fu"><a href="../reference/run_MC_TL_LOC.html">run_MC_TL_LOC</a></span><span class="op">(</span></span>
+<span> s <span class="op">=</span> <span class="fl">1e14</span>,</span>
+<span> E <span class="op">=</span> <span class="fl">0.9</span>,</span>
+<span> times <span class="op">=</span> <span class="fl">0</span><span class="op">:</span><span class="fl">100</span>,</span>
+<span> b <span class="op">=</span> <span class="fl">1</span>,</span>
+<span> n_filled <span class="op">=</span> <span class="fl">1000</span>,</span>
+<span> method <span class="op">=</span> <span class="st">"seq"</span>,</span>
+<span> clusters <span class="op">=</span> <span class="va">clusters</span>,</span>
+<span> r <span class="op">=</span> <span class="fl">1</span><span class="op">)</span> <span class="op">%&gt;%</span></span>
+<span><span class="fu"><a href="../reference/plot_RLumCarlo.html">plot_RLumCarlo</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
 <p><img src="RLumCarlo_-_Getting_started_with_RLumCarlo_files/figure-html/unnamed-chunk-7-1.png" width="480" style="display: block; margin: auto;"></p>
 <p>Please note: For the simulation of a dosimetric cluster system, the
 meaning of <code>n_filled</code> changes. Instead of defining the number
@@ -633,14 +633,12 @@ Luminescence</em> 207: 266–72. <a href="https://doi.org/10.1016/j.jlumin.2018.
 
       <footer><div class="copyright">
   <p></p>
-<p>Developed by Johannes Friedrich, Sebastian Kreutzer, Vasilis Pagonis,
-Christoph Schmidt.</p>
+<p>Developed by Johannes Friedrich, Sebastian Kreutzer, Vasilis Pagonis, Christoph Schmidt.</p>
 </div>
 
 <div class="pkgdown">
   <p></p>
-<p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a>
-2.0.2.</p>
+<p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.6.</p>
 </div>
 
       </footer>

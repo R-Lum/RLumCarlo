@@ -19,7 +19,7 @@ which is the purpose of this function."><!-- mathjax --><script src="https://cdn
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">RLumCarlo</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.1.8</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.1.9</span>
       </span>
     </div>
 
@@ -28,7 +28,7 @@ which is the purpose of this function."><!-- mathjax --><script src="https://cdn
   <a href="../reference/index.html">Reference</a>
 </li>
 <li class="dropdown">
-  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     Articles
      
     <span class="caret"></span>
@@ -67,7 +67,7 @@ which is the purpose of this function.</p>
     </div>
 
     <div id="ref-usage">
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="fu">create_ClusterSystem</span><span class="op">(</span>n <span class="op">=</span> <span class="fl">100</span>, h <span class="op">=</span> <span class="fl">0.5</span>, plot <span class="op">=</span> <span class="cn">FALSE</span>, <span class="va">...</span><span class="op">)</span></code></pre></div>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">create_ClusterSystem</span><span class="op">(</span>n <span class="op">=</span> <span class="fl">100</span>, h <span class="op">=</span> <span class="fl">0.5</span>, plot <span class="op">=</span> <span class="cn">FALSE</span>, <span class="va">...</span><span class="op">)</span></span></code></pre></div>
     </div>
 
     <div id="arguments">
@@ -75,20 +75,31 @@ which is the purpose of this function.</p>
     <dl><dt>n</dt>
 <dd><p><a href="https://rdrr.io/r/base/numeric.html" class="external-link">numeric</a> (<em>with default</em>): number of clusters to be created
 in an arbitrary 3-dimensional cube. x, y, z  distances range between 0 and 1.</p></dd>
+
+
 <dt>h</dt>
 <dd><p><a href="https://rdrr.io/r/base/numeric.html" class="external-link">numeric</a> (<em>with default</em>): numeric scalar the cut the cluster tree
 using <a href="https://rdrr.io/r/stats/cutree.html" class="external-link">stats::cutree</a>. The number must range between 0 and 1.</p></dd>
+
+
 <dt>plot</dt>
 <dd><p><a href="https://rdrr.io/r/base/logical.html" class="external-link">logical</a> (<em>with default</em>): enables/disables plot output</p></dd>
+
+
 <dt>...</dt>
 <dd><p>further arguments to be passed to the plot output</p></dd>
+
 </dl></div>
     <div id="value">
     <h2>Value</h2>
-    <p>The function returns a <a href="https://rdrr.io/r/base/list.html" class="external-link">list</a> of class <code>RLumCarlo_clusters</code> consisting
+    
+
+<p>The function returns a <a href="https://rdrr.io/r/base/list.html" class="external-link">list</a> of class <code>RLumCarlo_clusters</code> consisting
 of <a href="https://rdrr.io/r/base/numeric.html" class="external-link">numeric</a> vector of cluster groups and a <a href="https://rdrr.io/r/base/matrix.html" class="external-link">matrix</a> of the cluster positions
 in the arbitrary space. If <code>plot = TRUE</code> the system is displayed using
 <a href="https://rdrr.io/pkg/scatterplot3d/man/scatterplot3d.html" class="external-link">scatterplot3d::scatterplot3d</a></p>
+
+
     </div>
     <div id="function-version">
     <h2>Function version</h2>
@@ -100,36 +111,36 @@ in the arbitrary space. If <code>plot = TRUE</code> the system is displayed usin
     </div>
     <div id="author">
     <h2>Author</h2>
-    <p>Sebastian Kreutzer, Geography &amp; Earth Sciences, Aberystwyth University (United Kingdom)</p>
+    <p>Sebastian Kreutzer, Institute of Geography, Heidelberg University (Germany)</p>
     </div>
     <div id="how-to-cite">
     <h2>How to cite</h2>
-    <p>Kreutzer, S., 2022. create_ClusterSystem(): Create dosimetric cluster system. Function version 0.1.0. In: Friedrich, J., Kreutzer, S., Pagonis, V., Schmidt, C., 2022. RLumCarlo: Monte-Carlo Methods for Simulating Luminescence Phenomena. R package version 0.1.8. https://CRAN.R-project.org/package=RLumCarlo</p>
+    <p>Kreutzer, S., 2022. create_ClusterSystem(): Create dosimetric cluster system. Function version 0.1.0. In: Friedrich, J., Kreutzer, S., Pagonis, V., Schmidt, C., 2022. RLumCarlo: Monte-Carlo Methods for Simulating Luminescence Phenomena. R package version 0.1.9. https://CRAN.R-project.org/package=RLumCarlo</p>
     </div>
 
     <div id="ref-examples">
     <h2>Examples</h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span class="fu">create_ClusterSystem</span><span class="op">(</span>n <span class="op">=</span> <span class="fl">10</span>, plot <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="fu">create_ClusterSystem</span><span class="op">(</span>n <span class="op">=</span> <span class="fl">10</span>, plot <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span></span>
 <span class="r-plt img"><img src="create_ClusterSystem-1.png" alt="" width="700" height="433"></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> $cl_groups</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [1] 1 2 3 2 4 2 5 6 1 6</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [1] 1 2 3 1 4 3 5 1 6 3</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> $m</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                x           y          z</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [1,] 0.15608276 0.698934929 0.10422476</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [2,] 0.91826752 0.418799314 0.36207336</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [3,] 0.97239264 0.502506095 0.78345640</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [4,] 0.96065868 0.814669667 0.29270377</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [5,] 0.98250881 0.006954334 0.01743979</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [6,] 0.91203006 0.745439217 0.26929340</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [7,] 0.24334488 0.262394573 0.82259514</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [8,] 0.31824585 0.282942705 0.37865452</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [9,] 0.04322069 0.505456280 0.47791649</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [10,] 0.56499750 0.392072159 0.17383754</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>               x          y         z</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [1,] 0.2817585 0.63241297 0.4023774</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [2,] 0.1587530 0.46857641 0.8126550</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [3,] 0.6246439 0.74245347 0.6514086</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [4,] 0.2906986 0.78426412 0.1344048</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [5,] 0.7028749 0.86874303 0.2088964</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [6,] 0.6133890 0.70891994 0.5304134</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [7,] 0.9375382 0.01381981 0.9742276</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [8,] 0.4906840 0.61225656 0.3332547</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [9,] 0.5202289 0.27368251 0.4435662</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [10,] 0.8569906 0.56072631 0.8484819</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> attr(,"class")</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1] "RLumCarlo_ClusterSystem"</span>
-<span class="r-in"></span>
+<span class="r-in"><span></span></span>
 </code></pre></div>
     </div>
   </div>
@@ -140,13 +151,11 @@ in the arbitrary space. If <code>plot = TRUE</code> the system is displayed usin
 
 
       <footer><div class="copyright">
-  <p></p><p>Developed by Johannes Friedrich, Sebastian Kreutzer, Vasilis Pagonis,
-Christoph Schmidt.</p>
+  <p></p><p>Developed by Johannes Friedrich, Sebastian Kreutzer, Vasilis Pagonis, Christoph Schmidt.</p>
 </div>
 
 <div class="pkgdown">
-  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a>
-2.0.2.</p>
+  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.6.</p>
 </div>
 
       </footer></div>
