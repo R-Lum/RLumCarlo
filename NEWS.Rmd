@@ -8,5 +8,6 @@ header-includes:
 
 # RLumCarlo `r RLumBuild::.get_pkg_version()` (`r Sys.Date()`)
 
-* Update maintainer's e-mail address. 
+* Update maintainer's e-mail address
+* Fix some wrong calls in `if()` using `class()`
 
