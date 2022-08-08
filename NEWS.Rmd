@@ -8,5 +8,5 @@ header-includes:
 
 # RLumCarlo `r RLumBuild::.get_pkg_version()` (`r Sys.Date()`)
 
-* Dummy
+* Update maintainer's e-mail address. 
 
