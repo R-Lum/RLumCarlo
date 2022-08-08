@@ -38,7 +38,7 @@
 #'
 #' @section Function version: 0.1.0
 #'
-#' @author Sebastian Kreutzer, Geography & Earth Sciences, Aberystwyth University (United Kingdom)\cr
+#' @author Sebastian Kreutzer, Institute of Geography, Heidelberg University (Germany)\cr
 #' Johannes Friedrich, University of Bayreuth (Germany)
 #'
 #' @examples

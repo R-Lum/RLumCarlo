@@ -34,7 +34,7 @@
 #' @docType package
 #'
 #' @author Johannes Friedrich, University of Bayreuth (Germany), \cr
-#' Sebastian Kreutzer, Geography & Earth Sciences, Aberystwyth University (United Kingdom) \cr
+#' Sebastian Kreutzer, Institute of Geography, Heidelberg University (Germany) \cr
 #' Vasilis Pagonis, McDaniel College Westminster (MD, USA), \cr
 #' Christoph Schmidt, University of Bayreuth (Germany), \cr
 #' Ena Rajovic, University of Bayreuth (Germany), \cr

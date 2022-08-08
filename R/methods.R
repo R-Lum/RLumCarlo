@@ -4,7 +4,7 @@
 #'
 #' @param ... input objects or further function arguments
 #'
-#' @author Sebastian Kreutzer, Geography & Earth Sciences, Aberystwyth University (United Kingdom),
+#' @author Sebastian Kreutzer, Institute of Geography, Heidelberg University (Germany),
 #' Johannes Friedrich, University of Bayreuth (Germany),
 #'
 #' @keywords internal
@@ -112,7 +112,7 @@ summary.RLumCarlo_Model_Output <- function(object, verbose = TRUE, ...){
 #' @export
 c.RLumCarlo_Model_Output <- function(...){
   ## remove everything that does not belong into this list
-  objects <- lapply(list(...), function(x) if(class(x) == "RLumCarlo_Model_Output") x)
+  objects <- lapply(list(...), function(x) if(inherits(x, "RLumCarlo_Model_Output")) x)
   objects[sapply(objects, is.null)] <- NULL
 
   ## we can only merge results from the same stimulation mode

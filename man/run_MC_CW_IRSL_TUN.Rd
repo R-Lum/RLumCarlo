@@ -91,7 +91,7 @@ run_MC_CW_IRSL_TUN(
 } 
 
 \section{How to cite}{
-Friedrich, J., Kreutzer, S., 2022. run_MC_CW_IRSL_TUN(): Run Monte-Carlo Simulation for CW-IRSL (tunnelling transitions). Function version 0.2.0. In: Friedrich, J., Kreutzer, S., Pagonis, V., Schmidt, C., 2022. RLumCarlo: Monte-Carlo Methods for Simulating Luminescence Phenomena. R package version 0.1.8. https://CRAN.R-project.org/package=RLumCarlo
+Friedrich, J., Kreutzer, S., 2022. run_MC_CW_IRSL_TUN(): Run Monte-Carlo Simulation for CW-IRSL (tunnelling transitions). Function version 0.2.0. In: Friedrich, J., Kreutzer, S., Pagonis, V., Schmidt, C., 2022. RLumCarlo: Monte-Carlo Methods for Simulating Luminescence Phenomena. R package version 0.1.9. https://CRAN.R-project.org/package=RLumCarlo
 }
 
 \references{
@@ -116,7 +116,7 @@ WORLD SCIENTIFIC. \doi{10.1142/2781}
 }
 \author{
 Johannes Friedrich, University of Bayreuth (Germany),
-Sebastian Kreutzer, Geography & Earth Sciences, Aberystwyth University (United Kingdom)
+Sebastian Kreutzer, Institute of Geography, Heidelberg University (Germany)
 }
 \keyword{data}
 \keyword{models}

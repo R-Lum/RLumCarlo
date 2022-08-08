@@ -152,7 +152,7 @@ legend("topright",
 } 
 
 \section{How to cite}{
-Kreutzer, S., 2022. run_MC_TL_DELOC(): Run Monte-Carlo Simulation for TL (delocalized transitions). Function version 0.1.0. In: Friedrich, J., Kreutzer, S., Pagonis, V., Schmidt, C., 2022. RLumCarlo: Monte-Carlo Methods for Simulating Luminescence Phenomena. R package version 0.1.8. https://CRAN.R-project.org/package=RLumCarlo
+Kreutzer, S., 2022. run_MC_TL_DELOC(): Run Monte-Carlo Simulation for TL (delocalized transitions). Function version 0.1.0. In: Friedrich, J., Kreutzer, S., Pagonis, V., Schmidt, C., 2022. RLumCarlo: Monte-Carlo Methods for Simulating Luminescence Phenomena. R package version 0.1.9. https://CRAN.R-project.org/package=RLumCarlo
 }
 
 \references{
@@ -167,7 +167,7 @@ Chen, R., McKeever, S.W.S., 1997. Theory of Thermoluminescence and Related Pheno
 WORLD SCIENTIFIC. \doi{10.1142/2781}
 }
 \author{
-Sebastian Kreutzer, Geography & Earth Sciences, Aberystwyth University (United Kingdom)
+Sebastian Kreutzer, Institute of Geography, Heidelberg University (Germany)
 }
 \keyword{data}
 \keyword{models}
