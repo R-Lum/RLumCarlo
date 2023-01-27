@@ -8,6 +8,4 @@ header-includes:
 
 # RLumCarlo `r RLumBuild::.get_pkg_version()` (`r Sys.Date()`)
 
-* Update maintainer's e-mail address
-* Fix some wrong calls in `if()` using `class()`
-
+* Internal: Change standard C++11 to C++17 as requested by CRAN
