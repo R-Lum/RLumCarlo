@@ -7,13 +7,13 @@
   "codeRepository": "https://github.com/R-Lum/RLumCarlo",
   "issueTracker": "https://github.com/R-Lum/RLumCarlo/issues",
   "license": "https://spdx.org/licenses/GPL-3.0",
-  "version": "0.1.9",
+  "version": "0.1.10.9000.1",
   "programmingLanguage": {
     "@type": "ComputerLanguage",
     "name": "R",
     "url": "https://r-project.org"
   },
-  "runtimePlatform": "R Under development (unstable) (2022-06-27 r82528)",
+  "runtimePlatform": "R Under development (unstable) (2023-01-03 r83550)",
   "provider": {
     "@id": "https://cran.r-project.org",
     "@type": "Organization",
@@ -247,11 +247,11 @@
     },
     "SystemRequirements": null
   },
-  "fileSize": "1140.788KB",
+  "fileSize": "1706.58KB",
   "citation": [
     {
       "@type": "SoftwareSourceCode",
-      "datePublished": "2022",
+      "datePublished": "2023",
       "author": [
         {
           "@type": "Person",
@@ -281,7 +281,7 @@
       ],
       "name": "RLumCarlo: Monte-Carlo Methods for Simulating Luminescence Phenomena",
       "url": "https://CRAN.R-project.org/package=RLumCarlo",
-      "description": "R package version 0.1.9"
+      "description": "R package version 0.1.10.9000-1"
     },
     {
       "@type": "ScholarlyArticle",
