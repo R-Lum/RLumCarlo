@@ -15,6 +15,8 @@ various stimulation modes using Monte Carlo methods.
 Concept](https://www.repostatus.org/badges/latest/active.svg)](https://www.repostatus.org/#active)
 [![CRAN](https://www.r-pkg.org/badges/version/RLumCarlo)](https://CRAN.R-project.org/package=RLumCarlo)
 [![DOI](https://zenodo.org/badge/82188344.svg)](https://zenodo.org/badge/latestdoi/82188344)
+[![CRAN
+DOI](https://img.shields.io/badge/doi-10.32614/CRAN.package.RLumCarlo-blue.svg)](https://doi.org/10.32614/CRAN.package.RLumCarlo)
 [![Downloads](https://cranlogs.r-pkg.org/badges/grand-total/RLumCarlo)](https://www.r-pkg.org/pkg/RLumCarlo)
 [![R-CMD-check](https://github.com/R-Lum/RLumCarlo/workflows/GitHub%20Actions%20CI/badge.svg)](https://github.com/R-Lum/RLumCarlo/actions)
 [![Build
@@ -90,9 +92,8 @@ benefited from the support by various funding bodies:
   PPP USA 2018, ID: 57387041)’*.
 
 - The work of Sebastian Kreutzer as maintainer of the package was
-  supported by [LabEx LaScArBx (ANR -
-  n. ANR-10-LABX-52)](https://lascarbx.labex.u-bordeaux.fr) between 2017
-  and 2019.
+  supported by LabEx LaScArBx (ANR - n. ANR-10-LABX-52) between 2017 and
+  2019.
 
 - From 2020, Sebastian Kreutzer received funding from the European
   Union’s Horizon 2020 research and innovation programme under the Marie

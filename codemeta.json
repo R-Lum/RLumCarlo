@@ -7,13 +7,13 @@
   "codeRepository": "https://github.com/R-Lum/RLumCarlo",
   "issueTracker": "https://github.com/R-Lum/RLumCarlo/issues",
   "license": "https://spdx.org/licenses/GPL-3.0",
-  "version": "0.1.10.9000.1",
+  "version": "0.1.10.9000.5",
   "programmingLanguage": {
     "@type": "ComputerLanguage",
     "name": "R",
     "url": "https://r-project.org"
   },
-  "runtimePlatform": "R Under development (unstable) (2023-01-03 r83550)",
+  "runtimePlatform": "R Under development (unstable) (2024-07-11 r86890)",
   "provider": {
     "@id": "https://cran.r-project.org",
     "@type": "Organization",
@@ -92,7 +92,7 @@
       "@type": "SoftwareApplication",
       "identifier": "spelling",
       "name": "spelling",
-      "version": ">= 2.2",
+      "version": ">= 2.3",
       "provider": {
         "@id": "https://cran.r-project.org",
         "@type": "Organization",
@@ -105,7 +105,7 @@
       "@type": "SoftwareApplication",
       "identifier": "R.rsp",
       "name": "R.rsp",
-      "version": ">= 0.45.0",
+      "version": ">= 0.46.0",
       "provider": {
         "@id": "https://cran.r-project.org",
         "@type": "Organization",
@@ -118,7 +118,7 @@
       "@type": "SoftwareApplication",
       "identifier": "testthat",
       "name": "testthat",
-      "version": ">= 3.1.4",
+      "version": ">= 3.2.1",
       "provider": {
         "@id": "https://cran.r-project.org",
         "@type": "Organization",
@@ -133,7 +133,7 @@
       "@type": "SoftwareApplication",
       "identifier": "R",
       "name": "R",
-      "version": ">= 4.1"
+      "version": ">= 4.3"
     },
     "2": {
       "@type": "SoftwareApplication",
@@ -195,7 +195,7 @@
       "@type": "SoftwareApplication",
       "identifier": "khroma",
       "name": "khroma",
-      "version": ">= 1.9.0",
+      "version": ">= 1.13.0",
       "provider": {
         "@id": "https://cran.r-project.org",
         "@type": "Organization",
@@ -218,7 +218,7 @@
       "@type": "SoftwareApplication",
       "identifier": "Rcpp",
       "name": "Rcpp",
-      "version": ">= 1.0.9",
+      "version": ">= 1.0.12",
       "provider": {
         "@id": "https://cran.r-project.org",
         "@type": "Organization",
@@ -247,11 +247,11 @@
     },
     "SystemRequirements": null
   },
-  "fileSize": "1706.58KB",
+  "fileSize": "1343.746KB",
   "citation": [
     {
       "@type": "SoftwareSourceCode",
-      "datePublished": "2023",
+      "datePublished": "2024",
       "author": [
         {
           "@type": "Person",
@@ -281,7 +281,7 @@
       ],
       "name": "RLumCarlo: Monte-Carlo Methods for Simulating Luminescence Phenomena",
       "url": "https://CRAN.R-project.org/package=RLumCarlo",
-      "description": "R package version 0.1.10.9000-1"
+      "description": "R package version 0.1.10.9000-5"
     },
     {
       "@type": "ScholarlyArticle",

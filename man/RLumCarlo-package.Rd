@@ -41,6 +41,14 @@ Chen, R., Schmidt, C., 2019. Excited state luminescence signals from a random di
 defects - A new Monte Carlo simulation approach for feldspar.
 Journal of Luminescence 207, 266–272. \doi{doi:10.1016/j.jlumin.2018.11.024}
 }
+\seealso{
+Useful links:
+\itemize{
+  \item \url{https://CRAN.R-project.org/package=RLumCarlo}
+  \item Report bugs at \url{https://github.com/R-Lum/RLumCarlo/issues}
+}
+
+}
 \author{
 Johannes Friedrich, University of Bayreuth (Germany), \cr
 Sebastian Kreutzer, Institute of Geography, Heidelberg University (Germany) \cr
