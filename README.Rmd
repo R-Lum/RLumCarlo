@@ -76,7 +76,7 @@ The [development of RLumCarlo](https://github.com/R-Lum/RLumCarlo) benefited fro
 * Later financial support was secured through the project *'ULTIMO: Unifying Luminescence Models of quartz and feldspar (German Academic Exchange Service) DAAD: Deutscher Akademischer Austauschdienst DAAD PPP USA 2018, ID: 57387041)'*. 
 
 * The work of Sebastian Kreutzer as maintainer of the package was supported 
-by [LabEx LaScArBx (ANR - n. ANR-10-LABX-52)](https://lascarbx.labex.u-bordeaux.fr) between 2017 and 2019.
+by LabEx LaScArBx (ANR - n. ANR-10-LABX-52) between 2017 and 2019.
 
 * From 2020, Sebastian Kreutzer received funding from the European Union’s Horizon 2020
 research and innovation programme under the Marie Skłodowska-Curie grant agreement No 844457

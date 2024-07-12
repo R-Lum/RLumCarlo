@@ -31,7 +31,6 @@
 #' @name RLumCarlo-package
 #' @aliases RLumCarlo
 #' @keywords package
-#' @docType package
 #'
 #' @author Johannes Friedrich, University of Bayreuth (Germany), \cr
 #' Sebastian Kreutzer, Institute of Geography, Heidelberg University (Germany) \cr
@@ -58,4 +57,4 @@
 #' @importFrom utils modifyList
 #' @useDynLib RLumCarlo, .registration = TRUE
 #' @md
-NULL
+"_PACKAGE"
