@@ -41,7 +41,8 @@ test_that("basic run", {
     N_e = 2,
     r_c = 1e-4,
     delta.r = 0.5,
-    method = "par"
+    method = "par",
+    cores = 1
   ))
 
   ##check cluster system

@@ -27,7 +27,8 @@ test_that("basic run", {
     N_e = 2,
     r_c = 0.01,
     delta.r = 1e-1,
-    method = "par"
+    method = "par",
+    cores = 1
   ))
 
   ## create cluster system

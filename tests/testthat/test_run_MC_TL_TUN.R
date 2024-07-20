@@ -29,6 +29,7 @@ test_that("basic run", {
     clusters = 100,
     N_e = 20,
     method = "par",
+    cores = 1,
     delta.r = 1e-3
   ))
 
