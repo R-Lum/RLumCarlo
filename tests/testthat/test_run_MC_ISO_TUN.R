@@ -28,6 +28,7 @@ test_that("basic run", {
      N_e = 200,
      rho = 0.007,
      clusters = 10,
+     cores = 1,
      times = seq(0, 5000)),
      "RLumCarlo_Model_Output")
 
