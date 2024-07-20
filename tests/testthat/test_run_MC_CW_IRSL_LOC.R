@@ -14,7 +14,8 @@ test_that("basic run", {
     clusters = 50,
     n_filled = 100,
     r = 1e-7,
-    method = "seq"
+    method = "seq",
+    cores = 1
   ))
 
   results_par <- expect_silent(run_MC_CW_IRSL_LOC(
@@ -23,7 +24,8 @@ test_that("basic run", {
     clusters = 50,
     n_filled = 100,
     r = 1e-7,
-    method = "par"
+    method = "par",
+    cores = 1
   ))
 
   ## test cluster system
@@ -33,7 +35,8 @@ test_that("basic run", {
     clusters = create_ClusterSystem(10),
     n_filled = 100,
     r = 1e-7,
-    method = "seq"
+    method = "seq",
+    cores = 1
   ))
 
   ## check output
