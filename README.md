@@ -19,9 +19,8 @@ Concept](https://www.repostatus.org/badges/latest/active.svg)](https://www.repos
 DOI](https://img.shields.io/badge/doi-10.32614/CRAN.package.RLumCarlo-blue.svg)](https://doi.org/10.32614/CRAN.package.RLumCarlo)
 [![Downloads](https://cranlogs.r-pkg.org/badges/grand-total/RLumCarlo)](https://www.r-pkg.org/pkg/RLumCarlo)
 [![R-CMD-check](https://github.com/R-Lum/RLumCarlo/workflows/GitHub%20Actions%20CI/badge.svg)](https://github.com/R-Lum/RLumCarlo/actions)
-[![Build
-status](https://ci.appveyor.com/api/projects/status/yxsmwa86jajhtesn?svg=true)](https://ci.appveyor.com/project/RLumSK/rlumcarlo)
-[![codecov](https://app.codecov.io/gh/R-Lum/RLumCarlo/branch/master/graph/badge.svg?token=W0q5JUInf7)](https://app.codecov.io/gh/R-Lum/RLumCarlo)
+[![Coverage
+Status](https://img.shields.io/codecov/c/github/R-Lum/RLumCarlo.svg)](https://app.codecov.io/github/R-Lum/RLumCarlo?branch=master)
 
 ## Installation
 
