@@ -117,7 +117,7 @@ plot_RLumCarlo(results)
 } 
 
 \section{How to cite}{
-Friedrich, J., Kreutzer, S., 2024. run_MC_TL_TUN(): Run Monte-Carlo Simulation for TL (tunnelling transitions). Function version 0.1.0. In: Friedrich, J., Kreutzer, S., Pagonis, V., Schmidt, C., 2024. RLumCarlo: Monte-Carlo Methods for Simulating Luminescence Phenomena. R package version 0.1.10.9000-5. https://CRAN.R-project.org/package=RLumCarlo
+Friedrich, J., Kreutzer, S., 2025. run_MC_TL_TUN(): Run Monte-Carlo Simulation for TL (tunnelling transitions). Function version 0.1.0. In: Friedrich, J., Kreutzer, S., Pagonis, V., Schmidt, C., 2025. RLumCarlo: Monte-Carlo Methods for Simulating Luminescence Phenomena. R package version 0.1.10. https://CRAN.R-project.org/package=RLumCarlo
 }
 
 \references{

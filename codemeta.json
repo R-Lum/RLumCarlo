@@ -7,13 +7,13 @@
   "codeRepository": "https://github.com/R-Lum/RLumCarlo",
   "issueTracker": "https://github.com/R-Lum/RLumCarlo/issues",
   "license": "https://spdx.org/licenses/GPL-3.0",
-  "version": "0.1.10.9000.5",
+  "version": "0.1.10",
   "programmingLanguage": {
     "@type": "ComputerLanguage",
     "name": "R",
     "url": "https://r-project.org"
   },
-  "runtimePlatform": "R Under development (unstable) (2024-07-11 r86890)",
+  "runtimePlatform": "R version 4.5.1 (2025-06-13)",
   "provider": {
     "@id": "https://cran.r-project.org",
     "@type": "Organization",
@@ -92,7 +92,7 @@
       "@type": "SoftwareApplication",
       "identifier": "spelling",
       "name": "spelling",
-      "version": ">= 2.3",
+      "version": ">= 2.3.2",
       "provider": {
         "@id": "https://cran.r-project.org",
         "@type": "Organization",
@@ -118,7 +118,7 @@
       "@type": "SoftwareApplication",
       "identifier": "testthat",
       "name": "testthat",
-      "version": ">= 3.2.1",
+      "version": ">= 3.2.3",
       "provider": {
         "@id": "https://cran.r-project.org",
         "@type": "Organization",
@@ -133,7 +133,7 @@
       "@type": "SoftwareApplication",
       "identifier": "R",
       "name": "R",
-      "version": ">= 4.3"
+      "version": ">= 4.4"
     },
     "2": {
       "@type": "SoftwareApplication",
@@ -156,7 +156,7 @@
       "@type": "SoftwareApplication",
       "identifier": "abind",
       "name": "abind",
-      "version": ">= 1.4-5",
+      "version": ">= 1.4-8",
       "provider": {
         "@id": "https://cran.r-project.org",
         "@type": "Organization",
@@ -195,7 +195,7 @@
       "@type": "SoftwareApplication",
       "identifier": "khroma",
       "name": "khroma",
-      "version": ">= 1.13.0",
+      "version": ">= 1.16.0",
       "provider": {
         "@id": "https://cran.r-project.org",
         "@type": "Organization",
@@ -218,7 +218,7 @@
       "@type": "SoftwareApplication",
       "identifier": "Rcpp",
       "name": "Rcpp",
-      "version": ">= 1.0.12",
+      "version": ">= 1.1.0",
       "provider": {
         "@id": "https://cran.r-project.org",
         "@type": "Organization",
@@ -247,11 +247,11 @@
     },
     "SystemRequirements": null
   },
-  "fileSize": "1343.746KB",
+  "fileSize": "1368.553KB",
   "citation": [
     {
       "@type": "SoftwareSourceCode",
-      "datePublished": "2024",
+      "datePublished": "2025",
       "author": [
         {
           "@type": "Person",
@@ -281,7 +281,7 @@
       ],
       "name": "RLumCarlo: Monte-Carlo Methods for Simulating Luminescence Phenomena",
       "url": "https://CRAN.R-project.org/package=RLumCarlo",
-      "description": "R package version 0.1.10.9000-5"
+      "description": "R package version 0.1.10"
     },
     {
       "@type": "ScholarlyArticle",
@@ -335,7 +335,9 @@
     }
   ],
   "relatedLink": "https://CRAN.R-project.org/package=RLumCarlo",
-  "releaseNotes": "https://github.com/R-Lum/RLumCarlo/blob/master/NEWS.md",
+  "releaseNotes": "https://github.com/R-Lum/RLumCarlo/blob/main/NEWS.md",
+  "readme": "https://github.com/R-Lum/RLumCarlo/blob/master/README.md",
   "contIntegration": ["https://ci.appveyor.com/project/RLumSK/rlumcarlo", "https://app.codecov.io/gh/R-Lum/RLumCarlo"],
-  "developmentStatus": "https://www.repostatus.org/#active"
+  "developmentStatus": "https://www.repostatus.org/#active",
+  "keywords": ["monte-carlo-simulations", "feldspar", "luminescence", "simulation", "geochronology", "r", "r-package", "luminescence-models"]
 }
