@@ -1,15 +1,8 @@
 Package: RLumCarlo
 Type: Package
 Title: Monte-Carlo Methods for Simulating Luminescence Phenomena
-Version: 0.1.10.9000-5
-Date: 2024-07-12
-Author: Johannes Friedrich [aut, trl] (<https://orcid.org/0000-0002-0805-9547>),
-    Sebastian Kreutzer [aut, trl, cre] (<https://orcid.org/0000-0002-0734-2199>),
-    Vasilis Pagonis [aut] (<https://orcid.org/0000-0002-4852-9312>),
-    Christoph Schmidt [aut] (<https://orcid.org/0000-0002-2309-3209>),
-    Christian Laag [ctb] (<https://orcid.org/0000-0002-6012-1029>),
-    Ena Rajovic [ctb],
-    Alex Roy Duncan [ctb]
+Version: 0.1.10
+Date: 2025-09-17
 Authors@R: c(
     person("Johannes", "Friedrich", role = c("aut","trl"), comment = c(ORCID = "0000-0002-0805-9547")),
     person("Sebastian", "Kreutzer", role = c("aut","trl","cre"), comment = c(ORCID = "0000-0002-0734-2199"),
@@ -18,8 +11,7 @@ Authors@R: c(
     person("Christoph", "Schmidt", role = c("aut"), comment = c(ORCID = "0000-0002-2309-3209")),
     person("Christian", "Laag", role = c("ctb"), comment = c(ORCID = "0000-0002-6012-1029")),
     person("Ena", "Rajovic", role = c("ctb")), 
-    person("Alex Roy", "Duncan", role = c("ctb"))
-    )
+    person("Alex Roy", "Duncan", role = c("ctb")))
 Maintainer: Sebastian Kreutzer <sebastian.kreutzer@uni-heidelberg.de>
 Description: A collection of functions to simulate luminescence production in 
     dosimetric materials using Monte Carlo methods. Implemented are models for 
@@ -36,28 +28,28 @@ Contact: Package Developer Team <sebastian.kreutzer@uni-heidelberg.de>
 License: GPL-3
 BugReports: https://github.com/R-Lum/RLumCarlo/issues
 Depends: 
-  R (>= 4.3),
+  R (>= 4.4),
   utils,
   magrittr
 URL: https://CRAN.R-project.org/package=RLumCarlo
 LinkingTo: 
-  Rcpp (>= 1.0.12), 
-  RcppArmadillo (>= 1.0.12)
+  Rcpp (>= 1.1.0), 
+  RcppArmadillo (>= 14.6.0)
 Imports: 
-  abind (>= 1.4-5),
+  abind (>= 1.4-8),
   doParallel (>= 1.0.17),
   foreach (>= 1.5.2),
-  khroma (>= 1.13.0),
+  khroma (>= 1.16.0),
   methods,
   parallel,
-  Rcpp (>= 1.0.12),
+  Rcpp (>= 1.1.0),
   scatterplot3d (>= 0.3),
   stats
 Suggests:
-  spelling (>= 2.3), 
+  spelling (>= 2.3.2), 
   R.rsp (>= 0.46.0),
-  testthat (>= 3.2.1)
+  testthat (>= 3.2.3)
 Encoding: UTF-8
 Language: en-GB
 VignetteBuilder: R.rsp
-RoxygenNote: 7.3.2
+RoxygenNote: 7.3.3
