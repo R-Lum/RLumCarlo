@@ -121,7 +121,7 @@ plot_RLumCarlo(results, legend = TRUE)
 } 
 
 \section{How to cite}{
-Friedrich, J., Kreutzer, S., 2025. run_MC_ISO_TUN(): Monte-Carlo Simulation for ISO-TL (tunnelling transitions). Function version 0.1.0. In: Friedrich, J., Kreutzer, S., Pagonis, V., Schmidt, C., 2025. RLumCarlo: Monte-Carlo Methods for Simulating Luminescence Phenomena. R package version 0.1.10. https://CRAN.R-project.org/package=RLumCarlo
+Friedrich, J., Kreutzer, S., 2025. run_MC_ISO_TUN(): Monte-Carlo Simulation for ISO-TL (tunnelling transitions). Function version 0.1.0. In: Friedrich, J., Kreutzer, S., Pagonis, V., Schmidt, C., 2025. RLumCarlo: Monte-Carlo Methods for Simulating Luminescence Phenomena. R package version 0.1.10. https://r-lum.github.io/RLumCarlo/
 }
 
 \references{

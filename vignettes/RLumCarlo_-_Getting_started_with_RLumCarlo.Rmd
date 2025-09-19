@@ -3,7 +3,7 @@ title: "`RLumCarlo': Tedious features - fine examples"
 author: "Sebastian Kreutzer, Johannes Friedrich, Vasilis Pagonis, Christoph Schmidt"
 date: "RLumCarlo: v`r packageVersion('RLumCarlo')` | last modified: `r Sys.Date()`"
 output: 
-  pdf_document: 
+  bookdown::pdf_document2: 
     number_sections: yes
 header-includes:
   - \usepackage{doi}

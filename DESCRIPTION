@@ -2,7 +2,7 @@ Package: RLumCarlo
 Type: Package
 Title: Monte-Carlo Methods for Simulating Luminescence Phenomena
 Version: 0.1.10
-Date: 2025-09-17
+Date: 2025-09-19
 Authors@R: c(
     person("Johannes", "Friedrich", role = c("aut","trl"), comment = c(ORCID = "0000-0002-0805-9547")),
     person("Sebastian", "Kreutzer", role = c("aut","trl","cre"), comment = c(ORCID = "0000-0002-0734-2199"),
@@ -31,7 +31,7 @@ Depends:
   R (>= 4.4),
   utils,
   magrittr
-URL: https://CRAN.R-project.org/package=RLumCarlo
+URL: https://r-lum.github.io/RLumCarlo/
 LinkingTo: 
   Rcpp (>= 1.1.0), 
   RcppArmadillo (>= 14.6.0)

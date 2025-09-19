@@ -1,75 +1,27 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url>
-    <loc>/404.html</loc>
-  </url>
-  <url>
-    <loc>/LICENSE-text.html</loc>
-  </url>
-  <url>
-    <loc>/articles/RLumCarlo_-_Getting_started_with_RLumCarlo.html</loc>
-  </url>
-  <url>
-    <loc>/articles/index.html</loc>
-  </url>
-  <url>
-    <loc>/authors.html</loc>
-  </url>
-  <url>
-    <loc>/index.html</loc>
-  </url>
-  <url>
-    <loc>/news/index.html</loc>
-  </url>
-  <url>
-    <loc>/reference/RLumCarlo-package.html</loc>
-  </url>
-  <url>
-    <loc>/reference/create_ClusterSystem.html</loc>
-  </url>
-  <url>
-    <loc>/reference/index.html</loc>
-  </url>
-  <url>
-    <loc>/reference/methods_RLumCarlo.html</loc>
-  </url>
-  <url>
-    <loc>/reference/plot_RLumCarlo.html</loc>
-  </url>
-  <url>
-    <loc>/reference/run_MC_CW_IRSL_LOC.html</loc>
-  </url>
-  <url>
-    <loc>/reference/run_MC_CW_IRSL_TUN.html</loc>
-  </url>
-  <url>
-    <loc>/reference/run_MC_CW_OSL_DELOC.html</loc>
-  </url>
-  <url>
-    <loc>/reference/run_MC_ISO_DELOC.html</loc>
-  </url>
-  <url>
-    <loc>/reference/run_MC_ISO_LOC.html</loc>
-  </url>
-  <url>
-    <loc>/reference/run_MC_ISO_TUN.html</loc>
-  </url>
-  <url>
-    <loc>/reference/run_MC_LM_OSL_DELOC.html</loc>
-  </url>
-  <url>
-    <loc>/reference/run_MC_LM_OSL_LOC.html</loc>
-  </url>
-  <url>
-    <loc>/reference/run_MC_LM_OSL_TUN.html</loc>
-  </url>
-  <url>
-    <loc>/reference/run_MC_TL_DELOC.html</loc>
-  </url>
-  <url>
-    <loc>/reference/run_MC_TL_LOC.html</loc>
-  </url>
-  <url>
-    <loc>/reference/run_MC_TL_TUN.html</loc>
-  </url>
+<urlset xmlns = 'http://www.sitemaps.org/schemas/sitemap/0.9'>
+<url><loc>https://r-lum.github.io/RLumCarlo/404.html</loc></url>
+<url><loc>https://r-lum.github.io/RLumCarlo/LICENSE-text.html</loc></url>
+<url><loc>https://r-lum.github.io/RLumCarlo/articles/RLumCarlo_-_Getting_started_with_RLumCarlo.html</loc></url>
+<url><loc>https://r-lum.github.io/RLumCarlo/articles/index.html</loc></url>
+<url><loc>https://r-lum.github.io/RLumCarlo/authors.html</loc></url>
+<url><loc>https://r-lum.github.io/RLumCarlo/index.html</loc></url>
+<url><loc>https://r-lum.github.io/RLumCarlo/news/index.html</loc></url>
+<url><loc>https://r-lum.github.io/RLumCarlo/reference/RLumCarlo-package.html</loc></url>
+<url><loc>https://r-lum.github.io/RLumCarlo/reference/create_ClusterSystem.html</loc></url>
+<url><loc>https://r-lum.github.io/RLumCarlo/reference/index.html</loc></url>
+<url><loc>https://r-lum.github.io/RLumCarlo/reference/methods_RLumCarlo.html</loc></url>
+<url><loc>https://r-lum.github.io/RLumCarlo/reference/plot_RLumCarlo.html</loc></url>
+<url><loc>https://r-lum.github.io/RLumCarlo/reference/run_MC_CW_IRSL_LOC.html</loc></url>
+<url><loc>https://r-lum.github.io/RLumCarlo/reference/run_MC_CW_IRSL_TUN.html</loc></url>
+<url><loc>https://r-lum.github.io/RLumCarlo/reference/run_MC_CW_OSL_DELOC.html</loc></url>
+<url><loc>https://r-lum.github.io/RLumCarlo/reference/run_MC_ISO_DELOC.html</loc></url>
+<url><loc>https://r-lum.github.io/RLumCarlo/reference/run_MC_ISO_LOC.html</loc></url>
+<url><loc>https://r-lum.github.io/RLumCarlo/reference/run_MC_ISO_TUN.html</loc></url>
+<url><loc>https://r-lum.github.io/RLumCarlo/reference/run_MC_LM_OSL_DELOC.html</loc></url>
+<url><loc>https://r-lum.github.io/RLumCarlo/reference/run_MC_LM_OSL_LOC.html</loc></url>
+<url><loc>https://r-lum.github.io/RLumCarlo/reference/run_MC_LM_OSL_TUN.html</loc></url>
+<url><loc>https://r-lum.github.io/RLumCarlo/reference/run_MC_TL_DELOC.html</loc></url>
+<url><loc>https://r-lum.github.io/RLumCarlo/reference/run_MC_TL_LOC.html</loc></url>
+<url><loc>https://r-lum.github.io/RLumCarlo/reference/run_MC_TL_TUN.html</loc></url>
 </urlset>
+

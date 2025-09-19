@@ -7,7 +7,7 @@
 \title{Monte-Carlo Methods for Simulating Luminescence Phenomena.
 \cr
 \if{html}{
-\figure{Logo_RLumCarlo.png}{options: width="50" alt="https://github.com/R-Lum/RLumCarlo"}\cr
+\figure{Logo_RLumCarlo.png}{options: width="50"}\cr
 }}
 \description{
 A collection of functions to simulate luminescence production in dosimetric materials
@@ -27,8 +27,10 @@ quartz and feldspar DAAD: Deutscher Akademischer Austauschdienst
 (German Academic Exchange Service). Framework: DAAD PPP USA 2018, ID: 57387041.
 \item The work of Sebastian Kreutzer as maintainer of the package was supported
 by LabEx LaScArBx (ANR - n. ANR-10-LABX-52) between 2017 and 2019.
-\item From 2020, Sebastian Kreutzer received funding from the European Union’s Horizon 2020
+\item Between 2020-2022, Sebastian Kreutzer received funding from the European Union’s Horizon 2020
 research and innovation programme under the Marie Skłodowska-Curie grant agreement No 844457.
+\item From 2023, the work as a maintainer of this package by Sebastian Kreutzer is
+supported by the DFG Heisenberg programme (#505822867).
 }
 }
 \references{
@@ -44,7 +46,7 @@ Journal of Luminescence 207, 266–272. \doi{doi:10.1016/j.jlumin.2018.11.024}
 \seealso{
 Useful links:
 \itemize{
-  \item \url{https://CRAN.R-project.org/package=RLumCarlo}
+  \item \url{https://r-lum.github.io/RLumCarlo/}
   \item Report bugs at \url{https://github.com/R-Lum/RLumCarlo/issues}
 }
 

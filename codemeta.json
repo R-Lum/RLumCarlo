@@ -247,7 +247,7 @@
     },
     "SystemRequirements": null
   },
-  "fileSize": "1368.553KB",
+  "fileSize": "1389.325KB",
   "citation": [
     {
       "@type": "SoftwareSourceCode",
@@ -280,7 +280,7 @@
         }
       ],
       "name": "RLumCarlo: Monte-Carlo Methods for Simulating Luminescence Phenomena",
-      "url": "https://CRAN.R-project.org/package=RLumCarlo",
+      "url": "https://r-lum.github.io/RLumCarlo/",
       "description": "R package version 0.1.10"
     },
     {
@@ -334,10 +334,10 @@
       }
     }
   ],
-  "relatedLink": "https://CRAN.R-project.org/package=RLumCarlo",
+  "relatedLink": ["https://r-lum.github.io/RLumCarlo/", "https://CRAN.R-project.org/package=RLumCarlo"],
   "releaseNotes": "https://github.com/R-Lum/RLumCarlo/blob/main/NEWS.md",
   "readme": "https://github.com/R-Lum/RLumCarlo/blob/master/README.md",
-  "contIntegration": ["https://ci.appveyor.com/project/RLumSK/rlumcarlo", "https://app.codecov.io/gh/R-Lum/RLumCarlo"],
+  "contIntegration": "https://app.codecov.io/github/R-Lum/RLumCarlo?branch=master",
   "developmentStatus": "https://www.repostatus.org/#active",
   "keywords": ["monte-carlo-simulations", "feldspar", "luminescence", "simulation", "geochronology", "r", "r-package", "luminescence-models"]
 }

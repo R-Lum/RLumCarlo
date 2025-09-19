@@ -45,7 +45,7 @@ Sebastian Kreutzer, Institute of Geography, Heidelberg University (Germany)
 } 
 
 \section{How to cite}{
-Kreutzer, S., 2025. create_ClusterSystem(): Create dosimetric cluster system. Function version 0.1.0. In: Friedrich, J., Kreutzer, S., Pagonis, V., Schmidt, C., 2025. RLumCarlo: Monte-Carlo Methods for Simulating Luminescence Phenomena. R package version 0.1.10. https://CRAN.R-project.org/package=RLumCarlo
+Kreutzer, S., 2025. create_ClusterSystem(): Create dosimetric cluster system. Function version 0.1.0. In: Friedrich, J., Kreutzer, S., Pagonis, V., Schmidt, C., 2025. RLumCarlo: Monte-Carlo Methods for Simulating Luminescence Phenomena. R package version 0.1.10. https://r-lum.github.io/RLumCarlo/
 }
 
 \keyword{data}

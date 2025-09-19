@@ -1,0 +1,5 @@
+url: https://r-lum.github.io/RLumCarlo/
+template:
+  bootstrap: 5
+params:
+  bootswatch: cosmo
